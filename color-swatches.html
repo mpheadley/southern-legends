@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Legends — Color Palette Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    background: #f5f5f0;
+    color: #333;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+    color: #1C1917;
+    margin-bottom: 8px;
+  }
+  .sub {
+    text-align: center;
+    color: #78716C;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+
+  .palette-section {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .palette-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .palette-section .vibe {
+    font-size: 14px;
+    color: #78716C;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .swatch {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .swatch .color {
+    height: 80px;
+  }
+  .swatch .info {
+    padding: 10px 12px;
+    background: #fff;
+  }
+  .swatch .name {
+    font-weight: 700;
+    font-size: 12px;
+    color: #1C1917;
+  }
+  .swatch .hex {
+    font-size: 12px;
+    color: #78716C;
+    font-family: monospace;
+    cursor: pointer;
+  }
+  .swatch .hex:hover { color: #B45309; }
+  .swatch .use {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  /* Hero demo */
+  .hero-demo {
+    border-radius: 12px;
+    padding: 48px 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .hero-demo .eyebrow {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .hero-demo .headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero-demo .tagline {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+  .hero-demo .cta {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  /* Combo cards */
+  .combo-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .combo-card {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .combo-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .combo-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .combo-card .tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .combo-card .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 8px;
+  }
+
+  /* Profile card demo */
+  .card-demo {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .profile-card-demo {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .profile-card-demo .card-img {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-style: italic;
+  }
+  .profile-card-demo .card-body {
+    padding: 20px;
+  }
+  .profile-card-demo .card-body h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  .profile-card-demo .card-body .meta {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .profile-card-demo .card-body .excerpt {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #e5e5e0;
+    margin: 20px 0;
+  }
+
+  .pick-label {
+    display: inline-block;
+    background: #B45309;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+
+  .copied {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1C1917;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .copied.show { opacity: 1; }
+
+  .note {
+    text-align: center;
+    font-size: 13px;
+    color: #78716C;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="copied" id="copied">Copied!</div>
+
+<h1>Local Legends — Color Palette Comparison</h1>
+<p class="sub">Three warm palette directions · Click any hex to copy</p>
+
+<!-- ─── OPTION A ─── -->
+<div class="palette-section">
+  <h2>Option A — Parchment &amp; Amber <span class="pick-label">Recommended</span></h2>
+  <div class="vibe">Literary, warm, quiet authority. Feels like a well-worn leather journal. Oxford American energy.</div>
+
+  <div class="swatches">
+    <div class="swatch">
+      <div class="color" style="background: #1C1917;"></div>
+      <div class="info">
+        <div class="name">Dark</div>
+        <div class="hex" data-hex="#1C1917">#1C1917</div>
+        <div class="use">Nav, hero, footer</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #B45309;"></div>
+      <div class="info">
+        <div class="name">Primary</div>
+        <div class="hex" data-hex="#B45309">#B45309</div>
+        <div class="use">CTAs, links, accents</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #92400E;"></div>
+      <div class="info">
+        <div class="name">Primary Dark</div>
+        <div class="hex" data-hex="#92400E">#92400E</div>
+        <div class="use">Hover states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #D97706;"></div>
+      <div class="info">
+        <div class="name">Accent</div>
+        <div class="hex" data-hex="#D97706">#D97706</div>
+        <div class="use">Tags, highlights</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #FAF7F2; border: 1px solid #e5e0d8;"></div>
+      <div class="info">
+        <div class="name">Light</div>
+        <div class="hex" data-hex="#FAF7F2">#FAF7F2</div>
+        <div class="use">Page background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #F5F0E8; border: 1px solid #e0dbd3;"></div>
+      <div class="info">
+        <div class="name">Warm</div>
+        <div class="hex" data-hex="#F5F0E8">#F5F0E8</div>
+        <div class="use">Alt sections, cards</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #44403C;"></div>
+      <div class="info">
+        <div class="name">Text</div>
+        <div class="hex" data-hex="#44403C">#44403C</div>
+        <div class="use">Body copy</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #78716C;"></div>
+      <div class="info">
+        <div class="name">Text Light</div>
+        <div class="hex" data-hex="#78716C">#78716C</div>
+        <div class="use">Dates, meta, captions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-demo" style="background: #1C1917;">
+    <div class="eyebrow" style="color: #D97706;">Stories from Northeast Alabama</div>
+    <div class="headline" style="color: #FAF7F2;">Meet the People Who Make This Place Unforgettable</div>
+    <div class="tagline" style="color: rgba(250,247,242,0.6);">Craftspeople, musicians, business owners — the local legends your neighbors know but the wider world doesn't. Yet.</div>
+    <a class="cta" href="#" style="background: #B45309; color: #fff;">Read Their Stories</a>
+  </div>
+
+  <!-- Combo -->
+  <div class="combo-row">
+    <div class="combo-card" style="background: #FAF7F2; border: 1px solid #e5e0d8;">
+      <div class="tag" style="background: rgba(217,119,6,0.12); color: #B45309;">Blacksmithing</div>
+      <h3 style="color: #1C1917;">Earl McKinney</h3>
+      <p style="color: #44403C;">A coal forge still burns every morning in a cinderblock shop off Highway 9. Earl McKinney has been shaping iron for forty years.</p>
+      <a class="btn" href="#" style="background: #B45309; color: #fff;">Read Story →</a>
+    </div>
+    <div class="combo-card" style="background: #1C1917;">
+      <h3 style="color: #FAF7F2;">Know a Local Legend?</h3>
+      <p style="color: rgba(250,247,242,0.6);">If you know someone whose story deserves to be told, we'd love to hear about them.</p>
+      <a class="btn" href="#" style="background: #B45309; color: #fff;">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── OPTION B ─── -->
+<div class="palette-section">
+  <h2>Option B — Tobacco &amp; Clay</h2>
+  <div class="vibe">Earthier, more Appalachian character. Feels like red clay roads and afternoon light. More rustic, more place-specific.</div>
+
+  <div class="swatches">
+    <div class="swatch">
+      <div class="color" style="background: #292524;"></div>
+      <div class="info">
+        <div class="name">Dark</div>
+        <div class="hex" data-hex="#292524">#292524</div>
+        <div class="use">Nav, hero, footer</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #9A3412;"></div>
+      <div class="info">
+        <div class="name">Primary</div>
+        <div class="hex" data-hex="#9A3412">#9A3412</div>
+        <div class="use">CTAs, links, accents</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #7C2D12;"></div>
+      <div class="info">
+        <div class="name">Primary Dark</div>
+        <div class="hex" data-hex="#7C2D12">#7C2D12</div>
+        <div class="use">Hover states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #CA8A04;"></div>
+      <div class="info">
+        <div class="name">Accent</div>
+        <div class="hex" data-hex="#CA8A04">#CA8A04</div>
+        <div class="use">Tags, highlights</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #FAFAF7; border: 1px solid #e5e5e0;"></div>
+      <div class="info">
+        <div class="name">Light</div>
+        <div class="hex" data-hex="#FAFAF7">#FAFAF7</div>
+        <div class="use">Page background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #F0EDE6; border: 1px solid #dbd8d0;"></div>
+      <div class="info">
+        <div class="name">Warm</div>
+        <div class="hex" data-hex="#F0EDE6">#F0EDE6</div>
+        <div class="use">Alt sections, cards</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #3F3B36;"></div>
+      <div class="info">
+        <div class="name">Text</div>
+        <div class="hex" data-hex="#3F3B36">#3F3B36</div>
+        <div class="use">Body copy</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #6B6560;"></div>
+      <div class="info">
+        <div class="name">Text Light</div>
+        <div class="hex" data-hex="#6B6560">#6B6560</div>
+        <div class="use">Dates, meta, captions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-demo" style="background: #292524;">
+    <div class="eyebrow" style="color: #CA8A04;">Stories from Northeast Alabama</div>
+    <div class="headline" style="color: #FAFAF7;">Meet the People Who Make This Place Unforgettable</div>
+    <div class="tagline" style="color: rgba(250,250,247,0.6);">Craftspeople, musicians, business owners — the local legends your neighbors know but the wider world doesn't. Yet.</div>
+    <a class="cta" href="#" style="background: #9A3412; color: #fff;">Read Their Stories</a>
+  </div>
+
+  <!-- Combo -->
+  <div class="combo-row">
+    <div class="combo-card" style="background: #FAFAF7; border: 1px solid #e5e5e0;">
+      <div class="tag" style="background: rgba(202,138,4,0.12); color: #9A3412;">Blacksmithing</div>
+      <h3 style="color: #292524;">Earl McKinney</h3>
+      <p style="color: #3F3B36;">A coal forge still burns every morning in a cinderblock shop off Highway 9. Earl McKinney has been shaping iron for forty years.</p>
+      <a class="btn" href="#" style="background: #9A3412; color: #fff;">Read Story →</a>
+    </div>
+    <div class="combo-card" style="background: #292524;">
+      <h3 style="color: #FAFAF7;">Know a Local Legend?</h3>
+      <p style="color: rgba(250,250,247,0.6);">If you know someone whose story deserves to be told, we'd love to hear about them.</p>
+      <a class="btn" href="#" style="background: #9A3412; color: #fff;">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── OPTION C ─── -->
+<div class="palette-section">
+  <h2>Option C — Ink &amp; Rust</h2>
+  <div class="vibe">More editorial punch, higher contrast. Feels like a printed broadsheet with warm ink. More contrast, slightly more urban-editorial.</div>
+
+  <div class="swatches">
+    <div class="swatch">
+      <div class="color" style="background: #18181B;"></div>
+      <div class="info">
+        <div class="name">Dark</div>
+        <div class="hex" data-hex="#18181B">#18181B</div>
+        <div class="use">Nav, hero, footer</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #7C2D12;"></div>
+      <div class="info">
+        <div class="name">Primary</div>
+        <div class="hex" data-hex="#7C2D12">#7C2D12</div>
+        <div class="use">CTAs, links, accents</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #611f0a;"></div>
+      <div class="info">
+        <div class="name">Primary Dark</div>
+        <div class="hex" data-hex="#611f0a">#611f0a</div>
+        <div class="use">Hover states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #B45309;"></div>
+      <div class="info">
+        <div class="name">Accent</div>
+        <div class="hex" data-hex="#B45309">#B45309</div>
+        <div class="use">Tags, highlights</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #FAFAF9; border: 1px solid #e5e5e0;"></div>
+      <div class="info">
+        <div class="name">Light</div>
+        <div class="hex" data-hex="#FAFAF9">#FAFAF9</div>
+        <div class="use">Page background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #F5F5F0; border: 1px solid #ddddd8;"></div>
+      <div class="info">
+        <div class="name">Warm</div>
+        <div class="hex" data-hex="#F5F5F0">#F5F5F0</div>
+        <div class="use">Alt sections, cards</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #3F3F46;"></div>
+      <div class="info">
+        <div class="name">Text</div>
+        <div class="hex" data-hex="#3F3F46">#3F3F46</div>
+        <div class="use">Body copy</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color" style="background: #71717A;"></div>
+      <div class="info">
+        <div class="name">Text Light</div>
+        <div class="hex" data-hex="#71717A">#71717A</div>
+        <div class="use">Dates, meta, captions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-demo" style="background: #18181B;">
+    <div class="eyebrow" style="color: #B45309;">Stories from Northeast Alabama</div>
+    <div class="headline" style="color: #FAFAF9;">Meet the People Who Make This Place Unforgettable</div>
+    <div class="tagline" style="color: rgba(250,250,249,0.6);">Craftspeople, musicians, business owners — the local legends your neighbors know but the wider world doesn't. Yet.</div>
+    <a class="cta" href="#" style="background: #7C2D12; color: #fff;">Read Their Stories</a>
+  </div>
+
+  <!-- Combo -->
+  <div class="combo-row">
+    <div class="combo-card" style="background: #FAFAF9; border: 1px solid #e5e5e0;">
+      <div class="tag" style="background: rgba(180,83,9,0.12); color: #7C2D12;">Blacksmithing</div>
+      <h3 style="color: #18181B;">Earl McKinney</h3>
+      <p style="color: #3F3F46;">A coal forge still burns every morning in a cinderblock shop off Highway 9. Earl McKinney has been shaping iron for forty years.</p>
+      <a class="btn" href="#" style="background: #7C2D12; color: #fff;">Read Story →</a>
+    </div>
+    <div class="combo-card" style="background: #18181B;">
+      <h3 style="color: #FAFAF9;">Know a Local Legend?</h3>
+      <p style="color: rgba(250,250,249,0.6);">If you know someone whose story deserves to be told, we'd love to hear about them.</p>
+      <a class="btn" href="#" style="background: #7C2D12; color: #fff;">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<p class="note">Click any hex value to copy it · Open this file in your browser to compare</p>
+
+<script>
+document.querySelectorAll('.hex[data-hex]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var hex = el.getAttribute('data-hex');
+    navigator.clipboard.writeText(hex).then(function() {
+      var toast = document.getElementById('copied');
+      toast.textContent = 'Copied ' + hex;
+      toast.classList.add('show');
+      setTimeout(function() { toast.classList.remove('show'); }, 1200);
+    });
+  });
+});
+</script>
+</body>
+</html>

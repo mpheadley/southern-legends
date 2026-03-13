@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Legends — Font Final Compare</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Rock+Salt&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    background: #FAFAF7;
+    color: #3F3B36;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #292524;
+    margin-bottom: 8px;
+  }
+  .sub {
+    text-align: center;
+    color: #6B6560;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+
+  .font-section {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .font-section h2 {
+    font-size: 20px;
+    color: #292524;
+    margin-bottom: 2px;
+  }
+  .font-section .font-name {
+    font-size: 13px;
+    color: #6B6560;
+    font-family: monospace;
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: #9A3412;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .hero-demo {
+    border-radius: 12px;
+    padding: 48px 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .hero-demo .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .hero-demo .tagline {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto 20px;
+  }
+  .hero-demo .cta {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .article-preview {
+    margin-top: 20px;
+    padding: 28px;
+    background: #FAFAF7;
+    border-radius: 12px;
+    border: 1px solid #e5e5e0;
+  }
+  .article-preview .category {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(202,138,4,0.12);
+    color: #9A3412;
+    margin-bottom: 12px;
+  }
+  .article-preview .meta {
+    font-size: 13px;
+    color: #6B6560;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  .article-preview p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #3F3B36;
+    margin-bottom: 12px;
+  }
+  .article-preview .blockquote-standard {
+    border-left: 4px solid #CA8A04;
+    padding: 12px 20px;
+    margin: 16px 0;
+    background: #F0EDE6;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #3F3B36;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .article-preview .blockquote-rocksalt {
+    border-left: 4px solid #CA8A04;
+    padding: 20px 24px;
+    margin: 20px 0;
+    background: #F0EDE6;
+    border-radius: 0 8px 8px 0;
+    font-family: 'Rock Salt', cursive;
+    font-style: normal;
+    color: #292524;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .card-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .card {
+    flex: 1;
+    min-width: 240px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e5e5e0;
+  }
+  .card .card-img {
+    height: 140px;
+    background: #F0EDE6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B6560;
+    font-size: 13px;
+    font-style: italic;
+  }
+  .card .card-body {
+    padding: 18px;
+  }
+  .card .card-body .card-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(202,138,4,0.12);
+    color: #9A3412;
+    margin-bottom: 8px;
+  }
+  .card .card-body .card-meta {
+    font-size: 12px;
+    color: #6B6560;
+    margin-top: 4px;
+  }
+  .card .card-body .card-excerpt {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3F3B36;
+    margin-top: 8px;
+  }
+
+  .cta-section {
+    margin-top: 20px;
+    border-radius: 12px;
+    padding: 36px;
+    text-align: center;
+    background: #F0EDE6;
+  }
+  .cta-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 8px auto 16px;
+    color: #6B6560;
+  }
+  .cta-section .btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    background: #9A3412;
+    color: #fff;
+  }
+
+  .vs-divider {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #6B6560;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+  }
+  .vs-divider::before,
+  .vs-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #e5e5e0;
+  }
+  .vs-divider::before { left: 0; }
+  .vs-divider::after { right: 0; }
+
+  .note {
+    text-align: center;
+    font-size: 13px;
+    color: #6B6560;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Fraunces — Pure vs. Hybrid</h1>
+<p class="sub">Same headings, same tags, same body — only difference is the pull quotes</p>
+
+<!-- ─── PURE FRAUNCES ─── -->
+<div class="font-section">
+  <h2>A — Fraunces Only</h2>
+  <div class="font-name">Fraunces headings · Source Sans 3 body · Italic pull quotes</div>
+
+  <div class="hero-demo" style="background: #292524;">
+    <div class="eyebrow" style="color: #CA8A04;">Stories from Northeast Alabama</div>
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 38px; font-weight: 800; line-height: 1.15; color: #FAFAF7; margin-bottom: 12px;">Meet the People Who Make This Place Unforgettable</div>
+    <div class="tagline" style="color: rgba(250,250,247,0.6);">Craftspeople, musicians, business owners — the local legends your neighbors know but the wider world doesn't. Yet.</div>
+    <a class="cta" href="#" style="background: #9A3412; color: #fff;">Read Their Stories</a>
+  </div>
+
+  <div class="article-preview">
+    <div class="category">Blacksmithing</div>
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1.2; color: #292524;">Earl McKinney: The Last Coal Forge on Highway 9</div>
+    <div class="meta">Piedmont, AL · January 15, 2026 · 8 min read</div>
+    <p>The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old, standing at his grandfather's anvil, learning to read the color of heated steel.</p>
+    <blockquote class="blockquote-standard">"People ask me why I don't switch to gas. I tell 'em — you can't hear the metal talk over a gas forge."</blockquote>
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.3; color: #292524; margin-top: 20px;">Forty Years at the Anvil</div>
+    <p style="margin-top: 8px;">He started full-time in 1986, the year his grandfather's hands finally gave out. The shop was paid for. The tools were waiting. All he had to do was show up and keep the fire lit.</p>
+    <blockquote class="blockquote-standard">"My granddaddy said the anvil don't care what kind of day you're having. You show up and hit it right, or you don't."</blockquote>
+  </div>
+
+  <div class="card-row">
+    <div class="card">
+      <div class="card-img">[ photo placeholder ]</div>
+      <div class="card-body">
+        <div class="card-tag">Herbalism</div>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 700; color: #292524;">Mae Ruth Foster</div>
+        <div class="card-meta">Fort Payne, AL</div>
+        <div class="card-excerpt">She knows every plant on the mountain by name — and what each one can do.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">[ photo placeholder ]</div>
+      <div class="card-body">
+        <div class="card-tag">Music</div>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 700; color: #292524;">Jimmy Dawson</div>
+        <div class="card-meta">Gadsden, AL</div>
+        <div class="card-excerpt">Forty years of fish fries, front porches, and a beat-up Martin guitar.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: #292524;">Know a Local Legend?</div>
+    <p>If you know someone in Northeast Alabama whose story deserves to be told, we'd love to hear about them.</p>
+    <a class="btn" href="#">Learn More</a>
+  </div>
+</div>
+
+<div class="vs-divider">vs</div>
+
+<!-- ─── FRAUNCES + ROCK SALT QUOTES ─── -->
+<div class="font-section">
+  <h2>B — Fraunces + Rock Salt Pull Quotes <span class="badge">Recommended</span></h2>
+  <div class="font-name">Fraunces headings · Source Sans 3 body · Rock Salt for blockquotes only</div>
+
+  <div class="hero-demo" style="background: #292524;">
+    <div class="eyebrow" style="color: #CA8A04;">Stories from Northeast Alabama</div>
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 38px; font-weight: 800; line-height: 1.15; color: #FAFAF7; margin-bottom: 12px;">Meet the People Who Make This Place Unforgettable</div>
+    <div class="tagline" style="color: rgba(250,250,247,0.6);">Craftspeople, musicians, business owners — the local legends your neighbors know but the wider world doesn't. Yet.</div>
+    <a class="cta" href="#" style="background: #9A3412; color: #fff;">Read Their Stories</a>
+  </div>
+
+  <div class="article-preview">
+    <div class="category">Blacksmithing</div>
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1.2; color: #292524;">Earl McKinney: The Last Coal Forge on Highway 9</div>
+    <div class="meta">Piedmont, AL · January 15, 2026 · 8 min read</div>
+    <p>The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old, standing at his grandfather's anvil, learning to read the color of heated steel.</p>
+    <blockquote class="blockquote-rocksalt">"You can't hear the metal talk over a gas forge."</blockquote>
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.3; color: #292524; margin-top: 20px;">Forty Years at the Anvil</div>
+    <p style="margin-top: 8px;">He started full-time in 1986, the year his grandfather's hands finally gave out. The shop was paid for. The tools were waiting. All he had to do was show up and keep the fire lit.</p>
+    <blockquote class="blockquote-rocksalt">"The anvil don't care what kind of day you're having."</blockquote>
+  </div>
+
+  <div class="card-row">
+    <div class="card">
+      <div class="card-img">[ photo placeholder ]</div>
+      <div class="card-body">
+        <div class="card-tag">Herbalism</div>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 700; color: #292524;">Mae Ruth Foster</div>
+        <div class="card-meta">Fort Payne, AL</div>
+        <div class="card-excerpt">She knows every plant on the mountain by name — and what each one can do.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img">[ photo placeholder ]</div>
+      <div class="card-body">
+        <div class="card-tag">Music</div>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 700; color: #292524;">Jimmy Dawson</div>
+        <div class="card-meta">Gadsden, AL</div>
+        <div class="card-excerpt">Forty years of fish fries, front porches, and a beat-up Martin guitar.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div style="font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: #292524;">Know a Local Legend?</div>
+    <p>If you know someone in Northeast Alabama whose story deserves to be told, we'd love to hear about them.</p>
+    <a class="btn" href="#">Learn More</a>
+  </div>
+</div>
+
+<p class="note">Side-by-side: same layout, only the blockquotes change · Option B (Tobacco &amp; Clay) palette</p>
+
+</body>
+</html>

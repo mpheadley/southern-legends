@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Legends — Texture Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Rock+Salt&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    background: #FAFAF7;
+    color: #3F3B36;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #292524;
+    margin-bottom: 8px;
+  }
+  .sub {
+    text-align: center;
+    color: #6B6560;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+
+  .texture-section {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .texture-section h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #292524;
+    margin-bottom: 2px;
+  }
+  .texture-section .desc {
+    font-size: 13px;
+    color: #6B6560;
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: #9A3412;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  /* ── Shared demo block styles ── */
+  .demo-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .demo-block {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .demo-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #6B6560;
+    margin-bottom: 8px;
+  }
+
+  /* ── 1. Paper grain (CSS noise) ── */
+  .paper-grain {
+    position: relative;
+  }
+  .paper-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    border-radius: inherit;
+  }
+
+  /* ── 2. Parchment texture (heavier, real paper feel) ── */
+  .parchment-heavy {
+    position: relative;
+  }
+  .parchment-heavy::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.4'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 512px 512px;
+    border-radius: inherit;
+  }
+
+  /* ── 3. Topo map lines (real PNG patterns) ── */
+  .topo-1 { position: relative; }
+  .topo-1::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+    background-image: url("topo-1.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+  }
+
+  .topo-5 { position: relative; }
+  .topo-5::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+    background-image: url("topo-5.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+  }
+
+  .topo-7 { position: relative; }
+  .topo-7::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+    background-image: url("topo-7.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+  }
+
+  /* Dark bg versions (slightly higher opacity) */
+  .topo-1-dark { position: relative; }
+  .topo-1-dark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    background-image: url("topo-1.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+    filter: invert(1);
+  }
+
+  .topo-5-dark { position: relative; }
+  .topo-5-dark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    background-image: url("topo-5.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+    filter: invert(1);
+  }
+
+  .topo-7-dark { position: relative; }
+  .topo-7-dark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    background-image: url("topo-7.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+    filter: invert(1);
+  }
+
+  /* Keep old classes as aliases for combo section */
+  .topo-lines { position: relative; }
+  .topo-lines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+    background-image: url("topo-7.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+  }
+  .topo-dark { position: relative; }
+  .topo-dark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    background-image: url("topo-7.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    border-radius: inherit;
+    filter: invert(1);
+  }
+
+  /* ── Ink splatter ── */
+  .ink-divider {
+    text-align: center;
+    padding: 16px 0;
+    opacity: 0.15;
+  }
+
+  .note {
+    text-align: center;
+    font-size: 13px;
+    color: #6B6560;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Texture Options</h1>
+<p class="sub">Tobacco &amp; Clay palette · Fraunces headings · Real topo patterns from Spoon Graphics</p>
+
+<!-- ─── 1. PAPER GRAIN ─── -->
+<div class="texture-section">
+  <h2>1 — Paper Grain (subtle CSS noise)</h2>
+  <div class="desc">Lightweight noise overlay on light backgrounds. Feels like printed paper. Zero image load.</div>
+
+  <div class="demo-row">
+    <div>
+      <div class="demo-label">Without texture</div>
+      <div class="demo-block" style="background: #FAFAF7; padding: 32px; border: 1px solid #e5e5e0;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 700; color: #292524; margin-bottom: 8px;">Earl McKinney</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old, standing at his grandfather's anvil.</p>
+      </div>
+    </div>
+    <div>
+      <div class="demo-label">With paper grain</div>
+      <div class="demo-block paper-grain" style="background: #FAFAF7; padding: 32px; border: 1px solid #e5e5e0;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 700; color: #292524; margin-bottom: 8px; position: relative; z-index: 1;">Earl McKinney</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; position: relative; z-index: 1;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old, standing at his grandfather's anvil.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 2. PARCHMENT HEAVY ─── -->
+<div class="texture-section">
+  <h2>2 — Parchment (heavier grain)</h2>
+  <div class="desc">More visible texture. Feels like actual aged paper. Still CSS-only. Good for the warm bg sections.</div>
+
+  <div class="demo-row">
+    <div>
+      <div class="demo-label">On light bg (#FAFAF7)</div>
+      <div class="demo-block parchment-heavy" style="background: #FAFAF7; padding: 32px; border: 1px solid #e5e5e0;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 700; color: #292524; margin-bottom: 8px; position: relative; z-index: 1;">Earl McKinney</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; position: relative; z-index: 1;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old, standing at his grandfather's anvil.</p>
+      </div>
+    </div>
+    <div>
+      <div class="demo-label">On warm bg (#F0EDE6)</div>
+      <div class="demo-block parchment-heavy" style="background: #F0EDE6; padding: 32px; border: 1px solid #dbd8d0;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 700; color: #292524; margin-bottom: 8px; position: relative; z-index: 1;">Know a Local Legend?</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; position: relative; z-index: 1;">If you know someone in Northeast Alabama whose story deserves to be told, we'd love to hear about them.</p>
+        <a href="#" style="display: inline-block; margin-top: 12px; padding: 10px 22px; background: #9A3412; color: #fff; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; position: relative; z-index: 1;">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 3. TOPO MAP PATTERNS (REAL PNGs) ─── -->
+<div class="texture-section">
+  <h2>3 — Topo Pattern #1 (classic, even density)</h2>
+  <div class="desc">Spoon Graphics Pattern 1 — clean, uniform contour lines. Most versatile.</div>
+  <div class="demo-row">
+    <div>
+      <div class="demo-label">On light bg</div>
+      <div class="demo-block topo-1" style="background: #FAFAF7; padding: 32px; border: 1px solid #e5e5e0;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 700; color: #292524; margin-bottom: 8px; position: relative; z-index: 1;">Earl McKinney</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; position: relative; z-index: 1;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old.</p>
+      </div>
+    </div>
+    <div>
+      <div class="demo-label">On dark bg</div>
+      <div class="demo-block topo-1-dark" style="background: #292524; padding: 40px 32px; text-align: center;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 800; line-height: 1.15; color: #FAFAF7; margin-bottom: 12px; position: relative; z-index: 1;">Meet the People Who Make This Place Unforgettable</div>
+        <a href="#" style="display: inline-block; padding: 12px 28px; border-radius: 4px; background: #9A3412; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; position: relative; z-index: 1;">Read Their Stories</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="texture-section">
+  <h2>3b — Topo Pattern #5 (solid + dashed, spacious)</h2>
+  <div class="desc">Mixed line styles like a real USGS map. More open, more authentic.</div>
+  <div class="demo-row">
+    <div>
+      <div class="demo-label">On light bg</div>
+      <div class="demo-block topo-5" style="background: #FAFAF7; padding: 32px; border: 1px solid #e5e5e0;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 700; color: #292524; margin-bottom: 8px; position: relative; z-index: 1;">Earl McKinney</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; position: relative; z-index: 1;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old.</p>
+      </div>
+    </div>
+    <div>
+      <div class="demo-label">On dark bg</div>
+      <div class="demo-block topo-5-dark" style="background: #292524; padding: 40px 32px; text-align: center;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 800; line-height: 1.15; color: #FAFAF7; margin-bottom: 12px; position: relative; z-index: 1;">Meet the People Who Make This Place Unforgettable</div>
+        <a href="#" style="display: inline-block; padding: 12px 28px; border-radius: 4px; background: #9A3412; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; position: relative; z-index: 1;">Read Their Stories</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="texture-section">
+  <h2>3c — Topo Pattern #7 (clean, light, minimal)</h2>
+  <div class="desc">Lightest and most open. Least busy — best for subtlety.</div>
+  <div class="demo-row">
+    <div>
+      <div class="demo-label">On light bg</div>
+      <div class="demo-block topo-7" style="background: #FAFAF7; padding: 32px; border: 1px solid #e5e5e0;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 700; color: #292524; margin-bottom: 8px; position: relative; z-index: 1;">Earl McKinney</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; position: relative; z-index: 1;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old.</p>
+      </div>
+    </div>
+    <div>
+      <div class="demo-label">On dark bg</div>
+      <div class="demo-block topo-7-dark" style="background: #292524; padding: 40px 32px; text-align: center;">
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 800; line-height: 1.15; color: #FAFAF7; margin-bottom: 12px; position: relative; z-index: 1;">Meet the People Who Make This Place Unforgettable</div>
+        <a href="#" style="display: inline-block; padding: 12px 28px; border-radius: 4px; background: #9A3412; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; position: relative; z-index: 1;">Read Their Stories</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 4. COMBO: grain + topo ─── -->
+<div class="texture-section">
+  <h2>4 — Recommended Combo: Paper Grain + Topo Lines <span class="badge">Top Pick</span></h2>
+  <div class="desc">Paper grain on light sections (printed feel) · Topo lines on dark sections (place identity) · Best of both worlds</div>
+
+  <!-- Full page simulation -->
+  <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <!-- Hero -->
+    <div class="topo-dark" style="background: #292524; padding: 48px 32px; text-align: center;">
+      <div style="font-family: 'Source Sans 3', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; color: #CA8A04; margin-bottom: 14px; position: relative; z-index: 1;">Stories from Northeast Alabama</div>
+      <div style="font-family: 'Fraunces', Georgia, serif; font-size: 36px; font-weight: 800; line-height: 1.15; color: #FAFAF7; margin-bottom: 12px; position: relative; z-index: 1;">Meet the People Who Make This Place Unforgettable</div>
+      <div style="font-family: 'Source Sans 3', sans-serif; font-size: 16px; line-height: 1.6; color: rgba(250,250,247,0.6); max-width: 500px; margin: 0 auto 20px; position: relative; z-index: 1;">Craftspeople, musicians, business owners — the local legends your neighbors know but the wider world doesn't. Yet.</div>
+      <a href="#" style="display: inline-block; padding: 12px 28px; border-radius: 4px; background: #9A3412; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; position: relative; z-index: 1;">Read Their Stories</a>
+    </div>
+
+    <!-- Article section -->
+    <div class="paper-grain" style="background: #FAFAF7; padding: 36px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; position: relative; z-index: 1;">
+        <div style="display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: rgba(202,138,4,0.12); color: #9A3412; margin-bottom: 12px;">Blacksmithing</div>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1.2; color: #292524; margin-bottom: 6px;">Earl McKinney: The Last Coal Forge on Highway 9</div>
+        <div style="font-size: 13px; color: #6B6560; margin-bottom: 20px;">Piedmont, AL · January 15, 2026 · 8 min read</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; margin-bottom: 16px;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old, standing at his grandfather's anvil, learning to read the color of heated steel.</p>
+        <blockquote style="border-left: 4px solid #CA8A04; padding: 16px 24px; margin: 20px 0; background: #F0EDE6; border-radius: 0 8px 8px 0; font-family: 'Rock Salt', cursive; font-size: 18px; line-height: 1.6; color: #292524;">"You can't hear the metal talk over a gas forge."</blockquote>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 700; line-height: 1.3; color: #292524; margin-top: 24px; margin-bottom: 8px;">Forty Years at the Anvil</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36;">He started full-time in 1986, the year his grandfather's hands finally gave out. The shop was paid for. The tools were waiting. All he had to do was show up and keep the fire lit.</p>
+      </div>
+    </div>
+
+    <!-- CTA section -->
+    <div class="parchment-heavy" style="background: #F0EDE6; padding: 40px 32px; text-align: center;">
+      <div style="font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: #292524; margin-bottom: 8px; position: relative; z-index: 1;">Know a Local Legend?</div>
+      <p style="font-size: 15px; line-height: 1.6; color: #6B6560; max-width: 480px; margin: 0 auto 16px; position: relative; z-index: 1;">If you know someone in Northeast Alabama whose story deserves to be told, we'd love to hear about them.</p>
+      <a href="#" style="display: inline-block; padding: 12px 26px; border-radius: 4px; background: #9A3412; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; position: relative; z-index: 1;">Learn More</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="topo-dark" style="background: #292524; padding: 28px 32px; text-align: center;">
+      <div style="font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 700; color: #FAFAF7; margin-bottom: 4px; position: relative; z-index: 1;">Local Legends</div>
+      <div style="font-size: 13px; color: rgba(250,250,247,0.4); position: relative; z-index: 1;">Stories from Northeast Alabama's Small Businesses</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 5. CONTROL: no texture ─── -->
+<div class="texture-section">
+  <h2>5 — No Texture (control)</h2>
+  <div class="desc">Same layout, clean flat backgrounds. Compare against the combo above.</div>
+
+  <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <!-- Hero -->
+    <div style="background: #292524; padding: 48px 32px; text-align: center;">
+      <div style="font-family: 'Source Sans 3', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; color: #CA8A04; margin-bottom: 14px;">Stories from Northeast Alabama</div>
+      <div style="font-family: 'Fraunces', Georgia, serif; font-size: 36px; font-weight: 800; line-height: 1.15; color: #FAFAF7; margin-bottom: 12px;">Meet the People Who Make This Place Unforgettable</div>
+      <div style="font-family: 'Source Sans 3', sans-serif; font-size: 16px; line-height: 1.6; color: rgba(250,250,247,0.6); max-width: 500px; margin: 0 auto 20px;">Craftspeople, musicians, business owners — the local legends your neighbors know but the wider world doesn't. Yet.</div>
+      <a href="#" style="display: inline-block; padding: 12px 28px; border-radius: 4px; background: #9A3412; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none;">Read Their Stories</a>
+    </div>
+
+    <!-- Article section -->
+    <div style="background: #FAFAF7; padding: 36px 32px;">
+      <div style="max-width: 640px; margin: 0 auto;">
+        <div style="display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: rgba(202,138,4,0.12); color: #9A3412; margin-bottom: 12px;">Blacksmithing</div>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1.2; color: #292524; margin-bottom: 6px;">Earl McKinney: The Last Coal Forge on Highway 9</div>
+        <div style="font-size: 13px; color: #6B6560; margin-bottom: 20px;">Piedmont, AL · January 15, 2026 · 8 min read</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36; margin-bottom: 16px;">The shop smells like iron and burning coal. It's a smell Earl McKinney has known since he was twelve years old, standing at his grandfather's anvil, learning to read the color of heated steel.</p>
+        <blockquote style="border-left: 4px solid #CA8A04; padding: 16px 24px; margin: 20px 0; background: #F0EDE6; border-radius: 0 8px 8px 0; font-family: 'Rock Salt', cursive; font-size: 18px; line-height: 1.6; color: #292524;">"You can't hear the metal talk over a gas forge."</blockquote>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 700; line-height: 1.3; color: #292524; margin-top: 24px; margin-bottom: 8px;">Forty Years at the Anvil</div>
+        <p style="font-size: 16px; line-height: 1.7; color: #3F3B36;">He started full-time in 1986, the year his grandfather's hands finally gave out. The shop was paid for. The tools were waiting. All he had to do was show up and keep the fire lit.</p>
+      </div>
+    </div>
+
+    <!-- CTA section -->
+    <div style="background: #F0EDE6; padding: 40px 32px; text-align: center;">
+      <div style="font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: #292524; margin-bottom: 8px;">Know a Local Legend?</div>
+      <p style="font-size: 15px; line-height: 1.6; color: #6B6560; max-width: 480px; margin: 0 auto 16px;">If you know someone in Northeast Alabama whose story deserves to be told, we'd love to hear about them.</p>
+      <a href="#" style="display: inline-block; padding: 12px 26px; border-radius: 4px; background: #9A3412; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none;">Learn More</a>
+    </div>
+
+    <!-- Footer -->
+    <div style="background: #292524; padding: 28px 32px; text-align: center;">
+      <div style="font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 700; color: #FAFAF7; margin-bottom: 4px;">Local Legends</div>
+      <div style="font-size: 13px; color: rgba(250,250,247,0.4);">Stories from Northeast Alabama's Small Businesses</div>
+    </div>
+  </div>
+</div>
+
+<p class="note">All textures are pure CSS — no image files needed · Scroll between #4 (combo) and #5 (clean) to compare</p>
+
+</body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Legends — Typography-as-Photography Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,700;9..144,800;9..144,900&family=Rock+Salt&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,700;9..144,800;9..144,900&family=Rock+Salt&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Design System Tokens ─── */
+    :root {
+      --color-ll-primary: #9A3412;
+      --color-ll-primary-dark: #7C2D12;
+      --color-ll-primary-light: #B84A1C;
+      --color-ll-accent: #CA8A04;
+      --color-ll-accent-dark: #A16C03;
+      --color-ll-dark: #292524;
+      --color-ll-light: #FAFAF7;
+      --color-ll-warm: #F0EDE6;
+      --color-ll-text: #3F3B36;
+      --color-ll-text-light: #6B6560;
+      --color-ll-white: #FFFFFF;
+      --color-ll-border: #E5E5E0;
+
+      --font-heading: 'Fraunces', Georgia, serif;
+      --font-accent: 'Rock Salt', cursive;
+      --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+      /* Category colors */
+      --cat-craftspeople: #9A3412;
+      --cat-food: #CA8A04;
+      --cat-music: #6B4C8A;
+      --cat-agriculture: #3D6B4F;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-ll-light);
+      color: var(--color-ll-text);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* ─── Page Header ─── */
+    .page-header {
+      background: var(--color-ll-dark);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .page-header p {
+      color: rgba(255,255,255,0.6);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ─── Section Layout ─── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    .section + .section { border-top: 1px solid var(--color-ll-border); }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-ll-accent);
+      margin-bottom: 0.5rem;
+    }
+    .section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      color: var(--color-ll-dark);
+      margin-bottom: 0.5rem;
+    }
+    .section > p.desc {
+      color: var(--color-ll-text-light);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    /* ─── Decision Picker (radio pills) ─── */
+    .decision-picker {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      margin-bottom: 2rem;
+    }
+    .decision-picker label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 1px solid var(--color-ll-border);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-ll-text-light);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .decision-picker label:hover {
+      border-color: var(--color-ll-text-light);
+      color: var(--color-ll-text);
+    }
+    .decision-picker input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--color-ll-text-light);
+      border-radius: 50%;
+      transition: border-color 0.2s, background 0.2s;
+      flex-shrink: 0;
+    }
+    .decision-picker input[type="radio"]:checked {
+      border-color: var(--color-ll-primary);
+      background: var(--color-ll-primary);
+      box-shadow: inset 0 0 0 3px var(--color-ll-white);
+    }
+    .decision-picker label:has(input:checked) {
+      border-color: var(--color-ll-primary);
+      color: var(--color-ll-dark);
+      background: rgba(154, 52, 18, 0.06);
+    }
+
+    /* ─── Recommendation Box ─── */
+    .recommendation {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--color-ll-warm);
+      border-radius: 8px;
+      border-left: 4px solid var(--color-ll-accent);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .recommendation strong {
+      color: var(--color-ll-dark);
+    }
+    .recommendation .rec-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-ll-accent-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    /* ─── Card Grid ─── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--color-ll-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .card-image-area {
+      aspect-ratio: 3/2;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+    .card-body .cat-tag {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 9999px;
+      background: var(--color-ll-accent);
+      color: white;
+    }
+    .card-body h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-ll-dark);
+      margin-top: 0.75rem;
+    }
+    .card-body .location {
+      font-size: 0.85rem;
+      color: var(--color-ll-text-light);
+      margin-top: 0.25rem;
+    }
+    .card-body .excerpt {
+      font-size: 0.85rem;
+      color: var(--color-ll-text);
+      margin-top: 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ─── Option label tags ─── */
+    .option-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: var(--color-ll-dark);
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+    .option-label.current { background: var(--color-ll-text-light); }
+
+    /* ─── Current (placeholder) ─── */
+    .card-current .card-image-area {
+      background: var(--color-ll-warm);
+    }
+
+    /* ─── Option A: Oversized Initial ─── */
+    .card-initial .card-image-area {
+      background: var(--color-ll-warm);
+    }
+    .card-initial .big-initial {
+      font-family: var(--font-heading);
+      font-size: 10rem;
+      font-weight: 800;
+      line-height: 0.85;
+      opacity: 0.12;
+      position: absolute;
+      bottom: -0.1em;
+      right: 0.1em;
+      user-select: none;
+    }
+    .card-initial .initial-accent {
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1;
+      z-index: 1;
+    }
+    .cat-craftspeople { --cat-color: var(--cat-craftspeople); }
+    .cat-food { --cat-color: var(--cat-food); }
+    .cat-music { --cat-color: var(--cat-music); }
+    .cat-agriculture { --cat-color: var(--cat-agriculture); }
+
+    .card-initial .initial-accent,
+    .card-initial .big-initial { color: var(--cat-color); }
+
+    /* ─── Option B: Name as Art ─── */
+    .card-name-art .card-image-area {
+      padding: 1.5rem;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+    .card-name-art .card-image-area { background: var(--cat-color); }
+    .card-name-art .name-art {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .card-name-art .name-art-category {
+      font-family: var(--font-accent);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── Option C: Pull-Quote Teaser ─── */
+    .card-quote .card-image-area {
+      background: var(--color-ll-warm);
+      padding: 1.5rem 1.75rem;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .card-quote .quote-mark {
+      font-family: var(--font-heading);
+      font-size: 8rem;
+      line-height: 0.5;
+      color: var(--color-ll-accent);
+      opacity: 0.15;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.75rem;
+    }
+    .card-quote .quote-text {
+      font-family: var(--font-accent);
+      font-size: 0.85rem;
+      line-height: 2;
+      color: var(--color-ll-dark);
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+    .card-quote .quote-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--color-ll-accent);
+    }
+
+    /* ─── Hero Previews ─── */
+    .hero-preview {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+
+    /* Hero D: Large Editorial */
+    .hero-editorial {
+      background: var(--color-ll-dark);
+      color: white;
+      padding: 4rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-editorial::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(154,52,18,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(202,138,4,0.1) 0%, transparent 60%);
+    }
+    .hero-editorial .hero-kicker {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-ll-accent);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .hero-editorial h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      position: relative;
+    }
+    .hero-editorial .hero-tagline {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      margin-top: 1rem;
+      position: relative;
+    }
+    .hero-editorial .hero-rule {
+      width: 60px;
+      height: 3px;
+      background: var(--color-ll-accent);
+      border: none;
+      border-radius: 2px;
+      margin: 1.5rem auto 0;
+      position: relative;
+    }
+
+    /* Hero E: Rotating Quote */
+    .hero-quote {
+      background: var(--color-ll-dark);
+      color: white;
+      padding: 4rem 3rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero-quote .hero-site-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    .hero-quote .featured-quote {
+      font-family: var(--font-accent);
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      line-height: 2.2;
+      color: rgba(255,255,255,0.85);
+      max-width: 550px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-quote .featured-quote::before {
+      content: '\201C';
+      font-family: var(--font-heading);
+      font-size: 6rem;
+      color: var(--color-ll-accent);
+      opacity: 0.3;
+      position: absolute;
+      top: -2.5rem;
+      left: -1.5rem;
+      line-height: 1;
+    }
+    .hero-quote .quote-attribution {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--color-ll-accent);
+      margin-top: 1.5rem;
+    }
+
+    /* ─── Profile Detail Hero: Option F ─── */
+    .detail-hero {
+      background: var(--color-ll-dark);
+      color: white;
+      padding: 4rem 3rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .detail-hero .detail-back {
+      font-size: 0.85rem;
+      color: var(--color-ll-accent);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    .detail-hero .detail-category {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.75rem;
+    }
+    .detail-hero .detail-name {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+    .detail-hero .detail-dash {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.5rem;
+    }
+    .detail-hero .ghost-initial {
+      font-family: var(--font-heading);
+      font-size: 20rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      position: absolute;
+      right: -0.5rem;
+      bottom: -3rem;
+      line-height: 0.8;
+      user-select: none;
+    }
+    .detail-hero .detail-meta {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Option G: Paper Texture ─── */
+    .texture-demo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .texture-box {
+      padding: 2.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .texture-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .texture-box p {
+      font-size: 0.85rem;
+      color: var(--color-ll-text-light);
+    }
+    .texture-flat {
+      background: var(--color-ll-warm);
+    }
+    .texture-grain {
+      background: var(--color-ll-warm);
+      position: relative;
+    }
+    .texture-grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      opacity: 0.4;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+      background-size: 200px;
+      pointer-events: none;
+    }
+
+    /* ─── AI Section ─── */
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .ai-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .ai-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-ll-dark);
+      margin-bottom: 0.5rem;
+    }
+    .ai-card p {
+      font-size: 0.85rem;
+      color: var(--color-ll-text);
+      line-height: 1.6;
+    }
+    .verdict { font-weight: 700; }
+    .verdict-yes { color: var(--cat-agriculture); }
+    .verdict-no { color: var(--cat-craftspeople); }
+    .verdict-maybe { color: var(--color-ll-accent-dark); }
+
+    /* ─── Summary Bar ─── */
+    .summary-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      background: rgba(41, 37, 36, 0.97);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .summary-bar.visible {
+      transform: translateY(0);
+    }
+    .summary-count {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+    }
+    .summary-count strong {
+      color: var(--color-ll-accent);
+      font-weight: 700;
+    }
+    .summary-preview {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      max-width: 500px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .summary-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .summary-copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: none;
+      background: var(--color-ll-primary);
+      color: var(--color-ll-white);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .summary-copy-btn:hover {
+      background: var(--color-ll-primary-dark);
+      transform: translateY(-1px);
+    }
+    .summary-copy-btn.copied {
+      background: #22c55e;
+    }
+
+    /* ─── Misc ─── */
+    .variety-label {
+      font-family: var(--font-heading);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: var(--color-ll-dark);
+    }
+
+    @media (max-width: 640px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .texture-demo { grid-template-columns: 1fr; }
+      .ai-grid { grid-template-columns: 1fr; }
+      .summary-preview { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Typography Options Preview</h1>
+    <p>Visual approaches for Local Legends when no photography is available. Pick your preferred option for each decision point, then copy your choices.</p>
+  </header>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- DECISION 1: PROFILE CARDS                    -->
+  <!-- ════════════════════════════════════════════ -->
+
+  <div class="section">
+    <p class="section-label">Decision 1 of 5</p>
+    <h2>Profile Cards — What replaces the image?</h2>
+    <p class="desc">The card's 3:2 image area currently shows a generic person icon. Pick a typographic alternative.</p>
+
+    <div class="decision-picker">
+      <label><input type="radio" name="cards" value="A — Oversized Initial"> A — Oversized Initial</label>
+      <label><input type="radio" name="cards" value="B — Name as Art"> B — Name as Art</label>
+      <label><input type="radio" name="cards" value="C — Pull-Quote Teaser"> C — Pull-Quote Teaser</label>
+    </div>
+
+    <div class="card-grid">
+
+      <!-- Current -->
+      <div>
+        <span class="option-label current">Current</span>
+        <div class="card card-current">
+          <div class="card-image-area">
+            <svg style="width:64px;height:64px;color:var(--color-ll-border)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="cat-tag">Craftspeople</span>
+            <h3>Earl McKinney</h3>
+            <p class="location">Delta, Alabama</p>
+            <p class="excerpt">At 74, Earl McKinney still fires up his coal forge every morning. His hand-forged hinges and tools are scattered across barns from Anniston to Piedmont.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option A: Oversized Initial -->
+      <div>
+        <span class="option-label">A — Oversized Initial</span>
+        <div class="card card-initial cat-craftspeople">
+          <div class="card-image-area">
+            <span class="big-initial">E</span>
+            <span class="initial-accent">E</span>
+          </div>
+          <div class="card-body">
+            <span class="cat-tag">Craftspeople</span>
+            <h3>Earl McKinney</h3>
+            <p class="location">Delta, Alabama</p>
+            <p class="excerpt">At 74, Earl McKinney still fires up his coal forge every morning. His hand-forged hinges and tools are scattered across barns from Anniston to Piedmont.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option B: Name as Art -->
+      <div>
+        <span class="option-label">B — Name as Art</span>
+        <div class="card card-name-art cat-craftspeople">
+          <div class="card-image-area">
+            <div>
+              <p class="name-art-category">Craftspeople</p>
+              <p class="name-art">Earl<br>McKinney</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="cat-tag">Craftspeople</span>
+            <h3>Earl McKinney</h3>
+            <p class="location">Delta, Alabama</p>
+            <p class="excerpt">At 74, Earl McKinney still fires up his coal forge every morning. His hand-forged hinges and tools are scattered across barns from Anniston to Piedmont.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option C: Pull-Quote -->
+      <div>
+        <span class="option-label">C — Pull-Quote Teaser</span>
+        <div class="card card-quote">
+          <div class="card-image-area">
+            <span class="quote-mark">&ldquo;</span>
+            <p class="quote-text">That's not a defect. That's a signature.</p>
+            <div class="quote-border"></div>
+          </div>
+          <div class="card-body">
+            <span class="cat-tag">Craftspeople</span>
+            <h3>Earl McKinney</h3>
+            <p class="location">Delta, Alabama</p>
+            <p class="excerpt">At 74, Earl McKinney still fires up his coal forge every morning. His hand-forged hinges and tools are scattered across barns from Anniston to Piedmont.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category color variety for A & B -->
+    <h3 class="variety-label">Category color variety (Options A & B)</h3>
+    <div class="card-grid">
+      <div>
+        <div class="card card-initial cat-food">
+          <div class="card-image-area">
+            <span class="big-initial">M</span>
+            <span class="initial-accent">M</span>
+          </div>
+          <div class="card-body">
+            <span class="cat-tag" style="background: var(--cat-food);">Food</span>
+            <h3>Mae Ruth Foster</h3>
+            <p class="location">Fort Payne, Alabama</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card card-name-art cat-food">
+          <div class="card-image-area">
+            <div>
+              <p class="name-art-category">Food</p>
+              <p class="name-art">Mae Ruth<br>Foster</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="cat-tag" style="background: var(--cat-food);">Food</span>
+            <h3>Mae Ruth Foster</h3>
+            <p class="location">Fort Payne, Alabama</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card card-initial cat-music">
+          <div class="card-image-area">
+            <span class="big-initial">J</span>
+            <span class="initial-accent">J</span>
+          </div>
+          <div class="card-body">
+            <span class="cat-tag" style="background: var(--cat-music);">Music</span>
+            <h3>Jimmy Dawson</h3>
+            <p class="location">Gadsden, Alabama</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommendation">
+      <p class="rec-label">Recommendation</p>
+      <p><strong>Option A (Oversized Initial)</strong> is the strongest default. It's distinctive, works at every card size, scales gracefully when photos arrive later (just swap the initial for the image), and the category color-coding gives the grid visual variety without clutter. Option C is strong too but requires every profile to have a quotable line in the frontmatter — more content overhead.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- DECISION 2: HOMEPAGE HERO                    -->
+  <!-- ════════════════════════════════════════════ -->
+
+  <div class="section">
+    <p class="section-label">Decision 2 of 5</p>
+    <h2>Homepage Hero — Setting the tone without a photo</h2>
+    <p class="desc">Two approaches: pure editorial typography vs. a featured quote that rotates with each new profile.</p>
+
+    <div class="decision-picker">
+      <label><input type="radio" name="hero" value="D — Large Editorial Type"> D — Large Editorial Type</label>
+      <label><input type="radio" name="hero" value="E — Featured Quote from Latest Profile"> E — Featured Quote</label>
+      <label><input type="radio" name="hero" value="Keep current"> Keep Current</label>
+    </div>
+
+    <span class="option-label">D — Large Editorial Type</span>
+    <div class="hero-preview">
+      <div class="hero-editorial">
+        <p class="hero-kicker">Northeast Alabama</p>
+        <h1>Local Legends</h1>
+        <p class="hero-tagline">Stories of the people who built this place</p>
+        <hr class="hero-rule">
+      </div>
+    </div>
+
+    <span class="option-label">E — Featured Quote from Latest Profile</span>
+    <div class="hero-preview">
+      <div class="hero-quote">
+        <p class="hero-site-name">Local Legends</p>
+        <p class="featured-quote">That's not a defect. That's a signature.</p>
+        <p class="quote-attribution">— Earl McKinney, Blacksmith &middot; Delta, Alabama</p>
+      </div>
+    </div>
+
+    <div class="recommendation">
+      <p class="rec-label">Recommendation</p>
+      <p><strong>Option D (Large Editorial)</strong> is the safer, more timeless choice — it works whether you have 3 profiles or 30. Option E is more dynamic and editorial but requires building a quote-rotation mechanism and ensuring every profile has a strong featured quote. Consider D now, add E as a future enhancement when you have more content.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- DECISION 3: PROFILE DETAIL HERO              -->
+  <!-- ════════════════════════════════════════════ -->
+
+  <div class="section">
+    <p class="section-label">Decision 3 of 5</p>
+    <h2>Profile Detail Hero — Typographic treatment</h2>
+    <p class="desc">Large name in Fraunces with a ghost initial in the background. Category label in Rock Salt.</p>
+
+    <div class="decision-picker">
+      <label><input type="radio" name="detail" value="F — Typographic Hero with Ghost Initial"> F — Ghost Initial Hero</label>
+      <label><input type="radio" name="detail" value="Keep current"> Keep Current</label>
+    </div>
+
+    <span class="option-label">F — Typographic Detail Hero</span>
+    <div class="hero-preview">
+      <div class="detail-hero">
+        <span class="ghost-initial">E</span>
+        <a href="#" class="detail-back">&larr; All Stories</a>
+        <p class="detail-category">Craftspeople</p>
+        <h1 class="detail-name">Earl McKinney</h1>
+        <p class="detail-dash">The Last Blacksmith of Cheaha</p>
+        <div class="detail-meta">
+          <span>Delta, Alabama</span>
+          <span>&middot;</span>
+          <span>March 1, 2026</span>
+          <span>&middot;</span>
+          <span>4 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommendation">
+      <p class="rec-label">Recommendation</p>
+      <p><strong>Option F</strong> adds depth and visual interest for minimal code — just a positioned Fraunces character and a Rock Salt category label. The ghost initial is a subtle, editorial touch that makes each profile page feel intentional rather than "waiting for a photo." Gracefully disappears when a hero image is added later.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- DECISION 4: TEXTURE                          -->
+  <!-- ════════════════════════════════════════════ -->
+
+  <div class="section">
+    <p class="section-label">Decision 4 of 5</p>
+    <h2>Texture — Subtle paper grain on warm sections?</h2>
+    <p class="desc">A very light noise overlay on warm sections to reinforce the "Parchment" feel. Compare flat vs. textured.</p>
+
+    <div class="decision-picker">
+      <label><input type="radio" name="texture" value="G — Paper Grain Texture"> G — Paper Grain</label>
+      <label><input type="radio" name="texture" value="Flat (no texture)"> Flat (No Texture)</label>
+    </div>
+
+    <div class="texture-demo">
+      <div class="texture-box texture-flat">
+        <h3>Flat (current)</h3>
+        <p>Clean and minimal. Lets the type do all the work.</p>
+      </div>
+      <div class="texture-box texture-grain">
+        <h3>With paper grain</h3>
+        <p>Adds subtle warmth and tactility. Reinforces the editorial/analog vibe.</p>
+      </div>
+    </div>
+
+    <div class="recommendation">
+      <p class="rec-label">Recommendation</p>
+      <p><strong>Paper grain</strong> is a small touch that reinforces the "Parchment & Pine" identity — especially when no photos are pulling visual weight. It's CSS-only, no image download, and can be applied selectively (warm sections, card image areas, detail hero backgrounds). Easy to remove later if it feels heavy.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- DECISION 5: AI IMAGE GENERATION              -->
+  <!-- ════════════════════════════════════════════ -->
+
+  <div class="section">
+    <p class="section-label">Decision 5 of 5</p>
+    <h2>AI Image Generation — Where (if anywhere)?</h2>
+    <p class="desc">Should any AI-generated imagery be used, and if so, where?</p>
+
+    <div class="decision-picker">
+      <label><input type="radio" name="ai" value="No AI images — typography only"> No AI — Typography Only</label>
+      <label><input type="radio" name="ai" value="AI textures/patterns only"> AI Textures Only</label>
+      <label><input type="radio" name="ai" value="AI atmospheric illustrations + textures"> AI Illustrations + Textures</label>
+    </div>
+
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3>Hero portraits of profiled people</h3>
+        <p><span class="verdict verdict-no">No.</span> These are real people (or will be). An AI-generated face would be dishonest and uncanny. The whole point of the site is authenticity — a fake portrait undermines that immediately.</p>
+      </div>
+      <div class="ai-card">
+        <h3>Atmospheric / scene illustrations</h3>
+        <p><span class="verdict verdict-maybe">Maybe.</span> An AI-generated illustration of a forge, a kitchen, a workshop — used as a decorative element (not claiming to be the person's actual space) — could work. But it adds a layer of artificiality to a project about real places.</p>
+      </div>
+      <div class="ai-card">
+        <h3>Textures & patterns</h3>
+        <p><span class="verdict verdict-yes">Yes.</span> Paper grain, linen weave, subtle noise — AI or procedural generation is perfect here. No one expects these to be "real." They're design elements, not content.</p>
+      </div>
+      <div class="ai-card">
+        <h3>OG / social share images</h3>
+        <p><span class="verdict verdict-maybe">Maybe.</span> A branded typographic OG image (name + category + colors) is more honest and distinctive than a generic AI scene. But an AI-generated background texture behind the typography could enhance it.</p>
+      </div>
+    </div>
+
+    <div class="recommendation">
+      <p class="rec-label">Recommendation</p>
+      <p><strong>Typography only (no AI images)</strong> is the strongest position for this project. It's authentic, distinctive, and aligns with the editorial tone. Use CSS-generated textures for the parchment feel. When real photography arrives (Phase 6), the typographic system becomes a graceful fallback — cards with photos show photos, cards without show the initial/name treatment. No awkward "some AI, some real" mismatch.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SUMMARY BAR                                  -->
+  <!-- ════════════════════════════════════════════ -->
+
+  <div class="summary-bar" id="summary-bar">
+    <div>
+      <span class="summary-count"><strong id="decided-count">0</strong> / 5 decided</span>
+      <span class="summary-preview" id="summary-preview"></span>
+    </div>
+    <div class="summary-actions">
+      <button class="summary-copy-btn" id="copy-btn" onclick="copyDecisions()">Copy Decisions</button>
+    </div>
+  </div>
+
+  <script>
+    const points = [
+      { name: 'cards',   label: 'Profile Cards' },
+      { name: 'hero',    label: 'Homepage Hero' },
+      { name: 'detail',  label: 'Profile Detail' },
+      { name: 'texture', label: 'Texture' },
+      { name: 'ai',      label: 'AI Images' },
+    ];
+    const bar = document.getElementById('summary-bar');
+    const countEl = document.getElementById('decided-count');
+    const previewEl = document.getElementById('summary-preview');
+    const copyBtn = document.getElementById('copy-btn');
+
+    function getDecisions() {
+      return points.reduce((acc, p) => {
+        const el = document.querySelector(`input[name="${p.name}"]:checked`);
+        if (el) acc.push({ label: p.label, value: el.value });
+        return acc;
+      }, []);
+    }
+
+    function updateSummary() {
+      const decisions = getDecisions();
+      countEl.textContent = decisions.length;
+      bar.classList.toggle('visible', decisions.length > 0);
+      previewEl.textContent = decisions.map(d => `${d.label}: ${d.value.split(' — ')[0]}`).join('  |  ');
+    }
+
+    function copyDecisions() {
+      const decisions = getDecisions();
+      if (!decisions.length) return;
+
+      const lines = [`Local Legends — Typography Design Decisions`, '='.repeat(45), ''];
+      decisions.forEach(d => lines.push(`${d.label}: ${d.value}`));
+      if (decisions.length < points.length)
+        lines.push('', `(${points.length - decisions.length} points still undecided)`);
+
+      navigator.clipboard.writeText(lines.join('\n')).then(() => {
+        copyBtn.textContent = 'Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy Decisions';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    document.querySelectorAll('.decision-picker input[type="radio"]').forEach(r =>
+      r.addEventListener('change', updateSummary)
+    );
+  </script>
+
+</body>
+</html>
