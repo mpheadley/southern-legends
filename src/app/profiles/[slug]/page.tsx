@@ -144,7 +144,7 @@ export default async function ProfilePage({
 }) {
   const { slug } = await params;
   const profile = getProfileBySlug(slug);
-  if (!profile) notFound();
+  if (!profile || !profile.frontmatter.published) notFound();
 
   const { frontmatter, content, readingTime } = profile;
   const { prev, next } = getAdjacentProfiles(slug);

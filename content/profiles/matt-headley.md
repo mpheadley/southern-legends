@@ -9,7 +9,7 @@ excerpt: "I spent nineteen years leading churches and four years homesteading wi
 tldr: "My wife Heather and I ran a flower farm and homestead in Anniston while I served nineteen years in pastoral and music ministry — until bipolar disorder, first depression then a public manic episode, cost me my career, my church, and the life we'd built. Now based in Jacksonville, I run Headley Web & SEO and created Local Legends — a project dedicated to telling the stories of people and places in Northeast Alabama. It's part business, part rebuilding, and part proof that starting over doesn't mean starting from nothing."
 heroImage: ""
 heroAlt: "Matt Headley"
-published: true
+published: false
 ---
 
 For nineteen years, my life made sense. I served as a pastor and church music director, building worship services and leading congregations through the kinds of moments that shape a community: weddings, funerals, Wednesday nights, Sunday mornings. And for the last four of those years, my wife Heather and I homesteaded out of an 1832 farmhouse in Anniston, Alabama — she grew the flowers while I helped where I could, and together we raised sheep, chickens, vegetable gardens, and four kids. We sold bouquets from our Bloom Bar at local markets and from a little kiosk we called the Trail Porch, right on the Chief Ladiga Trail.

@@ -79,7 +79,7 @@ export default function HomePage() {
                 <div
                   key={profile.slug}
                   className="animate-on-scroll"
-                  style={{ transitionDelay: `${i * 100}ms` }}
+                  style={{ transitionDelay: `${i * 50}ms` }}
                 >
                   <ProfileCard profile={profile} />
                 </div>
