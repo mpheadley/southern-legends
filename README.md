@@ -24,6 +24,10 @@ Local Legends is an editorial project highlighting the people and places that ma
 - **JSU Music & Theater** — The departments at Jacksonville State that shaped everything that came after
 - **Shepherd's Table** — The Sunday morning breakfast ministry that changed how I saw my own church
 - **Pleasant Valley** — Home now. The place you go when you need to start again
+- **Aquality Farms** — Sam and John Mark Sawyer's hydroponic urban farm growing 24,000 heads of lettuce in downtown Anniston
+- **Howard Core Company** — One of America's largest violin dealers, operating from 99 Symphony Way, Anniston
+- **The Kress Mercantile** — A 1935 Art Deco building reborn as a downtown marketplace on Noble Street
+- **Pinhoti Pizza Company** — Brick oven pizza on the Chief Ladiga Trail in Piedmont
 
 ## Stack
 
