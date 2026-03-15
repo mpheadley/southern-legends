@@ -11,6 +11,10 @@ Local Legends is an editorial project highlighting the people and places that ma
 - **Interfaith Ministries of Calhoun County** — The coalition of churches that's been pooling resources since 1975 to keep Calhoun County's safety net intact
 - **Jacksonville Christian Outreach Center** — The food pantry, clothing closet, and emergency hub that runs on donations and stubbornness
 - **Anniston Museum of Natural History & Longleaf Botanical Gardens** — A world-class museum and 15-acre garden campus hiding in a town of 22,000
+- **Freedom Riders National Monument** — The 1961 bus firebombing that became a turning point in the Civil Rights Movement, now a National Park Service site
+- **Coldwater Mountain** — Over 56 miles of singletrack and the first Leadville qualifying race east of the Mississippi
+- **The Peerless Saloon & Grille** — Alabama's oldest bar, a 1904 World's Fair relic, a former brothel, and a ghost named Lucinda
+- **Chief Ladiga Trail** — 105 miles of paved trail from Anniston to Atlanta, and the Piedmont trail town businesses built around it
 
 ## Stack
 
