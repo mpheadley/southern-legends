@@ -36,8 +36,26 @@
 - [x] Location hero images copied from headleyweb (`public/images/locations/`)
 - [x] Texture images copied from headleyweb (`public/images/textures/`)
 - [x] About page images — headshot + family photo (`public/images/about/`)
+- [x] Fictional profiles removed pre-launch (Earl, Jimmy, Mae Ruth) — in git history
+- [x] 4 real profiles published (Anniston Museums, JCOC, Interfaith Ministries, Matt Headley)
+- [x] GitHub repo pushed (mpheadley/local-legends, public)
+- [x] OG image designed — forest green→gold gradient + topo + Fraunces/Rock Salt (`og-preview.html`)
+- [x] Gradient hero (`.gradient-hero`) applied sitewide — replaces flat `bg-ll-dark` on all dark sections
+- [x] `--gradient-pine` token + forest green `#3D6B4F` added to design system
+- [x] Matt Headley personal profile — first-person, cross-links to headleyweb blog draft
+- [x] Patreon monetization plan added (Phase 7)
+- [x] Distribution checklist + cross-promotion strategy added (Phase 6)
+- [x] `og-preview.html` pattern added to nextjs-starter-kit PLAN.md
 
-### In Progress
+### Next Up
+- [ ] Deploy to Vercel + buy domain (locallegends.com / locallegendsal.com / neallegends.com)
+- [ ] Submit to Google Search Console after deploy
+- [ ] Update cross-link URLs in matt-headley.mdx and headleyweb blog draft once domain is live
+- [ ] Screenshot OG image from og-preview.html and wire into site metadata
+- [ ] Add "Places" category color to design system
+- [ ] Mobile QA pass — verify gradient hero and typography on small screens
+- [ ] Flesh out headleyweb blog draft `why-i-build-for-local-businesses.mdx`
+- [ ] Write more place profiles (Noccalula Falls, Little River Canyon, Cheaha, covered bridges, Janney Furnace, etc.)
 - [ ] Add "Places" category + launch content strategy (see Phase 3)
 
 ---
@@ -71,7 +89,7 @@ The site uses **typography as the primary visual element** instead of stock phot
 - [x] `sitemap.ts` — auto-generated from profile slugs + static pages
 - [x] `not-found.tsx` — custom 404 with noindex, on-brand design
 - [ ] `apple-touch-icon.png` — needs Local Legends-branded icon designed
-- [ ] OG image — Appalachian foothills photo + "Local Legends" in Fraunces (see Foothills Strategy below)
+- [x] OG image — typography-only: forest green→gold gradient + topo + Fraunces/Rock Salt (`og-preview.html`). Photo version deferred — CC-licensed Cheaha photo rejected (ShareAlike license). Shoot own photo later.
 - [ ] Security headers in `next.config.ts`
 - [ ] `<!-- Built by Headley Web & SEO | headleyweb.com -->` HTML comment in layout.tsx
 
@@ -169,7 +187,7 @@ Start with **places** instead of (or alongside) business profiles for launch:
 
 ## Phase 5 — Deploy
 
-- [ ] Push to GitHub
+- [x] Push to GitHub (mpheadley/local-legends, public)
 - [ ] Deploy to Vercel
 - [ ] Domain — buy through Vercel (locallegends.com? locallegendsal.com? neallegends.com?)
 - [ ] Verify OG tags render correctly (use og-preview tools)
@@ -214,6 +232,43 @@ These happen at key content thresholds, not per-profile:
 - [ ] **Blog post #25** ("I Built a Local Storytelling Site...") — the Local Legends case study for headleyweb. Write when the site has enough real content to showcase.
 - [ ] **Roundup posts (#6-10)** — when a business featured in a headleyweb roundup also has a Local Legends profile, link between them.
 - [ ] **Keep the editorial line clear:** Local Legends profiles are narrative — no CTAs, no sales pitch. Headleyweb blog posts have CTAs and target keywords. The sites serve different purposes and the tone should never bleed.
+
+---
+
+## Phase 7 — Monetization: Patreon
+
+> **Trigger:** Launch when Local Legends has 10+ published profiles AND visible social engagement (200-300+ engaged followers in local Facebook groups counts).
+
+### Why Patreon fits Local Legends (but not Headley Web)
+- Local Legends is a **community content project**, not a service business — exactly what Patreon is built for.
+- The pitch: *"Help me tell the stories of the people who make Northeast Alabama great."*
+- Headley Web clients buy a service (audit → build → care plan). They're not patrons. Keep Patreon separate from the business.
+
+### Who would support it
+- Featured businesses and their networks (they're already invested in the project)
+- Community members who care about local pride and storytelling
+- Other small-town creators doing similar things in their regions
+- JSU alumni, NE Alabama expats who want to stay connected
+
+### Tier ideas
+| Tier | Price | Perks |
+|------|-------|-------|
+| **Supporter** | $5/mo | Early access to profiles (48 hrs before public), name in credits on About page |
+| **Champion** | $15/mo | Nominate a business/person to be featured, behind-the-scenes content (interview notes, photo outtakes) |
+| **Sponsor** | $25/mo | Your business name on a profile page as presenting sponsor, all lower-tier perks |
+
+### Important decisions
+- **Start a new Patreon page** — don't revive the old farm/ministry page. Clean slate, clear mission, no baggage. The old page served a different chapter.
+- **Keep it modest** — this isn't a revenue engine. It's a sustainability tool. Goal: cover domain, hosting, and gas money for interviews/photo shoots. If it grows beyond that, great.
+- **Transparency** — mention on the Patreon page that Matt is a web designer. Same philosophy as the About page: honest about who you are, but the project isn't a sales funnel.
+
+### Tasks
+- [ ] Reach 10+ published profiles (trigger point)
+- [ ] Create new Patreon page for Local Legends (not the old farm/ministry page)
+- [ ] Design tier structure and perks
+- [ ] Add "Support Local Legends" link in footer and About page (only after Patreon is live)
+- [ ] Create a patron credits section on the About page
+- [ ] Announce via per-profile distribution channels (Facebook, email list, Instagram)
 
 ---
 
