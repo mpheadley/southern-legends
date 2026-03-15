@@ -156,12 +156,16 @@ Start with **places** instead of (or alongside) business profiles for launch:
 - [ ] Write 2-3 real place stories (Noccalula Falls, Little River Canyon, etc.) with personal photos
 - [x] Anniston Museum of Natural History & Longleaf Botanical Gardens — published
 - [x] Jacksonville Christian Outreach Center — published
-- [x] Interfaith Ministries of Calhoun County — published
-- [ ] Noccalula Falls — personal narrative, not a travel guide
+- [x] Interfaith Ministries of Calhoun County — published (expanded with researched programs, First UMC connection)
+- [x] Freedom Riders National Monument — published
+- [x] Coldwater Mountain — published
+- [x] The Peerless Saloon & Grille — published
+- [x] Chief Ladiga Trail + Piedmont trail town — published
+- [x] Noccalula Falls — published
 - [ ] Little River Canyon — "canyon in Alabama" curiosity hook
-- [ ] Cheaha State Park — already referenced in existing profiles
-- [ ] Covered bridges (Horton Mill, Swann, Easley) — iconic, photographable
-- [ ] Janney Furnace — Civil War-era iron furnace in Ohatchee
+- [x] Cheaha State Park — published
+- [x] Covered bridges (Coldwater, Horton Mill, Swann, Easley) — published
+- [x] Janney Furnace — published
 - [ ] The Depot or downtown square in Jacksonville — small-town character piece
 - [ ] Calhoun County Farmers Market — seasonal, connects to Agriculture category
 - [ ] A long-running local barbershop or diner (30+ years) — when identified
