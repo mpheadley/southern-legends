@@ -19,6 +19,11 @@ Local Legends is an editorial project highlighting the people and places that ma
 - **Cheaha State Park** — Alabama's highest point at 2,407 feet, CCC-built structures, and the Pinhoti Trail connection
 - **Alabama's Covered Bridges** — The oldest in Alabama (Oxford, built ~1850 by a formerly enslaved man) plus the Blount County trio
 - **Janney Furnace** — A Confederate iron furnace destroyed before it ever fired, still standing in Ohatchee
+- **WaldenFARMacy** — The permaculture herb farm in Bessemer that taught me how to think about land as a living system
+- **Weaver, Alabama** — Seven years pastoring in a town of 3,300 that taught me what community looks like
+- **JSU Music & Theater** — The departments at Jacksonville State that shaped everything that came after
+- **Shepherd's Table** — The Sunday morning breakfast ministry that changed how I saw my own church
+- **Pleasant Valley** — Home now. The place you go when you need to start again
 
 ## Stack
 

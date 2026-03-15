@@ -148,6 +148,11 @@ Start with **places** instead of (or alongside) business profiles for launch:
 - [x] Cheaha State Park — published
 - [x] Covered bridges (Coldwater, Horton Mill, Swann, Easley) — published
 - [x] Janney Furnace — published
+- [x] WaldenFARMacy (Trevor & Joanna Mann) — published (permaculture mentors, personal connection)
+- [x] Weaver, Alabama — published (seven years pastoring, personal connection)
+- [x] JSU Music & Theater — published (alma mater, B.A. Music, drama minor)
+- [x] Shepherd's Table breakfast ministry — published (Anniston First UMC, personal connection)
+- [x] Pleasant Valley — published (current home, Heather's roots)
 - [ ] The Depot or downtown square in Jacksonville — small-town character piece
 - [ ] Calhoun County Farmers Market — seasonal, connects to Agriculture category
 - [ ] A long-running local barbershop or diner (30+ years) — when identified
