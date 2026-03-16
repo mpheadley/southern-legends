@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import {
@@ -8,7 +9,10 @@ import {
 } from "@/lib/profiles";
 import { siteConfig } from "@/lib/site-config";
 import { notFound } from "next/navigation";
+import ArticleImage from "@/app/components/ArticleImage";
+import PhotoCarouselLoader from "@/app/components/PhotoCarouselLoader";
 import PullQuote from "@/app/components/PullQuote";
+import VideoLoop from "@/app/components/VideoLoop";
 import ShareButtons from "@/app/components/ShareButtons";
 import StoryNav from "@/app/components/StoryNav";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
@@ -72,7 +76,10 @@ const mdxComponents = {
     <strong className="font-bold text-ll-dark" {...props} />
   ),
   hr: () => <hr className="my-10 border-t border-ll-border" />,
+  ArticleImage,
+  PhotoCarousel: PhotoCarouselLoader,
   PullQuote,
+  VideoLoop,
 };
 
 type Params = Promise<{ slug: string }>;
@@ -224,11 +231,30 @@ export default async function ProfilePage({
       />
 
       {/* Hero */}
-      <section className="relative text-white overflow-hidden gradient-hero">
-        {/* Ghost Initial */}
-        <span className="ghost-initial" aria-hidden="true">
-          {frontmatter.name.charAt(0)}
-        </span>
+      <section className={`relative text-white overflow-hidden ${frontmatter.heroImage ? "" : "gradient-hero"}`}
+        style={frontmatter.heroImage ? { background: "var(--color-ll-dark)" } : undefined}
+      >
+        {/* Hero image or ghost initial */}
+        {frontmatter.heroImage ? (
+          <>
+            <Image
+              src={frontmatter.heroImage}
+              alt={frontmatter.heroAlt || frontmatter.name}
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-ll-dark/95 via-ll-dark/60 to-ll-dark/25"
+              style={{ zIndex: 1 }}
+            />
+          </>
+        ) : (
+          <span className="ghost-initial" aria-hidden="true">
+            {frontmatter.name.charAt(0)}
+          </span>
+        )}
 
         <div className="relative max-w-3xl mx-auto px-6 pt-32 pb-16 md:pt-36 md:pb-20"
           style={{ zIndex: 2 }}
@@ -275,7 +301,18 @@ export default async function ProfilePage({
             {frontmatter.title}
           </h1>
 
+          {frontmatter.tldr && (
+            <p
+              className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-2xl animate-on-scroll"
+              data-speakable="true"
+            >
+              {frontmatter.tldr}
+            </p>
+          )}
+
           <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-white/60 animate-on-scroll">
+            <span>By {siteConfig.author}</span>
+            <span aria-hidden="true">&middot;</span>
             <span>{frontmatter.location}</span>
             <span aria-hidden="true">&middot;</span>
             <span>{formatDate(frontmatter.date)}</span>
@@ -304,21 +341,6 @@ export default async function ProfilePage({
       {/* Article Content */}
       <article className="bg-ll-light">
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 prose-profile">
-          {/* TL;DR / The Short Version */}
-          {frontmatter.tldr && (
-            <div
-              className="tldr mb-12 p-6 bg-ll-warm rounded-lg border-l-4 border-ll-accent"
-              data-speakable="true"
-            >
-              <p className="text-xs font-bold uppercase tracking-widest text-ll-accent mb-2">
-                The Short Version
-              </p>
-              <p className="text-ll-text leading-relaxed text-base italic mb-0">
-                {frontmatter.tldr}
-              </p>
-            </div>
-          )}
-
           <MDXRemote source={content} components={mdxComponents} />
         </div>
       </article>

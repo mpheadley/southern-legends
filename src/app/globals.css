@@ -131,6 +131,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
+/* ─── Drop Cap ─── */
+.prose-profile > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  float: left;
+  font-size: 3.8em;
+  line-height: 0.8;
+  padding-right: 0.08em;
+  padding-top: 0.07em;
+  color: var(--color-ll-primary);
+  font-weight: 700;
+}
+
 .prose-profile p {
   color: var(--color-ll-text);
   line-height: 1.8;
@@ -498,4 +510,194 @@ html {
   background-size: 500px 500px;
   border-radius: inherit;
   z-index: 1;
+}
+
+/* ─── Article Image floats clearfix ─── */
+.prose-profile .carousel-wrap,
+.prose-profile .my-12 {
+  clear: both;
+}
+
+/* ─── Photo Carousel ─── */
+
+.carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 420px;
+  user-select: none;
+  background: var(--color-ll-dark);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  opacity: 0.3;
+  transition: opacity 0.35s ease;
+  position: relative;
+  background: #222;
+  cursor: pointer;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  cursor: default;
+}
+
+.carousel-slide-img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 20px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.03em;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-slide.active .carousel-caption {
+  opacity: 1;
+}
+
+.carousel-counter {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.52);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  z-index: 3;
+}
+
+.carousel-btn:hover {
+  background: var(--color-ll-primary);
+  border-color: var(--color-ll-primary);
+}
+
+.carousel-prev {
+  left: 16px;
+}
+
+.carousel-next {
+  right: 16px;
+}
+
+.carousel-thumbs-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.carousel-thumbs {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.carousel-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-thumb {
+  flex: 0 0 auto;
+  width: 58px;
+  height: 44px;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s, outline-color 0.2s;
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.carousel-thumb.active {
+  opacity: 1;
+  outline-color: var(--color-ll-primary);
+}
+
+.carousel-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.carousel-thumb-btn {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-ll-warm);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--color-ll-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.carousel-thumb-btn:hover {
+  background: var(--color-ll-primary);
+  color: #fff;
+  border-color: var(--color-ll-primary);
+}
+
+@media (max-width: 900px) {
+  .carousel-wrap { height: 320px; }
+}
+
+@media (max-width: 600px) {
+  .carousel-wrap { height: 240px; }
+  .carousel-btn { width: 36px; height: 36px; }
 }
