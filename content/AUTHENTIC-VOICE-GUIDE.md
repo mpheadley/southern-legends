@@ -244,6 +244,8 @@ The blog posts on headleyweb.com are primarily SEO vehicles. Nobody's browsing t
 
 **matt-headley.mdx:** The profile opens with "For nineteen years, my life made sense" — strong, but abstract. Consider adding a sensory scene before that line to ground the reader physically. Something like the flower farm website origin story (Squarespace screen glowing on the dinner table, kids asleep down the hall) would give the reader a place to stand before the narrative arc begins. The SL profile goes deep on vulnerability — a concrete, quiet domestic scene at the top would earn that depth by starting small.
 
+**Detail to weave in:** The Headley Flower Farm website is still live — Heather still gets occasional paid downloads and has a few weddings booked for 2026. The business is mostly shuttered but the site keeps working. Good concrete example of building something that outlasts the season it was built in — fits the rebuilding theme.
+
 ---
 
 ## Summary: The Rules
