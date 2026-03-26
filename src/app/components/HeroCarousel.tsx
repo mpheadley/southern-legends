@@ -76,13 +76,42 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
-          {profiles.map((profile, i) => (
+          {profiles.map((profile, i) => {
+            const mobileMode: "bg" | "stack" | "text" =
+              profile.frontmatter.mobileHero ??
+              (profile.frontmatter.heroImage ? "bg" : "text");
+            const hasMobileImage =
+              (mobileMode === "bg" || mobileMode === "stack") &&
+              !!profile.frontmatter.heroImage;
+
+            return (
             <Link
               key={profile.slug}
               href={`/profiles/${profile.slug}`}
               tabIndex={i === current ? 0 : -1}
-              className="w-full h-full flex-shrink-0 group flex flex-col md:grid md:grid-cols-2 md:gap-12 items-center"
+              className="relative w-full h-full flex-shrink-0 group flex flex-col md:grid md:grid-cols-2 md:gap-12 items-center"
             >
+              {/* Mobile background image (bg + stack modes) */}
+              {hasMobileImage && (
+                <div className="md:hidden absolute inset-0 z-0">
+                  <Image
+                    src={profile.frontmatter.heroImage}
+                    alt={profile.frontmatter.heroAlt || profile.frontmatter.name}
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                    priority={i === 0}
+                  />
+                  <div
+                    className={`absolute inset-0 ${
+                      mobileMode === "stack"
+                        ? "bg-gradient-to-t from-black/85 via-black/50 to-black/10"
+                        : "bg-gradient-to-t from-black/80 via-black/50 to-black/30"
+                    }`}
+                  />
+                </div>
+              )}
+
               {/* Image — desktop only */}
               <div className="hidden md:block relative h-full overflow-hidden rounded-sm">
                 {profile.frontmatter.heroImage ? (
@@ -113,7 +142,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
               </div>
 
               {/* Text */}
-              <div className="flex flex-col justify-between h-full w-full py-2 md:py-6">
+              <div className={`relative z-10 flex flex-col h-full w-full py-2 md:py-6 md:justify-between ${mobileMode === "stack" ? "justify-end" : "justify-between"}`}>
                 {/* Top: title + subtitle + meta — min-h-0 allows flex shrink */}
                 <div className="min-h-0 overflow-hidden">
                   {profile.frontmatter.titleHtml ? (
@@ -157,7 +186,8 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                 </span>
               </div>
             </Link>
-          ))}
+          );
+          })}
         </div>
         </div>{/* end overflow-hidden */}
       </div>{/* end relative wrapper */}
