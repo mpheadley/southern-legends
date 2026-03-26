@@ -95,12 +95,14 @@ export async function generateMetadata({
   const profile = getProfileBySlug(slug);
   if (!profile) return {};
 
-  const { title, excerpt, name, location, heroImage, tags } =
+  const { title, excerpt, metaDescription, name, location, heroImage, tags } =
     profile.frontmatter;
+
+  const seoDescription = metaDescription ?? excerpt;
 
   return {
     title: `${name} — ${location}`,
-    description: excerpt,
+    description: seoDescription,
     alternates: {
       canonical: `/profiles/${slug}`,
     },
@@ -108,7 +110,7 @@ export async function generateMetadata({
     openGraph: {
       url: `/profiles/${slug}`,
       title,
-      description: excerpt,
+      description: seoDescription,
       type: "article",
       publishedTime: profile.frontmatter.date,
       ...(profile.frontmatter.lastModified && {
@@ -129,7 +131,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description: excerpt,
+      description: seoDescription,
     },
   };
 }
