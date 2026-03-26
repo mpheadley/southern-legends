@@ -20,6 +20,9 @@ export interface ProfileFrontmatter {
   published: boolean;
   featured?: boolean;
   titleHtml?: string;
+  aiWritten?: boolean;
+  photoCredit?: string;
+  byline?: string;
 }
 
 export interface Profile {
