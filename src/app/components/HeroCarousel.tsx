@@ -142,7 +142,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
               </div>
 
               {/* Text */}
-              <div className={`relative z-10 flex flex-col h-full w-full py-2 md:py-6 md:justify-between ${mobileMode === "stack" ? "justify-end" : "justify-between"}`}>
+              <div className={`relative z-10 flex flex-col h-full w-full py-2 px-4 md:px-0 md:py-6 md:justify-between ${mobileMode === "stack" ? "justify-end" : "justify-between"}`}>
                 {/* Top: title + subtitle + meta — min-h-0 allows flex shrink */}
                 <div className="min-h-0 overflow-hidden">
                   {profile.frontmatter.titleHtml ? (
