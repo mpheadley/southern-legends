@@ -50,13 +50,12 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <p>
-            &copy; {new Date().getFullYear()} {siteConfig.name}. A community
-            project by{" "}
+            &copy; {new Date().getFullYear()} {siteConfig.name}. Built by{" "}
             <a
               href="https://headleyweb.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-ll-accent transition-colors"
+              className="text-white/80 hover:text-ll-accent transition-colors font-semibold"
             >
               Headley Web &amp; SEO
             </a>

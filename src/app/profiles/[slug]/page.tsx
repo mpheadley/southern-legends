@@ -338,11 +338,27 @@ export default async function ProfilePage({
                 : wordsCredit ? `Words by ${siteConfig.author}`
                 : photosCredit ? `Photos by ${frontmatter.photoCredit}`
                 : null);
-            return byline ? (
-              <p className="text-sm text-ll-text-light italic mt-8 pt-6 border-t border-ll-border">
-                {byline}
-              </p>
-            ) : null;
+            return (
+              <div className="mt-8 pt-6 border-t border-ll-border">
+                {byline && (
+                  <p className="text-sm text-ll-text-light italic">
+                    {byline}
+                  </p>
+                )}
+                <p className="text-xs text-ll-text-light mt-3">
+                  Southern Legends is built by{" "}
+                  <a
+                    href="https://headleyweb.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-ll-primary font-medium hover:text-ll-primary-dark transition-colors"
+                  >
+                    Headley Web &amp; SEO
+                  </a>
+                  {" "}— websites for local businesses in Northeast Alabama.
+                </p>
+              </div>
+            );
           })()}
         </div>
       </article>
