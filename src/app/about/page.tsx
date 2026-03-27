@@ -73,8 +73,8 @@ export default function AboutPage() {
 
           <div className="not-prose my-6">
             <Image
-              src="/images/about/headshot-matt-headley.webp"
-              alt="Matt Headley"
+              src="/images/about/headshot-hedcut-matt-headley.webp"
+              alt="Matt Headley, illustrated portrait"
               width={120}
               height={120}
               className="rounded-lg float-left mr-6 mb-2"
