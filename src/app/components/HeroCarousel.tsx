@@ -41,7 +41,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
       onMouseLeave={() => setPaused(false)}
     >
       {/* Arrow + slide wrapper — relative so arrows can position freely without being clipped */}
-      <div className="relative h-[480px] md:h-[620px]">
+      <div className="relative h-[calc(100svh-3.5rem)] md:h-[620px]">
 
         {/* Prev arrow — sits just left of the image */}
         {profiles.length > 1 && (
@@ -84,7 +84,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
               className="w-full h-full flex-shrink-0 group flex flex-col md:grid md:grid-cols-2 md:gap-12 md:items-center"
             >
               {/* Image — band on mobile, full column on desktop */}
-              <div className="relative h-48 flex-shrink-0 md:h-full overflow-hidden rounded-sm">
+              <div className="relative h-[45%] flex-shrink-0 md:h-full md:order-last overflow-hidden rounded-sm">
                 {profile.frontmatter.heroImage ? (
                   <Image
                     src={profile.frontmatter.heroImage}
