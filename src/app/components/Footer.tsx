@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import SubscribeCTA from "./SubscribeCTA";
 
 export default function Footer() {
   return (
@@ -45,6 +46,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        <hr className="border-white/20 my-10" />
+
+        <SubscribeCTA variant="inline" />
 
         <hr className="border-white/20 my-10" />
 
