@@ -79,7 +79,8 @@ export default function AboutPage() {
             />
             <p className="text-ll-text leading-relaxed mb-6">
               My name is Matt Headley. I live in Jacksonville. I spent nineteen
-              years in music and pastoral ministry. Then my wife and I built a
+              years in music and pastoral ministry. Somewhere in the middle of
+              that, my wife and I built a
               flower farm. Cut flowers, farmers markets, a little retail kiosk
               on the Chief Ladiga Trail. We built that thing from the ground up,
               with our kids underfoot. And then we lost it.
@@ -100,7 +101,7 @@ export default function AboutPage() {
               </a>
               . Southern Legends started because the work kept putting me across
               the table from people, and I needed that more than I expected.
-              I&apos;d been resisting connection for a while. Turns out sitting
+              Turns out sitting
               with someone and asking them to tell you their story is one of the
               ways back.
             </p>
