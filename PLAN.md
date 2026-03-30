@@ -175,6 +175,8 @@ Start with **places** instead of (or alongside) business profiles for launch:
 - [ ] Calhoun County Farmers Market — seasonal, connects to Agriculture category
 - [ ] A long-running local barbershop or diner (30+ years) — when identified
 - [ ] Add "Places" category to frontmatter options and category color map
+- [ ] **Indigo Ridge Farms** — regenerative farm, pasture-raised meat, grass-finished beef. Family gave Headleys a farm tour, shared meat, encouraged us during flower farm. **Priority: HIGH mission, MEDIUM business.** Great Agriculture category story (regenerative philosophy, family generosity, land stewardship). Website rebuild is possible long-term play but small farm budget — write profile first, let business side develop organically. Website: indigoridgefarms.com (Eat From Farms template, undersells their story). CRM #97.
+- [ ] **Will Clay (LaPlante Faulkner)** — attorney, former high school classmate. **Priority: MEDIUM-HIGH mission, HIGH business.** Progressive attorney, plays rugby, competitive (banged up a judge in a basketball game), mutual friends, Facebook friends, donated to Matt's birthday fundraiser. Profile angle: Will is the subject, firm is context — why does a progressive rugby-playing attorney put his name on a building in Anniston instead of heading to Birmingham or Atlanta? **Requires interview** — message on Facebook, buy him coffee. Don't draft before talking to him. Write after Indigo Ridge. CRM #23.
 - [ ] Write real business/maker profiles as relationships develop
 - [ ] Nomination form or process — the "Know a Local Legend?" CTA currently links to `/about`
 - [ ] Categories to cover: craftspeople, food/restaurants, music, agriculture, places, retail, services

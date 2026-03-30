@@ -26,25 +26,31 @@
 - **No website, no nonprofit filings found** — very early-stage or informal
 - **UNKNOWN:** What it does, who it serves, when Sam started it, whether registered, whether it operates from same building, John Mark's involvement
 
-## Send-to-Sam Checklist
-1. Clean copy of the article (strip all `{/* */}` editorial comments)
-2. Interview questions (below) as a separate list
-3. Short note flagging: student number discrepancy and Chaha gaps
-4. Ask if he's comfortable with the Headley Farms/personal connection framing
+## Workflow
+1. Text Sam to schedule warehouse visit (~week of Apr 7)
+2. Visit — walk the warehouse, talk, get photos. Questions below are back-pocket, not a formal list
+3. After visit — rewrite draft with real scenes/quotes/detail, send finished version for Sam's review
+4. Fact-check on phone during visit: student number (35K vs 20K), Chaha details
 
-## Interview Questions (trimmed to 6 must-asks)
-1. Tell me about Chaha Outdoors — what does it actually do, who shows up, what does it look like in action?
-2. You named it Chaha — Creek for "high place." What's that connection for you?
-3. Do you see the farm and the nonprofit as one thing or two?
-4. Your website says 35,000 students through Farm to School. Earlier coverage said 20,000. What's the current number?
-5. What does John Mark handle that you don't?
-6. I wrote about the Harvest Box and the flowers and the mushroom compost. What do you remember from that time? Anything I'm missing?
+## The one back-pocket question
+- **"What's a season you almost walked away from it?"**
 
-## Follow-up questions (for natural conversation after he reads the draft)
-7. Was hydroponics always the plan with your Auburn degree, or did you come to it sideways?
-8. When did the mushroom science interest start?
-9. What do you want Anniston to know about Aquality that people still don't get?
-10. What's the hardest week you've had running both the farm and the nonprofit?
+Everything else — the grow room, mushrooms, John Mark, Farm to School — he'll tell you while showing you around. Just be there and pay attention.
+
+Also a natural conversation to have: his website, referrals, whether he needs web help.
+
+## Reference — other questions if conversation stalls
+- Tell me about Chaha Outdoors — what does it actually do, who shows up?
+- You named it Chaha — Creek for "high place." What's that connection?
+- Do you see the farm and the nonprofit as one thing or two?
+- Website says 35,000 students through Farm to School. Earlier coverage said 20,000. Current number?
+- What does John Mark handle that you don't?
+- What do you remember from the Harvest Box / flower farm days?
+- What do people not see about running a farm business?
+- Was hydroponics always the plan with your Auburn degree, or did you come to it sideways?
+- When did the mushroom science interest start?
+- What do you want Anniston to know about Aquality that people still don't get?
+- What's the hardest week you've had running both the farm and the nonprofit?
 
 ## Voice Guide Issues to Fix After Interview
 - Zero scenes — all summary and facts. Visit the warehouse for sensory detail.

@@ -3,6 +3,8 @@
 ## What This Is
 Editorial / storytelling site profiling small business owners and makers in Northeast Alabama. Not a client site — this is a personal/portfolio project by Matt Headley. Content-driven, MDX-based, magazine-style presentation.
 
+**Editorial lens:** Matt lost a farm and now builds websites for local businesses. The work keeps putting him across the table from people who are still building — and he notices them because of what he lost. The question underneath every profile isn't "what does this person do?" but "what kept them going?" — asked by someone who wanted to keep going and couldn't. Never frame subjects as inspiring, never flatten the complexity into feel-good narrative. Full context in `content/AUTHENTIC-VOICE-GUIDE.md` under "Why This Site Exists."
+
 ## Stack
 - **Next.js 16** (App Router, `src/` directory)
 - **Tailwind v4** (via `@tailwindcss/postcss`)

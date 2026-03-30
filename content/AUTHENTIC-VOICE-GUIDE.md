@@ -10,6 +10,18 @@ Southern Legends profiles small business owners and makers in Northeast Alabama.
 
 Matt's profile (`matt-headley.mdx`) is the voice baseline. Read it before helping with any new profile.
 
+### Why This Site Exists
+
+Matt lost a farm. He and Heather built it from the ground up — cut flowers, farmers markets, a kiosk on the Chief Ladiga Trail, kids underfoot — and then it was gone. Not by choice.
+
+Southern Legends exists because the web design work kept putting Matt across the table from people who are still building. He notices them because of what he lost. That noticing is the editorial lens — but it is not simple admiration. It is complicated. It includes grief, and sometimes the honest feeling underneath is: *they're luckier than me. I would have kept going if I had a choice.*
+
+**What this means for the writing:**
+- The universal question underneath every profile is not "what does this person do?" It's closer to "what kept them going?" — asked by someone who wanted to keep going and couldn't.
+- Never frame subjects as "inspiring" or their persistence as a lesson. Matt is not writing about resilience to feel better. He is paying attention to people who are still building because he can't stop noticing them.
+- Never flatten the emotional complexity into a feel-good narrative. These profiles can be warm, generous, even celebratory — but not at the cost of honesty. If the writing starts sounding like "look at this amazing local business," something has gone wrong.
+- Let the profiles hold both things: genuine care for the subject, and the weight of what it costs the writer to sit with someone else's survival.
+
 ---
 
 ## The Craft Moves
