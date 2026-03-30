@@ -164,18 +164,22 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
 
       {/* Nav dots — outside the clipped area, always visible */}
       {profiles.length > 1 && (
-        <div className="flex items-center justify-center gap-2 mt-6">
+        <div className="flex items-center justify-center gap-0 mt-4">
           {profiles.map((_, j) => (
             <button
               key={j}
               onClick={() => setCurrent(j)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                j === current
-                  ? "w-6 bg-white"
-                  : "w-1.5 bg-white/30 hover:bg-white/60"
-              }`}
+              className="relative flex items-center justify-center p-3"
               aria-label={`Show story ${j + 1}`}
-            />
+            >
+              <span
+                className={`block h-1.5 rounded-full transition-all duration-300 ${
+                  j === current
+                    ? "w-6 bg-white"
+                    : "w-1.5 bg-white/30 hover:bg-white/60"
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}

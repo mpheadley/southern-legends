@@ -199,6 +199,10 @@ export default async function ProfilePage({
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/images/logo.webp`,
+      },
     },
     mainEntityOfPage: `${siteConfig.url}/profiles/${slug}`,
     ...(frontmatter.heroImage && {

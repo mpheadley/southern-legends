@@ -22,6 +22,15 @@ export default function HomePage() {
       name: siteConfig.author,
       url: "https://headleyweb.com",
     },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/images/logo.webp`,
+      },
+    },
   };
 
   return (
