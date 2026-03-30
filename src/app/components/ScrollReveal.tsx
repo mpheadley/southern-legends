@@ -7,6 +7,8 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
+    document.documentElement.classList.add("scroll-reveal-ready");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
