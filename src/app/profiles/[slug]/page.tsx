@@ -151,7 +151,7 @@ export default async function ProfilePage({
 }) {
   const { slug } = await params;
   const profile = getProfileBySlug(slug);
-  if (!profile || !profile.frontmatter.published) notFound();
+  if (!profile) notFound();
 
   const { frontmatter, content, readingTime } = profile;
   const { prev, next } = getAdjacentProfiles(slug);
@@ -248,6 +248,7 @@ export default async function ProfilePage({
               priority
               className="object-cover"
               sizes="100vw"
+              style={frontmatter.heroPosition ? { objectPosition: frontmatter.heroPosition } : undefined}
             />
             <div
               className="absolute inset-0 bg-gradient-to-t from-ll-dark/95 via-ll-dark/60 to-ll-dark/25"

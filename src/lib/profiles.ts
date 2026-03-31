@@ -25,6 +25,7 @@ export interface ProfileFrontmatter {
   byline?: string;
   metaDescription?: string;
   mobileHero?: "bg" | "stack" | "text";
+  heroPosition?: string;
 }
 
 export interface Profile {

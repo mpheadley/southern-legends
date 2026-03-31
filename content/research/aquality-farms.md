@@ -39,6 +39,16 @@ Everything else — the grow room, mushrooms, John Mark, Farm to School — he'l
 
 Also a natural conversation to have: his website, referrals, whether he needs web help.
 
+## HW Opportunity Notes (for after profile is published)
+- Current site is Square Online — store builder, not a real website platform
+- "Our Story" page is pure brochure copy — doesn't tell his actual story at all
+- No StoryBrand framework — homepage is a product grid, no hero/problem/solution narrative
+- No visible local SEO, no GBP integration
+- Heavy JavaScript from Square platform — likely poor PageSpeed scores
+- The SL profile does more for his brand story than his own site does
+- DO NOT pitch until relationship is warm. The profile and follow-up conversation come first. If Sam ever mentions traffic, Google visibility, or wanting more customers, that's the opening.
+- Potential angle: "Your story is incredible and your site doesn't tell any of it."
+
 ## Reference — other questions if conversation stalls
 - Tell me about Chaha Outdoors — what does it actually do, who shows up?
 - You named it Chaha — Creek for "high place." What's that connection?
