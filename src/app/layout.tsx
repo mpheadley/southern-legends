@@ -64,11 +64,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
+    images: [
+      {
+        url: "/images/southern-legends-og.png",
+        width: 2396,
+        height: 1250,
+        alt: "Southern Legends — Stories from Northeast Alabama",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: ["/images/southern-legends-og.png"],
   },
   authors: [{ name: siteConfig.author }],
   robots: {

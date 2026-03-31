@@ -30,6 +30,7 @@ export default function HomePage() {
         "@type": "ImageObject",
         url: `${siteConfig.url}/images/logo.webp`,
       },
+      sameAs: ["https://www.facebook.com/SouthernLegendsAL"],
     },
   };
 
