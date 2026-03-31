@@ -48,6 +48,9 @@ Also a natural conversation to have: his website, referrals, whether he needs we
 - The SL profile does more for his brand story than his own site does
 - DO NOT pitch until relationship is warm. The profile and follow-up conversation come first. If Sam ever mentions traffic, Google visibility, or wanting more customers, that's the opening.
 - Potential angle: "Your story is incredible and your site doesn't tell any of it."
+- Don't replace Square store — build StoryBrand marketing site that links to Square for checkout. Two sites, two jobs.
+- StoryBrand frame: customer is hero (wants clean local food), Sam is the guide, plan is visit/order/subscribe.
+- Free build + case study offer is the pitch. Not "your site is bad" — it's "your site doesn't match what you've built."
 
 ## Reference — other questions if conversation stalls
 - Tell me about Chaha Outdoors — what does it actually do, who shows up?
