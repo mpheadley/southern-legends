@@ -154,12 +154,15 @@ h1, h2, h3, h4, h5, h6 {
 .prose-profile > p:first-of-type::first-letter {
   font-family: var(--font-heading);
   float: left;
-  font-size: 3.8em;
-  line-height: 0.8;
-  padding-right: 0.08em;
-  padding-top: 0.07em;
+  font-size: 7.5em;
+  line-height: 0.75;
+  margin-right: 0.15em;
+  padding-top: 0.05em;
+  margin-bottom: -0.05em;
   color: var(--color-ll-primary);
   font-weight: 700;
+  border-bottom: 3px solid var(--color-ll-accent);
+  padding-bottom: 0.06em;
 }
 
 .prose-profile p {
