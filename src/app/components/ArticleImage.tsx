@@ -14,9 +14,9 @@ interface ArticleImageProps {
 
 const layoutClasses: Record<ImageLayout, string> = {
   full: "my-10 -mx-2 md:-mx-6",
-  left: "clear-both my-6 mr-5 md:mr-6 float-left w-[45%] md:w-[38%]",
-  right: "clear-both my-6 ml-5 md:ml-6 float-right w-[45%] md:w-[38%]",
-  center: "clear-both my-10 mx-auto w-[55%] md:w-[45%]",
+  left: "clear-both my-6 mr-5 md:mr-6 float-left w-full md:w-[38%]",
+  right: "clear-both my-6 ml-5 md:ml-6 float-right w-full md:w-[38%]",
+  center: "clear-both my-10 mx-auto w-full md:w-[45%]",
 };
 
 export default function ArticleImage({
