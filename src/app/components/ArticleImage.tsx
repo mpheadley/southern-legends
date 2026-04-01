@@ -29,7 +29,7 @@ export default function ArticleImage({
   height = 675,
 }: ArticleImageProps) {
   return (
-    <figure className={layoutClasses[layout]}>
+    <figure className={`${layoutClasses[layout]} animate-on-scroll-slow`}>
       <div className="relative w-full overflow-hidden rounded-lg">
         <Image
           src={src}

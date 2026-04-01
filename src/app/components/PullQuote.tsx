@@ -5,7 +5,7 @@
  */
 export default function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <figure className="pull-quote my-12 mx-0 md:-mx-8 px-8 py-6 relative">
+    <figure className="pull-quote my-12 mx-0 md:-mx-8 px-8 py-6 relative animate-on-scroll-slow">
       {/* Oversized opening quote mark */}
       <span
         className="pull-quote-mark absolute -top-2 left-2 text-8xl leading-none select-none pointer-events-none"

@@ -289,13 +289,13 @@ export default async function ProfilePage({
 
           {frontmatter.titleHtml ? (
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white animate-on-scroll"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
               style={{ fontFamily: "var(--font-heading)" }}
               dangerouslySetInnerHTML={{ __html: frontmatter.titleHtml }}
             />
           ) : (
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white animate-on-scroll"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {frontmatter.title}
@@ -304,14 +304,14 @@ export default async function ProfilePage({
 
           {frontmatter.subtitle && (
             <p
-              className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-2xl animate-on-scroll"
+              className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-2xl"
               data-speakable="true"
             >
               {frontmatter.subtitle}
             </p>
           )}
 
-          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-white/60 animate-on-scroll">
+          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-white/60">
             <span>By {siteConfig.author}</span>
             <span aria-hidden="true">&middot;</span>
             <span>{frontmatter.location}</span>

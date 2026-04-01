@@ -24,5 +24,9 @@ export default function PhotoCarouselLoader({
     fs.readFileSync(filePath, "utf8")
   );
 
-  return <PhotoCarousel slides={slides} title={title} />;
+  return (
+    <div className="animate-on-scroll-slow">
+      <PhotoCarousel slides={slides} title={title} />
+    </div>
+  );
 }

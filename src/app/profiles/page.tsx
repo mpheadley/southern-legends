@@ -64,12 +64,12 @@ export default async function ProfilesPage({
         <div className="absolute inset-0 bg-black/50 z-[1]" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-10 md:pt-32 md:pb-14">
           <h1
-            className="text-3xl md:text-4xl font-bold animate-on-scroll uppercase tracking-tight"
+            className="text-3xl md:text-4xl font-bold uppercase tracking-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {tag ? `Stories tagged "${tag}"` : "All Stories"}
           </h1>
-          <p className="mt-3 text-white/70 animate-on-scroll">
+          <p className="mt-3 text-white/70">
             {profiles.length} {profiles.length === 1 ? "story" : "stories"}
             {tag ? ` tagged "${tag}"` : ""} and counting.
           </p>

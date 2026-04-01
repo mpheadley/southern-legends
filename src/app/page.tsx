@@ -72,12 +72,12 @@ export default function HomePage() {
           <div className="flex items-end justify-between mb-12">
             <div>
               <h2
-                className="text-3xl md:text-4xl font-bold text-ll-dark tracking-tight animate-on-scroll"
+                className="text-3xl md:text-4xl font-bold text-ll-dark tracking-tight"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {"More Stories"}
               </h2>
-              <p className="mt-2 text-ll-text-light animate-on-scroll">
+              <p className="mt-2 text-ll-text-light">
                 Meet the people behind the businesses, shops, and traditions that
                 make this region what it is.
               </p>
@@ -85,7 +85,7 @@ export default function HomePage() {
             {allProfiles.length > 3 && (
               <Link
                 href="/profiles"
-                className="hidden sm:inline-flex text-sm font-semibold text-ll-primary hover:text-ll-primary-dark transition-colors animate-on-scroll"
+                className="hidden sm:inline-flex text-sm font-semibold text-ll-primary hover:text-ll-primary-dark transition-colors"
               >
                 View all &rarr;
               </Link>

@@ -22,7 +22,7 @@ export default function ScrollReveal() {
     );
 
     document
-      .querySelectorAll(".animate-on-scroll:not(.visible)")
+      .querySelectorAll(".animate-on-scroll:not(.visible), .animate-on-scroll-slow:not(.visible)")
       .forEach((el) => {
         observer.observe(el);
       });
