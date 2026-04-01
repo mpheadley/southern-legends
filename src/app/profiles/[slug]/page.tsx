@@ -357,21 +357,18 @@ export default async function ProfilePage({
                     <Link href="/about" className="text-ll-dark font-medium hover:text-ll-primary transition-colors">
                       Matt Headley
                     </Link>{" "}
-                    is a writer and web designer in Jacksonville, Alabama.
+                    lives in Jacksonville, Alabama. He builds websites for local businesses at{" "}
+                    <a
+                      href="https://headleyweb.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-ll-primary font-medium hover:text-ll-primary-dark transition-colors"
+                    >
+                      headleyweb.com
+                    </a>
+                    {" "}and writes about the people and places he finds along the way.
                   </p>
                 </div>
-                <p className="text-xs text-ll-text-light mt-4">
-                  Southern Legends is built by{" "}
-                  <a
-                    href="https://headleyweb.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-ll-primary font-medium hover:text-ll-primary-dark transition-colors"
-                  >
-                    Headley Web &amp; SEO
-                  </a>
-                  {" "}&mdash; websites for local businesses in Northeast Alabama.
-                </p>
               </div>
             );
           })()}
