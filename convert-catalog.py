@@ -27,4 +27,8 @@ IMAGES = [
      "A dinner plate dahlia in full bloom at Longleaf Botanical Gardens"),
     (f"{DL}/PXL_20240927_163924331.jpg", "profiles/anniston-museums-gardens", "matt-dahlias.webp", 600,
      "Matt Headley in front of blooming dahlias at Longleaf Botanical Gardens"),
+
+    # Aquality Farms
+    (f"{DL}/IMG_6038.heic", "profiles/aquality-farms", "samuel-john-mark.webp", 900,
+     "Samuel and John Mark Sawyer"),
 ]
