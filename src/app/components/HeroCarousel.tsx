@@ -132,7 +132,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                   )}
                   {profile.frontmatter.subtitle && (
                     <p
-                      className="mt-4 text-white/70 text-base md:text-xl italic leading-relaxed max-w-md line-clamp-2"
+                      className="mt-4 text-white/70 text-base md:text-xl italic leading-relaxed max-w-md line-clamp-4"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 300 }}
                     >
                       {profile.frontmatter.subtitle}
