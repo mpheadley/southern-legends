@@ -54,7 +54,6 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
         <p className="mt-3 text-sm text-ll-text line-clamp-2">
           {frontmatter.excerpt}
         </p>
-        <p className="mt-3 text-xs text-ll-text-light">{readingTime}</p>
       </div>
     </Link>
   );

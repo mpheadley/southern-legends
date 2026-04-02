@@ -323,8 +323,6 @@ export default async function ProfilePage({
                   <span>Updated {formatDate(frontmatter.lastModified)}</span>
                 </>
               )}
-            <span aria-hidden="true">&middot;</span>
-            <span>{readingTime}</span>
           </div>
 
         </div>

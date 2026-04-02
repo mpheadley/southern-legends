@@ -509,15 +509,9 @@ html {
   background-size: 500px 500px;
   border-radius: inherit;
   mix-blend-mode: multiply;
-  z-index: 10;
-  clip-path: inset(0 50% 0 0);
+  z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .gradient-hero::after {
-    clip-path: inset(55% 0 0 0);
-  }
-}
 
 /* ─── Topo Texture (dark backgrounds) ─── */
 

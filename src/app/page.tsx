@@ -44,7 +44,7 @@ export default function HomePage() {
       {/* ─── Hero Carousel ─── */}
       <section className="relative overflow-hidden gradient-hero">
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent z-[1]" aria-hidden="true" />
-        <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16" style={{ zIndex: 2 }}>
+        <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16" style={{ zIndex: 3 }}>
           {carouselProfiles.length > 0 ? (
             <HeroCarousel profiles={carouselProfiles} />
           ) : (
