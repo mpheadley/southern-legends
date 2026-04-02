@@ -132,12 +132,12 @@ export default async function OGImage({
             <span
               style={{
                 fontFamily: "Fraunces",
-                fontSize: 32,
+                fontSize: 40,
                 fontWeight: 600,
                 color: "#FAFAF7",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase" as const,
-                opacity: 0.8,
+                opacity: 0.9,
               }}
             >
               Southern Legends
@@ -160,8 +160,8 @@ export default async function OGImage({
             <div
               style={{
                 display: "flex",
-                width: 60,
-                height: 2,
+                width: 80,
+                height: 3,
                 backgroundColor: "#CA8A04",
                 marginBottom: 28,
               }}
@@ -172,7 +172,7 @@ export default async function OGImage({
               style={{
                 display: "flex",
                 fontFamily: "Fraunces",
-                fontSize: title.length > 40 ? 56 : title.length > 25 ? 68 : 76,
+                fontSize: title.length > 40 ? 72 : title.length > 25 ? 84 : 96,
                 fontWeight: 600,
                 color: "#FAFAF7",
                 textAlign: "center",
@@ -190,12 +190,12 @@ export default async function OGImage({
                 style={{
                   display: "flex",
                   fontFamily: "Source Sans 3",
-                  fontSize: 28,
+                  fontSize: 36,
                   fontWeight: 400,
                   color: "#CA8A04",
                   letterSpacing: "0.15em",
                   textTransform: "uppercase" as const,
-                  marginTop: 20,
+                  marginTop: 24,
                 }}
               >
                 {name}
@@ -215,9 +215,9 @@ export default async function OGImage({
             <span
               style={{
                 fontFamily: "Source Sans 3",
-                fontSize: 22,
+                fontSize: 28,
                 color: "#FAFAF7",
-                opacity: 0.6,
+                opacity: 0.7,
               }}
             >
               By Matt Headley · {location}
@@ -227,7 +227,7 @@ export default async function OGImage({
               <span
                 style={{
                   fontFamily: "Source Sans 3",
-                  fontSize: 20,
+                  fontSize: 26,
                   color: "#CA8A04",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase" as const,
