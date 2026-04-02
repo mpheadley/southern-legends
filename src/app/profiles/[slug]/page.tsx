@@ -270,6 +270,7 @@ export default async function ProfilePage({
           <Link
             href="/profiles"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-ll-accent hover:text-ll-accent-dark transition-colors mb-8"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
           >
             <svg
               className="w-4 h-4"
@@ -302,9 +303,17 @@ export default async function ProfilePage({
             </h1>
           )}
 
+          {frontmatter.name && frontmatter.name !== frontmatter.title && (
+            <p className="mt-4 text-sm md:text-base font-medium tracking-wide text-ll-accent uppercase"
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
+            >
+              {frontmatter.name}
+            </p>
+          )}
+
           {frontmatter.subtitle && (
             <p
-              className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-2xl"
+              className="mt-4 text-base md:text-lg leading-relaxed text-white/75 max-w-2xl"
               data-speakable="true"
             >
               {frontmatter.subtitle}
