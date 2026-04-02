@@ -331,6 +331,15 @@ export default async function ProfilePage({
         </div>
       </section>
 
+      {/* Hero Caption */}
+      {frontmatter.heroCaption && (
+        <div className="bg-ll-light border-b border-ll-border">
+          <p className="max-w-3xl mx-auto px-6 py-3 text-xs text-ll-text-light italic text-right">
+            {frontmatter.heroCaption}
+          </p>
+        </div>
+      )}
+
       {/* Article Content */}
       <article className="bg-ll-light">
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 prose-profile">

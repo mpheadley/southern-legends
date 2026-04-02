@@ -38,7 +38,7 @@
 - [x] About page images — headshot + family photo (`public/images/about/`)
 - [x] Fictional profiles removed pre-launch (Earl, Jimmy, Mae Ruth) — in git history
 - [x] 4 real profiles published (Anniston Museums, JCOC, Interfaith Ministries, Matt Headley)
-- [x] GitHub repo pushed (mpheadley/local-legends, public)
+- [x] GitHub repo pushed (mpheadley/southern-legends, public)
 - [x] OG image designed — forest green→gold gradient + topo + Fraunces/Rock Salt (`og-preview.html`)
 - [x] Gradient hero (`.gradient-hero`) applied sitewide — replaces flat `bg-ll-dark` on all dark sections
 - [x] `--gradient-pine` token + forest green `#3D6B4F` added to design system
@@ -199,7 +199,7 @@ Start with **places** instead of (or alongside) business profiles for launch:
 
 ## Phase 5 — Deploy
 
-- [x] Push to GitHub (mpheadley/local-legends, public)
+- [x] Push to GitHub (mpheadley/southern-legends, public)
 - [ ] Deploy to Vercel
 - [ ] Domain — buy through Vercel (locallegends.com? locallegendsal.com? neallegends.com?)
 - [ ] Verify OG tags render correctly (use og-preview tools)

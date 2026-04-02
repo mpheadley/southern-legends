@@ -33,6 +33,11 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# interviews — raw audio and transcripts (large files)
+interviews/*.mp3
+interviews/*.wav
+interviews/*.json
+
 # vercel
 .vercel
 
