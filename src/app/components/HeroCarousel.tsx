@@ -69,8 +69,8 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
           </button>
         )}
 
-        {/* Clipped sliding area — inset to leave room for left arrow */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Clipped sliding area — full viewport width so slides animate edge-to-edge */}
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen overflow-hidden">
         {/* Sliding track */}
         <div
           className="flex h-full transition-transform duration-500 ease-in-out"
@@ -81,8 +81,9 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
               key={profile.slug}
               href={`/profiles/${profile.slug}`}
               tabIndex={i === current ? 0 : -1}
-              className="w-full h-full flex-shrink-0 group flex flex-col md:grid md:grid-cols-2 md:gap-12 md:items-center"
+              className="w-full h-full flex-shrink-0 group"
             >
+              <div className="h-full max-w-6xl mx-auto px-6 flex flex-col md:grid md:grid-cols-2 md:gap-12 md:items-center">
               {/* Image — band on mobile, full column on desktop */}
               <div className="relative h-[45%] flex-shrink-0 md:h-full md:order-last overflow-hidden rounded-sm">
                 {profile.frontmatter.heroImage ? (
@@ -143,8 +144,6 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                     <span>{profile.frontmatter.name}</span>
                     <span aria-hidden="true">&middot;</span>
                     <span>{profile.frontmatter.location}</span>
-                    <span aria-hidden="true">&middot;</span>
-                    <span>{profile.readingTime}</span>
                   </div>
                 </div>
 
@@ -155,6 +154,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                     <path d="M3 8h10M9 4l4 4-4 4" />
                   </svg>
                 </span>
+              </div>
               </div>
             </Link>
           ))}
