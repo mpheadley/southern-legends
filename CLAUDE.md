@@ -73,6 +73,11 @@ Each profile is an `.mdx` file in `content/profiles/` with frontmatter (title, s
 - **Done:** Design system, layout, homepage, about page, profile detail page, profile listing, 21 profiles (1 by Matt, 20 AI drafts), RSS feed, scroll animations, share buttons, story navigation, subscribe CTA
 - **Fonts loaded via `<link>` in layout.tsx** — Fraunces and Rock Salt are Google Fonts links, not `next/font`. Source Sans 3 uses `next/font/google`. Consider migrating Fraunces/Rock Salt to `next/font` for performance.
 
+## OG Images
+- **Manual OG (preferred):** Open `og-preview.html`, edit title/name/image/position, screenshot at 1200x630, save to `public/images/social/{slug}-og.png`. The site auto-detects and uses it.
+- **Satori fallback:** `src/app/profiles/[slug]/opengraph-image.tsx` auto-generates for profiles without a manual screenshot.
+- **Detection:** `generateMetadata` in `page.tsx` checks if `public/images/social/{slug}-og.png` exists. If yes, uses it. If no, Satori kicks in.
+
 ## Build Rules
 - Follow global CLAUDE.md standards (next/image, WebP, contrast checks, etc.)
 - No daisyUI — pure Tailwind + custom CSS

@@ -1,129 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>OG Image Preview — Southern Legends 1200x630</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700&family=Rock+Salt&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<title>OG Preview — Southern Legends Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      background: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      font-family: 'Source Sans 3', sans-serif;
-    }
+  body {
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
 
-    .instructions {
-      color: #ccc;
-      font-size: 14px;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    .instructions strong { color: #CA8A04; }
+  .instructions {
+    color: #999;
+    font-family: system-ui;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-    /* ─── The OG canvas ─── */
-    .og {
-      width: 1200px;
-      height: 630px;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(to right, #3D6B4F, #CA8A04);
-    }
+  /* ─── OG Card ─── */
+  .og {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: linear-gradient(to right, #1a3a2a 0%, #2d5a3f 10%, #3d6b4f 20%, #8a6d3b 35%, #CA8A04 50%);
+  }
 
-    /* Topo texture overlay — primary visual element */
-    .og-topo {
-      position: absolute;
-      inset: 0;
-      background-image: url("public/topo-7.png");
-      background-size: 600px;
-      background-repeat: repeat;
-      opacity: 0.5;
-      mix-blend-mode: multiply;
-      z-index: 1;
-      pointer-events: none;
-    }
+  /* Topo texture — left side only */
+  .og::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("public/topo-7.png");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+    clip-path: inset(0 50% 0 0);
+  }
 
-    /* Content */
-    .og-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-      padding: 60px 80px;
-    }
+  /* Top bar */
+  .og .top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background: #292524;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    z-index: 10;
+  }
 
-    .og-headline {
-      font-family: 'Fraunces', serif;
-      font-size: 120px;
-      font-weight: 700;
-      color: #FFFFFF;
-      line-height: 1.05;
-      letter-spacing: -1px;
-    }
+  .top-bar .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #FAFAF7;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
 
-    .og-divider {
-      width: 100px;
-      height: 4px;
-      background: #FFFFFF;
-      margin: 28px auto;
-      border-radius: 2px;
-    }
+  /* Two-column layout below bar */
+  .og .columns {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: 558px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 5;
+  }
 
-    .og-sub {
-      font-family: 'Rock Salt', cursive;
-      font-size: 38px;
-      color: #292524;
-      letter-spacing: 1px;
-    }
+  /* Text column */
+  .text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 48px;
+    gap: 16px;
+  }
 
-    /* Accent bar at bottom */
-    .og-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 14px;
-      background: #292524;
-      z-index: 3;
-    }
+  .text-col .title {
+    font-family: 'Fraunces', serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #FAFAF7;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .text-col .title.long { font-size: 80px; }
+  .text-col .title.very-long { font-size: 64px; }
 
-    /* Subtle grain overlay */
-    .og::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 4;
-    }
-  </style>
+  .text-col .divider {
+    width: 48px;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .text-col .name {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 36px;
+    color: #CA8A04;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .text-col .author {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 28px;
+    color: rgba(250, 250, 247, 0.6);
+  }
+
+  /* Image column */
+  .img-col {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* EDIT per profile — zoom in by scaling up: */
+    object-position: center 35%;
+    transform: scale(2);
+    transform-origin: center 40%;
+  }
+</style>
 </head>
 <body>
+  <!--
+    OG IMAGE WORKFLOW:
+    1. Edit the fields below (title, name, image src, object-position)
+    2. Open this file in browser
+    3. Screenshot the .og card at 1200x630
+    4. Save to: public/images/social/{slug}-og.png
+    5. The site auto-detects and uses it as the OG image
+    6. Satori fallback handles profiles without a manual screenshot
+  -->
   <p class="instructions">
-    Preview at actual size (1200 x 630). Take a screenshot of the card below.<br>
-    On Mac: <strong>Cmd + Shift + 4</strong>, then drag to select just the card.
+    Edit fields for each profile. Screenshot the .og div at 1200x630.
   </p>
 
-  <div class="og">
-    <div class="og-topo"></div>
+  <!-- ═══ EDIT THESE FOR EACH PROFILE ═══ -->
+  <div class="og" id="og-card">
 
-    <div class="og-content">
-      <h1 class="og-headline">Southern Legends</h1>
-      <div class="og-divider"></div>
-      <p class="og-sub">Stories from Northeast Alabama</p>
+    <div class="top-bar">
+      <span class="wordmark">Southern Legends</span>
+      <span class="wordmark" style="font-family: 'Source Sans 3', sans-serif; font-size: 28px; font-weight: 400; opacity: 0.7;">By Matt Headley</span>
     </div>
 
-    <!-- Accent bar -->
-    <div class="og-bar"></div>
+    <div class="columns">
+      <div class="text-col">
+        <h1 class="title">A New<br>Way of<br>Growing</h1>
+        <div class="divider"></div>
+        <p class="name">Aquality Farms</p>
+      </div>
+
+      <div class="img-col">
+        <img src="public/images/profiles/aquality-farms/sawyer-brothers-grow-room.webp" alt="">
+      </div>
+    </div>
+
   </div>
 </body>
 </html>

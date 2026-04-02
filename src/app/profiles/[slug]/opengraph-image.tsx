@@ -51,14 +51,26 @@ export default async function OGImage({
     );
   }
 
-  const { title, name, location, category, heroImage } = profile.frontmatter;
+  const { title, name, location, heroImage } = profile.frontmatter;
 
   let heroSrc: string | null = null;
   if (heroImage) {
     try {
       const imagePath = join(process.cwd(), "public", heroImage);
       const buffer = readFileSync(imagePath);
-      const pngBuffer = await sharp(buffer).resize(1200, 630, { fit: "cover" }).png({ quality: 80 }).toBuffer();
+      const meta = await sharp(buffer).metadata();
+      const srcW = meta.width || 1200;
+      const srcH = meta.height || 630;
+      const scale = Math.max(1200 / srcW, 630 / srcH);
+      const scaledW = Math.round(srcW * scale);
+      const scaledH = Math.round(srcH * scale);
+      const topOffset = Math.round((scaledH - 630) * 0.35);
+      const leftOffset = Math.round((scaledW - 1200) / 2);
+      const pngBuffer = await sharp(buffer)
+        .resize(scaledW, scaledH)
+        .extract({ left: leftOffset, top: topOffset, width: 1200, height: 630 })
+        .png({ quality: 80 })
+        .toBuffer();
       heroSrc = `data:image/png;base64,${pngBuffer.toString("base64")}`;
     } catch {
       heroSrc = null;
@@ -96,7 +108,7 @@ export default async function OGImage({
           />
         )}
 
-        {/* Dark overlay */}
+        {/* Side gradients — dark edges like homepage hero */}
         <div
           style={{
             display: "flex",
@@ -105,139 +117,130 @@ export default async function OGImage({
             left: 0,
             width: "100%",
             height: "100%",
-            background:
-              "linear-gradient(to top, rgba(41,37,36,0.95) 0%, rgba(41,37,36,0.7) 40%, rgba(41,37,36,0.4) 100%)",
+            background: "linear-gradient(to right, rgba(41,37,36,0.5) 0%, transparent 30%, transparent 70%, rgba(41,37,36,0.5) 100%)",
           }}
         />
 
-        {/* Content container */}
+        {/* Topo texture overlay */}
+        <img
+          src={`data:image/png;base64,${readFileSync(join(process.cwd(), "public/topo-7.png")).toString("base64")}`}
+          alt=""
+          width={500}
+          height={500}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.15,
+          }}
+        />
+
+
+        {/* Top bar — solid dark, like the site nav */}
+        <div
+          style={{
+            display: "flex",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: 80,
+            backgroundColor: "#292524",
+            padding: "0 60px",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "Fraunces",
+              fontSize: 28,
+              fontWeight: 600,
+              color: "#FAFAF7",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase" as const,
+            }}
+          >
+            Southern Legends
+          </span>
+
+          <span
+            style={{
+              fontFamily: "Source Sans 3",
+              fontSize: 24,
+              color: "#FAFAF7",
+              opacity: 0.7,
+            }}
+          >
+            By Matt Headley · {location}
+          </span>
+        </div>
+
+        {/* Title overlay — centered on image below bar */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "absolute",
+            top: 80,
+            left: 0,
             width: "100%",
-            height: "100%",
+            height: 550,
             padding: "48px 60px",
-            position: "relative",
           }}
         >
-          {/* Top: Wordmark */}
+          {/* Decorative rule above title */}
           <div
             style={{
               display: "flex",
-              alignItems: "center",
+              width: 80,
+              height: 3,
+              backgroundColor: "#CA8A04",
+              marginBottom: 28,
+            }}
+          />
+
+          {/* Profile title */}
+          <div
+            style={{
+              display: "flex",
+              fontFamily: "Fraunces",
+              fontSize: title.length > 40 ? 72 : title.length > 25 ? 84 : 96,
+              fontWeight: 600,
+              color: "#FAFAF7",
+              textAlign: "center",
+              lineHeight: 1.15,
+              maxWidth: 1000,
+              justifyContent: "center",
+              textShadow: "0 3px 12px rgba(0,0,0,0.8)",
             }}
           >
-            <span
+            {title}
+          </div>
+
+          {/* Business/place name */}
+          {name && name !== title && (
+            <div
               style={{
-                fontFamily: "Fraunces",
-                fontSize: 40,
-                fontWeight: 600,
-                color: "#FAFAF7",
+                display: "flex",
+                fontFamily: "Source Sans 3",
+                fontSize: 36,
+                fontWeight: 400,
+                color: "#CA8A04",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase" as const,
-                opacity: 0.9,
+                marginTop: 24,
+                textShadow: "0 2px 8px rgba(0,0,0,0.7)",
               }}
             >
-              Southern Legends
-            </span>
-          </div>
-
-          {/* Center: Title + Name */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              flex: 1,
-              paddingTop: 20,
-              paddingBottom: 20,
-            }}
-          >
-            {/* Decorative rule above title */}
-            <div
-              style={{
-                display: "flex",
-                width: 80,
-                height: 3,
-                backgroundColor: "#CA8A04",
-                marginBottom: 28,
-              }}
-            />
-
-            {/* Profile title */}
-            <div
-              style={{
-                display: "flex",
-                fontFamily: "Fraunces",
-                fontSize: title.length > 40 ? 72 : title.length > 25 ? 84 : 96,
-                fontWeight: 600,
-                color: "#FAFAF7",
-                textAlign: "center",
-                lineHeight: 1.15,
-                maxWidth: 1000,
-                justifyContent: "center",
-              }}
-            >
-              {title}
+              {name}
             </div>
-
-            {/* Business/place name */}
-            {name && name !== title && (
-              <div
-                style={{
-                  display: "flex",
-                  fontFamily: "Source Sans 3",
-                  fontSize: 36,
-                  fontWeight: 400,
-                  color: "#CA8A04",
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase" as const,
-                  marginTop: 24,
-                }}
-              >
-                {name}
-              </div>
-            )}
-          </div>
-
-          {/* Bottom: Location + Category */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-end",
-              width: "100%",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "Source Sans 3",
-                fontSize: 28,
-                color: "#FAFAF7",
-                opacity: 0.7,
-              }}
-            >
-              By Matt Headley · {location}
-            </span>
-
-            {category && (
-              <span
-                style={{
-                  fontFamily: "Source Sans 3",
-                  fontSize: 26,
-                  color: "#CA8A04",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase" as const,
-                  opacity: 0.8,
-                }}
-              >
-                {category}
-              </span>
-            )}
-          </div>
+          )}
         </div>
       </div>
     ),

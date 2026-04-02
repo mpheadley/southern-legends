@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { existsSync } from "fs";
+import { join } from "path";
 import {
   getProfileBySlug,
   getProfileSlugs,
@@ -117,11 +119,17 @@ export async function generateMetadata({
         modifiedTime: profile.frontmatter.lastModified,
       }),
       tags,
+      ...(existsSync(join(process.cwd(), `public/images/social/${slug}-og.png`)) && {
+        images: [`/images/social/${slug}-og.png`],
+      }),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: seoDescription,
+      ...(existsSync(join(process.cwd(), `public/images/social/${slug}-og.png`)) && {
+        images: [`/images/social/${slug}-og.png`],
+      }),
     },
   };
 }
