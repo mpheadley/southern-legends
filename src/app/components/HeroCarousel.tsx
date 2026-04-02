@@ -132,14 +132,14 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                   )}
                   {profile.frontmatter.subtitle && (
                     <p
-                      className="mt-4 text-white/70 text-sm md:text-base italic leading-relaxed max-w-md line-clamp-2"
+                      className="mt-4 text-white/70 text-base md:text-xl italic leading-relaxed max-w-md line-clamp-2"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 300 }}
                     >
                       {profile.frontmatter.subtitle}
                     </p>
                   )}
                   <div className="mt-4 w-12 h-[2px] bg-white/30" aria-hidden="true" />
-                  <div className="mt-4 flex items-center gap-3 text-xs text-white/50 uppercase tracking-widest">
+                  <div className="mt-4 flex items-center gap-3 text-sm md:text-base text-white/50 uppercase tracking-widest">
                     <span>{profile.frontmatter.name}</span>
                     <span aria-hidden="true">&middot;</span>
                     <span>{profile.frontmatter.location}</span>
@@ -149,7 +149,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                 </div>
 
                 {/* Bottom: CTA — always visible */}
-                <span className="flex-shrink-0 inline-flex items-center gap-2 text-sm font-semibold text-ll-accent group-hover:gap-3 transition-all duration-300">
+                <span className="flex-shrink-0 inline-flex items-center gap-2 text-base md:text-lg font-semibold text-ll-accent group-hover:gap-3 transition-all duration-300">
                   Read the story
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 8h10M9 4l4 4-4 4" />
