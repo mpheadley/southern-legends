@@ -95,7 +95,7 @@ export async function generateMetadata({
   const profile = getProfileBySlug(slug);
   if (!profile) return {};
 
-  const { title, excerpt, metaDescription, name, location, heroImage, tags } =
+  const { title, excerpt, metaDescription, name, location, tags } =
     profile.frontmatter;
 
   const seoDescription = metaDescription ?? excerpt;
@@ -117,16 +117,6 @@ export async function generateMetadata({
         modifiedTime: profile.frontmatter.lastModified,
       }),
       tags,
-      ...(heroImage && {
-        images: [
-          {
-            url: heroImage,
-            width: 1200,
-            height: 630,
-            alt: `${name} — ${location}`,
-          },
-        ],
-      }),
     },
     twitter: {
       card: "summary_large_image",
