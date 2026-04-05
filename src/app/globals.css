@@ -1372,6 +1372,12 @@ html {
   max-width: 580px;
   position: relative;
   z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .st-panel-content h2 {
@@ -1381,7 +1387,6 @@ html {
   color: var(--color-ll-light);
   margin-bottom: 1.5rem;
   line-height: 1.15;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 2px 16px rgba(0, 0, 0, 0.9), 0 4px 40px rgba(0, 0, 0, 0.5);
 }
 
 .st-panel-content p {
@@ -1389,16 +1394,14 @@ html {
   line-height: 1.75;
   color: var(--color-ll-light);
   margin-bottom: 1rem;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 2px 12px rgba(0, 0, 0, 0.8), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .st-panel-detail {
   font-style: italic;
-  color: var(--color-ll-light) !important;
+  color: var(--color-ll-accent) !important;
   font-family: var(--font-rock-salt), cursive !important;
   font-size: clamp(0.8rem, 1.6vw, 0.95rem) !important;
   line-height: 2 !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 2px 12px rgba(0, 0, 0, 0.8), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .st-panel-caption {
@@ -1561,12 +1564,12 @@ html {
   }
 
   .st-panel-bg-wrap {
-    top: -10%;
-    height: 120%;
+    top: -15%;
+    height: 130%;
   }
 
   .st-hero-bg {
-    top: -10%;
-    height: 125%;
+    top: -20%;
+    height: 145%;
   }
 }

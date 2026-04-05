@@ -105,7 +105,7 @@ export default function ScrollytellingProfile({
       // ── HERO PARALLAX ──
       const isMobile = window.innerWidth <= 768;
       gsap.to(".st-hero-bg", {
-        y: isMobile ? "-8%" : "-20%",
+        y: isMobile ? "-15%" : "-20%",
         ease: "none",
         scrollTrigger: {
           trigger: ".st-hero",
@@ -159,7 +159,7 @@ export default function ScrollytellingProfile({
 
         if (bg) {
           gsap.to(bg, {
-            y: isMobile ? "-5%" : "-10%",
+            y: isMobile ? "-8%" : "-10%",
             ease: "none",
             scrollTrigger: {
               trigger: section,
@@ -276,7 +276,7 @@ export default function ScrollytellingProfile({
   const panelCount = config.sections.length;
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} style={{ background: "var(--color-ll-dark)" }}>
       {/* HUD */}
       <nav className="st-hud" aria-label="Story progress">
         <div className="st-hud-track">
