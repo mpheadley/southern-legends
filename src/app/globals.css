@@ -1207,10 +1207,10 @@ html {
 
 .st-prose-block p {
   font-family: var(--font-source-sans), system-ui, sans-serif;
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  line-height: 1.8;
-  color: rgba(250, 250, 247, 0.82);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.125rem, 2.2vw, 1.3rem);
+  line-height: 1.9;
+  color: rgba(245, 242, 235, 0.88);
+  margin-bottom: 1.75rem;
 }
 
 .st-prose-block p:last-child {
