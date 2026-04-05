@@ -78,6 +78,11 @@ export function getFeaturedProfile(): Profile | null {
   return all.find((p) => p.frontmatter.featured) ?? all[0];
 }
 
+/** Returns all profiles with `featured: true`, sorted by date descending. */
+export function getFeaturedProfiles(): Profile[] {
+  return getAllProfiles().filter((p) => p.frontmatter.featured);
+}
+
 export function getCategories(): string[] {
   const profiles = getAllProfiles();
   const categories = new Set(profiles.map((p) => p.frontmatter.category));

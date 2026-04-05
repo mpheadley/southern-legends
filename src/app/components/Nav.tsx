@@ -24,6 +24,7 @@ export default function Nav() {
 
   const navLinks = [
     { label: "Stories", href: "/profiles" },
+    { label: "Featured", href: "/featured" },
     { label: "About", href: "/about" },
   ];
 

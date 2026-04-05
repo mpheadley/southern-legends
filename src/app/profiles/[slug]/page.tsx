@@ -16,6 +16,8 @@ import PhotoCarouselLoader from "@/app/components/PhotoCarouselLoader";
 import PullQuote from "@/app/components/PullQuote";
 import VideoLoop from "@/app/components/VideoLoop";
 import StoryNav from "@/app/components/StoryNav";
+import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
+import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
 
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => {
@@ -153,6 +155,16 @@ export default async function ProfilePage({
 
   const { frontmatter, content, readingTime } = profile;
   const { prev, next } = getAdjacentProfiles(slug);
+  const scrollyConfig = scrollytellingConfigs[slug];
+
+  // If a scrollytelling config exists, render the immersive layout
+  if (scrollyConfig) {
+    return (
+      <main id="main-content">
+        <ScrollytellingProfile config={scrollyConfig} />
+      </main>
+    );
+  }
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
