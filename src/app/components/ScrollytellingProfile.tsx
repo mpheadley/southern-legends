@@ -103,8 +103,9 @@ export default function ScrollytellingProfile({
         .to(".st-hud", { opacity: 1, duration: 0.8 }, "-=0.3");
 
       // ── HERO PARALLAX ──
+      const isMobile = window.innerWidth <= 768;
       gsap.to(".st-hero-bg", {
-        y: "-20%",
+        y: isMobile ? "-8%" : "-20%",
         ease: "none",
         scrollTrigger: {
           trigger: ".st-hero",
@@ -158,7 +159,7 @@ export default function ScrollytellingProfile({
 
         if (bg) {
           gsap.to(bg, {
-            y: "-10%",
+            y: isMobile ? "-5%" : "-10%",
             ease: "none",
             scrollTrigger: {
               trigger: section,
