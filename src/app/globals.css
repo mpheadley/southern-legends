@@ -1102,8 +1102,8 @@ html {
 .st-hero-bg {
   position: absolute;
   inset: 0;
-  top: -20%;
-  height: 160%;
+  top: -25%;
+  height: 170%;
 }
 
 .st-hero-bg::after {
@@ -1336,8 +1336,8 @@ html {
 .st-panel-bg-wrap {
   position: absolute;
   inset: 0;
-  top: -15%;
-  height: 130%;
+  top: -20%;
+  height: 140%;
   will-change: transform;
 }
 
@@ -1394,8 +1394,10 @@ html {
 
 .st-panel-detail {
   font-style: italic;
-  color: var(--color-ll-accent) !important;
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem) !important;
+  color: var(--color-ll-light) !important;
+  font-family: var(--font-rock-salt), cursive !important;
+  font-size: clamp(0.8rem, 1.6vw, 0.95rem) !important;
+  line-height: 2 !important;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 2px 12px rgba(0, 0, 0, 0.8), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
@@ -1548,5 +1550,15 @@ html {
   .st-panel-caption {
     left: 1.5rem;
     bottom: 1.5rem;
+  }
+
+  .st-panel-bg-wrap {
+    top: 0;
+    height: 100%;
+  }
+
+  .st-hero-bg {
+    top: 0;
+    height: 100%;
   }
 }

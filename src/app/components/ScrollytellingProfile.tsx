@@ -102,17 +102,20 @@ export default function ScrollytellingProfile({
         )
         .to(".st-hud", { opacity: 1, duration: 0.8 }, "-=0.3");
 
-      // ── HERO PARALLAX ──
-      gsap.to(".st-hero-bg", {
-        y: "-20%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".st-hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
+      // ── HERO PARALLAX (desktop only) ──
+      const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+      if (isDesktop) {
+        gsap.to(".st-hero-bg", {
+          y: "-20%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".st-hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
 
       // ── PROSE REVEALS ──
       gsap.utils
@@ -156,7 +159,7 @@ export default function ScrollytellingProfile({
           scrub: false,
         });
 
-        if (bg) {
+        if (bg && isDesktop) {
           gsap.to(bg, {
             y: "-10%",
             ease: "none",
