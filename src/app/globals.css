@@ -1552,13 +1552,21 @@ html {
     bottom: 1.5rem;
   }
 
+  .st-pin-section {
+    height: 100svh;
+  }
+
+  .st-hero {
+    height: 100svh;
+  }
+
   .st-panel-bg-wrap {
-    top: 0;
-    height: 100%;
+    top: -10%;
+    height: 120%;
   }
 
   .st-hero-bg {
-    top: 0;
-    height: 100%;
+    top: -10%;
+    height: 125%;
   }
 }
