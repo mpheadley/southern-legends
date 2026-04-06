@@ -154,6 +154,8 @@ export default function ScrollytellingProfile({
           start: "top top",
           end: "+=300vh",
           pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
           scrub: false,
         });
 
@@ -165,7 +167,7 @@ export default function ScrollytellingProfile({
               trigger: section,
               start: "top top",
               end: "+=300vh",
-              scrub: 1.5,
+              scrub: isMobile ? 0.5 : 1.5,
             },
           });
         }
