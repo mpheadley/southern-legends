@@ -75,7 +75,6 @@ export default function ParallaxHero({
             priority
             sizes="100vw"
             className="object-cover"
-            className="object-cover"
             style={{ objectPosition: isMobile ? "center 35%" : (heroPosition ?? "center center") }}
           />
         </div>
