@@ -951,11 +951,11 @@ html {
 }
 
 .featured-closing-eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.22em;
+  color: var(--color-ll-accent);
 }
 
 .featured-closing-headline {
@@ -977,20 +977,25 @@ html {
 }
 
 .featured-closing-attribution {
-  margin-top: 1rem;
-  font-size: 0.6875rem;
-  color: rgba(255, 255, 255, 0.35);
-  letter-spacing: 0.06em;
+  margin-top: 1.5rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .featured-closing-attribution-link {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  transition: color 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .featured-closing-attribution-link:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-ll-white);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 /* Reduced-motion: stack panels, simple fade */
