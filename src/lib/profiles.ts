@@ -28,6 +28,7 @@ export interface ProfileFrontmatter {
   heroPosition?: string;
   heroCaption?: string;
   facebook?: string;
+  parallaxHero?: boolean;
 }
 
 export interface Profile {

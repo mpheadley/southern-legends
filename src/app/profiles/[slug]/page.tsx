@@ -17,6 +17,7 @@ import PullQuote from "@/app/components/PullQuote";
 import VideoLoop from "@/app/components/VideoLoop";
 import StoryNav from "@/app/components/StoryNav";
 import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
+import ParallaxHero from "@/app/components/ParallaxHero";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
 
 const mdxComponents = {
@@ -244,109 +245,120 @@ export default async function ProfilePage({
         }}
       />
 
-      {/* Hero */}
-      <section className={`relative text-white overflow-hidden ${frontmatter.heroImage ? "" : "gradient-hero"}`}
-        style={frontmatter.heroImage ? { background: "var(--color-ll-dark)" } : undefined}
-      >
-        {/* Hero image or ghost initial */}
-        {frontmatter.heroImage ? (
-          <>
-            <Image
-              src={frontmatter.heroImage}
-              alt={frontmatter.heroAlt || frontmatter.name}
-              fill
-              priority
-              className="object-cover"
-              sizes="100vw"
-              style={frontmatter.heroPosition ? { objectPosition: frontmatter.heroPosition } : undefined}
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-ll-dark/95 via-ll-dark/60 to-ll-dark/25"
-              style={{ zIndex: 1 }}
-            />
-          </>
-        ) : (
-          <>
-            <div className="absolute inset-0 bg-black/50 z-[1]" aria-hidden="true" />
-            <span className="ghost-initial" aria-hidden="true">
-              {frontmatter.name.charAt(0)}
-            </span>
-          </>
-        )}
-
-        <div className="relative max-w-3xl mx-auto px-6 pt-28 pb-14 md:pt-32 md:pb-18"
-          style={{ zIndex: 2 }}
+      {/* Hero — parallax or standard */}
+      {frontmatter.parallaxHero && frontmatter.heroImage ? (
+        <ParallaxHero
+          title={frontmatter.title}
+          titleHtml={frontmatter.titleHtml}
+          subtitle={frontmatter.subtitle}
+          eyebrow={`${frontmatter.name} — ${frontmatter.location}`}
+          heroImage={frontmatter.heroImage}
+          heroAlt={frontmatter.heroAlt || frontmatter.name}
+          heroPosition={frontmatter.heroPosition}
+        />
+      ) : (
+        <section className={`relative text-white overflow-hidden ${frontmatter.heroImage ? "" : "gradient-hero"}`}
+          style={frontmatter.heroImage ? { background: "var(--color-ll-dark)" } : undefined}
         >
-          <Link
-            href="/profiles"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-ll-accent hover:text-ll-accent-dark transition-colors mb-8"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
+          {frontmatter.heroImage ? (
+            <>
+              <Image
+                src={frontmatter.heroImage}
+                alt={frontmatter.heroAlt || frontmatter.name}
+                fill
+                priority
+                className="object-cover"
+                sizes="100vw"
+                style={frontmatter.heroPosition ? { objectPosition: frontmatter.heroPosition } : undefined}
               />
-            </svg>
-            All Stories
-          </Link>
-
-          {frontmatter.titleHtml ? (
-            <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
-              style={{ fontFamily: "var(--font-heading)" }}
-              dangerouslySetInnerHTML={{ __html: frontmatter.titleHtml }}
-            />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-ll-dark/95 via-ll-dark/60 to-ll-dark/25"
+                style={{ zIndex: 1 }}
+              />
+            </>
           ) : (
-            <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              {frontmatter.title}
-            </h1>
+            <>
+              <div className="absolute inset-0 bg-black/50 z-[1]" aria-hidden="true" />
+              <span className="ghost-initial" aria-hidden="true">
+                {frontmatter.name.charAt(0)}
+              </span>
+            </>
           )}
 
-          {frontmatter.name && frontmatter.name !== frontmatter.title && (
-            <p className="mt-4 text-sm md:text-base font-medium tracking-wide text-ll-accent uppercase"
+          <div className="relative max-w-3xl mx-auto px-6 pt-28 pb-14 md:pt-32 md:pb-18"
+            style={{ zIndex: 2 }}
+          >
+            <Link
+              href="/profiles"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-ll-accent hover:text-ll-accent-dark transition-colors mb-8"
               style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
             >
-              {frontmatter.name}
-            </p>
-          )}
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              All Stories
+            </Link>
 
-          {frontmatter.subtitle && (
-            <p
-              className="mt-4 text-base md:text-lg leading-relaxed text-white/75 max-w-2xl"
-              data-speakable="true"
-            >
-              {frontmatter.subtitle}
-            </p>
-          )}
+            {frontmatter.titleHtml ? (
+              <h1
+                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
+                style={{ fontFamily: "var(--font-heading)" }}
+                dangerouslySetInnerHTML={{ __html: frontmatter.titleHtml }}
+              />
+            ) : (
+              <h1
+                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                {frontmatter.title}
+              </h1>
+            )}
 
-          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-white/60">
-            <span>By {siteConfig.author}</span>
-            <span aria-hidden="true">&middot;</span>
-            <span>{frontmatter.location}</span>
-            <span aria-hidden="true">&middot;</span>
-            <span>{formatDate(frontmatter.date)}</span>
-            {frontmatter.lastModified &&
-              frontmatter.lastModified !== frontmatter.date && (
-                <>
-                  <span aria-hidden="true">&middot;</span>
-                  <span>Updated {formatDate(frontmatter.lastModified)}</span>
-                </>
-              )}
+            {frontmatter.name && frontmatter.name !== frontmatter.title && (
+              <p className="mt-4 text-sm md:text-base font-medium tracking-wide text-ll-accent uppercase"
+                style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
+              >
+                {frontmatter.name}
+              </p>
+            )}
+
+            {frontmatter.subtitle && (
+              <p
+                className="mt-4 text-base md:text-lg leading-relaxed text-white/75 max-w-2xl"
+                data-speakable="true"
+              >
+                {frontmatter.subtitle}
+              </p>
+            )}
+
+            <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-white/60">
+              <span>By {siteConfig.author}</span>
+              <span aria-hidden="true">&middot;</span>
+              <span>{frontmatter.location}</span>
+              <span aria-hidden="true">&middot;</span>
+              <span>{formatDate(frontmatter.date)}</span>
+              {frontmatter.lastModified &&
+                frontmatter.lastModified !== frontmatter.date && (
+                  <>
+                    <span aria-hidden="true">&middot;</span>
+                    <span>Updated {formatDate(frontmatter.lastModified)}</span>
+                  </>
+                )}
+            </div>
+
           </div>
-
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Hero Caption */}
       {frontmatter.heroCaption && (
