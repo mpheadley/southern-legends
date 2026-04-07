@@ -55,17 +55,17 @@ export default function HomePage() {
       <FeaturedTilt cards={featuredCards} />
 
       {/* ─── Stories Grid ─── */}
-      <section className="bg-ll-light">
+      <section className="gradient-hero paper-grain">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
           <div className="flex items-end justify-between mb-12">
             <div>
               <h2
-                className="text-3xl md:text-4xl font-bold text-ll-dark tracking-tight"
+                className="text-3xl md:text-4xl font-bold text-white tracking-tight"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                {"More Stories"}
+                More Stories
               </h2>
-              <p className="mt-2 text-ll-text-light">
+              <p className="mt-2 text-white/60">
                 Meet the people behind the businesses, shops, and traditions that
                 make this region what it is.
               </p>
@@ -73,7 +73,7 @@ export default function HomePage() {
             {allProfiles.length > 3 && (
               <Link
                 href="/profiles"
-                className="hidden sm:inline-flex text-sm font-semibold text-ll-primary hover:text-ll-primary-dark transition-colors"
+                className="hidden sm:inline-flex text-sm font-semibold text-ll-accent hover:opacity-80 transition-opacity"
               >
                 View all &rarr;
               </Link>
@@ -81,9 +81,7 @@ export default function HomePage() {
           </div>
 
           {gridProfiles.length === 0 ? (
-            <p className="text-ll-text-light">
-              More stories coming soon.
-            </p>
+            <p className="text-white/60">More stories coming soon.</p>
           ) : (
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {gridProfiles.map((profile, i) => (

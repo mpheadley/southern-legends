@@ -41,8 +41,7 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
   const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [reducedMotion, setReducedMotion] = useState(false);
 
-  // Total panels = profile cards + 1 closing card
-  const totalPanels = cards.length + 1;
+  const totalPanels = cards.length;
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -291,50 +290,6 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
           </div>
         ))}
 
-        {/* Closing card */}
-        <div
-          className={`featured-panel featured-closing ${reducedMotion ? "featured-panel-reduced" : ""}`}
-          ref={(el) => {
-            panelRefs.current[cards.length] = el;
-          }}
-        >
-          <div className="featured-panel-bg">
-            <div className="featured-closing-bg" />
-            <div className="featured-panel-overlay" />
-          </div>
-          <div className="featured-closing-content">
-            <p
-              className="featured-closing-eyebrow ft-stagger"
-            >
-              Southern Legends
-            </p>
-            <p
-              className="featured-closing-headline ft-stagger"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              More stories from the foothills.
-            </p>
-            <div className="featured-closing-rule ft-stagger" />
-            <Link
-              href="/profiles"
-              className="featured-panel-link ft-stagger"
-            >
-              See all stories
-              <span aria-hidden="true"> →</span>
-            </Link>
-            <p className="featured-closing-attribution ft-stagger">
-              Built by{" "}
-              <a
-                href="https://headleyweb.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="featured-closing-attribution-link"
-              >
-                Headley Web &amp; SEO
-              </a>
-            </p>
-          </div>
-        </div>
       </section>
     </>
   );
