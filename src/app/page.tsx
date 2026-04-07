@@ -55,7 +55,7 @@ export default function HomePage() {
       <FeaturedTilt cards={featuredCards} />
 
       {/* ─── Stories Grid ─── */}
-      <section className="gradient-hero" style={{ position: "relative" }}>
+      <section className="gradient-hero no-pseudo-topo" style={{ position: "relative" }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
           backgroundImage: "url('/topo-7.png')", backgroundRepeat: "repeat",

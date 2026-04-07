@@ -499,6 +499,20 @@ html {
 }
 
 .gradient-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background-image: url("/topo-7.png");
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  border-radius: inherit;
+  mix-blend-mode: multiply;
+  z-index: 2;
+}
+
+.gradient-hero.no-pseudo-topo::after {
   display: none;
 }
 
