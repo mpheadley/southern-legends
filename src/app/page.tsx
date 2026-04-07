@@ -61,7 +61,7 @@ export default function HomePage() {
       </div>
       <section className="sm:hidden gradient-hero relative overflow-hidden">
         {/* z-[3] sits above the topo ::after (z-index: 2); pt-14 clears fixed nav */}
-        <div className="relative z-[3] max-w-6xl mx-auto px-6 pt-20 pb-4">
+        <div className="relative z-[3] max-w-6xl mx-auto px-6 pt-20 pb-2">
           <HeroCarousel profiles={featuredProfiles} />
         </div>
       </section>

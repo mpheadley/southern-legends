@@ -41,7 +41,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
       onMouseLeave={() => setPaused(false)}
     >
       {/* Arrow + slide wrapper — relative so arrows can position freely without being clipped */}
-      <div className="relative h-[calc(100svh-5rem)] md:h-[620px]">
+      <div className="relative h-[calc(100svh-8.5rem)] md:h-[620px]">
 
         {/* Prev arrow — sits just left of the image */}
         {profiles.length > 1 && (
@@ -114,7 +114,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
               </div>
 
               {/* Text */}
-              <div className="flex flex-col flex-1 min-h-0 justify-between py-4 px-4 md:px-0 md:py-6 md:h-full md:flex-none md:w-full">
+              <div className="flex flex-col gap-3 py-4 px-4 md:flex-1 md:min-h-0 md:justify-between md:px-0 md:py-6 md:h-full md:flex-none md:w-full">
                 {/* Top: title + subtitle + meta — min-h-0 allows flex shrink */}
                 <div className="min-h-0 overflow-hidden">
                   {profile.frontmatter.titleHtml ? (
