@@ -245,8 +245,8 @@ export default async function ProfilePage({
         }}
       />
 
-      {/* Hero — parallax or standard */}
-      {frontmatter.parallaxHero && frontmatter.heroImage ? (
+      {/* Hero — parallax by default, opt out with parallaxHero: false */}
+      {frontmatter.parallaxHero !== false && frontmatter.heroImage ? (
         <ParallaxHero
           title={frontmatter.title}
           titleHtml={frontmatter.titleHtml}
