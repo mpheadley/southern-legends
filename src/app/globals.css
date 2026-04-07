@@ -375,8 +375,7 @@ html {
   inset: 0;
   background-image: url("/topo-7.png");
   background-size: 500px 500px;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
+  opacity: 0.15;
   pointer-events: none;
 }
 
@@ -388,6 +387,12 @@ html {
   gap: 1rem;
   max-width: 36rem;
   text-align: left;
+}
+
+.profile-closing-author img {
+  width: 48px !important;
+  height: 48px !important;
+  flex-shrink: 0;
 }
 
 .profile-closing-bio {
