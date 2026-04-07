@@ -111,6 +111,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority={i === 0}
+                    style={profile.frontmatter.heroPosition ? { objectPosition: profile.frontmatter.heroPosition } : undefined}
                   />
                 ) : (
                   <div className="w-full h-full bg-ll-dark flex items-center justify-center">
