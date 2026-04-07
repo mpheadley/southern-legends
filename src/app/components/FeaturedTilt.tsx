@@ -51,6 +51,14 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
+  // Lock section height to window.innerHeight on mount so Safari's dvh
+  // recalculation (when bottom chrome hides) doesn't create a gap.
+  useEffect(() => {
+    if (sectionRef.current) {
+      sectionRef.current.style.height = `${window.innerHeight}px`;
+    }
+  }, []);
+
   useGSAP(
     () => {
       if (reducedMotion || cards.length === 0) return;
