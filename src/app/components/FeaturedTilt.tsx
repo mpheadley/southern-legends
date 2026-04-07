@@ -40,6 +40,8 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
   const hudTrackRef = useRef<HTMLDivElement>(null);
   const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [reducedMotion, setReducedMotion] = useState(false);
+  // Captured once at mount — never changes even when Safari dvh reflows
+  const stableVh = useRef<number>(0);
 
   const totalPanels = cards.length;
 
@@ -51,11 +53,12 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  // Lock section height to window.innerHeight on mount so Safari's dvh
-  // recalculation (when bottom chrome hides) doesn't create a gap.
+  // Lock section height to the initial window.innerHeight (Safari dvh fix).
+  // Also store it in stableVh so GSAP uses the same value and never recalculates.
   useEffect(() => {
+    stableVh.current = window.innerHeight;
     if (sectionRef.current) {
-      sectionRef.current.style.height = `${window.innerHeight}px`;
+      sectionRef.current.style.height = `${stableVh.current}px`;
     }
   }, []);
 
@@ -117,7 +120,7 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: () => `+=${(totalPanels - 1) * 1.0 * window.innerHeight}`,
+          end: `+=${(totalPanels - 1) * (stableVh.current || window.innerHeight)}`,
           pin: true,
           scrub: 0.8,
           onUpdate: (self) => {
