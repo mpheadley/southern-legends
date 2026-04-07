@@ -389,12 +389,7 @@ export default async function ProfilePage({
                 : photosCredit ? `Photos by ${frontmatter.photoCredit}`
                 : null);
             return (
-              <div className="mt-8 pt-6 border-t border-ll-border space-y-6">
-                <ShareButtons
-                  url={`/profiles/${frontmatter.slug}`}
-                  title={frontmatter.title}
-                  description={frontmatter.excerpt}
-                />
+              <div className="mt-8 pt-6 border-t border-ll-border">
                 <div className="flex items-center gap-4">
                   <Image
                     src="/images/about/headshot-hedcut-matt-headley.webp"
@@ -424,6 +419,16 @@ export default async function ProfilePage({
           })()}
         </div>
       </article>
+
+      {/* Share — dark topo section */}
+      <section className="profile-share-section">
+        <p className="profile-share-label">Enjoyed this story?</p>
+        <ShareButtons
+          url={`/profiles/${frontmatter.slug}`}
+          title={frontmatter.title}
+          description={frontmatter.excerpt}
+        />
+      </section>
 
       {/* Tags — below article */}
       {frontmatter.tags?.length > 0 && (
