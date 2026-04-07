@@ -16,6 +16,7 @@ import PhotoCarouselLoader from "@/app/components/PhotoCarouselLoader";
 import PullQuote from "@/app/components/PullQuote";
 import VideoLoop from "@/app/components/VideoLoop";
 import StoryNav from "@/app/components/StoryNav";
+import ShareButtons from "@/app/components/ShareButtons";
 import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
 import ParallaxHero from "@/app/components/ParallaxHero";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
@@ -388,7 +389,12 @@ export default async function ProfilePage({
                 : photosCredit ? `Photos by ${frontmatter.photoCredit}`
                 : null);
             return (
-              <div className="mt-8 pt-6 border-t border-ll-border">
+              <div className="mt-8 pt-6 border-t border-ll-border space-y-6">
+                <ShareButtons
+                  url={`/profiles/${frontmatter.slug}`}
+                  title={frontmatter.title}
+                  description={frontmatter.excerpt}
+                />
                 <div className="flex items-center gap-4">
                   <Image
                     src="/images/about/headshot-hedcut-matt-headley.webp"

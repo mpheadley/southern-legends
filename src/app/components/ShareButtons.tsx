@@ -36,9 +36,9 @@ export default function ShareButtons({ url, title, description }: ShareButtonsPr
     }
   }
 
-  // On mobile (where native share is actually useful), show one button.
-  // On desktop, fall back to the individual share targets.
-  const canNativeShare = typeof navigator !== "undefined" && "share" in navigator && /Mobi|Android/i.test(navigator.userAgent);
+  // Use native share wherever the API is available (Chrome desktop + all mobile).
+  // Fall back to individual share targets on browsers without support.
+  const canNativeShare = typeof navigator !== "undefined" && "share" in navigator;
 
   if (canNativeShare) {
     return (
