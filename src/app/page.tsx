@@ -7,7 +7,10 @@ import Link from "next/link";
 export default function HomePage() {
   const allProfiles = getAllProfiles();
   const featuredProfiles = getFeaturedProfiles();
-  const gridProfiles = allProfiles;
+  const gridProfiles = [
+    ...allProfiles.filter((p) => !p.frontmatter.featured),
+    ...allProfiles.filter((p) => p.frontmatter.featured),
+  ];
 
   const featuredCards = featuredProfiles.map((p) => ({
     slug: p.slug,
