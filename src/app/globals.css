@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-headline-lg {
   font-size: clamp(3rem, 7vw, 5.5rem);
-  font-variation-settings: "opsz" 144;
+  font-variation-settings: "opsz" 72;
   letter-spacing: -0.02em;
 }
 
