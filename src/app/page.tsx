@@ -1,15 +1,25 @@
-import { getAllProfiles } from "@/lib/profiles";
+import { getAllProfiles, getFeaturedProfiles } from "@/lib/profiles";
 import ProfileCard from "./components/ProfileCard";
-import HeroCarousel from "./components/HeroCarousel";
+import FeaturedTilt from "./components/FeaturedTilt";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 
 export default function HomePage() {
   const allProfiles = getAllProfiles();
-
-  // Top 4 profiles cycle in the hero carousel; all profiles show as cards below
-  const carouselProfiles = allProfiles.slice(0, 4);
+  const featuredProfiles = getFeaturedProfiles();
   const gridProfiles = allProfiles;
+
+  const featuredCards = featuredProfiles.map((p) => ({
+    slug: p.slug,
+    name: p.frontmatter.name,
+    title: p.frontmatter.title,
+    excerpt: p.frontmatter.excerpt,
+    location: p.frontmatter.location,
+    category: p.frontmatter.category,
+    heroImage: p.frontmatter.heroImage,
+    heroAlt: p.frontmatter.heroAlt,
+    heroPosition: p.frontmatter.heroPosition,
+  }));
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -41,30 +51,8 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
 
-      {/* ─── Hero Carousel ─── */}
-      <section className="relative overflow-hidden gradient-hero">
-        <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent z-[1]" aria-hidden="true" />
-        <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16" style={{ zIndex: 3 }}>
-          {carouselProfiles.length > 0 ? (
-            <HeroCarousel profiles={carouselProfiles} />
-          ) : (
-            <div className="text-center py-12">
-              <h1
-                className="text-white font-bold tracking-tight hero-headline"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                {siteConfig.name}
-              </h1>
-              <p
-                className="mt-4 text-white/50 text-lg max-w-lg mx-auto"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 300 }}
-              >
-                {siteConfig.tagline}
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
+      {/* ─── Featured Stories ─── */}
+      <FeaturedTilt cards={featuredCards} />
 
       {/* ─── Stories Grid ─── */}
       <section className="bg-ll-light">

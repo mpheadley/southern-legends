@@ -800,11 +800,9 @@ html {
   flex-direction: column;
   gap: 0.75rem;
   max-width: 520px;
-  background: rgba(28, 25, 23, 0.32);
-  backdrop-filter: blur(32px) saturate(120%);
-  -webkit-backdrop-filter: blur(32px) saturate(120%);
+  background: rgba(10, 8, 7, 0.55);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   transform: translateZ(160px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -1356,6 +1354,10 @@ html {
   overflow: hidden;
 }
 
+.st-panel-content--right {
+  margin-left: auto;
+}
+
 .st-panel-bg-wrap {
   position: absolute;
   inset: 0;
@@ -1395,12 +1397,10 @@ html {
   max-width: 580px;
   position: relative;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(10, 8, 7, 0.55);
   padding: 2.5rem;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .st-panel-content h2 {

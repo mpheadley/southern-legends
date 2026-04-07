@@ -36,6 +36,7 @@ export default function FeaturedPage() {
     category: p.frontmatter.category,
     heroImage: p.frontmatter.heroImage,
     heroAlt: p.frontmatter.heroAlt,
+    heroPosition: p.frontmatter.heroPosition,
   }));
 
   return (

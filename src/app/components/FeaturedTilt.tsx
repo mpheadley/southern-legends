@@ -18,6 +18,7 @@ interface FeaturedCard {
   category: string;
   heroImage: string;
   heroAlt: string;
+  heroPosition?: string;
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -230,6 +231,7 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
                   sizes="100vw"
                   priority={i === 0}
                   className="object-cover"
+                  style={card.heroPosition ? { objectPosition: card.heroPosition } : undefined}
                 />
               ) : (
                 <div className="featured-panel-ghost">

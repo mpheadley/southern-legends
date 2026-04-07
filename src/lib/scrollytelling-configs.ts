@@ -98,6 +98,7 @@ export const scrollytellingConfigs: Record<string, any> = {
           bgImage: `${IMG}/sam-chaha-trail.webp`,
           bgAlt: "Samuel Sawyer on a trail run in Calhoun County",
           caption: "Samuel on the trails through Chaha Outdoors.",
+          contentAlign: "right",
         },
       },
       {
@@ -117,6 +118,7 @@ export const scrollytellingConfigs: Record<string, any> = {
           bgAlt: "Samuel Sawyer at the farmers market with mushrooms and tinctures",
           bgPosition: "center 20%",
           caption: "Samuel at the farmers market. This is where we met.",
+          contentAlign: "right",
         },
       },
     ],

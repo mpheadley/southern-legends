@@ -25,6 +25,7 @@ interface PanelSection {
   bgAlt: string;
   bgPosition?: string;
   caption: string;
+  contentAlign?: "left" | "right";
 }
 
 interface ProseSection {
@@ -372,7 +373,7 @@ export default function ScrollytellingProfile({
               >
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="st-panel-content">
+              <div className={`st-panel-content${section.panel.contentAlign === "right" ? " st-panel-content--right" : ""}`}>
                 <div className="st-panel-line" aria-hidden="true" />
                 <h2>{section.panel.heading}</h2>
                 <p>{section.panel.text}</p>
