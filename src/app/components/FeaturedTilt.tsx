@@ -238,7 +238,7 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
                   src={card.heroImage}
                   alt={card.heroAlt || card.name}
                   fill
-                  sizes="100vw"
+                  sizes="(max-width: 639px) 50vw, 100vw"
                   priority={i === 0}
                   className="object-cover"
                   style={card.heroPosition ? { objectPosition: card.heroPosition } : undefined}
