@@ -7,7 +7,6 @@ export const siteConfig = {
   author: "Matt Headley",
   nav: [
     { label: "Stories", href: "/profiles" },
-    { label: "Featured", href: "/featured" },
     { label: "About", href: "/about" },
   ],
 };
