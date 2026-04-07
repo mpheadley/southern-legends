@@ -12,10 +12,14 @@ interface ShareButtonsProps {
 export default function ShareButtons({ url, title, description }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const [canNativeShare, setCanNativeShare] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setCanNativeShare("share" in navigator);
+    setMounted(true);
   }, []);
+
+  if (!mounted) return null;
 
   const fullUrl = `${siteConfig.url}${url}`;
 
