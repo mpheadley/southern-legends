@@ -419,35 +419,21 @@ export default async function ProfilePage({
           />
         </div>
 
-        {/* Tags */}
-        {frontmatter.tags?.length > 0 && (
-          <div className="profile-closing-tags">
-            {frontmatter.tags.map((tag) => (
-              <Link
-                key={tag}
-                href={`/profiles?tag=${encodeURIComponent(tag)}`}
-                className="category-tag hover:opacity-80 transition-opacity"
-              >
-                {tag}
-              </Link>
-            ))}
-          </div>
-        )}
       </section>
 
       {/* Story Navigation (prev/next) */}
       <StoryNav prev={prev} next={next} />
 
       {/* Nominate CTA */}
-      <section className="bg-ll-warm">
+      <section className="bg-ll-dark">
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
           <h2
-            className="text-xl md:text-2xl font-bold text-ll-dark mb-4 animate-on-scroll"
+            className="text-xl md:text-2xl font-bold text-white mb-4 animate-on-scroll"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Know Someone Worth Writing About?
           </h2>
-          <p className="text-ll-text-light mb-6 max-w-xl mx-auto animate-on-scroll">
+          <p className="mb-6 max-w-xl mx-auto animate-on-scroll" style={{ color: "rgba(255,255,255,0.6)" }}>
             The best profiles start with a recommendation. If you know a person
             or a place whose story deserves more than a paragraph in the local
             paper, I&apos;d like to hear about it.
