@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
+import ShareButtons from "./ShareButtons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -467,6 +468,11 @@ export default function ScrollytellingProfile({
             Explore All Stories
           </Link>
         </div>
+        <ShareButtons
+          url={`/profiles/${config.slug}`}
+          title={config.heroTitle}
+          description={config.heroSubtitle}
+        />
         <div className="st-outro-credit">
           <p>
             Built by{" "}

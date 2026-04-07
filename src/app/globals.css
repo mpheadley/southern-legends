@@ -379,6 +379,10 @@ html {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.st-outro .share-buttons span {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* ─── Story Navigation ─── */
 
 .story-nav {
