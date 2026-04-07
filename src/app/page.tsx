@@ -56,7 +56,12 @@ export default function HomePage() {
 
       {/* ─── Stories Grid ─── */}
       <section className="gradient-hero" style={{ position: "relative" }}>
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
+          backgroundImage: "url('/topo-7.png')", backgroundRepeat: "repeat",
+          backgroundSize: "500px 500px", opacity: 0.5, mixBlendMode: "multiply",
+        }} />
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28" style={{ position: "relative", zIndex: 1 }}>
           <div className="flex items-end justify-between mb-12">
             <div>
               <h2
