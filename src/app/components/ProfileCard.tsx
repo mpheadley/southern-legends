@@ -26,6 +26,7 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
             fill
             className="object-cover img-zoom"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            style={frontmatter.heroPosition ? { objectPosition: frontmatter.heroPosition } : undefined}
           />
         ) : (
           <div

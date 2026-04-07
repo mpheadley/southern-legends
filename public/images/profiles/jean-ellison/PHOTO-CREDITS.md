@@ -1,7 +1,11 @@
 # Photo Credits — Jean Ellison / Mom-To-Go
 
-## Professional Brand Shots — Emil Loeken
-*Credit pending confirmation with Jean. Verify before publishing.*
+## Professional Brand Shots — Emil Loeken / Nordic Photo Co
+*Confirmed by Jean — Emil took the photos, he'd love a tag.*
+
+- Instagram: https://www.instagram.com/nordicphotoco/
+- Facebook: https://www.facebook.com/loekenphotos/
+- Website: https://nordicphotoco.com/
 
 | File | Description |
 |---|---|
