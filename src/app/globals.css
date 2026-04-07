@@ -464,8 +464,8 @@ html {
 /* Dark background override — outro + closing sections */
 .st-outro .share-btn,
 .profile-closing .share-btn {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .st-outro .share-btn:hover,
