@@ -6,6 +6,7 @@ interface ArticleImageProps {
   src: string;
   alt: string;
   caption?: string;
+  captionHtml?: string;
   priority?: boolean;
   layout?: ImageLayout;
   width?: number;
@@ -24,6 +25,7 @@ export default function ArticleImage({
   src,
   alt,
   caption,
+  captionHtml,
   priority = false,
   layout = "full",
   width = 900,
@@ -50,11 +52,16 @@ export default function ArticleImage({
           }
         />
       </div>
-      {caption && (
+      {captionHtml ? (
+        <figcaption
+          className="text-sm text-ll-text-light text-center mt-3 italic px-2"
+          dangerouslySetInnerHTML={{ __html: captionHtml }}
+        />
+      ) : caption ? (
         <figcaption className="text-sm text-ll-text-light text-center mt-3 italic px-2">
           {caption}
         </figcaption>
-      )}
+      ) : null}
     </figure>
   );
 }

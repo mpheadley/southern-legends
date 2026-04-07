@@ -27,6 +27,7 @@ export interface ProfileFrontmatter {
   mobileHero?: "bg" | "stack" | "text";
   heroPosition?: string;
   heroCaption?: string;
+  heroCaptionHtml?: string;
   facebook?: string;
   parallaxHero?: boolean;
 }

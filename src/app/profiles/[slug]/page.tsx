@@ -361,11 +361,17 @@ export default async function ProfilePage({
       )}
 
       {/* Hero Caption */}
-      {frontmatter.heroCaption && (
+      {(frontmatter.heroCaption || frontmatter.heroCaptionHtml) && (
         <div className="bg-ll-light border-b border-ll-border">
-          <p className="max-w-3xl mx-auto px-6 py-3 text-xs text-ll-text-light italic text-right">
-            {frontmatter.heroCaption}
-          </p>
+          {frontmatter.heroCaptionHtml ? (
+            <p className="max-w-3xl mx-auto px-6 py-3 text-xs text-ll-text-light italic text-right"
+              dangerouslySetInnerHTML={{ __html: frontmatter.heroCaptionHtml }}
+            />
+          ) : (
+            <p className="max-w-3xl mx-auto px-6 py-3 text-xs text-ll-text-light italic text-right">
+              {frontmatter.heroCaption}
+            </p>
+          )}
         </div>
       )}
 
