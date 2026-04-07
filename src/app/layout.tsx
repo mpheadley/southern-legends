@@ -94,6 +94,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prerender: [{ where: { href_matches: "/profiles/*" }, eagerness: "moderate" }],
+            }),
+          }}
+        />
+      </head>
       {/* Built by Headley Web & SEO | headleyweb.com */}
       <body className={`${sourceSans.variable} ${fraunces.variable} ${rockSalt.variable} ${zeyada.variable} ${permanentMarker.variable} ${caveat.variable} antialiased`}>
         <a

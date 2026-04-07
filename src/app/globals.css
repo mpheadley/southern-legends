@@ -53,11 +53,13 @@ body {
   color: var(--color-ll-text);
   font-size: 1.0625rem;
   line-height: 1.7;
+  text-wrap: pretty;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 /* ─── Hero Headlines ─── */
@@ -1235,6 +1237,8 @@ html {
   display: flex;
   justify-content: center;
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
 }
 
 .st-prose-section::before {
@@ -1487,6 +1491,8 @@ html {
   background: linear-gradient(to right, #2A4A36, #8A5E03);
   gap: 2rem;
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 100dvh;
 }
 
 .st-outro::after {
