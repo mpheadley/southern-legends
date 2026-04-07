@@ -59,9 +59,9 @@ export default function HomePage() {
       <div className="hidden sm:block">
         <FeaturedTilt cards={featuredCards} />
       </div>
-      <section className="sm:hidden bg-ll-dark overflow-hidden">
-        {/* pt-14 clears the fixed nav (3.5rem) */}
-        <div className="max-w-6xl mx-auto px-6 pt-14 pb-4">
+      <section className="sm:hidden gradient-hero relative overflow-hidden">
+        {/* z-[3] sits above the topo ::after (z-index: 2); pt-14 clears fixed nav */}
+        <div className="relative z-[3] max-w-6xl mx-auto px-6 pt-14 pb-4">
           <HeroCarousel profiles={featuredProfiles} />
         </div>
       </section>
