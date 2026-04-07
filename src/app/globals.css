@@ -49,7 +49,7 @@ body {
   --font-body: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
 
   font-family: var(--font-body);
-  background-color: var(--color-ll-light);
+  background-color: var(--color-ll-dark);
   color: var(--color-ll-text);
   font-size: 1.0625rem;
   line-height: 1.7;
