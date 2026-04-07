@@ -801,8 +801,8 @@ html {
   gap: 0.75rem;
   max-width: 520px;
   background: rgba(28, 25, 23, 0.32);
-  backdrop-filter: blur(20px) saturate(120%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  backdrop-filter: blur(32px) saturate(120%);
+  -webkit-backdrop-filter: blur(32px) saturate(120%);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   transform: translateZ(160px);
@@ -1396,8 +1396,8 @@ html {
   position: relative;
   z-index: 1;
   background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   padding: 2.5rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
