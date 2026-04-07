@@ -375,7 +375,7 @@ html {
   inset: 0;
   background-image: url("/topo-7.png");
   background-size: 500px 500px;
-  opacity: 0.15;
+  opacity: 0.25;
   pointer-events: none;
 }
 
@@ -430,13 +430,6 @@ html {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.profile-closing-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  max-width: 36rem;
-}
 
 /* ─── Share Buttons ─── */
 

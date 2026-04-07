@@ -393,6 +393,7 @@ export default async function ProfilePage({
             width={48}
             height={48}
             className="rounded-full shrink-0"
+            style={{ width: "48px", height: "48px" }}
           />
           <p className="profile-closing-bio">
             <Link href="/about" className="profile-closing-name">
