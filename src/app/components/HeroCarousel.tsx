@@ -41,7 +41,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
       onMouseLeave={() => setPaused(false)}
     >
       {/* Arrow + slide wrapper — relative so arrows can position freely without being clipped */}
-      <div className="relative h-[calc(100svh-3.5rem)] md:h-[620px]">
+      <div className="relative h-[calc(100svh-4rem)] md:h-[620px]">
 
         {/* Prev arrow — sits just left of the image */}
         {profiles.length > 1 && (
