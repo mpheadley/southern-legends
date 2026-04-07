@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Profile } from "@/lib/profiles";
@@ -19,6 +19,7 @@ interface HeroCarouselProps {
 export default function HeroCarousel({ profiles }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
 
   const advance = useCallback(() => {
     setCurrent((i) => (i + 1) % profiles.length);
@@ -34,6 +35,20 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
 
   const prev = () => setCurrent((i) => (i - 1 + profiles.length) % profiles.length);
   const next = () => setCurrent((i) => (i + 1) % profiles.length);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    setPaused(true);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (delta < -50) next();
+    else if (delta > 50) prev();
+    touchStartX.current = null;
+    setPaused(false);
+  };
 
   return (
     <div
@@ -71,10 +86,12 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
 
         {/* Clipped sliding area — full viewport width so slides animate edge-to-edge */}
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen overflow-hidden">
-        {/* Sliding track */}
+        {/* Sliding track — touch handlers live here for swipe support */}
         <div
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {profiles.map((profile, i) => (
             <Link
