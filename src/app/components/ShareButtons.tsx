@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { siteConfig } from "@/lib/site-config";
 
 interface ShareButtonsProps {
@@ -11,6 +11,11 @@ interface ShareButtonsProps {
 
 export default function ShareButtons({ url, title, description }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [canNativeShare, setCanNativeShare] = useState(false);
+
+  useEffect(() => {
+    setCanNativeShare("share" in navigator);
+  }, []);
 
   const fullUrl = `${siteConfig.url}${url}`;
 
@@ -35,10 +40,6 @@ export default function ShareButtons({ url, title, description }: ShareButtonsPr
       // Fallback: do nothing
     }
   }
-
-  // Use native share wherever the API is available (Chrome desktop + all mobile).
-  // Fall back to individual share targets on browsers without support.
-  const canNativeShare = typeof navigator !== "undefined" && "share" in navigator;
 
   if (canNativeShare) {
     return (
