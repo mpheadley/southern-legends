@@ -380,74 +380,60 @@ export default async function ProfilePage({
       <article className="bg-ll-light">
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 prose-profile">
           <MDXRemote source={content} components={mdxComponents} />
-          {(() => {
-            const wordsCredit = !frontmatter.aiWritten;
-            const photosCredit = !!frontmatter.photoCredit;
-            const byline = frontmatter.byline
-              || (wordsCredit && photosCredit ? `Words and photos by ${siteConfig.author}`
-                : wordsCredit ? `Words by ${siteConfig.author}`
-                : photosCredit ? `Photos by ${frontmatter.photoCredit}`
-                : null);
-            return (
-              <div className="mt-8 pt-6 border-t border-ll-border">
-                <div className="flex items-center gap-4">
-                  <Image
-                    src="/images/about/headshot-hedcut-matt-headley.webp"
-                    alt="Matt Headley"
-                    width={48}
-                    height={48}
-                    className="rounded-full shrink-0"
-                  />
-                  <p className="text-sm text-ll-text-light">
-                    <Link href="/about" className="text-ll-dark font-medium hover:text-ll-primary transition-colors">
-                      Matt Headley
-                    </Link>{" "}
-                    lives in Jacksonville, Alabama. He builds websites for local businesses at{" "}
-                    <a
-                      href="https://headleyweb.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-ll-primary font-medium hover:text-ll-primary-dark transition-colors"
-                    >
-                      headleyweb.com
-                    </a>
-                    {" "}and writes about the people and places he finds along the way.
-                  </p>
-                </div>
-              </div>
-            );
-          })()}
         </div>
       </article>
 
-      {/* Share — dark topo section */}
-      <section className="profile-share-section">
-        <p className="profile-share-label">Enjoyed this story?</p>
-        <ShareButtons
-          url={`/profiles/${frontmatter.slug}`}
-          title={frontmatter.title}
-          description={frontmatter.excerpt}
-        />
-      </section>
+      {/* Closing — author credit, share, tags on dark topo/gradient */}
+      <section className="profile-closing">
+        {/* Author credit */}
+        <div className="profile-closing-author">
+          <Image
+            src="/images/about/headshot-hedcut-matt-headley.webp"
+            alt="Matt Headley"
+            width={48}
+            height={48}
+            className="rounded-full shrink-0"
+          />
+          <p className="profile-closing-bio">
+            <Link href="/about" className="profile-closing-name">
+              Matt Headley
+            </Link>{" "}
+            lives in Jacksonville, Alabama. He builds websites for local businesses at{" "}
+            <a href="https://headleyweb.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
+              headleyweb.com
+            </a>
+            {" "}and writes about the people and places he finds along the way.
+          </p>
+        </div>
 
-      {/* Tags — below article */}
-      {frontmatter.tags?.length > 0 && (
-        <section className="bg-ll-light border-t border-ll-border">
-          <div className="max-w-3xl mx-auto px-6 py-8">
-            <div className="flex flex-wrap gap-2">
-              {frontmatter.tags.map((tag) => (
-                <Link
-                  key={tag}
-                  href={`/profiles?tag=${encodeURIComponent(tag)}`}
-                  className="category-tag hover:opacity-80 transition-opacity"
-                >
-                  {tag}
-                </Link>
-              ))}
-            </div>
+        {/* Divider */}
+        <div className="profile-closing-divider" />
+
+        {/* Share */}
+        <div className="profile-closing-share">
+          <p className="profile-closing-share-label">Enjoyed this story?</p>
+          <ShareButtons
+            url={`/profiles/${frontmatter.slug}`}
+            title={frontmatter.title}
+            description={frontmatter.excerpt}
+          />
+        </div>
+
+        {/* Tags */}
+        {frontmatter.tags?.length > 0 && (
+          <div className="profile-closing-tags">
+            {frontmatter.tags.map((tag) => (
+              <Link
+                key={tag}
+                href={`/profiles?tag=${encodeURIComponent(tag)}`}
+                className="category-tag hover:opacity-80 transition-opacity"
+              >
+                {tag}
+              </Link>
+            ))}
           </div>
-        </section>
-      )}
+        )}
+      </section>
 
       {/* Story Navigation (prev/next) */}
       <StoryNav prev={prev} next={next} />
