@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -28,16 +28,13 @@ export default function ParallaxHero({
   heroPosition,
 }: ParallaxHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
-  }, []);
 
   useGSAP(
     () => {
       const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
       if (mq.matches) return;
+
+      const isMobile = window.innerWidth <= 768;
 
       gsap.set(".ph-eyebrow", { y: 24, opacity: 0 });
       gsap.set(".ph-title", { y: 32, opacity: 0 });
@@ -74,8 +71,8 @@ export default function ParallaxHero({
             fill
             priority
             sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: isMobile ? "center 35%" : (heroPosition ?? "center center") }}
+            className="object-cover ph-hero-img"
+            style={{ objectPosition: heroPosition ?? "center center" }}
           />
         </div>
         <div className="st-hero-content" style={{ paddingTop: "clamp(6rem, 14vh, 9rem)" }}>

@@ -1135,6 +1135,13 @@ html {
   color: var(--color-ll-primary);
 }
 
+/* Mobile override for parallax hero image position */
+@media (max-width: 768px) {
+  .ph-hero-img {
+    object-position: center 35% !important;
+  }
+}
+
 /* ── HERO ── */
 .st-hero {
   height: 100dvh;
