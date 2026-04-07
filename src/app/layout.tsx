@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ScrollReveal from "./components/ScrollReveal";
 import CookieBanner from "./components/CookieBanner";
+import LenisProvider from "./components/LenisProvider";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -101,11 +102,13 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Nav />
-        {children}
-        <Footer />
-        <ScrollReveal />
-        <CookieBanner />
+        <LenisProvider>
+          <Nav />
+          {children}
+          <Footer />
+          <ScrollReveal />
+          <CookieBanner />
+        </LenisProvider>
       </body>
     </html>
   );
