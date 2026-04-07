@@ -17,6 +17,8 @@ export default function HomePage() {
     slug: p.slug,
     name: p.frontmatter.name,
     title: p.frontmatter.title,
+    titleHtml: p.frontmatter.titleHtml,
+    subtitle: p.frontmatter.subtitle,
     excerpt: p.frontmatter.excerpt,
     location: p.frontmatter.location,
     category: p.frontmatter.category,

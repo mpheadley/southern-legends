@@ -13,6 +13,8 @@ interface FeaturedCard {
   slug: string;
   name: string;
   title: string;
+  titleHtml?: string;
+  subtitle?: string;
   excerpt: string;
   location: string;
   category: string;
@@ -263,31 +265,27 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
                 {card.category}
               </span>
 
-              <h2
-                className="featured-panel-name ft-stagger"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                {card.name}
-              </h2>
+              {card.titleHtml ? (
+                <h2
+                  className="featured-panel-name ft-stagger"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                  dangerouslySetInnerHTML={{ __html: card.titleHtml }}
+                />
+              ) : (
+                <h2
+                  className="featured-panel-name ft-stagger"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {card.title}
+                </h2>
+              )}
 
-              <p className="featured-panel-hook ft-stagger">{card.title}</p>
+              {card.subtitle && (
+                <p className="featured-panel-hook ft-stagger">{card.subtitle}</p>
+              )}
 
               <p className="featured-panel-location ft-stagger">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="inline-block mr-1 -mt-0.5"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                {card.location}
+                {card.name}&ensp;&middot;&ensp;{card.location}
               </p>
 
               <Link

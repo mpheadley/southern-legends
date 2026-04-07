@@ -76,8 +76,9 @@ export default async function ProfilesPage({
         </div>
       </section>
 
-      <section className="bg-ll-light">
-        <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+      <section className="gradient-hero no-pseudo-topo" style={{ position: "relative" }}>
+        <div aria-hidden="true" className="grid-topo" />
+        <div className="mx-auto max-w-6xl px-6 py-12 md:py-16" style={{ position: "relative", zIndex: 1 }}>
           {profiles.length > 0 ? (
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {profiles.map((profile, i) => (
@@ -91,15 +92,15 @@ export default async function ProfilesPage({
               ))}
             </div>
           ) : (
-            <p className="text-center text-ll-text-light py-12">
+            <p className="text-center text-white/60 py-12">
               No stories found{tag ? ` for "${tag}"` : ""}. Check back soon.
             </p>
           )}
 
           {/* Tag filters — below the grid, subtle */}
           {allTags.length > 1 && (
-            <div className="mt-16 pt-8 border-t border-ll-border">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-ll-text-light mb-4">
+            <div className="mt-16 pt-8 border-t border-white/10">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 mb-4">
                 Filter by tag
               </p>
               <div className="flex flex-wrap gap-2">

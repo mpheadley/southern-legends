@@ -5,12 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Profile } from "@/lib/profiles";
 
-function headlineClass(title: string) {
-  const len = title.length;
-  if (len <= 20) return "hero-headline-lg";
-  if (len <= 40) return "hero-headline";
-  return "hero-headline-sm";
-}
 
 interface HeroCarouselProps {
   profiles: Profile[];
@@ -137,13 +131,13 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
                 <div className="min-h-0 overflow-hidden">
                   {profile.frontmatter.titleHtml ? (
                     <h1
-                      className={`text-white font-bold tracking-tight leading-[0.9] uppercase line-clamp-4 ${headlineClass(profile.frontmatter.title)}`}
+                      className="text-white font-bold tracking-tight leading-[0.9] uppercase line-clamp-4 hero-headline"
                       style={{ fontFamily: "var(--font-heading)" }}
                       dangerouslySetInnerHTML={{ __html: profile.frontmatter.titleHtml }}
                     />
                   ) : (
                     <h1
-                      className={`text-white font-bold tracking-tight leading-[0.9] uppercase line-clamp-4 ${headlineClass(profile.frontmatter.title)}`}
+                      className="text-white font-bold tracking-tight leading-[0.9] uppercase line-clamp-4 hero-headline"
                       style={{ fontFamily: "var(--font-heading)" }}
                     >
                       {profile.frontmatter.title}
