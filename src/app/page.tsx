@@ -1,6 +1,7 @@
 import { getAllProfiles, getFeaturedProfiles } from "@/lib/profiles";
 import ProfileCard from "./components/ProfileCard";
 import FeaturedTilt from "./components/FeaturedTilt";
+import HeroCarousel from "./components/HeroCarousel";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 
@@ -54,8 +55,15 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
 
-      {/* ─── Featured Stories ─── */}
-      <FeaturedTilt cards={featuredCards} />
+      {/* ─── Featured Stories: 3D tilt on desktop, carousel on mobile ─── */}
+      <div className="hidden sm:block">
+        <FeaturedTilt cards={featuredCards} />
+      </div>
+      <section className="sm:hidden gradient-hero">
+        <div className="max-w-6xl mx-auto px-6 pt-8 pb-4">
+          <HeroCarousel profiles={featuredProfiles} />
+        </div>
+      </section>
 
       {/* ─── Stories Grid ─── */}
       <section className="gradient-hero no-pseudo-topo" style={{ position: "relative" }}>
