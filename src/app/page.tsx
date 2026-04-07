@@ -55,7 +55,7 @@ export default function HomePage() {
       <FeaturedTilt cards={featuredCards} />
 
       {/* ─── Stories Grid ─── */}
-      <section className="gradient-hero paper-grain">
+      <section className="gradient-hero" style={{ position: "relative" }}>
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
           <div className="flex items-end justify-between mb-12">
             <div>
