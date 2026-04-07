@@ -461,20 +461,23 @@ html {
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* Dark background override — outro section */
-.st-outro .share-btn {
+/* Dark background override — outro + closing sections */
+.st-outro .share-btn,
+.profile-closing .share-btn {
   border-color: rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.6);
 }
 
-.st-outro .share-btn:hover {
+.st-outro .share-btn:hover,
+.profile-closing .share-btn:hover {
   color: var(--color-ll-white);
   border-color: rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.08);
 }
 
-.st-outro .share-buttons span {
-  color: rgba(255, 255, 255, 0.6);
+.st-outro .share-buttons span,
+.profile-closing .share-buttons span {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ─── Story Navigation ─── */
