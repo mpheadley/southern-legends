@@ -51,7 +51,7 @@ export default function NominatePage() {
           <form
             action="https://formspree.io/f/xyknwdgp"
             method="POST"
-            className="space-y-6"
+            className="space-y-6 pl-6 border-l-4 border-ll-primary"
           >
             {/* Subject Name */}
             <div>
