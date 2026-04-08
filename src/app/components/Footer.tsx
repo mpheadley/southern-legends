@@ -36,6 +36,16 @@ export default function Footer() {
             </nav>
 
             <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Get Involved</p>
+              <Link
+                href="/nominate"
+                className="text-sm text-white/80 hover:text-white transition-colors"
+              >
+                Nominate a Story
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-3">
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Follow</p>
               <a
                 href="https://www.facebook.com/SouthernLegendsAL"
