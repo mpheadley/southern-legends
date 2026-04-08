@@ -74,6 +74,16 @@ export default function ParallaxHero({
             className="object-cover ph-hero-img"
             style={{ objectPosition: heroPosition ?? "center center" }}
           />
+          {/* Text contrast overlay — bottom-left vignette, doesn't cover faces */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "radial-gradient(ellipse at 0% 100%, rgba(20,16,14,0.72) 0%, rgba(20,16,14,0.35) 45%, transparent 75%)",
+              zIndex: 1,
+            }}
+          />
         </div>
         <div className="st-hero-content" style={{ paddingTop: "clamp(6rem, 14vh, 9rem)" }}>
           {eyebrow && <p className="ph-eyebrow st-hero-eyebrow">{eyebrow}</p>}
