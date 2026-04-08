@@ -415,7 +415,7 @@ export default async function ProfilePage({
         <div className="profile-closing-share">
           <p className="profile-closing-share-label">Enjoyed this story?</p>
           <ShareButtons
-            url={`/profiles/${frontmatter.slug}`}
+            url={`/profiles/${slug}`}
             title={frontmatter.title}
             description={frontmatter.excerpt}
           />
