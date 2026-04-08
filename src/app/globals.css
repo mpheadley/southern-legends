@@ -930,6 +930,8 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.12);
   transform: translateZ(2px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: inherit;
 }
 
 
@@ -989,7 +991,8 @@ html {
   transition: background 0.2s, border-color 0.2s;
 }
 
-.featured-panel-link:hover {
+.featured-panel-link:hover,
+.featured-panel-content:hover .featured-panel-link {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.6);
 }

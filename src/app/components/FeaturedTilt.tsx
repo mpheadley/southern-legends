@@ -44,6 +44,9 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
   const [reducedMotion, setReducedMotion] = useState(false);
   // Captured once at mount — never changes even when Safari dvh reflows
   const stableVh = useRef<number>(0);
+  // Track active index to only create Ken Burns tweens on change, not every frame
+  const lastActiveIndexRef = useRef<number>(-1);
+  const kenBurnsTweensRef = useRef<(gsap.core.Tween | null)[]>([]);
 
   const totalPanels = cards.length;
 
@@ -124,22 +127,39 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
           start: "top top",
           end: `+=${(totalPanels - 1) * (stableVh.current || window.innerHeight)}`,
           pin: true,
-          scrub: 0.8,
+          scrub: 0.5,
           onUpdate: (self) => {
             updateHUD(self.progress);
 
-            // Ken Burns: scale the active panel's image
+            // Ken Burns: only create tweens when active index CHANGES, not every frame
             const activeIndex = Math.round(self.progress * (totalPanels - 1));
-            panelRefs.current.forEach((panel, idx) => {
-              if (!panel) return;
-              const img = panel.querySelector(".featured-panel-bg img");
-              if (!img) return;
-              if (idx === activeIndex) {
-                gsap.to(img, { scale: 1.06, duration: 4, ease: "none", overwrite: "auto" });
-              } else {
-                gsap.set(img, { scale: 1 });
-              }
-            });
+            if (activeIndex !== lastActiveIndexRef.current) {
+              lastActiveIndexRef.current = activeIndex;
+              panelRefs.current.forEach((panel, idx) => {
+                if (!panel) return;
+                const img = panel.querySelector(".featured-panel-bg img");
+                if (!img) return;
+
+                // Kill any existing tween for this panel
+                if (kenBurnsTweensRef.current[idx]) {
+                  kenBurnsTweensRef.current[idx]!.kill();
+                }
+
+                if (idx === activeIndex) {
+                  // Reset scale, then start Ken Burns zoom
+                  gsap.set(img, { scale: 1 });
+                  kenBurnsTweensRef.current[idx] = gsap.to(img, {
+                    scale: 1.06,
+                    duration: 8,
+                    ease: "none",
+                  });
+                } else {
+                  // Reset inactive panels
+                  gsap.set(img, { scale: 1 });
+                  kenBurnsTweensRef.current[idx] = null;
+                }
+              });
+            }
           },
         },
       });
@@ -256,8 +276,8 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
               <div className="featured-panel-overlay" />
             </div>
 
-            {/* Content overlay */}
-            <div className="featured-panel-content ">
+            {/* Content overlay — entire content card is clickable */}
+            <Link href={`/profiles/${card.slug}`} className="featured-panel-content">
               <span
                 className="featured-category-tag ft-stagger"
                 style={{ backgroundColor: getCategoryColor(card.category) }}
@@ -288,14 +308,10 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
                 {card.name}&ensp;&middot;&ensp;{card.location}
               </p>
 
-              <Link
-                href={`/profiles/${card.slug}`}
-                className="featured-panel-link ft-stagger"
-              >
-                Read the story
-                <span aria-hidden="true"> →</span>
-              </Link>
-            </div>
+              <span className="featured-panel-link ft-stagger">
+                Read the story →
+              </span>
+            </Link>
           </div>
         ))}
 

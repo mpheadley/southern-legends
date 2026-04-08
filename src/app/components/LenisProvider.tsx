@@ -17,6 +17,9 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
       smoothWheel: true,
     });
 
+    // Lenis v1+ updates real window.scrollY, so GSAP reads it directly.
+    // Drive Lenis from GSAP's ticker so they share the same animation frame —
+    // this eliminates the 1-frame lag that causes scrubbed animations to jitter.
     lenis.on("scroll", ScrollTrigger.update);
 
     const tick = (time: number) => lenis.raf(time * 1000);
