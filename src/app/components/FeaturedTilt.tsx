@@ -96,15 +96,6 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
         });
       }
 
-      // First panel Ken Burns — start immediately
-      const firstBg = panelRefs.current[0]?.querySelector(".featured-panel-bg img");
-      if (firstBg) {
-        gsap.fromTo(
-          firstBg,
-          { scale: 1 },
-          { scale: 1.06, duration: 8, ease: "none" }
-        );
-      }
 
       // HUD entrance
       gsap.set(hudRef.current, { opacity: 0 });
@@ -130,36 +121,6 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
           scrub: 0.5,
           onUpdate: (self) => {
             updateHUD(self.progress);
-
-            // Ken Burns: only create tweens when active index CHANGES, not every frame
-            const activeIndex = Math.round(self.progress * (totalPanels - 1));
-            if (activeIndex !== lastActiveIndexRef.current) {
-              lastActiveIndexRef.current = activeIndex;
-              panelRefs.current.forEach((panel, idx) => {
-                if (!panel) return;
-                const img = panel.querySelector(".featured-panel-bg img");
-                if (!img) return;
-
-                // Kill any existing tween for this panel
-                if (kenBurnsTweensRef.current[idx]) {
-                  kenBurnsTweensRef.current[idx]!.kill();
-                }
-
-                if (idx === activeIndex) {
-                  // Reset scale, then start Ken Burns zoom
-                  gsap.set(img, { scale: 1 });
-                  kenBurnsTweensRef.current[idx] = gsap.to(img, {
-                    scale: 1.06,
-                    duration: 8,
-                    ease: "none",
-                  });
-                } else {
-                  // Reset inactive panels
-                  gsap.set(img, { scale: 1 });
-                  kenBurnsTweensRef.current[idx] = null;
-                }
-              });
-            }
           },
         },
       });
