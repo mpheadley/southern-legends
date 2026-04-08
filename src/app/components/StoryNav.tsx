@@ -43,6 +43,7 @@ export default function StoryNav({ prev, next }: StoryNavProps) {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 45vw, 300px"
                       loading="lazy"
+                      style={prev.frontmatter.heroPosition ? { objectPosition: prev.frontmatter.heroPosition } : undefined}
                     />
                   ) : (
                     <div className={`w-full h-full card-initial paper-grain ${getCategoryBg(prev.frontmatter.category)}`}>
@@ -78,6 +79,7 @@ export default function StoryNav({ prev, next }: StoryNavProps) {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 45vw, 300px"
                       loading="lazy"
+                      style={next.frontmatter.heroPosition ? { objectPosition: next.frontmatter.heroPosition } : undefined}
                     />
                   ) : (
                     <div className={`w-full h-full card-initial paper-grain ${getCategoryBg(next.frontmatter.category)}`}>
