@@ -256,6 +256,7 @@ export default async function ProfilePage({
           heroImage={frontmatter.heroImage}
           heroAlt={frontmatter.heroAlt || frontmatter.name}
           heroPosition={frontmatter.heroPosition}
+          heroTextBottom={frontmatter.heroTextBottom}
         />
       ) : (
         <section className={`relative text-white overflow-hidden ${frontmatter.heroImage ? "" : "gradient-hero"}`}

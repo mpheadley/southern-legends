@@ -1277,10 +1277,11 @@ html {
   max-width: 700px;
 }
 
-.st-hero-eyebrow,
-.st-hero-title,
-.st-hero-subtitle,
-.st-hero-scroll-hint { opacity: 0; }
+/* Hidden for GSAP entrance — bottom bar mode skips animation, uses ph-bottom-bar instead */
+.st-hero-content .st-hero-eyebrow,
+.st-hero-content .st-hero-title,
+.st-hero-content .st-hero-subtitle,
+.st-hero-content .st-hero-scroll-hint { opacity: 0; }
 
 .st-hero-eyebrow {
   font-family: var(--font-source-sans), system-ui, sans-serif;
@@ -1289,7 +1290,7 @@ html {
   text-transform: uppercase;
   color: var(--color-ll-accent);
   margin-bottom: 1.5rem;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.9);
 }
 
 .st-hero-title {
@@ -1298,7 +1299,7 @@ html {
   font-weight: 400;
   line-height: 1.1;
   color: var(--color-ll-light);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 4px 40px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 24px rgba(0, 0, 0, 0.8), 0 8px 48px rgba(0, 0, 0, 0.5);
 }
 
 .st-hero-title em {
