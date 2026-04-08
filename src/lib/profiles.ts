@@ -30,6 +30,7 @@ export interface ProfileFrontmatter {
   heroCaptionHtml?: string;
   facebook?: string;
   parallaxHero?: boolean;
+  heroTextBottom?: boolean;
 }
 
 export interface Profile {
