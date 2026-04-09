@@ -103,7 +103,7 @@ export default function AboutPage() {
               the table from people, and I needed that more than I expected.
               Turns out sitting
               with someone and asking them to tell you their story is one of the
-              ways back.
+              ways back. My writing has appeared in the Anniston Star.
             </p>
             <p className="text-ll-text leading-relaxed mb-6">
               When you&apos;ve lost something you built, you notice the people
