@@ -12,6 +12,30 @@ You're not building three separate things. You're building one story and letting
 
 ---
 
+## The Longer Vision — Chamber of Commerce Alternative
+
+Southern Legends is the beginning of a Chamber of Commerce alternative for Northeast Alabama.
+
+A traditional Chamber does three things: community visibility for local businesses, business networking, and a directory of local businesses. Southern Legends does all three — without membership fees, gatekeeping, or bureaucracy. It leads with free value and serves the community first.
+
+Over time it could evolve into:
+- A full business directory for Northeast Alabama
+- A community events calendar
+- A small business resource hub
+- A referral network for local service providers
+
+Every business in that ecosystem already knows Matt Headley built it. When they need a website or SEO help, they call him.
+
+---
+
+## What Southern Legends Is NOT
+
+- A sales pitch vehicle — keep editorial content clean, no web design pitches inside profiles
+- A Facebook group — distribute into existing groups, don't create new ones to maintain
+- A replacement for direct outreach — it runs parallel to cold walk-ins, not instead of them
+
+---
+
 ## Platform Architecture
 
 ### Layer 1 — Southern Legends (Free, Public)
@@ -97,7 +121,7 @@ That's not a Southern Legends detail. That's the book. And the Patreon is where 
 
 ### Calhoun Journal
 
-**Contact:** Lee
+**Contact:** Lee Kathryn Evancho
 
 **What it is:** Weekly paper with broad reach across Calhoun County. Lee reached out to Matt — they came to him, which matters. Running on donations (not a nonprofit, so no tax incentive for donors).
 
@@ -106,7 +130,7 @@ That's not a Southern Legends detail. That's the book. And the Patreon is where 
 - Already said yes. Use this credential now.
 - Best for general community awareness and building Southern Legends' name recognition.
 
-**Important:** Lee's husband runs a web design and marketing company. You're in the same space. Don't create friction — build the relationship first. Do not put a Patreon link directly in your Calhoun Journal byline, at least not yet. Once you've built trust and she understands what you're doing, revisit.
+**Competitive sensitivity:** Lee's husband owns JLM Communications, a web design and marketing company based in Weaver — direct overlap with Headley Web & SEO. Do not proactively raise this. Keep the editorial relationship clean and separate. Don't create friction — build the relationship first. Do not put a Patreon link directly in your Calhoun Journal byline, at least not yet. Once you've built trust and she understands what you're doing, revisit.
 
 **Calhoun Journal byline:**
 > *Matt Headley writes profiles of people and places in Northeast Alabama at southernlegends.com. He runs Headley Web & SEO from Jacksonville, Alabama.*
@@ -145,7 +169,7 @@ Point to Southern Legends, not directly to Patreon. Readers who want the deeper 
 |---|---|---|
 | Prestige / credibility | Higher | Moderate |
 | Raw reach | Smaller | ~120,000 weekly |
-| Contact | Donna Barton | Lee |
+| Contact | Donna Barton | Lee Kathryn Evancho |
 | Relationship status | Published author, warm reconnect | Already accepted |
 | Paid opportunity | Yes — pitch $50–100/article | Unknown |
 | Competitive sensitivity | None | Lee's husband in web/marketing |
@@ -175,6 +199,27 @@ Point to Southern Legends, not directly to Patreon. Readers who want the deeper 
 As long as Patreon isn't a paywall for Star content, and content stays clearly distinct, all three run simultaneously with no conflict.
 
 **Clarify with Donna:** *"I run a community storytelling site and have a Patreon for my writing work — is there anything in how we'd work together that I should know about?"*
+
+---
+
+## Target Businesses
+
+- Service companies with weak or no websites
+- Small local businesses with a good story to tell
+- Businesses whose owners are active in the community (church, farmers market, civic groups)
+- Use Google Business Profile scraper to identify targets by area
+
+---
+
+## Southern Legends vs. Cold Walk-Ins
+
+Southern Legends and cold walk-ins serve different moments:
+
+| Situation | Use |
+|---|---|
+| Walking into a cold business with no prior contact | Cold walk-in — leave business card, no profile offer on first visit |
+| Following up with a cold walk-in contact | Southern Legends profile offer as warm re-entry |
+| Approaching a warm contact (church, farmers market, referral) | Lead with Southern Legends profile immediately |
 
 ---
 
@@ -253,3 +298,9 @@ The work to do is not more writing or more building. It is sending the messages.
 - [ ] Publish on Southern Legends weekly (or close to it)
 - [ ] Syndicate to Calhoun Journal one to two weeks after
 - [ ] Write toward the Patreon — UAB section, Lucy, the mania
+
+---
+
+## Long-Term Vision
+
+Southern Legends grows into the go-to community resource for Northeast Alabama small businesses. Matt Headley is known as the guy who built it. Every business owner in the directory is a potential web design and SEO client. The community spotlight becomes a sustainable, compounding lead generation engine that no competitor can easily replicate.
