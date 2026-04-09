@@ -1,164 +1,141 @@
 # Southern Legends — Strategy
 
-*The business logic and storytelling framework underneath the editorial project.*
+*Matt Headley — April 2026*
 
 ---
 
-## The One Goal
+## The Big Picture
 
-Get web design and local SEO clients for **Headley Web**.
+Three platforms. One body of work. Written once, deployed strategically.
 
-Everything else — the writing, the publishing, the syndication, the reels — is marketing for that goal. Southern Legends is not the income. It is the warm door.
-
-That said, the Patreon opens a second revenue stream from the general public — readers who value the work but have no web design needs. Both streams matter. They compound rather than compete.
+You're not building three separate things. You're building one story and letting it live in three places at different depths. The income comes from multiple layers, not one big bet.
 
 ---
 
-## The Three-Layer Funnel
+## Platform Architecture
 
-**Layer 1 — Southern Legends (public)**
-Free profiles on southernlegends.com. Anyone can read. Draws in readers, builds community awareness, introduces profiles to people who find them through search, syndication, or social sharing. This is the public face.
+### Layer 1 — Southern Legends (Free, Public)
 
-**Layer 2 — Patreon (inner circle)**
-Deeper relationship for readers ready to support the work financially. Longer-form reflective writing — not profile-style, but blog-style. Space for Matt to explore things that don't fit in a 1,000-word profile: the psychiatric ward at UAB, Jack and the dominoes, losing the car, moving back home, the mushroom trip, what he learned, what he's still sorting through. Patreon is where the full arc lives. Southern Legends is the public face of that arc.
+**What it is:** Editorial profiles of people and places in Northeast Alabama. Your owned platform. The credibility and discovery engine.
 
-**Layer 3 — Headley Web (conversion)**
-The natural next conversation for business owners who've been profiled and want the same quality of care applied to their web presence. Editorial and web services stay cleanly separate — never pitch inside the profile relationship.
+**Your own profile lives here.** Honest about the loss, not the full depth. Gold star detail possibly fits. UAB ward does not.
 
-The profile is not a pitch. It is a gift that earns the right to a conversation.
+**Role in the funnel:** Warm entry point. Readers find you through the Calhoun Journal, click through to Southern Legends, read your profile, and follow the trail deeper.
 
----
-
-## The Storytelling Frameworks
-
-### StoryBrand
-
-- The business owner is the **hero** of their own profile.
-- Matt (as the profile writer) is the **guide** helping them tell that story well.
-- The **reader** is also invited into the story — they recognize themselves in the owner's journey or values.
-- The profile draws people in. It's not a hard sell. It's relational, not transactional.
-
-### The Lowry Loop (Narrative Preaching Method)
-
-Matt's background in ministry and preaching connects directly to how Southern Legends profiles are structured:
-
-- **Observation** — Here's who this person is and what they care about.
-- **Complication** — Here's the challenge they face, the gap they fill, the stakes involved.
-- **Resolution** — Here's how they show up for their community.
-
-The profile preaches, in the best sense — it invites the reader to recognize something true about themselves through someone else's story.
-
-### The Cross-Pollination
-
-Both frameworks share the same DNA: create tension, then release it. Both invite the listener or reader to see themselves in the story being told. Donald Miller's insight applies here — the best story you can tell isn't really about you. It's about the person listening, who sees themselves in it.
-
-Southern Legends is not a marketing product. It's a storytelling project that also happens to generate leads.
+**Publish here first** — before syndicating anywhere. Southern Legends is the primary home.
 
 ---
 
-## Matt's Own Story — Three Layers
+### Layer 2 — Patreon (Free tier + paid tier)
 
-**headleyweb.com bio** — Professional, business-focused. For clients evaluating whether to hire him. Not the place for vulnerability.
+**What it is:** The deeper layer of Southern Legends. Where your own story gets told in full — gold star, UAB, Jack and the dominoes, Lucy, all of it. Also where the book gets built, post by post.
 
-**Southern Legends profile** — More personal and community-oriented. The real story of loss, rebuilding, and what brought him to this work. The appropriate level of vulnerability for a public editorial context. The arc: nineteen years of ministry, the flower farm, bipolar disorder, losing both, rebuilding through Headley Web and Southern Legends.
+**Free tier:** Open to anyone. Full access to your personal essays. People who find you through the Calhoun Journal or Southern Legends can read without a paywall. This is the value-first play.
 
-**Patreon deep dive** — The full arc. The psychiatric hospitalization at UAB. Learning to play dominoes with a man named Jack in the ward. Losing his car. Moving back in with his parents. The disorientation of starting over at ground level. The mushroom trip. The slow rebuilding into meaningful work. This is for people who want to support the whole person and the whole journey.
+**Paid tier:** Early access, book chapters as they develop, direct conversation, or whatever you decide has enough value to charge for. Figure this out once you have traction.
 
-The phrase **"broken and becoming"** captures this arc. It belongs in the Patreon content and informs the tone of the Southern Legends profile.
+**Short-term income play:** You already have paying patrons. The Calhoun Journal syndication will drive new readers. Get the Patreon live and populated *before* you start sending content to the Journal.
 
-The song *Crazy* (Cee Lo Green) captures the emotional texture of that season — not for its literal narrative, but for the feeling: disorientation, questioning yourself, no solid ground. That register is relevant to the Patreon content and to the Southern Legends profile.
+### Patreon Content Plan
 
----
+Write these in order — they build on each other:
 
-## The Patreon
+1. **The Gold Star** — first post. Psychiatrist's office. Published in the Anniston Star. Everything buttoned up. Then: "I wasn't through it." Write it and stop. Don't resolve it. The gold star / Anniston Star irony is the point — neither of you knew what was coming.
+2. **The UAB Ward** — Jack, dominoes, badminton in hospital gowns, the anger, being away while your family dismantled everything.
+3. **Lucy and the finish line** — the conversation about there being no finish line. The honest ending that isn't resolution.
+4. **The mania that felt like recovery** — the meds you decided not to take.
+5. **The pulpit that couldn't heal you** — you spent your life being the one with answers. The second depression took that away.
+6. **The pole vault** — earns its place as the first "throwing myself at something unlikely." Also genuinely funny alongside everything else.
 
-### What It Is
-
-A rebooted version of a Patreon Matt launched before his bipolar diagnosis and hospitalization. People who followed it through that period may witness the transformation of both the work and the person — that's part of what makes rebooting it meaningful rather than just starting fresh.
-
-### What It Offers Supporters
-
-- From disconnection to belonging — knowing and caring about your community's stories.
-- From passive to active — becoming someone who sustains cultural storytelling.
-- For some: supporting a person they believe in who is rebuilding with intention.
-
-It's not primarily a conversion tool. It's a support and community platform. The patron isn't the only one being transformed — they're investing in watching someone rebuild and create meaningful work.
-
-### Format
-
-Longer-form reflective writing, blog-style. Space for the things that don't fit in a 1,000-word profile. The inner circle. Southern Legends is the public face; Patreon is what's underneath it.
-
-### Tier Options (under consideration)
-
-- **Listener — $5/month:** Early access to new profiles before they go live.
-- **Witness — $25/month:** Early access to new profiles, plus the deeper reflective writing.
+**This is also where the book gets written.** Post by post, the shape will emerge.
 
 ---
 
-## Profile Candidates & Key Relationships
+### Layer 3 — Headley Web & SEO (Paid, Long-term)
 
-| Subject | Status | Notes |
-|---|---|---|
-| Jean Ellison (Mom-To-Go) | Published | Two-touch complete. Made a Facebook reel unprompted — strong social proof. |
-| Samuel Sawyer (Aquality Farms) | Published | Two-touch complete. Reel planned. |
-| Lewis (Downing and Sons) | Not yet contacted | City council, former flower farm patron. Message this week. |
-| Anniston Museums & Gardens | Published | Follow-up status? |
-| Freedom Riders National Monument | Published | Follow-up status? |
-| Interfaith Ministries | Published | Follow-up status? |
-| Called Coffee / Jerrod | Research file exists | Early profile subject. Community-rooted business. |
-| Dolores Heidock | Not yet contacted | Alabama storyteller, Birmingham. Matt organized a workshop with her during ministry. Strong candidate and potential thinking partner on storytelling as craft. |
+**What it is:** The web design and local SEO business. The longer-term income play.
 
-*Update this table as outreach progresses.*
+**Role:** Southern Legends positions you as someone who understands story and community — not just a service provider but someone with deep roots and real credibility in Northeast Alabama. That's what makes the web business different from every other freelancer in the market.
+
+**Not the short-term play.** The portfolio is still building. Stephens Small Engine is in progress. Keep doing the work, keep the outreach going, but don't count on this for income in the next 90 days.
 
 ---
 
-## Distribution Channels
+## The Book
 
-### Southern Legends (southernlegends.com)
-Home base. Full editorial treatment, photos, scrollytelling where it fits. RSS feed live. OG images configured. Every other channel points back here.
+The Patreon is the workshop. By the time you've written enough posts, you'll have:
+
+- The inciting incident (unclear yet — gold star? the manic episode?)
+- The real center of the story (you spent your life being the one with answers; the second depression took that away)
+- The honest ending (not recovery — *there is no finish line*, per Lucy)
+
+Don't think about the book yet. Write the Patreon posts. The book will find its shape.
 
 ---
 
-### Anniston Star
+## The Real Center
 
-**What it is:** Established local newspaper with history and institutional credibility in Calhoun County. Being published in the Star means something to local business owners and community figures in a way that newer outlets don't.
+Everything connects to this:
 
-**The relationship:** Matt is already a published author in the Anniston Star. In 2024 he published a personal essay about his first journey through depression and ministry — the first wilderness, before the bipolar diagnosis. He also has a relationship with editor Donna Barton and was put on stringer payroll, though he never followed through on that. This is not a cold reconnect. He has a byline and a history there.
+You spent your life being the one with the answers — from the pulpit, from the Anniston Star, from the self-care disciplines that were supposed to hold. The second depression took all of that away. The mania felt like recovery. The gold star felt like the end of the hard chapter. Neither was true.
 
-**The credential is already active.** Matt can use "published in the Anniston Star" in outreach right now. He doesn't need to wait for a new piece to run.
+That's not a Southern Legends detail. That's the book. And the Patreon is where you write your way toward it.
 
-**Strategic value:**
-- Most prestigious local credential for cold business outreach. A Star byline signals legitimacy to subjects who care about local reputation.
-- The 2024 personal essay establishes Matt as a writer willing to be honest in public — that's relevant context for anyone considering being profiled.
-- Potentially a paid opportunity. The stringer payroll history suggests Donna was willing to pay for Matt's writing. Worth clarifying on reconnect.
-- Better for targeting businesses and community figures embedded in the older local media ecosystem — city council, established businesses, longstanding institutions.
+---
 
-**Content model — open question:** Is this syndication of existing Southern Legends profiles, or original pieces written for the Star?
-- *Syndication:* Star republishes Southern Legends content. Simpler, but Star may want exclusivity or first-run rights. Clarify on reconnect.
-- *Original assignment:* Matt pitches and writes pieces specifically for the Star, separate from Southern Legends. More work, but Star retains no rights to Southern Legends content, and Matt builds two distinct portfolios.
-- *Most likely hybrid:* Original pieces for the Star that overlap thematically with Southern Legends profiles, without being the same content.
+## Syndication Strategy
 
-**Don't pitch web services inside Star content.** Keep editorial and commercial cleanly separate.
+### Order of Operations
 
-**Action:** Email Donna Barton this week. Frame it as a returning contributor with new work, not a cold reconnect. Ask about the submission/assignment process and whether the stringer arrangement is still on the table.
+1. Write the piece
+2. Publish on **Southern Legends** first (your owned platform)
+3. Wait one to two weeks
+4. Syndicate to **Calhoun Journal** (Lee)
+5. Pitch to **Anniston Star** (Donna Barton) for paid syndication ($50–100/article)
 
 ---
 
 ### Calhoun Journal
 
-**What it is:** Weekly paper with broad reach across Calhoun County. Reached out to Matt and accepted a syndication invitation — they came to him, which is worth noting.
+**Contact:** Lee
+
+**What it is:** Weekly paper with broad reach across Calhoun County. Lee reached out to Matt — they came to him, which matters. Running on donations (not a nonprofit, so no tax incentive for donors).
 
 **Strategic value:**
 - Largest raw reach of any local outlet (~120,000 weekly readers).
-- Already said yes. Use this credential now — don't wait for the Star relationship to be reestablished.
-- Better for general community awareness and building Southern Legends' name recognition across a wide audience.
-- Useful as an immediate credibility marker when reaching out to profile subjects: "I write for the Calhoun Journal" opens doors before the Star relationship is active again.
+- Already said yes. Use this credential now.
+- Best for general community awareness and building Southern Legends' name recognition.
 
-**Content model:** Syndication of Southern Legends profiles. Simpler than the Star relationship. Confirm the submission process and understand any rights considerations before sending content.
+**Important:** Lee's husband runs a web design and marketing company. You're in the same space. Don't create friction — build the relationship first. Do not put a Patreon link directly in your Calhoun Journal byline, at least not yet. Once you've built trust and she understands what you're doing, revisit.
 
-**No conflict with the Star.** Running content in both is fine as long as rights are clear with each outlet. If the Star wants exclusivity on certain content, keep the Calhoun Journal relationship for pieces the Star isn't running.
+**Calhoun Journal byline:**
+> *Matt Headley writes profiles of people and places in Northeast Alabama at southernlegends.com. He runs Headley Web & SEO from Jacksonville, Alabama.*
 
-**Action:** Confirm submission process with Calhoun Journal this week.
+Point to Southern Legends, not directly to Patreon. Readers who want the deeper story find it naturally from there.
+
+**Action:** Confirm submission process with Lee this week.
+
+---
+
+### Anniston Star
+
+**Contact:** Donna Barton (editor, existing relationship)
+
+**What it is:** Established local newspaper with institutional credibility. Matt is already a published author there — 2024 personal essay on depression and ministry. This is a returning contributor relationship, not a cold reconnect.
+
+**The credential is already active.** Use "published in the Anniston Star" in outreach now.
+
+**Strategic value:**
+- Most prestigious local credential for cold business outreach.
+- The 2024 essay establishes Matt as a writer willing to be honest in public — relevant context for anyone considering being profiled.
+- Potentially paid. The stringer payroll history suggests Donna was willing to pay. Pitch syndication at $50–100/article — standard and reasonable.
+- Better for targeting businesses and community figures embedded in the older local media ecosystem.
+
+**Pitch to Donna:** You own the work, Southern Legends publishes first, the Star publishes for a small fee. Ask directly.
+
+**Content model — open question:** Syndication of existing Southern Legends profiles, original pieces for the Star, or a hybrid. Clarify on reconnect.
+
+**Action:** Email Donna Barton this week. Frame it as a returning contributor with new work.
 
 ---
 
@@ -168,57 +145,59 @@ Home base. Full editorial treatment, photos, scrollytelling where it fits. RSS f
 |---|---|---|
 | Prestige / credibility | Higher | Moderate |
 | Raw reach | Smaller | ~120,000 weekly |
+| Contact | Donna Barton | Lee |
 | Relationship status | Published author, warm reconnect | Already accepted |
-| Paid opportunity | Possible (stringer history) | Unknown |
-| Best use | Cold outreach to established businesses | Building broad name recognition |
+| Paid opportunity | Yes — pitch $50–100/article | Unknown |
+| Competitive sensitivity | None | Lee's husband in web/marketing |
+| Best use | Targeted outreach, credibility | Broad name recognition |
 | Content model | TBD — syndication or original | Syndication |
 | Use credential now? | Yes — byline already exists | Yes |
 
-**The play:** Use Calhoun Journal now to build momentum and name recognition. Reestablish the Star relationship for the more targeted, high-credibility outreach. Once both are active, route content strategically — Star for pieces where the byline does work, Calhoun Journal for broad reach.
+**The play:** Use Calhoun Journal now for momentum and reach. Reestablish the Star relationship for targeted, high-credibility outreach and paid income. Route content strategically once both are active.
 
 ---
 
 ### How Syndication and the Patreon Interact
 
-**Syndication feeds the Patreon.**
-Calhoun Journal's 120k readers and the Star's local audience are a pipeline of potential supporters that Southern Legends alone can't match. The most engaged readers from those outlets are exactly who the Patreon is for. Syndication builds the top of the funnel; Patreon converts the people who want to go deeper.
+**Syndication feeds the Patreon.** Calhoun Journal's 120k readers and the Star's local audience are a pipeline of potential supporters. Syndication builds the top of the funnel; Patreon converts the readers who want to go deeper.
 
-The Star byline also lends the Patreon credibility it wouldn't otherwise have on its own. The credential transfers.
+**The Star byline lends the Patreon credibility.** The credential transfers.
 
-**The Patreon helps the syndication relationships.**
-An active Patreon with real supporters signals that Matt's writing has an audience beyond whatever outlet he's pitching. That's a stronger position than "I have a website." Donna Barton is more likely to take a stringer seriously if he has a platform and a community behind him.
+**The Patreon helps the syndication relationships.** An active Patreon with real supporters signals Matt's writing has an audience. That's a stronger position when pitching editors.
 
-**The clean pipeline.**
-Star article (or Calhoun Journal piece) → bio line mentioning southernlegends.com → site → Patreon link. One degree of separation. No one can reasonably object to that. Do not reference the Patreon directly inside paid editorial content.
+**The clean pipeline:** Article → bio line mentioning southernlegends.com → site → Patreon link. One degree of separation. Do not reference Patreon directly in paid editorial content or in the Calhoun Journal byline until the relationship is established.
 
-**The rights tension to watch.**
-If the Star has a stringer arrangement, they may have opinions about whether Patreon content that overlaps thematically with Star pieces constitutes competition, or whether Matt can use his Star byline to drive Patreon subscriptions. Most publications don't care as long as content is clearly different.
+**Content differentiation (prevents conflict):**
+- Star / Calhoun Journal — published editorial journalism
+- Southern Legends — full editorial treatment on your own platform
+- Patreon — the personal inner arc, the things that don't fit in a published piece
 
-The protection is the three-layer content model:
-- **Star / Calhoun Journal** — published editorial journalism, profiles of local people and places
-- **Southern Legends** — same caliber, full editorial treatment, on Matt's own platform
-- **Patreon** — the personal inner arc, reflective writing, the things that don't fit in a published piece
+As long as Patreon isn't a paywall for Star content, and content stays clearly distinct, all three run simultaneously with no conflict.
 
-As long as Patreon isn't a paywall for Star content, and Patreon content stays clearly distinct from what's being submitted to either outlet, there is no conflict and all three run simultaneously.
-
-**What to clarify with Donna Barton.**
-Ask directly: *"I run a community storytelling site and have a Patreon for my writing work — is there anything in how we'd work together that I should know about?"* Most stringer arrangements have no exclusivity or no-compete provisions, but confirm it before the relationship is active.
+**Clarify with Donna:** *"I run a community storytelling site and have a Patreon for my writing work — is there anything in how we'd work together that I should know about?"*
 
 ---
 
-### Facebook / Social
-- Southern Legends page as primary social presence.
-- Subject-created content is the best distribution (Jean Ellison's reel is the model).
-- Reel workflow: screen record mobile site scrolling on iPhone → edit in Facebook native reel editor → instrumental bluegrass → post on Southern Legends page → share to personal.
-- Skip groups where the profile link was already posted.
+## Profile Pipeline
+
+| Subject | Status | Notes |
+|---|---|---|
+| Jean Ellison (Mom-To-Go) | Published | Two-touch complete. Made a Facebook reel unprompted — strong social proof. |
+| Samuel Sawyer (Aquality Farms) | Published | Two-touch complete. Reel planned. |
+| Lewis (Downing and Sons) | Not yet contacted | City council, former flower farm patron. Message this week. |
+| Anniston Museums & Gardens | Published | Follow-up status? |
+| Freedom Riders National Monument | Published | Follow-up status? |
+| Interfaith Ministries | Published | Follow-up status? |
+| Called Coffee / Jerrod | Research file exists | Community-rooted business. |
+| Dolores Heidock | Not yet contacted | Alabama storyteller, Birmingham. Matt organized a workshop with her during ministry. Strong candidate and potential thinking partner on storytelling as craft. |
+
+*Update this table as outreach progresses.*
 
 ---
 
 ## Profile Quality Standard
 
 Jean Ellison / Mom-To-Go is the bar. Real interview. Real photography. Longform narrative. That level of quality is what generates the social proof (Jean made a reel without being asked). Do not dilute it to publish faster.
-
-The credibility of the site depends on every profile being that good. One weak profile doesn't just underperform — it makes the strong ones look like exceptions.
 
 Current warm network profiles skew toward business owners who already have decent websites. The B2B conversion from Southern Legends is slower by design. Patreon fills the gap — it monetizes the audience directly rather than waiting for a web design need to surface.
 
@@ -234,20 +213,7 @@ Send the link. Nothing else. No ask. "Your profile is live — [link]."
 **Touch 2 — 5–7 days later:**
 Check in. Ask how it landed. This is where the conversation starts.
 
-The sequence is complete when Touch 2 is sent. Whether they respond or not, you've done your part. Do not follow up a third time unless they initiate.
-
----
-
-## The Outreach Approach (Cold Businesses — Future Phase)
-
-The Star/Calhoun Journal credential creates a legitimate reason to approach businesses cold:
-
-1. Reach out as a journalist/writer — ask to profile them for Southern Legends (and/or the Star/Journal).
-2. Do the interview. Publish the profile.
-3. Run the two-touch sequence.
-4. Follow up separately as a web designer — don't pitch inside the editorial relationship.
-
-Keep editorial and web services cleanly separate. Never pitch web design inside paid editorial content.
+The sequence is complete when Touch 2 is sent. Do not follow up a third time unless they initiate.
 
 ---
 
@@ -261,12 +227,29 @@ The work to do is not more writing or more building. It is sending the messages.
 
 ---
 
-## Immediate Actions
+## Action Items
 
-- [ ] Message Lewis (Downing and Sons) — city council, former flower farm patron
-- [ ] Confirm submission process with Calhoun Journal
+### This Week
+- [ ] Update Patreon — pivot from flower farm / ministry framing to storytelling + personal essay
+- [ ] Write first Patreon post: **The Gold Star**
+- [ ] Set up free tier on Patreon
+- [ ] Message Lewis (Downing and Sons)
+- [ ] Confirm submission process with Lee at Calhoun Journal
 - [ ] Email Donna Barton at Anniston Star to reconnect
-- [ ] Make Samuel/Aquality Farms reel
+- [ ] Make Samuel / Aquality Farms reel
+
+### Before First Calhoun Journal Submission
+- [ ] Have at least 2–3 Patreon posts live
+- [ ] Make sure Southern Legends profile links clearly to Patreon
+- [ ] Confirm byline language with Lee — Southern Legends link, not Patreon
+
+### Soon
+- [ ] Finish Stephens Small Engine site
 - [ ] Run two-touch follow-up on every published profile that hasn't had it
 - [ ] Build support page at southernlegends.com/support
-- [ ] Reboot Patreon under Southern Legends / Matt Headley framing
+- [ ] Add pole vaulter detail to Southern Legends profile opening
+
+### Ongoing
+- [ ] Publish on Southern Legends weekly (or close to it)
+- [ ] Syndicate to Calhoun Journal one to two weeks after
+- [ ] Write toward the Patreon — UAB section, Lucy, the mania
