@@ -123,21 +123,24 @@ Home base. Full editorial treatment, photos, scrollytelling where it fits. RSS f
 
 **What it is:** Established local newspaper with history and institutional credibility in Calhoun County. Being published in the Star means something to local business owners and community figures in a way that newer outlets don't.
 
-**The relationship:** Matt has an existing relationship with editor Donna Barton. Was published there. Was put on stringer payroll, never followed through. This is a warm reconnect, not a cold pitch — that matters. Donna already knows who Matt is.
+**The relationship:** Matt is already a published author in the Anniston Star. In 2024 he published a personal essay about his first journey through depression and ministry — the first wilderness, before the bipolar diagnosis. He also has a relationship with editor Donna Barton and was put on stringer payroll, though he never followed through on that. This is not a cold reconnect. He has a byline and a history there.
+
+**The credential is already active.** Matt can use "published in the Anniston Star" in outreach right now. He doesn't need to wait for a new piece to run.
 
 **Strategic value:**
 - Most prestigious local credential for cold business outreach. A Star byline signals legitimacy to subjects who care about local reputation.
-- Potentially a paid opportunity, not just syndication. The stringer payroll history suggests Donna was willing to pay for Matt's writing. Worth clarifying on reconnect.
-- Better for targeting businesses and community figures who are embedded in the older local media ecosystem — city council, established businesses, longstanding institutions.
+- The 2024 personal essay establishes Matt as a writer willing to be honest in public — that's relevant context for anyone considering being profiled.
+- Potentially a paid opportunity. The stringer payroll history suggests Donna was willing to pay for Matt's writing. Worth clarifying on reconnect.
+- Better for targeting businesses and community figures embedded in the older local media ecosystem — city council, established businesses, longstanding institutions.
 
-**Content model — open question:** Is this syndication of existing Southern Legends profiles, or original pieces written for the Star? These are different relationships with different implications:
+**Content model — open question:** Is this syndication of existing Southern Legends profiles, or original pieces written for the Star?
 - *Syndication:* Star republishes Southern Legends content. Simpler, but Star may want exclusivity or first-run rights. Clarify on reconnect.
 - *Original assignment:* Matt pitches and writes pieces specifically for the Star, separate from Southern Legends. More work, but Star retains no rights to Southern Legends content, and Matt builds two distinct portfolios.
-- *Most likely hybrid:* Original pieces for the Star that overlap thematically with Southern Legends profiles, without being the same content. Profile the same subjects from a different angle, or pitch Star-specific stories.
+- *Most likely hybrid:* Original pieces for the Star that overlap thematically with Southern Legends profiles, without being the same content.
 
 **Don't pitch web services inside Star content.** Keep editorial and commercial cleanly separate.
 
-**Action:** Email Donna Barton this week to reconnect. Ask whether the stringer arrangement is still on the table and what the submission/assignment process looks like now.
+**Action:** Email Donna Barton this week. Frame it as a returning contributor with new work, not a cold reconnect. Ask about the submission/assignment process and whether the stringer arrangement is still on the table.
 
 ---
 
@@ -165,11 +168,11 @@ Home base. Full editorial treatment, photos, scrollytelling where it fits. RSS f
 |---|---|---|
 | Prestige / credibility | Higher | Moderate |
 | Raw reach | Smaller | ~120,000 weekly |
-| Relationship status | Warm (Donna Barton) | Already accepted |
+| Relationship status | Published author, warm reconnect | Already accepted |
 | Paid opportunity | Possible (stringer history) | Unknown |
 | Best use | Cold outreach to established businesses | Building broad name recognition |
 | Content model | TBD — syndication or original | Syndication |
-| Use credential now? | Not yet — reconnect first | Yes |
+| Use credential now? | Yes — byline already exists | Yes |
 
 **The play:** Use Calhoun Journal now to build momentum and name recognition. Reestablish the Star relationship for the more targeted, high-credibility outreach. Once both are active, route content strategically — Star for pieces where the byline does work, Calhoun Journal for broad reach.
 
