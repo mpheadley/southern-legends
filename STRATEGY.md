@@ -175,6 +175,34 @@ Home base. Full editorial treatment, photos, scrollytelling where it fits. RSS f
 
 ---
 
+### How Syndication and the Patreon Interact
+
+**Syndication feeds the Patreon.**
+Calhoun Journal's 120k readers and the Star's local audience are a pipeline of potential supporters that Southern Legends alone can't match. The most engaged readers from those outlets are exactly who the Patreon is for. Syndication builds the top of the funnel; Patreon converts the people who want to go deeper.
+
+The Star byline also lends the Patreon credibility it wouldn't otherwise have on its own. The credential transfers.
+
+**The Patreon helps the syndication relationships.**
+An active Patreon with real supporters signals that Matt's writing has an audience beyond whatever outlet he's pitching. That's a stronger position than "I have a website." Donna Barton is more likely to take a stringer seriously if he has a platform and a community behind him.
+
+**The clean pipeline.**
+Star article (or Calhoun Journal piece) → bio line mentioning southernlegends.com → site → Patreon link. One degree of separation. No one can reasonably object to that. Do not reference the Patreon directly inside paid editorial content.
+
+**The rights tension to watch.**
+If the Star has a stringer arrangement, they may have opinions about whether Patreon content that overlaps thematically with Star pieces constitutes competition, or whether Matt can use his Star byline to drive Patreon subscriptions. Most publications don't care as long as content is clearly different.
+
+The protection is the three-layer content model:
+- **Star / Calhoun Journal** — published editorial journalism, profiles of local people and places
+- **Southern Legends** — same caliber, full editorial treatment, on Matt's own platform
+- **Patreon** — the personal inner arc, reflective writing, the things that don't fit in a published piece
+
+As long as Patreon isn't a paywall for Star content, and Patreon content stays clearly distinct from what's being submitted to either outlet, there is no conflict and all three run simultaneously.
+
+**What to clarify with Donna Barton.**
+Ask directly: *"I run a community storytelling site and have a Patreon for my writing work — is there anything in how we'd work together that I should know about?"* Most stringer arrangements have no exclusivity or no-compete provisions, but confirm it before the relationship is active.
+
+---
+
 ### Facebook / Social
 - Southern Legends page as primary social presence.
 - Subject-created content is the best distribution (Jean Ellison's reel is the model).
