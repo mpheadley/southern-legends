@@ -114,22 +114,66 @@ Longer-form reflective writing, blog-style. Space for the things that don't fit 
 
 ## Distribution Channels
 
-### Calhoun Journal
-- Reached out and accepted syndication invitation.
-- ~120,000 weekly readers.
-- **Action:** Confirm submission process this week.
-- Use the Calhoun Journal credential now for outreach — don't wait for the Star.
+### Southern Legends (southernlegends.com)
+Home base. Full editorial treatment, photos, scrollytelling where it fits. RSS feed live. OG images configured. Every other channel points back here.
+
+---
 
 ### Anniston Star
-- Matt has an existing relationship with editor **Donna Barton**.
-- Was published there. Was put on stringer payroll, never followed through.
-- More prestigious credential than Calhoun Journal for cold business outreach.
-- No conflict between Star and Calhoun Journal syndication.
-- **Action:** Email Donna Barton this week to reconnect.
 
-### Southern Legends (southernlegends.com)
-- Home base. Full editorial treatment, photos, scrollytelling where it fits.
-- RSS feed live. OG images configured.
+**What it is:** Established local newspaper with history and institutional credibility in Calhoun County. Being published in the Star means something to local business owners and community figures in a way that newer outlets don't.
+
+**The relationship:** Matt has an existing relationship with editor Donna Barton. Was published there. Was put on stringer payroll, never followed through. This is a warm reconnect, not a cold pitch — that matters. Donna already knows who Matt is.
+
+**Strategic value:**
+- Most prestigious local credential for cold business outreach. A Star byline signals legitimacy to subjects who care about local reputation.
+- Potentially a paid opportunity, not just syndication. The stringer payroll history suggests Donna was willing to pay for Matt's writing. Worth clarifying on reconnect.
+- Better for targeting businesses and community figures who are embedded in the older local media ecosystem — city council, established businesses, longstanding institutions.
+
+**Content model — open question:** Is this syndication of existing Southern Legends profiles, or original pieces written for the Star? These are different relationships with different implications:
+- *Syndication:* Star republishes Southern Legends content. Simpler, but Star may want exclusivity or first-run rights. Clarify on reconnect.
+- *Original assignment:* Matt pitches and writes pieces specifically for the Star, separate from Southern Legends. More work, but Star retains no rights to Southern Legends content, and Matt builds two distinct portfolios.
+- *Most likely hybrid:* Original pieces for the Star that overlap thematically with Southern Legends profiles, without being the same content. Profile the same subjects from a different angle, or pitch Star-specific stories.
+
+**Don't pitch web services inside Star content.** Keep editorial and commercial cleanly separate.
+
+**Action:** Email Donna Barton this week to reconnect. Ask whether the stringer arrangement is still on the table and what the submission/assignment process looks like now.
+
+---
+
+### Calhoun Journal
+
+**What it is:** Weekly paper with broad reach across Calhoun County. Reached out to Matt and accepted a syndication invitation — they came to him, which is worth noting.
+
+**Strategic value:**
+- Largest raw reach of any local outlet (~120,000 weekly readers).
+- Already said yes. Use this credential now — don't wait for the Star relationship to be reestablished.
+- Better for general community awareness and building Southern Legends' name recognition across a wide audience.
+- Useful as an immediate credibility marker when reaching out to profile subjects: "I write for the Calhoun Journal" opens doors before the Star relationship is active again.
+
+**Content model:** Syndication of Southern Legends profiles. Simpler than the Star relationship. Confirm the submission process and understand any rights considerations before sending content.
+
+**No conflict with the Star.** Running content in both is fine as long as rights are clear with each outlet. If the Star wants exclusivity on certain content, keep the Calhoun Journal relationship for pieces the Star isn't running.
+
+**Action:** Confirm submission process with Calhoun Journal this week.
+
+---
+
+### The Two Outlets Compared
+
+| | Anniston Star | Calhoun Journal |
+|---|---|---|
+| Prestige / credibility | Higher | Moderate |
+| Raw reach | Smaller | ~120,000 weekly |
+| Relationship status | Warm (Donna Barton) | Already accepted |
+| Paid opportunity | Possible (stringer history) | Unknown |
+| Best use | Cold outreach to established businesses | Building broad name recognition |
+| Content model | TBD — syndication or original | Syndication |
+| Use credential now? | Not yet — reconnect first | Yes |
+
+**The play:** Use Calhoun Journal now to build momentum and name recognition. Reestablish the Star relationship for the more targeted, high-credibility outreach. Once both are active, route content strategically — Star for pieces where the byline does work, Calhoun Journal for broad reach.
+
+---
 
 ### Facebook / Social
 - Southern Legends page as primary social presence.
