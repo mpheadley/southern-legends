@@ -400,7 +400,7 @@ export default async function ProfilePage({
             <Link href="/about" className="profile-closing-name">
               Matt Headley
             </Link>{" "}
-            lives in Jacksonville, Alabama. He spent nineteen years in pastoral ministry and music before becoming a writer and web designer. His work has appeared in the Anniston Star. He builds websites for local businesses at{" "}
+            lives in Jacksonville, Alabama. He spent nineteen years in pastoral ministry and music before becoming a writer, web designer, and SEO consultant. His work has appeared in the Anniston Star. He builds websites and runs search campaigns for local businesses at{" "}
             <a href="https://headleyweb.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
               headleyweb.com
             </a>
