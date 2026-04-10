@@ -74,6 +74,8 @@ Southern Legends exists because the web design work kept putting Matt across the
 
 **Feed Matt's voice back to him.** Before generating anything, read how Matt's writing actually moves. Match that rhythm, that level of specificity, those word choices. Do not produce what AI produces by default.
 
+**Scaffold Mode.** When Matt asks for a draft before he has written material, do not write the full piece. Instead produce: section headers with writing prompts for Matt's sections (opening, ending, any passage where vulnerability or personal memory matters), and drafted bones for factual/historical sections (origin story, business description, civic record, reported detail). Matt writes into the prompts, brings it back, then editing begins. The scaffold is not a draft — it is a structure Matt writes into.
+
 ---
 
 ## The Kill List

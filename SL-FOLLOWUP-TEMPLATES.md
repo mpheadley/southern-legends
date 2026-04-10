@@ -2,13 +2,15 @@
 
 Two touches. Don't combine them. The gap matters.
 
+**Always use the full URL with `https://`** — iMessage won't generate a preview or clickable link without it. Never share as `southernlegends.blog/...` alone.
+
 ---
 
 ## Touch 1: Profile Delivery (Day of Publish)
 
 Pure gift. No ask. No hint of an ask.
 
-> Hey [Name], your profile just went live on Southern Legends. Really enjoyed writing about [specific detail from their story]. Here's the link: [URL]
+> Hey [Name], your profile just went live on Southern Legends. Really enjoyed writing about [specific detail from their story]. Here's the link: https://southernlegends.blog/profiles/[slug]
 >
 > Hope it does your story justice.
 
