@@ -229,7 +229,7 @@ Southern Legends and cold walk-ins serve different moments:
 |---|---|---|
 | Jean Ellison (Mom-To-Go) | Published | Two-touch complete. Made a Facebook reel unprompted — strong social proof. |
 | Samuel Sawyer (Aquality Farms) | Published | Two-touch complete. Reel planned. |
-| Lewis (Downing and Sons) | Contacted | Reached out today. |
+| Lewis Downing (Downing and Sons) | Draft ready | Contacted today. Draft ready for editing. |
 | Shannon Jenkins (United Way of East Central Alabama) | Draft in progress | Met today, he agreed. Draft half written — send it. He/him. |
 | Anniston Museums & Gardens | Published | Follow-up status? |
 | Freedom Riders National Monument | Published | Follow-up status? |
