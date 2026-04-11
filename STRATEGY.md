@@ -50,15 +50,15 @@ Every business in that ecosystem already knows Matt Headley built it. When they 
 
 ---
 
-### Layer 2 — Patreon (Free tier + paid tier)
+### Layer 2 — Substack (Free + paid)
 
-**What it is:** The deeper layer of Southern Legends. Where your own story gets told in full — gold star, UAB, Jack and the dominoes, Lucy, all of it. Also where the book gets built, post by post.
+**What it is:** The deeper layer of Southern Legends. Where your own story gets told in full — gold star, UAB, Jack and the dominoes, Lucy, all of it. Also where the book gets built, post by post. Migrating from Patreon — see migration plan below.
 
 **Free tier:** Open to anyone. Full access to your personal essays. People who find you through the Calhoun Journal or Southern Legends can read without a paywall. This is the value-first play.
 
 **Paid tier:** Early access, book chapters as they develop, direct conversation, or whatever you decide has enough value to charge for. Figure this out once you have traction.
 
-**Short-term income play:** You already have paying patrons. The Calhoun Journal syndication will drive new readers. Get the Patreon live and populated *before* you start sending content to the Journal.
+**Short-term income play:** You have 4 paying patrons migrating from Patreon. The Calhoun Journal syndication will drive new readers. Get Substack live and populated *before* you start sending content to the Journal.
 
 ### Patreon Content Plan
 
@@ -86,21 +86,29 @@ Write these in order — they build on each other:
 
 ---
 
-## Patreon → Southern Legends Member Area (Migration Plan)
+## Platform Plan — Substack (not Patreon, not a custom member area)
 
-Long-term, the Patreon moves off Patreon and into Southern Legends as a built-in member area.
+**Current platform:** Patreon (4 paying patrons, dormant — hasn't been posted to in months)
 
-**Trigger:** ~10 paying patrons — enough proof the writing has an audience, small enough that migration is personal.
+**Move to: Substack.** Patreon was built for creators broadly — musicians, artists, YouTubers. Substack was built specifically for writers. Email-first delivery, real discovery, clean reading experience, Notes feed. For personal essay building toward a book, Substack is the native environment. Patreon is a workaround.
 
-**Stack:** Next.js (already the SL platform) + Stripe Billing (same account as Headley Web client billing — separate Products, one account) + auth (Clerk or NextAuth) + content gating via middleware.
+**Migration effort is low:**
+- Create Substack account
+- Write the reintroduction post (you're doing that anyway — it's also the apology)
+- Message 4 patrons personally: thank them, apologize for the silence, invite them to Substack
+- They cancel Patreon, subscribe on Substack
 
-**Migration ask to patrons:** One new payment setup in Stripe, cancel their Patreon. Low friction for people who care about the work. Message Rae Wall through Patreon directly — her email is an Apple private relay, unreachable otherwise.
+Message Rae Wall through Patreon directly — her email is an Apple private relay, unreachable otherwise.
 
-**Justification to patrons:** "I built something. I want to own the relationship with the people supporting this work — no platform in the middle."
+**First Substack post:** The reintroduction — where you've been, what this is now, why you're starting here. This collapses the apology and "Why Southern Legends" into one piece. Two jobs, one post.
 
-**Bonus:** The member area is a legitimate Next.js portfolio piece (auth + subscriptions + content gating) — demonstrable to future clients in media, fitness, education, local journalism.
+**Trigger to reassess:** ~10 paying subscribers. At that point decide whether to stay on Substack permanently or build a member area on Southern Legends (Next.js + Stripe + auth — still a valid portfolio piece, just not urgent).
 
-**Sequence:** Write 2–3 posts → get to ~10 patrons → build member area → migrate → close Patreon.
+**Why not build a custom member area now:** 3–5 posts proves you can write; it doesn't prove anyone will pay. Build once people have voted with their wallets. Substack may turn out to be the permanent home — no reason to build infrastructure until you've outgrown it.
+
+**Future creator note:** Patreon's broader support for music, podcasts, and video may matter later if those come back. A Substack with an established writing audience is a better launchpad for a podcast than starting cold on Patreon. Reassess platform when music/podcast is ready to move.
+
+**Sequence:** Create Substack → message 4 patrons → write reintroduction post → write Why Southern Legends / Gold Star → get to ~10 paying subscribers → reassess.
 
 ---
 

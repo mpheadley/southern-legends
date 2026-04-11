@@ -42,7 +42,7 @@ Both frameworks share the same DNA: create tension, then release it. Both invite
 
 **Southern Legends** (public) → draws readers in, builds community awareness, introduces profiles to anyone who finds them.
 
-**Patreon** (inner circle) → deepens the relationship for readers ready to support the work financially. Supporters get access to longer reflections, deeper storytelling, and Matt's ongoing journey.
+**Substack** (inner circle) → deepens the relationship for readers ready to support the work financially. Supporters get access to longer reflections, deeper storytelling, and Matt's ongoing journey. Migrating from Patreon — writer-native platform, email-first, better discovery.
 
 **Headley Web & SEO** (conversion) → the natural next conversation for business owners who've been profiled and want the same quality of care applied to their web presence.
 
