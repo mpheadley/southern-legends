@@ -409,7 +409,7 @@ export default async function ProfilePage({
             </p>
             <div className="profile-closing-links">
               <Link href="/journal" className="profile-closing-link">
-                I write about what&apos;s behind the profiles →
+                Read the journal →
               </Link>
               <Link href="/support" className="profile-closing-link">
                 Support this work →
