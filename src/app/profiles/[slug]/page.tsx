@@ -6,7 +6,7 @@ import { existsSync } from "fs";
 import { join } from "path";
 import {
   getProfileBySlug,
-  getProfileSlugs,
+  getPublishedSlugs,
   getAdjacentProfiles,
 } from "@/lib/profiles";
 import { siteConfig } from "@/lib/site-config";
@@ -89,7 +89,7 @@ const mdxComponents = {
 type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
-  return getProfileSlugs().map((slug) => ({ slug }));
+  return getPublishedSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -100,6 +100,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const profile = getProfileBySlug(slug);
   if (!profile) return {};
+  // AI-written drafts are not publishable — return empty metadata so nothing leaks.
+  if (profile.frontmatter.aiWritten) return {};
 
   const { title, excerpt, metaDescription, name, location, tags } =
     profile.frontmatter;
@@ -154,6 +156,8 @@ export default async function ProfilePage({
   const { slug } = await params;
   const profile = getProfileBySlug(slug);
   if (!profile) notFound();
+  // AI-written drafts are not publishable — 404 at runtime even on direct URL visits.
+  if (profile.frontmatter.aiWritten) notFound();
 
   const { frontmatter, content, readingTime } = profile;
   const { prev, next } = getAdjacentProfiles(slug);

@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getProfileBySlug, getProfileSlugs } from "@/lib/profiles";
+import { getProfileBySlug, getPublishedSlugs } from "@/lib/profiles";
 import { readFileSync } from "fs";
 import { join } from "path";
 import sharp from "sharp";
@@ -17,7 +17,7 @@ const sourceSans = readFileSync(
 );
 
 export function generateStaticParams() {
-  return getProfileSlugs().map((slug) => ({ slug }));
+  return getPublishedSlugs().map((slug) => ({ slug }));
 }
 
 export default async function OGImage({
@@ -28,7 +28,8 @@ export default async function OGImage({
   const { slug } = await params;
   const profile = getProfileBySlug(slug);
 
-  if (!profile) {
+  // AI-written drafts are not publishable — render the generic fallback rather than an OG card for the draft.
+  if (!profile || profile.frontmatter.aiWritten) {
     return new ImageResponse(
       (
         <div
