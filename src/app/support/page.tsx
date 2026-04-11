@@ -62,22 +62,21 @@ export default function SupportPage() {
           </p>
 
           <p>
-            It&apos;s free because the people I write about deserve to be written about, and the people who know them deserve to read it without a gate in the way. That&apos;s the whole point.
+            It&apos;s free because the people I write about deserve to be written about, and the people who know them deserve to read it without a gate in the way.
           </p>
 
           <p>
-            But there&apos;s real time in this. Interviews, research, photography, writing, editing. If you&apos;ve read something here that meant something, this is a way to say so. A story that sounded like someone you know. A place you&apos;ve driven past a hundred times without stopping.
+            But there&apos;s real time in this. If you&apos;ve read something here that meant something, this is a way to say so. A story that sounded like someone you know. A place you&apos;ve driven past a hundred times without stopping.
           </p>
 
           <p>
-            There&apos;s also a journal. It&apos;s where I write about what&apos;s behind the profiles. And what&apos;s behind me. You can read it at{" "}
+            There&apos;s also a journal.{" "}
             <Link
               href="/journal"
               className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
             >
               southernlegends.blog/journal
             </Link>
-            .
           </p>
 
           <div className="not-prose mt-10">
