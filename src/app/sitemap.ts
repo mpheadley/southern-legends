@@ -30,6 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${siteConfig.url}/support`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
     ...profileEntries,
   ];
 }

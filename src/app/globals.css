@@ -414,6 +414,14 @@ html {
   color: var(--color-ll-accent);
 }
 
+.profile-closing-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
 .profile-closing-divider {
   width: 3rem;
   height: 1px;

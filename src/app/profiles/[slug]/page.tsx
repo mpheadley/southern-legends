@@ -396,16 +396,26 @@ export default async function ProfilePage({
             className="rounded-full shrink-0"
             style={{ width: "48px", height: "48px" }}
           />
-          <p className="profile-closing-bio">
-            <Link href="/about" className="profile-closing-name">
-              Matt Headley
-            </Link>{" "}
-            is a former pastor, musician, and flower farmer turned writer and web designer. His work has appeared in the Anniston Star. He runs Headley Web &amp; SEO at{" "}
-            <a href="https://headleyweb.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
-              headleyweb.com
-            </a>
-            .
-          </p>
+          <div>
+            <p className="profile-closing-bio">
+              <Link href="/about" className="profile-closing-name">
+                Matt Headley
+              </Link>{" "}
+              is a former pastor, musician, and flower farmer turned writer and web designer. His work has appeared in the Anniston Star. He runs Headley Web &amp; SEO at{" "}
+              <a href="https://headleyweb.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
+                headleyweb.com
+              </a>
+              .
+            </p>
+            <div className="profile-closing-links">
+              <Link href="/journal" className="profile-closing-link">
+                I write about what&apos;s behind the profiles →
+              </Link>
+              <Link href="/support" className="profile-closing-link">
+                Support this work →
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Divider */}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -123,6 +124,26 @@ export default function AboutPage() {
           <p>
             Reach out at{" "}
             <a href="mailto:matt@headleyweb.com">matt@headleyweb.com</a>.
+          </p>
+
+          <hr className="my-10 border-ll-dark/10" />
+
+          <p>
+            If Southern Legends has meant something to you, you can{" "}
+            <Link
+              href="/support"
+              className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
+            >
+              support this work here
+            </Link>
+            . There&apos;s also a{" "}
+            <Link
+              href="/journal"
+              className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
+            >
+              journal
+            </Link>{" "}
+            — where I write about what&apos;s behind the profiles, and what&apos;s behind me.
           </p>
 
           <hr className="my-10 border-ll-dark/10" />

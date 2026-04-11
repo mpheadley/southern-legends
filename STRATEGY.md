@@ -50,15 +50,27 @@ Every business in that ecosystem already knows Matt Headley built it. When they 
 
 ---
 
-### Layer 2 — Substack (Free + paid)
+### Layer 2 — Personal Essays on southernlegends.blog (Free → Paid)
 
-**What it is:** The deeper layer of Southern Legends. Where your own story gets told in full — gold star, UAB, Jack and the dominoes, Lucy, all of it. Also where the book gets built, post by post. Migrating from Patreon — see migration plan below.
+**What it is:** The deeper layer of Southern Legends. Where your own story gets told in full — gold star, UAB, Jack and the dominoes, Lucy, all of it. Also where the book gets built, post by post. Lives on the SL domain, not a separate platform.
 
-**Free tier:** Open to anyone. Full access to your personal essays. People who find you through the Calhoun Journal or Southern Legends can read without a paywall. This is the value-first play.
+**Build sequence (staged):**
+1. **Essays page** — new content directory, MDX files, same stack as profiles. Free, no auth. A day of dev work.
+2. **Resend subscriber form** — people opt in, get notified when you publish. A day or two.
+3. **Stripe subscription + content gating** — paid tier, when you have 3–4 pieces published and the writing habit is proven. A focused week of Claude Code sessions.
 
-**Paid tier:** Early access, book chapters as they develop, direct conversation, or whatever you decide has enough value to charge for. Figure this out once you have traction.
+**Why build on SL instead of Substack:**
+- Full ownership — your domain, your data, your reader list
+- Stripe already set up for Headley Web — same account, no new setup
+- Resend already configured — same effort as wiring Substack
+- Portfolio value — a working subscription + member gating feature is a real Headley Web showcase (auth, Stripe, email delivery)
+- 0% platform cut vs. Substack's 10% on paid
 
-**Short-term income play:** You have 4 paying patrons migrating from Patreon. The Calhoun Journal syndication will drive new readers. Get Substack live and populated *before* you start sending content to the Journal.
+**Free tier:** Personal essays, open to anyone. Readers from Calhoun Journal or SL profiles can read without a paywall.
+
+**Paid tier:** The harder material — gold star (when finished), UAB ward, the deeper arc. Turn this on after 3–4 pieces are published and you know you'll keep writing.
+
+**Short-term:** Message the 4 paying Patreon supporters personally. Thank them, apologize for the silence, invite them to follow the SL essays page. They cancel Patreon, subscribe via Resend.
 
 ### Patreon Content Plan
 
@@ -86,29 +98,46 @@ Write these in order — they build on each other:
 
 ---
 
-## Platform Plan — Substack (not Patreon, not a custom member area)
+## Platform Plan — Build on southernlegends.blog (not Substack, not Patreon)
 
 **Current platform:** Patreon (4 paying patrons, dormant — hasn't been posted to in months)
 
-**Move to: Substack.** Patreon was built for creators broadly — musicians, artists, YouTubers. Substack was built specifically for writers. Email-first delivery, real discovery, clean reading experience, Notes feed. For personal essay building toward a book, Substack is the native environment. Patreon is a workaround.
+**Decision (April 2026):** Build the personal essays layer directly into southernlegends.blog. Staged build: essays page first (free, no auth), then Resend email delivery, then Stripe subscription + gating when the writing habit is proven.
 
-**Migration effort is low:**
-- Create Substack account
-- Write the reintroduction post (you're doing that anyway — it's also the apology)
-- Message 4 patrons personally: thank them, apologize for the silence, invite them to Substack
-- They cancel Patreon, subscribe on Substack
+**Why not Substack:** Substack and Resend are roughly equivalent effort. SL-native gives full ownership, 0% cut, portfolio value, and uses Stripe + Resend already in place. If the writing outgrows the custom build, reassess — but build first, migrate later if needed.
 
-Message Rae Wall through Patreon directly — her email is an Apple private relay, unreachable otherwise.
+**Why Substack discovery doesn't matter right now:** Discovery matters most when starting from zero. Matt isn't. Warm audience already exists: CaringBridge (hundreds), GoFundMe (hundreds), 4 Patreon supporters. Calhoun Journal (~120k weekly) and Anniston Star provide local distribution. The goal right now is re-engaging people who already know him — not finding strangers. Revisit if/when writing targets a national audience or book platform.
 
-**First Substack post:** The reintroduction — where you've been, what this is now, why you're starting here. This collapses the apology and "Why Southern Legends" into one piece. Two jobs, one post.
+**Why not keep Patreon:** Platform mismatch. Patreon was built for the flower farm / ministry chapter. That chapter is closed. Starting fresh on SL is the clean break.
 
-**Trigger to reassess:** ~10 paying subscribers. At that point decide whether to stay on Substack permanently or build a member area on Southern Legends (Next.js + Stripe + auth — still a valid portfolio piece, just not urgent).
+**Distribution model (decided April 2026):** SL canonical, Patreon as excerpt + link layer.
+- Full essay lives on southernlegends.blog (canonical, SEO-clean)
+- Short excerpt + link posted to Patreon so 27 existing subscribers get notified and click through
+- No content migration needed — Patreon stays as the notification layer for now
+- Message Rae Wall through Patreon directly — her email is an Apple private relay, unreachable otherwise
 
-**Why not build a custom member area now:** 3–5 posts proves you can write; it doesn't prove anyone will pay. Build once people have voted with their wallets. Substack may turn out to be the permanent home — no reason to build infrastructure until you've outgrown it.
+**Why Patreon over Substack for distribution:** 27 subscribers are already there. No migration, no new platform, no ask. Patreon now has native email delivery. Discovery is zero on Patreon, but discovery isn't the priority right now.
 
-**Future creator note:** Patreon's broader support for music, podcasts, and video may matter later if those come back. A Substack with an established writing audience is a better launchpad for a podcast than starting cold on Patreon. Reassess platform when music/podcast is ready to move.
+**Patreon reintroduction framing:** The first post must acknowledge the context mismatch — "this looks different from what you signed up for, here's why." The farm chapter is closed. This is the new chapter.
 
-**Sequence:** Create Substack → message 4 patrons → write reintroduction post → write Why Southern Legends / Gold Star → get to ~10 paying subscribers → reassess.
+**Section name: TBD — "Letters" vs "Notes" vs "Journal"**
+- "Letters" — fits the epistolary essay voice (Patreon posts opened "Dear friends"). Strains slightly when a sermon audio or podcast lives next to it.
+- "Notes" or "Journal" — covers the full multimedia content model (essays, sermons, podcast, curated music/art/video) without format expectation.
+- Decide before building. Lean toward Journal or Notes if multimedia is equal weight with writing.
+
+**This section does not appear in the stories grid.** Profiles are about other people. This section is about Matt. Mixing them blurs the editorial distinction. Own page, own layout, quiet homepage callout, nav link.
+
+**First essay:** The reintroduction — where you've been, what this is now, why you're starting here. Collapses the apology and "Why Southern Legends" into one piece. Two jobs, one post.
+
+**Trigger to add paid tier:** 3–4 essays published and the writing habit is real. Not before.
+
+**Build order:**
+1. Build SL essays page (dev work — a day)
+2. Write the reintroduction (in parallel — takes longer than the build)
+3. Publish full essay on SL
+4. Post excerpt + link to Patreon
+5. Repeat for Gold Star and subsequent pieces
+6. After 3–4 pieces: wire Resend subscriber form, then add Stripe paid tier
 
 ---
 
@@ -121,6 +150,32 @@ The Patreon is the workshop. By the time you've written enough posts, you'll hav
 - The honest ending (not recovery — *there is no finish line*, per Lucy)
 
 Don't think about the book yet. Write the Patreon posts. The book will find its shape.
+
+---
+
+## Building in Public
+
+Southern Legends is building in public. So is the person writing it.
+
+The profiles document people who are still building — businesses, lives, something worth noticing. The personal writing documents Matt figuring out what comes next, in real time, with readers alongside him. Same act. One site.
+
+This is a cleaner answer to "what is Southern Legends?" than anything else. It also reframes the personal writing section — it's not a blog bolted onto an editorial site. It's the author showing his work.
+
+**How to apply:** When writing About page copy, homepage framing, or the reintroduction post — "building in public" is the concept underneath. Don't use the phrase literally if it feels too startup-coded, but let it shape the framing.
+
+---
+
+## Open Question — What Is Southern Legends?
+
+Southern Legends might be a public journal. The profiles are Matt noticing other people and writing it down. The personal essays are Matt noticing himself and writing it down. Same act, same voice, one unified thing with two subjects.
+
+If that's true, the "editorial magazine + personal section" framing is slightly wrong. It was always one thing.
+
+**What this might change:** How the site introduces itself — About page, homepage framing, possibly the tagline. "Editorial profiles of local businesses" is narrower than what this actually is.
+
+**What it probably doesn't change:** Keeping profiles and personal writing in separate navigation. A reader who finds Jean Ellison's profile isn't necessarily ready for Matt's bipolar diagnosis in the same grid. The editorial distinction still serves the reader.
+
+**Why we're not deciding this now:** The framing will be clearer after the reintroduction and gold star exist. Write first. The site will show you what it is.
 
 ---
 

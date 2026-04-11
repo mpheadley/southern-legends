@@ -43,6 +43,18 @@ export default function Footer() {
               >
                 Nominate a Story
               </Link>
+              <Link
+                href="/journal"
+                className="text-sm text-white/80 hover:text-white transition-colors"
+              >
+                Journal
+              </Link>
+              <Link
+                href="/support"
+                className="text-sm text-white/80 hover:text-white transition-colors"
+              >
+                Support This Work
+              </Link>
             </div>
 
             <div className="flex flex-col gap-3">

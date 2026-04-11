@@ -72,6 +72,43 @@ Each profile is an `.mdx` file in `content/profiles/` with frontmatter (title, s
 - **AI kill list:** Avoid words/patterns in Part 5 of the voice guide (delve, foster, leverage, tapestry, etc.)
 - **Narrator vs. protagonist:** Matt writes in first person, but the subject must be the main character, not Matt. For business profiles: one personal connection sentence up front (e.g., "Sam is my friend"), then make it about them. Matt's personal stories belong in interview questions that draw out the subject's answers, not in the narrative body. Test: if you removed every sentence about Matt, does the profile still stand? If it collapses, Matt is too centered. Place/nonprofit profiles have more room for Matt's presence when his proximity IS the argument (e.g., Freedom Riders — "my kids were born at the same hospital").
 
+## Personal Writing Section (Planned — name TBD)
+
+Matt's personal writing and curated media live in a dedicated section — separate from profiles. Name is between **"Letters"** (fits the epistolary essay voice, Patreon posts opened "Dear friends") and **"Notes"** or **"Journal"** (fits the expanded multimedia content model better). Decide before building.
+
+**Why this lives on SL (not a separate site, not Patreon):**
+SL is the right home because the personal writing isn't separate from the editorial project — it's the explanation for why it exists. The profiles raise the question: why does this person notice these people so carefully? The personal section answers it. Model: The Marginalian (everything on one owned platform), The Bitter Southerner (author voice lives alongside journalism). See design-inspiration-editorial.md.
+
+**Editorial distinction:** Profiles are about other people. This section is about Matt — healing, the farm, bipolar diagnosis, SL as part of recovery. Do not mix them in the same grid or card layout.
+
+**Content model — richer than essays alone:**
+- Long-form personal essays (gold star, reintroduction, UAB arc)
+- Curated multimedia — music, art, video from other artists (the "Today's Anthem" pattern from Patreon posts)
+- Old sermons (audio)
+- Podcast episode(s)
+- Matt's own photos, candid and personal
+- Shorter reflections
+
+MDX files in `content/letters/` (or `content/notes/` depending on name). Frontmatter: title, slug, date, excerpt, optional featuredMedia type.
+
+**Components needed:**
+- Audio player (sermons, podcast)
+- Video embed (YouTube, Vimeo)
+- Music embed (Spotify, SoundCloud, Bandcamp)
+- ArtCredit (image + attribution for other artists' work)
+- SongCard ("Today's Anthem" pattern)
+
+**Portfolio value:** Building clean multimedia handling in Next.js (lazy loading, no layout shift, proper aspect ratios) is a real Headley Web skill. Clients ask for this. SL is the live demo.
+
+**Site architecture:**
+- `/letters` (or `/notes`) — dedicated page, own layout. Cards with photo, title, date, excerpt — warmer and more personal than profile cards. Warm background (`#F0EDE6`) to signal different space.
+- **Homepage** — quiet callout below the profiles grid. Not a full section.
+- **Nav** — distinct nav link alongside profiles.
+
+**Distribution:** Full content on SL (canonical, source of truth). Post to Facebook and LinkedIn for reach. Patreon is being wound down — message 4 paying supporters personally before closing.
+
+**Paid tier:** Stripe gating added after writing habit is proven (3–4 pieces live). Not before. Resend email delivery wired after same trigger.
+
 ## Current Status
 - **Done:** Design system, layout, homepage, about page, profile detail page, profile listing, 21 profiles (1 by Matt, 20 AI drafts), RSS feed, scroll animations, share buttons, story navigation, subscribe CTA
 - **Fonts loaded via `<link>` in layout.tsx** — Fraunces and Rock Salt are Google Fonts links, not `next/font`. Source Sans 3 uses `next/font/google`. Consider migrating Fraunces/Rock Salt to `next/font` for performance.
