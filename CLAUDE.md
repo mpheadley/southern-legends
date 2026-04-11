@@ -64,7 +64,10 @@ Each profile is an `.mdx` file in `content/profiles/` with frontmatter (title, s
 
 ## Writing Workflow
 - **Voice guide:** `content/AUTHENTIC-VOICE-GUIDE.md` — reference for all writing on this site.
+- **Storytelling framework:** `STORYTELLING-FRAMEWORK.md` — StoryBrand/Lowry Loop frameworks, three-tier personal story arc, Patreon philosophy.
+- **Platform strategy:** `STRATEGY.md` — three-platform architecture, Patreon content plan, syndication order of operations, byline examples, action items.
 - **Two-draft rule:** Matt writes first draft. Claude acts as editor with specific questions. Claude never writes openings, endings, or vulnerable passages.
+- **Gap audit (runs before scaffold):** When Matt brings in raw material — voice chat, transcript, notes — run a gap audit before touching the draft. For each scene implied by the material, check three criteria: (1) time/place anchor, (2) first sensory hit when entering a space or moment, (3) specific visual of the key person. Ask one question per gap, one at a time. Wait for Matt's answer before asking the next. Only write the scaffold once the gaps are filled.
 - **Voice baseline:** Read `matt-headley.mdx` before helping with any new profile writing.
 - **AI kill list:** Avoid words/patterns in Part 5 of the voice guide (delve, foster, leverage, tapestry, etc.)
 - **Narrator vs. protagonist:** Matt writes in first person, but the subject must be the main character, not Matt. For business profiles: one personal connection sentence up front (e.g., "Sam is my friend"), then make it about them. Matt's personal stories belong in interview questions that draw out the subject's answers, not in the narrative body. Test: if you removed every sentence about Matt, does the profile still stand? If it collapses, Matt is too centered. Place/nonprofit profiles have more room for Matt's presence when his proximity IS the argument (e.g., Freedom Riders — "my kids were born at the same hospital").

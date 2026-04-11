@@ -1,0 +1,67 @@
+# Hope in the Wilderness: A Pastor's Journey Through Depression
+
+*Matt Headley, Special to the Star — October 21, 2024*
+*Source: Anniston Star (annistonstar.com)*
+
+---
+
+ANNISTON — Severe depression feels like being lost in total darkness. It's relentless, stretching time and making hope feel out of reach.
+
+This past summer, I found myself sinking into that wilderness, facing some of the hardest days of my life. Each morning, the weight of another day felt unbearable. Every night, I wondered if the next day would be different, but like Bill Murray in Groundhog Day, each day was the same.
+
+Maybe you've been there, or someone you love is there now. It's disorienting, lonely, and feels endless.
+
+But today, I'm writing from a place of resurrection. Not because everything is perfect, but because I've found hope again—through hard work and grace.
+
+
+## My trip through the wilderness
+
+The wilderness wasn't just a metaphor — it was literal, as I often took hikes in the woods during my depression, searching for peace. Turning 40 should have been a milestone to celebrate, but instead, I was questioning everything. I'd spent decades in ministry helping others find hope, yet here I was, unsure if I could keep going. As a pastor, it wasn't easy realizing I was the one who felt lost.
+
+I feared the darkness would take everything — my family, my ministry, myself. Even simple joys felt unreachable. I remember sitting by the Camp Lee pool many Sundays, surrounded by friends and family, yet feeling completely disconnected.
+
+I tried everything — counseling, prayer, yoga, hiking, reading — but none of it lifted the fog like it once had. That's when I started exploring paths I hadn't been on before — treatments that felt unfamiliar, uncomfortable and even controversial.
+
+The hardest part was letting go of my bias against psychiatric medications. I had believed that faith and willpower alone could get me through. But as the darkness closed in, I realized that accepting help, whether through medication or grace, was not defeat. A friend put it best when she said, "Yes, my serotonin is store-bought!" Accepting that shifted my perspective.
+
+Healing wasn't instant. It was slow, with small moments of light breaking through.
+
+During this time, I wrestled with God. I dumped my anger, grief and frustration into my journal, shouting, "Where are you, God!?" It felt like I was shouting into a void, doubting that God was listening. But even in my doubt, writing was its own prayer.
+
+Psalm 139, a scripture that had always comforted me, now felt like a challenge. The words "Where can I go from your Spirit? Where can I flee from your presence?" felt distant, but I held onto them, clinging to hope, even when the anxious silence was all I felt.
+
+
+## Resurrection and healing
+
+The journey out of the wilderness wasn't fast or easy. It was a slow process of letting go and opening myself to healing. But gradually, I began to notice changes. These changes didn't just feel like healing—they felt like resurrection. It wasn't just about surviving depression, but about becoming someone new.
+
+One of the most surprising parts of this resurrection was what I can only describe as an ego death. The part of me that craved control and perfection relaxed. I became more at ease, less filtered, gentler with my flaws, and more willing to laugh at myself.
+
+I had prayed for years to let go of self-criticism and embrace humor and lightness. I didn't expect those prayers to be answered through such a painful process, but here I am — finding a freedom I never imagined.
+
+The critical voice has quieted, the pressure to be perfect has eased, and there's more room for joy, humor and connection. This feels like resurrection — not just of my spirit, but my whole self.
+
+
+## Hope for the wilderness wanderer
+
+Looking back, I see the wilderness — emotional, mental, spiritual — isn't just a place of suffering; it's where transformation happens. I've witnessed this firsthand, working with people at Shepherd's Table, our church's Sunday breakfast ministry.
+
+Many of them are unhomed and struggling with mental health conditions. For years, I saw their resilience, but it wasn't until my own journey through depression that I realized I wasn't so different from them. We all wrestle with darkness, and we all need grace and support.
+
+Love pulled me forward in my darkest moments, especially the patient love of my wife, Heather, who stood by me, and the moments of joy with my children. Like trying to beat my son at Mario Kart, a battle I'm still fighting!
+
+With the recognition of World Mental Health Day and this year's theme of #MentalHealthAtWork, I'm reminded of how important it is to create spaces that support mental health. I'm deeply grateful for the leadership at my church, who gave me the time to heal.
+
+We need more workplaces and communities that truly support mental health. I encourage you to pray for your faith leaders, and advocate for mental health support, including time off, just as I received.
+
+If your prayers feel unanswered, if silence is unbearable, I encourage you: Keep praying. Keep wrestling. Keep showing up. Even in the darkness, God is working, sometimes in ways we can't yet see. Healing doesn't mean the end of struggle, but it does bring the hope that we are never alone.
+
+I'm still learning to live with more grace. I still have hard days, but I don't hide them anymore. Love sustained me through my darkest hours, and it continues to guide me. That love is available to all of us, no matter where we are or how far we feel.
+
+If you're walking through your own wilderness, know that hope doesn't always arrive in big, dramatic ways. It shows up in a laugh, a hug, a small moment of joy.
+
+Resurrection isn't just a thing of the past. It's what happens when love brings us back to life.
+
+---
+
+*Matt Headley, a father of four with his partner, Heather Headley, is the associate pastor and music director at Anniston First United Methodist Church. After wandering through a season of depression, Matt now shares his journey of healing, highlighting the power of grace, mental health support and the hope of resurrection. He can be reached at matt@annistonfirst.info.*

@@ -64,12 +64,13 @@ Every business in that ecosystem already knows Matt Headley built it. When they 
 
 Write these in order — they build on each other:
 
-1. **The Gold Star** — first post. Psychiatrist's office. Published in the Anniston Star. Everything buttoned up. Then: "I wasn't through it." Write it and stop. Don't resolve it. The gold star / Anniston Star irony is the point — neither of you knew what was coming.
-2. **The UAB Ward** — Jack, dominoes, badminton in hospital gowns, the anger, being away while your family dismantled everything.
-3. **Lucy and the finish line** — the conversation about there being no finish line. The honest ending that isn't resolution.
-4. **The mania that felt like recovery** — the meds you decided not to take.
+1. **Why Southern Legends** — the first post. Why you're doing this personally and professionally. How you're beginning to suspect it's part of your healing. Reconnecting with people you thought you'd lost relationships with because of decisions made while manic. Present tense, unresolved, honest. Write this one first — it's happening now, which makes it easier than The Gold Star. It also sets up everything that comes after: readers who find you here will understand why the backstory matters.
+2. **The Gold Star** — Psychiatrist's office. Published in the Anniston Star. Everything buttoned up. The unfilled prescription. Then: "I wasn't through it." Write it and stop. Don't resolve it. The gold star / Anniston Star irony is the point — neither of you knew what was coming. Draft in progress: see `content/profiles/matt-headley-sources/gold-star-draft-notes.md`.
+3. **The mania that felt like recovery** — the meds you decided not to take. The ego death that was actually mania. The lightness that was a warning sign neither of you recognized.
+4. **The UAB Ward** — Jack, dominoes, badminton in hospital gowns, the anger, being away while your family dismantled everything.
 5. **The pulpit that couldn't heal you** — you spent your life being the one with answers. The second depression took that away.
-6. **The pole vault** — earns its place as the first "throwing myself at something unlikely." Also genuinely funny alongside everything else.
+6. **Lucy and the finish line** — the conversation about there being no finish line. The honest ending that isn't resolution.
+7. **The pole vault** — earns its place as the first "throwing myself at something unlikely." Also genuinely funny alongside everything else.
 
 **This is also where the book gets written.** Post by post, the shape will emerge.
 
@@ -82,6 +83,24 @@ Write these in order — they build on each other:
 **Role:** Southern Legends positions you as someone who understands story and community — not just a service provider but someone with deep roots and real credibility in Northeast Alabama. That's what makes the web business different from every other freelancer in the market.
 
 **Not the short-term play.** The portfolio is still building. Stephens Small Engine is in progress. Keep doing the work, keep the outreach going, but don't count on this for income in the next 90 days.
+
+---
+
+## Patreon → Southern Legends Member Area (Migration Plan)
+
+Long-term, the Patreon moves off Patreon and into Southern Legends as a built-in member area.
+
+**Trigger:** ~10 paying patrons — enough proof the writing has an audience, small enough that migration is personal.
+
+**Stack:** Next.js (already the SL platform) + Stripe Billing (same account as Headley Web client billing — separate Products, one account) + auth (Clerk or NextAuth) + content gating via middleware.
+
+**Migration ask to patrons:** One new payment setup in Stripe, cancel their Patreon. Low friction for people who care about the work. Message Rae Wall through Patreon directly — her email is an Apple private relay, unreachable otherwise.
+
+**Justification to patrons:** "I built something. I want to own the relationship with the people supporting this work — no platform in the middle."
+
+**Bonus:** The member area is a legitimate Next.js portfolio piece (auth + subscriptions + content gating) — demonstrable to future clients in media, fitness, education, local journalism.
+
+**Sequence:** Write 2–3 posts → get to ~10 patrons → build member area → migrate → close Patreon.
 
 ---
 
@@ -292,8 +311,10 @@ The work to do is not more writing or more building. It is sending the messages.
 
 ### This Week
 - [ ] Update Patreon — pivot from flower farm / ministry framing to storytelling + personal essay
-- [ ] Write first Patreon post: **The Gold Star**
-- [ ] Set up free tier on Patreon
+- [ ] Message the 4 paying patrons personally before publishing anything new — they've been paying through radio silence
+- [x] Set up free tier on Patreon (already done)
+- [ ] Write first Patreon post: **Why Southern Legends** — healing, reconnection, present tense
+- [ ] Write second Patreon post: **The Gold Star** — draft in progress
 - [ ] Message Lewis (Downing and Sons)
 - [ ] Confirm submission process with Lee at Calhoun Journal
 - [ ] Email Donna Barton at Anniston Star to reconnect
@@ -314,6 +335,20 @@ The work to do is not more writing or more building. It is sending the messages.
 - [ ] Publish on Southern Legends weekly (or close to it)
 - [ ] Syndicate to Calhoun Journal one to two weeks after
 - [ ] Write toward the Patreon — UAB section, Lucy, the mania
+
+---
+
+## Writing Habit
+
+The Patreon writing is emotionally heavy. A rigid schedule backfires — forcing "The UAB Ward" on a Tuesday because it's Tuesday produces bad writing or nothing at all.
+
+**Daily (low bar):** 10 minutes of longhand or voice memo. Not drafting — noticing. What surfaced today that connects to the larger story. No pressure to use it. The goal is staying close to the material.
+
+**Weekly (real session):** One 60–90 minute writing block. Away from the desk — coffee shop, outside, different chair. Anywhere that doesn't feel like web work. Your brain needs a different physical context to know which mode it's in. Longhand in the Moleskine is better for the rawest material (harder to self-edit as you go) — use it for first pass, then bring it here to shape into a draft.
+
+**Trigger-based:** When something surfaces in a Southern Legends interview or profile conversation that connects to your own story, note it immediately. Those moments are the best raw material.
+
+The habit isn't "publish a post every week." It's staying close enough to the material that when you sit down, something's there.
 
 ---
 

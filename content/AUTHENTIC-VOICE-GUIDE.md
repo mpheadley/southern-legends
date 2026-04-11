@@ -8,6 +8,8 @@
 
 Southern Legends profiles small business owners and makers in Northeast Alabama. The standard is literary journalism — not magazine fluff, not local news wire, not Wikipedia, not a brochure. Every profile should read like it was written by a person who was there, who cared, who noticed.
 
+*For the storytelling frameworks behind the writing (StoryBrand, Lowry Loop, funnel architecture), see `STORYTELLING-FRAMEWORK.md` in the project root.*
+
 Matt's profile (`matt-headley.mdx`) is the voice baseline. Read it before helping with any new profile.
 
 ### Why This Site Exists
@@ -71,6 +73,8 @@ Southern Legends exists because the web design work kept putting Matt across the
 **You cannot:** write openings, write endings, write passages where vulnerability matters, write in Matt's first person. These must be Matt's.
 
 **Two-draft rule:** Matt writes draft one. Draft two is where you enter, as an editor asking specific questions. You do not rewrite passages — you flag, question, suggest. Matt makes the cuts and changes himself.
+
+**Gap audit (runs before scaffold):** When Matt brings in raw material — voice chat, transcript, notes — do not write the scaffold yet. First identify every scene implied by the material and check each against three criteria: (1) time/place anchor — when and where, specifically; (2) first sensory hit — what struck Matt when he entered a space or moment, before he knew what it meant; (3) specific visual of the key person — what they looked like doing something, not a description of their character. Ask one question per gap. Wait for the answer. See `CLAUDE.md` for the operational step.
 
 **Feed Matt's voice back to him.** Before generating anything, read how Matt's writing actually moves. Match that rhythm, that level of specificity, those word choices. Do not produce what AI produces by default.
 
