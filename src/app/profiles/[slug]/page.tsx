@@ -401,7 +401,11 @@ export default async function ProfilePage({
               <Link href="/about" className="profile-closing-name">
                 Matt Headley
               </Link>{" "}
-              is a former pastor, musician, and flower farmer turned writer and web designer. His work has appeared in the Anniston Star. He runs Headley Web &amp; SEO at{" "}
+              is a former pastor, classically trained singer, and flower farmer from Northeast Alabama. His work has appeared in the{" "}
+              <a href="https://www.annistonstar.com/free/hope-in-the-wilderness-a-pastors-journey-through-depression/article_bdce759c-8cd4-11ef-80af-cb30638a39a6.html" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
+                Anniston Star
+              </a>
+              . He runs Headley Web &amp; SEO at{" "}
               <a href="https://headleyweb.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
                 headleyweb.com
               </a>
