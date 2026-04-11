@@ -56,10 +56,7 @@ export default function JournalPage() {
       <section className="bg-ll-light">
         <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 prose-profile">
           <p>
-            The profiles raise a question I don&apos;t answer in them: why does this person notice these people so carefully?
-          </p>
-          <p>
-            This is where I answer it. Writing about what&apos;s behind the profiles. And what&apos;s behind me.
+            I write about what&apos;s behind the profiles. And what&apos;s behind me.
           </p>
           <p className="text-ll-text-light text-sm">
             Coming soon.
