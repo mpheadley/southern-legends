@@ -50,7 +50,8 @@ src/
     profiles.ts         — MDX content loader (reads content/profiles/*.mdx)
     site-config.ts      — site metadata, nav links
 content/
-  profiles/             — MDX story files (21 profiles, see below)
+  profiles/             — MDX story files that ship (Matt + edited profiles only)
+  research/             — .md research docs; raw material, never ships
   AUTHENTIC-VOICE-GUIDE.md — writing voice reference
 ```
 
@@ -58,8 +59,10 @@ content/
 Each profile is an `.mdx` file in `content/profiles/` with frontmatter (title, slug, category, location, excerpt, date, etc.) and long-form narrative content. Profiles use the `PullQuote` component for Rock Salt accent quotes.
 
 ## Content Status
-- **Matt's writing:** `matt-headley.mdx` — Matt's own profile, written by Matt. This is the voice baseline for the site.
-- **AI-written profiles (20):** All other profiles were written entirely by Claude and tagged `aiWritten: true` in frontmatter. Do NOT reference these as examples of Matt's voice. They need Matt's review and proofing before being treated as final. Consider them drafts until Matt removes the `aiWritten` flag.
+- **Matt's writing:** `matt-headley.mdx` — Matt's own profile, the voice baseline for the site.
+- **Published profiles:** 7 `.mdx` files in `content/profiles/` (Matt's plus 6 edited). `interfaith-ministries-calhoun-county.mdx` has open edit notes (`INTERFAITH-EDIT-NOTES.md` in the same folder) including an unresolved question about whether its `aiWritten: false` claim is accurate.
+- **Research docs:** 16 `.md` files in `content/research/`. These started as AI-written profile drafts and were reduced to facts/outlines. They are raw material for Matt to write from. They do not ship — the loader filters them out by directory (it only reads `content/profiles/*.mdx`), and any accidental `.mdx` file with `aiWritten: true` is also filtered out by `getAllProfiles`.
+- **AI-written is terminal, not a checkpoint.** `aiWritten: true` is a hard gate, not a review flag. The loader refuses to publish anything with it set. To promote a research doc into a profile, Matt writes the profile from scratch in `content/profiles/`; the new file has `aiWritten: false` or omits the field.
 - **Fake sample profiles deleted:** Earl McKinney, Jimmy Dawson, Mae Ruth Foster were fictional — removed.
 
 ## Writing Workflow
@@ -110,7 +113,7 @@ MDX files in `content/letters/` (or `content/notes/` depending on name). Frontma
 **Paid tier:** Stripe gating added after writing habit is proven (3–4 pieces live). Not before. Resend email delivery wired after same trigger.
 
 ## Current Status
-- **Done:** Design system, layout, homepage, about page, profile detail page, profile listing, 21 profiles (1 by Matt, 20 AI drafts), RSS feed, scroll animations, share buttons, story navigation, subscribe CTA
+- **Done:** Design system, layout, homepage, about page, profile detail page, profile listing, 7 published profiles (1 by Matt, 6 edited), 16 research docs in `content/research/`, RSS feed, scroll animations, share buttons, story navigation, subscribe CTA
 - **Fonts loaded via `<link>` in layout.tsx** — Fraunces and Rock Salt are Google Fonts links, not `next/font`. Source Sans 3 uses `next/font/google`. Consider migrating Fraunces/Rock Salt to `next/font` for performance.
 
 ## OG Images

@@ -48,6 +48,11 @@ export function getProfileSlugs(): string[] {
     .map((file) => file.replace(/\.mdx$/, ""));
 }
 
+/** Slugs that are safe to serve — filtered by `published` and `!aiWritten`. Use this for route generation (generateStaticParams, sitemap) instead of getProfileSlugs. */
+export function getPublishedSlugs(): string[] {
+  return getAllProfiles().map((p) => p.slug);
+}
+
 export function getProfileBySlug(slug: string): Profile {
   const filePath = path.join(contentDir, `${slug}.mdx`);
   const fileContents = fs.readFileSync(filePath, "utf8");
@@ -66,7 +71,7 @@ export function getAllProfiles(): Profile[] {
   const slugs = getProfileSlugs();
   return slugs
     .map(getProfileBySlug)
-    .filter((p) => p.frontmatter.published)
+    .filter((p) => p.frontmatter.published && !p.frontmatter.aiWritten)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.date).getTime() -
