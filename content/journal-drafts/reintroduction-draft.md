@@ -9,7 +9,7 @@ I haven't disappeared. I don't have to disappear.
 
 ---
 
-I [shared my story](https://www.annistonstar.com/free/hope-in-the-wilderness-a-pastors-journey-through-depression/article_bdce759c-8cd4-11ef-80af-cb30638a39a6.html) about wrestling with clinical depression. It nearly took me out. Then I got better. Published the story in the Star. Tied a bow on it. Even got a printed copy to frame in my office.
+I [shared my story](/journal/hope-in-the-wilderness) about wrestling with clinical depression. It nearly took me out. Then I got better. Published the story in the Star. Tied a bow on it. Even got a printed copy to frame in my office.
 
 I resigned from the church after Ash Wednesday. Abruptly, angrily, with a confidence that felt like calling. I doubled down on the flower farm. I was working 16-20 hour days, sleeping three or four hours. Everything felt holy. My family was holding on for dear life.
 

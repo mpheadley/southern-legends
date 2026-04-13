@@ -1,34 +1,32 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { getAllJournalPosts } from "@/lib/journal";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Journal",
-  description: `Matt Headley writes about what's behind the profiles — and what's behind him. Coming soon to Southern Legends.`,
-  alternates: {
-    canonical: "/journal",
-  },
-  openGraph: {
-    url: "/journal",
-  },
+  description: `Matt Headley writes about what's behind the profiles — and what's behind him.`,
+  alternates: { canonical: "/journal" },
+  openGraph: { url: "/journal" },
 };
 
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export default function JournalPage() {
+  const posts = getAllJournalPosts();
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteConfig.url,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Journal",
-        item: `${siteConfig.url}/journal`,
-      },
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Journal", item: `${siteConfig.url}/journal` },
     ],
   };
 
@@ -49,18 +47,43 @@ export default function JournalPage() {
           >
             Journal
           </h1>
+          <p className="mt-4 text-base md:text-lg text-white/75 max-w-xl">
+            I write about what&apos;s behind the profiles. And what&apos;s behind me.
+          </p>
         </div>
       </section>
 
-      {/* Content */}
+      {/* Posts */}
       <section className="bg-ll-light">
-        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 prose-profile">
-          <p>
-            I write about what&apos;s behind the profiles. And what&apos;s behind me.
-          </p>
-          <p className="text-ll-text-light text-sm">
-            Coming soon.
-          </p>
+        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16">
+          {posts.length === 0 ? (
+            <p className="text-ll-text-light text-sm">Coming soon.</p>
+          ) : (
+            <ul className="space-y-10">
+              {posts.map((post) => (
+                <li key={post.slug} className="border-b border-ll-border pb-10 last:border-0 last:pb-0">
+                  <Link href={`/journal/${post.slug}`} className="group block">
+                    <p className="text-xs text-ll-text-light mb-2 uppercase tracking-wide">
+                      {formatDate(post.frontmatter.date)}
+                      {post.frontmatter.originalPublication && (
+                        <> &middot; Originally in {post.frontmatter.originalPublication.name}</>
+                      )}
+                    </p>
+                    <h2
+                      className="text-xl md:text-2xl font-bold text-ll-dark group-hover:text-ll-primary transition-colors mb-3"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      {post.frontmatter.title}
+                    </h2>
+                    <p className="text-ll-text leading-relaxed">{post.frontmatter.excerpt}</p>
+                    <span className="inline-block mt-4 text-sm font-medium text-ll-primary group-hover:underline">
+                      Read →
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
     </main>

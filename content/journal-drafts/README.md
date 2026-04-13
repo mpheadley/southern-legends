@@ -24,6 +24,7 @@ Raw material files for Matt's personal writing section. These are not profiles �
 | `easter-last-year.md` | Manic Easter — purple pants, pink tie, selfies, anger at the church he used to serve | Raw material only |
 | `easter-this-year.md` | Second Sunday at Jax FUMC — Andy inviting Matt to help serve communion — reconstruction beginning | Raw material only |
 | `the-church-visits.md` | Heartbreaking and anger-filled visits to First Anniston — the church where he used to work | Raw material only |
+| `faith-journey-raw-notes.md` | Faith through depression: 20 years of vocation, Marcus Borg + postcritical naivete, psychedelic community, Romaren et Corvo, "hanging out in the margins" | Voice transcript (April 13, 2026) — Matt's words verbatim, Claude turns summarized in brackets |
 
 ---
 
