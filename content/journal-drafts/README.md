@@ -3,7 +3,7 @@
 Raw material files for Matt's personal writing section. These are not profiles — they are Matt's story.
 
 **Publication order:**
-1. Reintroduction (`../profiles/matt-headley-sources/reintroduction-raw-material.md`) — in progress
+1. Reintroduction (`reintroduction-raw-material.md` + `reintroduction-draft.md`) — in progress
 2. Holding on to Hope (`../profiles/matt-headley-sources/patreon-holding-on-to-hope.md`) — published with dateline: *Written October 2025, before the hospitalization*
 3. Entries below — no set order yet, write what's ready
 
