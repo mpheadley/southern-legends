@@ -293,15 +293,57 @@ As long as Patreon isn't a paywall for Star content, and content stays clearly d
 
 ---
 
-## Southern Legends vs. Cold Walk-Ins
+## Two-Track Outreach Strategy (April 2026)
 
-Southern Legends and cold walk-ins serve different moments:
+Run both tracks simultaneously. They serve different purposes and different business types.
 
-| Situation | Use |
+### Premium Track — Southern Legends
+
+High-touch, relationship-driven. Profile businesses you genuinely want to feature. Creates the strongest warmth and social indebtedness. Higher lift but higher quality. Reserved for businesses you want to build a real relationship with — requires research and interview, so use selectively, not as a cold opener.
+
+### Volume Track — Drop-By Funnel
+
+Lighter, faster, wider net. For businesses you don't want to profile right away or where you just want to get your name out.
+
+**Cold Walk-In Funnel (step by step):**
+
+1. **Drop by** — Introduce yourself briefly. Mention you write for the Calhoun Journal / Anniston Star and do web design. Ask if you can leave some info. Leave card and one-pager. Keep it short and low pressure.
+2. **Follow up (1 week later)** — Email or call. Offer a free website audit as the reason to reconnect.
+3. **Audit conversation** — Review results together. This naturally opens the door to the $2,400 rebuild pitch or a Southern Legends profile offer for the right businesses.
+4. **Southern Legends profile** — Reserved for businesses you want to build a real relationship with. Requires interview so it's higher lift — use selectively, not as a cold opener.
+
+### Journal & Star Writing — How It Fits
+
+Writing for the Calhoun Journal and Anniston Star builds ambient authority across the whole region. Use it as a credibility opener on drop-bys: "I write for the Calhoun Journal and I also do web design." It warms every cold walk-in before you even open your mouth, but it's not part of the one-on-one pipeline itself.
+
+### Free Website Audit Tool
+
+Live on headleyweb.com — business owner enters URL and receives a free PDF report covering:
+
+- SEO score
+- Page speed
+- StoryBrand copy clarity
+- Competitor research
+
+Your primary follow-up hook after the initial drop-by. Show on phone or send via email to get them into the pipeline.
+
+### Pre-Built Capture Page Mockups
+
+For high-ticket service businesses only, pre-build a quick capture page mockup before a scheduled walk-in day in a given area. Use as a "here's what I can build for you" visual in follow-up conversations, not on the initial drop-by.
+
+### $2,400 Rebuild Pitch
+
+Comes after the audit conversation, not before. Optional: bring a pre-built mockup for high-ticket targets to make it tangible.
+
+### When to Use Which Track
+
+| Situation | Track |
 |---|---|
-| Walking into a cold business with no prior contact | Cold walk-in — leave business card, no profile offer on first visit |
-| Following up with a cold walk-in contact | Southern Legends profile offer as warm re-entry |
-| Approaching a warm contact (church, farmers market, referral) | Lead with Southern Legends profile immediately |
+| Cold business, no prior contact | Drop-by funnel — leave card, follow up with audit |
+| Follow-up with a drop-by contact who's a good fit | Offer SL profile as warm re-entry |
+| Warm contact (church, farmers market, referral) | Lead with SL profile immediately |
+| Want to get name out across a town quickly | Drop-by funnel — one morning, rotate towns |
+| Business you genuinely want to know | Premium track — SL profile |
 
 ---
 
@@ -347,16 +389,19 @@ The sequence is complete when Touch 2 is sent. Whether they respond or not, you'
 
 ---
 
-## The Outreach Approach (Cold Businesses)
-
-The Star/Calhoun Journal credential creates a legitimate reason to approach businesses with weak or no websites:
-
-1. Reach out as a journalist/writer — ask to profile them for Southern Legends (and/or the Star/Journal).
-2. Do the interview. Publish the profile.
-3. Run the two-touch sequence.
-4. Follow up separately as a web designer — don't pitch inside the editorial relationship.
+## The Outreach Approach — Editorial vs. Web Services
 
 Keep editorial and web services cleanly separate. Never pitch web design inside paid editorial content.
+
+**For the premium track (SL profile):** Do the interview and publish the profile first. Run the two-touch sequence. Follow up separately as a web designer — the profile creates goodwill, the web pitch is a separate conversation.
+
+**For the volume track (drop-by funnel):** The web design pitch lives inside the audit conversation, not inside any editorial context. The Star/Journal credential opens the door, but the funnel moves through the audit tool, not through the profile.
+
+---
+
+## Short-Term Income — Sebastian's SEO Gig
+
+$50/article, up to 10 articles/month = $500/month potential. Keep as side income while prioritizing walk-in outreach and Southern Legends. Builds SEO knowledge and cash flow without derailing long-term agency goal.
 
 ---
 
@@ -394,10 +439,19 @@ The work to do is not more writing or more building. It is sending the messages.
 - [ ] Build support page at southernlegends.com/support
 - [ ] Add pole vaulter detail to Southern Legends profile opening
 
+### Outreach — Drop-By Funnel
+- [ ] Build free website audit tool on headleyweb.com
+- [ ] Design one-pager leave-behind for drop-bys
+- [ ] Pick first town — schedule one morning of walk-ins
+- [ ] Pre-build capture page mockup for one high-ticket target before walk-in day
+- [ ] Follow up on first round of drop-bys (1 week later) with audit offer
+
 ### Ongoing
 - [ ] Publish on Southern Legends weekly (or close to it)
 - [ ] Syndicate to Calhoun Journal one to two weeks after
 - [ ] Write toward the Patreon — UAB section, Lucy, the mania
+- [ ] One morning per week — rotate walk-ins through different towns in NE Alabama
+- [ ] Sebastian's SEO articles — up to 10/month at $50 each
 
 ---
 
@@ -416,5 +470,9 @@ The habit isn't "publish a post every week." It's staying close enough to the ma
 ---
 
 ## Long-Term Vision
+
+**Long-term goal: $400K marketing agency (Don Miller model).**
+
+Current strategy: free-to-fee via Southern Legends → warm outreach → Headley Web clients. Bottleneck is behavioral (initiating outreach), not strategic. One morning per week, rotate walk-ins through different towns in Northeast Alabama. Journal and Star writing builds regional authority passively alongside active outreach.
 
 Southern Legends grows into the go-to community resource for Northeast Alabama small businesses. Matt Headley is known as the guy who built it. Every business owner in the directory is a potential web design and SEO client. The community spotlight becomes a sustainable, compounding lead generation engine that no competitor can easily replicate.
