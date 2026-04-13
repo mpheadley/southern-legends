@@ -196,8 +196,8 @@ That's not a Southern Legends detail. That's the book. And the Patreon is where 
 1. Write the piece
 2. Publish on **Southern Legends** first (your owned platform)
 3. Wait one to two weeks
-4. Syndicate to **Calhoun Journal** (Lee)
-5. Pitch to **Anniston Star** (Donna Barton) for paid syndication ($50–100/article)
+4. Pitch to **Anniston Star** (Donna Barton) for paid syndication ($50–100/article) — their paid model means they get the larger-outlet exclusivity window first
+5. Syndicate to **Calhoun Journal** (Lee) after another one to two weeks — their free model means prior publication elsewhere isn't a problem, and the "as seen in the Anniston Star" credential strengthens the pitch
 
 ---
 
@@ -214,10 +214,10 @@ That's not a Southern Legends detail. That's the book. And the Patreon is where 
 
 **Competitive sensitivity:** Lee's husband owns JLM Communications, a web design and marketing company based in Weaver — direct overlap with Headley Web & SEO. Do not proactively raise this. Keep the editorial relationship clean and separate. Don't create friction — build the relationship first. Do not put a Patreon link directly in your Calhoun Journal byline, at least not yet. Once you've built trust and she understands what you're doing, revisit.
 
-**Calhoun Journal byline:**
-> *Matt Headley writes profiles of people and places in Northeast Alabama at southernlegends.com. He runs Headley Web & SEO from Jacksonville, Alabama.*
+**Recommended byline (both Anniston Star and Calhoun Journal):**
+> *Matt Headley is a former pastor, classically trained singer, and flower farmer. He writes local business profiles and personal essays about mental health and faith at Southern Legends (southernlegends.com). He runs Headley Web & SEO in Jacksonville, Alabama.*
 
-Point to Southern Legends, not directly to Patreon. Readers who want the deeper story find it naturally from there.
+Only one link: Southern Legends. Keeps the byline clean and editorial rather than promotional. Headley Web & SEO in plain text — brand recognition and local SEO benefit without a second link. The pastor / singer / flower farmer framing establishes you as a human with a story. Send the exact byline to editors when pitching — editors sometimes rewrite bylines.
 
 **Action:** Confirm submission process with Lee this week.
 
@@ -259,7 +259,7 @@ Point to Southern Legends, not directly to Patreon. Readers who want the deeper 
 | Content model | TBD — syndication or original | Syndication |
 | Use credential now? | Yes — byline already exists | Yes |
 
-**The play:** Use Calhoun Journal now for momentum and reach. Reestablish the Star relationship for targeted, high-credibility outreach and paid income. Route content strategically once both are active.
+**The play:** Pitch the Star first after SL publication — their paid model earns the exclusivity window. Then syndicate to the Calhoun Journal, where prior publication elsewhere isn't a problem and the Star credential strengthens the pitch. Route content strategically once both are active.
 
 ---
 
