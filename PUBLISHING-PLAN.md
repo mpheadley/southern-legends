@@ -14,7 +14,7 @@ A plan for publishing personal journal essays and local business profiles across
 
 **Business Profiles** — Local business and community figure spotlights (the existing Southern Legends work).
 
-**Personal Journal Essays** — A new series of 12 planned essays processing your mental health journey (depression, bipolar diagnosis), the loss of the flower farm, faith rebuilding, and the "broken and becoming" arc. Bones of 12 drafted; first essay nearly finished.
+**Personal Journal Essays** — A series of 12 planned essays processing your mental health journey (depression, bipolar diagnosis), the loss of the flower farm, faith rebuilding, and the "broken and becoming" arc. Three published as of April 14, 2026: *I'm Not Going to Disappear* (reintroduction), *Hope in the Wilderness* (AS reprint), *Holding on to Hope* (Oct 2025 Patreon draft, never sent).
 
 Both streams build toward the same goal: warming up cold outreach for Headley Web & SEO by making you a known, trusted voice in the community.
 
@@ -59,7 +59,7 @@ Written essays for now, not video. Written form is more intimate and lets reader
 
 **Recommended byline for both the Anniston Star and the Calhoun Journal:**
 
-> Matt Headley is a former pastor, classically trained singer, and flower farmer. He writes local business profiles and personal essays about mental health and faith at Southern Legends (southernlegends.com). He runs Headley Web & SEO in Jacksonville, Alabama.
+> Matt Headley is a former pastor, classically trained singer, and flower farmer. He writes local business profiles and personal essays about mental health and faith at Southern Legends (southernlegends.blog). He runs Headley Web & SEO in Jacksonville, Alabama.
 
 **Key points:**
 
@@ -99,12 +99,13 @@ Lee Kathryn Evancho already extended an unsolicited invitation to syndicate. Tha
 
 ## Immediate Next Steps
 
-1. Finish the first essay.
-2. Publish it on Southern Legends.
-3. Share with your trusted circle via direct email.
-4. Post a soft teaser to Facebook linking back to the site.
-5. After 1–2 weeks, reach out to Donna with the pitch above.
-6. After the Star publishes, offer to the Calhoun Journal.
+1. ~~Finish the first essay.~~ ✓ Done
+2. ~~Publish it on Southern Legends.~~ ✓ Done — three journal posts live as of April 14, 2026
+3. Message 4 paying Patreon supporters personally (drafts ready — see `content/journal-drafts/patreon-supporters.md`)
+4. Post to CaringBridge manually with the live link
+5. Post a soft teaser to Facebook linking back to the site
+6. After 1–2 weeks, reach out to Donna with the pitch above
+7. After the Star publishes, offer to the Calhoun Journal
 
 ---
 
