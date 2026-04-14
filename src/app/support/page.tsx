@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import StripeBuyButton from "@/app/components/StripeBuyButton";
+import StripePricingTable from "@/app/components/StripePricingTable";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -65,9 +66,17 @@ export default function SupportPage() {
           </p>
 
           <div className="not-prose mt-10">
+            <StripePricingTable />
+          </div>
+
+          <hr className="my-10 border-ll-dark/10" />
+
+          <p className="text-sm font-medium text-ll-dark">Prefer a one-time gift?</p>
+
+          <div className="not-prose mt-4">
             <StripeBuyButton />
             <p className="text-sm text-ll-text-light mt-4">
-              One-time donation. No account needed. Processed securely by Stripe.
+              No account needed. Processed securely by Stripe.
             </p>
           </div>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllJournalPosts } from "@/lib/journal";
 import { siteConfig } from "@/lib/site-config";
 
@@ -62,23 +63,36 @@ export default function JournalPage() {
             <ul className="space-y-10">
               {posts.map((post) => (
                 <li key={post.slug} className="border-b border-ll-border pb-10 last:border-0 last:pb-0">
-                  <Link href={`/journal/${post.slug}`} className="group block">
-                    <p className="text-xs text-ll-text-light mb-2 uppercase tracking-wide">
-                      {formatDate(post.frontmatter.date)}
-                      {post.frontmatter.originalPublication && (
-                        <> &middot; Originally in {post.frontmatter.originalPublication.name}</>
-                      )}
-                    </p>
-                    <h2
-                      className="text-xl md:text-2xl font-bold text-ll-dark group-hover:text-ll-primary transition-colors mb-3"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                      {post.frontmatter.title}
-                    </h2>
-                    <p className="text-ll-text leading-relaxed">{post.frontmatter.excerpt}</p>
-                    <span className="inline-block mt-4 text-sm font-medium text-ll-primary group-hover:underline">
-                      Read →
-                    </span>
+                  <Link href={`/journal/${post.slug}`} className="group flex gap-6 items-start">
+                    {post.frontmatter.image && (
+                      <div className="shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden">
+                        <Image
+                          src={post.frontmatter.image}
+                          alt={post.frontmatter.imageAlt ?? post.frontmatter.title}
+                          width={128}
+                          height={128}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-ll-text-light mb-2 uppercase tracking-wide">
+                        {formatDate(post.frontmatter.date)}
+                        {post.frontmatter.originalPublication && (
+                          <> &middot; Originally in {post.frontmatter.originalPublication.name}</>
+                        )}
+                      </p>
+                      <h2
+                        className="text-xl md:text-2xl font-bold text-ll-dark group-hover:text-ll-primary transition-colors mb-3"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                      >
+                        {post.frontmatter.title}
+                      </h2>
+                      <p className="text-ll-text leading-relaxed">{post.frontmatter.excerpt}</p>
+                      <span className="inline-block mt-4 text-sm font-medium text-ll-primary group-hover:underline">
+                        Read →
+                      </span>
+                    </div>
                   </Link>
                 </li>
               ))}

@@ -90,6 +90,26 @@ export default function AboutPage() {
               I still drive past farms and gardens on my way to work. Some days
               it&apos;s fine. Some days it isn&apos;t.
             </p>
+          </div>
+
+          <div className="not-prose my-8 grid grid-cols-2 gap-4">
+            <Image
+              src="/images/about/matt-and-heather-flower-farm.webp"
+              alt="Matt and Heather Headley at the flower farm"
+              width={720}
+              height={720}
+              className="w-full rounded-lg object-cover aspect-square"
+            />
+            <Image
+              src="/images/about/headley-flower-farm-field.webp"
+              alt="Rows of zinnias and echinacea at Headley Flower Farm"
+              width={800}
+              height={600}
+              className="w-full rounded-lg object-cover aspect-square"
+            />
+          </div>
+
+          <div className="not-prose">
             <p className="text-ll-text leading-relaxed mb-6">
               What I do now is build websites and run search campaigns for local businesses. That&apos;s{" "}
               <a
@@ -104,7 +124,14 @@ export default function AboutPage() {
               the table from people, and I needed that more than I expected.
               Turns out sitting
               with someone and asking them to tell you their story is one of the
-              ways back. My writing has appeared in the Anniston Star.
+              ways back. My writing has appeared in the{" "}
+              <Link
+                href="/journal/hope-in-the-wilderness"
+                className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
+              >
+                Anniston Star
+              </Link>
+              .
             </p>
             <p className="text-ll-text leading-relaxed mb-6">
               When you&apos;ve lost something you built, you notice the people

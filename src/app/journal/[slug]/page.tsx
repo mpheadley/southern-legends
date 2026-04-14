@@ -8,6 +8,20 @@ import { siteConfig } from "@/lib/site-config";
 import ShareButtons from "@/app/components/ShareButtons";
 import PullQuote from "@/app/components/PullQuote";
 
+function FeaturedImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="not-prose my-10">
+      <Image
+        src={src}
+        alt={alt}
+        width={900}
+        height={600}
+        className="w-full rounded-lg object-cover"
+      />
+    </div>
+  );
+}
+
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => {
     const id =
@@ -62,6 +76,7 @@ const mdxComponents = {
   ),
   hr: () => <hr className="my-10 border-t border-ll-border" />,
   PullQuote,
+  FeaturedImage,
 };
 
 type Params = Promise<{ slug: string }>;

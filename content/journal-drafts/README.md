@@ -3,9 +3,12 @@
 Raw material files for Matt's personal writing section. These are not profiles — they are Matt's story.
 
 **Publication order:**
-1. Reintroduction (`reintroduction-raw-material.md` + `reintroduction-draft.md`) — in progress
-2. Holding on to Hope (`../profiles/matt-headley-sources/patreon-holding-on-to-hope.md`) — published with dateline: *Written October 2025, before the hospitalization*
+1. Reintroduction (`reintroduction-raw-material.md` + `reintroduction-draft.md`) — PUBLISHED
+2. Holding on to Hope (`../profiles/matt-headley-sources/patreon-holding-on-to-hope.md`) — PUBLISHED with dateline: *Written October 2025, before the hospitalization*
 3. Entries below — no set order yet, write what's ready
+
+**Planned: Headley Flower Farm journal entry**
+The farm as a story — the kiosk on the Chief Ladiga Trail, the cut flowers, the markets, the kids underfoot, and losing it. Several Anniston Star articles written by others exist as source material (not Matt's writing — link from within the entry, not from the about page). When written, the about page "Chief Ladiga Trail" mention can link to the SL profile/entry, and the about page farm reference earns a link too.
 
 ---
 

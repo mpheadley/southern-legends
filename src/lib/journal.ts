@@ -11,6 +11,8 @@ export interface JournalFrontmatter {
   date: string;
   excerpt: string;
   published: boolean;
+  image?: string;
+  imageAlt?: string;
   originalPublication?: {
     name: string;
     url: string;
