@@ -426,7 +426,10 @@ export default async function ProfilePage({
               .
             </p>
             <div className="mt-3">
-              <Link href="/journal" className="profile-closing-link">
+              <Link
+                href="/journal"
+                className="inline-block px-5 py-2 border-2 border-ll-accent text-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent hover:text-ll-dark transition-colors"
+              >
                 Matt also writes about his own story →
               </Link>
             </div>
