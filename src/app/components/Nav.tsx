@@ -27,6 +27,7 @@ export default function Nav() {
     { label: "Journal", href: "/journal" },
     { label: "About", href: "/about" },
   ];
+  const supportLink = { label: "Support", href: "/support" };
 
   return (
     <>
@@ -68,6 +69,14 @@ export default function Nav() {
 
           {/* Spacer */}
           <div className="hidden md:block flex-1" />
+
+          {/* Support button — right side, desktop */}
+          <Link
+            href={supportLink.href}
+            className="hidden md:inline-block px-4 py-1.5 bg-ll-primary text-white text-xs font-semibold uppercase tracking-[0.15em] rounded hover:bg-ll-primary-dark transition-colors"
+          >
+            {supportLink.label}
+          </Link>
 
           {/* RSS icon — right side */}
           <a
@@ -152,6 +161,14 @@ export default function Nav() {
               </Link>
             );
           })}
+          <Link
+            href={supportLink.href}
+            className="px-6 py-2 bg-ll-primary text-white text-xl font-semibold rounded hover:bg-ll-primary-dark transition-colors"
+            style={{ fontFamily: "var(--font-heading)" }}
+            onClick={() => setMobileOpen(false)}
+          >
+            {supportLink.label}
+          </Link>
         </nav>
       </div>
     </>
