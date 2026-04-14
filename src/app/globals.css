@@ -699,6 +699,20 @@ html {
   z-index: 1;
 }
 
+/* ─── Reusable CTA Buttons ─── */
+.btn-support {
+  color: white !important;
+}
+.btn-support:hover {
+  color: white !important;
+}
+.btn-journal {
+  color: var(--color-ll-accent) !important;
+}
+.btn-journal:hover {
+  color: var(--color-ll-dark) !important;
+}
+
 /* ─── Article Image floats clearfix ─── */
 .prose-profile .carousel-wrap,
 .prose-profile .my-12 {

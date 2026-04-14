@@ -141,8 +141,7 @@ export default async function ProfilesPage({
       <div className="bg-ll-light border-t border-ll-border py-8 text-center">
         <Link
           href="/support"
-          className="inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
-          style={{ color: "white" }}
+          className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
         >
           Support this work →
         </Link>

@@ -118,15 +118,13 @@ export default function HomePage() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/support"
-            className="inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
-            style={{ color: "white" }}
+            className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
           >
             Support this work →
           </Link>
           <Link
             href="/journal"
-            className="inline-block px-5 py-2 border-2 border-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent transition-colors"
-            style={{ color: "var(--color-ll-accent)" }}
+            className="btn-journal inline-block px-5 py-2 border-2 border-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent transition-colors"
           >
             Matt also writes about his own story →
           </Link>

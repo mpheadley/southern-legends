@@ -158,15 +158,13 @@ export default function AboutPage() {
           <div className="not-prose flex flex-col sm:flex-row gap-4 my-10">
             <Link
               href="/support"
-              className="inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors text-center"
-              style={{ color: "white" }}
+              className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors text-center"
             >
               Support this work →
             </Link>
             <Link
               href="/journal"
-              className="inline-block px-5 py-2 border-2 border-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent transition-colors text-center"
-              style={{ color: "var(--color-ll-accent)" }}
+              className="btn-journal inline-block px-5 py-2 border-2 border-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent transition-colors text-center"
             >
               Matt also writes about his own story →
             </Link>
