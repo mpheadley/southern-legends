@@ -3,10 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
-import { getAllJournalPosts, getJournalPostBySlug } from "@/lib/journal";
+import { getAllJournalPosts, getJournalPostBySlug, getAdjacentJournalPosts } from "@/lib/journal";
 import { siteConfig } from "@/lib/site-config";
 import ShareButtons from "@/app/components/ShareButtons";
 import PullQuote from "@/app/components/PullQuote";
+import JournalNav from "@/app/components/JournalNav";
 
 function Dateline({ children }: { children: React.ReactNode }) {
   return (
@@ -129,6 +130,7 @@ function formatDate(dateStr: string): string {
 export default async function JournalPostPage({ params }: { params: Params }) {
   const { slug } = await params;
   const post = getJournalPostBySlug(slug);
+  const { prev, next } = getAdjacentJournalPosts(slug);
   if (!post || !post.frontmatter.published) notFound();
 
   const { frontmatter, content, readingTime } = post;
@@ -211,7 +213,7 @@ export default async function JournalPostPage({ params }: { params: Params }) {
       {/* Closing */}
       <section className="profile-closing">
         <div className="profile-closing-links" style={{ paddingBottom: "0.25rem" }}>
-          <Link href="/support" className="profile-closing-link">
+          <Link href="/support" className="profile-closing-link" style={{ color: "var(--color-ll-accent)", fontWeight: 600 }}>
             If this meant something →
           </Link>
           <Link href="/journal" className="profile-closing-link">
@@ -233,6 +235,8 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           />
         </div>
       </section>
+
+      <JournalNav prev={prev} next={next} />
     </main>
   );
 }

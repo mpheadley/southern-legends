@@ -50,6 +50,26 @@ export function getJournalPostBySlug(slug: string): JournalPost | null {
   };
 }
 
+export function getAdjacentJournalPosts(slug: string): {
+  prev: JournalPost | null;
+  next: JournalPost | null;
+} {
+  const all = getAllJournalPosts();
+  const idx = all.findIndex((p) => p.slug === slug);
+  let prev: JournalPost | null = idx < all.length - 1 ? all[idx + 1] : null;
+  let next: JournalPost | null = idx > 0 ? all[idx - 1] : null;
+
+  if (!prev || !next) {
+    const others = all.filter(
+      (p) => p.slug !== slug && p.slug !== prev?.slug && p.slug !== next?.slug
+    );
+    if (!next && others.length > 0) next = others[0];
+    else if (!prev && others.length > 0) prev = others[others.length - 1];
+  }
+
+  return { prev, next };
+}
+
 export function getAllJournalPosts(): JournalPost[] {
   return getJournalSlugs()
     .map(getJournalPostBySlug)
