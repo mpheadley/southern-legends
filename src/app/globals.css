@@ -700,6 +700,21 @@ html {
 }
 
 /* ─── Reusable CTA Buttons ─── */
+.btn-support,
+.btn-journal,
+.btn-primary {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.btn-support:hover,
+.btn-journal:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+.btn-support:active,
+.btn-journal:active,
+.btn-primary:active {
+  transform: translateY(0);
+}
 .btn-support {
   color: white !important;
 }

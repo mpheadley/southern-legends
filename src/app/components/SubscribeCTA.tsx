@@ -115,7 +115,7 @@ export default function SubscribeCTA({ variant = "section" }: { variant?: "secti
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark transition-colors disabled:opacity-60"
+              className="btn-primary px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark disabled:opacity-60"
             >
               {status === "loading" ? "Subscribing..." : "Subscribe"}
             </button>

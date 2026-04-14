@@ -172,7 +172,7 @@ export default function NominatePage() {
             <div className="pt-4">
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark transition-colors"
+                className="btn-primary w-full px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark"
               >
                 Send Nomination
               </button>

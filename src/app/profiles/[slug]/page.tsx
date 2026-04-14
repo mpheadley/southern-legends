@@ -470,7 +470,7 @@ export default async function ProfilePage({
           </p>
           <Link
             href="/about"
-            className="inline-block px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark transition-colors animate-on-scroll"
+            className="btn-primary inline-block px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark animate-on-scroll"
           >
             Tell Me About Them
           </Link>
