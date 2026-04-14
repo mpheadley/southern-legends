@@ -17,7 +17,7 @@ function Dateline({ children }: { children: React.ReactNode }) {
   );
 }
 
-function FeaturedImage({ src, alt }: { src: string; alt: string }) {
+function FeaturedImage({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
   return (
     <div className="not-prose my-10">
       <Image
@@ -27,6 +27,9 @@ function FeaturedImage({ src, alt }: { src: string; alt: string }) {
         height={600}
         className="w-full rounded-lg object-cover"
       />
+      {caption && (
+        <p className="mt-2 text-xs text-center italic text-ll-text-light">{caption}</p>
+      )}
     </div>
   );
 }
