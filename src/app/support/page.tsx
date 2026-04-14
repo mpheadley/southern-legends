@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
-import StripeBuyButton from "@/app/components/StripeBuyButton";
 import StripePricingTable from "@/app/components/StripePricingTable";
 
 export const metadata: Metadata = {
@@ -74,7 +73,16 @@ export default function SupportPage() {
           <p className="text-sm font-medium text-ll-dark">Prefer a one-time gift?</p>
 
           <div className="not-prose mt-4">
-            <StripeBuyButton />
+            {process.env.NEXT_PUBLIC_STRIPE_SUPPORT_URL && (
+              <a
+                href={process.env.NEXT_PUBLIC_STRIPE_SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark"
+              >
+                Give a one-time gift →
+              </a>
+            )}
             <p className="text-sm text-ll-text-light mt-4">
               No account needed. Processed securely by Stripe.
             </p>
