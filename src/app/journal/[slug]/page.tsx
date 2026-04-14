@@ -31,6 +31,23 @@ function FeaturedImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+function InlineImage({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <div className="not-prose my-8 mx-auto" style={{ maxWidth: "400px" }}>
+      <Image
+        src={src}
+        alt={alt}
+        width={400}
+        height={533}
+        className="w-full rounded-lg object-cover"
+      />
+      {caption && (
+        <p className="mt-2 text-xs text-center italic text-ll-text-light">{caption}</p>
+      )}
+    </div>
+  );
+}
+
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => {
     const id =
@@ -86,6 +103,7 @@ const mdxComponents = {
   hr: () => <hr className="my-10 border-t border-ll-border" />,
   PullQuote,
   FeaturedImage,
+  InlineImage,
   Dateline,
 };
 
