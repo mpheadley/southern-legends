@@ -201,37 +201,22 @@ export default async function JournalPostPage({ params }: { params: Params }) {
 
       {/* Closing */}
       <section className="profile-closing">
-        <div className="profile-closing-author">
-          <Image
-            src="/images/about/headshot-hedcut-matt-headley.webp"
-            alt="Matt Headley"
-            width={48}
-            height={48}
-            className="rounded-full shrink-0"
-            style={{ width: "48px", height: "48px" }}
-          />
-          <div>
-            <p className="profile-closing-bio">
-              <Link href="/about" className="profile-closing-name">
-                Matt Headley
-              </Link>{" "}
-              is a former pastor, classically trained singer, and flower farmer from Northeast Alabama.
-            </p>
-            <div className="profile-closing-links">
-              <Link href="/journal" className="profile-closing-link">
-                More from the journal →
-              </Link>
-              <Link href="/profiles" className="profile-closing-link">
-                Read the stories →
-              </Link>
-            </div>
-          </div>
+        <div className="profile-closing-links" style={{ paddingBottom: "0.25rem" }}>
+          <Link href="/support" className="profile-closing-link">
+            If this meant something →
+          </Link>
+          <Link href="/journal" className="profile-closing-link">
+            More from the journal →
+          </Link>
+          <Link href="/profiles" className="profile-closing-link">
+            Read the stories →
+          </Link>
         </div>
 
         <div className="profile-closing-divider" />
 
         <div className="profile-closing-share">
-          <p className="profile-closing-share-label">Found this useful?</p>
+          <p className="profile-closing-share-label">Share</p>
           <ShareButtons
             url={`/journal/${slug}`}
             title={frontmatter.title}
