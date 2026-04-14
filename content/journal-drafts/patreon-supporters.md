@@ -26,13 +26,13 @@ Read and adjust before sending. Send from Patreon message tool or Gmail directly
 
 ---
 
-**Mary Larson** *(most personal — highest lifetime support)*
+**Mary Larson** — marylarson1312@gmail.com *(most personal — highest lifetime support)*
 
 Mary,
 
-I owe you a real message. You've been supporting this work since the beginning, and I went quiet on you for months. I'm sorry for that.
+I've owed you a direct message for a long time. You've been supporting our Patreon work since the beginning, and I went quiet on you for months. I'm sorry for that.
 
-A lot happened. The farm sold. I was hospitalized. It was the hardest year of my life. I've written about some of it here — I thought you deserved to read it before anyone else: southernlegends.blog/journal
+A lot happened. The farm sold. I was hospitalized. It has been the hardest year of my life. I've written about some of it here, and I thought you deserved to read it before anyone else: southernlegends.blog/journal
 
 Thank you for sticking around. It means more than I've said.
 
@@ -40,7 +40,7 @@ Matt
 
 ---
 
-**Sherill Clontz** *(pastor — knows you professionally)*
+**Sherill Clontz** — pastorsherill@gmail.com *(pastor — knows you professionally)*
 
 Sherill,
 
@@ -54,24 +54,34 @@ Matt
 
 ---
 
-**Rae Wall** *(Apple private relay — may not receive)*
+**Rae Wall** — tpcyytg6nx@privaterelay.appleid.com *(Apple private relay — may not receive; use Patreon DM instead)*
 
-Rae,
+Dear Rae,
 
-I went quiet for a long time. I'm writing again now — four essays live at southernlegends.blog/journal. That's where the story picks up.
+I've owed you a direct message for a long time. You've supported my work on Patreon since I started it, and I went quiet on you for months. I'm sorry for that.
 
-Thank you for being part of the early days of this.
+A lot happened. The farm sold. I was hospitalized. It has been the hardest year of my life.
 
+I've written about some of it here, and I thought you deserved to read it before anyone else: https://southernlegends.blog/journal
+
+Thank you for supporting this through the silence. That kind of grace hasn't gone unnoticed.
+
+With love,
 Matt
 
 ---
 
-**K Veasey**
+**K Veasey (goes by Lin)** — karenlinvz@gmail.com
 
-Thank you for supporting this work through a season when I wasn't able to show up. I'm back. Four essays live now at southernlegends.blog/journal — that's where I'll keep writing.
+Dear Lin,
 
-Grateful for you.
+I've owed you a direct message for a long time. You've supported my work on Patreon since I started it, and I went quiet on you for months. I'm sorry for that. I meant to mention it when we met, but it slipped my mind.
 
+As you know, a lot happened, and it's been a hard year. I've written about some of it here, and I thought you deserved to read it before anyone else: https://southernlegends.blog/journal
+
+Thank you for supporting this through the silence. That kind of grace hasn't gone unnoticed.
+
+With love,
 Matt
 
 ---
@@ -84,23 +94,19 @@ Post publicly on Patreon after sending personal messages. Then pin it.
 
 Dear friends,
 
-I've moved the journal over to a new home — Southern Legends, my editorial project covering people and stories in Northeast Alabama. That's where I'll be writing from now on.
-
-Some pieces I wrote for you found their way there first. If you haven't read them yet, here's where they live:
+My writing has a new home. Here's what I wrote during the silence.
 
 [I'm Not Going to Disappear](https://southernlegends.blog/journal/im-not-going-to-disappear) — where I've been, and why I'm still here.
 
-[Holding on to Hope](https://southernlegends.blog/journal/holding-on-to-hope) — the farm, the diagnosis, and what comes next.
+[A Letter Never Sent](https://southernlegends.blog/journal/a-letter-never-sent) — the farm, the diagnosis, and what comes next.
 
-[Pushing Through](https://southernlegends.blog/journal/pushing-through) — started for Patreon in July. Finished here.
+[Attempt 73](https://southernlegends.blog/journal/attempt-73) — started for Patreon in July. Finished here.
 
 [Hope in the Wilderness](https://southernlegends.blog/journal/hope-in-the-wilderness) — the Anniston Star piece from 2024, where this all started.
 
-Thank you for being here during the season that produced all of those. It mattered more than you know.
+This is my last post here. Thank you for being here during that season. It mattered more than you know. If you want to continue to support the work, you can do that at southernlegends.blog/support.
 
-If you want to keep following the work, southernlegends.blog is the place. There's also a way to [support it there](https://southernlegends.blog/support) if you're so inclined.
-
-With gratitude,
+With love,
 Matt
 
 ## Free tier followers (no message needed, will find via reintroduction)

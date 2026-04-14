@@ -4,9 +4,11 @@ Raw material files for Matt's personal writing section. These are not profiles �
 
 **Published:**
 1. **I'm Not Going to Disappear** — LIVE at `/journal/im-not-going-to-disappear`
-2. **Holding on to Hope** — LIVE at `/journal/holding-on-to-hope`
+2. **A Letter Never Sent** (was "Holding on to Hope") — LIVE at `/journal/a-letter-never-sent`
 3. **Hope in the Wilderness** (Anniston Star reprint) — LIVE at `/journal/hope-in-the-wilderness`
-4. **Pushing Through** — LIVE at `/journal/pushing-through`
+4. **Attempt 73** (was "Pushing Through") — LIVE at `/journal/attempt-73`
+
+**Patreon closed April 14, 2026.** Personal messages sent to 4 paying supporters. Closing post published and pinned. Announce journal on Facebook this week.
 
 **Up next — no set order, write what's ready:**
 
