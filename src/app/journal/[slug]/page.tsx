@@ -8,6 +8,14 @@ import { siteConfig } from "@/lib/site-config";
 import ShareButtons from "@/app/components/ShareButtons";
 import PullQuote from "@/app/components/PullQuote";
 
+function Dateline({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="text-sm italic text-ll-text-light mb-6 leading-relaxed">
+      {children}
+    </div>
+  );
+}
+
 function FeaturedImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="not-prose my-10">
@@ -77,6 +85,7 @@ const mdxComponents = {
   hr: () => <hr className="my-10 border-t border-ll-border" />,
   PullQuote,
   FeaturedImage,
+  Dateline,
 };
 
 type Params = Promise<{ slug: string }>;
