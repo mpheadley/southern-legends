@@ -20,8 +20,6 @@ import ShareButtons from "@/app/components/ShareButtons";
 import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
 import ParallaxHero from "@/app/components/ParallaxHero";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
-import { getOtherJournalPosts } from "@/lib/journal";
-import JournalCard from "@/app/components/JournalCard";
 
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => {
@@ -164,7 +162,6 @@ export default async function ProfilePage({
   const { frontmatter, content, readingTime } = profile;
   const { prev, next } = getAdjacentProfiles(slug);
   const scrollyConfig = scrollytellingConfigs[slug];
-  const journalPosts = getOtherJournalPosts("", 2);
 
   // If a scrollytelling config exists, render the immersive layout
   if (scrollyConfig) {
@@ -408,10 +405,10 @@ export default async function ProfilePage({
           <Image
             src="/images/about/headshot-hedcut-matt-headley.webp"
             alt="Matt Headley"
-            width={48}
-            height={48}
+            width={96}
+            height={96}
             className="rounded-full shrink-0"
-            style={{ width: "48px", height: "48px" }}
+            style={{ width: "96px", height: "96px" }}
           />
           <div>
             <p className="profile-closing-bio">
@@ -428,6 +425,11 @@ export default async function ProfilePage({
               </a>
               .
             </p>
+            <div className="mt-3">
+              <Link href="/journal" className="profile-closing-link">
+                Matt also writes about his own story →
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -448,25 +450,6 @@ export default async function ProfilePage({
 
       {/* Story Navigation (prev/next) */}
       <StoryNav prev={prev} next={next} />
-
-      {/* From the Journal */}
-      {journalPosts.length > 0 && (
-        <section className="bg-ll-warm py-12 md:py-16 border-t border-ll-border">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2
-              className="text-xl font-bold text-ll-dark mb-8"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              From the Journal
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {journalPosts.map((p) => (
-                <JournalCard key={p.slug} post={p} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Nominate CTA */}
       <section className="bg-ll-dark">

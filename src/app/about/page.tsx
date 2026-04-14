@@ -155,23 +155,20 @@ export default function AboutPage() {
 
           <hr className="my-10 border-ll-dark/10" />
 
-          <p>
-            If Southern Legends has meant something to you, you can{" "}
+          <div className="not-prose flex flex-col sm:flex-row gap-4 my-10">
             <Link
               href="/support"
-              className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
+              className="inline-block px-7 py-3 bg-ll-primary text-white font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors text-center"
             >
-              support this work here
+              Support this work →
             </Link>
-            . There&apos;s also a{" "}
             <Link
               href="/journal"
-              className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
+              className="inline-block px-7 py-3 border-2 border-ll-primary text-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary hover:text-white transition-colors text-center"
             >
-              journal
+              Read the Journal →
             </Link>
-            {" "}where I write about what&apos;s behind the profiles, and what&apos;s behind me.
-          </p>
+          </div>
 
           <hr className="my-10 border-ll-dark/10" />
 
