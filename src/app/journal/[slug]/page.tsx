@@ -226,7 +226,7 @@ export default async function JournalPostPage({ params }: { params: Params }) {
               textDecoration: "none",
             }}
           >
-            If this meant something →
+            Support this work →
           </Link>
         </div>
         <div className="profile-closing-links" style={{ paddingBottom: "0.25rem" }}>
