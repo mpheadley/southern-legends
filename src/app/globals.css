@@ -192,6 +192,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-ll-primary-dark);
 }
 
+.prose-profile .not-prose a,
+.prose-profile .not-prose a:hover {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
 .prose-profile blockquote {
   position: relative;
   border-left: 4px solid var(--color-ll-accent);
