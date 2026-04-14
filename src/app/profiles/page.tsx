@@ -71,7 +71,7 @@ export default async function ProfilesPage({
           </h1>
           {!tag && (
             <p className="mt-4 text-base md:text-lg text-white/75 max-w-xl">
-              I sit down with people in Northeast Alabama — business owners, mostly — ask how they got here, and write it with enough room to actually tell the story.
+              I sit down with people in Northeast Alabama. Business owners, mostly. I ask how they got here and write it with enough room to actually tell the story.
             </p>
           )}
           <p className="mt-3 text-white/70 text-sm">
