@@ -69,7 +69,12 @@ export default async function ProfilesPage({
           >
             {tag ? `Stories tagged "${tag}"` : "All Stories"}
           </h1>
-          <p className="mt-3 text-white/70">
+          {!tag && (
+            <p className="mt-4 text-base md:text-lg text-white/75 max-w-xl">
+              Long-form profiles of the people building Northeast Alabama. Business owners, mostly — but also places and organizations that have been here long enough to have a story worth hearing.
+            </p>
+          )}
+          <p className="mt-3 text-white/70 text-sm">
             {profiles.length} {profiles.length === 1 ? "story" : "stories"}
             {tag ? ` tagged "${tag}"` : ""} and counting.
           </p>

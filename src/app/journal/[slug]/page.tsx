@@ -212,10 +212,34 @@ export default async function JournalPostPage({ params }: { params: Params }) {
 
       {/* Closing */}
       <section className="profile-closing">
-        <div className="profile-closing-links" style={{ paddingBottom: "0.25rem" }}>
-          <Link href="/support" className="profile-closing-link" style={{ color: "var(--color-ll-accent)", fontWeight: 600 }}>
+        <div style={{ paddingBottom: "1.25rem" }}>
+          <Link
+            href="/support"
+            style={{
+              display: "inline-block",
+              padding: "0.6rem 1.4rem",
+              border: "2px solid var(--color-ll-accent)",
+              borderRadius: "6px",
+              color: "var(--color-ll-accent)",
+              fontWeight: 700,
+              fontSize: "0.95rem",
+              letterSpacing: "0.01em",
+              textDecoration: "none",
+              transition: "background 0.15s, color 0.15s",
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLElement).style.background = "var(--color-ll-accent)";
+              (e.currentTarget as HTMLElement).style.color = "#fff";
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+              (e.currentTarget as HTMLElement).style.color = "var(--color-ll-accent)";
+            }}
+          >
             If this meant something →
           </Link>
+        </div>
+        <div className="profile-closing-links" style={{ paddingBottom: "0.25rem" }}>
           <Link href="/journal" className="profile-closing-link">
             More from the journal →
           </Link>
