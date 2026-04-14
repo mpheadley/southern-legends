@@ -89,7 +89,7 @@ export default function SubscribeCTA({ variant = "section" }: { variant?: "secti
           Don&apos;t Miss a Story
         </h2>
         <p className="text-white/60 mb-8 text-base leading-relaxed">
-          Get notified when we publish a new profile. No spam, no fluff — just
+          Get notified when we publish a new profile. No spam, no fluff. Just
           stories worth reading.
         </p>
 

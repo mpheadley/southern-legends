@@ -26,7 +26,7 @@ export default function NotFound() {
             Wrong trail, friend.
           </h1>
           <p className="text-white/70 mt-4 text-lg max-w-md mx-auto">
-            This page doesn&apos;t exist — but there are plenty of stories worth
+            This page doesn&apos;t exist. But there are plenty of stories worth
             finding.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">

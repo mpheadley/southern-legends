@@ -169,8 +169,8 @@ export default function AboutPage() {
               className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
             >
               journal
-            </Link>{" "}
-            — where I write about what&apos;s behind the profiles, and what&apos;s behind me.
+            </Link>
+            {" "}where I write about what&apos;s behind the profiles, and what&apos;s behind me.
           </p>
 
           <hr className="my-10 border-ll-dark/10" />
