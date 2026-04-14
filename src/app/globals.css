@@ -428,6 +428,22 @@ html {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.journal-support-btn {
+  display: inline-block;
+  padding: 0.65rem 1.75rem;
+  background: white;
+  border-radius: 6px;
+  color: var(--color-ll-dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.journal-support-btn:hover {
+  background: var(--color-ll-accent);
+  color: white;
+}
+
 .profile-closing-share {
   display: flex;
   flex-direction: column;
