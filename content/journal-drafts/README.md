@@ -2,10 +2,13 @@
 
 Raw material files for Matt's personal writing section. These are not profiles — they are Matt's story.
 
-**Publication order:**
-1. Reintroduction (`reintroduction-raw-material.md` + `reintroduction-draft.md`) — PUBLISHED
-2. Holding on to Hope (`../profiles/matt-headley-sources/patreon-holding-on-to-hope.md`) — PUBLISHED with dateline: *Written October 2025, before the hospitalization*
-3. Entries below — no set order yet, write what's ready
+**Published:**
+1. **I'm Not Going to Disappear** — LIVE at `/journal/im-not-going-to-disappear`
+2. **Holding on to Hope** — LIVE at `/journal/holding-on-to-hope`
+3. **Hope in the Wilderness** (Anniston Star reprint) — LIVE at `/journal/hope-in-the-wilderness`
+4. **Pushing Through** — LIVE at `/journal/pushing-through`
+
+**Up next — no set order, write what's ready:**
 
 **Planned: Headley Flower Farm journal entry**
 The farm as a story — the kiosk on the Chief Ladiga Trail, the cut flowers, the markets, the kids underfoot, and losing it. Several Anniston Star articles written by others exist as source material (not Matt's writing — link from within the entry, not from the about page). When written, the about page "Chief Ladiga Trail" mention can link to the SL profile/entry, and the about page farm reference earns a link too.
@@ -27,6 +30,10 @@ The farm as a story — the kiosk on the Chief Ladiga Trail, the cut flowers, th
 | `easter-last-year.md` | Manic Easter — purple pants, pink tie, selfies, anger at the church he used to serve | Raw material only |
 | `easter-this-year.md` | Second Sunday at Jax FUMC — Andy inviting Matt to help serve communion — reconstruction beginning | Raw material only |
 | `the-church-visits.md` | Heartbreaking and anger-filled visits to First Anniston — the church where he used to work | Raw material only |
+| `the-hospital-chapter.md` | Halloween in hospital, camper at parents', trailer move, Thanksgiving + Christmas together | Matt's words, needs writing |
+| `ministry-grief.md` | 20-year career grief, Camp Lee chapter, slow acceptance the season was over | Matt's words, needs writing |
+| `kyles-grippy-socks.md` | Kyle who preached grippy socks + showed up in person day of UAB | Raw material only |
+| `easter.md` | Manic Easter vs. serving communion this year — the whole arc in one image | Raw material only |
 | `faith-journey-raw-notes.md` | Faith through depression: 20 years of vocation, Marcus Borg + postcritical naivete, psychedelic community, Romaren et Corvo, "hanging out in the margins" | Voice transcript (April 13, 2026) — Matt's words verbatim, Claude turns summarized in brackets |
 
 ---
