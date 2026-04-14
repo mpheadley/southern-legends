@@ -3,11 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
-import { getAllJournalPosts, getJournalPostBySlug, getAdjacentJournalPosts } from "@/lib/journal";
+import { getAllJournalPosts, getJournalPostBySlug, getOtherJournalPosts } from "@/lib/journal";
+import { getAllProfiles } from "@/lib/profiles";
 import { siteConfig } from "@/lib/site-config";
 import ShareButtons from "@/app/components/ShareButtons";
 import PullQuote from "@/app/components/PullQuote";
-import JournalNav from "@/app/components/JournalNav";
+import JournalCard from "@/app/components/JournalCard";
+import ProfileCard from "@/app/components/ProfileCard";
 
 function Dateline({ children }: { children: React.ReactNode }) {
   return (
@@ -151,8 +153,10 @@ function formatDate(dateStr: string): string {
 export default async function JournalPostPage({ params }: { params: Params }) {
   const { slug } = await params;
   const post = getJournalPostBySlug(slug);
-  const { prev, next } = getAdjacentJournalPosts(slug);
   if (!post || !post.frontmatter.published) notFound();
+
+  const moreJournal = getOtherJournalPosts(slug, 2);
+  const profiles = getAllProfiles().slice(0, 3);
 
   const { frontmatter, content, readingTime } = post;
 
@@ -231,36 +235,56 @@ export default async function JournalPostPage({ params }: { params: Params }) {
         </div>
       </article>
 
+      {/* Support — top of closing */}
+      <div className="bg-ll-light border-t border-ll-border py-8 text-center">
+        <Link
+          href="/support"
+          className="inline-block px-7 py-3 bg-ll-primary text-white font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
+        >
+          Support this work →
+        </Link>
+      </div>
+
+      {/* More from the Journal */}
+      {moreJournal.length > 0 && (
+        <section className="bg-ll-warm py-12 md:py-16 border-t border-ll-border">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className="text-xl font-bold text-ll-dark mb-8"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              More from the Journal
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {moreJournal.map((p) => (
+                <JournalCard key={p.slug} post={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Stories */}
+      {profiles.length > 0 && (
+        <section className="bg-ll-warm py-12 md:py-16 border-t border-ll-border">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className="text-xl font-bold text-ll-dark mb-8"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Read the Stories
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {profiles.map((p) => (
+                <ProfileCard key={p.slug} profile={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Closing */}
       <section className="profile-closing">
-        <div style={{ paddingBottom: "1.25rem", isolation: "isolate" }}>
-          <Link
-            href="/support"
-            style={{
-              display: "inline-block",
-              padding: "0.65rem 1.75rem",
-              background: "white",
-              borderRadius: "6px",
-              color: "var(--color-ll-dark)",
-              fontWeight: 700,
-              fontSize: "0.95rem",
-              textDecoration: "none",
-            }}
-          >
-            Support this work →
-          </Link>
-        </div>
-        <div className="profile-closing-links" style={{ paddingBottom: "0.25rem" }}>
-          <Link href="/journal" className="profile-closing-link">
-            More from the journal →
-          </Link>
-          <Link href="/profiles" className="profile-closing-link">
-            Read the stories →
-          </Link>
-        </div>
-
-        <div className="profile-closing-divider" />
-
         <div className="profile-closing-share">
           <p className="profile-closing-share-label">Share</p>
           <ShareButtons
@@ -271,7 +295,6 @@ export default async function JournalPostPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      <JournalNav prev={prev} next={next} />
     </main>
   );
 }

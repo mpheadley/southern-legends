@@ -20,6 +20,8 @@ import ShareButtons from "@/app/components/ShareButtons";
 import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
 import ParallaxHero from "@/app/components/ParallaxHero";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
+import { getOtherJournalPosts } from "@/lib/journal";
+import JournalCard from "@/app/components/JournalCard";
 
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => {
@@ -162,6 +164,7 @@ export default async function ProfilePage({
   const { frontmatter, content, readingTime } = profile;
   const { prev, next } = getAdjacentProfiles(slug);
   const scrollyConfig = scrollytellingConfigs[slug];
+  const journalPosts = getOtherJournalPosts("", 2);
 
   // If a scrollytelling config exists, render the immersive layout
   if (scrollyConfig) {
@@ -388,6 +391,16 @@ export default async function ProfilePage({
         </div>
       </article>
 
+      {/* Support */}
+      <div className="bg-ll-light border-t border-ll-border py-8 text-center">
+        <Link
+          href="/support"
+          className="inline-block px-7 py-3 bg-ll-primary text-white font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
+        >
+          Support this work →
+        </Link>
+      </div>
+
       {/* Closing — author credit, share, tags on dark topo/gradient */}
       <section className="profile-closing">
         {/* Author credit */}
@@ -405,24 +418,16 @@ export default async function ProfilePage({
               <Link href="/about" className="profile-closing-name">
                 Matt Headley
               </Link>{" "}
-              is a former pastor, classically trained singer, and flower farmer from Northeast Alabama. His work has appeared in the{" "}
-              <a href="https://www.annistonstar.com/free/hope-in-the-wilderness-a-pastors-journey-through-depression/article_bdce759c-8cd4-11ef-80af-cb30638a39a6.html" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
+              is a former pastor, flower farmer, and classically trained singer from Northeast Alabama. His work has appeared in the{" "}
+              <Link href="/journal/hope-in-the-wilderness" className="profile-closing-link">
                 Anniston Star
-              </a>
-              . He runs Headley Web &amp; SEO at{" "}
+              </Link>
+              . He builds websites for small businesses at{" "}
               <a href="https://headleyweb.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
                 headleyweb.com
               </a>
               .
             </p>
-            <div className="profile-closing-links">
-              <Link href="/journal" className="profile-closing-link">
-                Read the journal →
-              </Link>
-              <Link href="/support" className="profile-closing-link">
-                Support this work →
-              </Link>
-            </div>
           </div>
         </div>
 
@@ -443,6 +448,25 @@ export default async function ProfilePage({
 
       {/* Story Navigation (prev/next) */}
       <StoryNav prev={prev} next={next} />
+
+      {/* From the Journal */}
+      {journalPosts.length > 0 && (
+        <section className="bg-ll-warm py-12 md:py-16 border-t border-ll-border">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className="text-xl font-bold text-ll-dark mb-8"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              From the Journal
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {journalPosts.map((p) => (
+                <JournalCard key={p.slug} post={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Nominate CTA */}
       <section className="bg-ll-dark">

@@ -70,6 +70,12 @@ export function getAdjacentJournalPosts(slug: string): {
   return { prev, next };
 }
 
+export function getOtherJournalPosts(slug: string, count = 2): JournalPost[] {
+  return getAllJournalPosts()
+    .filter((p) => p.slug !== slug)
+    .slice(0, count);
+}
+
 export function getAllJournalPosts(): JournalPost[] {
   return getJournalSlugs()
     .map(getJournalPostBySlug)
