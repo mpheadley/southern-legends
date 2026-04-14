@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import StripeBuyButton from "@/app/components/StripeBuyButton";
 
@@ -58,25 +57,11 @@ export default function SupportPage() {
       <section className="bg-ll-light">
         <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 prose-profile">
           <p>
-            Southern Legends is free. Every profile, every story, every word. No paywall, no subscription, no sign-up required. That&apos;s not going to change.
+            Southern Legends is free.
           </p>
 
           <p>
-            It&apos;s free because the people I write about deserve to be written about, and the people who know them deserve to read it without a gate in the way.
-          </p>
-
-          <p>
-            But there&apos;s real time in this. If you&apos;ve read something here that meant something, this is a way to say so. A story that sounded like someone you know. A place you&apos;ve driven past a hundred times without stopping.
-          </p>
-
-          <p>
-            There&apos;s also a journal.{" "}
-            <Link
-              href="/journal"
-              className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
-            >
-              southernlegends.blog/journal
-            </Link>
+            There&apos;s real time in this. If you&apos;ve read something here that meant something, this is a way to say so. A story that sounded like someone you know. A place you&apos;ve driven past a hundred times without stopping.
           </p>
 
           <div className="not-prose mt-10">
