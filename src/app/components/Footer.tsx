@@ -10,12 +10,14 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           <div>
-            <p
-              className="text-2xl font-bold text-white tracking-tight uppercase tracking-[0.08em]"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              {siteConfig.name}
-            </p>
+            <Link href="/">
+              <p
+                className="text-2xl font-bold text-white tracking-tight uppercase tracking-[0.08em] hover:text-ll-accent transition-colors"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                {siteConfig.name}
+              </p>
+            </Link>
             <p className="text-sm mt-2 text-white/70 max-w-xs">
               {siteConfig.tagline}
             </p>
