@@ -1,5 +1,7 @@
 # Southern Legends — Project Instructions
 
+**Strategy doc:** `STRATEGY.md` — read at the start of any outreach, content, or business strategy session. Covers SL + HW shared outreach strategy, weekly rhythm, profile pipeline, syndication, and platform decisions.
+
 ## What This Is
 Editorial / storytelling site profiling small business owners and makers in Northeast Alabama. Not a client site — this is a personal/portfolio project by Matt Headley. Content-driven, MDX-based, magazine-style presentation.
 

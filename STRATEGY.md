@@ -4,6 +4,35 @@
 
 ---
 
+## Contents
+
+| Section | What's in it |
+|---|---|
+| [The Big Picture](#the-big-picture) | Three platforms, one body of work |
+| [Chamber of Commerce Alternative](#the-longer-vision--chamber-of-commerce-alternative) | Long-term community vision |
+| [What SL Is NOT](#what-southern-legends-is-not) | Editorial guardrails |
+| [Platform Architecture](#platform-architecture) | SL → Personal Essays → Headley Web layers |
+| [Platform Plan](#platform-plan--build-on-southernlegendsblog-not-substack-not-patreon) | Build on SL (not Substack/Patreon) — decisions made |
+| [The Book](#the-book) | Patreon as workshop, post-by-post arc |
+| [Building in Public](#building-in-public) | The concept underneath the site |
+| [Open Question](#open-question--what-is-southern-legends) | What SL actually is — TBD after writing |
+| [The Real Center](#the-real-center) | The story underneath everything |
+| [Syndication Strategy](#syndication-strategy) | SL → Anniston Star → Calhoun Journal order of operations |
+| [Target Businesses](#target-businesses) | Who to profile and why |
+| [Two-Track Outreach Strategy](#two-track-outreach-strategy-april-2026) | Premium (SL) vs. volume (drop-by) — opener toolkit by business type |
+| [Profile Pipeline](#profile-pipeline) | Current subjects and status |
+| [Profile Quality Standard](#profile-quality-standard) | Jean Ellison is the bar |
+| [Two-Touch Follow-Up](#two-touch-follow-up-sequence) | Every published profile, no exceptions |
+| [Editorial vs. Web Services](#the-outreach-approach--editorial-vs-web-services) | Keep them separate |
+| [Sebastian's SEO Gig](#short-term-income--sebastians-seo-gig) | $500/month side income |
+| [Known Blockers](#known-blockers) | Initiation, not planning |
+| [Weekly Rhythm](#weekly-rhythm) | Shared SL + HW operating rhythm — Monday through Friday |
+| [Action Items](#action-items) | This week, soon, ongoing |
+| [Writing Habit](#writing-habit) | Low bar daily, real session weekly |
+| [Long-Term Vision](#long-term-vision) | $400K agency, Don Miller model |
+
+---
+
 ## The Big Picture
 
 Three platforms. One body of work. Written once, deployed strategically.
@@ -193,11 +222,23 @@ That's not a Southern Legends detail. That's the book. And the Patreon is where 
 
 ### Order of Operations
 
-1. Write the piece
-2. Publish on **Southern Legends** first (your owned platform)
-3. Wait one to two weeks
-4. Pitch to **Anniston Star** (Donna Barton) for paid syndication ($50–100/article) — their paid model means they get the larger-outlet exclusivity window first
-5. Syndicate to **Calhoun Journal** (Lee) after another one to two weeks — their free model means prior publication elsewhere isn't a problem, and the "as seen in the Anniston Star" credential strengthens the pitch
+1. Walk in / contact the business owner — introduce yourself as someone who runs Southern Legends and would like to profile them. Mention that profiles get picked up by the Anniston Star and the Calhoun Journal.
+2. Interview them
+3. Write the piece
+4. Publish on **Southern Legends** first (your owned platform — permanent canonical home)
+5. Wait one to two weeks — pitch to **Anniston Star** (Donna Barton) for syndication
+6. Syndicate to **Calhoun Journal** (Lee) after another one to two weeks
+
+**Why SL publishes first (decided April 2026):**
+SL is the primary home — you own it permanently, it demonstrates your web design ability to the subject firsthand, and it's already generating real social proof (Jean Ellison and Samuel Sawyer both shared their profiles multiple times without being asked). The gift dynamic — "I chose you for my personal project" — creates stronger personal goodwill than a Star assignment would. The Star and CJ are distribution on top of something that already works, not the primary credibility play.
+
+**Why not Star first:**
+Considered and rejected April 2026. The Star credential is valuable for cold outreach, but the SL profile is a free gift with no strings attached — that creates deeper relationship warmth than press coverage does. The Star placement feels like you doing your job; the SL profile feels like you honoring them personally. SL is also working without syndication — don't fix what isn't broken.
+
+**Cold intro language (use this verbatim or close to it):**
+> "I run a community storytelling project called Southern Legends — profiles of interesting people and small business owners across northeast Alabama. I'd love to feature you. The profiles also get picked up by the Anniston Star and the Calhoun Journal."
+
+This keeps SL as the gift and the syndication as a bonus — the business owner understands you chose them, the papers just happen to run it too.
 
 ---
 
@@ -237,11 +278,11 @@ Only one link: Southern Legends. Keeps the byline clean and editorial rather tha
 - Potentially paid. The stringer payroll history suggests Donna was willing to pay. Pitch syndication at $50–100/article — standard and reasonable.
 - Better for targeting businesses and community figures embedded in the older local media ecosystem.
 
-**Pitch to Donna:** You own the work, Southern Legends publishes first, the Star publishes for a small fee. Ask directly.
+**Pitch to Donna:** You own the work, Southern Legends publishes first, the Star publishes for a small fee. Ask directly. Also pitch the personal essay series — the reintroduction essay is a direct sequel to the 2024 piece she published. Both profiles and personal essays are on the table.
 
-**Content model — open question:** Syndication of existing Southern Legends profiles, original pieces for the Star, or a hybrid. Clarify on reconnect.
+**Content model (decided April 2026):** SL profiles syndicated to the Star after SL publishes first. Personal essays also available — reintroduction is the first, more to come. Do not disclose the Calhoun Journal arrangement upfront — let Donna respond first. If she asks about exclusivity, negotiate then.
 
-**Action:** Email Donna Barton this week. Frame it as a returning contributor with new work.
+**Action:** Text sent April 14, 2026 — awaiting response.
 
 ---
 
@@ -305,9 +346,25 @@ High-touch, relationship-driven. Profile businesses you genuinely want to featur
 
 Lighter, faster, wider net. For businesses you don't want to profile right away or where you just want to get your name out.
 
+**Cadence:** Tuesday mornings, ~2 hours. Rotate through towns in NE Alabama.
+
+**Cold Walk-In Opener — choose by business type:**
+
+| Business type | Best opener | Card |
+|---|---|---|
+| Restaurant, coffee shop, retail, market | Selfie-cam video posted to SL page first, walk in and show them | SL card or phone number — no HW card |
+| Service biz with community story (auto shop, local contractor) | Profile draft opening written first, walk in asking for a quote | SL card |
+| HVAC, law, insurance, generic service | Simple drop-by — "can I leave some information?" | HW card |
+
+**On the selfie video opener:** Post before you walk in. Tag the business. Walk in and say "I posted about your place this morning — wanted to introduce myself." The video is already done for them. No ask required on the first visit.
+
+**On the profile draft opener:** Write a strong opening paragraph or two from research before you visit. Walk in with "I've started a profile of your business for Southern Legends — I'd love to get a quote from you." Specific, low-commitment ask. Gets you past gatekeepers because you have something concrete. Research docs in `content/research/` can serve as starting material.
+
+**On cards:** SL track gets SL card (or just phone number exchange). HW track gets HW card. Never hand both at once — it conflates editorial and sales on first impression and undercuts the SL goodwill.
+
 **Cold Walk-In Funnel (step by step):**
 
-1. **Drop by** — Introduce yourself briefly. Mention you write for the Calhoun Journal / Anniston Star and do web design. Ask if you can leave some info. Leave card and one-pager. Keep it short and low pressure.
+1. **Drop by** — Use the opener appropriate to the business type (see table above). Keep it short and low pressure.
 2. **Follow up (1 week later)** — Email or call. Offer a free website audit as the reason to reconnect.
 3. **Audit conversation** — Review results together. This naturally opens the door to the $2,400 rebuild pitch or a Southern Legends profile offer for the right businesses.
 4. **Southern Legends profile** — Reserved for businesses you want to build a real relationship with. Requires interview so it's higher lift — use selectively, not as a cold opener.
@@ -335,15 +392,33 @@ For high-ticket service businesses only, pre-build a quick capture page mockup b
 
 Comes after the audit conversation, not before. Optional: bring a pre-built mockup for high-ticket targets to make it tangible.
 
+### The Move for a Law Office SL Profile
+
+Don't walk in cold. Do it in two steps.
+
+**Research first.** Find the story before you show up. LinkedIn, their firm site, Anniston Star archives, community involvement. Is there actually a "what kept them going" story here — community roots, left a big firm to come home, 3rd generation, pro bono mission? If you can't find the story from outside, don't go in.
+
+**Email or call before you show up.** "I write profiles of local businesses and community figures for Southern Legends — I've read about [specific thing] and I think there's a real story here. Would you be open to a 20-minute conversation?" That gets you a scheduled meeting with the actual decision-maker, not a card in a drawer.
+
+The cold drop-in only makes sense for a sole practitioner in a small office where the lawyer answers their own door. That happens in small towns. Worth trying if the story is there.
+
+**The filter:** Only approach lawyers with a genuinely interesting story. A personal injury firm with four associates isn't SL material. A third-generation firm whose grandfather defended civil rights cases in Calhoun County in 1963 is.
+
+---
+
 ### When to Use Which Track
 
-| Situation | Track |
-|---|---|
-| Cold business, no prior contact | Drop-by funnel — leave card, follow up with audit |
-| Follow-up with a drop-by contact who's a good fit | Offer SL profile as warm re-entry |
-| Warm contact (church, farmers market, referral) | Lead with SL profile immediately |
-| Want to get name out across a town quickly | Drop-by funnel — one morning, rotate towns |
-| Business you genuinely want to know | Premium track — SL profile |
+**Meta-principle:** Go where the owner actually is, with the ask that's most flattering to them. LinkedIn is for people who work behind a desk and screen their door. Drop-in is for people who are physically present and accessible. SL is the lead for anyone with a real story; HW is the lead when there's no story but there's a bad website.
+
+| Business type | Smartest move | Why |
+|---|---|---|
+| Lawyer with a real story | Email — SL research-first, specific | Respects their time, gets past receptionist, professional register |
+| Trades with a community story (family business, 40+ years) | SL cold drop-in | Owner is in the shop, talk directly |
+| Generic trades (HVAC, etc.) | HW drop-in + audit follow-up | Not SL material, audit is the hook |
+| Restaurant / coffee / retail | SL video drop-in | Owner is behind the counter, visual story, natural |
+| Accountant / insurance / professional services | LinkedIn — SL message | They're online, poor cold drop-in targets, flattery works in writing |
+
+**The one thing to avoid:** Splitting Tuesday between SL prep and HW prep. They require different mental modes. Pick a lane for the morning — SL research and video prep — and let HW opportunities tag along if they appear. Don't optimize for both simultaneously or you'll do neither well.
 
 ---
 
@@ -383,7 +458,17 @@ Run this on **every published profile without exception**.
 Send the link. Nothing else. No ask. "Your profile is live — [link]."
 
 **Touch 2 — 5–7 days later:**
-Check in. Ask how it landed. This is where the conversation starts.
+Check in. Ask how it landed. "How did it land? Did you get any response from it?" Listen first — they'll often tell you exactly what they need. This is where the conversation opens naturally.
+
+**The ask lives inside Touch 2 — not as a separate Touch 3.**
+Once the conversation is warm, make one ask. Pick the highest leverage option for that specific person:
+- **Website redesign pitch** — if their site is weak, dead, or nonexistent
+- **Referral ask** — if they're well-connected (NAWA, Chamber, trade groups, industry peers)
+- **Google review** — if they're less connected but warm and willing
+
+Never stack asks. One per conversation. The profile already did the heavy lifting.
+
+**There is no scripted Touch 3.** If they respond warmly to Touch 2, the conversation is already open and the ask comes naturally in that thread. If they don't respond, you've done your part. Don't chase.
 
 The sequence is complete when Touch 2 is sent. Whether they respond or not, you've done your part. Do not follow up a third time unless they initiate.
 
@@ -415,6 +500,40 @@ The work to do is not more writing or more building. It is sending the messages.
 
 ---
 
+## Weekly Rhythm
+
+Five modes: field, prep, writing, client/HW, and light. Don't mix SL and HW prep on the same morning.
+
+**Monday — prep (desk)**
+- SL research: identify Tuesday drop-in targets, find the story before you show up
+- Post selfie video to SL FB page if doing a video drop-in Tuesday (post it the morning before or the same morning on the way out)
+- Email and LinkedIn outreach to research-first targets (lawyers, professional services) — these are desk moves, not field moves
+- CRM updates from prior week
+
+**Tuesday — field (~2 hours)**
+- Drop-ins: SL track (video businesses, draft-opener businesses)
+- Opportunistic HW drop-ins if an obvious target is en route — don't plan around it
+- Log conversations in CRM same day while they're fresh
+
+**Wednesday — writing**
+- SL profile writing or personal essays
+- Follow up on Tuesday conversations (text or email same week, not next week)
+
+**Thursday — client work + HW**
+- Active client work (Giovanna, JCOC, etc.)
+- HW audit follow-ups from prior weeks
+- HW-specific LinkedIn outreach (professional services, service businesses)
+- Sebastian SEO articles if doing them
+
+**Friday — lighter**
+- Audit conversations if booked
+- CRM review
+- Scout next Tuesday's town — identify 3-4 targets, note which opener fits each
+
+**HW prep specifically:** Thursday. Different mental mode from SL. Audit tool, HW LinkedIn messages, follow-up emails from drop-ins that moved to audit conversations. Never mix with Tuesday field prep.
+
+---
+
 ## Action Items
 
 ### This Week
@@ -440,9 +559,11 @@ The work to do is not more writing or more building. It is sending the messages.
 - [ ] Add pole vaulter detail to Southern Legends profile opening
 
 ### Outreach — Drop-By Funnel
+- [ ] Get SL business cards made (Moo or Vistaprint — headshot, southernlegends.blog, name, "Northeast Alabama stories")
 - [ ] Build free website audit tool on headleyweb.com
-- [ ] Design one-pager leave-behind for drop-bys
-- [ ] Pick first town — schedule one morning of walk-ins
+- [ ] Design one-pager leave-behind for drop-bys (HW track only)
+- [ ] Block Tuesdays ~2 hours for walk-ins — rotate towns in NE Alabama weekly
+- [ ] Pick first Tuesday town — prep 1-2 profile draft openers + identify video-friendly businesses in that town first
 - [ ] Pre-build capture page mockup for one high-ticket target before walk-in day
 - [ ] Follow up on first round of drop-bys (1 week later) with audit offer
 
