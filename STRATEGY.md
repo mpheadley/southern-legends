@@ -452,25 +452,33 @@ Current warm network profiles skew toward business owners who already have decen
 
 ## Two-Touch Follow-Up Sequence
 
-Run this on **every published profile without exception**.
+Run this on **every published profile without exception**. Create CRM tasks for each step when a profile publishes.
 
 **Touch 1 — Day of publish:**
 Send the link. Nothing else. No ask. "Your profile is live — [link]."
+Add at the end: "Feel free to share it anywhere — including your own website if you'd like." No pressure. Many will link without a separate ask.
+
+**Between Touch 1 and Touch 2 — passive distribution nudges (no separate ask needed):**
+- **Instagram/Stories** — "Tag us if you share it on Instagram." Different audience than Facebook, often higher engagement for food/maker businesses.
+- **Google Business Profile post** — mention it casually: "You could post the article link on your Google Business page — it actually helps your search ranking." They do the work; you get a citation.
+- **Email list** — if they have a newsletter or customer list: "If you have an email list, a mention there reaches people your social doesn't." Frame it as helping them, not you.
+
+These nudges fit naturally into the Touch 1 message or a quick follow-up text the same week. Don't make them a formal ask — plant and move on.
 
 **Touch 2 — 5–7 days later:**
 Check in. Ask how it landed. "How did it land? Did you get any response from it?" Listen first — they'll often tell you exactly what they need. This is where the conversation opens naturally.
 
 **The ask lives inside Touch 2 — not as a separate Touch 3.**
-Once the conversation is warm, make one ask. Pick the highest leverage option for that specific person:
-- **Website redesign pitch** — if their site is weak, dead, or nonexistent
-- **Referral ask** — if they're well-connected (NAWA, Chamber, trade groups, industry peers)
-- **Google review** — if they're less connected but warm and willing
+Once the conversation is warm, make **one** ask. Pick the highest leverage option for that specific person:
+- **Story lead** — "Know anyone else in the area whose story deserves telling?" Highest long-term value, feels least transactional. Feeds the pipeline.
+- **HW referral** — "If you know anybody who needs a website or help getting found online, I'd love an intro." One sentence.
+- **Website redesign pitch** — if their site is weak, dead, or nonexistent and the relationship is warm enough.
 
 Never stack asks. One per conversation. The profile already did the heavy lifting.
 
 **There is no scripted Touch 3.** If they respond warmly to Touch 2, the conversation is already open and the ask comes naturally in that thread. If they don't respond, you've done your part. Don't chase.
 
-The sequence is complete when Touch 2 is sent. Whether they respond or not, you've done your part. Do not follow up a third time unless they initiate.
+No testimonial asks. The profile IS the marketing. Don't attach strings to the give.
 
 ---
 

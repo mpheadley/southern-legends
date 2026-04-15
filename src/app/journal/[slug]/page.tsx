@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
@@ -197,7 +197,10 @@ export default async function JournalPostPage({ params }: { params: Params }) {
       />
 
       {/* Hero */}
-      <section className="relative text-white overflow-hidden gradient-hero">
+      <section
+        className="relative text-white overflow-hidden gradient-hero"
+        style={{ viewTransitionName: `journal-hero-${slug}` } as React.CSSProperties}
+      >
         <div className="absolute inset-0 bg-black/50 z-[1]" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 pt-28 pb-14 md:pt-32 md:pb-18">
           <Link
