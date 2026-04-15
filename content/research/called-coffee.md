@@ -30,6 +30,7 @@
 4. What's been harder about running this than you expected?
 5. You checked on me when things were falling apart — where does that instinct to care for the neighborhood come from?
 6. What should people try first when they visit?
+7. Tell me about the podcast — what made you start it, and what are you trying to do with it that a coffee shop alone can't?
 
 ## Draft Issues (from prior review)
 - Too much Matt, not enough Jerod — Jerod must be main character
