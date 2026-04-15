@@ -147,7 +147,7 @@ export default async function ProfilesPage({
             Know Someone Worth Writing About?
           </h2>
           <p className="text-sm text-ll-text mb-6 max-w-sm mx-auto">
-            The best profiles start with a recommendation. If you know a person or place whose story deserves more than a paragraph in the local paper, I&apos;d like to hear about it.
+            If you know a person or a place whose story deserves to be told, I&apos;d like to hear about it.
           </p>
           <Link
             href="/nominate"

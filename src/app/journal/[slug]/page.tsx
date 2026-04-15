@@ -28,6 +28,7 @@ function FeaturedImage({ src, alt, caption }: { src: string; alt: string; captio
         width={900}
         height={600}
         className="w-full rounded-lg object-cover"
+        priority
       />
       {caption && (
         <p className="mt-2 text-xs text-center italic text-ll-text-light">{caption}</p>
@@ -238,15 +239,19 @@ export default async function JournalPostPage({ params }: { params: Params }) {
         </div>
       </article>
 
-      {/* Support — top of closing */}
-      <div className="bg-ll-light border-t border-ll-border py-8 text-center">
-        <Link
-          href="/support"
-          className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
-        >
+      {/* Share + Support */}
+      <section className="profile-closing">
+        <div className="profile-closing-share">
+          <ShareButtons
+            url={`/journal/${slug}`}
+            title={frontmatter.title}
+            description={frontmatter.excerpt}
+          />
+        </div>
+        <Link href="/support" className="journal-support-btn">
           Support this work →
         </Link>
-      </div>
+      </section>
 
       {/* More from the Journal */}
       {moreJournal.length > 0 && (
@@ -269,7 +274,7 @@ export default async function JournalPostPage({ params }: { params: Params }) {
 
       {/* Stories */}
       {profiles.length > 0 && (
-        <section className="bg-ll-warm py-12 md:py-16 border-t border-ll-border">
+        <section className="bg-ll-light py-12 md:py-16 border-t border-ll-border">
           <div className="max-w-3xl mx-auto px-6">
             <h2
               className="text-xl font-bold text-ll-dark mb-8"
@@ -285,18 +290,6 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           </div>
         </section>
       )}
-
-      {/* Closing */}
-      <section className="profile-closing">
-        <div className="profile-closing-share">
-          <p className="profile-closing-share-label">Share</p>
-          <ShareButtons
-            url={`/journal/${slug}`}
-            title={frontmatter.title}
-            description={frontmatter.excerpt}
-          />
-        </div>
-      </section>
 
     </main>
   );
