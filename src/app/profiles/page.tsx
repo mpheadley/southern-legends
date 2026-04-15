@@ -137,15 +137,26 @@ export default async function ProfilesPage({
         </div>
       </section>
 
-      {/* Support */}
-      <div className="bg-ll-light border-t border-ll-border py-8 text-center">
-        <Link
-          href="/support"
-          className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
-        >
-          Support this work →
-        </Link>
-      </div>
+      {/* Nominate */}
+      <section className="bg-ll-light border-t border-ll-border py-12 text-center">
+        <div className="max-w-xl mx-auto px-6">
+          <h2
+            className="text-xl font-bold text-ll-dark mb-3"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Know Someone Worth Writing About?
+          </h2>
+          <p className="text-sm text-ll-text mb-6 max-w-sm mx-auto">
+            The best profiles start with a recommendation. If you know a person or place whose story deserves more than a paragraph in the local paper, I&apos;d like to hear about it.
+          </p>
+          <Link
+            href="/nominate"
+            className="btn-primary inline-block px-7 py-3 bg-ll-primary text-white font-bold text-sm rounded-md hover:bg-ll-primary-dark"
+          >
+            Nominate a Story →
+          </Link>
+        </div>
+      </section>
 
     </main>
   );

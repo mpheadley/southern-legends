@@ -2,6 +2,7 @@ import { getAllProfiles, getFeaturedProfiles } from "@/lib/profiles";
 import ProfileCard from "./components/ProfileCard";
 import FeaturedTilt from "./components/FeaturedTilt";
 import HeroCarousel from "./components/HeroCarousel";
+import SubscribeCTA from "./components/SubscribeCTA";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 
@@ -113,23 +114,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Support + Journal */}
-      <section className="bg-ll-light border-t border-ll-border py-12 text-center">
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            href="/support"
-            className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
-          >
-            Support this work →
-          </Link>
-          <Link
-            href="/journal"
-            className="btn-journal inline-block px-5 py-2 border-2 border-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent transition-colors"
-          >
-            Matt also writes about his own story →
-          </Link>
-        </div>
-      </section>
+      {/* Subscribe */}
+      <SubscribeCTA />
 
     </main>
   );
