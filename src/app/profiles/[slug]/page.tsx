@@ -390,16 +390,6 @@ export default async function ProfilePage({
         </div>
       </article>
 
-      {/* Support */}
-      <div className="bg-ll-light border-t border-ll-border py-8 text-center">
-        <Link
-          href="/support"
-          className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
-        >
-          Support this work →
-        </Link>
-      </div>
-
       {/* Closing — author credit, share, tags on dark topo/gradient */}
       <section className="profile-closing">
         {/* Author credit */}
@@ -407,10 +397,10 @@ export default async function ProfilePage({
           <Image
             src="/images/about/headshot-hedcut-matt-headley.webp"
             alt="Matt Headley"
-            width={96}
-            height={96}
+            width={128}
+            height={128}
             className="rounded-full shrink-0"
-            style={{ width: "96px", height: "96px" }}
+            style={{ width: "128px", height: "128px" }}
           />
           <div>
             <p className="profile-closing-bio">
@@ -441,14 +431,19 @@ export default async function ProfilePage({
         {/* Divider */}
         <div className="profile-closing-divider" />
 
-        {/* Share */}
+        {/* Share + Support */}
         <div className="profile-closing-share">
-          <p className="profile-closing-share-label">Enjoyed this story?</p>
           <ShareButtons
             url={`/profiles/${slug}`}
             title={frontmatter.title}
             description={frontmatter.excerpt}
           />
+          <Link
+            href="/support"
+            className="btn-support inline-block mt-4 px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
+          >
+            Support this work →
+          </Link>
         </div>
 
       </section>
@@ -456,26 +451,6 @@ export default async function ProfilePage({
       {/* Story Navigation (prev/next) */}
       <StoryNav prev={prev} next={next} />
 
-      {/* Nominate CTA */}
-      <section className="bg-ll-dark">
-        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
-          <h2
-            className="text-xl md:text-2xl font-bold text-white mb-4 animate-on-scroll"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Know Someone Worth Writing About?
-          </h2>
-          <p className="mb-6 max-w-xl mx-auto animate-on-scroll" style={{ color: "rgba(255,255,255,0.6)" }}>
-            If you know a person or a place whose story deserves to be told, I&apos;d like to hear about it.
-          </p>
-          <Link
-            href="/about"
-            className="btn-primary inline-block px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark animate-on-scroll"
-          >
-            Tell Me About Them
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }

@@ -415,11 +415,18 @@ html {
 }
 
 .profile-closing-author img {
-  width: 48px !important;
-  height: 48px !important;
+  width: 80px !important;
+  height: 80px !important;
   flex-shrink: 0;
   object-fit: cover;
   border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+  .profile-closing-author img {
+    width: 128px !important;
+    height: 128px !important;
+  }
 }
 
 .profile-closing-bio {

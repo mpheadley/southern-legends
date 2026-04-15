@@ -4,6 +4,7 @@ import FeaturedTilt from "./components/FeaturedTilt";
 import HeroCarousel from "./components/HeroCarousel";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
+import SubscribeCTA from "./components/SubscribeCTA";
 
 export default function HomePage() {
   const allProfiles = getAllProfiles();
@@ -112,6 +113,8 @@ export default function HomePage() {
           )}
         </div>
       </section>
+
+      <SubscribeCTA />
 
       {/* Journal */}
       <div className="bg-ll-light border-t border-ll-border py-8 text-center">
