@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, Fraunces, Rock_Salt, Zeyada, Permanent_Marker, Caveat } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ScrollReveal from "./components/ScrollReveal";
@@ -93,6 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ViewTransitions>
     <html lang="en">
       <head>
         <script
@@ -121,5 +123,6 @@ export default function RootLayout({
         </LenisProvider>
       </body>
     </html>
+    </ViewTransitions>
   );
 }
