@@ -23,6 +23,7 @@
 | [Profile Pipeline](#profile-pipeline) | Current subjects and status |
 | [Profile Quality Standard](#profile-quality-standard) | Jean Ellison is the bar |
 | [Two-Touch Follow-Up](#two-touch-follow-up-sequence) | Every published profile, no exceptions |
+| [Social Share Plan](SOCIAL-SHARE-PLAN.md) | Journal launch sequence — which posts, when, how |
 | [Editorial vs. Web Services](#the-outreach-approach--editorial-vs-web-services) | Keep them separate |
 | [Sebastian's SEO Gig](#short-term-income--sebastians-seo-gig) | $500/month side income |
 | [Known Blockers](#known-blockers) | Initiation, not planning |

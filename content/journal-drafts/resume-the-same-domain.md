@@ -16,12 +16,24 @@ Raw material and context is at:
 
 Southern Legends started as a top-of-funnel marketing strategy for my web design business (Headley Web). It became the place where the hardest years of my life live publicly — bipolar diagnosis, psych hospitalization, farm loss. Those two things are on the same domain. This piece is about that tension and the specific decisions it forced.
 
-## What exists already
+## Raw material (all in `content/journal-drafts/`)
 
-- MDX shell with section markers, `published: false`
-- Raw material doc with my exact words from a prior session, mined fragments from published pieces, structure sketch, and possible opening lines
-- Published context pieces: `im-not-going-to-disappear.mdx`, `attempt-73.mdx`, `a-letter-never-sent.mdx`
-- I also have a voice memo transcript and Claude chat logs with additional raw material — I'll paste them in
+- `the-same-domain.md` — original seeds and structure sketch
+- `the-same-domain-words.md` — Matt's exact words organized by section (primary working doc)
+- `the-same-domain-chat-transcript.md` — Claude.ai chat transcript, speaker-labeled
+- `20260415 134931-1E6A79C4.txt` — voice memo transcript (7:30, recorded 1:49 PM April 15)
+- `20260415 141246-B6B256A4.txt` — voice memo transcript (4:09, recorded 2:12 PM April 15)
+
+## Structure (decided April 15 2026)
+
+One piece, isolation first then the meta-question. Sections:
+1. Opening — Little John Road, the gardens, the silence on Facebook
+2. The business fact — Lee Blue, lead gen, top of funnel
+3. What it became — jealousy delay, cold calling, the pulpit gone, needing to be understood
+4. The irreversible moment — Patreon message, 20+ pointed here
+5. The specific decisions — what can live here, what can't, why
+6. The tension held — maybe being broken is what makes the profiles work
+7. Ending — Matt's to write, not a summary
 
 ## Your role
 
@@ -31,12 +43,13 @@ You are the editor, not the writer. You do not write my opening, ending, or any 
 
 What you can do: run a gap audit on whatever draft I bring, ask one specific question at a time, flag rhythm problems, check the kill list.
 
-## Key decisions already made (do not relitigate)
+## Key decisions (do not relitigate)
 
 - The journal stays on SL — Patreon was wound down, 20+ people pointed here, irreversible
 - The psilocybin piece does NOT live on SL — hard line
+- Isolation/relational core and meta-question are one piece, not two
 - This piece is pinned first in the journal and linked from the About page when published
 
-## Status
+## Status (April 15 2026)
 
-I have the shell open. I'm writing. When I bring you a draft, start with a gap audit — don't volunteer structural changes until I ask.
+Gap audit done — two gaps closed (the gardens detail, the Patreon moment weight). Raw material organized into `the-same-domain-words.md`. Matt is writing the draft. When he brings it, start with a gap audit — don't volunteer structural changes until asked.

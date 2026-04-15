@@ -134,11 +134,17 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       description: post.frontmatter.excerpt,
       type: "article",
       publishedTime: post.frontmatter.date,
+      ...(post.frontmatter.image && {
+        images: [{ url: post.frontmatter.image, alt: post.frontmatter.imageAlt ?? post.frontmatter.title }],
+      }),
     },
     twitter: {
       card: "summary_large_image",
       title: post.frontmatter.title,
       description: post.frontmatter.excerpt,
+      ...(post.frontmatter.image && {
+        images: [post.frontmatter.image],
+      }),
     },
   };
 }
@@ -234,7 +240,7 @@ export default async function JournalPostPage({ params }: { params: Params }) {
 
       {/* Article */}
       <article className="bg-ll-light">
-        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 prose-profile">
+        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 prose-journal">
           <MDXRemote source={content} components={mdxComponents} />
         </div>
       </article>
@@ -261,7 +267,9 @@ export default async function JournalPostPage({ params }: { params: Params }) {
               className="text-xl font-bold text-ll-dark mb-8"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              More from the Journal
+              <Link href="/journal" className="hover:text-ll-primary transition-colors">
+                More from the Journal
+              </Link>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {moreJournal.map((p) => (
@@ -280,7 +288,9 @@ export default async function JournalPostPage({ params }: { params: Params }) {
               className="text-xl font-bold text-ll-dark mb-8"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Read the Stories
+              <Link href="/profiles" className="hover:text-ll-primary transition-colors">
+                Read the Stories
+              </Link>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {profiles.map((p) => (

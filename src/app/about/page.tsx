@@ -109,7 +109,7 @@ export default function AboutPage() {
             />
           </div>
 
-          <div className="not-prose">
+          <div>
             <p className="text-ll-text leading-relaxed mb-6">
               What I do now is build websites and run search campaigns for local businesses. That&apos;s{" "}
               <a
@@ -124,7 +124,14 @@ export default function AboutPage() {
               the table from people, and I needed that more than I expected.
               Turns out sitting
               with someone and asking them to tell you their story is one of the
-              ways back. My writing has appeared in the{" "}
+              ways back. I wrote more about{" "}
+              <Link
+                href="/journal/the-same-domain"
+                className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
+              >
+                why this site exists
+              </Link>
+              {" "}in the journal. My writing has appeared in the{" "}
               <Link
                 href="/journal/hope-in-the-wilderness"
                 className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"

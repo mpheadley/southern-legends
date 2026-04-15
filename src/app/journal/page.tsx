@@ -21,6 +21,8 @@ function formatDate(dateStr: string): string {
 
 export default function JournalPage() {
   const posts = getAllJournalPosts();
+  const featured = posts.find((p) => p.frontmatter.featured) ?? posts[0] ?? null;
+  const rest = posts.filter((p) => p.slug !== featured?.slug);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -54,14 +56,47 @@ export default function JournalPage() {
         </div>
       </section>
 
-      {/* Posts */}
-      <section className="bg-ll-light">
-        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16">
-          {posts.length === 0 ? (
-            <p className="text-ll-text-light text-sm">Coming soon.</p>
-          ) : (
+      {/* Featured post */}
+      {featured && (
+        <section className="bg-ll-light border-b border-ll-border">
+          <div className="mx-auto max-w-3xl px-6 pt-12 pb-10 md:pt-16 md:pb-12">
+            <Link href={`/journal/${featured.slug}`} className="group block">
+              {featured.frontmatter.image && (
+                <div className="w-full aspect-[16/9] rounded-lg overflow-hidden mb-6">
+                  <Image
+                    src={featured.frontmatter.image}
+                    alt={featured.frontmatter.imageAlt ?? featured.frontmatter.title}
+                    width={900}
+                    height={394}
+                    className="w-full h-full object-cover object-center"
+                    priority
+                  />
+                </div>
+              )}
+              <p className="text-xs text-ll-text-light mb-3 uppercase tracking-wide">
+                {formatDate(featured.frontmatter.date)}
+              </p>
+              <h2
+                className="text-2xl md:text-3xl font-bold text-ll-dark group-hover:text-ll-primary transition-colors mb-4"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                {featured.frontmatter.title}
+              </h2>
+              <p className="text-ll-text leading-relaxed max-w-xl">{featured.frontmatter.excerpt}</p>
+              <span className="inline-block mt-5 text-sm font-medium text-ll-primary group-hover:underline">
+                Read →
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* Remaining posts */}
+      {rest.length > 0 && (
+        <section className="bg-ll-light">
+          <div className="mx-auto max-w-3xl px-6 py-12 md:py-16">
             <ul className="space-y-10">
-              {posts.map((post) => (
+              {rest.map((post) => (
                 <li key={post.slug} className="border-b border-ll-border pb-10 last:border-0 last:pb-0">
                   <Link href={`/journal/${post.slug}`} className="group flex gap-6 items-start">
                     {post.frontmatter.image && (
@@ -97,9 +132,17 @@ export default function JournalPage() {
                 </li>
               ))}
             </ul>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
+
+      {posts.length === 0 && (
+        <section className="bg-ll-light">
+          <div className="mx-auto max-w-3xl px-6 py-12">
+            <p className="text-ll-text-light text-sm">Coming soon.</p>
+          </div>
+        </section>
+      )}
 
 
     </main>

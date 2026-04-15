@@ -83,11 +83,18 @@ Written essays for now, not video. Written form is more intimate and lets reader
 
 ---
 
-## Reconnecting with Donna Barton
+## Donna Barton / Anniston Star — Current Status (April 2026)
 
-You have existing relationship equity: prior Star publication, stringer payroll setup (even though you didn't follow through last time). Suggested reconnection angle:
+Pitch already made. Matt texted Donna on April 15 pitching SL profile syndication. She replied she'd take a look. Waiting on her response.
 
-> "I've been writing personal essays about my mental health journey, grief around losing the farm, and rebuilding faith. Given the response to the piece I published with you before, I think these might be a fit for the Star. Would you be open to taking a look?"
+**If she says yes to syndication:**
+Ask directly whether she wants a first-run window before Calhoun Journal publishes. The Star likely expects this. If yes, follow the sequence above (SL → Star 1-2 wks → Calhoun 1-2 wks after). If she doesn't need exclusivity, Calhoun Journal can run simultaneously or after a shorter window.
+
+**Separate play — feature story about SL:**
+A Star staff reporter writing *about* Southern Legends as a project is a different, bigger opportunity than syndication. It's press coverage, not content distribution. Worth floating after the syndication conversation settles — not before. One ask at a time. If she says yes to syndication, you could add: *"Would you ever want to write about the project itself, or is running the profiles the better fit?"*
+
+**Historical context:**
+Prior Star publication (Hope in the Wilderness — reprinted). Donna set up stringer payroll ($35 offered for a faith piece) but Matt never received payment — life got complicated. Relationship went quiet. Reconnected April 2026.
 
 ---
 

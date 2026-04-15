@@ -159,7 +159,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Prose (MDX content) ─── */
 
-.prose-profile h2 {
+.prose-profile h2, .prose-journal h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 3vw, 2rem);
   color: var(--color-ll-dark);
@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.prose-profile h3 {
+.prose-profile h3, .prose-journal h3 {
   font-family: var(--font-heading);
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   color: var(--color-ll-dark);
@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
-/* ─── Drop Cap ─── */
+/* ─── Drop Cap (profiles only) ─── */
 .prose-profile > p:first-of-type::first-letter {
   font-family: var(--font-heading);
   float: left;
@@ -190,13 +190,13 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0.06em;
 }
 
-.prose-profile p {
+.prose-profile p, .prose-journal p {
   color: var(--color-ll-text);
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
-.prose-profile a {
+.prose-profile a, .prose-journal a {
   color: var(--color-ll-primary);
   font-weight: 500;
   text-decoration: underline;
@@ -204,18 +204,20 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.2s;
 }
 
-.prose-profile a:hover {
+.prose-profile a:hover, .prose-journal a:hover {
   color: var(--color-ll-primary-dark);
 }
 
 .prose-profile .not-prose a,
-.prose-profile .not-prose a:hover {
+.prose-profile .not-prose a:hover,
+.prose-journal .not-prose a,
+.prose-journal .not-prose a:hover {
   color: inherit;
   font-weight: inherit;
   text-decoration: none;
 }
 
-.prose-profile blockquote {
+.prose-profile blockquote, .prose-journal blockquote {
   position: relative;
   border-left: 4px solid var(--color-ll-accent);
   padding-left: 2.5rem;
@@ -228,7 +230,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-ll-text);
 }
 
-.prose-profile blockquote::before {
+.prose-profile blockquote::before, .prose-journal blockquote::before {
   content: "\201C";
   font-family: var(--font-heading);
   font-size: 5rem;
@@ -240,29 +242,29 @@ h1, h2, h3, h4, h5, h6 {
   top: 0.25rem;
 }
 
-.prose-profile ul {
+.prose-profile ul, .prose-journal ul {
   list-style-type: disc;
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.prose-profile ol {
+.prose-profile ol, .prose-journal ol {
   list-style-type: decimal;
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.prose-profile li {
+.prose-profile li, .prose-journal li {
   line-height: 1.7;
   margin-bottom: 0.5rem;
 }
 
-.prose-profile strong {
+.prose-profile strong, .prose-journal strong {
   font-weight: 700;
   color: var(--color-ll-dark);
 }
 
-.prose-profile hr {
+.prose-profile hr, .prose-journal hr {
   border: none;
   border-top: 1px solid var(--color-ll-border);
   margin: 2.5rem 0;
@@ -753,7 +755,9 @@ html {
 
 /* ─── Article Image floats clearfix ─── */
 .prose-profile .carousel-wrap,
-.prose-profile .my-12 {
+.prose-profile .my-12,
+.prose-journal .carousel-wrap,
+.prose-journal .my-12 {
   clear: both;
 }
 

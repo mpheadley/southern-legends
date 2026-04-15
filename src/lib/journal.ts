@@ -13,6 +13,7 @@ export interface JournalFrontmatter {
   published: boolean;
   image?: string;
   imageAlt?: string;
+  featured?: boolean;
   originalPublication?: {
     name: string;
     url: string;
