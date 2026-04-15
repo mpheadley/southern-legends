@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export default function Nav() {
   const pathname = usePathname();
