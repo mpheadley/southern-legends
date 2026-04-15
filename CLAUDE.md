@@ -89,6 +89,12 @@ SL is the right home because the personal writing isn't separate from the editor
 
 **Client credibility note:** SL started as top-of-funnel for Headley Web. The journal's heavier content (bipolar diagnosis, psychiatric hospitalizations) is a real but manageable credibility risk in the NE Alabama small business market. Mitigation: keep the journal at low visibility (nav + footer + byline only — never a homepage feature), and treat each heavy piece as a judgment call before publishing. Farm/faith/music content is an asset. Clinical mental health material warrants more care. Most clients won't go looking; the ones who do and are put off were probably not the right fit.
 
+**Future pieces — placement decisions (decided April 2026):**
+- **Psilocybin trip:** Do NOT publish on SL. This is the hard line. Everything else is about things that happened to Matt; this is about a choice involving a Schedule I substance in Alabama. One client finding it could cost real business. Belongs on Substack or nowhere public yet — not here.
+- **Faith post:** Probably fine on SL. Faith, doubt, and wrestling resonate in NE Alabama. Faith deconstruction is more sensitive but manageable — read the angle before publishing.
+- **Psych ward, mania, hospital, grief, farm loss:** Case by case. Suffering and survival land differently than choices clients might find disqualifying. These are generally okay on SL with care.
+- **The meta-piece** (writing publicly about these placement decisions themselves — the tension of building a business platform while needing somewhere to process) — worth writing and fits naturally on SL. It's the most honest explanation of what the site is.
+
 **Editorial distinction:** Profiles are about other people. This section is about Matt — healing, the farm, bipolar diagnosis, SL as part of recovery. Do not mix them in the same grid or card layout.
 
 **Content model — richer than essays alone:**
