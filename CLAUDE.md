@@ -115,6 +115,18 @@ MDX files in `content/letters/` (or `content/notes/` depending on name). Frontma
 
 **Paid tier:** Stripe gating added after writing habit is proven (3–4 pieces live). Not before. Resend email delivery wired after same trigger.
 
+## CTA Strategy (decided April 2026 — do not revert without reason)
+Profile pages are intentionally lean on asks. The post-read flow is:
+1. **Byline** — author photo (80px mobile / 128px desktop), bio, journal link, share buttons, "Support this work →"
+2. **StoryNav** — prev/next stories
+
+Decisions and why:
+- **SubscribeCTA on homepage only** — no newsletter exists yet. Add back to profiles when a real send cadence is in place. The component (`SubscribeCTA.tsx`) supports `variant="section"` (homepage) and `variant="inline"` (footer).
+- **"Support this work" lives in the byline** — not a standalone strip. It sits below share buttons inside `profile-closing-share`, grouped under the author credit where it makes contextual sense.
+- **Nominate CTA removed from profile pages** — lives on the About page only. Profile pages already have enough asks.
+- **Journal strip removed from homepage** — journal is discoverable via persistent nav, profile byline button, and footer. Doesn't need its own homepage band until the journal has 8–10 published pieces.
+- **No "Enjoyed this story?" label** — share and support buttons are self-explanatory. Labels were redundant.
+
 ## Current Status
 - **Done:** Design system, layout, homepage, about page, profile detail page, profile listing, 7 published profiles (1 by Matt, 6 edited), 16 research docs in `content/research/`, RSS feed, scroll animations, share buttons, story navigation, subscribe CTA
 - **Fonts loaded via `<link>` in layout.tsx** — Fraunces and Rock Salt are Google Fonts links, not `next/font`. Source Sans 3 uses `next/font/google`. Consider migrating Fraunces/Rock Salt to `next/font` for performance.

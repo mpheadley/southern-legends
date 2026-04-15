@@ -116,16 +116,6 @@ export default function HomePage() {
 
       <SubscribeCTA />
 
-      {/* Journal */}
-      <div className="bg-ll-light border-t border-ll-border py-8 text-center">
-        <Link
-          href="/journal"
-          className="btn-journal inline-block px-5 py-2 border-2 border-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent transition-colors"
-        >
-          Matt also writes about his own story →
-        </Link>
-      </div>
-
     </main>
   );
 }
