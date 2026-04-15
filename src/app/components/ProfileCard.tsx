@@ -18,7 +18,10 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
 
   return (
     <Link href={`/profiles/${slug}`} className="group block profile-card">
-      <div className="aspect-[3/2] relative overflow-hidden bg-ll-warm">
+      <div
+        className="aspect-[3/2] relative overflow-hidden bg-ll-warm"
+        style={{ viewTransitionName: `profile-hero-${slug}` } as React.CSSProperties}
+      >
         {frontmatter.heroImage ? (
           <Image
             src={frontmatter.heroImage}

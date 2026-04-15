@@ -17,6 +17,7 @@ interface ParallaxHeroProps {
   heroAlt: string;
   heroPosition?: string;
   heroTextBottom?: boolean;
+  slug?: string;
 }
 
 export default function ParallaxHero({
@@ -28,6 +29,7 @@ export default function ParallaxHero({
   heroAlt,
   heroPosition,
   heroTextBottom = false,
+  slug,
 }: ParallaxHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -67,7 +69,10 @@ export default function ParallaxHero({
 
   return (
     <div ref={containerRef}>
-      <section className="ph-hero st-hero">
+      <section
+        className="ph-hero st-hero"
+        style={slug ? ({ viewTransitionName: `profile-hero-${slug}` } as React.CSSProperties) : undefined}
+      >
         <div className="ph-bg st-hero-bg" style={{ top: 0, height: "120%" }}>
           <Image
             src={heroImage}

@@ -261,10 +261,12 @@ export default async function ProfilePage({
           heroAlt={frontmatter.heroAlt || frontmatter.name}
           heroPosition={frontmatter.heroPosition}
           heroTextBottom={frontmatter.heroTextBottom}
+          slug={slug}
         />
       ) : (
-        <section className={`relative text-white overflow-hidden ${frontmatter.heroImage ? "" : "gradient-hero"}`}
-          style={frontmatter.heroImage ? { background: "var(--color-ll-dark)" } : undefined}
+        <section
+          className={`relative text-white overflow-hidden ${frontmatter.heroImage ? "" : "gradient-hero"}`}
+          style={{ ...(frontmatter.heroImage ? { background: "var(--color-ll-dark)" } : {}), viewTransitionName: `profile-hero-${slug}` } as React.CSSProperties}
         >
           {frontmatter.heroImage ? (
             <>

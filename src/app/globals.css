@@ -14,6 +14,8 @@
   from { opacity: 0; }
 }
 
+/* Shared elements (profile-hero-${slug}) morph automatically via browser default */
+
 /* ─── Design System: "Parchment & Pine" ─── */
 
 :root {
