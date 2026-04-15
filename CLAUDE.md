@@ -85,6 +85,10 @@ Matt's personal writing and curated media live in a dedicated section — separa
 **Why this lives on SL (not a separate site, not Patreon):**
 SL is the right home because the personal writing isn't separate from the editorial project — it's the explanation for why it exists. The profiles raise the question: why does this person notice these people so carefully? The personal section answers it. Model: The Marginalian (everything on one owned platform), The Bitter Southerner (author voice lives alongside journalism). See design-inspiration-editorial.md.
 
+**This decision is settled (April 2026).** Patreon was wound down and 20+ followers were directed to SL journal entries. Moving the content now would break those links and relationships. The journal stays on SL.
+
+**Client credibility note:** SL started as top-of-funnel for Headley Web. The journal's heavier content (bipolar diagnosis, psychiatric hospitalizations) is a real but manageable credibility risk in the NE Alabama small business market. Mitigation: keep the journal at low visibility (nav + footer + byline only — never a homepage feature), and treat each heavy piece as a judgment call before publishing. Farm/faith/music content is an asset. Clinical mental health material warrants more care. Most clients won't go looking; the ones who do and are put off were probably not the right fit.
+
 **Editorial distinction:** Profiles are about other people. This section is about Matt — healing, the farm, bipolar diagnosis, SL as part of recovery. Do not mix them in the same grid or card layout.
 
 **Content model — richer than essays alone:**
