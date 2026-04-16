@@ -176,6 +176,32 @@ Promotional language doing marketing work instead of journalism. Sells the subje
 
 **Emoji-style emotional signaling.** Don't label the emotion. Recreate the conditions that produced it. Let the reader feel it themselves.
 
+**Performative vulnerability.** When writers get performative about vulnerability, they start explaining what things meant to them. Honest writing reports what happened and trusts the reader to feel it. The test: is this sentence describing an experience, or narrating the significance of an experience? If the latter, cut it or rewrite it as scene. "I felt invisible" is an explanation. "I lived an hour away and nobody called" is a report.
+
+This is also a preaching principle — Matt encountered it in a homiletics text in seminary. Inductive preaching (Craddock, Lowry) builds through scene and example and lets the listener arrive at the conclusion rather than stating it up front. The same instinct is in Matt's best writing. When in doubt, ask: am I preaching at the reader, or am I putting them in the room?
+
+**Examples from Bitter Southerner:**
+
+From "A Family Project" (death of a mother, written by family members):
+> "A few more gasps and she was gone. Her color left. Her breath left. Her pain left."
+
+Three declaratives. No narration of grief. The loss is in the rhythm.
+
+From "Old Parents":
+> "Imagine the look on my friends' faces when they rode by on their bikes and saw me in my backward hat and last year's Reebok Pumps, tromping like a buffalo through the clay."
+
+The embarrassment is in the Reebok Pumps. Not in a sentence explaining that he was embarrassed.
+
+**Examples from Matt's own work:**
+
+> "They said it was sad that it ended. I said I was still sad too."
+
+> "Jason checked on me weekly. I was hiding."
+
+> "Getting hung up on sucks."
+
+None of these explain what they meant. They report and move.
+
 ---
 
 ## Transitions
@@ -220,6 +246,7 @@ Run this before returning any draft or edit to Matt.
 - [ ] Is there at least one concrete specific detail in every scene? (not "the workshop" — what was in it)
 - [ ] Transition words doing structural work? Fix the structure instead.
 - [ ] Read a paragraph aloud: does the rhythm vary, or does every sentence land the same way?
+- [ ] Any sentence explaining what something meant? Cut it. Report what happened instead.
 
 ---
 
@@ -235,3 +262,26 @@ Run this before returning any draft or edit to Matt.
 8. **Write from the South, not about it.**
 9. **Let people be people.** Not symbols, not characters, not representatives of anything.
 10. **When in doubt: add a detail, remove an adjective.**
+
+---
+
+## References & Influences
+
+### Books
+
+**Phillip Lopate — *The Art of the Personal Essay* (anthology)**
+The canonical text on the personal essay form. Lopate's argument: the essayist doesn't reduce life to a recitation of events — the job is to reveal its continuing meaning through voice, presence, and honest reckoning. The introduction alone is worth reading before writing any personal piece.
+
+**Fred Craddock — *Preaching***
+The homiletics text where Matt first encountered the inductive preaching principle — build through scene and example, let the listener arrive at the conclusion rather than stating it up front. The same principle as "report, don't explain." Craddock's *Overhearing the Gospel* extends this further: the most powerful communication is what people arrive at on their own, not what they're told.
+
+**Eugene Lowry — *The Homiletical Plot***
+Lowry's "narrative loop" — begin with tension, delay resolution, let meaning accumulate. The structure underneath many of Matt's best journal pieces.
+
+### Exemplary Pieces (Bitter Southerner)
+
+**["A Family Project"](https://bittersoutherner.com/feature/2022/a-family-project)**
+Death of a mother written by family members. Strong model for reporting grief without narrating it. The line: *"A few more gasps and she was gone. Her color left. Her breath left. Her pain left."* — three declaratives, no explanation of loss.
+
+**["Old Parents"](https://bittersoutherner.com/old-parents)**
+Coming-of-age embarrassment rendered through concrete detail. The Reebok Pumps image: *"...my backward hat and last year's Reebok Pumps, tromping like a buffalo through the clay."* The embarrassment is in the Pumps. Not in a sentence explaining he was embarrassed.

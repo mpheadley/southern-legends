@@ -122,14 +122,14 @@ Do not bulk-import any of these audiences into Resend. Reach out personally and 
 **Context:** Know the full story. No need to explain much.
 **Point to:** "I'm Not Going to Disappear" or whichever piece fits the friendship.
 
-**Draft:**
-> Hey — I've been writing again. Figured you'd want to know.
+**Draft (Gladwell principle — short, no instructions, leaves room for response):**
+> Hey — I've been writing again. Made something I'm proud of. Would love for you to check it out.
 >
 > southernlegends.blog/journal/im-not-going-to-disappear
->
-> There's a subscribe form at the bottom if you want to get new pieces when they drop.
->
-> — Matt
+
+No subscribe nudge. If they want to follow they'll find it. The ask is just "read this."
+
+**List:** Jason, Kyle, Justin, Heather, Estef, Chelsea, Lin, Lucy
 
 ---
 
