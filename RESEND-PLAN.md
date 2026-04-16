@@ -13,6 +13,11 @@ Broadcasts are not automated — Matt writes a short note in Resend, picks the S
 
 ---
 
+## Bipolar Community Outreach (second wave — after warm audience)
+The journal piece speaks directly to bipolar experience — hospitalization, mania, diagnosis, hiding after discharge. Post in bipolar Facebook groups after the warm network (DMs + personal Facebook) has been reached first. Different relationship, broader reach. Let people who know you in before opening to strangers.
+
+---
+
 ## Launch Sequence (do in this order)
 1. **DMs first** — 3-5 personal contacts before the public post. Patreon folks, family, close friends. Short note, here's the piece, posting today. Warm the network before going public.
 2. **Facebook post** — personal profile first, then share to SL page. Piece: "I'm Not Going to Disappear." Last personal post was August 2024 (Heather's surgery). Draft in this doc below.
@@ -207,7 +212,7 @@ No subscribe nudge. If they want to follow they'll find it. The ask is just "rea
 
 ## Paid Tier — Timing & Context
 
-**Patreon history:** Matt had a Patreon with 4 paying supporters at $25/month ($100/month total). It was wound down when things collapsed. These supporters were directed to SL. This proves willingness to pay — the paid tier is not starting from zero.
+**Patreon history:** Matt had a Patreon with 4 paying supporters, $25/month total. It was wound down when things collapsed. These supporters were directed to SL. This proves willingness to pay — the paid tier is not starting from zero.
 
 **When to build it:**
 - When there's a piece that clearly belongs behind a gate. The psilocybin piece is the first obvious candidate.

@@ -247,6 +247,7 @@ Run this before returning any draft or edit to Matt.
 - [ ] Transition words doing structural work? Fix the structure instead.
 - [ ] Read a paragraph aloud: does the rhythm vary, or does every sentence land the same way?
 - [ ] Any sentence explaining what something meant? Cut it. Report what happened instead.
+- [ ] Does the ending reach for meaning, or does it land on a scene? If it's announcing what the piece was about, cut it. End on the image, the fact, the last line of dialogue.
 
 ---
 
