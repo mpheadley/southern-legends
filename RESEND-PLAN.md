@@ -3,10 +3,44 @@
 
 ---
 
+## Send Cadence (decided April 16, 2026)
+No formal nurture sequence. No drip campaigns. Simple rule:
+
+- **New piece publishes → send a broadcast** with a short note and the link
+- That's it. One email per piece, when it's ready
+
+Broadcasts are not automated — Matt writes a short note in Resend, picks the SL audience, sends. Takes 10 minutes.
+
+---
+
+## Launch Sequence (do in this order)
+1. **DMs first** — 3-5 personal contacts before the public post. Patreon folks, family, close friends. Short note, here's the piece, posting today. Warm the network before going public.
+2. **Facebook post** — personal profile first, then share to SL page. Piece: "I'm Not Going to Disappear." Last personal post was August 2024 (Heather's surgery). Draft in this doc below.
+3. **Personal outreach (next few days)** — Patreon supporters, GoFundMe donors, CaringBridge followers. Drafts below.
+4. **Let it accumulate** — give people a week or two to find the form and subscribe.
+5. **First broadcast** — send when the next new piece publishes. Short note + link.
+6. **Promote the signup publicly** — after broadcast #1 is sent, share the subscribe link on social.
+
+6 journal pieces are live. That's enough to invite people. Do not wait for more content.
+
+### Facebook post draft (April 17, 2026)
+> It's been a while since I've posted anything personal. Heather is doing well. We've had a hard stretch since last summer — but we're okay.
+>
+> I've been writing again. Some of it is about that.
+>
+> southernlegends.blog/journal/im-not-going-to-disappear
+
+### On Lucy Morris / contributors
+Lucy had coffee with Matt, loved SL, said having her story told was therapeutic. Matt floated the idea of inviting her as a contributor. **Do not open this yet.** Send a personal note thanking her for coffee and letting her know you're sharing publicly today. The contributor idea needs a separate conversation — what it means, what you'd ask, whether SL is ready — before anyone gets invited.
+
+---
+
 ## Status
 - 6 journal pieces live — past the threshold Matt set ("wire Resend after 3–4 pieces live")
-- First public Facebook share of the journal happening today (April 16)
-- No newsletter infrastructure exists yet
+- Newsletter infrastructure LIVE as of April 16, 2026 — subscribe form on journal and profile pages, wired to Resend audience, deployed to Vercel
+- **First public Facebook share of the journal has NOT happened yet** (as of April 16)
+- Do NOT push the signup link publicly until after broadcast #1 is sent
+- Sequence: FB post first → let organic subscribers trickle in → send first broadcast → then promote the signup
 
 ## Decision: One List
 Do NOT segment profiles vs. journal. One list, everyone gets everything.
@@ -42,11 +76,13 @@ Do NOT segment profiles vs. journal. One list, everyone gets everything.
 **Resend handles everything** — subscriber list, broadcasts (what Resend calls newsletters), and sending. No MailChimp, no Substack, no extra tools needed.
 
 ### From address
-**`matt@southernlegends.blog`** — verified sending address via Resend DNS records. Does NOT need to be a real inbox. Never needs paid email hosting.
+**For now: `matt@headleyweb.com`** — already verified in Resend, works immediately. Slightly off-brand but functional.
+
+**Eventually: `matt@southernlegends.blog`** — requires Resend paid plan (~$20/mo) to add a second domain. Not worth it at zero subscribers. Upgrade when you hit 50–100 subscribers.
 
 - Resend sends the broadcast
-- Replies go to `matt@headleyweb.com` (set as reply-to)
-- `southernlegends.blog` domain just needs Resend's DNS verification records added (free, one-time)
+- Set reply-to as `matt@headleyweb.com`
+- Revisit domain upgrade at 50–100 subscribers
 
 ### API key
 **Reuse the existing `RESEND_API_KEY` from headleyweb** — same key works across projects. Add it to the Southern Legends Vercel project env vars. No new key needed.
@@ -61,31 +97,108 @@ Write the email in Resend → pick the Southern Legends audience → send. That'
 
 ## Warm Audience Outreach (do NOT import — invite personally)
 
-Three existing warm audiences who already know Matt's voice. Do not bulk-import any of them into Resend — they didn't opt into an email newsletter. Reach out personally and invite them to subscribe.
-
-### Patreon (~20 supporters)
-Matt has their emails from Patreon. Send a short personal note: Patreon is wound down, the writing lives at southernlegends.blog now, here's the subscribe link. These people already paid — they're the warmest possible list.
-
-### GoFundMe donors
-People who gave during a hard season. They've demonstrated care. A brief personal note acknowledging the connection before inviting them to follow the writing. Don't make it transactional — acknowledge what they did first.
-
-### CaringBridge followers (Heather's surgery updates)
-Matt posted updates there, so these people are connected through family crisis, not editorial interest. More sensitive audience. Approach carefully — a personal note is appropriate, but don't assume they're interested in the SL editorial project. Lead with the personal writing (journal section), not the business profiles.
-
-**Process for all three:** Personal email or message, not a bulk send. Link to the subscribe form. Let them opt in on their own terms.
+Do not bulk-import any of these audiences into Resend. Reach out personally and invite them to subscribe via the form on the site. All messages should feel like a personal note, not a marketing email.
 
 ---
 
-## What to Build
-- Resend account + API key
-- Subscribe form component (name + email, minimal)
-- Form copy from above
-- Double opt-in confirmation (Resend handles this)
-- Place form: profile pages (byline area or after StoryNav), journal pages, maybe homepage
-- No paid tier yet — free list only
+### Patreon (~20 supporters)
+**Context:** Paid for Matt's writing. Warmest possible audience. Were told Patreon was winding down and directed to SL.
+**Point to:** "I'm Not Going to Disappear" — closes the loop on why Patreon ended.
 
-## What NOT to Build Yet
-- Segmentation
+**Draft:**
+> Hey [name] — I wanted to reach out personally. I wound down Patreon a while back, and I've been quiet since. I'm not gone. I've been writing again, just in a different place.
+>
+> I built a site called Southern Legends — it profiles small business owners and makers in NE Alabama. But I've also been writing about my own story there. The farm. The diagnosis. What's been happening since.
+>
+> Here's the first piece I posted: southernlegends.blog/journal/im-not-going-to-disappear
+>
+> If you want to follow along, there's a subscribe form at the bottom of any page. No pressure either way. Just wanted you to know where I landed.
+>
+> — Matt
+
+---
+
+### Close friends
+**Context:** Know the full story. No need to explain much.
+**Point to:** "I'm Not Going to Disappear" or whichever piece fits the friendship.
+
+**Draft:**
+> Hey — I've been writing again. Figured you'd want to know.
+>
+> southernlegends.blog/journal/im-not-going-to-disappear
+>
+> There's a subscribe form at the bottom if you want to get new pieces when they drop.
+>
+> — Matt
+
+---
+
+### Family
+**Context:** Know the story but may need slightly more context on what SL is.
+**Point to:** "I'm Not Going to Disappear."
+
+**Draft:**
+> Hey — I've been doing something I wanted to share with you. I built a site called Southern Legends that profiles local business owners in NE Alabama. I've also started writing about our own story there — the farm, the last couple of years, what's been happening.
+>
+> Here's the first personal piece: southernlegends.blog/journal/im-not-going-to-disappear
+>
+> If you want to keep up with it, there's a subscribe form at the bottom of any page.
+>
+> Love you — Matt
+
+---
+
+### GoFundMe donors
+**Context:** Gave during the first depression episode (2024) when the farm was struggling. They invested in Matt during a specific hard moment.
+**Point to:** "I'm Not Going to Disappear" — directly addresses that chapter and what came after.
+
+**Draft:**
+> Hey [name] — I've been meaning to reach out for a while. You gave during a really hard stretch, and I never said enough about what that meant.
+>
+> I'm on the other side of it now — still in it in some ways, but standing. I've been writing about it. Here's where I landed:
+>
+> southernlegends.blog/journal/im-not-going-to-disappear
+>
+> The site is called Southern Legends. I built it to tell stories about people in NE Alabama who are still building things. I've also started telling my own story there.
+>
+> If you want to follow along, there's a subscribe form at the bottom. No obligation — just wanted you to know I'm okay, and that what you did mattered.
+>
+> — Matt
+
+---
+
+### CaringBridge followers (Heather's surgery)
+**Context:** Mixed audience — personal friends, congregation, community. Connected through Heather's surgery, not through Matt's writing. More sensitive. Lead with Heather and the family update before introducing the site.
+**Point to:** Journal section generally, or "I'm Not Going to Disappear" for those who know more of the story.
+
+**Draft:**
+> Hey [name] — I wanted to send a quick update for those who followed along on CaringBridge during Heather's surgery.
+>
+> Heather is doing well. We've had a hard couple of years since then — the farm sold, some things I'm still processing — but we're okay. Still here.
+>
+> I've been writing about some of it, if you're interested. I built a site called Southern Legends that profiles local business owners in NE Alabama, and I've started writing about my own story there too.
+>
+> southernlegends.blog/journal/im-not-going-to-disappear
+>
+> There's a subscribe form at the bottom if you'd like to follow along. Either way, thank you for the prayers and the care during that season. It meant more than I said at the time.
+>
+> — Matt
+
+---
+
+**Process for all five:** Personal message or email, not a bulk send. One person at a time where possible. Link to the subscribe form. Let them opt in on their own terms.
+
+---
+
+## What's Built (as of April 16, 2026)
+- Resend installed, API route at `/api/subscribe`
+- Subscribe form (name optional, email required) on journal listing, journal detail, and profile pages
+- Form copy: Option A headline + subtext
+- Env vars live in Vercel (RESEND_API_KEY, RESEND_AUDIENCE_ID)
+- Deployed to southernlegends.blog
+
+## What's NOT Built Yet
+- Homepage subscribe callout (quiet, below profiles grid — add when journal has 8–10 pieces)
 - Paid tier / Stripe gating
-- Automated send sequences
-- Separate profile vs. journal lists
+- Segmentation
+- `southernlegends.blog` as sending domain (blocked by Resend free plan — revisit at 50–100 subscribers)
