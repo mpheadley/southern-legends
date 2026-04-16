@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export default function SubscribeCTA({ variant = "section" }: { variant?: "section" | "inline" }) {
+  const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -11,18 +12,14 @@ export default function SubscribeCTA({ variant = "section" }: { variant?: "secti
     setStatus("loading");
 
     try {
-      const res = await fetch("https://formspree.io/f/xyknwdgp", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email.trim(),
-          source: "newsletter-southern-legends",
-          newsletter_optin: "yes",
-          _subject: "Southern Legends newsletter signup",
-        }),
+        body: JSON.stringify({ email: email.trim(), firstName: firstName.trim() }),
       });
       if (res.ok) {
         setStatus("success");
+        setFirstName("");
         setEmail("");
       } else {
         setStatus("error");
@@ -39,29 +36,39 @@ export default function SubscribeCTA({ variant = "section" }: { variant?: "secti
           className="text-lg font-bold text-white mb-1"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Don&apos;t Miss a Story
+          Stories from Northeast Alabama
         </p>
         <p className="text-sm text-white/60 mb-3">
-          Get notified when new profiles drop. No spam.
+          Profiles of local makers and business owners, plus occasional personal writing from Matt. One list. No spam.
         </p>
 
         {status === "success" ? (
           <p className="text-sm font-medium text-ll-accent">
-            You&apos;re in. We&apos;ll let you know when the next story drops.
+            You&apos;re in. Watch for the next story.
           </p>
         ) : (
-          <form onSubmit={handleSubmit} className="flex gap-2">
-            <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
-            <label className="sr-only" htmlFor="footer-subscribe-email">Email address</label>
-            <input
-              id="footer-subscribe-email"
-              type="email"
-              required
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-3 py-2 text-sm rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-ll-accent"
-            />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <label className="sr-only" htmlFor="footer-subscribe-name">First name</label>
+              <input
+                id="footer-subscribe-name"
+                type="text"
+                placeholder="First name (optional)"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="w-28 px-3 py-2 text-sm rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-ll-accent"
+              />
+              <label className="sr-only" htmlFor="footer-subscribe-email">Email address</label>
+              <input
+                id="footer-subscribe-email"
+                type="email"
+                required
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 px-3 py-2 text-sm rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-ll-accent"
+              />
+            </div>
             <button
               type="submit"
               disabled={status === "loading"}
@@ -86,32 +93,39 @@ export default function SubscribeCTA({ variant = "section" }: { variant?: "secti
           className="text-2xl md:text-3xl font-bold mb-3"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Don&apos;t Miss a Story
+          Stories from Northeast Alabama — and from the person writing them.
         </h2>
         <p className="text-white/60 mb-8 text-base leading-relaxed">
-          Get notified when we publish a new profile. No spam, no fluff. Just
-          stories worth reading.
+          Profiles of local makers and business owners, plus occasional personal writing from Matt. One list. No spam.
         </p>
 
         {status === "success" ? (
           <p className="text-lg font-medium text-ll-accent">
-            You&apos;re in. We&apos;ll let you know when the next story drops.
+            You&apos;re in. Watch for the next story.
           </p>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            {/* Honeypot */}
-            <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
-
-            <label className="sr-only" htmlFor="subscribe-email">Email address</label>
-            <input
-              id="subscribe-email"
-              type="email"
-              required
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="subscribe-input flex-1 px-4 py-3 rounded text-ll-dark text-base bg-white placeholder:text-ll-text-light focus:outline-none focus:ring-2 focus:ring-ll-accent"
-            />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <label className="sr-only" htmlFor="subscribe-name">First name</label>
+              <input
+                id="subscribe-name"
+                type="text"
+                placeholder="First name (optional)"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="subscribe-input sm:w-36 px-4 py-3 rounded text-ll-dark text-base bg-white placeholder:text-ll-text-light focus:outline-none focus:ring-2 focus:ring-ll-accent"
+              />
+              <label className="sr-only" htmlFor="subscribe-email">Email address</label>
+              <input
+                id="subscribe-email"
+                type="email"
+                required
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="subscribe-input flex-1 px-4 py-3 rounded text-ll-dark text-base bg-white placeholder:text-ll-text-light focus:outline-none focus:ring-2 focus:ring-ll-accent"
+              />
+            </div>
             <button
               type="submit"
               disabled={status === "loading"}

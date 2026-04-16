@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllJournalPosts } from "@/lib/journal";
 import { siteConfig } from "@/lib/site-config";
+import SubscribeCTA from "@/app/components/SubscribeCTA";
 
 export const metadata: Metadata = {
   title: "Journal",
@@ -144,6 +145,8 @@ export default function JournalPage() {
         </section>
       )}
 
+      {/* Subscribe */}
+      <SubscribeCTA />
 
     </main>
   );

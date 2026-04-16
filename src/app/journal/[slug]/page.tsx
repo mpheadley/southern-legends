@@ -10,6 +10,7 @@ import ShareButtons from "@/app/components/ShareButtons";
 import PullQuote from "@/app/components/PullQuote";
 import JournalCard from "@/app/components/JournalCard";
 import ProfileCard from "@/app/components/ProfileCard";
+import SubscribeCTA from "@/app/components/SubscribeCTA";
 
 function Dateline({ children }: { children: React.ReactNode }) {
   return (
@@ -258,6 +259,9 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           Support this work →
         </Link>
       </section>
+
+      {/* Subscribe */}
+      <SubscribeCTA />
 
       {/* More from the Journal */}
       {moreJournal.length > 0 && (

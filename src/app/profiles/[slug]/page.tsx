@@ -19,6 +19,7 @@ import StoryNav from "@/app/components/StoryNav";
 import ShareButtons from "@/app/components/ShareButtons";
 import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
 import ParallaxHero from "@/app/components/ParallaxHero";
+import SubscribeCTA from "@/app/components/SubscribeCTA";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
 
 const mdxComponents = {
@@ -450,6 +451,9 @@ export default async function ProfilePage({
 
       {/* Story Navigation (prev/next) */}
       <StoryNav prev={prev} next={next} />
+
+      {/* Subscribe */}
+      <SubscribeCTA />
 
     </main>
   );
