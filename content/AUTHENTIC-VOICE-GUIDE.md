@@ -269,6 +269,17 @@ Run this before returning any draft or edit to Matt.
 
 ### Books
 
+**"Murder Your Darlings" — origin and preaching application**
+Commonly attributed to Arthur Quiller-Couch, Cambridge writing lecturer, circa 1913: *"Whenever you feel an impulse to perpetrate a piece of exceptionally fine writing, obey it — and delete it before sending your manuscript to press."* Faulkner, King, and others have repeated versions of it. The principle: cut what you love most if it isn't serving the piece.
+
+Dave Barnhart, pastor and licensed counselor, applied it directly to preaching in a 2016 MinistryMatters piece: ["Edits That Make Sermons Stronger"](https://ministrymatters.com/2016-01-25_edits_that_make_sermons_stronger/). His four search-and-destroy missions are worth reading in full, but the most transferable:
+- **Eliminate generic nouns** — "the poor" has no power; Joe with a chemistry degree sleeping in an abandoned house does.
+- **Eliminate state-of-non-being verbs** — "should, ought, must" are preachy and demotivating. Show the thing instead.
+- **Short sentences.** Vary length, but default short.
+- **Cut mollifying rhetorical questions** — they steal energy from declarations.
+
+Matt encountered the inductive preaching principle in seminary. Barnhart is a clergy colleague. Both the homiletics tradition and this aphorism are baked into Matt's instincts as a writer.
+
 **Phillip Lopate — *The Art of the Personal Essay* (anthology)**
 The canonical text on the personal essay form. Lopate's argument: the essayist doesn't reduce life to a recitation of events — the job is to reveal its continuing meaning through voice, presence, and honest reckoning. The introduction alone is worth reading before writing any personal piece.
 
