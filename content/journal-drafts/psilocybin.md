@@ -34,9 +34,16 @@ The Johns Hopkins context matters: Barnhart isn't someone who stumbled into this
 
 ## Placement decision
 
-**Not SL.** This piece would follow a different publication strategy — Substack, a personal newsletter, or a venue outside the Headley Web business orbit. The NE Alabama small business market is not the audience for this piece.
+**Not SL public. Not a separate platform (no Substack).** Options in order of preference:
 
-**Timeline:** Write after the other pieces are settled. This requires more distance and more deliberate decisions about who to name and how.
+1. **SL paid tier** — long-term home. Gated, opt-in, people who've specifically subscribed to the deeper personal writing. Natural fit when the paid tier exists.
+2. **Private Resend send** — no public URL, not indexed, goes only to the list. Available now. Use this if the piece is ready before the paid tier is built.
+
+Do not publish publicly anywhere — not indexed, not findable by potential clients in NE Alabama.
+
+**Intent:** All of the above — processing, contributing to the public conversation about psychedelic therapy and faith, reaching people who've been through similar things.
+
+**Timeline:** Write it when it wants to be written. Sit on it until Barnhart says yes and the container is ready. The piece will be ready before the platform needs to be decided.
 
 ---
 
@@ -44,5 +51,4 @@ The Johns Hopkins context matters: Barnhart isn't someone who stumbled into this
 
 - Talk to Barnhart. Does he want to be named? What's his comfort level?
 - Talk to Justin. Same question.
-- Decide on the venue before drafting — the venue shapes what can be said and how.
 - Read the Johns Hopkins psilocybin + clergy research. Know the actual findings before writing around them.

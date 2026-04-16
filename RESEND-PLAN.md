@@ -202,3 +202,20 @@ No subscribe nudge. If they want to follow they'll find it. The ask is just "rea
 - Paid tier / Stripe gating
 - Segmentation
 - `southernlegends.blog` as sending domain (blocked by Resend free plan — revisit at 50–100 subscribers)
+
+---
+
+## Paid Tier — Timing & Context
+
+**Patreon history:** Matt had a Patreon with 4 paying supporters at $25/month ($100/month total). It was wound down when things collapsed. These supporters were directed to SL. This proves willingness to pay — the paid tier is not starting from zero.
+
+**When to build it:**
+- When there's a piece that clearly belongs behind a gate. The psilocybin piece is the first obvious candidate.
+- Or at 50+ subscribers, when paying feels like supporting ongoing work rather than a one-time transaction.
+- Not before. Free writing builds the relationship first.
+
+**CTAs in emails:** Add a quiet "support this work" line to broadcasts once sending regularly. Not in the first few sends.
+
+**What the paid tier gates:** Deeper personal writing — psilocybin piece, anything in the Cropwell/separation category. Free tier gets profiles and lighter journal pieces. Paid gets everything.
+
+**Platform:** Stripe + SL. Already scoped in CLAUDE.md. Build when the first gateable piece is ready.
