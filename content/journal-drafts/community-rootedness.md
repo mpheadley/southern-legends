@@ -20,6 +20,7 @@ Not a nostalgia piece. More like: I didn't realize I had roots here until I star
 - The Chamber of Commerce meetup (Called Coffee) — people who knew Matt from the flower farm, from church, from school. They showed up in a room without being summoned.
 - Southern Legends itself as an act of rootedness — profiling people here, not elsewhere. Why here? Because this is where I am. Because I know these people.
 - The difference between community you build intentionally and community that accrues without your noticing.
+- People who kept checking: Jason weekly. Lucy offered coffee when she heard about the diagnosis through the grapevine. John Martin (former parishioner, associate pastor days) got together Monday — good listener, just showed up.
 
 ---
 
