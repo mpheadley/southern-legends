@@ -222,6 +222,14 @@
 
 ---
 
+## Additional verbatim — from easter.md draft (April 2026)
+
+"sitting at coffee with a friend, they told me 'your expericne will make you more effective in mnisty. you don't have to be working at a church to do ministry.' she was a former parishoner, left that cchurch before i did."
+
+"is my faith still there? returning?"
+
+---
+
 ## Key phrases and lines — Matt's exact words to mine from
 
 - "I'm not resolved and not landed and not really sure where my faith is right now"
@@ -240,3 +248,4 @@
 - "she listened, and it was super generous"
 - "there's a part of me that doesn't even feel interested in any of it"
 - "I stopped doing yoga or meditation a long time ago when I was depressed"
+- After discharge I spent a month in my parents' camper.

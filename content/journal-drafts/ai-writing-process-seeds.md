@@ -38,6 +38,12 @@ Not a cautionary tale, not a celebration. Honest: I've had a fraught relationshi
 - This piece sequences *after* the-same-domain.mdx — readers need to understand why the journal exists before they understand how it's made.
 - Possible connection to the comments/dialogue idea: why public processing requires actual other humans, not just an AI.
 
+## What public processing actually does
+
+The day after "The Same Domain" published, Amber Simpson (Jacksonville artist, Bipolar 2 diagnosis, also a pastor's-world person) sent a message: *"I want to share that I am sending you every ounce of love and prayer I can muster... please know you're not alone in this ministry + mental health + small business combo."* She'd written publicly about her own diagnosis in 2023, hadn't said anything to Matt about it until he published.
+
+That's the thing AI can't do. Processing with Claude is useful for drafting and thinking. It doesn't pull Amber out of the woodwork. The public part does that. The piece is partly about that distinction — AI as tool for making the thing, humans as what the thing reaches.
+
 ## Status
 
-Seed only. Do not start drafting until the-same-domain.mdx is published.
+Dependency cleared — the-same-domain.mdx is published (April 15, 2026). Ready to draft.

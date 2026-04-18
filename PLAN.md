@@ -213,7 +213,8 @@ Start with **places** instead of (or alongside) business profiles for launch:
 - [ ] Real photography — shoot or collect photos as profiles are written
 - [ ] Update visual system to blend typography + photography as images become available
 - [ ] Community nominations — formalize the nomination flow
-- [ ] Cookie banner + GA4 analytics — model after headleyweb's consent-first approach
+- [x] Cookie banner + GA4 analytics — live, consent-gated. GA4 ID: G-3PGNQKKWTN. Verify NEXT_PUBLIC_GA4_ID is set in Vercel dashboard.
+- [x] Comments — Supabase + Resend notification, no account required, moderated. Needs Supabase project + env vars filled in.
 - [ ] Track profile views, nomination clicks, subscribe conversions
 
 ### Distribution — Per-Profile Checklist

@@ -173,13 +173,15 @@ Write these in order — they build on each other:
 
 ## The Book
 
+Full working document: **`BOOK.md`** — structure, connective tissue map, strategic notes on timeline, profiles that may belong in the book but aren't written yet.
+
 The Patreon is the workshop. By the time you've written enough posts, you'll have:
 
 - The inciting incident (unclear yet — gold star? the manic episode?)
 - The real center of the story (you spent your life being the one with answers; the second depression took that away)
 - The honest ending (not recovery — *there is no finish line*, per Lucy)
 
-Don't think about the book yet. Write the Patreon posts. The book will find its shape.
+Don't think about the book yet. Write the Patreon posts. The book will find its shape. `BOOK.md` is where you capture the shape as it emerges.
 
 ---
 

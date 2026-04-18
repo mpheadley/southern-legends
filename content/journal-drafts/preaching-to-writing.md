@@ -66,6 +66,14 @@ When the re-entry pieces are settled and there's room to be reflective rather th
 
 ---
 
+## Wendell Berry thread
+
+Berry is probably the natural through-line for this piece. Matt used Berry for preaching and farm work — not a borrowed reference, a native language. Berry's conviction that the local and the bodily are where meaning lives maps directly onto inductive preaching: you don't announce the destination, you earn it through the particular.
+
+The farm was Berry. The sermons were Berry. The craft traveling from pulpit to web design desk to journal — that's a Berry argument. See also `whitman-berry.md` for the broader Whitman/Berry contrast.
+
+---
+
 ## Internal linking notes
 
 When published, link to and from:
