@@ -20,6 +20,7 @@ import ShareButtons from "@/app/components/ShareButtons";
 import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
 import ParallaxHero from "@/app/components/ParallaxHero";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
+import Comments from "@/app/components/Comments";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
 
 const mdxComponents = {
@@ -390,6 +391,8 @@ export default async function ProfilePage({
           <MDXRemote source={content} components={mdxComponents} />
         </div>
       </article>
+
+      <Comments slug={slug} />
 
       {/* Closing — author credit, share, tags on dark topo/gradient */}
       <section className="profile-closing">

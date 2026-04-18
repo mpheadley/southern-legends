@@ -3,11 +3,12 @@ import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
-import { getAllJournalPosts, getJournalPostBySlug, getOtherJournalPosts } from "@/lib/journal";
+import { getAllJournalPosts, getJournalPostBySlug, getJournalSlugs, getOtherJournalPosts } from "@/lib/journal";
 import { getAllProfiles } from "@/lib/profiles";
 import { siteConfig } from "@/lib/site-config";
 import ShareButtons from "@/app/components/ShareButtons";
 import PullQuote from "@/app/components/PullQuote";
+import Comments from "@/app/components/Comments";
 import JournalCard from "@/app/components/JournalCard";
 import ProfileCard from "@/app/components/ProfileCard";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
@@ -117,7 +118,7 @@ const mdxComponents = {
 type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
-  return getAllJournalPosts().map((post) => ({ slug: post.slug }));
+  return getJournalSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
@@ -161,7 +162,7 @@ function formatDate(dateStr: string): string {
 export default async function JournalPostPage({ params }: { params: Params }) {
   const { slug } = await params;
   const post = getJournalPostBySlug(slug);
-  if (!post || !post.frontmatter.published) notFound();
+  if (!post) notFound();
 
   const moreJournal = getOtherJournalPosts(slug, 2);
   const profiles = getAllProfiles().slice(0, 3);
@@ -245,6 +246,8 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           <MDXRemote source={content} components={mdxComponents} />
         </div>
       </article>
+
+      <Comments slug={slug} />
 
       {/* Share + Support */}
       <section className="profile-closing">
