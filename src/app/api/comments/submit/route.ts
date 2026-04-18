@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
   if (resendKey) {
     const resend = new Resend(resendKey);
     await resend.emails.send({
-      from: "Southern Legends <noreply@southernlegends.blog>",
+      from: "Southern Legends <noreply@headleyweb.com>",
       to: "matt@headleyweb.com",
       subject: `New comment on /${slug}`,
       html: `
