@@ -39,7 +39,6 @@ export async function POST(request: NextRequest) {
     name: name.trim(),
     email: email?.trim() || null,
     message: message.trim(),
-    approved: false,
   });
 
   if (dbError) {
