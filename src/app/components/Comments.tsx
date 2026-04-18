@@ -20,6 +20,7 @@ function formatDate(iso: string) {
 export default function Comments({ slug }: { slug: string }) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -38,12 +39,13 @@ export default function Comments({ slug }: { slug: string }) {
       const res = await fetch("/api/comments/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug, name, message }),
+        body: JSON.stringify({ slug, name, email, message }),
       });
 
       if (res.ok) {
         setStatus("success");
         setName("");
+        setEmail("");
         setMessage("");
       } else {
         setStatus("error");
@@ -88,6 +90,17 @@ export default function Comments({ slug }: { slug: string }) {
                 required
                 maxLength={100}
                 autoComplete="name"
+              />
+            </div>
+            <div className="comment-field">
+              <label htmlFor="comment-email">Email <span className="comment-optional">(optional — only used if I reply)</span></label>
+              <input
+                id="comment-email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
+                autoComplete="email"
               />
             </div>
             <div className="comment-field">
