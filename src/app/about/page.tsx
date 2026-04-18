@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import SubscribeCTA from "@/app/components/SubscribeCTA";
 
 export const metadata: Metadata = {
   title: "About",
@@ -190,6 +191,8 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      <SubscribeCTA variant="section" />
     </main>
   );
 }

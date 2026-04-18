@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import StripePricingTable from "@/app/components/StripePricingTable";
+import SubscribeCTA from "@/app/components/SubscribeCTA";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -101,6 +102,8 @@ export default function SupportPage() {
           </p>
         </div>
       </section>
+
+      <SubscribeCTA variant="section" />
     </main>
   );
 }
