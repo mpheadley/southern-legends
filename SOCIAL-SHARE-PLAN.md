@@ -15,17 +15,11 @@ Already done: personal messages to 4 Patreon supporters (April 14, 2026).
 ---
 
 ### Step 2 — First public share: "I'm Not Going to Disappear"
-**When:** Today (April 15) or tomorrow morning.
+**Status: DONE — posted to personal Facebook April 17, 2026. 96 likes, 26 comments, 1 share.**
 
-**Why this one first:** It's the reintroduction. Names where you've been (diagnosis, hospital, hiding) and ends with you showing up again. Reads like a letter to your community without being called one. Leads with the most current, alive energy.
+**Did not tag or share to SL page yet.** Do that now or on next natural moment — share the journal link from the SL Facebook page with a short editorial note. Don't re-post to personal; let it breathe.
 
-**Personal Facebook post — write in your own voice, not the excerpt:**
-> I published something today. It's about where I've been.
-> [link]
-
-That's enough. Don't oversell it.
-
-**Then:** Share the post from the Southern Legends Facebook page. Tag your personal profile.
+**Timing lesson documented:** Best times for SL shares are Tue–Thu 7–9am or 6–8pm local. Avoid weekends (too much noise for editorial content). Personal posts get reactions, not reshares — that's normal. The subject's own share (for profiles) outperforms yours every time.
 
 ---
 
@@ -50,7 +44,10 @@ That's enough. Don't oversell it.
 
 ## Rules
 - One piece per share session. Don't post two in the same day.
-- Personal post first, SL page share after.
+- Personal post first, SL page share after (don't skip the SL page share — that's what builds the page audience).
 - Write the Facebook post in your own voice — never use the excerpt verbatim.
 - Don't explain too much. Short post, let the piece do the work.
 - Space posts at least 2–3 days apart.
+- **Best times:** Tue–Thu, 7–9am or 6–8pm local. Avoid weekends.
+- **For profiles:** Always ask the subject to share from their own page. Their audience knows them — their share outperforms yours. Ask directly: "Would you share this from your page?"
+- **After a strong post (96+ likes):** Let it breathe a full week before any reshare attempt. Ride momentum to the next piece instead of milking the last one.
