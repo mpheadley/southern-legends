@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Masthead — Southern Legends',
+  title: 'Masthead',
   description: 'The editors and contributors behind Southern Legends — writers who know Northeast Alabama and the Southern diaspora from the inside.',
   alternates: { canonical: 'https://southernlegends.org/masthead' },
   openGraph: {
-    title: 'Masthead — Southern Legends',
+    title: 'Masthead',
     description: 'The editors and contributors behind Southern Legends — writers who know Northeast Alabama and the Southern diaspora from the inside.',
     url: 'https://southernlegends.org/masthead',
   },

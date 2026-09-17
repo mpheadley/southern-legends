@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Buy — Southern Legends',
+  title: 'Buy',
   description: 'Order Southern Legends gear — shirts, stickers, and prints made for NE Alabama schools, races, and trails.',
   openGraph: {
-    title: 'Buy — Southern Legends',
+    title: 'Buy',
     description: 'Order Southern Legends gear — shirts, stickers, and prints made for NE Alabama schools, races, and trails.',
   },
 };
