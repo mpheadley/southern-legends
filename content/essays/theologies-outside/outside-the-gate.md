@@ -1,0 +1,29 @@
+# Outside the Gate
+
+*Synthesized by Fable — 2026-08-21*
+
+The last time I stood in a pulpit, I knew something the congregation didn't. I knew I wasn't coming back. Not because I'd stopped believing in God. Because I'd started noticing where God actually stood in the room, and it wasn't up front with me. It was near the back, by the doors. It was out in the parking lot with the man who came every week and never came in past the foyer. It was, as far as I could tell, mostly outside.
+
+There's a line buried near the end of the book of Hebrews that almost nobody preaches on. The writer is talking about the old sacrificial system, how the bodies of the animals were burned outside the camp, away from the holy places, out where the refuse went. And then he says this about Jesus: he also suffered outside the city gate. And then the invitation, which is the strangest invitation in the whole Bible: let us go to him, then, outside the camp.
+
+Not: let us bring him in. Not: let us build a gate worthy of him. Go out. That's where he is.
+
+I spent years on the inside of the gate. I had keys to the building. I knew which thermostat actually controlled the sanctuary and which one was decorative. I sat in the meetings where we decided who was ready to serve and who needed more time, which usually meant which people made us comfortable and which didn't. I don't say that with contempt. I loved those rooms and most of the people in them. But a gate does two things at once, and we only ever admitted to one of them. We said the gate protected what was sacred. We didn't say the gate also decided who got to stand near it.
+
+Then I got a diagnosis. Bipolar. And I learned, faster than I wanted to, which side of the gate a diagnosis puts you on.
+
+Here's what that looked like in practice. When my energy ran high, when the ideas came fast and the words came faster, the church had a category for it: anointed. On fire. When the same energy tipped over into something that scared people, the category changed overnight, and so did my seat. Nobody handed me a letter. Nobody has to. You just notice that the invitations slow down. You notice people talking to you the way you talk to a stove that might be hot. You notice that the same institution that called your intensity a gift now calls it a liability, and that at no point did anyone ask which one it actually was.
+
+I posted something online during a manic stretch that I'll probably be quoting for the rest of my life, mostly because I meant every word and didn't know what I was saying. Everything feels amazing, I wrote. So why is everybody telling me to slow down? I put a duck emoji on it, because that's the kind of thing you do when everything feels amazing. The duck didn't know he was manic. The duck felt wonderful. And here's the part I need you to sit with: the duck was also right about something. Underneath the diagnosis, underneath the speed, he was a good duck. Both of those things were true at the same time, and I have yet to find an institution built to hold both. The gate wants to sort. Sick or well. In or out. Fit for service or on a break. It cannot process "hopeful duck, bipolar duck, still a good duck." It has no column for that.
+
+But God apparently does. That's what the Hebrews line keeps doing to me. Outside the camp was where they put what the system couldn't process. The burned remains. The unclean. The contaminated and the contagious and the ones whose condition made everyone else nervous. And the writer says, with a straight face, that's where Jesus ended up. Not visiting. Not doing outreach. Executed there, outside the wall, with the discarded things, because the people who ran the gate looked at him and made the same call gates always make.
+
+So if you're reading this and you can't walk into a church building anymore, I'm not going to talk you back inside. Maybe you left, or maybe you're like a lot of people I know, and the leaving happened to you. A divorce that made you a question mark. A question you asked out loud one too many times. A kid who came out. A breakdown, a bottle, a bad year. Something that moved you from the category the gate could process to the category it couldn't. And now you're out here, and you still love God, and nobody knows what to do with you, including you.
+
+I can't fix that. I want to be honest about what I am: not a guide who's been to the summit and come back with the map. I walk with a limp, and the limp is not getting better, and I've stopped asking it to. What I can tell you is what I found when I got out here. I expected exile. Empty parking lot, cooling casserole, silence where the singing used to be. Some days it is that, and I won't pretend otherwise.
+
+But most days it's stranger than exile. Most days it feels like arriving somewhere Jesus already was. Out here are the people who couldn't perform wellness anymore. The ones whose questions got too heavy for a Sunday school table. The ones who found out the hard way that the gate's mercy has business hours. And moving among them, unhurried, unbothered by the diagnosis or the divorce or the doubt, is the same Lord the gate was supposedly built to protect. Turns out he was never in danger of being contaminated by us. Turns out he was never the one who needed the wall.
+
+The old sacrifices were burned outside the camp because they were finished, used up, done. That's how the gate sees everything it puts out. That's how you might see yourself. But the writer of Hebrews looked at the same ash heap and saw an altar. The place of disposal was the place of atonement all along. The city was wrong about what it was throwing away.
+
+Which raises the question I couldn't stop asking once I was out here, the question the rest of this book is trying to answer: if God does his best work outside the gate, what was the gate ever actually for?
