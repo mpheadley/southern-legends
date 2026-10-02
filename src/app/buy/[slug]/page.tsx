@@ -19,6 +19,7 @@ function BuyForm({ item }: { item: MerchItem }) {
   const [size, setSize] = useState(item.sizes?.[1] ?? '')
   const [qty, setQty] = useState(1)
   const [loading, setLoading] = useState(false)
+  const [showBack, setShowBack] = useState(false)
 
   async function checkout() {
     setLoading(true)
@@ -44,8 +45,23 @@ function BuyForm({ item }: { item: MerchItem }) {
         </a>
 
         {/* Image */}
-        <div style={{ background: '#161616', borderRadius: 16, overflow: 'hidden', marginBottom: 28, aspectRatio: '1', position: 'relative' }}>
-          <Image src={item.photo} alt={item.name} fill style={{ objectFit: 'contain', padding: 24 }} sizes="480px" />
+        <div
+          onMouseEnter={() => setShowBack(true)}
+          onMouseLeave={() => setShowBack(false)}
+          style={{ background: '#161616', borderRadius: 16, overflow: 'hidden', marginBottom: 28, aspectRatio: '1', position: 'relative' }}
+        >
+          <Image
+            src={item.photoBack && showBack ? item.photoBack : item.photo}
+            alt={item.photoBack && showBack ? `${item.name} — back` : item.name}
+            fill
+            style={{ objectFit: 'contain', padding: 24 }}
+            sizes="480px"
+          />
+          {item.photoBack && (
+            <span style={{ position: 'absolute', bottom: 12, right: 12, background: 'rgba(0,0,0,0.6)', color: 'rgba(240,237,230,0.75)', fontSize: 10, fontWeight: 600, padding: '4px 9px', borderRadius: 20, letterSpacing: '0.06em', textTransform: 'uppercase', pointerEvents: 'none' }}>
+              {showBack ? 'Back' : 'Hover for back'}
+            </span>
+          )}
           {item.badge && (
             <span style={{ position: 'absolute', top: 12, left: 12, background: item.badgeColor ?? '#9A3412', color: '#fff', fontSize: 11, fontWeight: 700, padding: '4px 10px', borderRadius: 20, letterSpacing: '0.06em' }}>
               {item.badge}

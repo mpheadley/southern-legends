@@ -12,6 +12,8 @@ export type MerchItem = {
   sub?: string
   price: number
   photo: string
+  /** Optional back-of-garment art — product pages swap to this on hover. */
+  photoBack?: string
   rawGraphic?: string
   bg?: string
   badge?: string
@@ -215,6 +217,7 @@ export const MERCH: MerchItem[] = [
     sub: '25% of every sale → West Anniston Foundation',
     price: 40,
     photo: '/print-files/FREEDOM-RIDERS-01-burning-bus-WHITE.png',
+    photoBack: '/merch/freedom-riders/back.png',
     bg: '#1a1a2e',
     badge: 'Memorial',
     badgeColor: '#1a1a2e',
@@ -233,6 +236,7 @@ export const MERCH: MerchItem[] = [
     sub: '100% → West Anniston Foundation · White shirt · Woodcut · 1-color',
     price: 40,
     photo: '/print-files/FREEDOM-RIDERS-01-burning-bus-WHITE.png',
+    photoBack: '/merch/freedom-riders/back.png',
     bg: '#f5f0e8',
     badge: 'Memorial',
     badgeColor: '#1a1a2e',
@@ -249,6 +253,7 @@ export const MERCH: MerchItem[] = [
     sub: '100% → West Anniston Foundation · White shirt · Hedcut portrait',
     price: 40,
     photo: '/print-files/FREEDOM-RIDERS-02-dennis-portrait-BLACK.png',
+    photoBack: '/merch/freedom-riders/back.png',
     bg: '#1a1a1a',
     badge: 'SL Editorial',
     badgeColor: '#1a1a2e',
@@ -1248,9 +1253,9 @@ export function getMerchForOutdoors(limit = 6): MerchItem[] {
 
 // Merch product lookups for profile/essay crosslinks — all internal routes
 export const FW_PRODUCTS = {
-  ICM: { url: '/merch', name: 'I Contain Multitudes', image: '/merch/model-city-mockup-cream.webp' },
-  SH:  { url: '/merch', name: 'Still Here', image: '/merch/clt-shirt-mockup.webp' },
-  BP:  { url: '/merch', name: 'Bipolar & Proud', image: '/merch/model-city-mockup-black.webp' },
+  ICM: { url: '/merch', name: 'I Contain Multitudes', image: '/merch/i-contain-multitudes.webp' },
+  SH:  { url: '/merch', name: 'Still Here', image: '/merch/still-here.webp' },
+  BP:  { url: '/merch', name: 'Bipolar & Proud', image: '/merch/bipolar-proud.webp' },
   CLT: { url: '/buy/clt-shirt', name: "Ladiga's Land", image: '/merch/clt-shirt-mockup.webp' },
   MC:  { url: '/buy/model-city-shirt', name: 'The Model City', image: '/merch/model-city-mockup-cream.webp' },
   DD:  { url: '/merch/freedom-riders', name: 'Freedom Riders — Anniston, 1961', image: '/merch/freedom-riders/shirt-mockup-dark.webp' },
