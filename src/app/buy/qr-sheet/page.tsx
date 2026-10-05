@@ -34,7 +34,7 @@ export default function QRSheetPage() {
       </head>
       <body>
         <h1>Woodstock 5K Booth — Scan to Buy</h1>
-        <div className="sub">Aug 2, 2026 · southernlegends.blog/merch · Scan any code to pay by card</div>
+        <div className="sub">Aug 2, 2026 · southernlegends.org/merch · Scan any code to pay by card</div>
         <div className="grid">
           {items.map(item => {
             const url = `${BASE}/buy/${item.id}`

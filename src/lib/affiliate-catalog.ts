@@ -74,7 +74,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$5–$8',
     commission: '15%',
     commissionNote: '$0.75–$1.20 per sale',
-    dest: 'https://southernlegends.blog/merch',
+    dest: 'https://southernlegends.org/merch',
     description: 'CLT trail sticker, Ecclesia coin sticker, Woodstock badge. Vinyl, waterproof.',
     category: 'merch',
   },
@@ -172,7 +172,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$28–$35',
     commission: '12%',
     commissionNote: '$3.36–$4.20 per sale',
-    dest: 'https://southernlegends.blog/merch',
+    dest: 'https://southernlegends.org/merch',
     description: '8-bit coin, pilgrims in the forest, Celtic knot. For the church that walks a different road.',
     category: 'merch',
   },
@@ -305,8 +305,8 @@ export const DESTINATIONS: Record<string, string> = Object.fromEntries(
 )
 
 // Add legacy keys
-DESTINATIONS['default'] = 'https://southernlegends.blog/merch'
-DESTINATIONS['merch'] = 'https://southernlegends.blog/merch'
+DESTINATIONS['default'] = 'https://southernlegends.org/merch'
+DESTINATIONS['merch'] = 'https://southernlegends.org/merch'
 DESTINATIONS['shop'] = 'https://ecclesiacommunity.org/shop'
 DESTINATIONS['books'] = 'https://southernlegends.blog/books'
 DESTINATIONS['freedom-riders'] = 'https://southernlegends.blog/buy/freedom-riders-shirt'

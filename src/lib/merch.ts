@@ -696,7 +696,7 @@ export const MERCH: MerchItem[] = [
     tagline: 'Southern Legends · Thorns + roses + Southern Gothic',
     sub: 'Cream shirt · Skull emerging from vines',
     price: 35,
-    photo: '/merch/sl-blossom-decay-cream.webp',
+    photo: '/merch/sl-blossom-decay-cream-mockup.webp',
     rawGraphic: '/merch/blossom-and-decay-clean.png',
     badge: 'SL Original',
     badgeColor: '#7f1d1d',
