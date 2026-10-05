@@ -119,6 +119,20 @@ const BOOKS: Book[] = [
       "During a manic episode, I built a community of AI spiritual directors: one for each Enneagram type, plus a Richard Rohr and a figure I labeled Jesus. The technical execution worked. This book is what I found when I looked at it in daylight.",
   },
   {
+    slug: "chief-ladiga-trail",
+    title: "The Chief Ladiga Trail",
+    tagline: "In 1832, the Creek Nation was removed from Northeast Alabama. This book argues for a reckoning, not a celebration.",
+    status: "longGame",
+    statusLabel: "Research phase · 2032 bicentennial",
+    tier: "later",
+    series: "Standalone",
+    eta: "2032 (bicentennial)",
+    signupLabel: "Notify me when it's ready",
+    signupUrl: "/subscribe",
+    description:
+      "A historical reckoning with the Creek removal from Northeast Alabama, timed to the 2032 bicentennial. Built from years of SL profiles, trail walks, and local history. Not a celebration. A witness.",
+  },
+  {
     slug: "back-forty",
     title: "The Back Forty",
     tagline: "Dispatches on dirt, chickens, and the people who perform them.",
