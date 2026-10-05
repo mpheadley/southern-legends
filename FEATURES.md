@@ -6,6 +6,9 @@
 
 ## Shirts Page + Merch DAM API (2026-10-05)
 
+- **`/author` refresh** — books ordered by completeness ("Closest to done": Clever Confuses. Clarity Sells. first, then Tend, SL Vol. 1; "Also in the works": Broken Ground, God & the Algorithm, Back Forty). Parked titles (Chief Ladiga, Company of Farmers) removed to match BOOKS.md. Canonical byline in header. Title-card fallback for books without a real cover. Fake per-book merch replaced with real Fourthwall shirts from `merch.ts`.
+- **Shirt cards** — 3D card flip on hover/tap; cream panel with multiply blend melts the Fourthwall photos' white backdrop.
+
 - **`/merch/shirts`** — full shirt catalog: "On Fourthwall" (every item with `fwUrl`) + "Local & At Events". Real Fourthwall product photos in `public/merch/fw/`; tap (mobile) or hover flips to the back; thumbnail strip from `gallery`.
 - **`MerchItem.fwUrl` / `gallery`** — Fourthwall product link and extra photos live in `merch.ts` (one home), not in page code.
 - **`/api/merch-dam`** — DAM-shaped manifest (groups by category + assets) from the full `MERCH` array. Consumed by Gather Works `/dam-merch`. Asset `src` is `id|photo` so items sharing a photo don't collide; labels carry `[FW]` / `[print]` for search.

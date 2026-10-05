@@ -33,13 +33,30 @@ const COLLECTIONS: { label: string; desc: string; ids: string[] }[] = [
   },
 ]
 
+// Fourthwall photos have a baked-in white backdrop; multiply melts it into the panel color
+const PANEL = '#ece5d8'
+
+function Face({ src, alt, back = false }: { src: string; alt: string; back?: boolean }) {
+  return (
+    <div style={{
+      position: 'absolute', inset: 0, background: PANEL, isolation: 'isolate',
+      backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
+      transform: back ? 'rotateY(180deg)' : undefined,
+    }}>
+      <Image src={src} alt={alt} fill sizes="(max-width: 640px) 50vw, 260px"
+        style={{ objectFit: 'cover', mixBlendMode: 'multiply' }} />
+    </div>
+  )
+}
+
 function ShirtCard({ item }: { item: MerchItem }) {
   const [hovered, setHovered] = useState(false)
   const [flipped, setFlipped] = useState(false)
   const [shown, setShown] = useState<string | null>(null)
   const fwUrl = item.fwUrl
-  const showBack = (hovered || flipped) && item.photoBack
-  const src = shown ?? (showBack ? item.photoBack! : item.photo)
+  const showBack = Boolean((hovered || flipped) && item.photoBack && !shown)
+  const front = shown ?? item.photo
+  const src = showBack ? item.photoBack! : front
   const thumbs = [item.photo, ...(item.photoBack ? [item.photoBack] : []), ...(item.gallery ?? [])]
 
   return (
@@ -57,15 +74,16 @@ function ShirtCard({ item }: { item: MerchItem }) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => { setShown(null); setFlipped(f => !f) }}
-        style={{ position: 'relative', aspectRatio: '1/1', background: '#1a1a1a', overflow: 'hidden', cursor: 'pointer' }}
+        style={{ position: 'relative', aspectRatio: '1/1', background: PANEL, overflow: 'hidden', cursor: 'pointer', perspective: 1000 }}
       >
-        <Image
-          src={src}
-          alt={item.name}
-          fill
-          sizes="(max-width: 640px) 50vw, 260px"
-          style={{ objectFit: 'cover' }}
-        />
+        <div style={{
+          position: 'absolute', inset: 0, transformStyle: 'preserve-3d',
+          transition: 'transform 0.6s cubic-bezier(.2,.7,.2,1)',
+          transform: showBack ? 'rotateY(180deg)' : 'none',
+        }}>
+          <Face src={front} alt={item.name} />
+          {item.photoBack && <Face src={item.photoBack} alt={`${item.name} back`} back />}
+        </div>
         {item.badge && (
           <span style={{
             position: 'absolute', top: 10, left: 10,
@@ -94,10 +112,10 @@ function ShirtCard({ item }: { item: MerchItem }) {
       {thumbs.length > 2 && (
         <div style={{ display: 'flex', gap: 4, padding: '8px 10px 0', overflowX: 'auto' }}>
           {thumbs.map(t => (
-            <button key={t} onClick={() => setShown(t)} aria-label="Show photo"
+            <button key={t} onClick={() => { setFlipped(false); setShown(t === item.photo ? null : t) }} aria-label="Show photo"
               style={{ position: 'relative', flex: '0 0 36px', height: 36, borderRadius: 4, overflow: 'hidden', padding: 0, cursor: 'pointer',
-                border: t === src ? '1px solid #9a6c2f' : '1px solid rgba(255,255,255,0.1)', background: '#1a1a1a' }}>
-              <Image src={t} alt="" fill sizes="36px" style={{ objectFit: 'cover' }} />
+                border: t === src ? '1px solid #9a6c2f' : '1px solid rgba(255,255,255,0.1)', background: PANEL, isolation: 'isolate' }}>
+              <Image src={t} alt="" fill sizes="36px" style={{ objectFit: 'cover', mixBlendMode: 'multiply' }} />
             </button>
           ))}
         </div>
