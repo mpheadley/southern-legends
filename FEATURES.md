@@ -10,6 +10,43 @@
 
 ---
 
+## Ad Network Pass 2 — placements, tracking, status (2026-10-05)
+
+**Status key:** ✅ live in code and verified locally · 🟡 built, not yet verified in a browser · ⏳ waiting on a gate or a credential · ❌ not started
+
+### Placements (The Aisle, the featured campaign)
+- ✅ **Top strip** — slim card above the first paragraph of every profile and essay. Headline "Bridal Show", date, venue, website URL. `AisleStrip.tsx`.
+- ✅ **End-of-page band** — full card above the footer, with the couple photo, QR code, "Register free →" button, and "Free to register in advance · $25 at the door". Site-wide from `layout.tsx` via `SiteAisleBand.tsx`. Single copy per page (duplicate removed 2026-10-05).
+- 🟡 **Desktop margin card** — 300×250 standard medium rectangle, right margin, shown from 1440px wide. Fades in at a quarter of the page, out at the footer, has a close ×. Subtle photo drift and button hover, off under reduced-motion. `MarginAisle.tsx`.
+- 🟡 **Mobile bottom bar** — 320×50 sticky bar below 1024px, same fade rules, close ×. `MobileAisleBar.tsx`. Not yet seen on a phone.
+- ✅ **Support fallback** — sensitive pages (grief, illness, obituaries, etc.) get only the soft "Get new stories free" email signup. `TestimonialBand.tsx`.
+
+### Show schedule and live data
+- ✅ **Schedule** — `FEATURED_SCHEDULE` in `src/lib/ad-inventory.ts`: Anniston Oct 18 2026, then Silver Run Chapel Feb 21 2027. Switches itself the day after each show.
+- ✅ **Snapshot** — `tools/sl-aisle-shows-snapshot.py` reads Turso `expo_shows` and writes `src/data/aisle-shows.json` plus one QR per show. Includes `ad_photo_url`.
+- 🟡 **Live read** — `src/lib/aisle-shows-live.ts` reads Turso directly and falls back to the snapshot. Needs `AISLE_TURSO_URL` and `AISLE_TURSO_TOKEN` set in SL's environment. ⏳ Not set yet.
+
+### Links, referral, QR
+- ✅ **Permanent link `/go/aisle`** — forwards to the current show. Every placement links here, so a QR screenshotted today still works after the show changes. Tags each click with `utm_source=southernlegends`, `utm_content=<page>:<spot>`, and `ref=SLREFERS`.
+- ✅ **Referral partner** — "Southern Legends" row (`SLREFERS`) in Turso `expo_partners`, created 2026-10-05. Live lookup confirmed.
+- ✅ **Per-page QR** — every QR points to `/go/aisle` with the page tagged in.
+- ✅ **VIP link** — "Make it VIP · $75 →" under the end band, via `/go/aisle?tier=vip` → register page with `tier=vip`. VIP price comes from the snapshot (Turso, falling back to `expo-pricing.ts`).
+
+### Tracking
+- ✅ **Table** — `sl_ad_events` in Turso (impression / click, placement, page, show, session). Created 2026-10-05, empty. SQL in `tools/sql/sl-ad-events.sql`.
+- 🟡 **Click logging** — `/go/aisle` records a click before forwarding. Writes only once Turso credentials are set. ⏳
+- 🟡 **Impression logging** — `ImpressionOnView` + `/api/ad-event`, approved by Matt 2026-10-05, placed in the band, top strip, margin card and mobile bar. Fires once per placement per visit, when half the card is on screen. Writes only once Turso credentials are set. ⏳
+- ❌ **Hover tracking** — not built. The table only accepts impression and click events, so adding hover needs a schema change (`WRITE TO TURSO`).
+- ❌ **Registration attribution** — the two `expo_registrations` columns (`sl_placement`, `sl_page`) are drafted but not added.
+
+### Still waiting
+- ⏳ `DEPLOY SOUTHERNLEGENDS TO VERCEL` — required for any of this to go live. Note: `nexus-trail-news.py` no longer deploys on its own; its daily auto-deploy was removed 2026-10-05.
+- ⏳ Turso credentials for SL (`AISLE_TURSO_URL`, `AISLE_TURSO_TOKEN`) — needed for live show data and for logging.
+- ❌ Video ads — after deploy.
+- ❌ Margin and bottom-bar rollouts for GS, BSR, Heather Florals, and other ventures.
+
+---
+
 ## Ad Network on SL + Aisle Campaign (2026-10-05)
 
 - **One ad router** — `src/lib/cta-router.ts` `pickAd`/`snapshotAd`: paid advertiser → featured campaign → topic-matched house ad → Support SL. SENSITIVE pages (grief, obituary, illness…) only ever get the soft Support ad; arts/theater pages skip random venture pitches but do run the featured campaign.

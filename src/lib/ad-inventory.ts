@@ -83,6 +83,8 @@ export const FEATURED_SCHEDULE: string[] = [
 export type AisleShow = {
   slug: string; name: string; venue: string; city: string; state: string
   date: string; registerUrl: string; doorPrice: number | null; vipPrice: number | null
+  photo?: string // expo_shows.ad_photo_url
+  qr?: string
 }
 
 /** The show the Aisle ad promotes today, or null once the schedule is used up. */
@@ -98,15 +100,14 @@ export function activeAisleShow(today = new Date()): AisleShow | null {
 }
 
 /** Presentation only (photo, partner logo, venue wording) — facts stay in the snapshot. */
-export const AISLE_SHOW_LOOK: Record<string, { photo?: string; venueLine?: string; partnerLogo?: string; partnerAlt?: string }> = {
+export const AISLE_SHOW_LOOK: Record<string, { venueLine?: string; partnerLogo?: string; partnerAlt?: string }> = {
   'anniston-oct-2026': {
-    photo: '/ad-assets/aisle-couple.webp',
     venueLine: 'Longleaf Event Center · Anniston Museums & Gardens',
     partnerLogo: '/ad-assets/amag-white.png',
     partnerAlt: 'Anniston Museums and Gardens',
   },
-  // No real, cleared Silver Run photo on disk yet (the chapel images are AI renderings) —
-  // text-forward navy until one is added here.
+  // Photo per show = Turso expo_shows.ad_photo_url. Silver Run: none yet (the chapel images
+  // on disk are AI renderings) → text-forward navy until a real photo URL is set in Turso.
   'silver-run-feb-2027': {},
 }
 

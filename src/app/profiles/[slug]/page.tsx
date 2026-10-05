@@ -469,7 +469,9 @@ export default async function ProfilePage({
           {(() => {
             const pageCta = pickCTA({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags });
             const top = snapshotAd(`profiles/${slug}`, { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags }, pageCta.key);
-            return top?.key === "aisle" ? <AisleStrip ad={top} page={`profiles/${slug}`} /> : null;
+            if (top?.key === "aisle") return <AisleStrip ad={top} page={`profiles/${slug}`} />;
+            // Sensitive page (only the soft Support ad) → tell the site-wide Aisle band to stay off.
+            return top?.key === "support" ? <span data-sl-no-promo hidden /> : null;
           })()}
           <ShelfLifeNotice
             shelfLife={frontmatter.shelfLife}
@@ -526,25 +528,6 @@ export default async function ProfilePage({
         );
       })()}
 
-      {/* Ad slot — a house cross-promo for a DIFFERENT venture than the page CTA,
-          so the profile visibly carries buyable ad inventory. Renders nothing on
-          sensitive topics (pickHouseAd returns null). Canonical unit: @mpheadley/shared
-          GatherAd; this is SL's deploy-safe local mirror. See lib/cta-router.ts */}
-      {(() => {
-        const pageCta = pickCTA({
-          category: (frontmatter as { category?: string }).category,
-          tags: frontmatter.tags,
-        });
-        const houseAd = snapshotAd(`profiles/${slug}`, 
-          {
-            category: (frontmatter as { category?: string }).category,
-            tags: frontmatter.tags,
-          },
-          pageCta.key,
-        );
-        return houseAd ? <HouseAdUnit ad={houseAd} page={`profiles/${slug}`} /> : null;
-      })()}
-
       <Comments slug={slug} />
 
       {/* Closing */}
@@ -571,6 +554,8 @@ export default async function ProfilePage({
         );
       })()}
 
+      {/* Ad slot: The Aisle, above Related Stories */}
+
       {/* Related Stories by tag */}
       {related.length > 0 && (
         <section className="bg-ll-warm border-t border-ll-border py-12 md:py-16">
@@ -588,16 +573,6 @@ export default async function ProfilePage({
             </div>
           </div>
         </section>
-      )}
-
-      {/* Next Profile */}
-      {next && (
-        <NextProfileCard
-          slug={next.slug}
-          name={next.frontmatter.name}
-          teaser={next.frontmatter.excerpt ?? next.frontmatter.subtitle ?? ""}
-          image={next.frontmatter.heroImage}
-        />
       )}
 
       {/* Subscribe */}

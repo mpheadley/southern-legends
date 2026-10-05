@@ -7,13 +7,13 @@
 import type { VentureCTA } from "@/lib/cta-router";
 import { brandFor } from "@/lib/ad-brand";
 import TestimonialBand from "@/app/components/TestimonialBand";
-import AisleBand from "@/app/components/AisleBand";
 
 export default function HouseAdUnit({ ad, page }: { ad: VentureCTA; page?: string }) {
   const b = brandFor(ad.key);
   const label = ad.paid ? "Advertisement" : "From Southern Legends";
 
-  if (ad.key === "aisle") return <AisleBand ad={ad} label={label} page={page} />;
+  // The Aisle band renders site-wide from the layout (SiteAisleBand) — never twice on a page.
+  if (ad.key === "aisle") return null;
 
   if (b.testimonial) {
     return <TestimonialBand ad={ad} t={b.testimonial} accent={b.accent} onAccent={b.onAccent} label={label} />;

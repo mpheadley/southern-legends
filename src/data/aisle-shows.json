@@ -10,7 +10,8 @@
       "date": "2026-10-18",
       "registerUrl": "https://theaislebridalshows.com/live/anniston-oct-2026/register",
       "doorPrice": 25,
-      "vipPrice": null,
+      "vipPrice": 75,
+      "photo": "/ad-assets/aisle-couple.webp",
       "qr": "/ad-assets/aisle-qr-anniston-oct-2026.svg"
     },
     {
@@ -23,6 +24,7 @@
       "registerUrl": "https://theaislebridalshows.com/live/silver-run-feb-2027/register",
       "doorPrice": 10,
       "vipPrice": 40,
+      "photo": null,
       "qr": "/ad-assets/aisle-qr-silver-run-feb-2027.svg"
     }
   ]

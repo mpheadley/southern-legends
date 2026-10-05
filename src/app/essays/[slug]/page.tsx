@@ -352,7 +352,9 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           {(() => {
             const pageCta = pickCTA({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags });
             const top = snapshotAd(`essays/${slug}`, { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags }, pageCta.key);
-            return top?.key === "aisle" ? <AisleStrip ad={top} page={`essays/${slug}`} /> : null;
+            if (top?.key === "aisle") return <AisleStrip ad={top} page={`essays/${slug}`} />;
+            // Sensitive page (only the soft Support ad) → tell the site-wide Aisle band to stay off.
+            return top?.key === "support" ? <span data-sl-no-promo hidden /> : null;
           })()}
           <MDXRemote source={content} components={mdxComponents} />
 
