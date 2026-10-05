@@ -204,12 +204,23 @@ def _write_preview(slug: str, subject: str, body: str, url: str, open_it: bool) 
     h = hashlib.sha256((subject + body).encode()).hexdigest()
     OUT.mkdir(parents=True, exist_ok=True)
     page = OUT / f"{slug}.html"
+    # Images not on the live site yet (waiting on a deploy) show from the local file in the
+    # preview only, so Matt sees the real email. The sent email always uses the live URL.
+    shown, pending_imgs = body, []
+    for u in image_urls(body):
+        if u.startswith(SITE) and not is_live(u):
+            local = REPO / "public" / u[len(SITE):].lstrip("/")
+            pending_imgs.append(u[len(SITE):])
+            if local.exists():
+                shown = shown.replace(u, local.as_uri())
+    note = (f" · <b style='color:#8B2A1F'>{len(pending_imgs)} image(s) not live yet, deploy before sending</b>"
+            if pending_imgs else "")
     banner = (
         f'<div style="font-family:Arial;background:#fff7d6;border:1px solid #e3b23c;padding:10px 14px;margin:0 0 20px;">'
         f"<b>PREVIEW, not sent.</b> Subject: {htmlmod.escape(subject)} · To: SL subscribers · "
-        f'Page live: {"yes" if live else "NO, deploy first"} · <a href="{url}">{url}</a></div>'
+        f'Page live: {"yes" if live else "NO, deploy first"} · <a href="{url}">{url}</a>{note}</div>'
     )
-    page.write_text(banner + body.replace("{{{RESEND_UNSUBSCRIBE_URL}}}", "#"), encoding="utf-8")
+    page.write_text(banner + shown.replace("{{{RESEND_UNSUBSCRIBE_URL}}}", "#"), encoding="utf-8")
     (OUT / f"{slug}.json").write_text(json.dumps({"slug": slug, "hash": h, "url": url, "subject": subject,
                                                   "built": datetime.now(timezone.utc).isoformat()}))
     print(f"{slug}: preview {page}  live={live}")
