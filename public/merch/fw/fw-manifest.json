@@ -1,0 +1,73 @@
+{
+  "pv-raiders-xc": {
+    "name": "PV Raiders XC \u2014 Pirate Tee",
+    "price": 30,
+    "slug": "pv-raiders-xc-pirate-tee",
+    "variants": [
+      "Black"
+    ],
+    "images": [
+      "/merch/fw/pv-raiders-xc-01.webp",
+      "/merch/fw/pv-raiders-xc-02.webp",
+      "/merch/fw/pv-raiders-xc-03.webp",
+      "/merch/fw/pv-raiders-xc-04.webp",
+      "/merch/fw/pv-raiders-xc-05.webp",
+      "/merch/fw/pv-raiders-xc-06.webp",
+      "/merch/fw/pv-raiders-xc-07.webp"
+    ]
+  },
+  "dave-dennis-freedom-rider": {
+    "name": "Dave Dennis \u2014 Freedom Rider, 1961",
+    "price": 40,
+    "slug": "freedomriders-anniston-1961",
+    "variants": [
+      "Black",
+      "True Navy",
+      "Midnight Denim"
+    ],
+    "images": [
+      "/merch/fw/dave-dennis-freedom-rider-01.webp",
+      "/merch/fw/dave-dennis-freedom-rider-02.webp",
+      "/merch/fw/dave-dennis-freedom-rider-03.webp",
+      "/merch/fw/dave-dennis-freedom-rider-04.webp",
+      "/merch/fw/dave-dennis-freedom-rider-05.webp",
+      "/merch/fw/dave-dennis-freedom-rider-06.webp",
+      "/merch/fw/dave-dennis-freedom-rider-07.webp"
+    ]
+  },
+  "bloom-bar": {
+    "name": "The Bloom Bar Tee",
+    "price": 29,
+    "slug": "bloom-bar-tee",
+    "variants": [],
+    "images": [
+      "/merch/fw/bloom-bar-01.webp",
+      "/merch/fw/bloom-bar-02.webp",
+      "/merch/fw/bloom-bar-03.webp",
+      "/merch/fw/bloom-bar-04.webp",
+      "/merch/fw/bloom-bar-05.webp",
+      "/merch/fw/bloom-bar-06.webp",
+      "/merch/fw/bloom-bar-07.webp"
+    ]
+  },
+  "model-city-light": {
+    "name": "The Model City \u2014 Anniston, Alabama",
+    "price": 29,
+    "slug": "the-model-city-anniston-alabama-light-version",
+    "variants": [
+      "Mustard",
+      "Light Green",
+      "Ice Blue",
+      "Crimson",
+      "White"
+    ],
+    "images": [
+      "/merch/fw/model-city-light-01.webp",
+      "/merch/fw/model-city-light-02.webp",
+      "/merch/fw/model-city-light-03.webp",
+      "/merch/fw/model-city-light-04.webp",
+      "/merch/fw/model-city-light-05.webp",
+      "/merch/fw/model-city-light-06.webp"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "pv-raiders-xc": {
+    "name": "PV Raiders XC \u2014 Pirate Tee",
+    "price": 30,
+    "slug": "pv-raiders-xc-pirate-tee",
+    "variants": [
+      "Black"
+    ],
+    "images": [
+      "https://imgproxy.fourthwall.dev/LJn9PbBQWKXNbj1N-qZTlpBMh2JZRvJvDOIOAeCFyn8/w:1920/sm:1/enc/dQzPU0zOKPF7LDwB/BTRokrpLPytBzLEm/5-YgqE2asOBurd07/tvKM7KZFDR7rmbMP/IDMruad2-3eStq48/NDaQAB_vPr2bsIZO/YrIJU66pCHwDdmLT/OqcMfRvHGkIdZkbC/61AOZrm4bWC3CiK2/HaGsUrbz_-wmLa8m/SKrICY7-cjgmIh9Q/ie7I6qIlFpaevDLl/eLkLu657RyXxkqK9/LRORFoZp367UQLgK/F536t05V_0w.jpg",
+      "https://imgproxy.fourthwall.dev/eXyUr0egUK--pDd3nN4zJuCdzH4vCos6GuSvJ_WNaxU/w:1920/sm:1/enc/7sWrKv8nA59vIl80/2oe10jCIf2Yo_fBt/x8oBzX1g9R32fqOE/S2Q2qoqm0fGlCpKO/CrhOx9RcpC6gKYjl/PI3IGhoWYEXa5zcb/aziF5wBeE50EtS_G/7MIJ3AzJ1iRathc9/ESn24oxhKkrHrcda/CZoNyw4eeATEcJ5U/-FZHTsR9IP4nxvZE/h81tJgkU7XK2Z6VG/CeB8g3YTGo2Vf6Cw/UIajRypsBwgWqmV1/EeKrUXsD8D4.jpg",
+      "https://imgproxy.fourthwall.dev/bjWsonC1blUQCiPn77WBAKhF1hWDuxVazjEgzUVc6VQ/w:1920/sm:1/enc/JHKEWz1dzgiZKBDF/UnqwmgQGCsxSQzDe/DgLxeCeAoZTAMOWP/-zxwkH5EJ7eW9AbA/dp225syg1RQSyrPp/HShEbWpwfdYBiODW/NM2RC7JxnE71TeXc/ntxRDaKjCm0TWvlK/96PTT1Sr7aXC_Ljl/gSfjESH0yGnzr4vG/Nv9QjKZpjVYNLvyJ/P4EOcox-F9dQueeG/8QRwWaspAZBKS03w/b4COMpPqNZSY1lfw/nA-QwInXz68.jpg",
+      "https://imgproxy.fourthwall.dev/tgHAF89nl60HWj_qZoHNkIRMTCAxGH_eOuQP9p0jt28/w:1920/sm:1/enc/LQkoIh_Rt4xy2RtS/Jy929-NvQNCd0Q85/7Ov0KAIh1ED-AsNT/LuVqceh93tStVFU9/A2QPtildT9-GC0AU/NM6utduQBYuWSZcL/XftdNnKpV16x2X_L/bFjbnWS11vZyJcxS/ZKlY4O84FPwqCkSL/3KVlBzQkJmcH3DL1/COPwhZwLRYfkoawb/wh2tFZ8W5UJRQX6d/ypSHK4mB0D9rsdS8/7rwAOI7h7jmncFB4/cmHodzlOWYg.jpg",
+      "https://imgproxy.fourthwall.dev/FIN9nU9mLJ2RIMdCK4HroNWvRfxyA7wvJHYwgroGJqQ/w:1920/sm:1/enc/jSMiV9ogKsJB29uz/3pzo08dxxh9vuyCU/SVhdmHhUXplgqDPX/8Ww1JfHie5XP3FGs/Kz09nlQugAXy5o4Y/57r40L-AH6Dc9yS5/tS0bwhKXP_gytewI/cpZezBrVajV2Qrsu/fWQn5GDV3p30LcWu/fGFxhg1kSNHt7p8X/mF_EUPswtzdhbu-J/Y9DW0WEmCyqhWhDn/wRzpsIy2UQSA4Xa1/EHgDJPFR1VCTLNsT/TeBXx4hzW2w.jpg",
+      "https://imgproxy.fourthwall.dev/6ya5x04qbxiGj4lTrcERIhT3Mfrmkg1A3U0YNWlPuJk/w:1920/sm:1/enc/o6Cl1-bISeiavvm-/19KLuJBWwxl38WWr/IP5tOqX_2uCevV9B/REV6T-SsJ4hZ1il0/cQbKfCLQ9gvHwIEF/5_xeu0PZIAPrsh0T/uCzbmMgdep3PsBPB/Mh3zEiVdbpM-nyEi/6BgzQp8qiFACGXTs/DvYLmjQhl3dPVJvr/4Y5Q7aTmkbDfDzfd/le75VtsqU8BfRR7Z/lTSekvT42GicE48p/KaZ_OwmPm6xGBWap/6oUVK15Ob90.jpg",
+      "https://imgproxy.fourthwall.dev/bO-RZc_BmbkMO8q1FUmyThd8xc9bnnd923FqTGhT3NI/w:1920/sm:1/enc/Au8XAK27_8nb1yd4/NE6WG7ecNylLtLBO/ly4g_97klKy4zU4r/NjoOqXilFez41ghX/G2Ku97feHOkg6dLR/yBObxhGvw9F1pHTt/_46eJkUUkTNmWX1k/XL1UAgudtMEziJqU/GANs6shkfth4NsUX/IP1ji6o3orp4XU_T/Nw43MBEQ9zGpuUGe/NL9P_mrX2uc6z317/jg9iVjA2qhIDPZVr/gdbdyNS0oZPChSQG/3wSxKS9M9qM.jpg"
+    ]
+  },
+  "dave-dennis-freedom-rider": {
+    "name": "Dave Dennis \u2014 Freedom Rider, 1961",
+    "price": 40,
+    "slug": "freedomriders-anniston-1961",
+    "variants": [
+      "Black",
+      "True Navy",
+      "Midnight Denim"
+    ],
+    "images": [
+      "https://imgproxy.fourthwall.dev/YvdCQQM4m34BsiGM6jH_ZWtLkpB-86lBsT-JJkH5ywk/w:1920/sm:1/enc/KJmEURE1ZEHH7lz8/KbhMAztnGROBOrZB/o1KrQlLfPkYCWGsu/3VL6M0apn3-yNoot/gJPOll2UlrMbcT8Z/vVZ1y11cowVyD17R/sbEPfskKjsV9d8Vp/AqT_Q1F4px2_tfwr/k-RstG64c2orIMYh/HMEZQoFMr8fRPgDc/gsaRG0QfuoURMYhQ/-zr4w5ogA_ILJAWL/_a8TnRJ1oT5Y8hM8/nlJuDiLEe-ixnKlh/brcnBF06Xtk.jpg",
+      "https://imgproxy.fourthwall.dev/xNfNSZHi3l0XoRM9ygkz4vv7OO_5olmubpX89S-a5GE/w:1920/sm:1/enc/AU0FiuBA1Opk4hlJ/bw1jrrykRzvsKTdL/znIpuW_uUg7cgJV_/y9I740tUQnY7OwJd/TJJYtXXliZNDWeHo/MKP1QEmmKFtN7-ks/kchowT8yIEozwaAW/WoYUwb-o1m8AeE1r/UtJxDBsVZkUS2yTk/3d_qPB81Yq7GnzkS/1BNDInbJeORQTFuT/JIxtVGqp-yeSl4bs/VFukpj7-fJySCg_3/VRvtofkJvwMCxXzu/apJslKm4b_Y.jpg",
+      "https://imgproxy.fourthwall.dev/stJzUEeoO_HIBWnKW3gXkWUWwQj2LG6vl-XBLCE6RBE/w:1920/sm:1/enc/CiOCzZkDk5e0ENvJ/0ldKcRAigEwqDUqt/WAqiKF4xnCpzxWmD/XiKkYsT026bNp48B/yNgPj2naZ6CsGLkU/fIsYlBZtOqmvsQaB/4BuqEPbp0tLnrgS_/a5c7YXBxdbxcvY3i/nklNY2Q47bxZ8yWR/46raGE4KQADPjPr3/wRs78t3CFv3Ii8su/JK3nn4XDzeseZYUV/1b_PXphm95GOfhFU/VFNSFRff2hv593O6/6J0cMKac6Vc.jpg",
+      "https://imgproxy.fourthwall.dev/Dp3iBVsxt2LlrsxmTWXEfrbCNb-13eNP4CdHmsPochE/w:1920/sm:1/enc/f-GK3eYj6mH_JBle/0yVOzqhAz-MNZ-7c/GEYdqIJBcp18PNhs/GueaefDsLHsxegwv/4x0UNtC-fnWZSRFk/OtbXMmgsQQpjpbOW/IPD_-ecSFK_WSHKp/uzWmlnEOqhtNQ8qy/KkhEP0VcOu4PhTHc/GGntNGWZRqAvDIuD/h48LQPqeW80J6WAZ/IyiU6ZY9UK1qliwV/CutaXGXbEqB8tp3x/Yer7l4C08yFN8xYM/_HJkwfedOWc.jpg",
+      "https://imgproxy.fourthwall.dev/aC1V5MvBRP6-VIlyIrrG9Ngc9_i0WS0fKLog3ry5w6k/w:1920/sm:1/enc/WYlZiW35C7PWNVyc/zc30rKc6KWpVZGCX/WBGhFRfRVTbIMn4y/DmnkIJWmdwBduloo/iQqKQr6uL0O8R2wb/yekfJQJAK89-ndGJ/wukBwNnZFQ3MP3A6/hmU-Trdl3vtn9Ozm/1UfcbmgRnafFtryT/tdem4YLQwgB9zovo/DlYOrMfiywAxcE4K/pTHsEvf3p12YMxqM/7lUfE3utmZG-CUgz/6uiG_JnH1U3-c7_t/7tbpODFbVQ4.jpg",
+      "https://imgproxy.fourthwall.dev/AQ061bmSMzdO7Yo0FxzDJwSCWdHjaCV_9lbPpi4mKo8/w:1920/sm:1/enc/DF_rYqim6jrWedab/hCD7c0yo2qzCWafN/y2viFHguFwX54lYH/KREUaaCJJzRwDp2a/UZSQ4o3rHqZcKGdJ/VXuLi_UO21i7sayl/FoGrHeq_D-cyMlpe/r_qpJLGoL6acoP6l/GjuGHqEQLk7C9rs2/-U62JEwMuW19y26N/3mIUmI4pR3lGWG_M/BinZCmD4GdrDhKh6/lx3i1H83aUPOGvHI/TQa3ioUwB23WSrcU/E6zpk86wmNs.jpg",
+      "https://imgproxy.fourthwall.dev/jY9bqgej2ItNOUCGfw44IptQM87nuDaVYxL7C6mEe6Y/w:1920/sm:1/enc/Wp0GGM8quUreh5_2/7B9KucsdxsmC2MLs/-U-Y9pJ8LiiSVWA4/wYwIZobXiDWCyYvM/ksKX6zL2aejNpz4C/jQZMQvWhry7a8Qwf/R8KHdGb626va58Za/pFfpWEBT1oGhqfNp/pgXwI2W4eEjaWC2s/QLZD_7lQVxy4n0cW/CyFwm7C364iAeL47/f7fhtNIzx76MATVr/jXQD8BLy_7gm5Tiv/r1FxcwfI-Etjdb4p/DalMw_jrmAg.jpg"
+    ]
+  },
+  "bloom-bar": {
+    "name": "The Bloom Bar Tee",
+    "price": 29,
+    "slug": "bloom-bar-tee",
+    "variants": [],
+    "images": [
+      "https://imgproxy.fourthwall.dev/P5n4Y07dP1hGOkbyuHP7lTX5Q_tM3DWvp4qGsgmODWQ/w:1920/sm:1/enc/bbtY-El0WMVRzqWT/kxDeqbf7M4Ng-sqL/7kcvbI7chtUOMj_4/CAkKfAHS9FkWcSas/Stfnb2h-vA0jOXGw/tp4_vmbeHMYTbqfX/K94gzniq4RqnXru8/RKWELaA3DLikTO2I/VZR7xQXgaCvWeirc/q8NSCTGTqBNa_l35/Xib891cu9EXJddNA/tT9OJDhrnzdXd_9t/gcknonTALn89U7nf/rY5nRfIfsdGURKUs/4b6QznBRhdY.jpg",
+      "https://imgproxy.fourthwall.dev/jS5LoEwdqpwENbqp0KFJufrYpeX29byked-A8L7yt5w/w:1920/sm:1/enc/vizqP3yWAgvzLU0G/Nx2P51QvkoBDBf6d/kUpFSbQxVP3rAtLN/IGyJF7pBwIofGelf/9lexBj-nsfShV4WL/LKHLnz68MaCRf1kU/uegugPp1-hW9qcvf/8-wMraAeBabvPb_s/OCRpnYffMtbJk4IW/W4HP1VBgh-DRk83b/yBtYG3I8MBBdX-jI/33_-hoYn3jqMqa23/DcAR28Z4tbunVR2o/unpGtP-xtdkSqRSo/IO-JX8rPzjk.jpg",
+      "https://imgproxy.fourthwall.dev/5CvPJX6C8ZsKfA5atPhVNIORIPkIMZCBdtW1NFEoeSk/w:1920/sm:1/enc/-qs_sE-TQGL_GF71/jfvVFkknYwl7KaMJ/bAnfvTzMP5TbwCFQ/DuLYM4jvZSZmGiKr/feNqeyck1e4dTjJj/O172emlrlLkkmTC4/XyxKkAzRf_JQVFg-/zwkWAo_TOeNAuSbf/5rHtaVCwuKHR4f86/B3AVuYQwK0A8m4qE/ZQ--WbAKFx3GuSuf/LVj1WO7OLf4pnw3u/lV4eDsIdtw9epU_2/4Hgx-WzWfc_sH1so/8dQAOoQl5nA.jpg",
+      "https://imgproxy.fourthwall.dev/sza4yxZnnX9sGfuklcMDhoeUT1f3aPhEiRcSUU9PfLw/w:1920/sm:1/enc/COAPTZCkT8MnK5Re/xNOFvo8PoXKGsFeV/9j_oPKOZXPTKto3L/TyKy6KhIubnC8gmp/4RFLz-LFuOyPotyE/V0Cerd7VxHsTxVwD/e1o7gzTbi1Hzrs90/m1p0wSlJDmJz3opv/xOXFU92hdb3b_8cT/xySnoMacsVudK7An/Dxu3GnWsEGtYCVf5/IGunAf2YyVufF5hJ/ez9Pmjd1OH3oRWtz/REKSrIXDvjFXemAy/I_D5-PoKRwM.jpg",
+      "https://imgproxy.fourthwall.dev/8RT-919dXH8luZTKjsfZeXizYgLh4nGkBKPAaDXSsac/w:1920/sm:1/enc/XcJf02LgWX3mxPkS/M6iPbbsxYlpt17Em/oQvvCfqQDO68gXdA/ZTRsl56EQ9hVkUuM/vsybJMqep-Vy76X2/72jJIqHiAClZKSrU/5mRCukeO1k7Ntu55/LJLRCbzgkaLgeOl1/5_SRrfONfQqR13WQ/EYHafWX4CIpNmykw/gs99TvOK-qAWfHvO/ciLa3K8gwFau0V_v/UM7I-PLx5R7Spjyq/rqolBz6wtskhJ48z/vN9COozsBhE.jpg",
+      "https://imgproxy.fourthwall.dev/_4FuLxYZdabjQjc5xDd-hiOZS-kZ002TIBc1ehf_bLs/w:1920/sm:1/enc/g9QKXGnexcwjNR_q/KjWk8BQWm9yQ5Xv1/d_g5bPQq8ySr0Idm/xuvlxXz7tFFviEXg/lUXflX2FQu7KcntV/Zyv6r4Os3MspQCCd/7rJ1NciCcjJlec8E/t8H2nVW-edznlVS6/Z0twrZcWsWh8bp1L/vupXdFGWabnHKZ99/fRL3x0tAV6lRcQMw/bykZYnRF_eMO83Qj/mmCINWHcFQJEyEeo/SJ1WVhEcHKtZz1Rz/hY5FgSW_CMk.jpg",
+      "https://imgproxy.fourthwall.dev/0z5YfH3OWX1sjnL1WyLlDR_C4FzfVy3vI5QC1qZl4SY/w:1920/sm:1/enc/xfj9aK_8MloiR_gY/SHxwl5811IW23_eP/2quyCtSZzqwVktZe/wcXjUrRGYt77lCdA/z0D92zNMrqq67w_1/Kmrdhaw05InHhePp/_knS1eNi8CePkno4/uzupIpSoikXrD8dK/J2JudNNelfnIOdK3/se-tvUopajpFGpfk/85cTL4ij8qfNk2q7/MMdDbJZL83H6HRKa/ZHCBPHs6TV4MVEOs/YRZntg5-EUz4hOKW/h06mKSbWAbg.jpg"
+    ]
+  },
+  "model-city-light": {
+    "name": "The Model City \u2014 Anniston, Alabama",
+    "price": 29,
+    "slug": "the-model-city-anniston-alabama-light-version",
+    "variants": [
+      "Mustard",
+      "Light Green",
+      "Ice Blue",
+      "Crimson",
+      "White"
+    ],
+    "images": [
+      "https://imgproxy.fourthwall.dev/D-27N22cBQmz_-ANsCC03dpz-9yZ5dqWC7twdSFFLs8/w:1920/sm:1/enc/PEM4Oua1Bo9GrWQJ/khVGu92TbXJYHq8j/CFn2b6dUfmYlE6oR/jda7l3Z-5ujXTFBT/-zFgVmwS7IEsmBvv/t9RNdeX7Ody2D5u_/OvWFPCJlyhrb_34c/zx8cGdefGLtS-Y_g/k3odiVhXxT7_BjkC/7a1ht5gDc5F-J-Do/bfe6EjbLjo7Pq2-N/LhxmD55Vi-WcEgXY/eSQNbPETH1XBsMCu/rDvAbVts3sCx4LXu/DGO2MpH6VU8.jpg",
+      "https://imgproxy.fourthwall.dev/Vxh004uNpcKaH51fRMY_MJcFzlM-nis5dzeGQBWk-1E/w:1920/sm:1/enc/kpJ71RRUAZRHl2_Z/7_Z_1BDMTiiEKL6-/FOc6Nv1rkhbZkPpg/8OpP8hmt7sUUc9zF/mvtkPkoXG3Jrd05R/DZ1zyQpzXzk3X8bu/k4fH4ZTs9u4xeCG6/I2PFL2g0ot5FkUkP/1pMn5hHZQceYpmOU/blRD1KCs-gfNCm8q/I2RbVOKFyx7xdQF_/IZO9emuZKZ0FdDLe/DB37sN7kOpzZIm2T/9USseE0B9s8gQNBB/fXcK5FFGDPw.jpg",
+      "https://imgproxy.fourthwall.dev/f7dJqzwTxViZKQSFfX1n3fGnTCJKinPsQUB9p5yI2uk/w:1920/sm:1/enc/6wQ1CHnSpbgny6-q/Ws4lTINpdJLDMbtY/57DaOaSnPgLXcH9P/cgj3b5tM2wexRJdp/bmoRHzu_vFHE3aVE/dGPDiKN9A8IdEN3x/La84Eko8YV53ckd4/P_OODPEciX9Ho-fW/AhOg2ZFLvFyvmVP5/hT8WM7UpnfgstC16/XJLVd4P-k8hKfQWM/IIf20WQSocGbglXL/klY99DLlsLXqi2Fz/izFV4dRFIPWHZj7J/lZW-_gmcKB4.jpg",
+      "https://imgproxy.fourthwall.dev/77-VGPbpsouasp3WV4zn_5xfCwYOAQzvb-P7NSS20mU/w:1920/sm:1/enc/3XxXOMacL4yw7EwN/_ligFXKTaxBH5VIe/ARZPxP5ngvFFUpOZ/CI2D3gfsO7BHReHJ/h3J83Spa2t4FYL0p/Rf9ZLKA_Fc8O1xwD/yRnG1YWS-GThP7gw/I0RMhSQe1u4z4ftB/KrYvPQzoYcpcU5WR/93ueobBZICuTFCsa/3H_7DMTjsuVBNviY/c4ZR281-ZiiP-ks2/uTn5ppuSO54A-WgC/30lTw_s7aki1NG9c/vq0SwjNFZWA.jpg",
+      "https://imgproxy.fourthwall.dev/B093TEiiTzwvNQLH4olsX8_Y-HqLAHj8floLC1rJFQY/w:1920/sm:1/enc/qXl-yiaL95aFp5lZ/ZphfSxvUfBC6umCe/6efOAgqiZncLQvNN/B02Vw9mIVfg2ifQE/lR6hsRNCHJl1LOgd/aByvBu_tNLBldzza/DHCDUo4X32M3rUUK/HaNRMU2Y0kYsb2R9/ZsAk0sx9EKSkBoqb/3_qyPEFSWVusXmAu/PXOaQGiyNavT5Z9-/T-9XaU_oC_YKstkY/ZZ6-6ir4xHVhrxj4/S_uM9vMkCZaG0s2i/ub5s0N2sHdE.jpg",
+      "https://imgproxy.fourthwall.dev/Fgkcdw_xsI10dvhhSMFTjO8RSJ-bWq6yQ6gF7_RyuSY/w:1920/sm:1/enc/zrW2yFxzI7Z1oNgi/dXQVyMFIrL62_8xZ/8YSPVyDb4hHXOSUn/yrMRitGl3UolSMyp/-Pgc7zTSOTAgxKCv/BlS2DlvjDAQab9zU/tW7A7ZjuXJ1foWyg/q3l3hzeXCeQuWA1Y/AWYXLrex_6YJNjrk/K2vfGVrO3dwbHCpC/OlWpMfDC1DTp5u1D/jS5Jr3QCvnOy1W5g/HtH6bIQQE05g29si/Xj7TyUBtVchr66y_/E5rB-nj46sk.jpg"
+    ]
+  }
+}

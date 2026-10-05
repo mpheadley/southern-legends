@@ -43,10 +43,10 @@ export default function MerchPage() {
           <div className="absolute inset-y-0 left-0 w-32 z-10" style={{ background: 'linear-gradient(to right, var(--color-ll-dark), transparent)' }} />
           <div className="absolute inset-y-0 right-0 w-8 z-10" style={{ background: 'linear-gradient(to left, var(--color-ll-dark), transparent)' }} />
           <div className="grid h-full" style={{ gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 3 }}>
-            <img src="/merch/clt-hike-explore-mockup.webp"     alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
-            <img src="/merch/model-city-mockup-cream.webp"     alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
-            <img src="/merch/freedom-riders/shirt-mockup-dark.webp" alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
-            <img src="/merch/clt-shirt-front-mockup.jpg"       alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+            <img src="/merch/fw/pv-raiders-xc-01.webp"           alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+            <img src="/merch/fw/model-city-dark-01.webp"          alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+            <img src="/merch/fw/dave-dennis-freedom-rider-01.webp" alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
+            <img src="/merch/fw/chief-ladiga-trail-01.webp"       alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
           </div>
         </div>
 
@@ -78,10 +78,10 @@ export default function MerchPage() {
               style={{ background: 'var(--color-ll-warm)', color: 'var(--color-ll-dark)', fontSize: '0.82rem', padding: '0.95rem 1.75rem', letterSpacing: '0.1em', textDecoration: 'none' }}>
               Support this work
             </a>
-            <Link href="/merch/catalog"
+            <Link href="/merch/shirts"
               className="font-black uppercase tracking-widest rounded-xl transition-opacity hover:opacity-90"
               style={{ background: 'rgba(240,237,230,0.07)', color: 'var(--color-ll-warm)', border: '1px solid rgba(240,237,230,0.18)', fontSize: '0.82rem', padding: '0.95rem 1.75rem', letterSpacing: '0.1em', textDecoration: 'none' }}>
-              Shop the merch →
+              Shop shirts →
             </Link>
           </div>
 
