@@ -13,7 +13,7 @@ const stripe = process.env.STRIPE_SECRET_KEY
 const NEWSLETTER_PRICE_ID = process.env.STRIPE_NEWSLETTER_PRICE_ID ?? "";
 
 // Resend audience for paid newsletter subscribers (separate from free list)
-export const NEWSLETTER_PAID_AUDIENCE = process.env.RESEND_AUDIENCE_ID_NEWSLETTER ?? "bc84e16a-40ed-4e6b-bc6e-1396bcb83a92";
+const NEWSLETTER_PAID_AUDIENCE = process.env.RESEND_AUDIENCE_ID_NEWSLETTER ?? "bc84e16a-40ed-4e6b-bc6e-1396bcb83a92";
 
 export async function POST(req: NextRequest) {
   if (!stripe) {
