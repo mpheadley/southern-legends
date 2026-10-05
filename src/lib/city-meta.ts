@@ -11,6 +11,7 @@ export type CityMeta = {
   population?: number
   tagline?: string         // one-line for meta/display
   heroImage?: string       // path under /public, e.g. /images/locations/anniston-hero.webp
+  heroCredit?: string      // visible photo credit for the hero
 }
 
 export const CITY_META: CityMeta[] = [
@@ -22,6 +23,7 @@ export const CITY_META: CityMeta[] = [
     population: 22000,
     tagline: "The Model City of the New South",
     heroImage: "/images/locations/anniston-hero.webp",
+    heroCredit: "Photo: Art Meripol, Alabama Tourism Department",
   },
   {
     slug: "oxford",

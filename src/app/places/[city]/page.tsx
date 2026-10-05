@@ -1,3 +1,5 @@
+import fs from "fs"
+import path from "path"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -267,6 +269,11 @@ export default async function CityPage({ params }: Props) {
             />
           )}
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,8,0.5) 0%, transparent 65%)" }} />
+          {cityMeta?.heroCredit && (
+            <p style={{ position: "absolute", right: "0.75rem", bottom: "0.5rem", margin: 0, zIndex: 2, fontSize: "0.85rem", color: "rgba(255,255,255,0.9)", textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}>
+              {cityMeta.heroCredit}
+            </p>
+          )}
           {!cityMeta?.heroImage && (
             <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2rem, 8vw, 3.5rem)", color: "rgba(240,237,230,0.18)", fontWeight: 400, letterSpacing: "0.04em" }}>
@@ -384,12 +391,20 @@ export default async function CityPage({ params }: Props) {
             Every business in {cityName} in the directory. Hover a card for details.
           </p>
           <div className="biz-grid" style={{ marginBottom: "1.5rem" }}>
-            {cityBizzes.slice(0, 21).map((biz) => {
+            {[...cityBizzes]
+              // Businesses with a real photo on file lead the grid.
+              .map((biz) => ({ biz, photo: fs.existsSync(path.join(process.cwd(), "public/images/businesses", `${biz.slug}.webp`)) ? `/images/businesses/${biz.slug}.webp` : null }))
+              .sort((a, b) => Number(!!b.photo) - Number(!!a.photo))
+              .slice(0, 21)
+              .map(({ biz, photo }) => {
               const bgColor = BIZ_COLORS[biz.vertical] ?? BIZ_COLORS.default
+              const frontBg = photo
+                ? `linear-gradient(to top, rgba(20,16,14,0.88) 0%, rgba(20,16,14,0.45) 55%, rgba(20,16,14,0.15) 100%), url(${photo}) center/cover no-repeat, ${bgColor}`
+                : bgColor
               return (
                 <div key={biz.id} className="flip-card">
                   <div className="flip-card-inner">
-                    <div className="flip-card-front" style={{ background: bgColor }}>
+                    <div className="flip-card-front" style={{ background: frontBg }}>
                       <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(240,237,230,0.55)", marginBottom: "0.5rem" }}>
                         {biz.category}
                       </p>

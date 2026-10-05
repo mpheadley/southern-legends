@@ -4,6 +4,17 @@
 
 ---
 
+## Subscriber Emails + City Page Photos (2026-10-05)
+
+- **`tools/sl-notify-subscribers.py`** — emails a newly live profile, essay, or list (or a hand-written letter in `reports/sl-notify/letters/`) to the SL Resend list. Preview first, always: the send refuses unless Matt saw a preview of the exact same content, the page and every image load on southernlegends.org, the slug was never sent before, and (in a Claude session) `SL_NOTIFY_APPROVED=<slug>` is set. WebP heroes get a `-email.jpg` copy for Outlook.
+- **`tools/sl-publish.py --after-deploy`** — opens those previews for every newly live page.
+- **Turso `newsletter_subscribers`** — canonical subscriber list (venture + email), synced nightly from Resend by `tools/newsletter-sync.py` (`com.headley.sl-newsletter-sync`, 2:15am). Upsert only, never deletes.
+- **`/api/newsletter/send`** — sender fixed to `stories@matthewheadley.com` (plainspokenblueprint.com is not a verified Resend domain).
+- **City pages** — Anniston hero is the ATD Hotel Finial photo with credit; flip cards show a business photo when one is on file. `public/images/locations/` now ships (city heroes were 404 in prod).
+- **Profile closing CTA** — real SL wordmark image above "More stories like this one".
+
+---
+
 ## Shirts Page + Merch DAM API (2026-10-05)
 
 - **`/author` refresh** — books ordered by completeness ("Closest to done": Clever Confuses. Clarity Sells. first, then Tend, SL Vol. 1; "Also in the works": Broken Ground, God & the Algorithm, Back Forty). Company of Farmers removed (not in BOOKS.md); Chief Ladiga kept as the 2032 long game. Canonical byline in header. Title-card fallback for books without a real cover. Fake per-book merch replaced with real Fourthwall shirts from `merch.ts`.

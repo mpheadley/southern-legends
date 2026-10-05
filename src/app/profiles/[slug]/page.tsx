@@ -508,9 +508,15 @@ export default async function ProfilePage({
         return (
           <div className="bg-ll-warm border-t border-ll-accent/10 px-6 py-10">
             <div className="max-w-2xl mx-auto text-center">
-              <p className="text-ll-accent-dark text-[0.7rem] font-bold tracking-[0.18em] uppercase mb-3" style={{ fontFamily: "var(--font-body)" }}>
-                {cta.eyebrow}
-              </p>
+              {cta.key === "sl" ? (
+                // SL's own CTA carries the wordmark, not a text label.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src="/ad-assets/sl-wordmark-crimson.png" alt="Southern Legends" style={{ height: 34, width: "auto", margin: "0 auto 0.85rem", display: "block" }} />
+              ) : (
+                <p className="text-ll-accent-dark text-[0.7rem] font-bold tracking-[0.18em] uppercase mb-3" style={{ fontFamily: "var(--font-body)" }}>
+                  {cta.eyebrow}
+                </p>
+              )}
               <p className="text-ll-dark font-normal mb-3" style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.25rem, 3vw, 1.75rem)" }}>
                 {cta.headline}
               </p>

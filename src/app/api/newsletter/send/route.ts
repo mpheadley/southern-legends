@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
 
   const createResult = await resend.broadcasts.create({
     audienceId,
-    from: "Southern Legends <noreply@plainspokenblueprint.com>",
+    from: "Southern Legends <stories@matthewheadley.com>",
     subject: subject.trim(),
     html: html.trim(),
     name: `SL - ${subject.trim()} - ${new Date().toISOString().slice(0, 10)}`,
