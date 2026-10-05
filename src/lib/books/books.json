@@ -1,0 +1,108 @@
+{
+  "locked": "2026-10-05",
+  "note": "ONE home for book facts + cover copy. Edit here, then run tools/export.py and tools/sync.py. Cover copy changes need Matt's go.",
+  "books": [
+    {
+      "key": "cc",
+      "slug": "plainspoken-blueprint",
+      "order": 1,
+      "advertised": true,
+      "title": "Clever Confuses. Clarity Sells.",
+      "series": "The Plainspoken Blueprint · Book One",
+      "subtitle": null,
+      "tagline": "Say the plain thing. Make your customer the hero.",
+      "cover": "clever-confuses-cover.webp",
+      "front": { "tagline": "Say the plain thing.<br>Make your customer the hero." },
+      "back": {
+        "headline": "You built something<br>worth buying.",
+        "body": "This book helps your customers see it.",
+        "footer": "The Plainspoken Blueprint<br>Book One",
+        "url": "plainspokenblueprint.com"
+      }
+    },
+    {
+      "key": "tend",
+      "slug": "tend-before-the-wedding",
+      "order": 2,
+      "advertised": true,
+      "title": "Tend: Before the Wedding",
+      "series": null,
+      "subtitle": null,
+      "tagline": "Five conversations before you say I do.",
+      "cover": "tend-cover.webp",
+      "front": { "tagline": "Five conversations before you say I do." },
+      "back": {
+        "headline": "Most couples spend months planning the wedding.",
+        "headline2": "Almost nobody prepares for the marriage.",
+        "body": "Five conversations won&rsquo;t prevent every hard season. But you&rsquo;ll go in knowing each other better than most.",
+        "url": "tendmarriage.com"
+      }
+    },
+    {
+      "key": "sl",
+      "slug": "southern-legends-vol1",
+      "order": 3,
+      "advertised": true,
+      "title": "Southern Legends",
+      "series": null,
+      "subtitle": null,
+      "tagline": "Untold Stories of the South",
+      "cover": "southern-legends-cover.webp",
+      "front": { "tagline": "Untold Stories of the South" },
+      "back": {
+        "headline": "Every place has a mythology and a reality.",
+        "headline2": "This book is the reality.",
+        "body": "The profiles, the places, the history. Northeast Alabama as it actually is."
+      }
+    },
+    {
+      "key": "gata",
+      "slug": "god-and-the-algorithm",
+      "order": 4,
+      "advertised": true,
+      "title": "God & the Algorithm",
+      "series": null,
+      "subtitle": "How I became more rested and less productive",
+      "tagline": "How I became more rested and less productive",
+      "cover": "god-and-the-algorithm-cover.webp",
+      "front": {
+        "subtitle": "How I became more rested and less productive",
+        "line2": "Essays on disclosed AI, faith, and neurodiversity"
+      },
+      "back": {
+        "quote": "&ldquo;I built God out of code.<br>It wasn&rsquo;t what I needed.&rdquo;",
+        "attribution": "&mdash; Matt Headley",
+        "url": "matthewheadley.com"
+      }
+    },
+    {
+      "key": "clt",
+      "slug": "chief-ladiga-trail",
+      "order": 5,
+      "advertised": true,
+      "title": "The Chief Ladiga Trail",
+      "series": null,
+      "subtitle": null,
+      "tagline": "The land the trail runs through · 1832 – 2032",
+      "cover": "chief-ladiga-cover.webp",
+      "front": { "tagline": "The land the trail runs through", "years": "1832 – 2032" },
+      "back": {
+        "body": "<b>1832</b> The Creek Nation was removed from Northeast Alabama.<br><b>2032</b> The bicentennial arrives.",
+        "url": "chiefladiga.org"
+      }
+    },
+    {
+      "key": "bg",
+      "slug": "broken-ground",
+      "order": 90,
+      "advertised": false,
+      "title": "Broken Ground",
+      "series": null,
+      "subtitle": null,
+      "tagline": "A Memoir",
+      "cover": "broken-ground-cover.webp",
+      "front": {},
+      "back": {}
+    }
+  ]
+}

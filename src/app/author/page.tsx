@@ -1,3 +1,4 @@
+import Book3D from "@/lib/books/Book3D";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,6 +28,7 @@ interface Book {
   status: BookStatus;
   statusLabel: string;
   coverImage?: string;
+  cover3d?: string; // key for /images/books/3d/<key>-{front,back,spine}.webp
   series?: string;
   presellUrl?: string;
   signupLabel?: string;
@@ -49,6 +51,7 @@ const STATUS_STYLES: Record<BookStatus, string> = {
 const BOOKS: Book[] = [
   {
     slug: "plainspoken-blueprint",
+    cover3d: "cc",
     coverImage: "/images/books/clever-confuses-cover.webp",
     title: "Clever Confuses. Clarity Sells.",
     subtitle: "The Plainspoken Blueprint field guide.",
@@ -66,6 +69,7 @@ const BOOKS: Book[] = [
   },
   {
     slug: "tend-before-the-wedding",
+    cover3d: "tend",
     coverImage: "/images/books/tend-cover.webp",
     title: "Tend: Before the Wedding",
     tagline: "Five conversations before you say I do.",
@@ -81,6 +85,7 @@ const BOOKS: Book[] = [
   },
   {
     slug: "southern-legends-vol1",
+    cover3d: "sl",
     coverImage: "/images/books/southern-legends-cover.webp",
     title: "Southern Legends Vol. 1",
     tagline: "Collected profiles from Northeast Alabama.",
@@ -95,6 +100,7 @@ const BOOKS: Book[] = [
   },
   {
     slug: "god-and-the-algorithm",
+    cover3d: "gata",
     title: "God & the Algorithm",
     subtitle: "How I became more rested and less productive.",
     tagline: "I built God out of code. It wasn't what I needed.",
@@ -110,6 +116,7 @@ const BOOKS: Book[] = [
   },
   {
     slug: "chief-ladiga-trail",
+    cover3d: "clt",
     coverImage: "/images/books/chief-ladiga-cover.webp",
     title: "The Chief Ladiga Trail",
     tagline: "In 1832, the Creek Nation was removed from Northeast Alabama. This book argues for a reckoning, not a celebration.",
@@ -155,6 +162,12 @@ export default function AuthorPage() {
           </p>
         </div>
       </div>
+
+      {/* Desktop: all books on one 3D shelf. Phones get one book per card below. */}
+      <Book3D
+        className="hidden sm:block h-[380px] mb-14 -mx-4 md:-mx-24"
+        books={BOOKS.filter(b => b.cover3d).map(b => ({ key: b.cover3d!, title: b.title, subtitle: b.tagline }))}
+      />
 
       <section className="mb-14">
         <h2 className="text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-5">Closest to done</h2>
@@ -237,8 +250,15 @@ function BookCard({ book, featured = false }: { book: Book; featured?: boolean }
           : "border-stone-200 dark:border-stone-700"
       }`}
     >
+      {book.cover3d && (
+        <Book3D
+          className="sm:hidden h-64 -mx-6 -mt-6 mb-4"
+          books={[{ key: book.cover3d, title: book.title }]}
+          fallbackSrc={book.coverImage}
+        />
+      )}
       <div className="flex gap-5">
-        <div className="shrink-0">
+        <div className={`shrink-0 ${book.cover3d ? "hidden sm:block" : ""}`}>
           {book.coverImage ? (
             <Image
               src={book.coverImage}
