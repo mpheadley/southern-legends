@@ -159,21 +159,28 @@ export default function SubscribePopup() {
             <p style={{ fontSize: "0.875rem", color: "rgba(250,250,247,0.55)", marginBottom: "1.75rem", lineHeight: 1.7 }}>
               Profiles of local makers. Personal essays. New pieces sent when they&rsquo;re ready — no noise.
             </p>
+            <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", margin: "0 0 1.25rem" }}>
+              <p style={{ margin: 0, fontSize: "0.85rem", color: "rgba(240,237,230,.75)", lineHeight: 1.4 }}>
+                You&rsquo;ll get a welcome note now, and new stories by email as they&rsquo;re published.
+              </p>
+            </div>
 
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                 <input
                   type="text"
                   placeholder="First name (optional)"
+                  autoComplete="given-name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   disabled={status === "loading"}
-                  style={inputStyle}
+                  style={{ ...inputStyle, paddingRight: "2.5rem" }}
                 />
                 <input
                   type="email"
                   required
                   placeholder="your@email.com"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={status === "loading"}
