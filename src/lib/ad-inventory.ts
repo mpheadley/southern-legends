@@ -63,21 +63,61 @@ export interface PaidAd {
 export const PAID_ADS: PaidAd[] = []
 
 /**
- * FEATURED CAMPAIGN — the campaign chooser. When set and live, this venture's ad runs on
- * every SL page that has an ad slot (except sensitive pages, which keep the soft Support
- * ad, and pages whose own CTA already pitches this venture). Paid advertisers still win.
- * Set to null to go back to topic-matched house ads. Auto-ends after `until`.
+ * FEATURED CAMPAIGN — the campaign chooser. The featured venture's ad runs on every SL page
+ * with an ad slot (except SENSITIVE pages and pages whose own CTA already pitches it). Paid
+ * advertisers still win.
+ *
+ * The Aisle runs on a SHOW SCHEDULE: it promotes the first show below that hasn't happened
+ * yet (Central time), so the ad switches itself the day after each show. Show facts come
+ * from src/data/aisle-shows.json (generated from Turso expo_shows by
+ * tools/sl-aisle-shows-snapshot.py) — never typed here. Pages revalidate every 5 minutes, so
+ * the switch needs no deploy. Empty schedule / all shows past → no featured campaign.
  */
-export const FEATURED_CAMPAIGN: { key: string; until: string } | null = {
-  key: 'aisle',
-  until: '2026-10-18', // The Aisle: Anniston Bridal Show — Sunday, Oct 18 2026
+import aisleShows from '@/data/aisle-shows.json'
+
+export const FEATURED_SCHEDULE: string[] = [
+  'anniston-oct-2026',   // Sun Oct 18 2026 · Longleaf @ AMAG
+  'silver-run-feb-2027', // Sun Feb 21 2027 · Silver Run Chapel (date per Turso)
+]
+
+export type AisleShow = {
+  slug: string; name: string; venue: string; city: string; state: string
+  date: string; registerUrl: string; doorPrice: number | null; vipPrice: number | null
+}
+
+/** The show the Aisle ad promotes today, or null once the schedule is used up. */
+export function activeAisleShow(today = new Date()): AisleShow | null {
+  const shows = (aisleShows as { shows: AisleShow[] }).shows
+  for (const slug of FEATURED_SCHEDULE) {
+    const show = shows.find((x) => x.slug === slug)
+    if (!show) continue
+    const end = new Date(`${show.date}T23:59:59-06:00`) // end of show day, Central
+    if (today <= end) return show
+  }
+  return null
+}
+
+/** Presentation only (photo, partner logo, venue wording) — facts stay in the snapshot. */
+export const AISLE_SHOW_LOOK: Record<string, { photo?: string; venueLine?: string; partnerLogo?: string; partnerAlt?: string }> = {
+  'anniston-oct-2026': {
+    photo: '/ad-assets/aisle-couple.webp',
+    venueLine: 'Longleaf Event Center · Anniston Museums & Gardens',
+    partnerLogo: '/ad-assets/amag-white.png',
+    partnerAlt: 'Anniston Museums and Gardens',
+  },
+  // No real, cleared Silver Run photo on disk yet (the chapel images are AI renderings) —
+  // text-forward navy until one is added here.
+  'silver-run-feb-2027': {},
+}
+
+/** "Sunday, Oct 18" from an ISO date (weekday computed, never typed). */
+export function showDayLabel(iso: string): string {
+  const d = new Date(`${iso}T12:00:00-06:00`)
+  return d.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', timeZone: 'America/Chicago' })
 }
 
 export function featuredKey(today = new Date()): string | null {
-  const c = FEATURED_CAMPAIGN
-  if (!c) return null
-  const end = new Date(`${c.until}T23:59:59-05:00`)
-  return today <= end ? c.key : null
+  return activeAisleShow(today) ? 'aisle' : null
 }
 
 /** Is this ad live today (and on this site)? */
@@ -134,11 +174,11 @@ export function pickPaidAd(
 export const SL_AISLE_REF = 'SLREFERS' // expo_partners row 3d6b6b5418b043f5, created 2026-10-05
 
 /** Tagged Aisle register link: source = SL, content = the page or spot it came from. */
-export function aisleLink(base: string, content: string): string {
+export function aisleLink(base: string, content: string, campaign = 'aisle-oct18'): string {
   const u = new URL(base)
   u.searchParams.set('utm_source', 'southernlegends')
   u.searchParams.set('utm_medium', 'ad')
-  u.searchParams.set('utm_campaign', 'aisle-oct18')
+  u.searchParams.set('utm_campaign', campaign)
   if (content) u.searchParams.set('utm_content', content)
   if (SL_AISLE_REF) u.searchParams.set('ref', SL_AISLE_REF)
   return u.toString()

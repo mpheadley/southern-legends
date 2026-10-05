@@ -7,7 +7,7 @@
 ## Ad Network on SL + Aisle Campaign (2026-10-05)
 
 - **One ad router** — `src/lib/cta-router.ts` `pickAd`/`snapshotAd`: paid advertiser → featured campaign → topic-matched house ad → Support SL. SENSITIVE pages (grief, obituary, illness…) only ever get the soft Support ad; arts/theater pages skip random venture pitches but do run the featured campaign.
-- **Campaign chooser** — `FEATURED_CAMPAIGN` in `src/lib/ad-inventory.ts` (key + `until` date, auto-ends). Currently The Aisle through 2026-10-18. Selling an ad = add an entry to `PAID_ADS` (no code change).
+- **Campaign chooser** — `FEATURED_SCHEDULE` in `src/lib/ad-inventory.ts`: The Aisle promotes the next show that hasn't happened yet (Anniston Oct 18 2026 → Silver Run Chapel, date per Turso), switching itself the day after each show (ISR, no deploy). Show facts + per-show QR come from `src/data/aisle-shows.json`, generated from Turso `expo_shows` by `tools/sl-aisle-shows-snapshot.py`. Selling an ad = add an entry to `PAID_ADS` (no code change).
 - **Aisle ads** — `AisleStrip` (slim, top of every profile/essay) + `AisleBand` (full, end of article; church-banner photo, Aisle arch + AMAG at ½ height, QR for laptop + phone). Both link straight to the register page via `aisleLink()`: `utm_source=southernlegends`, `utm_content=<page>:<spot>`, `ref=SLREFERS` (expo_partners "Southern Legends", so registrations are credited).
 - **Testimonial band** — `TestimonialBand`: consented quote + face + one action. Support ad = inline free email signup (`/api/subscribe`, source `ad-band-support`). Consent source: `data/testimonials.json`.
 - **Honest labels** — "From Southern Legends" for our own ventures, "Advertisement" only for paid (`VentureCTA.paid`).

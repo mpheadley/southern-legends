@@ -1,0 +1,29 @@
+{
+  "_source": "Turso expo_shows via tools/sl-aisle-shows-snapshot.py",
+  "shows": [
+    {
+      "slug": "anniston-oct-2026",
+      "name": "The Aisle: Anniston Bridal Show",
+      "venue": "Longleaf Event Center @ AMAG",
+      "city": "Anniston",
+      "state": "AL",
+      "date": "2026-10-18",
+      "registerUrl": "https://theaislebridalshows.com/live/anniston-oct-2026/register",
+      "doorPrice": 25,
+      "vipPrice": null,
+      "qr": "/ad-assets/aisle-qr-anniston-oct-2026.svg"
+    },
+    {
+      "slug": "silver-run-feb-2027",
+      "name": "The Aisle: Silver Run Chapel",
+      "venue": "Silver Run Chapel",
+      "city": "Munford",
+      "state": "AL",
+      "date": "2027-02-21",
+      "registerUrl": "https://theaislebridalshows.com/live/silver-run-feb-2027/register",
+      "doorPrice": 10,
+      "vipPrice": 40,
+      "qr": "/ad-assets/aisle-qr-silver-run-feb-2027.svg"
+    }
+  ]
+}
