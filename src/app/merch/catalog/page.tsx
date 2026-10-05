@@ -57,6 +57,17 @@ function StatusChip({ item }: { item: MerchItem }) {
   )
 }
 
+// Photo is a flat/compositable design if it's in print-files, has a trans/nobg name, or item.bg is set
+function isCompositableDesign(item: MerchItem): boolean {
+  return !!(
+    item.bg ||
+    item.rawGraphic ||
+    item.photo.includes('/print-files/') ||
+    item.photo.includes('-trans.') ||
+    item.photo.includes('-nobg.')
+  )
+}
+
 function MerchCard({ item }: { item: MerchItem }) {
   const [hovered, setHovered] = useState(false)
   const isShirt = item.category === 'shirt' || item.category === 'hoodie'
@@ -73,12 +84,18 @@ function MerchCard({ item }: { item: MerchItem }) {
         }}
       >
         {isShirt ? (
-          <ShirtMockup
-            src={item.photo}
-            alt={item.name}
-            shirtColor={hovered ? (item.bg ?? '#f5f0e8') : undefined}
-            size={180}
-          />
+          hovered && item.photoBack
+            ? <div style={{ position: 'relative', width: 180, height: 180 }}>
+                <Image src={item.photoBack} alt={`${item.name} back`} fill style={{ objectFit: 'contain', padding: 16 }} sizes="180px" />
+              </div>
+            : isCompositableDesign(item)
+              ? <ShirtMockup
+                  src={item.rawGraphic ?? item.photo}
+                  alt={item.name}
+                  shirtColor={item.bg}
+                  size={180}
+                />
+              : <Image src={item.photo} alt={item.name} fill style={{ objectFit: 'contain', padding: 12 }} sizes="240px" />
         ) : (
           <Image src={item.photo} alt={item.name} fill style={{ objectFit: 'contain', padding: 12 }} sizes="240px" />
         )}

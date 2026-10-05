@@ -73,7 +73,7 @@ export default function ShirtMockup({ src, alt, shirtColor, size = 320, classNam
         left: '50%',
         top: '22%',
         transform: 'translateX(-50%)',
-        width: '52%',
+        width: '42%',
         aspectRatio: '1',
         zIndex: 1,
         mixBlendMode: dark ? 'screen' : 'multiply',
