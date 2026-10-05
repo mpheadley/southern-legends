@@ -18,24 +18,6 @@ const BOOK_TAGS = ["books", "literature", "reading", "memoir", "novel", "poetry"
 // Matt's forthcoming books — covers live in /images/books/ and /images/journal/
 const FORTHCOMING_BOOKS = [
   {
-    slug: "company-of-farmers",
-    href: "/books/company-of-farmers",
-    title: "Company of Farmers",
-    tagline: "The people who taught me to love the land — and the farm I dreamed, built, and did not keep. Half portrait, half confession.",
-    cover: "/images/journal/chickens-pasture.webp",
-    status: "Preorder open",
-    preorder: true,
-  },
-  {
-    slug: "the-back-forty",
-    href: "/books/the-back-forty",
-    title: "I Was Outside",
-    tagline: "Dispatches on dirt, chickens, and the people who perform them — from a man who farmed for real and lost the farm anyway.",
-    cover: "/images/books/back-forty-cover.png",
-    status: "Preorder open",
-    preorder: true,
-  },
-  {
     slug: "forthcoming-tend-before-the-wedding",
     href: "/essays/forthcoming-tend-before-the-wedding",
     title: "Tend: Before the Wedding",
@@ -58,15 +40,6 @@ const FORTHCOMING_BOOKS = [
     href: "/essays/forthcoming-god-and-the-algorithm",
     title: "God & the Algorithm",
     tagline: "How I became more rested and less productive.",
-    cover: null,
-    status: "Forthcoming",
-    preorder: false,
-  },
-  {
-    slug: "forthcoming-broken-ground",
-    href: "/essays/forthcoming-broken-ground",
-    title: "Broken Ground",
-    tagline: "A memoir.",
     cover: null,
     status: "Forthcoming",
     preorder: false,

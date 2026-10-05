@@ -49,6 +49,7 @@ const STATUS_STYLES: Record<BookStatus, string> = {
 const BOOKS: Book[] = [
   {
     slug: "plainspoken-blueprint",
+    coverImage: "/images/books/clever-confuses-cover.webp",
     title: "Clever Confuses. Clarity Sells.",
     subtitle: "The Plainspoken Blueprint field guide.",
     tagline: "Message first. Brand second. Website last.",
@@ -65,6 +66,7 @@ const BOOKS: Book[] = [
   },
   {
     slug: "tend-before-the-wedding",
+    coverImage: "/images/books/tend-cover.webp",
     title: "Tend: Before the Wedding",
     tagline: "Five conversations before you say I do.",
     status: "presell",
@@ -79,6 +81,7 @@ const BOOKS: Book[] = [
   },
   {
     slug: "southern-legends-vol1",
+    coverImage: "/images/books/southern-legends-cover.webp",
     title: "Southern Legends Vol. 1",
     tagline: "Collected profiles from Northeast Alabama.",
     status: "serializing",
@@ -91,19 +94,6 @@ const BOOKS: Book[] = [
       "The profiles, the places, the people doing quiet durable work in Northeast Alabama. Not because they are famous. Because they are here, and that is worth something. Compiled from the first years of the column.",
   },
   {
-    slug: "broken-ground",
-    title: "Broken Ground",
-    tagline: "Losing a flower farm. Leaving a church. What it looked like to rebuild.",
-    status: "forthcoming",
-    statusLabel: "Memoir · in progress",
-    tier: "later",
-    series: "Standalone",
-    signupLabel: "Notify me when it's ready",
-    signupUrl: "/subscribe",
-    description:
-      "I lost a flower farm in Anniston. I resigned from a church I loved. I survived a manic episode I didn't recognize until the damage was done. This is the memoir of what it looked like to start over when you're not sure what you're starting toward.",
-  },
-  {
     slug: "god-and-the-algorithm",
     title: "God & the Algorithm",
     subtitle: "How I became more rested and less productive.",
@@ -111,7 +101,7 @@ const BOOKS: Book[] = [
     status: "drafting",
     statusLabel: "Drafting now",
     tier: "later",
-    coverImage: "/images/books/god-algorithm-cover.webp",
+    coverImage: "/images/books/god-and-the-algorithm-cover.webp",
     series: "Standalone",
     signupLabel: "Notify me when it's ready",
     signupUrl: "/subscribe",
@@ -120,6 +110,7 @@ const BOOKS: Book[] = [
   },
   {
     slug: "chief-ladiga-trail",
+    coverImage: "/images/books/chief-ladiga-cover.webp",
     title: "The Chief Ladiga Trail",
     tagline: "In 1832, the Creek Nation was removed from Northeast Alabama. This book argues for a reckoning, not a celebration.",
     status: "longGame",
@@ -131,21 +122,6 @@ const BOOKS: Book[] = [
     signupUrl: "/subscribe",
     description:
       "A historical reckoning with the Creek removal from Northeast Alabama, timed to the 2032 bicentennial. Built from years of SL profiles, trail walks, and local history. Not a celebration. A witness.",
-  },
-  {
-    slug: "back-forty",
-    title: "The Back Forty",
-    tagline: "Dispatches on dirt, chickens, and the people who perform them.",
-    status: "serializing",
-    statusLabel: "Column in progress · read it now",
-    tier: "later",
-    coverImage: "/images/books/back-forty-cover.webp",
-    series: "Southern Legends",
-    presellUrl: "/back-forty",
-    signupLabel: "Read the column",
-    signupUrl: "/back-forty",
-    description:
-      "Southern Gothic agrarian satire, running on Southern Legends under my name. Half dispatch, half confession. A man who farmed for real and lost the farm anyway, on dirt, chickens, and the honest absurdity of growing things.",
   },
 ];
 
@@ -305,7 +281,7 @@ function BookCard({ book, featured = false }: { book: Book; featured?: boolean }
                 href={book.presellUrl}
                 className="inline-block bg-amber-700 text-white text-sm font-medium px-4 py-2 rounded hover:bg-amber-800 transition"
               >
-                Presell — {book.eta ?? "order now"} →
+                Presell — {book.eta ?? "join the list"} →
               </Link>
             )}
             {book.presellUrl && book.status === "serializing" && (
