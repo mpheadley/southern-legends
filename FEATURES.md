@@ -40,7 +40,7 @@
 - ✅ **VIP link** — "Make it VIP · $75 →" under the end band, via `/go/aisle?tier=vip` → register page with `tier=vip`. VIP price comes from the snapshot (Turso, falling back to `expo-pricing.ts`).
 
 ### Tracking
-- ✅ **Table** — `sl_ad_events` in Turso (impression / click, placement, page, show, session). Created 2026-10-05, empty. SQL in `tools/sql/sl-ad-events.sql`.
+- ✅ **Table** — `sl_ad_events` in Turso (impression / click / hover, placement, page, show, session). Created 2026-10-05. Test rows (ids 5–8, local dev) deleted 2026-10-05 under `WRITE TO TURSO`; table empty. SQL in `tools/sql/sl-ad-events.sql`.
 - ✅ **Click logging** — `/go/aisle` records a click before forwarding. Verified writing to Turso 2026-10-05 (test row, then removed).
 - 🟡 **Impression logging** — `ImpressionOnView` + `/api/ad-event`, approved by Matt 2026-10-05, placed in the band, top strip, margin card and mobile bar. Fires once per placement per visit, when half the card is on screen. Verified writing to Turso 2026-10-05.
 - ✅ **Hover tracking** — logged once per placement per visit after an 800ms pause on the card. `sl_ad_events` accepts `hover` (schema changed 2026-10-05).
