@@ -3,12 +3,12 @@
 // AISLE_TURSO_TOKEN in the environment; if they're missing it logs nothing and never breaks the page.
 import "server-only";
 
-export type AdEvent = { event: "impression" | "click"; placement: string; page: string; showSlug?: string | null; sessionId?: string | null };
+export type AdEvent = { event: "impression" | "click" | "hover"; placement: string; page: string; showSlug?: string | null; sessionId?: string | null };
 
-const PLACEMENTS = new Set(["top-strip", "band", "margin", "bottom-bar", "qr"]);
+const PLACEMENTS = new Set(["top-strip", "band", "band-vip", "margin", "bottom-bar", "qr"]);
 
 export async function logAdEvent(e: AdEvent): Promise<boolean> {
-  if (!PLACEMENTS.has(e.placement) || !["impression", "click"].includes(e.event)) return false;
+  if (!PLACEMENTS.has(e.placement) || !["impression", "click", "hover"].includes(e.event)) return false;
   const url = process.env.AISLE_TURSO_URL;
   const token = process.env.AISLE_TURSO_TOKEN;
   if (!url || !token) return false;

@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   let body: Record<string, unknown> = {};
   try { body = await req.json(); } catch { return new NextResponse(null, { status: 400 }); }
   const ok = await logAdEvent({
-    event: body.event as "impression" | "click",
+    event: body.event as "impression" | "click" | "hover",
     placement: String(body.placement ?? ""),
     page: String(body.page ?? "").slice(0, 160),
     showSlug: typeof body.showSlug === "string" ? body.showSlug : null,

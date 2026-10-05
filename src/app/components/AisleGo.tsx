@@ -9,7 +9,7 @@ import QRCode from "qrcode";
 const GO = "https://southernlegends.org/go/aisle";
 
 /** Fire-and-forget impression/click beacon. Never blocks the page; no cookies, no personal data. */
-export function sendAdEvent(event: "impression" | "click", placement: string, page: string, showSlug?: string) {
+export function sendAdEvent(event: "impression" | "click" | "hover", placement: string, page: string, showSlug?: string) {
   try {
     const body = JSON.stringify({ event, placement, page, showSlug: showSlug ?? null, sessionId: sessionStorage.getItem("sl-ad-sid") ?? undefined });
     navigator.sendBeacon?.("/api/ad-event", new Blob([body], { type: "application/json" })) ||
@@ -114,7 +114,15 @@ export function ImpressionOnView({ placement, showSlug }: { placement: string; s
       }
     }, { threshold: 0.5 });
     io.observe(el);
-    return () => io.disconnect();
+    // Hover: a real pause on the card (≥800ms), logged once per placement per visit.
+    const card = el.parentElement;
+    const hoverKey = `sl-ad-hov:${placement}:${path}`;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const enter = () => { if (sessionStorage.getItem(hoverKey)) return; timer = setTimeout(() => { sessionStorage.setItem(hoverKey, "1"); sendAdEvent("hover", placement, path, showSlug); }, 800); };
+    const leave = () => clearTimeout(timer);
+    card?.addEventListener("mouseenter", enter);
+    card?.addEventListener("mouseleave", leave);
+    return () => { io.disconnect(); clearTimeout(timer); card?.removeEventListener("mouseenter", enter); card?.removeEventListener("mouseleave", leave); };
   }, [placement, path, showSlug]);
   return <span ref={ref} aria-hidden="true" style={{ display: "block", height: 1 }} />;
 }
