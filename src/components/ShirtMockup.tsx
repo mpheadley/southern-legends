@@ -29,7 +29,7 @@ function blankForColor(hex: string): string {
     return '/merch/blanks/blank-forest.webp'
   }
   // Olive / medium green
-  if (h === '4a5e2a' || h === '556b2f' || h === '6b7c3e') {
+  if (h === '4a5e2a' || h === '556b2f' || h === '6b7c3e' || h === '4a5741') {
     return '/merch/blanks/blank-olive.webp'
   }
   // Default cream
