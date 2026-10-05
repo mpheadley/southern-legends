@@ -4,9 +4,11 @@
 
 ---
 
-## Merch DAM API (2026-10-05)
+## Shirts Page + Merch DAM API (2026-10-05)
 
-- **`/api/merch-dam`** — returns DAM-shaped manifest (groups + assets) from the full `MERCH` array. Groups: On Fourthwall, Available, then by category. Consumed by Gather Works `/dam-merch` route to render the canonical merch image browser. `fw: true` flag on FW-photo assets; `printFile` flag on print-graphic assets.
+- **`/merch/shirts`** — full shirt catalog: "On Fourthwall" (every item with `fwUrl`) + "Local & At Events". Real Fourthwall product photos in `public/merch/fw/`; tap (mobile) or hover flips to the back; thumbnail strip from `gallery`.
+- **`MerchItem.fwUrl` / `gallery`** — Fourthwall product link and extra photos live in `merch.ts` (one home), not in page code.
+- **`/api/merch-dam`** — DAM-shaped manifest (groups by category + assets) from the full `MERCH` array. Consumed by Gather Works `/dam-merch`. Asset `src` is `id|photo` so items sharing a photo don't collide; labels carry `[FW]` / `[print]` for search.
 
 ---
 
