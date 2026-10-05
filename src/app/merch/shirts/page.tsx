@@ -1,35 +1,14 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { MERCH, MerchItem } from '@/lib/merch'
-
-const FW_URLS: Record<string, string> = {
-  'pv-raiders-shirt':       'https://matt-headley-shop.fourthwall.com/products/pv-raiders-xc-pirate-tee',
-  'david-dennis-shirt':     'https://matt-headley-shop.fourthwall.com/products/freedomriders-anniston-1961',
-  'bloom-bar-tee':          'https://matt-headley-shop.fourthwall.com/products/bloom-bar-tee',
-  'model-city-shirt':       'https://matt-headley-shop.fourthwall.com/products/the-model-city-anniston-alabama',
-  'model-city-shirt-light': 'https://matt-headley-shop.fourthwall.com/products/the-model-city-anniston-alabama-light-version',
-  'i-contain-multitudes':   'https://matt-headley-shop.fourthwall.com/products/i-contain-multitudes',
-  'bipolar-proud':          'https://matt-headley-shop.fourthwall.com/products/bipolar-proud',
-  'still-here':             'https://matt-headley-shop.fourthwall.com/products/still-here',
-  'clt-shirt':              'https://matt-headley-shop.fourthwall.com/products/chief-ladiga-trail',
-}
 
 const COLLECTIONS: { label: string; desc: string; ids: string[] }[] = [
   {
     label: 'On Fourthwall — Order Now',
     desc: 'Ships to your door. All sizes. Multiple colorways.',
-    ids: [
-      'pv-raiders-shirt',
-      'david-dennis-shirt',
-      'model-city-shirt',
-      'model-city-shirt-light',
-      'i-contain-multitudes',
-      'bipolar-proud',
-      'still-here',
-      'clt-shirt',
-      'bloom-bar-tee',
-    ],
+    ids: MERCH.filter(m => m.fwUrl).map(m => m.id),
   },
   {
     label: 'Local & At Events',
@@ -56,8 +35,12 @@ const COLLECTIONS: { label: string; desc: string; ids: string[] }[] = [
 
 function ShirtCard({ item }: { item: MerchItem }) {
   const [hovered, setHovered] = useState(false)
-  const fwUrl = FW_URLS[item.id]
-  const showBack = hovered && item.photoBack
+  const [flipped, setFlipped] = useState(false)
+  const [shown, setShown] = useState<string | null>(null)
+  const fwUrl = item.fwUrl
+  const showBack = (hovered || flipped) && item.photoBack
+  const src = shown ?? (showBack ? item.photoBack! : item.photo)
+  const thumbs = [item.photo, ...(item.photoBack ? [item.photoBack] : []), ...(item.gallery ?? [])]
 
   return (
     <div style={{
@@ -73,12 +56,15 @@ function ShirtCard({ item }: { item: MerchItem }) {
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        onClick={() => { setShown(null); setFlipped(f => !f) }}
         style={{ position: 'relative', aspectRatio: '1/1', background: '#1a1a1a', overflow: 'hidden', cursor: 'pointer' }}
       >
-        <img
-          src={showBack ? item.photoBack : item.photo}
+        <Image
+          src={src}
           alt={item.name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'opacity 0.25s', display: 'block' }}
+          fill
+          sizes="(max-width: 640px) 50vw, 260px"
+          style={{ objectFit: 'cover' }}
         />
         {item.badge && (
           <span style={{
@@ -100,10 +86,22 @@ function ShirtCard({ item }: { item: MerchItem }) {
             padding: '2px 6px', borderRadius: 3,
             fontFamily: 'var(--font-body)',
           }}>
-            {hovered ? 'Back' : 'Hover →'}
+            {showBack ? 'Back' : 'Tap / hover'}
           </span>
         )}
       </div>
+
+      {thumbs.length > 2 && (
+        <div style={{ display: 'flex', gap: 4, padding: '8px 10px 0', overflowX: 'auto' }}>
+          {thumbs.map(t => (
+            <button key={t} onClick={() => setShown(t)} aria-label="Show photo"
+              style={{ position: 'relative', flex: '0 0 36px', height: 36, borderRadius: 4, overflow: 'hidden', padding: 0, cursor: 'pointer',
+                border: t === src ? '1px solid #9a6c2f' : '1px solid rgba(255,255,255,0.1)', background: '#1a1a1a' }}>
+              <Image src={t} alt="" fill sizes="36px" style={{ objectFit: 'cover' }} />
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Info */}
       <div style={{ padding: '14px 16px 16px', display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>

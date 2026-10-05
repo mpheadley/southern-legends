@@ -20,27 +20,22 @@ const CATEGORY_LABELS: Record<string, string> = {
 }
 
 export async function GET() {
-  const available = MERCH.filter(m => m.available && m.photo)
   const all = MERCH.filter(m => m.photo)
 
-  // Groups: fw-first, then by category
   const cats = [...new Set(all.map(m => m.category ?? 'other'))]
-  const groups = [
-    { key: 'fw',        label: 'On Fourthwall',   count: all.filter(m => m.photo?.includes('/merch/fw/')).length },
-    { key: 'available', label: 'Available',        count: available.length },
-    ...cats.map(cat => ({
-      key: cat,
-      label: CATEGORY_LABELS[cat] ?? cat,
-      count: all.filter(m => m.category === cat).length,
-    })),
-  ]
+  const groups = cats.map(cat => ({
+    key: cat,
+    label: CATEGORY_LABELS[cat] ?? cat,
+    count: all.filter(m => m.category === cat).length,
+  }))
 
   const assets = all.map(m => {
     const cat = m.category ?? 'other'
     const isFw = m.photo?.includes('/merch/fw/') ?? false
     const isPrintFile = m.photo?.includes('/print-files/') ?? false
     return {
-      src:    m.photo,
+      // DamBrowser keys cards by src; several items share one photo, so prefix the id
+      src:    `${m.id}|${m.photo}`,
       url:    BASE + m.photo,
       label:  m.name + (m.price ? ` · $${m.price}` : '') + (isFw ? ' [FW]' : isPrintFile ? ' [print]' : ''),
       group:  cat,

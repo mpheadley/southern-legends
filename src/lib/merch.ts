@@ -14,6 +14,10 @@ export type MerchItem = {
   photo: string
   /** Optional back-of-garment art — product pages swap to this on hover. */
   photoBack?: string
+  /** Extra product photos (colorways/angles), shown as a thumbnail strip. */
+  gallery?: string[]
+  /** Fourthwall product page — present = orderable online. */
+  fwUrl?: string
   rawGraphic?: string
   bg?: string
   badge?: string
@@ -100,6 +104,8 @@ export const MERCH: MerchItem[] = [
     price: 30,
     photo: '/merch/fw/pv-raiders-xc-01.webp',
     photoBack: '/merch/fw/pv-raiders-xc-02.webp',
+    gallery: ['/merch/fw/pv-raiders-xc-03.webp', '/merch/fw/pv-raiders-xc-04.webp', '/merch/fw/pv-raiders-xc-05.webp', '/merch/fw/pv-raiders-xc-06.webp', '/merch/fw/pv-raiders-xc-07.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/pv-raiders-xc-pirate-tee',
     badge: 'Fundraiser',
     badgeColor: '#9A3412',
     category: 'shirt',
@@ -118,6 +124,8 @@ export const MERCH: MerchItem[] = [
     price: 35,
     photo: '/merch/fw/chief-ladiga-trail-01.webp',
     photoBack: '/merch/fw/chief-ladiga-trail-02.webp',
+    gallery: ['/merch/fw/chief-ladiga-trail-03.webp', '/merch/fw/chief-ladiga-trail-04.webp', '/merch/fw/chief-ladiga-trail-05.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/chief-ladiga-trail',
     category: 'shirt',
     mediums: ['T-Shirt', 'Tote Bag', 'Sticker', 'Art Print', 'Hat'],
     sizes: ['S', 'M', 'L', 'XL', '2XL'],
@@ -237,6 +245,8 @@ export const MERCH: MerchItem[] = [
     price: 40,
     photo: '/merch/fw/dave-dennis-freedom-rider-01.webp',
     photoBack: '/merch/fw/dave-dennis-freedom-rider-02.webp',
+    gallery: ['/merch/fw/dave-dennis-freedom-rider-03.webp', '/merch/fw/dave-dennis-freedom-rider-04.webp', '/merch/fw/dave-dennis-freedom-rider-05.webp', '/merch/fw/dave-dennis-freedom-rider-06.webp', '/merch/fw/dave-dennis-freedom-rider-07.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/freedomriders-anniston-1961',
     badge: 'SL Editorial',
     badgeColor: '#1a1a2e',
     category: 'shirt',
@@ -255,6 +265,8 @@ export const MERCH: MerchItem[] = [
     price: 29,
     photo: '/merch/fw/bloom-bar-01.webp',
     photoBack: '/merch/fw/bloom-bar-02.webp',
+    gallery: ['/merch/fw/bloom-bar-03.webp', '/merch/fw/bloom-bar-04.webp', '/merch/fw/bloom-bar-05.webp', '/merch/fw/bloom-bar-06.webp', '/merch/fw/bloom-bar-07.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/bloom-bar-tee',
     badge: 'Heather Florals',
     badgeColor: '#166534',
     category: 'shirt',
@@ -318,6 +330,8 @@ export const MERCH: MerchItem[] = [
     price: 30,
     photo: '/merch/fw/i-contain-multitudes-01.webp',
     photoBack: '/merch/fw/i-contain-multitudes-02.webp',
+    gallery: ['/merch/fw/i-contain-multitudes-03.webp', '/merch/fw/i-contain-multitudes-04.webp', '/merch/fw/i-contain-multitudes-05.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/i-contain-multitudes',
     badge: 'Mental Health',
     badgeColor: '#4c1d95',
     category: 'shirt',
@@ -332,6 +346,8 @@ export const MERCH: MerchItem[] = [
     price: 30,
     photo: '/merch/fw/bipolar-proud-01.webp',
     photoBack: '/merch/fw/bipolar-proud-02.webp',
+    gallery: ['/merch/fw/bipolar-proud-03.webp', '/merch/fw/bipolar-proud-04.webp', '/merch/fw/bipolar-proud-05.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/bipolar-proud',
     badge: 'Mental Health',
     badgeColor: '#4c1d95',
     category: 'shirt',
@@ -370,6 +386,8 @@ export const MERCH: MerchItem[] = [
     price: 30,
     photo: '/merch/fw/still-here-01.webp',
     photoBack: '/merch/fw/still-here-03.webp',
+    gallery: ['/merch/fw/still-here-04.webp', '/merch/fw/still-here-05.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/still-here',
     badge: 'Mental Health',
     badgeColor: '#4c1d95',
     category: 'shirt',
@@ -840,6 +858,8 @@ export const MERCH: MerchItem[] = [
     price: 29,
     photo: '/merch/fw/model-city-dark-01.webp',
     photoBack: '/merch/fw/model-city-dark-02.webp',
+    gallery: ['/merch/fw/model-city-dark-03.webp', '/merch/fw/model-city-dark-04.webp', '/merch/fw/model-city-dark-05.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/the-model-city-anniston-alabama',
     category: 'shirt',
     sizes: ['S', 'M', 'L', 'XL', '2XL'],
     available: true,
@@ -853,6 +873,8 @@ export const MERCH: MerchItem[] = [
     price: 29,
     photo: '/merch/fw/model-city-light-01.webp',
     photoBack: '/merch/fw/model-city-light-02.webp',
+    gallery: ['/merch/fw/model-city-light-03.webp', '/merch/fw/model-city-light-04.webp', '/merch/fw/model-city-light-05.webp', '/merch/fw/model-city-light-06.webp'],
+    fwUrl: 'https://matt-headley-shop.fourthwall.com/products/the-model-city-anniston-alabama-light-version',
     category: 'shirt',
     sizes: ['S', 'M', 'L', 'XL', '2XL'],
     available: true,
