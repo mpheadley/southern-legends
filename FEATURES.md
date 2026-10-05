@@ -4,6 +4,12 @@
 
 ---
 
+## Merch DAM API (2026-10-05)
+
+- **`/api/merch-dam`** — returns DAM-shaped manifest (groups + assets) from the full `MERCH` array. Groups: On Fourthwall, Available, then by category. Consumed by Gather Works `/dam-merch` route to render the canonical merch image browser. `fw: true` flag on FW-photo assets; `printFile` flag on print-graphic assets.
+
+---
+
 ## Ad Network on SL + Aisle Campaign (2026-10-05)
 
 - **One ad router** — `src/lib/cta-router.ts` `pickAd`/`snapshotAd`: paid advertiser → featured campaign → topic-matched house ad → Support SL. SENSITIVE pages (grief, obituary, illness…) only ever get the soft Support ad; arts/theater pages skip random venture pitches but do run the featured campaign.
