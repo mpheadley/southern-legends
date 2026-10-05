@@ -1269,12 +1269,12 @@ export function getMerchForOutdoors(limit = 6): MerchItem[] {
 
 // Merch product lookups for profile/essay crosslinks — all internal routes
 export const FW_PRODUCTS = {
-  ICM: { url: '/merch', name: 'I Contain Multitudes', image: '/merch/i-contain-multitudes.webp' },
-  SH:  { url: '/merch', name: 'Still Here', image: '/merch/still-here.webp' },
-  BP:  { url: '/merch', name: 'Bipolar & Proud', image: '/merch/bipolar-proud.webp' },
-  CLT: { url: '/buy/clt-shirt', name: "Ladiga's Land", image: '/merch/clt-shirt-mockup.webp' },
-  MC:  { url: '/buy/model-city-shirt', name: 'The Model City', image: '/merch/model-city-mockup-cream.webp' },
-  DD:  { url: '/merch/freedom-riders', name: 'Freedom Riders — Anniston, 1961', image: '/merch/freedom-riders/shirt-mockup-dark.webp' },
+  ICM: { url: '/merch/shirts', name: 'I Contain Multitudes', image: '/merch/fw/i-contain-multitudes-01.webp' },
+  SH:  { url: '/merch/shirts', name: 'Still Here', image: '/merch/fw/still-here-01.webp' },
+  BP:  { url: '/merch/shirts', name: 'Bipolar & Proud', image: '/merch/fw/bipolar-proud-01.webp' },
+  CLT: { url: '/merch/shirts', name: "Ladiga's Land", image: '/merch/fw/chief-ladiga-trail-01.webp' },
+  MC:  { url: '/merch/shirts', name: 'The Model City', image: '/merch/fw/model-city-dark-01.webp' },
+  DD:  { url: '/merch/freedom-riders', name: 'Freedom Riders — Anniston, 1961', image: '/merch/fw/dave-dennis-freedom-rider-01.webp' },
 } as const
 
 type FWProduct = (typeof FW_PRODUCTS)[keyof typeof FW_PRODUCTS]

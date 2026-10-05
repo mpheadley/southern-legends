@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MERCH } from '@/lib/merch'
 import ShirtMockup from '@/components/ShirtMockup'
 
-const DROP = MERCH.filter(m => ['mh-neuro-spicy', 'mh-i-contain-multitudes', 'mh-bipolar-proud'].includes(m.id))
+const DROP = MERCH.filter(m => ['neuro-spicy-nutrition-shirt', 'i-contain-multitudes', 'bipolar-proud'].includes(m.id))
 
 export default function LivePage() {
   const [hovered, setHovered] = useState<string | null>(null)
