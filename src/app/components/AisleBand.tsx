@@ -4,13 +4,13 @@
 // price, register link and QR all come from the Turso snapshot, so it switches itself.
 // Brand rules: Aisle arch on every Aisle graphic; a partner lockup is exactly half its height.
 import type { VentureCTA } from "@/lib/cta-router";
-import { AISLE_SHOW_LOOK, showDayLabel } from "@/lib/ad-inventory";
+import { AISLE_SHOW_LOOK, showDayLabel, adLabel } from "@/lib/ad-inventory";
 import { getActiveAisleShow } from "@/lib/aisle-shows-live";
 import { AisleGoLink, AisleQR, ImpressionOnView } from "@/app/components/AisleGo";
 
 const ARCH_H = 64;
 
-export default async function AisleBand({ label = "From Southern Legends" }: { ad?: VentureCTA; label?: string }) {
+export default async function AisleBand({ label = adLabel("aisle") }: { ad?: VentureCTA; label?: string }) {
   const show = await getActiveAisleShow();
   if (!show) return null;
   const look = AISLE_SHOW_LOOK[show.slug] ?? {};

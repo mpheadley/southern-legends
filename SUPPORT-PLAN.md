@@ -5,7 +5,7 @@
 
 ## What It Is
 
-A `/support` page + quiet links in three places. One-time donations via Stripe. No subscription, no paywall, no membership. Free site, always will be — support is voluntary.
+A `/support` page + quiet links in three places. One-time donations via Stripe. Support is voluntary: no one has to pay to read SL. Profiles and community stories are always free; essays need only a free email signup after 3 a month. The one planned exception is a paid tier for Matt's deepest personal essays (see `STRATEGY.md` → Access policy, confirmed 2026-10-05).
 
 ---
 

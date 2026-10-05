@@ -184,3 +184,27 @@ export function aisleLink(base: string, content: string, campaign = 'aisle-oct18
   if (SL_AISLE_REF) u.searchParams.set('ref', SL_AISLE_REF)
   return u.toString()
 }
+
+
+/**
+ * The small label above every ad — one home, so each placement names the right venture.
+ * Our own ventures: "<Venture name> · Ad". Sold ads: "Advertisement · <advertiser>".
+ * New venture? Add its display name here; every placement picks it up.
+ */
+export const VENTURE_DISPLAY: Record<string, string> = {
+  aisle: 'The Aisle Bridal Shows',
+  gatherstudio: 'Gather Studio',
+  bsr: 'Bridal Show Reviews',
+  sermoncoach: 'SermonCoach',
+  tend: 'Tend',
+  ecclesia: 'Ecclesia',
+  gatherregistry: 'Gather Registry',
+  support: 'Southern Legends',
+  sl: 'Southern Legends',
+}
+
+export function adLabel(key: string, opts: { paid?: boolean; advertiser?: string } = {}): string {
+  if (opts.paid) return opts.advertiser ? `Advertisement · ${opts.advertiser}` : 'Advertisement'
+  const name = VENTURE_DISPLAY[key]
+  return name ? `${name} · Ad` : 'Advertisement'
+}

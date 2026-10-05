@@ -97,7 +97,12 @@ Every business in that ecosystem already knows Matt Headley built it. When they 
 - Portfolio value — a working subscription + member gating feature is a real Headley Web showcase (auth, Stripe, email delivery)
 - 0% platform cut vs. Substack's 10% on paid
 
-**Free tier:** Personal essays, open to anyone. Readers from Calhoun Journal or SL profiles can read without a paywall.
+**Access policy (confirmed by Matt 2026-10-05):**
+- **Profiles and community stories: always free.** Never paid, never gated behind payment.
+- **Essays: soft email wall.** 3 free essays per reader per calendar month; after that, a free email signup unlocks every essay permanently. No payment required. Built: `src/app/components/ArticleGate.tsx`.
+- **Paid tier: yes, kept — for Matt's deepest personal essays only** (the gold star piece, the UAB ward, the deeper arc). Everything else stays free. Trigger unchanged: 3–4 essays published and the writing habit is real.
+
+**Free tier:** Personal essays, open to anyone, with a free email signup after 3 a month. Readers from Calhoun Journal or SL profiles can read without paying.
 
 **Paid tier:** The harder material — gold star (when finished), UAB ward, the deeper arc. Turn this on after 3–4 pieces are published and you know you'll keep writing.
 

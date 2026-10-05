@@ -3,14 +3,15 @@
 // honest label. Layout = a wide band: picture left · message middle · button right.
 //   • testimonial set in ad-brand.ts → TestimonialBand (face + verbatim quote + ask)
 //   • otherwise → venture band (its own creative + headline + one button)
-// Label: sold advertiser → "Advertisement"; our own ventures → "From Southern Legends".
+// Label: adLabel() in lib/ad-inventory — our ventures → "<Venture> · Ad"; sold ads → "Advertisement · <advertiser>".
 import type { VentureCTA } from "@/lib/cta-router";
 import { brandFor } from "@/lib/ad-brand";
+import { adLabel } from "@/lib/ad-inventory";
 import TestimonialBand from "@/app/components/TestimonialBand";
 
 export default function HouseAdUnit({ ad, page }: { ad: VentureCTA; page?: string }) {
   const b = brandFor(ad.key);
-  const label = ad.paid ? "Advertisement" : "From Southern Legends";
+  const label = adLabel(ad.key, { paid: ad.paid, advertiser: ad.eyebrow });
 
   // The Aisle band renders site-wide from the layout (SiteAisleBand) — never twice on a page.
   if (ad.key === "aisle") return null;

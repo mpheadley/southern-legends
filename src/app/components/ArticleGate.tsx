@@ -38,6 +38,7 @@ export default function ArticleGate({ slug }: { slug: string }) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [hideNote, setHideNote] = useState(false);
 
   useEffect(() => {
     if (isUnlocked()) {
@@ -53,7 +54,8 @@ export default function ArticleGate({ slug }: { slug: string }) {
     }
 
     setCount(reads.length);
-    if (reads.length >= FREE_LIMIT) setGated(true);
+    // Wall only AFTER the free stories are used (was ">=", which walled the 3rd "free" story).
+    if (reads.length > FREE_LIMIT) setGated(true);
     setReady(true);
   }, [slug]);
 
@@ -88,22 +90,15 @@ export default function ArticleGate({ slug }: { slug: string }) {
 
   if (!ready || unlocked) return null;
 
-  // Running heads-up meter — shown before the reader hits the wall.
+  // Heads-up: nothing on the first free stories (no clutter at the top of the article).
+  // On the LAST free story only, a small dismissible note in the corner.
   if (!gated) {
-    const left = FREE_LIMIT - count;
+    if (count !== FREE_LIMIT || hideNote) return null;
     return (
-      <div className="not-prose mb-8 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 rounded border border-ll-border bg-white px-4 py-3">
-        <p className="text-sm text-ll-text">
-          Free story <strong className="text-ll-dark">{count}</strong> of {FREE_LIMIT} this month
-          {" · "}
-          <strong className="text-ll-dark">{left}</strong> left
-        </p>
-        <a
-          href="/subscribe"
-          className="whitespace-nowrap text-sm font-semibold text-ll-primary hover:underline"
-        >
-          Subscribe free for unlimited →
-        </a>
+      <div className="not-prose fixed z-30 left-4 right-4 sm:left-auto sm:right-6 sm:w-80 bottom-[68px] lg:bottom-6 rounded-lg border border-ll-border bg-white shadow-lg px-4 py-3">
+        <button type="button" aria-label="Close" onClick={() => setHideNote(true)} className="absolute top-1 right-2 text-ll-text-light text-lg leading-none">×</button>
+        <p className="text-sm text-ll-dark font-semibold pr-4">This is your last free story this month.</p>
+        <a href="/subscribe" className="text-sm font-semibold text-ll-primary hover:underline">Get every story free by email →</a>
       </div>
     );
   }
@@ -121,18 +116,21 @@ export default function ArticleGate({ slug }: { slug: string }) {
       {/* Gate card */}
       <div className="absolute top-32 left-0 right-0 bottom-0 bg-ll-light flex items-start justify-center px-6 pt-8">
         <div className="max-w-md w-full text-center">
+          <img src="/ad-assets/sl-wordmark-crimson.png" alt="Southern Legends" className="mx-auto mb-4" style={{ height: 28, width: "auto" }} />
+          <img src="/images/matt-headshot-square.webp" alt="Matt Headley" className="mx-auto mb-3 rounded-full object-cover" style={{ width: 84, height: 84, border: "3px solid #9A3412" }} />
           <p className="text-xs font-semibold tracking-widest uppercase text-ll-text-light mb-3">
-            {FREE_LIMIT} of {FREE_LIMIT} free stories this month
+            You&apos;ve read your {FREE_LIMIT} free stories this month
           </p>
           <h2
             className="text-2xl md:text-3xl font-bold text-ll-dark mb-3"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Keep reading — free.
+            Keep reading — it&apos;s free.
           </h2>
           <p className="text-base text-ll-text mb-6">
-            Southern Legends is free with your email. No payment, no paywall.
-            Just stories from people who stayed.
+            Add your email and every Southern Legends story opens up, with new ones sent to you as they publish. No payment, ever.
+            <br />
+            <span className="text-sm text-ll-text-light">— Matt Headley</span>
           </p>
 
           {status === "success" ? (
@@ -163,7 +161,7 @@ export default function ArticleGate({ slug }: { slug: string }) {
                 disabled={status === "loading"}
                 className="px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark transition-colors disabled:opacity-60"
               >
-                {status === "loading" ? "..." : "Unlock all stories — free"}
+                {status === "loading" ? "..." : "Send me the stories — free"}
               </button>
             </form>
           )}

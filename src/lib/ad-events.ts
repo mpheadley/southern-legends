@@ -9,6 +9,8 @@ const PLACEMENTS = new Set(["top-strip", "band", "band-vip", "margin", "bottom-b
 
 export async function logAdEvent(e: AdEvent): Promise<boolean> {
   if (!PLACEMENTS.has(e.placement) || !["impression", "click", "hover"].includes(e.event)) return false;
+  // Only the live site counts. Local and preview views would pollute the real numbers.
+  if (process.env.VERCEL_ENV !== "production") return false;
   const url = process.env.AISLE_TURSO_URL;
   const token = process.env.AISLE_TURSO_TOKEN;
   if (!url || !token) return false;

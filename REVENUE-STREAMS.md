@@ -34,7 +34,7 @@ Included here only for completeness. See `STRATEGY.md:83-101` and `RESEND-PLAN.m
 
 - **Trigger:** 3–4 essays published + writing habit proven.
 - **Mechanism:** Stripe + Resend, SL-native, 0% platform cut.
-- **Not a scaffold item** — already decided.
+- **Not a scaffold item** — already decided. Scope confirmed 2026-10-05: paid tier covers only Matt's deepest personal essays; profiles and community stories stay free, essays need only a free email signup.
 
 ---
 

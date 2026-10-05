@@ -5,7 +5,7 @@
 // scrolled a quarter of the way down, and never on no-promo pages.
 import { AisleGoLink, AisleGate, AfterQuarter, Dismissible, ImpressionOnView } from "@/app/components/AisleGo";
 import { getActiveAisleShow } from "@/lib/aisle-shows-live";
-import { showDayLabel } from "@/lib/ad-inventory";
+import { showDayLabel, adLabel } from "@/lib/ad-inventory";
 
 const ARCH_H = 64;
 
@@ -18,7 +18,7 @@ export default async function MarginAisle() {
         <aside className="margin-aisle" aria-label="The Aisle">
          <Dismissible>
           <style>{`@keyframes aisleDrift{from{transform:scale(1)}to{transform:scale(1.06)}}.margin-aisle .aisle-photo{animation:aisleDrift 12s ease-in-out infinite alternate}.margin-aisle .aisle-cta{transition:transform .2s ease,filter .2s ease}.margin-aisle .aisle-cta:hover{transform:translateY(-1px);filter:brightness(1.06)}@media (prefers-reduced-motion:reduce){.margin-aisle .aisle-photo{animation:none}.margin-aisle .aisle-cta{transition:none}}.margin-aisle{display:none}@media(min-width:1440px){.margin-aisle{display:block;position:fixed;right:20px;top:120px;width:300px;z-index:30}}`}</style>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: "0 0 6px" }}>From Southern Legends</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: "0 0 6px" }}>{adLabel("aisle")}</p>
           <AisleGoLink spot="margin" className="block no-underline rounded-xl overflow-hidden relative" style={{ width: 300, height: 250, color: "#fff", background: "#1e2a4a", boxShadow: "0 8px 24px rgba(0,0,0,.2)", borderTop: "4px solid #C9A227" }}>
             <ImpressionOnView placement="margin" showSlug={show.slug} />
             <img className="aisle-photo" src={show.photo ?? "/ad-assets/aisle-couple.webp"} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "62% 30%" }} />
