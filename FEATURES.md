@@ -1,6 +1,17 @@
 # Southern Legends — Shipped Features
 
-*Last updated: 2026-08-03. Source of truth for what's built.*
+*Last updated: 2026-10-05. Source of truth for what's built.*
+
+---
+
+## Ad Network on SL + Aisle Campaign (2026-10-05)
+
+- **One ad router** — `src/lib/cta-router.ts` `pickAd`/`snapshotAd`: paid advertiser → featured campaign → topic-matched house ad → Support SL. SENSITIVE pages (grief, obituary, illness…) only ever get the soft Support ad; arts/theater pages skip random venture pitches but do run the featured campaign.
+- **Campaign chooser** — `FEATURED_CAMPAIGN` in `src/lib/ad-inventory.ts` (key + `until` date, auto-ends). Currently The Aisle through 2026-10-18. Selling an ad = add an entry to `PAID_ADS` (no code change).
+- **Aisle ads** — `AisleStrip` (slim, top of every profile/essay) + `AisleBand` (full, end of article; church-banner photo, Aisle arch + AMAG at ½ height, QR for laptop + phone). Both link straight to the register page via `aisleLink()`: `utm_source=southernlegends`, `utm_content=<page>:<spot>`, `ref=SLREFERS` (expo_partners "Southern Legends", so registrations are credited).
+- **Testimonial band** — `TestimonialBand`: consented quote + face + one action. Support ad = inline free email signup (`/api/subscribe`, source `ad-band-support`). Consent source: `data/testimonials.json`.
+- **Honest labels** — "From Southern Legends" for our own ventures, "Advertisement" only for paid (`VentureCTA.paid`).
+- **Comments** — honeypot + 3s minimum-time check on `/api/comments/submit`.
 
 ---
 

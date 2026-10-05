@@ -22,6 +22,10 @@ interface ParallaxHeroProps {
   displayTitle?: boolean;
   slug?: string;
   cardFont?: "serif" | "serif-bold" | "serif-italic" | "serif-caps" | "condensed";
+  /** Photo attribution (e.g. "Jane Doe, CC BY-SA 2.0, via Wikimedia Commons") —
+   * rendered as a small corner credit on the hero image. Was a typed frontmatter
+   * field (ProfileFrontmatter.photoCredit) that nothing ever rendered — fixed 2026-10-01. */
+  photoCredit?: string;
 }
 
 export default function ParallaxHero({
@@ -37,6 +41,7 @@ export default function ParallaxHero({
   displayTitle = false,
   slug,
   cardFont,
+  photoCredit,
 }: ParallaxHeroProps) {
   const heroFontStyle: React.CSSProperties["fontStyle"] = cardFont === "serif-italic" ? "italic" : "normal";
   const heroFontWeight = cardFont === "serif-bold" ? 700 : undefined;
@@ -82,7 +87,10 @@ export default function ParallaxHero({
         className="ph-hero st-hero"
         style={slug ? ({ viewTransitionName: `profile-hero-${slug}` } as React.CSSProperties) : undefined}
       >
-        <div className="ph-bg st-hero-bg" style={{ top: 0, height: "120%" }}>
+        {/* The bg moves up by 20% of its own height while the hero scrolls out. At 120%
+            tall it bottomed out at 96% of the hero and left a dark gap. It needs
+            height × (1 − 0.20) ≥ 100%, so 135% keeps the image covering with margin. */}
+        <div className="ph-bg st-hero-bg" style={{ top: 0, height: "135%" }}>
           <Image
             src={heroImage}
             alt={heroAlt}
@@ -98,6 +106,18 @@ export default function ParallaxHero({
             style={{ position: "absolute", inset: 0, zIndex: 1 }}
           />
         </div>
+
+        {photoCredit && (
+          <p
+              style={{
+                position: "absolute", bottom: "0.5rem", right: "0.75rem", zIndex: 3,
+                margin: 0, fontSize: "1rem", fontWeight: 500, color: "rgba(255,255,255,0.92)",
+                textShadow: "0 1px 3px rgba(0,0,0,0.8)",
+              }}
+            >
+            Photo: {photoCredit}
+            </p>
+          )}
         {heroTextBottom ? (
           <div
             className="ph-bottom-bar"

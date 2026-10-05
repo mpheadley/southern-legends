@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 120" width="580" height="120">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&amp;display=swap');
+      .heading { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; }
+    </style>
+  </defs>
+
+  <!-- Icon mark -->
+  <rect x="0" y="10" width="96" height="96" rx="8" fill="#7C2D12"/>
+  <text x="48" y="76" text-anchor="middle" class="heading"
+    font-weight="700" font-size="48" fill="#FAFAF7" letter-spacing="-2">SL</text>
+
+  <!-- Divider -->
+  <line x1="116" y1="14" x2="116" y2="102" stroke="#7C2D12" stroke-width="1.5"/>
+
+  <!-- Wordmark text block -->
+  <text x="136" y="52" class="heading"
+    font-weight="700" font-size="32" fill="#292524" letter-spacing="2">SOUTHERN LEGENDS</text>
+
+  <!-- Rule under wordmark -->
+  <line x1="136" y1="62" x2="572" y2="62" stroke="#CA8A04" stroke-width="1.5"/>
+
+  <!-- Tagline -->
+  <text x="136" y="82" class="heading"
+    font-weight="400" font-size="13" fill="#7C2D12" letter-spacing="2">NORTHEAST ALABAMA · southernlegends.blog</text>
+</svg>

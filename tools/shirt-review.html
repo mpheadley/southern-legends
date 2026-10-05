@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SL Shirt Design Review</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0e0c0b; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #f0ede8; padding: 40px 24px 80px; max-width: 1500px; margin: 0 auto; }
+h1 { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
+.meta { font-size: 11px; color: rgba(255,255,255,0.3); margin-bottom: 24px; }
+.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid rgba(202,138,4,0.2); }
+.controls button { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #f0ede8; font-size: 11px; font-weight: 700; padding: 7px 14px; border-radius: 8px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; transition: all 0.15s; }
+.controls button:hover { background: rgba(255,255,255,0.12); }
+.controls button.active { background: rgba(202,138,4,0.2); border-color: rgba(202,138,4,0.5); color: #ca8a04; }
+.export-btn { background: rgba(74,222,128,0.12) !important; border-color: rgba(74,222,128,0.3) !important; color: #4ade80 !important; margin-left: auto; }
+.section { margin-bottom: 52px; }
+.section-title { font-size: 15px; font-weight: 800; color: #f0ede8; margin-bottom: 4px; }
+.section-sub { font-size: 11px; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+.section-rule { height: 1px; background: linear-gradient(to right, rgba(202,138,4,0.3), transparent); margin-bottom: 18px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+.card { background: #1c1917; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; transition: border-color 0.15s; }
+.card.decision-good { border-color: rgba(74,222,128,0.5); }
+.card.decision-redo { border-color: rgba(249,115,22,0.5); }
+.card.decision-delete { border-color: rgba(239,68,68,0.4); opacity: 0.6; }
+.img-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.img-panel { position: relative; aspect-ratio: 1; background: #111; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.img-panel:first-child { border-right: 1px solid rgba(255,255,255,0.05); }
+.panel-label { position: absolute; top: 5px; left: 5px; font-size: 7px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 5px; border-radius: 6px; z-index: 10; }
+.pl-design { background: rgba(107,114,128,0.3); color: #9ca3af; }
+.pl-composite { background: rgba(74,222,128,0.15); color: #4ade80; }
+.flat-img { width: 82%; height: 82%; object-fit: contain; display: block; }
+/* CSS shirt composite */
+.shirt-composite { position: relative; width: 100%; height: 100%; }
+.shirt-blank { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.shirt-design-wrap { position: absolute; left: 50%; top: 22%; transform: translateX(-50%); width: 42%; aspect-ratio: 1; }
+.shirt-design-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.card-body { padding: 11px 13px 12px; }
+.card-name { font-size: 13px; font-weight: 700; color: #f0ede8; margin-bottom: 2px; line-height: 1.3; }
+.card-sub { font-size: 10px; color: rgba(255,255,255,0.3); margin-bottom: 8px; }
+.card-actions { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; }
+.action-btn { font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 6px; border: 1px solid; cursor: pointer; letter-spacing: 0.05em; transition: all 0.12s; background: transparent; text-transform: uppercase; }
+.btn-good { color: #4ade80; border-color: rgba(74,222,128,0.3); }
+.btn-good:hover, .btn-good.active { background: rgba(74,222,128,0.15); }
+.btn-redo { color: #fb923c; border-color: rgba(249,115,22,0.3); }
+.btn-redo:hover, .btn-redo.active { background: rgba(249,115,22,0.15); }
+.btn-delete { color: #f87171; border-color: rgba(239,68,68,0.3); }
+.btn-delete:hover, .btn-delete.active { background: rgba(239,68,68,0.15); }
+.note-input { flex: 1; min-width: 120px; font-size: 9px; padding: 3px 7px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: #f0ede8; outline: none; }
+.note-input::placeholder { color: rgba(255,255,255,0.2); }
+.badge { display: inline-block; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.hidden { display: none !important; }
+.summary-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1c1917; border-top: 1px solid rgba(202,138,4,0.2); padding: 10px 24px; display: flex; gap: 20px; align-items: center; font-size: 11px; z-index: 100; }
+.sum-item { display: flex; align-items: center; gap: 5px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<h1>Southern Legends — Shirt Design Review</h1>
+<p class="meta" id="meta-line">All designs · Exported: <span id="export-date"></span></p>
+
+<div class="controls">
+  <button class="active" onclick="filter('all')">All</button>
+  <button onclick="filter('available')">Available Now</button>
+  <button onclick="filter('coming-soon')">Coming Soon</button>
+  <button onclick="filter('undecided')">Undecided</button>
+  <button onclick="filter('good')">✓ Good</button>
+  <button onclick="filter('redo')">⟳ Needs Redo</button>
+  <button onclick="filter('delete')">✗ Delete</button>
+  <button class="export-btn" onclick="exportJSON()">Export Decisions JSON</button>
+</div>
+
+<div id="sections"></div>
+
+<div class="summary-bar">
+  <span style="font-weight:800; color:#f0ede8; margin-right:4px;">Decisions:</span>
+  <div class="sum-item"><div class="dot" style="background:#4ade80"></div><span id="count-good">0 good</span></div>
+  <div class="sum-item"><div class="dot" style="background:#fb923c"></div><span id="count-redo">0 redo</span></div>
+  <div class="sum-item"><div class="dot" style="background:#f87171"></div><span id="count-delete">0 delete</span></div>
+  <div class="sum-item"><div class="dot" style="background:#6b7280"></div><span id="count-undecided">0 undecided</span></div>
+  <span style="margin-left:auto; color:rgba(255,255,255,0.25); font-size:10px;">Saved locally · click Export to save JSON</span>
+</div>
+
+<script>
+const BASE = 'file:///Volumes/Samsung_T5/webdev/southern-legends/public';
+const BLANK = (color) => {
+  const map = { black:'blank-black', navy:'blank-navy', forest:'blank-forest', olive:'blank-olive', cream:'blank-cream' };
+  return `${BASE}/merch/blanks/${map[color]||'blank-cream'}.webp`;
+};
+
+function blankForBg(bg) {
+  if (!bg) return 'cream';
+  const h = bg.toLowerCase().replace('#','');
+  const v = parseInt(h,16);
+  if (v < 0x222222 || h==='1a1a1a' || h==='0d0d0d') return 'black';
+  if (h==='1a1a2e'||h==='1e3a5f'||h==='1b2a4a') return 'navy';
+  if (h==='4a5e2a'||h==='556b2f'||h==='4a5741') return 'olive';
+  if (h==='1c2e1a'||h==='14401a') return 'forest';
+  if (h==='c8102e') return 'black'; // red → black blank
+  return 'cream';
+}
+
+function isDark(bg) {
+  if (!bg) return false;
+  const h = bg.replace('#','');
+  if (h.length < 6) return false;
+  const r=parseInt(h.slice(0,2),16), g=parseInt(h.slice(2,4),16), b=parseInt(h.slice(4,6),16);
+  return (r*299+g*587+b*114)/1000 < 128;
+}
+
+// All shirt designs
+const SECTIONS = [
+  {
+    title: 'Woodstock 5K Line',
+    sub: 'Woodstock Avenue · Anniston, AL · Aug 2026 · DTF queue',
+    designs: [
+      { id: 'woodstock-oval', name: 'Woodstock Avenue Oval', file: '/print-files/WOODSTOCK-00-woodstock-avenue-oval-CREAM.png', bg: '#f5f0e8', badge: 'Event', available: true },
+      { id: 'clt-hike-explore', name: 'CLT Hike & Explore', file: '/print-files/WOODSTOCK-02-clt-hike-explore-CREAM.png', bg: '#f5f0e8', badge: 'Woodstock', available: true },
+      { id: 'cheaha-tower', name: 'Cheaha Tower', file: '/print-files/WOODSTOCK-03-cheaha-tower-BLACK.png', bg: '#f5f0e8', badge: 'Woodstock', available: true },
+      { id: 'coldwater-mountain', name: 'Coldwater Mountain', file: '/print-files/WOODSTOCK-05-coldwater-mountain-FOREST-GREEN.png', bg: '#1c2e1a', badge: 'Woodstock', available: false },
+      { id: 'pinhoti-trail', name: 'Pinhoti Trail', file: '/print-files/WOODSTOCK-06-pinhoti-trail-BLACK.png', bg: '#f5f0e8', badge: 'Woodstock', available: false },
+      { id: 'lickskillet-circle', name: 'Lickskillet Circle', file: '/print-files/WOODSTOCK-07-lickskillet-circle-OLIVE.png', bg: '#4a5e2a', badge: 'Woodstock', available: true },
+      { id: 'fort-mcclellan', name: 'Fort McClellan', file: '/print-files/WOODSTOCK-08-fort-mcclellan-BLACK.webp', bg: '#4a5741', badge: 'Woodstock', available: true },
+      { id: 'blossom-decay', name: 'Blossom & Decay', file: '/print-files/WOODSTOCK-09-blossom-decay-MOCHA.png', bg: '#f5f0e8', badge: 'Woodstock', available: true },
+      { id: 'pv-raiders-xc', name: 'PV Raiders XC (front)', file: '/print-files/WOODSTOCK-10-pv-raiders-xc-BLACK.png', bg: '#C8102E', badge: 'Fundraiser', available: true },
+      { id: 'pv-raiders-xc-back', name: 'PV Raiders XC (back)', file: '/print-files/WOODSTOCK-10-pv-raiders-xc-BACK-BLACK.webp', bg: '#f5f0e8', badge: 'Fundraiser', available: true },
+      { id: 'cheaha-skyway', name: 'Cheaha — Building the Skyway', file: '/print-files/WOODSTOCK-11-cheaha-skyway-BLACK.png', bg: '#1a1a1a', badge: 'SL Woodcut', available: true },
+      { id: 'blossom-decay-roses', name: 'Blossom & Decay — Roses', file: '/print-files/WOODSTOCK-12-blossom-decay-roses-MOCHA.png', bg: '#f5f0e8', badge: 'Woodstock', available: true },
+    ]
+  },
+  {
+    title: 'Freedom Riders Memorial',
+    sub: 'Anniston, Alabama · 1961 · 25–100% → West Anniston Foundation',
+    designs: [
+      { id: 'freedom-riders-dark', name: 'Freedom Riders — Dark (navy)', file: '/print-files/FREEDOM-RIDERS-01-burning-bus-WHITE-trans.webp', bg: '#1a1a2e', badge: 'Memorial', available: true },
+      { id: 'david-dennis', name: 'David Dennis — Freedom Rider', file: '/print-files/FREEDOM-RIDERS-02-dennis-portrait-BLACK.png', bg: '#f5f0e8', badge: 'SL Editorial', available: true },
+    ]
+  },
+  {
+    title: 'Southern Legends Originals',
+    sub: 'Core SL line · Anniston, places, stories',
+    designs: [
+      { id: 'model-city', name: 'The Model City (black shirt)', file: '/print-files/SL-04-model-city-anniston-WHITE.webp', bg: '#1a1a1a', badge: 'Local Pride', available: true },
+      { id: 'model-city-cream', name: 'The Model City (cream shirt)', file: '/merch/model-city-mockup-cream.webp', bg: '', badge: 'Local Pride', available: true },
+      { id: 'noccalula-falls', name: 'Noccalula Falls', file: '/print-files/SL-07-noccalula-falls-BLACK.png', bg: '#f5f0e8', badge: 'Place', available: false },
+      { id: 'noccalula-water-thunders', name: "Noccalula — 'Water Thunders'", file: '/print-files/SL-08-noccalula-water-thunders-BLACK.png', bg: '#f5f0e8', badge: 'Place', available: false },
+      { id: 'noccalula-go-flow', name: 'Noccalula — Go With the Flow', file: '/print-files/SL-09-noccalula-go-with-the-flow-CREAM.png', bg: '#f5f0e8', badge: 'Place', available: false },
+    ]
+  },
+  {
+    title: 'Mental Health Line',
+    sub: 'I Contain Multitudes · Bipolar & Proud · Still Here · Neuro-Spicy',
+    designs: [
+      { id: 'i-contain-multitudes', name: 'I Contain Multitudes', file: '/print-files/MENTAL-HEALTH-01-i-contain-multitudes.webp', bg: '#f5f0e8', badge: 'Mental Health', available: true },
+      { id: 'neuro-spicy', name: 'Neuro-Spicy Nutrition Label', file: '/print-files/NEUROSPICY-01-nutrition-label-CREAM.png', bg: '#f5f0e8', badge: 'Mental Health', available: true },
+      { id: 'bipolar-proud', name: 'Bipolar & Proud', file: '/print-files/MENTAL-HEALTH-02-bipolar-proud.webp', bg: '#1a1a1a', badge: 'Mental Health', available: true },
+      { id: 'still-here', name: 'Still Here', file: '/print-files/MENTAL-HEALTH-03-still-here.webp', bg: '#f5f0e8', badge: 'Mental Health', available: true },
+    ]
+  },
+  {
+    title: 'Chief Ladiga Trail',
+    sub: "Ladiga's Land · CLT trail designs",
+    designs: [
+      { id: 'clt-badge', name: "Ladiga's Land (front badge)", file: '/merch/clt-shirt-mockup.webp', bg: '', badge: 'CLT', available: true },
+      { id: 'clt-hike-explore-photo', name: 'CLT Hike & Explore (photo)', file: '/merch/shirt-renders/store/clt-hike-explore-trans-shirt.webp', bg: '', badge: 'CLT', available: true },
+      { id: 'clt-trail-map', name: 'CLT Trail Map', file: '/merch/clt-trail-map.png', bg: '#f5f0e8', badge: 'CLT', available: true },
+    ]
+  },
+  {
+    title: 'Ecclesia Community',
+    sub: 'Faith formation · Ancient paths · Coin series',
+    designs: [
+      { id: 'ec-stone-paths', name: 'Stone — Ancient Paths', file: '/print-files/ECCLESIA-01-stone-ancient-paths-BLACK.png', bg: '#1a1a1a', badge: 'Ecclesia', available: true },
+      { id: 'ec-cheshire', name: "We're All Mad Here (Cheshire)", file: '/print-files/ECCLESIA-02-cheshire-cat-BLACK.png', bg: '#1a1a1a', badge: 'Ecclesia', available: true },
+      { id: 'ec-coin-celtic', name: 'Coin — Celtic', file: '/print-files/ECCLESIA-03-coin-celtic-BLACK.png', bg: '#1a1a1a', badge: 'Ecclesia', available: true },
+      { id: 'ec-coin-8bit', name: 'Coin — 8-bit', file: '/print-files/ECCLESIA-04-coin-8bit-BLACK.png', bg: '#1a1a1a', badge: 'Ecclesia', available: true },
+      { id: 'ec-pilgrims', name: 'Pilgrims (Community)', file: '/print-files/ECCLESIA-05-pilgrims-BLACK-trans.webp', bg: '#1a1a1a', badge: 'Ecclesia', available: true },
+      { id: 'ec-chewed-gum', name: 'You Were Not Chewed Gum', file: '/print-files/ECCLESIA-06-chewed-gum-BLACK.png', bg: '#1a1a1a', badge: 'Ecclesia Press', available: true },
+      { id: 'ec-he-is-not-here', name: 'He Is Not Here (Easter)', file: '/print-files/ECCLESIA-08-he-is-not-here-BLACK.png', bg: '#1a1a1a', badge: 'Ecclesia', available: true },
+    ]
+  },
+  {
+    title: 'Merch-Only / Other Designs',
+    sub: 'Stand-alone designs not in print-files',
+    designs: [
+      { id: 'pv-raiders-photo', name: 'PV Raiders XC (photo mock)', file: '/merch/pv-raiders-xc.webp', bg: '#C8102E', badge: 'Fundraiser', available: true },
+      { id: 'blossom-decay-cream', name: 'Blossom & Decay — Cream', file: '/merch/sl-blossom-decay-cream-fixed.webp', bg: '', badge: 'SL', available: true },
+    ]
+  },
+];
+
+// State
+const decisions = {};
+
+function makeComposite(file, bg) {
+  const blankColor = blankForBg(bg);
+  const dark = isDark(bg);
+  const blendMode = dark ? 'screen' : 'multiply';
+  return `
+    <div class="shirt-composite">
+      <img class="shirt-blank" src="${BLANK(blankColor)}" alt="" onerror="this.style.display='none'">
+      <div class="shirt-design-wrap" style="mix-blend-mode:${blendMode}">
+        <img src="${BASE}${file}" alt="" onerror="this.parentElement.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;height:100%;font-size:10px;color:rgba(255,255,255,0.2)\\'>No file</div>'">
+      </div>
+    </div>
+  `;
+}
+
+function makeFlatDisplay(file) {
+  return `<img class="flat-img" src="${BASE}${file}" alt="" onerror="this.style.opacity=0.2">`;
+}
+
+function makeCard(d) {
+  const hasBg = !!d.bg;
+  const dec = decisions[d.id] || {};
+  const cardClass = dec.decision ? `decision-${dec.decision}` : '';
+  return `
+  <div class="card ${cardClass}" id="card-${d.id}" data-available="${d.available}">
+    <div class="img-row">
+      <div class="img-panel" style="background:${hasBg && isDark(d.bg) ? '#111' : '#f0ede820'}">
+        <span class="panel-label pl-design">Design file</span>
+        ${makeFlatDisplay(d.file)}
+      </div>
+      <div class="img-panel">
+        <span class="panel-label pl-composite">${hasBg ? 'CSS composite' : 'photo only'}</span>
+        ${hasBg ? makeComposite(d.file, d.bg) : `<img class="flat-img" src="${BASE}${d.file}" alt="">`}
+      </div>
+    </div>
+    <div class="card-body">
+      <div>
+        <span class="badge" style="background:rgba(202,138,4,0.1);color:#ca8a04;border:1px solid rgba(202,138,4,0.2)">${d.badge||'SL'}</span>
+        ${d.available ? '<span class="badge" style="background:rgba(74,222,128,0.1);color:#4ade80;border:1px solid rgba(74,222,128,0.2)">Available</span>' : '<span class="badge" style="background:rgba(107,114,128,0.1);color:#9ca3af;border:1px solid rgba(107,114,128,0.18)">Coming Soon</span>'}
+      </div>
+      <div class="card-name">${d.name}</div>
+      <div class="card-sub">${d.file.split('/').pop()}</div>
+      <div class="card-actions">
+        <button class="action-btn btn-good ${dec.decision==='good'?'active':''}" onclick="decide('${d.id}','good')">✓ Good</button>
+        <button class="action-btn btn-redo ${dec.decision==='redo'?'active':''}" onclick="decide('${d.id}','redo')">⟳ Redo</button>
+        <button class="action-btn btn-delete ${dec.decision==='delete'?'active':''}" onclick="decide('${d.id}','delete')">✗ Delete</button>
+        <input class="note-input" placeholder="note..." value="${dec.note||''}" onchange="note('${d.id}', this.value)">
+      </div>
+    </div>
+  </div>`;
+}
+
+function render() {
+  const container = document.getElementById('sections');
+  container.innerHTML = SECTIONS.map(s => `
+    <div class="section">
+      <div class="section-title">${s.title}</div>
+      <div class="section-sub">${s.sub}</div>
+      <div class="section-rule"></div>
+      <div class="grid">${s.designs.map(d => makeCard(d)).join('')}</div>
+    </div>
+  `).join('');
+  updateSummary();
+}
+
+function decide(id, val) {
+  if (!decisions[id]) decisions[id] = {};
+  decisions[id].decision = decisions[id].decision === val ? null : val;
+  // re-render just this card
+  SECTIONS.forEach(s => s.designs.forEach(d => {
+    if (d.id === id) {
+      const el = document.getElementById(`card-${id}`);
+      if (el) el.outerHTML = makeCard(d);
+    }
+  }));
+  updateSummary();
+}
+
+function note(id, val) {
+  if (!decisions[id]) decisions[id] = {};
+  decisions[id].note = val;
+}
+
+function filter(type) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.card').forEach(card => {
+    const id = card.id.replace('card-','');
+    const dec = decisions[id] || {};
+    const avail = card.dataset.available === 'true';
+    let show = true;
+    if (type === 'available') show = avail;
+    if (type === 'coming-soon') show = !avail;
+    if (type === 'good') show = dec.decision === 'good';
+    if (type === 'redo') show = dec.decision === 'redo';
+    if (type === 'delete') show = dec.decision === 'delete';
+    if (type === 'undecided') show = !dec.decision;
+    card.classList.toggle('hidden', !show);
+  });
+}
+
+function updateSummary() {
+  let good=0, redo=0, del=0, und=0;
+  SECTIONS.forEach(s => s.designs.forEach(d => {
+    const dec = decisions[d.id]?.decision;
+    if (dec === 'good') good++;
+    else if (dec === 'redo') redo++;
+    else if (dec === 'delete') del++;
+    else und++;
+  }));
+  document.getElementById('count-good').textContent = `${good} good`;
+  document.getElementById('count-redo').textContent = `${redo} redo`;
+  document.getElementById('count-delete').textContent = `${del} delete`;
+  document.getElementById('count-undecided').textContent = `${und} undecided`;
+}
+
+function exportJSON() {
+  const out = {
+    exported: new Date().toISOString(),
+    decisions: []
+  };
+  SECTIONS.forEach(s => s.designs.forEach(d => {
+    const dec = decisions[d.id];
+    if (dec && (dec.decision || dec.note)) {
+      out.decisions.push({
+        id: d.id,
+        name: d.name,
+        file: d.file,
+        decision: dec.decision || null,
+        note: dec.note || '',
+        delete: dec.decision === 'delete',
+      });
+    }
+  }));
+  const blob = new Blob([JSON.stringify(out, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'shirt-decisions.json';
+  a.click();
+}
+
+document.getElementById('export-date').textContent = new Date().toLocaleDateString();
+render();
+</script>
+</body>
+</html>

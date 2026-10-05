@@ -22,6 +22,9 @@ export default function Comments({ slug }: { slug: string }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  // Bot checks (no third party): honeypot must stay empty; form must be open >=3s.
+  const [trap, setTrap] = useState("");
+  const [openedAt] = useState(() => Date.now());
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const [notifyReplies, setNotifyReplies] = useState(false);
@@ -45,7 +48,7 @@ export default function Comments({ slug }: { slug: string }) {
       const res = await fetch("/api/comments/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug, name, email, message }),
+        body: JSON.stringify({ slug, name, email, message, trap, openedMs: Date.now() - openedAt }),
       });
 
       if (res.ok) {
@@ -128,6 +131,7 @@ export default function Comments({ slug }: { slug: string }) {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="comment-form">
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={trap} onChange={(e) => setTrap(e.target.value)} style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }} />
             <div className="comment-field">
               <label htmlFor="comment-name">Name</label>
               <input

@@ -15,14 +15,20 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Database not configured" }, { status: 500 });
   }
 
-  let body: { slug: string; name: string; email?: string; message: string; notifyReplies?: boolean };
+  let body: { slug: string; name: string; email?: string; message: string; notifyReplies?: boolean; trap?: string; openedMs?: number };
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  const { slug, name, message, email, notifyReplies } = body;
+  const { slug, name, message, email, notifyReplies, trap, openedMs } = body;
+
+  // Bot checks: a filled honeypot or a form submitted in under 3s is a bot.
+  // Return a generic success so bots can't tell they were filtered.
+  if ((trap && trap.trim().length > 0) || (typeof openedMs === "number" && openedMs < 3000)) {
+    return NextResponse.json({ ok: true });
+  }
 
   if (!slug || !name?.trim() || !message?.trim()) {
     return NextResponse.json({ error: "Name and message are required" }, { status: 400 });

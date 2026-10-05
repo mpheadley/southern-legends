@@ -3,28 +3,21 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MERCH, type MerchItem, type MerchCategory } from '@/lib/merch'
 
-const SHIRTS    = MERCH.filter(m => m.category === 'shirt' && m.available)
-const TOTES     = MERCH.filter(m => m.category === 'tote' && m.available)
-const STICKERS  = MERCH.filter(m => m.category === 'sticker' && m.available)
-const PRINTS    = MERCH.filter(m => m.category === 'print' && m.available)
-const MAGAZINES = MERCH.filter(m => m.category === 'magazine' && m.available)
+// ─── Hero ─────────────────────────────────────────────────────────────────────
 
 export default function MerchPage() {
-  const [notifyEmail, setNotifyEmail] = useState('')
-  const [notifySent, setNotifySent] = useState(false)
   const heroRef = useRef<HTMLDivElement>(null)
+  const [notifyEmail, setNotifyEmail]   = useState('')
+  const [notifySent,  setNotifySent]    = useState(false)
 
   useEffect(() => {
     const hero = heroRef.current
     if (!hero) return
-    const onScroll = () => { hero.style.backgroundPositionY = `${window.scrollY * 0.35}px` }
+    const onScroll = () => { hero.style.backgroundPositionY = `${window.scrollY * 0.28}px` }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  const success = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('success') === '1'
 
   async function submitNotify(e: React.FormEvent) {
     e.preventDefault()
@@ -37,346 +30,249 @@ export default function MerchPage() {
   }
 
   return (
-    <main id="main-content" className="min-h-screen relative" style={{ background: 'var(--color-ll-dark)', color: 'var(--color-ll-warm)' }}>
+    <main id="main-content" className="min-h-screen" style={{ background: 'var(--color-ll-dark)', color: 'var(--color-ll-warm)' }}>
 
-      <div ref={heroRef} className="gradient-hero no-pseudo-topo relative overflow-hidden" style={{ minHeight: '72vh' }}>
+      {/* ── HERO ── */}
+      <div ref={heroRef} className="gradient-hero no-pseudo-topo relative overflow-hidden" style={{ minHeight: '100svh' }}>
         <div aria-hidden="true" className="grid-topo" />
-        <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(155deg, rgba(6,13,9,0.96) 0%, rgba(154,52,18,0.08) 50%, rgba(6,13,9,0.55) 100%)' }} />
-        <div className="absolute inset-x-0 bottom-0 h-40 z-[1]" style={{ background: 'linear-gradient(to bottom, transparent, var(--color-ll-dark))' }} />
+        <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(135deg, rgba(6,13,9,0.97) 0%, rgba(154,52,18,0.07) 55%, rgba(6,13,9,0.60) 100%)' }} />
+        <div className="absolute inset-x-0 bottom-0 h-56 z-[1]" style={{ background: 'linear-gradient(to bottom, transparent, var(--color-ll-dark))' }} />
 
-        {/* ── Right-side shirt collage (desktop only) ── */}
-        <div className="hidden md:block absolute right-0 top-0 bottom-0 z-[2]" style={{ width: '44%', overflow: 'hidden' }}>
-          {/* gradient edge fade left */}
-          <div className="absolute inset-y-0 left-0 w-24 z-10" style={{ background: 'linear-gradient(to right, var(--color-ll-dark), transparent)' }} />
-          <div className="grid h-full" style={{ gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 4 }}>
-            <img src="/merch/clt-hike-explore-mockup.webp" alt="CLT Hike & Explore tee" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
-            <img src="/merch/model-city-mockup-cream.webp" alt="Model City Anniston tee" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
-            <img src="/merch/freedom-riders/shirt-mockup-dark.webp" alt="Freedom Riders tee" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
-            <img src="/merch/clt-shirt-front-mockup.jpg" alt="CLT Trail shirt" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+        {/* Right — product collage (desktop) */}
+        <div className="hidden md:block absolute right-0 top-0 bottom-0 z-[2]" style={{ width: '46%', overflow: 'hidden' }}>
+          <div className="absolute inset-y-0 left-0 w-32 z-10" style={{ background: 'linear-gradient(to right, var(--color-ll-dark), transparent)' }} />
+          <div className="absolute inset-y-0 right-0 w-8 z-10" style={{ background: 'linear-gradient(to left, var(--color-ll-dark), transparent)' }} />
+          <div className="grid h-full" style={{ gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 3 }}>
+            <img src="/merch/clt-hike-explore-mockup.webp"     alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+            <img src="/merch/model-city-mockup-cream.webp"     alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+            <img src="/merch/freedom-riders/shirt-mockup-dark.webp" alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
+            <img src="/merch/clt-shirt-front-mockup.jpg"       alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 pointer-events-auto" style={{ maxWidth: 'min(960px, 56vw)' }}>
-          {success && (
-            <div className="mb-8 px-5 py-4 rounded-xl text-sm" style={{ background: 'rgba(34,85,34,0.3)', border: '1px solid rgba(100,200,100,0.25)', color: '#6dcf6d' }}>
-              Order received — check your email for confirmation.
-            </div>
-          )}
-          <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: 'rgba(202,138,4,0.7)' }}>Southern Legends · NE Alabama</p>
-          <h1 className="font-black leading-[0.92] mb-6" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3.4rem, 8vw, 6rem)', color: 'var(--color-ll-warm)', textShadow: '0 2px 24px rgba(0,0,0,0.5)' }}>
-            Wear<br />the Story.
+        {/* Left — editorial headline */}
+        <div className="relative z-10 flex flex-col justify-center px-6 md:px-12 lg:px-20"
+          style={{ minHeight: '100svh', maxWidth: 'min(600px, 56vw)' }}>
+
+          <p className="text-xs tracking-[0.45em] uppercase mb-5 font-bold" style={{ color: 'rgba(202,138,4,0.7)' }}>
+            Southern Legends · NE Alabama
+          </p>
+
+          <h1 className="font-black leading-[0.88] mb-6"
+            style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(4rem, 9vw, 7.2rem)',
+              color: 'var(--color-ll-warm)',
+              textShadow: '0 2px 32px rgba(0,0,0,0.6)',
+            }}>
+            Wear<br />the<br />story.
           </h1>
-          <p className="text-base max-w-lg leading-relaxed mb-8" style={{ color: 'rgba(240,237,230,0.6)' }}>
-            Shirts, totes, stickers, and prints from NE Alabama — schools, trails, races, and the stories behind them.
+
+          <p className="mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', color: 'rgba(240,237,230,0.55)', maxWidth: '380px' }}>
+            Every shirt funds a story. Every story keeps a place alive.
           </p>
-          <div className="flex flex-wrap gap-3">
-            {[
-              { t: 'Secure checkout via Stripe', c: 'rgba(240,237,230,0.4)' },
-              { t: '25% → Raiders XC', c: '#4ade80' },
-              { t: 'Cash · Square at booth Aug 2', c: 'rgba(240,237,230,0.3)' },
-            ].map(p => (
-              <span key={p.t} className="text-xs px-3 py-1.5 rounded-full" style={{ border: `1px solid ${p.c}`, color: p.c, letterSpacing: '0.06em' }}>{p.t}</span>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      <div className="relative mx-auto max-w-5xl px-6 pb-24 pt-2">
-
-        <p className="text-xs mb-8 leading-relaxed" style={{ color: 'rgba(240,237,230,0.3)', letterSpacing: '0.03em' }}>
-          Images are design mockups. Actual print colors, placement, and fabric may vary slightly. All items are made to order — no two prints are identical.
-        </p>
-
-        {/* Featured — CLT hero banner */}
-        <Link href="/merch/chief-ladiga" style={{ display: 'block', borderRadius: '14px', overflow: 'hidden', textDecoration: 'none', position: 'relative', minHeight: '200px', background: '#0d1a0e', marginBottom: '1rem' }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg, rgba(6,13,9,0.95) 0%, rgba(45,90,48,0.35) 60%, rgba(6,13,9,0.7) 100%)' }} />
-          <div style={{ position: 'relative', padding: '2rem', maxWidth: '520px' }}>
-            <span style={{ fontSize: '0.6rem', letterSpacing: '0.35em', textTransform: 'uppercase', color: '#C9A227', fontWeight: 700 }}>Aug 2 · Woodstock 5K · LIMITED RUN</span>
-            <p style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 900, color: '#f0ede8', margin: '0.5rem 0 0.4rem', lineHeight: 1.1 }}>Chief Ladiga Trail Shirt</p>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(240,237,230,0.55)', marginBottom: '1.1rem' }}>Natural triblend sublimation · Front badge + back trail map · 55 made</p>
-            <span style={{ display: 'inline-block', background: '#E8722A', color: '#fff', fontWeight: 900, fontSize: '0.85rem', padding: '0.55rem 1.25rem', borderRadius: '8px', letterSpacing: '0.04em' }}>Get yours — $40 →</span>
-          </div>
-        </Link>
-
-        {/* Featured collections */}
-        <div className="grid gap-4 mb-10" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
-          <Link href="/merch/pvxc" style={{ display: 'block', borderRadius: '12px', overflow: 'hidden', textDecoration: 'none', position: 'relative', minHeight: '160px', background: '#111' }}>
-            <Image src="/merch/pv-shirt-mockup.webp" alt="PV Raiders XC" fill className="object-cover" style={{ objectPosition: 'center 20%', opacity: 0.55 }} sizes="320px" />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%)' }} />
-            <div style={{ position: 'relative', padding: '1.5rem' }}>
-              <span style={{ fontSize: '0.6rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#C8102E', fontWeight: 700 }}>Aug 2 · Woodstock 5K</span>
-              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: 900, color: '#f0ede8', margin: '0.35rem 0 0.25rem', lineHeight: 1.1 }}>PV Raiders XC</p>
-              <p style={{ fontSize: '0.78rem', color: 'rgba(240,237,232,0.5)', marginBottom: '0.75rem' }}>25% → Raiders XC program</p>
-              <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#C8102E', letterSpacing: '0.04em' }}>Shop the collection →</span>
-            </div>
-          </Link>
-          <Link href="/merch/freedom-riders" style={{ display: 'block', borderRadius: '12px', overflow: 'hidden', textDecoration: 'none', position: 'relative', minHeight: '160px', background: '#111' }}>
-            <Image src="/merch/freedom-riders/shirt-mockup-dark.webp" alt="Freedom Riders" fill className="object-cover" style={{ objectPosition: 'center 30%', opacity: 0.55 }} sizes="320px" />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%)' }} />
-            <div style={{ position: 'relative', padding: '1.5rem' }}>
-              <span style={{ fontSize: '0.6rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#9A3412', fontWeight: 700 }}>Anniston, Alabama · 1961</span>
-              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: 900, color: '#f0ede8', margin: '0.35rem 0 0.25rem', lineHeight: 1.1 }}>Freedom Riders</p>
-              <p style={{ fontSize: '0.78rem', color: 'rgba(240,237,232,0.5)', marginBottom: '0.75rem' }}>25% → West Anniston Foundation</p>
-              <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#9A3412', letterSpacing: '0.04em' }}>Shop the collection →</span>
-            </div>
-          </Link>
-          <Link href="/merch#magazines" style={{ display: 'block', borderRadius: '12px', overflow: 'hidden', textDecoration: 'none', position: 'relative', minHeight: '160px', background: '#1a1410', border: '1px solid rgba(202,138,4,0.2)' }}>
-            <div style={{ position: 'relative', padding: '1.5rem' }}>
-              <span style={{ fontSize: '0.6rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#C9A227', fontWeight: 700 }}>Digital · $9.95 — Print · $20</span>
-              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: 900, color: '#f0ede8', margin: '0.35rem 0 0.25rem', lineHeight: 1.1 }}>SL Magazine</p>
-              <p style={{ fontSize: '0.78rem', color: 'rgba(240,237,232,0.5)', marginBottom: '0.75rem' }}>Stories, profiles, and places from NE Alabama</p>
-              <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#C9A227', letterSpacing: '0.04em' }}>Read now →</span>
-            </div>
-          </Link>
-        </div>
-
-        <SectionHead label="Shirts" sub="Order online · Ships after Aug 2 · Sizes S–2XL" first />
-        <div className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))' }}>
-          {SHIRTS.map(item => <ProductCard key={item.id} item={item} />)}
-        </div>
-
-        <SectionHead label="Totes" sub="In stock · Cream canvas · DTF print" />
-        <div className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))' }}>
-          {TOTES.map(item => <ProductCard key={item.id} item={item} />)}
-        </div>
-
-        <div id="stickers">
-          <SectionHead label="Stickers" sub="3″ vinyl · Matte · Weather-resistant · $5 each" />
-          {/* Sticker pack visual strip */}
-          <div className="flex gap-4 overflow-x-auto pb-3 mb-6" style={{ scrollbarWidth: 'none' }}>
-            {STICKERS.slice(0,8).map((s, i) => (
-              <a key={s.id} href={`/buy/${s.id}`}
-                style={{
-                  flexShrink: 0,
-                  transform: `rotate(${[-4,3,-6,5,-3,7,-5,2][i % 8]}deg)`,
-                  filter: 'drop-shadow(0 3px 8px rgba(0,0,0,.5))',
-                  transition: 'transform .15s ease',
-                  display: 'block',
-                }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = `rotate(0deg) scale(1.1)` }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = `rotate(${[-4,3,-6,5,-3,7,-5,2][i % 8]}deg)` }}
-              >
-                <img src={s.photo} alt={s.name} width={90} height={90}
-                  style={{ width: '90px', height: '90px', objectFit: 'contain' }} />
-              </a>
-            ))}
-          </div>
-          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}>
-            {STICKERS.map(item => <ProductCard key={item.id} item={item} small />)}
-          </div>
-        </div>
-
-        {MAGAZINES.length > 0 && (
-          <div id="magazines">
-            <SectionHead label="Magazines" sub="Digital PDF download · $9.95 — Full-color print edition · $20" />
-            <div className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))' }}>
-              {MAGAZINES.map(item => <ProductCard key={item.id} item={item} />)}
-            </div>
-          </div>
-        )}
-
-        {PRINTS.length > 0 && (
-          <>
-            <SectionHead label="Prints" sub="Rolled · Ships in tube" />
-            <div className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))' }}>
-              {PRINTS.map(item => <ProductCard key={item.id} item={item} />)}
-            </div>
-          </>
-        )}
-
-        <Rule />
-
-        <div className="rounded-2xl p-6 mb-10" style={{ background: 'rgba(154,52,18,0.1)', border: '1px solid rgba(154,52,18,0.2)' }}>
-          <p className="text-xs tracking-[0.3em] uppercase mb-2" style={{ color: 'var(--color-ll-primary-light)' }}>Woodstock 5K · Aug 2</p>
-          <h2 className="text-xl font-black mb-2" style={{ fontFamily: 'var(--font-heading)' }}>Find us at the booth</h2>
-          <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(240,237,230,0.5)' }}>
-            Woodstock Avenue, Anniston. Cash, Venmo, or Square. Scan any QR code at the booth to pay by card.
-            Pre-orders ship 2–3 weeks after the race. 25% of PV Raiders tee sales go to the XC program.
-          </p>
-          <div className="flex flex-wrap gap-6">
-            {[
-              { l: 'At the booth', v: 'Cash · Venmo · Square · QR' },
-              { l: 'Team pricing', v: 'Ask a volunteer' },
-              { l: 'Custom orders', v: 'matt@southernlegends.blog' },
-            ].map(({ l, v }) => (
-              <div key={l}>
-                <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: 'rgba(240,237,230,0.25)' }}>{l}</p>
-                <p className="text-sm" style={{ color: 'rgba(240,237,230,0.55)' }}>{v}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-2xl p-6 mb-10" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(240,237,230,0.06)' }}>
-          <h2 className="text-lg font-black mb-1" style={{ fontFamily: 'var(--font-heading)' }}>New drops — get notified</h2>
-          <p className="text-sm mb-4" style={{ color: 'rgba(240,237,230,0.4)' }}>Cheaha Mountain, I Live Here On Purpose, and more in progress.</p>
-          <form onSubmit={submitNotify} className="flex gap-3 max-w-md">
-            <input type="email" required placeholder="Your email" value={notifyEmail} onChange={e => setNotifyEmail(e.target.value)}
-              className="flex-1 px-4 py-2.5 rounded-xl text-sm"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(240,237,230,0.12)', color: 'var(--color-ll-warm)', outline: 'none' }} />
-            <button type="submit" disabled={notifySent} className="px-5 py-2.5 rounded-xl text-sm font-bold"
-              style={{ background: 'var(--color-ll-accent)', color: '#1C1917', cursor: notifySent ? 'default' : 'pointer', opacity: notifySent ? 0.7 : 1 }}>
-              {notifySent ? '✓ Got it' : 'Notify me'}
-            </button>
-          </form>
-        </div>
-
-        {/* Ecclesia Resource Shop cross-link */}
-        <div className="rounded-2xl p-6 mb-4" style={{ background: 'rgba(13,26,15,0.6)', border: '1px solid rgba(45,212,191,0.12)' }}>
-          <p className="text-xs tracking-[0.3em] uppercase mb-2" style={{ color: 'rgba(45,212,191,0.5)' }}>Ecclesia Resource Shop</p>
-          <h2 className="text-xl font-black mb-2" style={{ fontFamily: 'var(--font-heading)', color: '#f0ede8' }}>&ldquo;In the Meantime&rdquo; — Advent 2026 Kit</h2>
-          <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(240,237,230,0.4)' }}>
-            Sermon series art, slides, liturgy, kids curriculum. Made by a pastor for the next church that can&apos;t afford to make their own. $49.
-          </p>
-          <a href="https://ecclesiacommunity.org/shop" className="inline-block px-5 py-2.5 rounded-xl text-sm font-bold hover:opacity-90"
-            style={{ background: 'rgba(45,212,191,0.1)', color: '#2dd4bf', border: '1px solid rgba(45,212,191,0.25)', textDecoration: 'none' }}>
-            Pre-order — $49 →
-          </a>
-        </div>
-
-        {/* Affiliate cross-link */}
-        <div className="rounded-2xl p-6" style={{ background: 'rgba(154,52,18,0.08)', border: '1px solid rgba(154,52,18,0.18)' }}>
-          <p className="text-xs tracking-[0.3em] uppercase mb-2" style={{ color: 'rgba(202,138,4,0.5)' }}>Partner Program</p>
-          <h2 className="text-xl font-black mb-2" style={{ fontFamily: 'var(--font-heading)' }}>Earn when you share.</h2>
-          <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(240,237,230,0.5)' }}>Share any product — shirts, the Ecclesia shop, Blueprint Sessions, Heather Florals — and earn 10–20% on every sale. One link, everything in the catalog.</p>
-          <Link href="/affiliate" className="inline-block px-5 py-2.5 rounded-xl text-sm font-bold hover:opacity-90"
-            style={{ background: '#9A3412', color: '#FAFAF7' }}>
-            Get your affiliate link →
-          </Link>
-        </div>
-
-        <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(240,237,230,0.05)' }}>
-          <p className="text-xs tracking-[0.3em] uppercase mb-2" style={{ color: 'rgba(202,138,4,0.5)' }}>Southern Legends</p>
-          <h2 className="text-xl font-black mb-2" style={{ fontFamily: 'var(--font-heading)' }}>Support the publication</h2>
-          <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(240,237,230,0.4)' }}>Every story is free. A monthly contribution keeps the archives growing.</p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/newsletter" className="inline-block px-5 py-2.5 rounded-xl text-sm font-bold hover:opacity-90"
-              style={{ background: 'var(--color-ll-primary)', color: 'var(--color-ll-warm)' }}>
-              Subscribe free →
-            </Link>
-            <a href="mailto:matt@southernlegends.blog" className="inline-block px-5 py-2.5 rounded-xl text-sm font-bold hover:opacity-90"
-              style={{ background: 'rgba(255,255,255,0.06)', color: 'var(--color-ll-warm)', border: '1px solid rgba(240,237,230,0.1)' }}>
-              Founding Patron inquiry
+          <div className="flex flex-wrap gap-4">
+            <a href="#support"
+              className="font-black uppercase tracking-widest rounded-xl transition-opacity hover:opacity-90"
+              style={{ background: 'var(--color-ll-warm)', color: 'var(--color-ll-dark)', fontSize: '0.82rem', padding: '0.95rem 1.75rem', letterSpacing: '0.1em', textDecoration: 'none' }}>
+              Support this work
             </a>
+            <Link href="/merch/catalog"
+              className="font-black uppercase tracking-widest rounded-xl transition-opacity hover:opacity-90"
+              style={{ background: 'rgba(240,237,230,0.07)', color: 'var(--color-ll-warm)', border: '1px solid rgba(240,237,230,0.18)', fontSize: '0.82rem', padding: '0.95rem 1.75rem', letterSpacing: '0.1em', textDecoration: 'none' }}>
+              Shop the merch →
+            </Link>
+          </div>
+
+          {/* Scroll cue */}
+          <div className="absolute bottom-8 left-6 md:left-12 lg:left-20 flex items-center gap-3" style={{ opacity: 0.3 }}>
+            <div style={{ width: 1, height: 36, background: 'var(--color-ll-warm)' }} />
+            <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
           </div>
         </div>
-
       </div>
+
+      {/* ── SUPPORT BLOCK ── */}
+      <section id="support" className="relative px-6 md:px-12 lg:px-20 py-24">
+        <div className="max-w-4xl mx-auto">
+
+          <p className="text-xs tracking-[0.4em] uppercase mb-4 font-bold" style={{ color: 'rgba(202,138,4,0.6)' }}>
+            Support Southern Legends
+          </p>
+          <h2 className="font-black mb-4 leading-tight"
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', color: 'var(--color-ll-warm)' }}>
+            Every story is free.
+          </h2>
+          <p className="mb-12 max-w-xl leading-relaxed" style={{ fontSize: '1.05rem', color: 'rgba(240,237,230,0.5)' }}>
+            No paywall. No algorithm. A monthly contribution keeps the archives growing and the researchers paid.
+          </p>
+
+          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))' }}>
+
+            {/* Subscribe free */}
+            <SupportCard
+              eyebrow="Free"
+              headline="Newsletter"
+              body="New stories, profiles, and place essays — straight to your inbox."
+              cta="Subscribe free →"
+              href="/newsletter"
+              accent="rgba(240,237,230,0.12)"
+              ctaStyle={{ background: 'rgba(240,237,230,0.08)', color: 'var(--color-ll-warm)', border: '1px solid rgba(240,237,230,0.18)' }}
+            />
+
+            {/* $5/mo patron */}
+            <SupportCard
+              eyebrow="$5 / month"
+              headline="Reader Patron"
+              body="Keep the lights on. Cancel any time."
+              cta="Become a patron →"
+              href="https://buy.stripe.com/patron5"
+              accent="rgba(154,52,18,0.25)"
+              ctaStyle={{ background: 'var(--color-ll-primary)', color: 'var(--color-ll-warm)' }}
+            />
+
+            {/* Founding $15/mo */}
+            <SupportCard
+              eyebrow="$15 / month"
+              headline="Founding Patron"
+              body="Your name in the masthead. First access to print editions."
+              cta="Founding Patron →"
+              href="mailto:matt@gatherstudio.app?subject=Founding+Patron"
+              accent="rgba(202,138,4,0.18)"
+              ctaStyle={{ background: 'rgba(202,138,4,0.15)', color: '#C9A227', border: '1px solid rgba(202,138,4,0.35)' }}
+            />
+
+          </div>
+
+          {/* Notify strip */}
+          <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(240,237,230,0.07)' }}>
+            <p className="text-sm mb-3" style={{ color: 'rgba(240,237,230,0.35)' }}>
+              Cheaha Mountain, I Live Here On Purpose, and more drops incoming —
+            </p>
+            <form onSubmit={submitNotify} className="flex gap-3 max-w-md">
+              <input type="email" required placeholder="your@email.com"
+                value={notifyEmail} onChange={e => setNotifyEmail(e.target.value)}
+                className="flex-1 px-4 py-2.5 rounded-xl text-sm"
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(240,237,230,0.1)', color: 'var(--color-ll-warm)', outline: 'none' }} />
+              <button type="submit" disabled={notifySent}
+                className="px-5 py-2.5 rounded-xl text-sm font-bold"
+                style={{ background: 'var(--color-ll-accent)', color: '#1C1917', cursor: notifySent ? 'default' : 'pointer', opacity: notifySent ? 0.7 : 1 }}>
+                {notifySent ? '✓ Got it' : 'Notify me'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FLAGSHIP MERCH TEASER ── */}
+      <section className="px-6 md:px-12 lg:px-20 pb-28">
+        <div className="max-w-4xl mx-auto">
+
+          <p className="text-xs tracking-[0.4em] uppercase mb-8 font-bold" style={{ color: 'rgba(202,138,4,0.6)' }}>
+            The Store
+          </p>
+
+          <Link href="/merch/catalog" style={{ textDecoration: 'none', display: 'block' }}>
+            <div className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.015]"
+              style={{ background: '#0d1a0e', border: '1px solid rgba(240,237,230,0.07)', boxShadow: '0 8px 48px rgba(0,0,0,0.5)' }}>
+
+              {/* Large product image */}
+              <div className="relative" style={{ aspectRatio: '16/7' }}>
+                <Image
+                  src="/merch/freedom-riders/shirt-mockup-dark.webp"
+                  alt="Freedom Riders shirt"
+                  fill
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+                  sizes="(max-width: 768px) 100vw, 880px"
+                  priority
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0"
+                  style={{ background: 'linear-gradient(90deg, rgba(6,13,9,0.92) 0%, rgba(6,13,9,0.6) 40%, rgba(6,13,9,0.15) 100%)' }} />
+                <div className="absolute inset-0 md:hidden"
+                  style={{ background: 'rgba(6,13,9,0.75)' }} />
+
+                {/* Text on top */}
+                <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-12" style={{ maxWidth: '520px' }}>
+                  <p className="text-xs tracking-[0.35em] uppercase font-bold mb-3" style={{ color: 'rgba(154,52,18,0.9)' }}>
+                    Anniston, Alabama · 1961
+                  </p>
+                  <h2 className="font-black leading-tight mb-3"
+                    style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: 'var(--color-ll-warm)' }}>
+                    Freedom Riders
+                  </h2>
+                  <p className="mb-6 leading-relaxed" style={{ fontSize: '0.95rem', color: 'rgba(240,237,230,0.5)', maxWidth: '320px' }}>
+                    Shirts, hoodies, prints, and stickers from the most significant civil rights moment in Alabama history.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-black uppercase tracking-widest rounded-xl self-start transition-all duration-200 group-hover:gap-4"
+                    style={{ background: '#9A3412', color: '#fff', fontSize: '0.78rem', padding: '0.85rem 1.5rem', letterSpacing: '0.1em' }}>
+                    Enter the store →
+                  </span>
+                </div>
+
+                {/* Item count badge */}
+                <div className="absolute top-5 right-5 text-xs font-bold px-3 py-1.5 rounded-full"
+                  style={{ background: 'rgba(6,13,9,0.8)', color: 'rgba(240,237,230,0.5)', border: '1px solid rgba(240,237,230,0.12)', backdropFilter: 'blur(8px)' }}>
+                  40+ designs
+                </div>
+              </div>
+
+              {/* Bottom strip */}
+              <div className="flex items-center justify-between px-8 md:px-12 py-5"
+                style={{ borderTop: '1px solid rgba(240,237,230,0.06)' }}>
+                <div className="flex gap-6">
+                  {['Shirts', 'Hoodies', 'Totes', 'Stickers', 'Prints', 'Hats'].map(cat => (
+                    <span key={cat} className="text-xs" style={{ color: 'rgba(240,237,230,0.3)' }}>{cat}</span>
+                  ))}
+                </div>
+                <span className="text-xs font-bold" style={{ color: 'rgba(202,138,4,0.6)' }}>
+                  Browse all →
+                </span>
+              </div>
+            </div>
+          </Link>
+
+        </div>
+      </section>
+
     </main>
   )
 }
 
-const CATEGORY_LABELS: Record<MerchCategory, string> = {
-  shirt: 'T-Shirt', hoodie: 'Hoodie', hat: 'Hat',
-  sticker: 'Sticker', patch: 'Patch', pin: 'Pin / Coin',
-  tote: 'Tote Bag', print: 'Art Print', poster: 'Poster',
-  mug: 'Mug', sock: 'Socks', bandana: 'Bandana',
-  pennant: 'Pennant', journal: 'Journal', '3d-print': '3D Print',
-  magazine: 'Magazine',
-}
+// ─── Support Card ─────────────────────────────────────────────────────────────
 
-function ProductCard({ item, small }: { item: MerchItem; small?: boolean }) {
-  const [showMediums, setShowMediums] = useState(false)
-  const mediumLabel = CATEGORY_LABELS[item.category] ?? item.category
-  const allMediums = item.mediums ?? [mediumLabel]
+function SupportCard({
+  eyebrow, headline, body, cta, href, ctaStyle,
+}: {
+  eyebrow: string
+  headline: string
+  body: string
+  cta: string
+  href: string
+  accent?: string
+  ctaStyle?: React.CSSProperties
+}) {
+  const isExternal = href.startsWith('http') || href.startsWith('mailto')
+  const btnClass = 'inline-block font-black text-xs uppercase tracking-widest rounded-xl text-center hover:opacity-90 transition-opacity'
+  const btnStyle = { padding: '0.75rem 1.25rem', textDecoration: 'none', ...ctaStyle }
 
   return (
-    <div
-      className="rounded-2xl overflow-hidden transition-all duration-200"
-      style={{ background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(12px)', border: '1px solid rgba(240,237,230,0.08)', boxShadow: '0 2px 16px rgba(0,0,0,0.3)' }}
-    >
-      {/* Image area — click shows/hides mediums overlay */}
-      <div
-        className="relative overflow-hidden cursor-pointer group"
-        style={{ aspectRatio: small ? '1' : '4/5', background: item.bg ?? '#12190f' }}
-        onClick={() => setShowMediums(s => !s)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={e => e.key === 'Enter' && setShowMediums(s => !s)}
-      >
-        <Image
-          src={item.photo}
-          alt={item.name}
-          fill
-          className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-          sizes={small ? '220px' : '(max-width: 640px) 100vw, 320px'}
-          style={{ padding: small ? 8 : 14 }}
-        />
-
-        {/* Badge — top left */}
-        {item.badge && (
-          <span className="absolute top-3 left-3 text-xs font-bold px-2.5 py-1 rounded-full z-10"
-            style={{ background: item.badgeColor ?? '#9A3412', color: '#fff', letterSpacing: '0.06em' }}>
-            {item.badge}
-          </span>
-        )}
-
-        {/* Medium label — top right */}
-        <span className="absolute top-3 right-3 text-xs font-semibold px-2 py-0.5 rounded z-10"
-          style={{ background: 'rgba(6,13,9,0.75)', color: 'rgba(240,237,230,0.7)', border: '1px solid rgba(240,237,230,0.15)', backdropFilter: 'blur(6px)' }}>
-          {mediumLabel}
-        </span>
-
-        {/* Mediums overlay */}
-        {showMediums ? (
-          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center"
-            style={{ background: 'rgba(6,13,9,0.93)', backdropFilter: 'blur(4px)', padding: '1.25rem' }}>
-            <p className="text-xs uppercase mb-3" style={{ color: 'rgba(240,237,230,0.45)', letterSpacing: '0.2em' }}>Available on</p>
-            <div className="flex flex-wrap gap-2 justify-center mb-4">
-              {allMediums.map(m => (
-                <span key={m} className="text-xs font-semibold px-3 py-1.5 rounded-full"
-                  style={{ border: '1px solid rgba(202,138,4,0.5)', color: '#C9A227', background: 'rgba(202,138,4,0.08)' }}>
-                  {m}
-                </span>
-              ))}
-            </div>
-            <Link href={`/buy/${item.id}`} onClick={e => e.stopPropagation()}
-              className="text-xs font-black uppercase tracking-widest px-4 py-2 rounded-lg"
-              style={{ background: 'var(--color-ll-primary)', color: 'var(--color-ll-warm)', textDecoration: 'none' }}>
-              Buy now →
-            </Link>
-            <p className="text-[10px] mt-3" style={{ color: 'rgba(240,237,230,0.28)' }}>tap again to close</p>
-          </div>
-        ) : (
-          <div className="absolute inset-0 flex items-end justify-between pb-3 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%)' }}>
-            <span className="text-[10px]" style={{ color: 'rgba(240,237,230,0.4)' }}>tap · see mediums</span>
-            <Link href={`/buy/${item.id}`} onClick={e => e.stopPropagation()}
-              className="text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-lg"
-              style={{ background: 'var(--color-ll-primary)', color: 'var(--color-ll-warm)', textDecoration: 'none' }}>
-              Buy →
-            </Link>
-          </div>
-        )}
-      </div>
-
-      {/* Text + buy link */}
-      <Link href={`/buy/${item.id}`} style={{ display: 'block', padding: '1rem', textDecoration: 'none', color: 'inherit' }}>
-        <div className="flex items-start justify-between mb-1">
-          <h2 className="font-black text-sm leading-tight flex-1 mr-2" style={{ fontFamily: 'var(--font-heading)' }}>{item.name}</h2>
-          <span className="font-black text-sm flex-shrink-0" style={{ color: 'var(--color-ll-primary-light)' }}>${item.price}</span>
-        </div>
-        <p className="text-xs mb-0.5" style={{ color: 'rgba(240,237,230,0.4)' }}>{item.tagline}</p>
-        {item.sub && <p className="text-xs" style={{ color: 'rgba(202,138,4,0.6)' }}>{item.sub}</p>}
-        {item.fundraiser && <p className="text-xs mt-1" style={{ color: '#4ade80' }}>25% → {item.fundraiser}</p>}
-      </Link>
+    <div className="rounded-2xl p-7 flex flex-col"
+      style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(240,237,230,0.07)' }}>
+      <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-3" style={{ color: 'rgba(240,237,230,0.35)' }}>
+        {eyebrow}
+      </p>
+      <h3 className="font-black mb-2" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', color: 'var(--color-ll-warm)' }}>
+        {headline}
+      </h3>
+      <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: 'rgba(240,237,230,0.42)' }}>
+        {body}
+      </p>
+      {isExternal
+        ? <a href={href} target="_blank" rel="noopener noreferrer" className={btnClass} style={btnStyle}>{cta}</a>
+        : <Link href={href} className={btnClass} style={btnStyle}>{cta}</Link>
+      }
     </div>
   )
-}
-
-function SectionHead({ label, sub, first }: { label: string; sub: string; first?: boolean }) {
-  return (
-    <div className={`${first ? 'mt-4' : 'mt-14'} mb-6`}>
-      <div className="flex items-center gap-4 mb-1">
-        <div className="h-px flex-1" style={{ background: 'linear-gradient(to right, rgba(154,52,18,0.6), transparent)' }} />
-        <p className="text-xs tracking-[0.35em] uppercase font-bold" style={{ color: 'var(--color-ll-primary-light)' }}>{label}</p>
-        <div className="h-px flex-1" style={{ background: 'linear-gradient(to left, rgba(154,52,18,0.6), transparent)' }} />
-      </div>
-      <p className="text-xs text-center" style={{ color: 'rgba(240,237,230,0.28)', letterSpacing: '0.06em' }}>{sub}</p>
-    </div>
-  )
-}
-
-function Rule() {
-  return <div className="my-12 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(202,138,4,0.25), transparent)' }} />
 }

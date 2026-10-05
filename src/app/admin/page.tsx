@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type CSSProperties } from "react";
 
 const PIN_KEY = "sl_admin_pin";
 const ls = { getItem: (k: string) => typeof window !== "undefined" ? localStorage.getItem(k) : null, setItem: (k: string, v: string) => typeof window !== "undefined" && localStorage.setItem(k, v) };
@@ -7,18 +7,32 @@ const BROWN = "#292524";
 const AMBER = "#D97706";
 const AMBER_BG = "#FEF3C7";
 const CREAM = "#FAFAF7";
+const inp: CSSProperties = { width: "100%", background: "#fafaf7", border: "1px solid #e5e0d8", borderRadius: 6, color: BROWN, padding: "8px 10px", fontSize: 13, marginTop: 4, boxSizing: "border-box" };
 
 export default function AdminPage() {
   const [pin, setPin] = useState("");
   const [authed, setAuthed] = useState(false);
   const [pinInput, setPinInput] = useState("");
-  const [tab, setTab] = useState<"scripts"|"calendar"|"queue"|"post"|"email"|"ghostwrite">("scripts");
+  const [tab, setTab] = useState<"scripts"|"calendar"|"queue"|"edit"|"post"|"email"|"ghostwrite">("scripts");
 
   // Queue state
   type Profile = { slug: string; title: string; date: string; published: boolean };
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [queueFilter, setQueueFilter] = useState<"all"|"published"|"drafts">("all");
   const [queueLoading, setQueueLoading] = useState(false);
+
+  // Edit state — in-place MDX profile editor
+  type Frontmatter = Record<string, unknown> & { title?: string; excerpt?: string; subtitle?: string; heroImage?: string; heroAlt?: string; tags?: string[]; published?: boolean; date?: string };
+  const [editSlug, setEditSlug] = useState<string|null>(null);
+  const [editFm, setEditFm] = useState<Frontmatter>({});
+  const [editBody, setEditBody] = useState("");
+  const [editLoading, setEditLoading] = useState(false);
+  const [editSaving, setEditSaving] = useState(false);
+  const [editSaved, setEditSaved] = useState(false);
+  const [editStats, setEditStats] = useState<{ words: number; readTime: string }|null>(null);
+  const [editErr, setEditErr] = useState<string|null>(null);
+  const editWords = editBody.trim() ? editBody.trim().split(/\s+/).length : 0;
+  const editReadMin = Math.max(1, Math.round(editWords / 200));
 
   // Post state
   const [message, setMessage] = useState("");
@@ -101,6 +115,26 @@ export default function AdminPage() {
     if (d.ok) setProfiles(d.profiles);
   }
 
+  async function openEditor(slug: string) {
+    setTab("edit"); setEditSlug(slug); setEditLoading(true); setEditErr(null); setEditSaved(false);
+    setEditFm({}); setEditBody(""); setEditStats(null);
+    const r = await fetch(`/api/admin/profile/${slug}`, { headers: { "x-admin-pin": pin } });
+    const d = await r.json();
+    setEditLoading(false);
+    if (d.ok) { setEditFm(d.frontmatter || {}); setEditBody(d.content || ""); setEditStats({ words: d.words, readTime: d.readTime }); }
+    else setEditErr(d.error || "Failed to load");
+  }
+  function setFm(key: string, value: unknown) { setEditFm(f => ({ ...f, [key]: value })); }
+  async function saveProfile() {
+    if (!editSlug) return;
+    setEditSaving(true); setEditErr(null); setEditSaved(false);
+    const r = await fetch(`/api/admin/profile/${editSlug}`, { method: "POST", headers: headers(), body: JSON.stringify({ frontmatter: editFm, content: editBody }) });
+    const d = await r.json();
+    setEditSaving(false);
+    if (d.ok) { setEditSaved(true); setEditStats({ words: d.words, readTime: d.readTime }); setTimeout(() => setEditSaved(false), 2500); loadQueue(); }
+    else setEditErr(d.error || "Save failed");
+  }
+
   async function postNow() {
     if (!message.trim()) return;
     setPosting(true); setPostResult(null);
@@ -181,6 +215,7 @@ export default function AdminPage() {
     { key: "scripts" as const, label: "📜 Scripts" },
     { key: "calendar" as const, label: "📅 Calendar" },
     { key: "queue" as const, label: "📋 Queue" },
+    { key: "edit" as const, label: "📝 Edit" },
     { key: "post" as const, label: "📘 Post" },
     { key: "email" as const, label: "✉ Email" },
     { key: "ghostwrite" as const, label: "✍ Write" },
@@ -194,12 +229,16 @@ export default function AdminPage() {
         <span style={{ marginLeft: "auto", fontSize: 11, color: "#a8a29e" }}>southernlegends.blog</span>
       </div>
 
-      <div style={{ display: "flex", borderBottom: "1px solid #e5e0d8", padding: "0 16px", background: "#fff" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, borderBottom: "1px solid #e5e0d8", padding: "12px 16px", background: CREAM }}>
         {tabs.map(t => (
           <button key={t.key} onClick={() => setTab(t.key)} style={{
-            padding: "12px 14px", background: "none", border: "none",
-            borderBottom: `2px solid ${tab===t.key ? AMBER : "transparent"}`,
-            color: tab===t.key ? BROWN : "#a8a29e", cursor: "pointer", fontWeight: tab===t.key ? 700 : 400, fontSize: 13,
+            padding: "10px 16px", borderRadius: 9,
+            background: tab===t.key ? AMBER : "#fff",
+            border: `1.5px solid ${tab===t.key ? AMBER : "#d8cfc2"}`,
+            color: tab===t.key ? "#fff" : BROWN,
+            cursor: "pointer", fontWeight: 700, fontSize: 14,
+            boxShadow: tab===t.key ? "0 1px 3px rgba(0,0,0,0.15)" : "none",
+            transition: "all .12s",
           }}>{t.label}</button>
         ))}
       </div>
@@ -323,11 +362,89 @@ export default function AdminPage() {
                     <div style={{ fontSize: 13, fontWeight: 600, color: BROWN, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.title}</div>
                     <div style={{ fontSize: 11, color: "#a8a29e", marginTop: 2 }}>{p.date} · <span style={{ color: p.published ? "#16a34a" : AMBER }}>{p.published ? "Published" : "Draft"}</span></div>
                   </div>
+                  <button onClick={() => openEditor(p.slug)} style={{ background: "#fff", color: BROWN, border: "1px solid #d8cfc2", borderRadius: 5, padding: "5px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>
+                    ✏️ Edit
+                  </button>
                   <button onClick={() => { setMessage(`${p.title}\n\nhttps://southernlegends.blog/profiles/${p.slug}`); setLink(`https://southernlegends.blog/profiles/${p.slug}`); setTab("post"); }} style={{ background: AMBER, color: "#fff", border: "none", borderRadius: 5, padding: "5px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>
                     Post →
                   </button>
                 </div>
               ))}
+          </div>
+        )}
+
+        {/* Edit — in-place MDX profile editor */}
+        {tab === "edit" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {!editSlug && (
+              <div style={{ color: "#a8a29e", fontSize: 13, textAlign: "center", padding: 32, lineHeight: 1.6 }}>
+                Pick a profile to edit.<br />
+                <button onClick={() => { setTab("queue"); if (profiles.length === 0) loadQueue(); }} style={{ marginTop: 12, background: AMBER, color: "#fff", border: "none", borderRadius: 7, padding: "8px 16px", fontWeight: 700, fontSize: 13, cursor: "pointer" }}>Go to Queue →</button>
+              </div>
+            )}
+            {editSlug && editLoading && <div style={{ color: "#a8a29e", fontSize: 13, textAlign: "center", padding: 32 }}>Loading {editSlug}…</div>}
+            {editSlug && !editLoading && (
+              <>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, flexWrap: "wrap" }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, color: "#a8a29e" }}>Editing · {editSlug}</div>
+                  <a href={`/profiles/${editSlug}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, fontWeight: 700, color: AMBER, textDecoration: "none", background: AMBER_BG, border: `1px solid ${AMBER}`, borderRadius: 6, padding: "4px 10px" }}>Preview →</a>
+                </div>
+
+                {/* Frontmatter form */}
+                <div style={{ background: "#fff", border: "1px solid #e5e0d8", borderRadius: 10, padding: 14, display: "flex", flexDirection: "column", gap: 10 }}>
+                  <div>
+                    <label style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Title</label>
+                    <input value={String(editFm.title ?? "")} onChange={e => setFm("title", e.target.value)} style={inp} />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Excerpt</label>
+                    <textarea value={String(editFm.excerpt ?? "")} onChange={e => setFm("excerpt", e.target.value)} style={{ ...inp, minHeight: 52, resize: "vertical", fontFamily: "Georgia,serif", lineHeight: 1.5 }} />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Subtitle</label>
+                    <input value={String(editFm.subtitle ?? "")} onChange={e => setFm("subtitle", e.target.value)} style={inp} />
+                  </div>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                    <div>
+                      <label style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Hero image</label>
+                      <input value={String(editFm.heroImage ?? "")} onChange={e => setFm("heroImage", e.target.value)} placeholder="/images/profiles/…" style={inp} />
+                    </div>
+                    <div>
+                      <label style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Date</label>
+                      <input value={String(editFm.date ?? "")} onChange={e => setFm("date", e.target.value)} placeholder="2026-01-01" style={inp} />
+                    </div>
+                  </div>
+                  <div>
+                    <label style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Hero alt</label>
+                    <input value={String(editFm.heroAlt ?? "")} onChange={e => setFm("heroAlt", e.target.value)} style={inp} />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Tags (comma-separated)</label>
+                    <input value={(Array.isArray(editFm.tags) ? editFm.tags : []).join(", ")} onChange={e => setFm("tags", e.target.value.split(",").map(t => t.trim()).filter(Boolean))} style={inp} />
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: "#78716c" }}>Published</span>
+                    <button onClick={() => setFm("published", !editFm.published)} style={{ background: editFm.published ? "#16a34a" : "#e5e0d8", color: editFm.published ? "#fff" : "#78716c", border: "none", borderRadius: 99, padding: "4px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>
+                      {editFm.published ? "● Published" : "○ Draft"}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Body editor */}
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <label style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, color: "#a8a29e" }}>MDX Body</label>
+                  <span style={{ fontSize: 11, color: "#a8a29e" }}>{editWords} words · ~{editReadMin} min</span>
+                </div>
+                <textarea value={editBody} onChange={e => setEditBody(e.target.value)} placeholder="MDX body…" spellCheck
+                  style={{ background: "#fff", border: "1px solid #e5e0d8", borderRadius: 8, color: BROWN, padding: "12px 14px", fontSize: 14, lineHeight: 1.7, minHeight: 340, resize: "vertical", fontFamily: "Georgia, serif", width: "100%", boxSizing: "border-box" }}
+                />
+
+                <button onClick={saveProfile} disabled={editSaving} style={{ position: "sticky", bottom: 12, background: editSaved ? "#16a34a" : editSaving ? "#e5e0d8" : AMBER, color: editSaving ? "#a8a29e" : "#fff", border: "none", borderRadius: 8, padding: "13px 0", fontWeight: 700, fontSize: 15, cursor: editSaving ? "default" : "pointer", boxShadow: "0 2px 10px rgba(0,0,0,0.12)" }}>
+                  {editSaving ? "⏳ Saving…" : editSaved ? "✓ Saved to disk" : "💾 Save profile"}
+                </button>
+                {editErr && <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: 8, padding: "10px 14px", fontSize: 13, color: "#dc2626" }}>Error: {editErr}</div>}
+              </>
+            )}
           </div>
         )}
 

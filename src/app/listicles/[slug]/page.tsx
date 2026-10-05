@@ -11,6 +11,7 @@ import ShareRow from "@/app/components/ShareRow";
 import { BusinessCard } from "@/app/components/BusinessCard";
 import { Calendar, MapPin, Route, ExternalLink, Star } from "lucide-react";
 import AuthorSupport from "@/app/components/AuthorSupport";
+import UpcomingEvents from "@/app/components/UpcomingEvents";
 
 export function generateStaticParams() {
   return getListicleSlugs().map((slug) => ({ slug }));
@@ -221,7 +222,7 @@ export default async function ListiclePage({
             <div>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", fontWeight: 600, color: "#1a1208", lineHeight: 1.2 }}>Matt Headley</p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", color: "#9a6c2f", lineHeight: 1.2 }}>
-                Southern Legends{l.date ? ` · ${new Date(l.date).toLocaleDateString("en-US", { month: "long", year: "numeric" })}` : ""}
+                Southern Legends{l.date && !l.eventsFeed ? ` · ${new Date(l.date).toLocaleDateString("en-US", { month: "long", year: "numeric" })}` : ""}
               </p>
             </div>
           </div>
@@ -230,7 +231,23 @@ export default async function ListiclePage({
           </a>
         </div>
 
-        {isEvent ? (
+        {l.eventsFeed ? (
+          <>
+            <UpcomingEvents
+              {...l.eventsFeed}
+              grouped
+              filter
+              jsonLd
+              pageUrl={`https://southernlegends.org/listicles/${slug}`}
+              emptyText="Nothing on the calendar yet. Check back soon."
+            />
+            {l.content && (
+              <article className="prose prose-lg max-w-none" style={{ fontFamily: "var(--font-body)" }}>
+                <MDXRemote source={l.content} components={mdxComponents} />
+              </article>
+            )}
+          </>
+        ) : isEvent ? (
           <EventList events={l.events!} />
         ) : isCard ? (
           <div style={{ display: "grid", gap: "1.25rem" }}>

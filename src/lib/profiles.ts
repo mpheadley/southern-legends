@@ -22,6 +22,14 @@ export interface ProfileFrontmatter {
   featuredOrder?: number;
   titleHtml?: string;
   aiWritten?: boolean;
+  /** evergreen = holds up indefinitely; timely = event preview/news, stale after validUntil. */
+  shelfLife?: "evergreen" | "timely";
+  /** YYYY-MM-DD. For timely pieces: last day the piece is current. */
+  validUntil?: string;
+  /** Label shown on a current timely piece, e.g. "Event preview · Oct. 9-10". */
+  shelfLabel?: string;
+  /** Evergreen page to point readers to once a timely piece expires. */
+  evergreenHref?: string;
   listed?: boolean;
   photoCredit?: string;
   byline?: string;
@@ -112,10 +120,15 @@ export function getFeaturedProfile(): Profile | null {
   return all.find((p) => p.frontmatter.featured) ?? all[0];
 }
 
-/** Returns all profiles with `featured: true`, sorted by date descending. */
+/** True when a timely piece is past its validUntil date. */
+export function isExpired(fm: ProfileFrontmatter): boolean {
+  return fm.shelfLife === "timely" && !!fm.validUntil && new Date().toISOString().slice(0, 10) > fm.validUntil;
+}
+
+/** Returns all profiles with `featured: true`, sorted by date descending. Expired timely pieces drop out. */
 export function getFeaturedProfiles(): Profile[] {
   return getAllProfiles()
-    .filter((p) => p.frontmatter.featured)
+    .filter((p) => p.frontmatter.featured && !isExpired(p.frontmatter))
     .sort((a, b) => {
       const oa = a.frontmatter.featuredOrder ?? 999
       const ob = b.frontmatter.featuredOrder ?? 999

@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "venture": "Southern Legends",
+    "domain": "southernlegends.org",
+    "updated": "2026-09-21",
+    "note": "Home of record for every SL story. Channels feed one masthead; the archive/entity graph is the moat and the licensable asset."
+  },
+  "sponsorship": [
+    {
+      "tier": "Channel Presenting Sponsor",
+      "unit": "per channel / month",
+      "price": 250,
+      "actual": false,
+      "detail": "\"[Channel] presented by [Brand]\" — logo on section, in-story credit, 1 sponsored feature/mo."
+    },
+    {
+      "tier": "Channel Presenting — annual",
+      "unit": "per channel / year",
+      "price": 2500,
+      "actual": false,
+      "detail": "~2 months free vs monthly. Locks the section for the year."
+    },
+    {
+      "tier": "Newsletter Presenting Sponsor",
+      "unit": "per month",
+      "price": 500,
+      "actual": false,
+      "detail": "Top slot in every SL newsletter send that month."
+    },
+    {
+      "tier": "Single Newsletter Slot",
+      "unit": "per send",
+      "price": 150,
+      "actual": false,
+      "detail": "One placement in one send."
+    }
+  ],
+  "adUnits": [
+    {
+      "tier": "Run-of-site display",
+      "unit": "per week (flat)",
+      "price": 100,
+      "actual": false,
+      "detail": "GatherAd unit across SL. Flat weekly beats CPM at this scale."
+    },
+    {
+      "tier": "Sponsored story (advertorial)",
+      "unit": "per piece",
+      "price": 400,
+      "actual": false,
+      "detail": "Disclosed, written in SL voice, keeps canonical home on SL."
+    },
+    {
+      "tier": "Sponsored video / reel",
+      "unit": "per piece",
+      "price": 75,
+      "actual": true,
+      "detail": "Confirmed rate from media-partner work."
+    }
+  ],
+  "newsletter": [
+    {
+      "tier": "Free",
+      "unit": "reader",
+      "price": 0,
+      "actual": true,
+      "detail": "Weekly. The top of the funnel."
+    },
+    {
+      "tier": "Paid Member",
+      "unit": "per month",
+      "price": 6,
+      "actual": false,
+      "detail": "Full archive access, then/now backstories, member-only pieces."
+    },
+    {
+      "tier": "Paid Member — annual",
+      "unit": "per year",
+      "price": 60,
+      "actual": false,
+      "detail": "2 months free."
+    },
+    {
+      "tier": "Founding Member",
+      "unit": "per year",
+      "price": 120,
+      "actual": false,
+      "detail": "Early supporter; name in the colophon."
+    }
+  ],
+  "syndication": [
+    {
+      "tier": "Anniston Star faith column",
+      "unit": "per week",
+      "price": 25,
+      "actual": true,
+      "detail": "Running. The credential + clip engine."
+    },
+    {
+      "tier": "Local outlet — freelance",
+      "unit": "per piece",
+      "price": 65,
+      "actual": false,
+      "detail": "Est. $50–75. First or reprint rights."
+    },
+    {
+      "tier": "Regional magazine",
+      "unit": "per piece",
+      "price": 275,
+      "actual": false,
+      "detail": "Est. $150–400 (~$0.25–0.40/word). Alabama Living tier."
+    },
+    {
+      "tier": "National / prestige",
+      "unit": "per word",
+      "price": 1.5,
+      "actual": false,
+      "detail": "Est. $1–2/word ($1,500–3,000+ feature). Garden & Gun / Bitter Southerner tier."
+    },
+    {
+      "tier": "Reprint rights (outlet pays SL)",
+      "unit": "per pickup",
+      "price": 50,
+      "actual": false,
+      "detail": "After the exclusive window; SL keeps the canonical home."
+    }
+  ],
+  "licensing": [
+    {
+      "tier": "Regional media license",
+      "unit": "per month",
+      "price": 500,
+      "actual": false,
+      "detail": "Entity graph + then/now archive feed for a newsroom."
+    },
+    {
+      "tier": "CVB / tourism license",
+      "unit": "per year",
+      "price": 6000,
+      "actual": false,
+      "detail": "Community memory + places graph for a visitors bureau."
+    },
+    {
+      "tier": "Government / nonprofit",
+      "unit": "per year",
+      "price": 3600,
+      "actual": false,
+      "detail": "Discounted civic tier. 26-year local record."
+    },
+    {
+      "tier": "Custom dataset build",
+      "unit": "project",
+      "price": 2500,
+      "actual": false,
+      "detail": "Bespoke entity/archive extract. Quoted to scope."
+    }
+  ],
+  "costs": [
+    {
+      "tier": "Reel production (Ginna)",
+      "unit": "per reel",
+      "price": 75,
+      "actual": true,
+      "detail": "Ginna offered $75/reel — confirmed. Feeds sponsored-reel margin ($75 sold ≈ break-even; markup or bundle.)"
+    }
+  ]
+}

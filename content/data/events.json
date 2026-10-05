@@ -1,0 +1,1804 @@
+{
+  "_note": "One home for dated event facts on SL. Pages render these via <UpcomingEvents />; an event hides itself the day after `end`. Verify Aisle facts against gather/apps/theaisle canonical-snapshot.json + lib/expo-pricing.ts before editing.",
+  "updatedAt": "2026-10-05T13:16:20+00:00",
+  "events": [
+    {
+      "id": "skytrail-2026",
+      "name": "SkyTrail Festival",
+      "start": "2026-10-09",
+      "end": "2026-10-10",
+      "venues": [
+        "longleaf",
+        "choccolocco-park"
+      ],
+      "summary": "Hosted by the Calhoun County Area Chamber. Calhoun County's first birding festival. Friday welcome at the Sensory Garden at Longleaf Center, 5:30-7 p.m. ($25, registration required). Saturday guided walks at Choccolocco Park in Oxford, 8-11 a.m.",
+      "url": "https://visitcalhouncounty.com/event/skytrail-festival/",
+      "urlLabel": "Event details",
+      "profile": "/profiles/no-binoculars-required",
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "outdoors",
+      "venue": "Longleaf Event Center",
+      "time": "5:30 p.m.",
+      "price": "$25 (Friday welcome)",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/skytrail-festival/",
+      "verifiedAt": "2026-10-05",
+      "addedAt": "2026-10-05",
+      "startTime": "17:30"
+    },
+    {
+      "id": "the-aisle-2026",
+      "name": "The Aisle: Anniston Bridal Show",
+      "start": "2026-10-18",
+      "end": "2026-10-18",
+      "venues": [
+        "longleaf"
+      ],
+      "summary": "Sunday, Oct. 18, at the Longleaf Event Center. Register free in advance; $25 at the door; VIP $75. Founded by Matt Headley, who writes Southern Legends.",
+      "url": "https://theaislebridalshows.com",
+      "urlLabel": "Register",
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "market",
+      "venue": "Longleaf Event Center",
+      "time": "11 a.m.",
+      "price": "Free with advance registration; $25 at the door; VIP $75",
+      "source": "The Aisle",
+      "sourceUrl": "https://theaislebridalshows.com",
+      "verifiedAt": "2026-10-05",
+      "addedAt": "2026-10-05",
+      "startTime": "11:00"
+    },
+    {
+      "id": "jefferson-starship-at-oxford-performing-arts-center-2026-10-06",
+      "auto": true,
+      "name": "Jefferson Starship",
+      "start": "2026-10-06",
+      "end": "2026-10-06",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/jefferson-starship-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/jefferson-starship-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/jefferson-starship-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2948"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "collection-conversations-berman-discussion-group-2026-10-07",
+      "auto": true,
+      "name": "Collection Conversations: Berman Discussion Group",
+      "start": "2026-10-07",
+      "end": "2026-10-07",
+      "time": "12 p.m.",
+      "startTime": "",
+      "venue": "Anniston Museums & Gardens",
+      "venues": [
+        "amag"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "community",
+      "price": "Free",
+      "url": "https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/",
+      "urlLabel": "Event details",
+      "source": "Anniston Museums & Gardens",
+      "sourceUrl": "https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/",
+      "sources": [
+        {
+          "name": "Anniston Museums & Gardens",
+          "url": "https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/",
+          "official": true,
+          "verify": "amag:https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community event. Free. Check the listing before you go."
+    },
+    {
+      "id": "viruses-anti-virus-software-2026-10-07",
+      "auto": true,
+      "name": "Viruses & Anti-Virus Software",
+      "start": "2026-10-07",
+      "end": "2026-10-07",
+      "time": "2 p.m.",
+      "startTime": "14:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "civic",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261007T190000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community class. Free. Check the listing before you go."
+    },
+    {
+      "id": "blackhawk-at-oxford-performing-arts-center-2026-10-08",
+      "auto": true,
+      "name": "Blackhawk",
+      "start": "2026-10-08",
+      "end": "2026-10-08",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/blackhawk-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/blackhawk-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/blackhawk-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2950"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "cosplayers-ball-2026-10-08",
+      "auto": true,
+      "name": "Cosplayers' Ball",
+      "start": "2026-10-08",
+      "end": "2026-10-08",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261008T230000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "an-evening-with-amy-grant-at-oxford-performing-arts-center-2026-10-09",
+      "auto": true,
+      "name": "An Evening with Amy Grant",
+      "start": "2026-10-09",
+      "end": "2026-10-09",
+      "time": "7:30 p.m.",
+      "startTime": "19:30",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/an-evening-with-amy-grant-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/an-evening-with-amy-grant-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/an-evening-with-amy-grant-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2952"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "mad-science-experiments-2026-10-09",
+      "auto": true,
+      "name": "Mad Science Experiments",
+      "start": "2026-10-09",
+      "end": "2026-10-09",
+      "time": "4 p.m.",
+      "startTime": "16:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261009T210000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program. Free. Check the listing before you go."
+    },
+    {
+      "id": "midnight-on-main-at-oxford-performing-arts-center-2026-10-10",
+      "auto": true,
+      "name": "Midnight on Main",
+      "start": "2026-10-10",
+      "end": "2026-10-10",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "community",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/midnight-on-main-opac/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/midnight-on-main-opac/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/midnight-on-main-opac/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2473"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community event in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "museum-after-dark-2026-10-10",
+      "auto": true,
+      "name": "Museum After Dark",
+      "start": "2026-10-10",
+      "end": "2026-10-10",
+      "time": "5:30 p.m.",
+      "startTime": "",
+      "venue": "Anniston Museums & Gardens",
+      "venues": [
+        "amag"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "Adults $15 · Children (4–17) $10 · Ages 0–3 Free",
+      "url": "https://www.exploreamag.org/events/museum-after-dark/",
+      "urlLabel": "Event details",
+      "source": "Anniston Museums & Gardens",
+      "sourceUrl": "https://www.exploreamag.org/events/museum-after-dark/",
+      "sources": [
+        {
+          "name": "Anniston Museums & Gardens",
+          "url": "https://www.exploreamag.org/events/museum-after-dark/",
+          "official": true,
+          "verify": "amag:https://www.exploreamag.org/events/museum-after-dark/"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program. Tickets: Adults $15 · Children (4–17) $10 · Ages 0–3 Free. Check the listing before you go."
+    },
+    {
+      "id": "elktoberfest-at-anniston-elks-lodge-189-2026-10-11",
+      "auto": true,
+      "name": "Elktoberfest at Anniston Elks Lodge #189",
+      "start": "2026-10-11",
+      "end": "2026-10-11",
+      "time": "1 p.m.",
+      "startTime": "13:00",
+      "venue": "",
+      "venues": [],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "food",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/elktoberfest-at-anniston-elks-lodge-189/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/elktoberfest-at-anniston-elks-lodge-189/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/elktoberfest-at-anniston-elks-lodge-189/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/4612"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Food and gathering. Check the listing before you go."
+    },
+    {
+      "id": "halloween-costume-giveaway-2026-10-12",
+      "auto": true,
+      "name": "Halloween Costume Giveaway",
+      "start": "2026-10-12",
+      "end": "2026-10-12",
+      "time": "",
+      "startTime": "",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261012"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program. Free. Check the listing before you go."
+    },
+    {
+      "id": "ancestry-101-an-introduction-to-ancestry-com-and-ancestry-li-2026-10-13",
+      "auto": true,
+      "name": "Ancestry 101: An Introduction to Ancestry.com and Ancestry Library Edition",
+      "start": "2026-10-13",
+      "end": "2026-10-13",
+      "time": "2 p.m.",
+      "startTime": "14:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "civic",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261013T190000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community class. Free. Check the listing before you go."
+    },
+    {
+      "id": "florida-international-panthers-at-jacksonville-state-gamecoc-2026-10-13",
+      "auto": true,
+      "name": "Florida International Panthers at Jacksonville State Gamecocks Football",
+      "start": "2026-10-13",
+      "end": "2026-10-13",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Burgess-Snow Field at AmFirst Stadium",
+      "venues": [
+        "jsu"
+      ],
+      "city": "Jacksonville",
+      "county": "Calhoun",
+      "category": "sports",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/florida-international-panthers-at-jacksonville-state-gamecocks-football/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/florida-international-panthers-at-jacksonville-state-gamecocks-football/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/florida-international-panthers-at-jacksonville-state-gamecocks-football/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2524"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "College sports in Jacksonville. Check the listing before you go."
+    },
+    {
+      "id": "old-crow-medicine-show-at-oxford-performing-arts-center-2026-10-13",
+      "auto": true,
+      "name": "Old Crow Medicine Show",
+      "start": "2026-10-13",
+      "end": "2026-10-13",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/old-crow-medicine-show-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/old-crow-medicine-show-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/old-crow-medicine-show-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2954"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "plant-sale-2026-10-15",
+      "auto": true,
+      "name": "Plant Sale",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "time": "10 a.m.",
+      "startTime": "10:00",
+      "venue": "Longleaf Event Center",
+      "venues": [
+        "longleaf"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "outdoors",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/plant-sale-4/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/plant-sale-4/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/plant-sale-4/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/3607"
+        },
+        {
+          "name": "Anniston Museums & Gardens",
+          "url": "https://www.exploreamag.org/events/plant-sale-27/",
+          "official": true,
+          "verify": "amag:https://www.exploreamag.org/events/plant-sale-27/"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Outdoors. Check the listing before you go."
+    },
+    {
+      "id": "smokey-robinson-at-oxford-performing-arts-center-2026-10-15",
+      "auto": true,
+      "name": "Smokey Robinson",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "time": "7:30 p.m.",
+      "startTime": "19:30",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/smokey-robinson-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/smokey-robinson-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/smokey-robinson-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2956"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "third-thursday-oakleaf-hydrangea-2026-10-15",
+      "auto": true,
+      "name": "Third Thursday: Oakleaf Hydrangea",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "time": "12 p.m.",
+      "startTime": "",
+      "venue": "Anniston Museums & Gardens",
+      "venues": [
+        "amag"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "outdoors",
+      "price": "Free",
+      "url": "https://www.exploreamag.org/events/third-thursday-oakleaf-hydrangea/",
+      "urlLabel": "Event details",
+      "source": "Anniston Museums & Gardens",
+      "sourceUrl": "https://www.exploreamag.org/events/third-thursday-oakleaf-hydrangea/",
+      "sources": [
+        {
+          "name": "Anniston Museums & Gardens",
+          "url": "https://www.exploreamag.org/events/third-thursday-oakleaf-hydrangea/",
+          "official": true,
+          "verify": "amag:https://www.exploreamag.org/events/third-thursday-oakleaf-hydrangea/"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Outdoors. Free. Check the listing before you go."
+    },
+    {
+      "id": "grown-up-movie-night-obsession-r-2026-10-16",
+      "auto": true,
+      "name": "Grown-Up Movie Night - Obsession (R)",
+      "start": "2026-10-16",
+      "end": "2026-10-16",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261016T230000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "author-susan-zurenda-no-way-out-but-through-2026-10-19",
+      "auto": true,
+      "name": "Author Susan Zurenda: No Way Out But Through",
+      "start": "2026-10-19",
+      "end": "2026-10-19",
+      "time": "3 p.m.",
+      "startTime": "15:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261019T200000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "creative-pumpkin-carving-2026-10-20",
+      "auto": true,
+      "name": "Creative Pumpkin Carving",
+      "start": "2026-10-20",
+      "end": "2026-10-20",
+      "time": "2 p.m.",
+      "startTime": "14:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261020T190000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "the-dolphins-quartet-at-oxford-performing-arts-center-2026-10-20",
+      "auto": true,
+      "name": "The Dolphins Quartet",
+      "start": "2026-10-20",
+      "end": "2026-10-20",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/the-dolphins-quartet-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/the-dolphins-quartet-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/the-dolphins-quartet-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2958"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "bill-engvall-at-oxford-performing-arts-center-2026-10-23",
+      "auto": true,
+      "name": "Bill Engvall",
+      "start": "2026-10-23",
+      "end": "2026-10-23",
+      "time": "7:30 p.m.",
+      "startTime": "19:30",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/bill-engvall-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/bill-engvall-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/bill-engvall-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2960"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "mini-pumpkin-painting-2026-10-23",
+      "auto": true,
+      "name": "Mini Pumpkin Painting",
+      "start": "2026-10-23",
+      "end": "2026-10-23",
+      "time": "4 p.m.",
+      "startTime": "16:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261023T210000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "saturday-alive-2026-10-24",
+      "auto": true,
+      "name": "Saturday Alive!",
+      "start": "2026-10-24",
+      "end": "2026-10-24",
+      "time": "1 p.m.",
+      "startTime": "",
+      "venue": "Anniston Museums & Gardens",
+      "venues": [
+        "amag"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "Free",
+      "url": "https://www.exploreamag.org/events/saturday-alive-37/",
+      "urlLabel": "Event details",
+      "source": "Anniston Museums & Gardens",
+      "sourceUrl": "https://www.exploreamag.org/events/saturday-alive-37/",
+      "sources": [
+        {
+          "name": "Anniston Museums & Gardens",
+          "url": "https://www.exploreamag.org/events/saturday-alive-37/",
+          "official": true,
+          "verify": "amag:https://www.exploreamag.org/events/saturday-alive-37/"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program. Free. Check the listing before you go."
+    },
+    {
+      "id": "wildlife-workshop-scat-chat-2026-10-24",
+      "auto": true,
+      "name": "Wildlife Workshop: Scat Chat",
+      "start": "2026-10-24",
+      "end": "2026-10-24",
+      "time": "2 p.m.",
+      "startTime": "",
+      "venue": "Anniston Museums & Gardens",
+      "venues": [
+        "amag"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "civic",
+      "price": "",
+      "url": "https://www.exploreamag.org/events/wildlife-workshop-scat-chat/",
+      "urlLabel": "Event details",
+      "source": "Anniston Museums & Gardens",
+      "sourceUrl": "https://www.exploreamag.org/events/wildlife-workshop-scat-chat/",
+      "sources": [
+        {
+          "name": "Anniston Museums & Gardens",
+          "url": "https://www.exploreamag.org/events/wildlife-workshop-scat-chat/",
+          "official": true,
+          "verify": "amag:https://www.exploreamag.org/events/wildlife-workshop-scat-chat/"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community class. Check the listing before you go."
+    },
+    {
+      "id": "everyday-ai-how-it-s-used-and-what-you-should-know-2026-10-27",
+      "auto": true,
+      "name": "Everyday AI: How It's Used, and What You Should Know",
+      "start": "2026-10-27",
+      "end": "2026-10-27",
+      "time": "2 p.m.",
+      "startTime": "14:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "civic",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261027T190000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community class. Free. Check the listing before you go."
+    },
+    {
+      "id": "coffee-house-book-chat-2026-10-29",
+      "auto": true,
+      "name": "Coffee House Book Chat",
+      "start": "2026-10-29",
+      "end": "2026-10-29",
+      "time": "3 p.m.",
+      "startTime": "15:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261029T150000"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "whiskey-and-secrets-an-exclusive-speakeasy-dinner-at-otter-c-2026-10-30",
+      "auto": true,
+      "name": "Whiskey and Secrets – An Exclusive Speakeasy Dinner at Otter Creek",
+      "start": "2026-10-30",
+      "end": "2026-10-30",
+      "time": "5:30 p.m.",
+      "startTime": "17:30",
+      "venue": "Otter Creek Farmstead & Distillery",
+      "venues": [],
+      "city": "Ohatchee",
+      "county": "Calhoun",
+      "category": "food",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/whiskey-and-secrets-an-exclusive-speakeasy-dinner-at-otter-creek/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/whiskey-and-secrets-an-exclusive-speakeasy-dinner-at-otter-creek/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/whiskey-and-secrets-an-exclusive-speakeasy-dinner-at-otter-creek/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/3836"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Food and gathering in Ohatchee. Check the listing before you go."
+    },
+    {
+      "id": "miles-of-hope-spooky-edition-2026-10-31",
+      "auto": true,
+      "name": "Miles of Hope: Spooky Edition",
+      "start": "2026-10-31",
+      "end": "2026-10-31",
+      "time": "8 a.m.",
+      "startTime": "08:00",
+      "venue": "171 Town Center Drive",
+      "venues": [],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "community",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/miles-of-hope-spooky-edition/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/miles-of-hope-spooky-edition/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/miles-of-hope-spooky-edition/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2547"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community event. Check the listing before you go."
+    },
+    {
+      "id": "skulls-and-skeletons-2026-10-31",
+      "auto": true,
+      "name": "Skulls and Skeletons",
+      "start": "2026-10-31",
+      "end": "2026-10-31",
+      "time": "1 p.m.",
+      "startTime": "",
+      "venue": "Anniston Museums & Gardens",
+      "venues": [
+        "amag"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "Free",
+      "url": "https://www.exploreamag.org/events/skulls-and-skeletons-2/",
+      "urlLabel": "Event details",
+      "source": "Anniston Museums & Gardens",
+      "sourceUrl": "https://www.exploreamag.org/events/skulls-and-skeletons-2/",
+      "sources": [
+        {
+          "name": "Anniston Museums & Gardens",
+          "url": "https://www.exploreamag.org/events/skulls-and-skeletons-2/",
+          "official": true,
+          "verify": "amag:https://www.exploreamag.org/events/skulls-and-skeletons-2/"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program. Free. Check the listing before you go."
+    },
+    {
+      "id": "thankful-turkey-2026-11-01",
+      "auto": true,
+      "name": "Thankful Turkey",
+      "start": "2026-11-01",
+      "end": "2026-11-01",
+      "time": "",
+      "startTime": "",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261101"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program. Free. Check the listing before you go."
+    },
+    {
+      "id": "puppy-pals-at-oxford-performing-arts-center-2026-11-02",
+      "auto": true,
+      "name": "Puppy Pals",
+      "start": "2026-11-02",
+      "end": "2026-11-02",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/puppy-pals-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/puppy-pals-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/puppy-pals-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2962"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "wynonna-judd-at-oxford-performing-arts-center-2026-11-06",
+      "auto": true,
+      "name": "Wynonna Judd",
+      "start": "2026-11-06",
+      "end": "2026-11-06",
+      "time": "7:30 p.m.",
+      "startTime": "19:30",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/wynonna-judd-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/wynonna-judd-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/wynonna-judd-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2964"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "gobbler-5k-10k-13-1m-at-piedmont-al-45-2026-11-07",
+      "auto": true,
+      "name": "Gobbler 5K, 10K, & 13.1M at Piedmont, AL",
+      "start": "2026-11-07",
+      "end": "2026-11-07",
+      "time": "8 a.m.",
+      "startTime": "08:00",
+      "venue": "",
+      "venues": [],
+      "city": "Piedmont",
+      "county": "Calhoun",
+      "category": "outdoors",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/__trashed-52/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/__trashed-52/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/__trashed-52/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2280"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Outdoors in Piedmont. Check the listing before you go."
+    },
+    {
+      "id": "sam-houston-state-bearkats-at-jacksonville-state-gamecocks-f-2026-11-07",
+      "auto": true,
+      "name": "Sam Houston State Bearkats at Jacksonville State Gamecocks Football",
+      "start": "2026-11-07",
+      "end": "2026-11-07",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "AmFirst Stadium",
+      "venues": [
+        "jsu"
+      ],
+      "city": "Jacksonville",
+      "county": "Calhoun",
+      "category": "sports",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/__trashed-50/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/__trashed-50/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/__trashed-50/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2284"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "College sports in Jacksonville. Check the listing before you go."
+    },
+    {
+      "id": "nutcracker-magical-christmas-ballet-at-oxford-performing-art-2026-11-10",
+      "auto": true,
+      "name": "Nutcracker! Magical Christmas Ballet",
+      "start": "2026-11-10",
+      "end": "2026-11-10",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/nutcracker-magical-christmas-ballet-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/nutcracker-magical-christmas-ballet-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/nutcracker-magical-christmas-ballet-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2966"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "puzzle-race-2026-11-13",
+      "auto": true,
+      "name": "Puzzle Race",
+      "start": "2026-11-13",
+      "end": "2026-11-13",
+      "time": "5:30 p.m.",
+      "startTime": "17:30",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "community",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261113T233000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community event. Free. Check the listing before you go."
+    },
+    {
+      "id": "christmas-on-main-oxford-al-2026-11-15",
+      "auto": true,
+      "name": "Christmas on Main",
+      "start": "2026-11-15",
+      "end": "2026-11-15",
+      "time": "noon",
+      "startTime": "12:00",
+      "venue": "Oxford, AL Main Street",
+      "venues": [],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "community",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/christmas-on-main/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/christmas-on-main/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/christmas-on-main/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2173"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Community event in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "grand-funk-railroad-at-oxford-performing-arts-center-2026-11-15",
+      "auto": true,
+      "name": "Grand Funk Railroad",
+      "start": "2026-11-15",
+      "end": "2026-11-15",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/grand-funk-railroad-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/grand-funk-railroad-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/grand-funk-railroad-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2968"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "plant-sale-2026-11-17",
+      "auto": true,
+      "name": "Plant Sale",
+      "start": "2026-11-17",
+      "end": "2026-11-17",
+      "time": "10 a.m.",
+      "startTime": "10:00",
+      "venue": "Longleaf Event Center",
+      "venues": [
+        "longleaf"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "outdoors",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/plant-sale-2/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/plant-sale-2/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/plant-sale-2/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/3600"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Outdoors. Check the listing before you go."
+    },
+    {
+      "id": "grown-up-movie-night-power-ballad-r-2026-11-20",
+      "auto": true,
+      "name": "Grown-Up Movie Night - Power Ballad (R)",
+      "start": "2026-11-20",
+      "end": "2026-11-20",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261121T000000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "micky-dolenz-at-oxford-performing-arts-center-2026-11-20",
+      "auto": true,
+      "name": "Micky Dolenz",
+      "start": "2026-11-20",
+      "end": "2026-11-20",
+      "time": "7:30 p.m.",
+      "startTime": "19:30",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/micky-dolenz-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/micky-dolenz-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/micky-dolenz-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2970"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "an-otter-creek-thanksgiving-dinner-2026-11-21",
+      "auto": true,
+      "name": "An Otter Creek Thanksgiving Dinner",
+      "start": "2026-11-21",
+      "end": "2026-11-21",
+      "time": "5:30 p.m.",
+      "startTime": "17:30",
+      "venue": "Otter Creek Farmstead & Distillery",
+      "venues": [],
+      "city": "Ohatchee",
+      "county": "Calhoun",
+      "category": "food",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/an-otter-creek-thanksgiving-dinner/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/an-otter-creek-thanksgiving-dinner/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/an-otter-creek-thanksgiving-dinner/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/3840"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Food and gathering in Ohatchee. Check the listing before you go."
+    },
+    {
+      "id": "missouri-state-bears-at-jacksonville-state-gamecocks-footbal-2026-11-21",
+      "auto": true,
+      "name": "Missouri State Bears at Jacksonville State Gamecocks Football",
+      "start": "2026-11-21",
+      "end": "2026-11-21",
+      "time": "1 p.m.",
+      "startTime": "13:00",
+      "venue": "AmFirst Stadium",
+      "venues": [
+        "jsu"
+      ],
+      "city": "Jacksonville",
+      "county": "Calhoun",
+      "category": "sports",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/__trashed-46/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/__trashed-46/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/__trashed-46/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2290"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "College sports in Jacksonville. Check the listing before you go."
+    },
+    {
+      "id": "a-charlie-brown-christmas-at-oxford-performing-arts-center-2026-11-23",
+      "auto": true,
+      "name": "A Charlie Brown Christmas",
+      "start": "2026-11-23",
+      "end": "2026-11-23",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/a-charlie-brown-christmas-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/a-charlie-brown-christmas-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/a-charlie-brown-christmas-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2972"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "plucked-turkey-10k-2026-11-26",
+      "auto": true,
+      "name": "Plucked Turkey 10k",
+      "start": "2026-11-26",
+      "end": "2026-11-26",
+      "time": "8 a.m.",
+      "startTime": "08:00",
+      "venue": "Norwood Hodges Community Center",
+      "venues": [],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "outdoors",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/plucked-turkey-10k/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/plucked-turkey-10k/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/plucked-turkey-10k/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2566"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Outdoors. Check the listing before you go."
+    },
+    {
+      "id": "an-olde-english-christmas-with-peter-noone-at-oxford-perform-2026-12-04",
+      "auto": true,
+      "name": "An Olde English Christmas with Peter Noone",
+      "start": "2026-12-04",
+      "end": "2026-12-04",
+      "time": "7:30 p.m.",
+      "startTime": "19:30",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/an-olde-english-christmas-with-peter-noone-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/an-olde-english-christmas-with-peter-noone-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/an-olde-english-christmas-with-peter-noone-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2974"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "winter-wonderland-2026-12-04",
+      "auto": true,
+      "name": "Winter Wonderland",
+      "start": "2026-12-04",
+      "end": "2026-12-04",
+      "time": "4 p.m.",
+      "startTime": "16:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "family",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261204T220000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Family program. Free. Check the listing before you go."
+    },
+    {
+      "id": "holiday-5k-10k-13-1m-at-piedmont-al-49-2026-12-05",
+      "auto": true,
+      "name": "Holiday 5K, 10K, & 13.1M at Piedmont, AL",
+      "start": "2026-12-05",
+      "end": "2026-12-05",
+      "time": "8 a.m.",
+      "startTime": "08:00",
+      "venue": "",
+      "venues": [],
+      "city": "Piedmont",
+      "county": "Calhoun",
+      "category": "outdoors",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/__trashed-41/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/__trashed-41/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/__trashed-41/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2299"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Outdoors in Piedmont. Check the listing before you go."
+    },
+    {
+      "id": "croce-plays-croce-at-oxford-performing-arts-center-2026-12-06",
+      "auto": true,
+      "name": "Croce Plays Croce",
+      "start": "2026-12-06",
+      "end": "2026-12-06",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/croce-plays-croce-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/croce-plays-croce-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/croce-plays-croce-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2976"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "cozy-christmas-movie-2026-12-11",
+      "auto": true,
+      "name": "Cozy Christmas Movie",
+      "start": "2026-12-11",
+      "end": "2026-12-11",
+      "time": "4 p.m.",
+      "startTime": "16:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261211T220000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    },
+    {
+      "id": "christmas-with-the-pops-at-oxford-performing-arts-center-2026-12-13",
+      "auto": true,
+      "name": "Christmas with The Pops",
+      "start": "2026-12-13",
+      "end": "2026-12-13",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/christmas-with-the-pops-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/christmas-with-the-pops-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/christmas-with-the-pops-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2978"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "clay-walker-family-christmas-at-oxford-performing-arts-cente-2026-12-17",
+      "auto": true,
+      "name": "Clay Walker Family Christmas",
+      "start": "2026-12-17",
+      "end": "2026-12-17",
+      "time": "7 p.m.",
+      "startTime": "19:00",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/clay-walker-family-christmas-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/clay-walker-family-christmas-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/clay-walker-family-christmas-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2980"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "celtic-woman-silver-bells-christmas-tour-at-oxford-performin-2026-12-18",
+      "auto": true,
+      "name": "Celtic Woman: Silver Bells Christmas Tour",
+      "start": "2026-12-18",
+      "end": "2026-12-18",
+      "time": "7:30 p.m.",
+      "startTime": "19:30",
+      "venue": "Oxford Performing Arts Center",
+      "venues": [
+        "opac"
+      ],
+      "city": "Oxford",
+      "county": "Calhoun",
+      "category": "music",
+      "price": "",
+      "url": "https://visitcalhouncounty.com/event/celtic-woman-silver-bells-christmas-tour-at-oxford-performing-arts-center/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/celtic-woman-silver-bells-christmas-tour-at-oxford-performing-arts-center/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/celtic-woman-silver-bells-christmas-tour-at-oxford-performing-arts-center/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2982"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Live music in Oxford. Check the listing before you go."
+    },
+    {
+      "id": "grown-up-movie-night-the-dog-stars-r-2026-12-18",
+      "auto": true,
+      "name": "Grown-Up Movie Night - The Dog Stars (R)",
+      "start": "2026-12-18",
+      "end": "2026-12-18",
+      "time": "6 p.m.",
+      "startTime": "18:00",
+      "venue": "Public Library of Anniston-Calhoun County",
+      "venues": [
+        "placc"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "arts",
+      "price": "Free",
+      "url": "https://www.publiclibrary.cc/events",
+      "urlLabel": "Event details",
+      "source": "Public Library of Anniston-Calhoun County",
+      "sourceUrl": "https://www.publiclibrary.cc/events",
+      "sources": [
+        {
+          "name": "Public Library of Anniston-Calhoun County",
+          "url": "https://www.publiclibrary.cc/events",
+          "official": true,
+          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261219T000000Z"
+        }
+      ],
+      "addedAt": "2026-10-05",
+      "verifiedAt": "2026-10-05",
+      "summary": "Arts and performance. Free. Check the listing before you go."
+    }
+  ]
+}

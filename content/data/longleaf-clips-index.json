@@ -1,0 +1,4615 @@
+{
+ "source": "Photos library, geotagged within ~0.3 mi of Longleaf Event Center",
+ "tag": "longleaf",
+ "count": 288,
+ "clips": [
+  {
+   "uuid": "6989E600-F39D-4149-AF29-423A7196640B",
+   "path": null,
+   "taken": "2023-01-30 11:56:26",
+   "duration_s": 19.4,
+   "width": 176,
+   "height": 144,
+   "lat": 33.6631,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5592159F-DC74-474F-A95E-8B85067D1FAF",
+   "path": null,
+   "taken": "2025-02-09 08:34:02",
+   "duration_s": 85.0,
+   "width": 1280,
+   "height": 720,
+   "lat": 33.6628,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "FD5D0BC5-1E95-4B84-83F6-D893EAF41890",
+   "path": null,
+   "taken": "2025-02-09 08:39:12",
+   "duration_s": 0.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F4EBCDED-451F-4152-BE94-64A0494A97FF",
+   "path": null,
+   "taken": "2025-02-09 08:39:15",
+   "duration_s": 777.5,
+   "width": 1280,
+   "height": 720,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C55C6F3C-B8EC-4795-8182-E2CF92E6EB32",
+   "path": null,
+   "taken": "2025-02-15 11:58:59",
+   "duration_s": 72.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8301,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "71ED1FB8-242D-4A21-8D5F-21A2B04874FE",
+   "path": null,
+   "taken": "2025-02-19 19:48:18",
+   "duration_s": 30.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6632,
+   "lon": -85.8307,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "458DE9F5-60BA-4718-87DE-9563B8B651E9",
+   "path": null,
+   "taken": "2025-02-19 19:48:55",
+   "duration_s": 22.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6632,
+   "lon": -85.8307,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "3B2730F6-F4B6-4D3A-86D6-FF3D0450CDAE",
+   "path": null,
+   "taken": "2025-02-23 10:29:34",
+   "duration_s": 128.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "70FB342B-FBE2-4885-BA91-7F7D222EBB3B",
+   "path": null,
+   "taken": "2025-02-23 10:32:44",
+   "duration_s": 3533.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "53DCC887-108F-4D2C-872E-1D727AB611E4",
+   "path": null,
+   "taken": "2025-02-28 10:03:45",
+   "duration_s": 29.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DDCDEE78-CE1B-48F8-BF83-1365E385D16D",
+   "path": null,
+   "taken": "2025-02-28 10:07:17",
+   "duration_s": 87.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8CD4E89E-7904-4D92-8C1F-255A903EA3B3",
+   "path": null,
+   "taken": "2025-02-28 10:08:57",
+   "duration_s": 61.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F3EE6B45-831D-4925-AB14-9D898681FDC9",
+   "path": null,
+   "taken": "2025-02-28 10:10:00",
+   "duration_s": 146.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7E537915-181F-4FE0-9988-DBC72B42D920",
+   "path": null,
+   "taken": "2025-02-28 10:13:44",
+   "duration_s": 93.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "36351094-F7D7-4C4D-B944-CFC1BCA8FC2B",
+   "path": null,
+   "taken": "2025-03-02 07:57:56",
+   "duration_s": 66.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6624,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0FE2AC9A-E431-4236-87A5-19FDA6C22776",
+   "path": null,
+   "taken": "2025-03-02 08:14:39",
+   "duration_s": 177.9,
+   "width": 1280,
+   "height": 720,
+   "lat": 33.6628,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9B212BD0-D309-4F61-9B2E-E091B3C3CA32",
+   "path": null,
+   "taken": "2025-03-02 08:14:39",
+   "duration_s": 177.9,
+   "width": 1280,
+   "height": 720,
+   "lat": 33.6628,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "970B59D4-68BA-4E3E-A37E-237A28934663",
+   "path": null,
+   "taken": "2025-03-02 08:14:39",
+   "duration_s": 177.9,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6628,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4A6A8618-5FCB-442D-A9BB-A7516F2B4593",
+   "path": null,
+   "taken": "2025-03-02 08:23:49",
+   "duration_s": 2.1,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "EA1644A1-A5EF-4642-90B4-FC3607667323",
+   "path": null,
+   "taken": "2025-03-02 08:30:05",
+   "duration_s": 240.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2CE64913-2E73-424A-8042-B3DAC29BF6A7",
+   "path": null,
+   "taken": "2025-03-02 08:34:08",
+   "duration_s": 56.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6628,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "66BCB9FD-0CD7-41D4-BCD4-5789A3095CE1",
+   "path": null,
+   "taken": "2025-03-02 09:01:04",
+   "duration_s": 0.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.663,
+   "lon": -85.8307,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "1784D74D-17E4-4262-ADF9-3B6524CEEB4A",
+   "path": null,
+   "taken": "2025-03-02 09:01:44",
+   "duration_s": 3.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A90DDF46-F1AD-497A-B611-52148C16794A",
+   "path": null,
+   "taken": "2025-03-02 09:25:47",
+   "duration_s": 291.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8166DEB7-CE1F-40B6-891A-C8A415F36799",
+   "path": null,
+   "taken": "2025-03-02 09:25:47",
+   "duration_s": 276.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C3363403-54B2-4C11-8511-11BF3A18F5A2",
+   "path": null,
+   "taken": "2025-03-02 10:07:48",
+   "duration_s": 179.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C8858DBE-18F3-4B98-BBD5-FA3275A95852",
+   "path": null,
+   "taken": "2025-03-02 10:17:34",
+   "duration_s": 625.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6628,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A62B34CA-4769-4CDB-9564-5DCAF6A53D58",
+   "path": null,
+   "taken": "2025-03-02 10:29:08",
+   "duration_s": 674.5,
+   "width": 1280,
+   "height": 720,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2D81C2C6-AD25-41DF-9B10-30278B561F81",
+   "path": null,
+   "taken": "2025-03-02 10:29:08",
+   "duration_s": 674.5,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "564FD94A-E626-4C7B-BF5E-5776E2835249",
+   "path": null,
+   "taken": "2025-03-02 10:50:55",
+   "duration_s": 2.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "68BFA074-4929-42BD-BFC6-67C0AC1D6B3B",
+   "path": null,
+   "taken": "2025-03-02 10:51:34",
+   "duration_s": 8.5,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0742B9EA-D6EE-4937-B3CD-EB96F94A15CF",
+   "path": null,
+   "taken": "2025-03-02 10:51:48",
+   "duration_s": 2458.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6E60FC33-9C79-4397-B918-18C293556B46",
+   "path": null,
+   "taken": "2025-03-02 11:42:23",
+   "duration_s": 57.7,
+   "width": 1280,
+   "height": 720,
+   "lat": 33.6623,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6FAE362C-9BB1-4CF7-90FE-F685C6BBE484",
+   "path": null,
+   "taken": "2025-03-02 11:42:23",
+   "duration_s": 57.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6623,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "AA1B867E-B70D-4519-8142-9C0F3B267C87",
+   "path": null,
+   "taken": "2025-03-03 17:40:57",
+   "duration_s": 64.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6553,
+   "lon": -85.8278,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "498942F8-AA3C-4F4A-985B-AEE299710E43",
+   "path": null,
+   "taken": "2025-03-09 09:33:59",
+   "duration_s": 181.6,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DCD7C623-A2C3-4384-854E-6F65FF6A5301",
+   "path": null,
+   "taken": "2025-03-09 09:37:06",
+   "duration_s": 1254.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "BB3ABC66-A2F0-4F80-9293-E5146BF8E738",
+   "path": null,
+   "taken": "2025-03-09 10:30:29",
+   "duration_s": 1103.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E55E59A7-1908-4A29-8C5E-2E21BD67B4E8",
+   "path": null,
+   "taken": "2025-03-09 11:10:12",
+   "duration_s": 1.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "10B97DB5-3EC8-486E-96F5-A2E0156CD730",
+   "path": null,
+   "taken": "2025-03-09 11:10:49",
+   "duration_s": 2434.9,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F9A3B138-ADC9-4D14-A43C-49E7BD86554F",
+   "path": null,
+   "taken": "2025-03-10 16:28:12",
+   "duration_s": 87.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.667,
+   "lon": -85.8269,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "CB9C18F3-989C-4E26-A7F9-A5CF37C7C3E3",
+   "path": null,
+   "taken": "2025-03-10 16:29:40",
+   "duration_s": 50.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6635,
+   "lon": -85.826,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6DD70CF8-71F3-4BA6-81F5-86A1637F4DD6",
+   "path": null,
+   "taken": "2025-03-10 16:30:44",
+   "duration_s": 8.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6571,
+   "lon": -85.8255,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4D629423-1224-47FD-A90B-A5CCD9DC84C7",
+   "path": null,
+   "taken": "2025-03-10 16:30:53",
+   "duration_s": 0.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6571,
+   "lon": -85.8247,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6F4F51B3-19E5-4EDC-881C-6BF94BD3CE1E",
+   "path": null,
+   "taken": "2025-03-10 16:30:55",
+   "duration_s": 2.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6571,
+   "lon": -85.8247,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "681A2D56-B026-4A8F-941D-EA0BBCC2F998",
+   "path": null,
+   "taken": "2025-03-10 16:31:14",
+   "duration_s": 8.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6575,
+   "lon": -85.8229,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D44DA7BC-0F7E-4071-856F-E09CC3CFBAC2",
+   "path": null,
+   "taken": "2025-03-10 16:31:24",
+   "duration_s": 170.5,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6574,
+   "lon": -85.8212,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9AFCFDF0-32A5-44D3-9729-A752B8DF2C09",
+   "path": null,
+   "taken": "2025-03-10 16:31:24",
+   "duration_s": 170.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6574,
+   "lon": -85.8212,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A79EED79-0F6F-40B4-8094-A43204295089",
+   "path": null,
+   "taken": "2025-03-12 18:34:37",
+   "duration_s": 11.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6574,
+   "lon": -85.8311,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "01DE46A1-8FB3-4ED4-B911-3C9AB7643A4A",
+   "path": null,
+   "taken": "2025-03-12 18:34:51",
+   "duration_s": 180.3,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6575,
+   "lon": -85.831,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E79A0755-CD7D-4EC1-8755-09EF772405DC",
+   "path": null,
+   "taken": "2025-03-19 09:20:01",
+   "duration_s": 0.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6574,
+   "lon": -85.8312,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8FA0D3EC-DAC4-4BE1-B20F-B1F1C3AABA18",
+   "path": null,
+   "taken": "2025-03-23 10:45:19",
+   "duration_s": 58.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "BB7F1C2E-F30F-4970-9990-6600D9D0E537",
+   "path": null,
+   "taken": "2025-03-23 10:51:15",
+   "duration_s": 17.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2C2E24FD-8C7E-4543-9351-FA11B6D3754B",
+   "path": null,
+   "taken": "2025-03-23 10:52:53",
+   "duration_s": 29.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E5AEE75C-BDB4-4347-B3EB-98D9B1FB1873",
+   "path": null,
+   "taken": "2025-03-23 11:02:44",
+   "duration_s": 13.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E19ECCFA-45D0-44C9-8144-F7D742C51890",
+   "path": null,
+   "taken": "2025-03-23 11:08:28",
+   "duration_s": 36.1,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "EADD7D14-2792-4673-A96C-06C2CFF3E9C8",
+   "path": null,
+   "taken": "2025-03-23 11:16:47",
+   "duration_s": 36.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "16185102-9295-4699-9E41-FEF42D9E66B6",
+   "path": null,
+   "taken": "2025-03-23 11:17:47",
+   "duration_s": 21.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6625,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0429BEBB-DD13-42B0-86C9-154E6EDD8ABA",
+   "path": null,
+   "taken": "2025-03-23 12:01:06",
+   "duration_s": 26.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6598,
+   "lon": -85.8277,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4D941F32-D89A-4CE9-AB20-2D7D13174492",
+   "path": null,
+   "taken": "2025-03-23 12:02:13",
+   "duration_s": 12.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6584,
+   "lon": -85.8294,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E64FF238-5E64-4EBD-A5D4-695B0A4BD917",
+   "path": null,
+   "taken": "2025-03-23 12:02:55",
+   "duration_s": 2.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6584,
+   "lon": -85.8318,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "EBC405EE-6EF9-44E6-8770-892E3C90B16C",
+   "path": null,
+   "taken": "2025-03-23 12:03:01",
+   "duration_s": 6.5,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6584,
+   "lon": -85.8322,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F8A81655-7B1D-47F2-A9B8-7A2E397CC485",
+   "path": null,
+   "taken": "2025-03-23 12:03:25",
+   "duration_s": 9.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6588,
+   "lon": -85.8329,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "FB8ED405-5BE1-478A-B464-52EEE6E1C564",
+   "path": null,
+   "taken": "2025-03-23 12:03:54",
+   "duration_s": 33.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6598,
+   "lon": -85.8336,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A3B44683-554C-4D0A-852B-9351A4809E48",
+   "path": null,
+   "taken": "2025-03-23 12:05:02",
+   "duration_s": 39.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6599,
+   "lon": -85.8336,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "34E10DAB-E910-4D92-86D9-8C11EC386B3F",
+   "path": null,
+   "taken": "2025-03-23 12:06:19",
+   "duration_s": 17.3,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6571,
+   "lon": -85.8318,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "87D678B8-D2FD-4019-A7B6-2735FC690988",
+   "path": null,
+   "taken": "2025-03-23 12:07:35",
+   "duration_s": 179.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6563,
+   "lon": -85.828,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6D1B2E75-C945-43B0-A84D-D22390656551",
+   "path": null,
+   "taken": "2025-03-28 16:54:50",
+   "duration_s": 28.6,
+   "width": 1280,
+   "height": 720,
+   "lat": 33.6664,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "227CBCD5-EDB7-42C3-BE33-2754FCCBF765",
+   "path": null,
+   "taken": "2025-03-28 16:54:50",
+   "duration_s": 28.6,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6664,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C148F158-5783-4C93-AAF9-6CD5C258D215",
+   "path": null,
+   "taken": "2025-04-05 09:05:32",
+   "duration_s": 30.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6574,
+   "lon": -85.8297,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "19A2FED7-4E23-40EB-A3D3-9398824A1A58",
+   "path": null,
+   "taken": "2025-04-05 10:39:28",
+   "duration_s": 12.5,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6578,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "AA9AEC24-DFED-4F58-9AE8-E9CA3CF6602F",
+   "path": null,
+   "taken": "2025-04-05 10:39:28",
+   "duration_s": 12.5,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6578,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "98E2799F-91E4-4BAC-BBB5-1A8DA721F0C5",
+   "path": null,
+   "taken": "2025-04-05 10:39:28",
+   "duration_s": 12.5,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6578,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D9578538-1BAD-4A32-A3C4-A4D2FC1C3226",
+   "path": null,
+   "taken": "2025-04-05 10:39:28",
+   "duration_s": 12.5,
+   "width": 404,
+   "height": 720,
+   "lat": 33.6578,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "15F34C0D-BCC8-4C2C-88C9-9DA4F4B61E77",
+   "path": null,
+   "taken": "2025-04-05 10:39:28",
+   "duration_s": 12.5,
+   "width": 404,
+   "height": 720,
+   "lat": 33.6578,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "BE155152-5E46-410A-B1AC-975344192D4C",
+   "path": null,
+   "taken": "2025-04-05 10:39:28",
+   "duration_s": 12.5,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6578,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "714482BE-0E93-4515-91D8-4E7F70C006F3",
+   "path": null,
+   "taken": "2025-04-07 17:30:41",
+   "duration_s": 15.9,
+   "width": 770,
+   "height": 1078,
+   "lat": 33.6627,
+   "lon": -85.827,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "67DAAD19-BDA1-4509-9093-537A73F993E3",
+   "path": null,
+   "taken": "2025-04-07 17:30:41",
+   "duration_s": 15.9,
+   "width": 770,
+   "height": 1078,
+   "lat": 33.6627,
+   "lon": -85.827,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "991D7F68-A1B6-465F-A1A3-3703B0691935",
+   "path": null,
+   "taken": "2025-04-07 17:30:41",
+   "duration_s": 15.9,
+   "width": 770,
+   "height": 1078,
+   "lat": 33.6627,
+   "lon": -85.827,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "24A9AF96-F18B-43D3-A31D-ABDC7D2548BF",
+   "path": null,
+   "taken": "2025-04-10 18:11:34",
+   "duration_s": 7.6,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6632,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "3FF0F682-C21C-4021-9BF7-A76DC902D14A",
+   "path": null,
+   "taken": "2025-04-17 20:24:21",
+   "duration_s": 82.3,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6573,
+   "lon": -85.8312,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9236E36C-816F-4E85-8DFF-36CD73365E25",
+   "path": null,
+   "taken": "2025-04-18 14:26:12",
+   "duration_s": 6.8,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6626,
+   "lon": -85.8269,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "74D1123A-13F8-4D30-A9C4-224469220C48",
+   "path": null,
+   "taken": "2025-04-18 14:26:12",
+   "duration_s": 6.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8269,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "ACB87FD8-7427-4C56-9600-89C9C141D634",
+   "path": null,
+   "taken": "2025-04-18 14:26:48",
+   "duration_s": 16.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8269,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C6147E3F-D9FD-4B29-BB53-10B8675A36FA",
+   "path": null,
+   "taken": "2025-04-18 14:27:27",
+   "duration_s": 3.9,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6627,
+   "lon": -85.827,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "96F971ED-1679-4B13-97F8-09BB7F88E223",
+   "path": null,
+   "taken": "2025-04-18 14:28:06",
+   "duration_s": 6.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.827,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "975A74B4-3357-459A-B3D9-A80E30A1D5B2",
+   "path": null,
+   "taken": "2025-04-18 18:00:46",
+   "duration_s": 53.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6572,
+   "lon": -85.8311,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "176D02EC-EF97-4063-AC4D-7F89D725B190",
+   "path": null,
+   "taken": "2025-04-18 18:47:47",
+   "duration_s": 28.5,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6574,
+   "lon": -85.8311,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "FAB8A677-E817-4FD9-9079-102A942BC235",
+   "path": null,
+   "taken": "2025-04-18 18:47:47",
+   "duration_s": 28.5,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6574,
+   "lon": -85.8311,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9A0E6871-6E0D-46E9-88E7-FBD6570BEE19",
+   "path": null,
+   "taken": "2025-04-18 18:47:47",
+   "duration_s": 28.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6574,
+   "lon": -85.8311,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7976A8D4-1FB1-4A7F-94FA-6555898C93E0",
+   "path": null,
+   "taken": "2025-04-20 10:41:16",
+   "duration_s": 96.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6625,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "1B4CFEBD-DDCE-4094-A84B-28640C123E59",
+   "path": null,
+   "taken": "2025-04-20 10:42:56",
+   "duration_s": 90.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "71FBC14C-EDBA-4FBB-9268-B55CC32FCD87",
+   "path": null,
+   "taken": "2025-04-20 11:13:03",
+   "duration_s": 195.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "00A1B753-1E14-4F36-928F-F048AFB2799F",
+   "path": null,
+   "taken": "2025-04-20 11:22:10",
+   "duration_s": 31.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6625,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "B6B9854C-7FFB-4CF4-8291-9B67325BB338",
+   "path": null,
+   "taken": "2025-04-20 11:22:52",
+   "duration_s": 37.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6625,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "B6F58E3B-1CD7-40E3-BEF2-108106D2BCF7",
+   "path": null,
+   "taken": "2025-04-20 11:24:39",
+   "duration_s": 27.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6625,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "507D499A-2986-45E1-8DC1-BA79C351A6AE",
+   "path": null,
+   "taken": "2025-04-20 11:29:59",
+   "duration_s": 179.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6625,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C073FE05-15B6-428C-9D11-49288E2D17BE",
+   "path": null,
+   "taken": "2025-05-10 06:37:42",
+   "duration_s": 13.2,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F2D45319-DAE3-4B93-B38C-164638A13B4B",
+   "path": null,
+   "taken": "2025-05-10 10:13:49",
+   "duration_s": 23.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "AE135B91-806D-4951-9959-5DF13CD3173E",
+   "path": null,
+   "taken": "2025-05-10 18:29:38",
+   "duration_s": 77.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6572,
+   "lon": -85.8312,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6BB100E0-D08C-4817-9FB2-4035B50D0EC4",
+   "path": null,
+   "taken": "2025-05-10 19:53:55",
+   "duration_s": 3.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6572,
+   "lon": -85.8311,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "CCE7D0C4-70B5-4F6D-869D-ECD21B59B0DA",
+   "path": null,
+   "taken": "2025-05-11 11:30:23",
+   "duration_s": 9.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "297CF361-5208-4963-B969-F7E8962BE259",
+   "path": null,
+   "taken": "2025-05-25 10:45:36",
+   "duration_s": 28.9,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6626,
+   "lon": -85.83,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8956FC65-A4C4-498F-A1D9-159488828BDB",
+   "path": null,
+   "taken": "2025-05-25 10:45:36",
+   "duration_s": 28.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.83,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "ADD28F7E-7C13-465B-8C07-2807B2718474",
+   "path": null,
+   "taken": "2025-05-25 10:46:49",
+   "duration_s": 38.0,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6627,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0E92A58B-41CA-4C32-BCDB-A87DF4096096",
+   "path": null,
+   "taken": "2025-05-25 10:46:49",
+   "duration_s": 38.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "3E50289F-8984-4252-B078-3F9EBDBE9696",
+   "path": null,
+   "taken": "2025-05-25 11:10:36",
+   "duration_s": 79.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A2E17B5C-F8CF-4D21-934B-2C11B68AFF51",
+   "path": null,
+   "taken": "2025-06-01 11:30:34",
+   "duration_s": 8.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DCB50173-55E8-415B-A59B-806EF6AA9C3D",
+   "path": null,
+   "taken": "2025-06-01 11:32:07",
+   "duration_s": 7.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "CD336B01-391D-44A3-AB0B-E8C2F5864DED",
+   "path": null,
+   "taken": "2025-06-21 06:26:57",
+   "duration_s": 24.6,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4E225591-449C-428C-B645-E058080E92C2",
+   "path": null,
+   "taken": "2025-06-21 06:26:57",
+   "duration_s": 24.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A28AC562-EB49-45EF-9809-FFCC925652A0",
+   "path": null,
+   "taken": "2025-06-22 11:12:26",
+   "duration_s": 0.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6625,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "1623DF8F-C851-49F7-846C-92F11F02037A",
+   "path": null,
+   "taken": "2025-06-28 06:26:16",
+   "duration_s": 18.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6B976910-F391-441C-BF1E-E083599CD734",
+   "path": null,
+   "taken": "2025-07-05 06:45:48",
+   "duration_s": 23.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "FB8217B1-3F8A-4478-B82C-257678E73C56",
+   "path": null,
+   "taken": "2026-05-13 10:08:46",
+   "duration_s": 3.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6631,
+   "lon": -85.8287,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "760F4E2F-2D51-43D1-ACFB-7D08CAEC8F5B",
+   "path": null,
+   "taken": "2026-05-13 10:09:36",
+   "duration_s": 62.3,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6631,
+   "lon": -85.8288,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "1C6E71AD-3E4E-4D46-831C-7ACA09C1A5F2",
+   "path": null,
+   "taken": "2026-05-13 10:13:44",
+   "duration_s": 37.1,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.663,
+   "lon": -85.8291,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6A63D99C-0554-47F1-BD85-C4737AC33B59",
+   "path": null,
+   "taken": "2026-05-13 10:14:48",
+   "duration_s": 4.1,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6631,
+   "lon": -85.8289,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9431FEDF-E0F4-46F8-BC0E-21BF589847F8",
+   "path": null,
+   "taken": "2026-05-13 10:15:02",
+   "duration_s": 4.1,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.663,
+   "lon": -85.8289,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "252E5AD8-304C-4091-91CB-568B1D2CED18",
+   "path": null,
+   "taken": "2026-05-16 08:28:20",
+   "duration_s": 7.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5378F86F-D1EE-480D-AE55-C494CCD0468C",
+   "path": null,
+   "taken": "2026-05-16 08:28:45",
+   "duration_s": 2.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4AC790B2-C7DB-404C-B2A1-A10A1F8CF836",
+   "path": null,
+   "taken": "2026-05-16 08:28:53",
+   "duration_s": 4.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7FC5349B-6350-4A01-9A4C-B429AEBBC934",
+   "path": null,
+   "taken": "2026-05-16 08:29:05",
+   "duration_s": 2.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A52DBC47-C781-4B80-93B1-03F17B469DA2",
+   "path": null,
+   "taken": "2026-05-16 08:29:09",
+   "duration_s": 2.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C2724A3E-7C75-481C-BB4D-0B525D5D3667",
+   "path": null,
+   "taken": "2026-05-16 08:29:20",
+   "duration_s": 2.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5427F5FD-1012-4769-9664-07F3556E0683",
+   "path": null,
+   "taken": "2026-05-16 08:29:27",
+   "duration_s": 4.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F08B81DB-7029-4AC1-A6D7-B4F13D9AEE40",
+   "path": null,
+   "taken": "2026-05-16 08:29:49",
+   "duration_s": 43.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DD3FC004-CA1F-419B-AB0D-D7CCD03BD346",
+   "path": null,
+   "taken": "2026-05-16 10:32:21",
+   "duration_s": 20.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6584,
+   "lon": -85.8321,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "52381BDE-A3D8-45D0-A889-9E8D09E8DAD2",
+   "path": null,
+   "taken": "2026-05-16 10:32:54",
+   "duration_s": 19.3,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6583,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5A303E3C-E2A4-40A4-BE6A-735A3B243EA1",
+   "path": null,
+   "taken": "2026-05-23 07:15:20",
+   "duration_s": 0.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F7EDC5B5-FE21-468C-B0FA-5E67610E8EAF",
+   "path": null,
+   "taken": "2026-05-23 07:15:25",
+   "duration_s": 0.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "994D635A-B956-4795-A81C-A878C07451CF",
+   "path": null,
+   "taken": "2026-05-23 07:15:29",
+   "duration_s": 3.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "BFD68A98-695F-4833-A9FB-703D57B30B85",
+   "path": null,
+   "taken": "2026-05-23 07:15:37",
+   "duration_s": 0.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0B6EE99D-A41E-4028-8E5F-DCFFDA430D5C",
+   "path": null,
+   "taken": "2026-05-23 07:15:54",
+   "duration_s": 0.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C266E257-026B-427B-857F-4E7AD323321B",
+   "path": null,
+   "taken": "2026-05-23 07:16:34",
+   "duration_s": 0.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DC7CF69B-731F-4284-9BB5-2DE2DA6A83CF",
+   "path": null,
+   "taken": "2026-05-23 07:16:38",
+   "duration_s": 0.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "EC0E2DF5-29B4-4100-95D5-69EA3D877579",
+   "path": null,
+   "taken": "2026-05-23 07:19:22",
+   "duration_s": 1.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8717F229-9E51-4A24-B2F6-1800839267C1",
+   "path": null,
+   "taken": "2026-05-23 07:19:27",
+   "duration_s": 1.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E8B70368-A077-4461-AFE2-32E3A4825BCE",
+   "path": null,
+   "taken": "2026-05-23 07:19:33",
+   "duration_s": 3.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DC580CC2-11BC-431F-8F4A-9CC75F0D2486",
+   "path": null,
+   "taken": "2026-05-23 07:19:41",
+   "duration_s": 1.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4473813E-155C-457F-BBE0-36AD424CD9EF",
+   "path": null,
+   "taken": "2026-05-23 07:19:45",
+   "duration_s": 12.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A7CAE6B4-96DF-41FF-A355-AA4E1A0B9DC7",
+   "path": null,
+   "taken": "2026-05-23 07:20:01",
+   "duration_s": 1.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6585,
+   "lon": -85.8321,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8301FD4A-661A-46E3-B947-367AFDAE1A22",
+   "path": null,
+   "taken": "2026-05-23 07:20:08",
+   "duration_s": 1.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6A48E055-2F43-48A1-845A-BFF2E9A029D3",
+   "path": null,
+   "taken": "2026-05-23 07:21:01",
+   "duration_s": 1.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "CAFB3DAB-BC69-476E-81E5-CE03055782E6",
+   "path": null,
+   "taken": "2026-05-23 07:21:23",
+   "duration_s": 1.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9050CA71-47B6-4D10-B778-55DCB2EB2063",
+   "path": null,
+   "taken": "2026-05-23 07:21:29",
+   "duration_s": 1.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7E8345E1-91EA-46F9-8BBE-FE40C2DC548A",
+   "path": null,
+   "taken": "2026-05-23 07:21:34",
+   "duration_s": 1.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A2B79994-93B7-4933-ACBB-582CC8D58CAE",
+   "path": null,
+   "taken": "2026-05-23 07:21:38",
+   "duration_s": 1.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A270B3E2-FE9E-4A72-A723-1783AEB0555D",
+   "path": null,
+   "taken": "2026-05-23 07:21:43",
+   "duration_s": 1.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "534457EC-600B-4013-86B9-8391542E13DD",
+   "path": null,
+   "taken": "2026-05-23 07:21:49",
+   "duration_s": 1.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "32D9AFE4-4AC1-4F98-A4B3-1E224900D4B5",
+   "path": null,
+   "taken": "2026-05-23 07:21:53",
+   "duration_s": 1.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "AC5A3D8B-E9AA-4ED1-AE89-FDAAB9368C7A",
+   "path": null,
+   "taken": "2026-05-23 07:22:01",
+   "duration_s": 1.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D3AA3D0F-63E1-4BBD-BB29-3DC61FA23FA0",
+   "path": null,
+   "taken": "2026-05-23 07:22:04",
+   "duration_s": 1.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0E439CC7-6F28-477B-962A-15B10F2828C9",
+   "path": null,
+   "taken": "2026-05-23 07:22:08",
+   "duration_s": 0.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "AFDB3594-EE37-4153-94B3-78E0FC64743C",
+   "path": null,
+   "taken": "2026-05-23 07:22:12",
+   "duration_s": 1.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7B093FB9-7959-4950-956D-9575F42C3B1F",
+   "path": null,
+   "taken": "2026-05-23 07:22:15",
+   "duration_s": 4.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A9FA6873-0737-41AF-89F4-E04A48BA55AD",
+   "path": null,
+   "taken": "2026-05-23 07:22:23",
+   "duration_s": 1.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "09C1FB8D-BE59-4245-AB35-F9840AB87CD0",
+   "path": null,
+   "taken": "2026-05-23 07:22:28",
+   "duration_s": 1.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "AD4D9795-8C28-446F-A0C9-C9D2964698AA",
+   "path": null,
+   "taken": "2026-05-23 07:25:35",
+   "duration_s": 1.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D66AB968-DCA1-48D4-AB53-DBA8046D47A6",
+   "path": null,
+   "taken": "2026-05-23 07:25:49",
+   "duration_s": 0.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "12A88DCF-2417-4387-B316-218CF9D2569A",
+   "path": null,
+   "taken": "2026-05-23 07:25:56",
+   "duration_s": 0.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0DA3C6E6-0599-4F42-A6A2-3C3A9C6FDCF4",
+   "path": null,
+   "taken": "2026-05-23 07:26:02",
+   "duration_s": 1.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "47A97BFE-5AFB-4AB7-9870-69EF4C233BA7",
+   "path": null,
+   "taken": "2026-05-26 11:19:48",
+   "duration_s": 1.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6666,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "856A9B86-E1DE-4B76-AEEE-BBC3B2CCA864",
+   "path": null,
+   "taken": "2026-06-13 09:14:19",
+   "duration_s": 20.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9EE22DAD-622C-4246-8B37-7BAD05CA7B2B",
+   "path": null,
+   "taken": "2026-06-13 09:16:30",
+   "duration_s": 99.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F80598AD-47D6-4055-88CA-380332BD09EC",
+   "path": null,
+   "taken": "2026-06-13 09:36:10",
+   "duration_s": 4.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "409A85A2-DFCA-456B-B61E-81789E916E46",
+   "path": null,
+   "taken": "2026-06-13 09:36:19",
+   "duration_s": 5.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2B17113F-CDE7-47C6-BF94-55EB636DF38F",
+   "path": null,
+   "taken": "2026-06-13 09:36:33",
+   "duration_s": 22.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E0122C94-C4C7-4FDF-A972-984539FC4686",
+   "path": null,
+   "taken": "2026-06-13 09:37:00",
+   "duration_s": 1.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "18119900-B01F-49C5-A92F-961C12A37D93",
+   "path": null,
+   "taken": "2026-06-13 09:37:13",
+   "duration_s": 8.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C88A71AA-0A86-4E99-AA02-52F4FE4C98D5",
+   "path": null,
+   "taken": "2026-06-13 09:37:28",
+   "duration_s": 3.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "BB01D774-8730-4D2E-8FEB-DBA961CF5413",
+   "path": null,
+   "taken": "2026-06-13 09:37:42",
+   "duration_s": 6.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0A6A600C-3BC3-4704-80FC-05692C2A2E58",
+   "path": null,
+   "taken": "2026-06-13 09:37:53",
+   "duration_s": 6.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "915823D3-46F1-44F5-AE64-42A2A9B0F7FC",
+   "path": null,
+   "taken": "2026-06-13 09:38:04",
+   "duration_s": 7.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "35F88B4F-1271-4EAF-AA3C-09B2FBC2DC89",
+   "path": null,
+   "taken": "2026-06-13 09:38:17",
+   "duration_s": 3.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4B5B6B45-2B32-4D72-A7F8-9C2AB6A827F0",
+   "path": null,
+   "taken": "2026-06-13 09:38:27",
+   "duration_s": 10.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A76FD8FD-63A2-4A63-9067-0320DA1FE07F",
+   "path": null,
+   "taken": "2026-06-27 06:58:53",
+   "duration_s": 20.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8277,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "893E8530-0398-4E6A-AFAA-7EAC600441DF",
+   "path": null,
+   "taken": "2026-06-27 07:04:04",
+   "duration_s": 6.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6564,
+   "lon": -85.8314,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "3AA31B7F-62F6-423D-B7AA-023D930DFB8C",
+   "path": null,
+   "taken": "2026-06-27 07:04:17",
+   "duration_s": 20.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.657,
+   "lon": -85.8314,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "66A28303-FB23-4F6E-A2C7-A3CA4F82C2F1",
+   "path": null,
+   "taken": "2026-06-27 07:04:45",
+   "duration_s": 7.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8315,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "B630006E-4EDF-40E6-A0E1-9BD3AA5D7976",
+   "path": null,
+   "taken": "2026-06-27 07:05:20",
+   "duration_s": 3.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6585,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5574C9B6-5D8A-4ECE-A145-E21605FDCB88",
+   "path": null,
+   "taken": "2026-06-27 10:50:07",
+   "duration_s": 2.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5672963F-1A89-4644-B0CE-21A68D075211",
+   "path": null,
+   "taken": "2026-06-27 10:50:17",
+   "duration_s": 2.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "EF023494-64D6-4D9F-AB5C-B3F6078B1E62",
+   "path": null,
+   "taken": "2026-06-27 10:50:23",
+   "duration_s": 2.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "AEFB89ED-5E0F-4D27-84B9-5039EA7F6A75",
+   "path": null,
+   "taken": "2026-06-27 10:50:28",
+   "duration_s": 0.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "ABEC62FD-426B-4F9F-8D0F-B9F22682DEB2",
+   "path": null,
+   "taken": "2026-06-27 10:50:35",
+   "duration_s": 10.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "CAC9F8D1-D24E-4DFB-B6B8-ADCEB0D4C780",
+   "path": null,
+   "taken": "2026-06-27 10:51:01",
+   "duration_s": 1.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D5B6AE58-3A4B-4543-8527-B37E98590C7C",
+   "path": null,
+   "taken": "2026-06-27 10:51:05",
+   "duration_s": 5.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "9B815DC6-129C-41DE-BA2F-68A2D9A7785F",
+   "path": null,
+   "taken": "2026-06-27 10:51:13",
+   "duration_s": 1.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8323,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DC72E501-F8AE-4FA6-9315-E6994EBF5766",
+   "path": null,
+   "taken": "2026-06-27 10:51:22",
+   "duration_s": 1.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "3DB9D111-1EAC-428A-A5AA-3B465C93D985",
+   "path": null,
+   "taken": "2026-06-27 10:51:31",
+   "duration_s": 2.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "052966FB-4AB1-4785-90B5-ABAAAC2CA45E",
+   "path": null,
+   "taken": "2026-06-27 10:51:52",
+   "duration_s": 0.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "274780C7-DB53-4B30-B0FE-388DFC6B840F",
+   "path": null,
+   "taken": "2026-06-27 10:52:02",
+   "duration_s": 9.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D6D953E5-4225-42BB-97ED-A264A1FD3939",
+   "path": null,
+   "taken": "2026-06-27 10:52:15",
+   "duration_s": 1.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "B63D13F1-7920-403C-BCE6-7A0400AA5C84",
+   "path": null,
+   "taken": "2026-06-27 10:52:27",
+   "duration_s": 1.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "FDE428EC-5C70-4BEA-AD41-AA6A1DC00F29",
+   "path": null,
+   "taken": "2026-06-27 10:52:53",
+   "duration_s": 3.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6583,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "643F8C42-761E-4AA1-84CC-6F0B22BE16F3",
+   "path": null,
+   "taken": "2026-06-27 10:53:28",
+   "duration_s": 7.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2AB9F8B9-6648-4976-9CEF-1E5AB82F975D",
+   "path": null,
+   "taken": "2026-06-27 11:00:43",
+   "duration_s": 7.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "41B49CA1-3449-4DED-AB1F-9A2259924168",
+   "path": null,
+   "taken": "2026-06-27 11:00:54",
+   "duration_s": 2.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8326,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E7E8BFC3-8459-454B-9235-A22A534D1F8A",
+   "path": null,
+   "taken": "2026-06-27 11:01:00",
+   "duration_s": 7.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8328,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "1786F050-F30B-4028-99B0-4C79F890CD3C",
+   "path": null,
+   "taken": "2026-06-27 11:04:51",
+   "duration_s": 2.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7DF7E615-6F09-4076-84F3-34E9F44EA3FE",
+   "path": null,
+   "taken": "2026-06-27 11:04:56",
+   "duration_s": 4.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A2811080-DFB3-4B3C-A2BC-5944373733F8",
+   "path": null,
+   "taken": "2026-06-27 11:06:56",
+   "duration_s": 1.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "24F88723-78C4-4F89-A300-F812FFAB67CB",
+   "path": null,
+   "taken": "2026-06-27 11:12:34",
+   "duration_s": 0.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "B0D177A7-CB72-4392-9E08-634AC0C9A41F",
+   "path": null,
+   "taken": "2026-06-27 11:12:41",
+   "duration_s": 1.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2D63710D-BD23-4A2E-B530-375F57961EF3",
+   "path": null,
+   "taken": "2026-06-27 11:12:56",
+   "duration_s": 0.5,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6E3882F0-5B1E-4BD3-861F-EA119835BCEE",
+   "path": null,
+   "taken": "2026-06-27 11:13:18",
+   "duration_s": 42.6,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6581,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "319FE75A-374A-419C-979E-B90EF36293FA",
+   "path": null,
+   "taken": "2026-06-27 11:14:04",
+   "duration_s": 64.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6585,
+   "lon": -85.8328,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D228FDF8-F0E6-4101-86BE-48A0E34A0387",
+   "path": null,
+   "taken": "2026-06-27 11:15:13",
+   "duration_s": 81.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7055B0BA-914D-46FF-BBC0-8751577F6AFB",
+   "path": null,
+   "taken": "2026-06-27 11:17:04",
+   "duration_s": 3.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.658,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "937D8B35-5450-498E-979B-7797DA01F407",
+   "path": null,
+   "taken": "2026-06-27 11:17:59",
+   "duration_s": 2.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.658,
+   "lon": -85.8324,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "37879994-4E68-4566-A502-A3FB7BC2C689",
+   "path": null,
+   "taken": "2026-06-27 11:23:58",
+   "duration_s": 3.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "469D62FA-E4C3-4A2A-9E8C-E80276555A09",
+   "path": null,
+   "taken": "2026-06-27 11:24:26",
+   "duration_s": 4.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5DD2FEEE-79CE-401F-9324-0EFCBB27447C",
+   "path": null,
+   "taken": "2026-06-27 11:28:03",
+   "duration_s": 0.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "241163BC-A596-4C29-A2E5-8A299F05B43E",
+   "path": null,
+   "taken": "2026-06-27 11:43:03",
+   "duration_s": 7.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6582,
+   "lon": -85.8326,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4B4C1806-F906-4112-9795-99D59DC05B3D",
+   "path": null,
+   "taken": "2026-06-27 11:46:34",
+   "duration_s": 5.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8325,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "664DCF4A-DFBC-4F58-94DE-553EA9ACA6B0",
+   "path": null,
+   "taken": "2026-07-01 10:39:14",
+   "duration_s": 51.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D0D00DC0-5CEB-40F2-82F0-67052FABD891",
+   "path": null,
+   "taken": "2026-07-01 10:46:48",
+   "duration_s": 62.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.66258,
+   "lon": -85.83027,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "EA4A3803-8D26-4E05-A6F9-DD72380E4D38",
+   "path": null,
+   "taken": "2026-07-01 10:48:23",
+   "duration_s": 1598.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.66258,
+   "lon": -85.83033,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8DFD1BDA-DE46-4D74-8198-11986F71E971",
+   "path": null,
+   "taken": "2026-07-21 13:01:29",
+   "duration_s": 15.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6615,
+   "lon": -85.8294,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D5497087-99A6-436B-B5CE-7AA720043C73",
+   "path": null,
+   "taken": "2026-07-21 14:24:04",
+   "duration_s": 328.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6615,
+   "lon": -85.8294,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D3C5AEA8-7917-44D5-AC2D-F6E5D2F6F57F",
+   "path": null,
+   "taken": "2026-07-29 16:08:10",
+   "duration_s": 1421.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8272,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7CCFBD09-981A-43F3-A697-B23F4E1FAB4C",
+   "path": null,
+   "taken": "2026-07-29 17:55:33",
+   "duration_s": 13.5,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6626,
+   "lon": -85.8272,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "806BCA41-FDEB-47CC-A29E-AF308C0F323C",
+   "path": null,
+   "taken": "2026-07-29 17:56:16",
+   "duration_s": 27.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6626,
+   "lon": -85.8272,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "3F9E1891-6292-4FBD-AE56-34B9A4678D51",
+   "path": null,
+   "taken": "2026-08-02 11:14:46",
+   "duration_s": 6.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6624,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "7C25BE62-7658-493F-A655-EA0A4C8F99CB",
+   "path": null,
+   "taken": "2026-08-02 11:14:59",
+   "duration_s": 11.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6624,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "B78515E0-EBEA-4E06-BE9D-180AFC17FFB4",
+   "path": null,
+   "taken": "2026-08-02 11:15:21",
+   "duration_s": 13.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6624,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "8BE33651-94CF-4811-998E-2177DCCE24C3",
+   "path": null,
+   "taken": "2026-08-02 11:59:34",
+   "duration_s": 30.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "96508892-5467-49E1-A393-C4850F752967",
+   "path": null,
+   "taken": "2026-08-02 12:00:51",
+   "duration_s": 33.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6627,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "33D96D56-094C-42C6-A7EE-ED3545ECEB75",
+   "path": null,
+   "taken": "2026-08-03 13:46:42",
+   "duration_s": 11.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.661,
+   "lon": -85.8295,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DD7AA519-E7E6-4373-9BBC-8CDDC9BB8761",
+   "path": null,
+   "taken": "2026-08-03 13:46:56",
+   "duration_s": 22.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.661,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D5D74CDB-9F68-4E91-B0CF-30EEF2D83351",
+   "path": null,
+   "taken": "2026-08-03 13:51:08",
+   "duration_s": 53.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.661,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "729CF940-BD1E-4DAC-8F5E-2A995A45B661",
+   "path": null,
+   "taken": "2026-08-03 13:53:58",
+   "duration_s": 607.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6611,
+   "lon": -85.8295,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "81BD78CF-934D-412A-B2AA-480C19EA797C",
+   "path": null,
+   "taken": "2026-08-03 14:04:07",
+   "duration_s": 10.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6611,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6E19C03B-976F-479C-8121-324434D92B34",
+   "path": null,
+   "taken": "2026-08-03 14:04:32",
+   "duration_s": 449.6,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6611,
+   "lon": -85.8295,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "42702116-67D1-4606-AE8A-D0448B47E933",
+   "path": null,
+   "taken": "2026-08-03 14:30:08",
+   "duration_s": 18.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.661,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "40D305C8-42DD-4024-8B01-258C55789145",
+   "path": null,
+   "taken": "2026-08-03 14:31:10",
+   "duration_s": 1729.3,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.661,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C484DD80-E5C6-4DE4-89A2-4C393D9B33B4",
+   "path": null,
+   "taken": "2026-08-03 15:00:05",
+   "duration_s": 1959.0,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.661,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "862AC4E7-302C-4DDB-BB4B-C08D3A697531",
+   "path": null,
+   "taken": "2026-08-03 15:00:05",
+   "duration_s": 115.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.661,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "40BA9091-B520-4C69-A53C-946EC5D7685E",
+   "path": null,
+   "taken": "2026-08-03 15:32:47",
+   "duration_s": 15.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.661,
+   "lon": -85.8296,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "94539B60-1BE7-4B3F-8230-4975F90986B7",
+   "path": null,
+   "taken": "2026-08-03 15:45:54",
+   "duration_s": 12.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.661,
+   "lon": -85.8295,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5615C7EB-BA2B-461A-A929-0004132654B8",
+   "path": null,
+   "taken": "2026-08-03 15:46:13",
+   "duration_s": 3.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.661,
+   "lon": -85.8293,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "26F4EC53-E7D0-40B7-91F2-7BAE7CFC5EF9",
+   "path": null,
+   "taken": "2026-08-05 10:28:15",
+   "duration_s": 316.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6619,
+   "lon": -85.8274,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2AC3A856-E0D5-48CA-88D0-3C17ABE1A6FA",
+   "path": null,
+   "taken": "2026-08-05 10:33:41",
+   "duration_s": 2558.5,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.662,
+   "lon": -85.8274,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "03368F37-6103-447F-AD9E-657E55B19588",
+   "path": null,
+   "taken": "2026-08-09 11:07:22",
+   "duration_s": 8.2,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6625,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2D028DB4-4BB6-4824-AA9B-AB3EE96493D8",
+   "path": null,
+   "taken": "2026-08-09 11:07:42",
+   "duration_s": 1995.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6636,
+   "lon": -85.8309,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D32C6D95-AA73-45A1-BD60-B7D21F387C5D",
+   "path": null,
+   "taken": "2026-08-09 11:44:20",
+   "duration_s": 2.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6625,
+   "lon": -85.8301,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "02C6154D-FC8C-42CC-A347-2998DC3F4DE2",
+   "path": null,
+   "taken": "2026-09-15 18:13:36",
+   "duration_s": 45.2,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6596,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "DD8BFDDC-BD95-4934-AA2B-5F1A60EE58EE",
+   "path": null,
+   "taken": "2026-09-15 18:13:36",
+   "duration_s": 45.2,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6596,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "3366609F-9B88-437C-8B11-2A24FDD863A3",
+   "path": null,
+   "taken": "2026-09-15 18:13:36",
+   "duration_s": 45.2,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6596,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F0EB3598-8748-420D-B684-7EFE4715266F",
+   "path": null,
+   "taken": "2026-09-15 18:13:36",
+   "duration_s": 45.2,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6596,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "592812C0-7954-4EED-9A72-10C7CD80FC47",
+   "path": null,
+   "taken": "2026-09-15 18:13:36",
+   "duration_s": 45.2,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6596,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "81A17DBA-3318-44D6-AC22-96B79C2C5ABA",
+   "path": null,
+   "taken": "2026-09-15 18:14:23",
+   "duration_s": 21.9,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.659,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "EFF0713C-4E01-463B-834F-DD51E10F8B91",
+   "path": null,
+   "taken": "2026-09-15 18:14:23",
+   "duration_s": 21.9,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.659,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "287B340E-62E3-4392-B617-4E37C26D48B4",
+   "path": null,
+   "taken": "2026-09-15 18:14:23",
+   "duration_s": 21.9,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.659,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "BDBCB4A9-72BA-4AFA-BE4F-4A4A43A6532B",
+   "path": null,
+   "taken": "2026-09-15 18:14:23",
+   "duration_s": 21.9,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.659,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "6E567AE8-BAE4-490E-9007-4780E6A93B82",
+   "path": null,
+   "taken": "2026-09-15 18:14:23",
+   "duration_s": 21.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.659,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "03503E6B-FBF3-4E8C-B3BD-CE5C223103B4",
+   "path": null,
+   "taken": "2026-09-15 18:14:48",
+   "duration_s": 17.8,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6585,
+   "lon": -85.8297,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "4B313E2E-DC74-4282-ADD7-1FBB2C3B42E9",
+   "path": null,
+   "taken": "2026-09-15 18:14:48",
+   "duration_s": 17.8,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6585,
+   "lon": -85.8297,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "1AAD8AE4-3132-409A-9DEA-BE131D585BF3",
+   "path": null,
+   "taken": "2026-09-15 18:14:48",
+   "duration_s": 17.8,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6585,
+   "lon": -85.8297,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "B73547DD-6141-48FF-B4AA-EFF161B2C2EC",
+   "path": null,
+   "taken": "2026-09-15 18:14:48",
+   "duration_s": 17.8,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6585,
+   "lon": -85.8297,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "49AE9838-07EA-4604-8FFB-5233820D44A8",
+   "path": null,
+   "taken": "2026-09-15 18:14:48",
+   "duration_s": 17.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6585,
+   "lon": -85.8297,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E7D307FE-0EA6-43A5-85F6-1D49F8FD46E5",
+   "path": null,
+   "taken": "2026-09-15 18:15:37",
+   "duration_s": 40.6,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6584,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "74843377-DCC8-40ED-995D-D2055227B71F",
+   "path": null,
+   "taken": "2026-09-15 18:15:37",
+   "duration_s": 40.6,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6584,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "14AB69BA-74E5-4940-BD21-E3D9A9A38832",
+   "path": null,
+   "taken": "2026-09-15 18:15:37",
+   "duration_s": 40.6,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6584,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "874D9EB0-2A44-451E-97DA-1DDD4891E1AF",
+   "path": null,
+   "taken": "2026-09-15 18:15:37",
+   "duration_s": 40.6,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6584,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F986A7E8-3337-4432-8F99-165F3F6F31FC",
+   "path": null,
+   "taken": "2026-09-15 18:15:37",
+   "duration_s": 40.6,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6584,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "111E2ACF-BE93-423F-948F-BDAE997D054F",
+   "path": null,
+   "taken": "2026-09-15 18:16:22",
+   "duration_s": 8.7,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6581,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "A81BD3E3-1031-4366-9631-1566370B51B9",
+   "path": null,
+   "taken": "2026-09-15 18:16:22",
+   "duration_s": 8.7,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6581,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "1E91F819-3180-467C-9E60-0625446B6FD6",
+   "path": null,
+   "taken": "2026-09-15 18:16:22",
+   "duration_s": 8.7,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6581,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "302ADCBF-BC89-45D6-BA10-4BA5E1F2A157",
+   "path": null,
+   "taken": "2026-09-15 18:16:22",
+   "duration_s": 8.7,
+   "width": 720,
+   "height": 1280,
+   "lat": 33.6581,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "43AAF8B7-65A9-4098-97AB-494686DCF4EF",
+   "path": null,
+   "taken": "2026-09-15 18:16:22",
+   "duration_s": 8.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6581,
+   "lon": -85.8299,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "CA8CCEA9-131A-4AB0-96AE-9A6ADFF4AAAB",
+   "path": null,
+   "taken": "2026-09-23 15:45:31",
+   "duration_s": 3.4,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6647,
+   "lon": -85.8298,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "94DF522C-B512-4B03-8319-9B89D7B90BE1",
+   "path": null,
+   "taken": "2026-09-25 11:33:59",
+   "duration_s": 58.3,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.662,
+   "lon": -85.8273,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "5B7BB89A-9541-4860-858C-C001B4BBDA2E",
+   "path": null,
+   "taken": "2026-09-25 11:45:47",
+   "duration_s": 52.9,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6619,
+   "lon": -85.8275,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "D20CD995-ABED-46EA-B02B-D451330FC4C0",
+   "path": null,
+   "taken": "2026-09-25 11:47:46",
+   "duration_s": 9.5,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6631,
+   "lon": -85.8276,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "33730A0A-0E8C-411D-AF16-A38C5150D990",
+   "path": null,
+   "taken": "2026-09-25 11:47:57",
+   "duration_s": 21.1,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6621,
+   "lon": -85.8274,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "C851E838-DE02-4085-A060-55E62DDEC221",
+   "path": null,
+   "taken": "2026-09-25 11:49:09",
+   "duration_s": 4.8,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6621,
+   "lon": -85.8274,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2930A2F8-E02E-4CE4-8182-3C838D9A8DD4",
+   "path": null,
+   "taken": "2026-09-25 11:49:26",
+   "duration_s": 237.7,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6621,
+   "lon": -85.8274,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "F9AE0A67-36F8-4A88-B720-46FAC678A126",
+   "path": null,
+   "taken": "2026-09-29 12:40:10",
+   "duration_s": 1.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6635,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "77DA10DE-87CD-4173-BA66-F36E5ED3262A",
+   "path": null,
+   "taken": "2026-09-29 12:40:13",
+   "duration_s": 6.7,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6635,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "E2F428FD-F920-4CA4-8A2A-B35790C3F3CB",
+   "path": null,
+   "taken": "2026-09-29 12:40:31",
+   "duration_s": 44.1,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6638,
+   "lon": -85.8306,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "FC1BF235-3AC0-4E2D-9F4C-9CF6F0B85798",
+   "path": null,
+   "taken": "2026-09-29 12:41:16",
+   "duration_s": 11.4,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6636,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "BE5A3F83-6469-41E8-AC76-B0F7FD545CF7",
+   "path": null,
+   "taken": "2026-09-29 12:41:29",
+   "duration_s": 28.8,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6636,
+   "lon": -85.8303,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "94A9B3D1-A07C-423A-9CED-C79E2CE11B70",
+   "path": null,
+   "taken": "2026-09-29 12:42:03",
+   "duration_s": 2.3,
+   "width": 1920,
+   "height": 1080,
+   "lat": 33.6633,
+   "lon": -85.8301,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "2A35465A-BC3A-43BA-96D9-75F2911FEEC6",
+   "path": null,
+   "taken": "2026-09-29 12:43:29",
+   "duration_s": 217.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6633,
+   "lon": -85.8302,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": false,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "0F4EAE70-131E-4BF3-8C2C-16138A1BA879",
+   "path": null,
+   "taken": "2026-09-29 12:49:52",
+   "duration_s": 12.0,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.663,
+   "lon": -85.8305,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  },
+  {
+   "uuid": "819EB36F-C238-4A07-BA51-233B17A0BABC",
+   "path": null,
+   "taken": "2026-09-29 12:50:09",
+   "duration_s": 5.9,
+   "width": 1080,
+   "height": 1920,
+   "lat": 33.6628,
+   "lon": -85.8304,
+   "tags": [
+    "longleaf"
+   ],
+   "usable": true,
+   "credit": "Matt Headley",
+   "kind": "video"
+  }
+ ]
+}

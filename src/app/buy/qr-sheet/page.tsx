@@ -1,4 +1,9 @@
+import type { Metadata } from 'next'
 import { MERCH } from '@/lib/merch'
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+}
 
 const BASE = 'https://southernlegends.blog'
 

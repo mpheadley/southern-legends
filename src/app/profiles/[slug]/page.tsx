@@ -16,7 +16,11 @@ import { siteConfig } from "@/lib/site-config";
 import { notFound } from "next/navigation";
 import ArticleImage from "@/app/components/ArticleImage";
 import InlineImage from "@/app/components/InlineImage";
+import Figure from "@/app/components/Figure";
 import PhotoCarouselLoader from "@/app/components/PhotoCarouselLoader";
+import { pickCTA, pickAd, snapshotAd } from "@/lib/cta-router";
+import HouseAdUnit from "@/app/components/HouseAdUnit";
+import AisleStrip from "@/app/components/AisleStrip";
 import PullQuote from "@/app/components/PullQuote";
 import FacebookEmbed from "@/app/components/FacebookEmbed";
 import VideoLoop from "@/app/components/VideoLoop";
@@ -28,7 +32,6 @@ import Comments from "@/app/components/Comments";
 import PlaylistEmbed from "@/app/components/PlaylistEmbed";
 import { getPlaylist } from "@/lib/playlists";
 import { getProfileMerch } from "@/lib/merch";
-import ContextualMerchGrid from "@/components/ContextualMerchGrid";
 import ClosingSection from "@/app/components/ClosingSection";
 import ReadingProgressBar from "@/app/components/ReadingProgressBar";
 import ProfileCardHero from "@/app/components/ProfileCardHero";
@@ -37,6 +40,8 @@ import FloatingShareBar from "@/app/components/FloatingShareBar";
 import PrevNextEdgeArrows from "@/app/components/PrevNextEdgeArrows";
 import NextUpPopup from "@/app/components/NextUpPopup";
 import VideoEmbed from "@/app/components/VideoEmbed";
+import UpcomingEvents from "@/app/components/UpcomingEvents";
+import ShelfLifeNotice from "@/app/components/ShelfLifeNotice";
 import MerchBlock from "@/app/components/MerchBlock";
 import ArtCredit from "@/app/components/ArtCredit";
 import Callout from "@/app/components/Callout";
@@ -104,11 +109,13 @@ const mdxComponents = {
   hr: () => <hr className="my-10 border-t border-ll-border" />,
   ArticleImage,
   InlineImage,
+  Figure,
   PhotoCarousel: PhotoCarouselLoader,
   PullQuote,
   FacebookEmbed,
   VideoLoop,
   VideoEmbed,
+  UpcomingEvents,
   MerchBlock,
   ArtCredit,
   Callout,
@@ -193,7 +200,8 @@ export default async function ProfilePage({
   // They are excluded from the grid, RSS, sitemap, and search. Only someone with the exact
   // slug can reach them. Do NOT add a notFound() check here for published: false.
   // AI-written drafts are not publishable — 404 at runtime even on direct URL visits.
-  if (profile.frontmatter.aiWritten) notFound();
+  // Local dev only: render them so Matt can review in the browser. Production still 404s.
+  if (profile.frontmatter.aiWritten && process.env.NODE_ENV !== "development") notFound();
 
   const { frontmatter, content, readingTime } = profile;
   const { prev, next } = getAdjacentProfiles(slug);
@@ -316,6 +324,7 @@ export default async function ProfilePage({
           displayTitle={frontmatter.displayTitle}
           cardFont={frontmatter.cardFont}
           slug={slug}
+          photoCredit={frontmatter.photoCredit}
         />
       ) : (
         <section
@@ -452,8 +461,22 @@ export default async function ProfilePage({
       <div id="hero-end-sentinel" aria-hidden="true" />
 
       {/* Article Content */}
+      {/* Ad policy (2026-10-05, Matt: income first through the show): while a campaign is
+          featured, a slim strip opens the article and the full band closes it. Otherwise
+          ONE ad, end-of-article. Sensitive pages get only the soft Support ad. */}
       <article className="bg-ll-light">
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 prose-profile">
+          {(() => {
+            const pageCta = pickCTA({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags });
+            const top = snapshotAd(`profiles/${slug}`, { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags }, pageCta.key);
+            return top?.key === "aisle" ? <AisleStrip ad={top} page={`profiles/${slug}`} /> : null;
+          })()}
+          <ShelfLifeNotice
+            shelfLife={frontmatter.shelfLife}
+            validUntil={frontmatter.validUntil}
+            label={frontmatter.shelfLabel}
+            evergreenHref={frontmatter.evergreenHref}
+          />
           <MDXRemote source={content} components={mdxComponents} />
           {(() => {
             const pl = getPlaylist(slug);
@@ -472,26 +495,55 @@ export default async function ProfilePage({
       </article>
       <div id="share-bar-sentinel" aria-hidden="true" />
 
-      {/* Blueprint pitch — best content is best sales page */}
-      <div style={{ background: "#f5f0e8", borderTop: "1px solid rgba(154,108,47,0.12)", padding: "2.5rem 1.5rem" }}>
-        <div className="max-w-2xl mx-auto" style={{ textAlign: "center" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.75rem" }}>
-            Gather Studio
-          </p>
-          <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.25rem, 3vw, 1.75rem)", color: "#1a1208", marginBottom: "0.75rem", fontWeight: 400 }}>
-            Does your business have a clear message?
-          </p>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", color: "#4a3728", lineHeight: 1.65, marginBottom: "1.5rem", maxWidth: "36rem", margin: "0 auto 1.5rem" }}>
-            Every story here starts with someone who knew what they were building and why. A Blueprint Session gets you there in 90 minutes.
-          </p>
-          <a
-            href="https://gatherstudio.app/book"
-            style={{ display: "inline-block", background: "#9a6c2f", color: "#F0EDE6", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "0.875rem", padding: "0.625rem 1.5rem", borderRadius: "4px", textDecoration: "none" }}
-          >
-            Book a Blueprint Session
-          </a>
-        </div>
-      </div>
+      {/* Context-aware CTA — pickCTA matches the page's topic to the right
+          venture, or falls back to a soft SL subscribe. No mismatched pitches
+          on arts / personal / community profiles. See lib/cta-router.ts */}
+      {(() => {
+        const cta = pickCTA({
+          category: (frontmatter as { category?: string }).category,
+          tags: frontmatter.tags,
+        });
+        return (
+          <div className="bg-ll-warm border-t border-ll-accent/10 px-6 py-10">
+            <div className="max-w-2xl mx-auto text-center">
+              <p className="text-ll-accent-dark text-[0.7rem] font-bold tracking-[0.18em] uppercase mb-3" style={{ fontFamily: "var(--font-body)" }}>
+                {cta.eyebrow}
+              </p>
+              <p className="text-ll-dark font-normal mb-3" style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.25rem, 3vw, 1.75rem)" }}>
+                {cta.headline}
+              </p>
+              <p className="text-ll-dark/80 text-[0.9375rem] leading-relaxed mb-6 max-w-xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
+                {cta.body}
+              </p>
+              <a
+                href={cta.href}
+                className="inline-block bg-ll-primary hover:bg-ll-primary-dark text-ll-warm font-semibold text-sm px-6 py-2.5 rounded transition-colors no-underline"
+              >
+                {cta.cta}
+              </a>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Ad slot — a house cross-promo for a DIFFERENT venture than the page CTA,
+          so the profile visibly carries buyable ad inventory. Renders nothing on
+          sensitive topics (pickHouseAd returns null). Canonical unit: @mpheadley/shared
+          GatherAd; this is SL's deploy-safe local mirror. See lib/cta-router.ts */}
+      {(() => {
+        const pageCta = pickCTA({
+          category: (frontmatter as { category?: string }).category,
+          tags: frontmatter.tags,
+        });
+        const houseAd = snapshotAd(`profiles/${slug}`, 
+          {
+            category: (frontmatter as { category?: string }).category,
+            tags: frontmatter.tags,
+          },
+          pageCta.key,
+        );
+        return houseAd ? <HouseAdUnit ad={houseAd} page={`profiles/${slug}`} /> : null;
+      })()}
 
       <Comments slug={slug} />
 
@@ -499,11 +551,13 @@ export default async function ProfilePage({
       {(() => {
         const { primary, secondary, tertiary } = getProfileMerch(slug);
         const fm = frontmatter as unknown as { audioUrl?: string; youtubeUrl?: string };
-        const podcastUrls = fm.audioUrl ? {
+        // Bottom podcast player ALWAYS shows (the SL show) — at the top it only
+        // shows when the piece has its own episode (fm.audioUrl). See [[feedback_sl_podcast_player]].
+        const podcastUrls = {
           spotify: "https://open.spotify.com/show/033rE2IJkbyZuLXZwEjtgo",
           apple: "https://podcasts.apple.com/podcast/id1896892029",
           youtube: fm.youtubeUrl ?? "https://www.youtube.com/@mpheadley",
-        } : undefined;
+        };
         return (
           <ClosingSection
             shareUrl={`/profiles/${slug}`}
@@ -515,24 +569,6 @@ export default async function ProfilePage({
             podcastUrls={podcastUrls}
           />
         );
-      })()}
-
-      {/* Contextual merch — graphic-on-blank shirts via ContextualMerchGrid (ShirtMockup + hover color) */}
-      {(() => {
-        const rawCity = frontmatter.location?.split(",")[0]?.trim()
-        const citySlug = rawCity?.toLowerCase().replace(/\s+/g, '-')
-        return (
-          <section style={{ background: "#1a1208", borderTop: "1px solid rgba(154,108,47,0.12)" }}>
-            <div style={{ maxWidth: "48rem", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
-              <ContextualMerchGrid
-                ctx={{ slug, cities: citySlug ? [citySlug] : undefined, limit: 6 }}
-                heading={`Wear it — ${rawCity ?? "Southern Legends"} merch`}
-                layout="grid"
-              />
-              <a href="/merch" style={{ display: "inline-block", marginTop: "0.875rem", fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "#c4974a", fontWeight: 600, textDecoration: "none" }}>See all merch →</a>
-            </div>
-          </section>
-        )
       })()}
 
       {/* Related Stories by tag */}

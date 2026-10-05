@@ -1,0 +1,45 @@
+{
+  "store": [
+    "clt-back-trail-shirt",
+    "clt-hike-explore-trans-shirt",
+    "icm-shirt",
+    "model-city-dark-trans-black"
+  ],
+  "review": [
+    "aisle-vendor-tee-front-shirt",
+    "clt-back-shirt",
+    "lickskillet-ox-trans-shirt",
+    "model-city-dark-shirt",
+    "model-city-dark-trans-shirt",
+    "piedmont-shirt-mockup",
+    "piedmont-trans-shirt",
+    "rbwf-ghibli-shirt",
+    "skull-gothic-trans-shirt",
+    "skull-marigold-trans-shirt",
+    "sl-run-trans-shirt"
+  ],
+  "archive": [
+    "01-rembg-shirt",
+    "04-rembg-shirt",
+    "05-rembg-shirt",
+    "anniston-45-trans-shirt",
+    "blossom-and-decay-bgremoved-shirt",
+    "blossom-and-decay-trans-shirt",
+    "blossom-decay-sugar-trans-shirt",
+    "blossom-rembg-clean-shirt",
+    "diaspora-trans-shirt",
+    "fort-mcclellan-trans-shirt",
+    "jacksonville-gamecock-clean-shirt",
+    "jacksonville-gamecock-trans-shirt",
+    "jacksonville-trans-shirt",
+    "lickskillet-trans-shirt",
+    "piedmont-change-shirt",
+    "pinhoti-trans-shirt",
+    "pv-raiders-xc-shirt",
+    "raider-road-runners-trans-shirt",
+    "sl-sticker-shirt",
+    "survived-woodstock-trans-shirt",
+    "woodstock-v2-shirt"
+  ],
+  "note": "store = CLT, ICM, Model City only (Matt, 2026-10-05). Everything else archived, not deleted."
+}

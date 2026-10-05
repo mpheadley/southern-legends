@@ -9,16 +9,25 @@ export default function ReadingProgressBar() {
     const article = document.querySelector("article");
     if (!article) return;
 
-    const update = () => {
+    // rAF loop instead of the native "scroll" event: the site uses Lenis
+    // smooth-scroll, which doesn't fire continuous native scroll events, so a
+    // scroll listener only updates when scrolling stops. A frame loop tracks it
+    // live. Threshold-gated setState avoids needless re-renders.
+    let raf = 0;
+    let last = -1;
+    const tick = () => {
       const { top, height } = article.getBoundingClientRect();
       const total = height - window.innerHeight;
       const scrolled = Math.max(0, -top);
-      setProgress(total > 0 ? Math.min(100, (scrolled / total) * 100) : 0);
+      const pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+      if (Math.abs(pct - last) > 0.05) {
+        last = pct;
+        setProgress(pct);
+      }
+      raf = requestAnimationFrame(tick);
     };
-
-    window.addEventListener("scroll", update, { passive: true });
-    update();
-    return () => window.removeEventListener("scroll", update);
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (

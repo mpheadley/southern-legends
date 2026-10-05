@@ -46,6 +46,9 @@ export interface Listicle {
   businesses: GuideBusiness[];
   events?: GuideEvent[];
   itemlist?: string; // JSON-LD ItemList string
+  /** Rolling events page: render upcoming events from content/data/events.json. */
+  eventsFeed?: { city?: string; county?: string; category?: string };
+  shelfLife?: "evergreen" | "timely";
   content: string; // legacy MDX body (empty for card-format guides)
 }
 
@@ -83,6 +86,8 @@ export function getListicle(slug: string): Listicle | null {
     businesses: (data.businesses as GuideBusiness[]) ?? [],
     events: data.events as GuideEvent[] | undefined,
     itemlist: data.itemlist as string | undefined,
+    eventsFeed: data.eventsFeed as Listicle["eventsFeed"],
+    shelfLife: data.shelfLife as Listicle["shelfLife"],
     content: content.replace(/^\s*import .*$/gm, "").trim(),
   };
 }

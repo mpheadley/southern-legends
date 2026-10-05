@@ -1,0 +1,50 @@
+{
+  "_comment": "CANONICAL syndication rate data — the ONLY home for these numbers. Edit here; the TS engine (src/lib/syndication-pricing.ts) and the rate card (tools/syndication-rate-card.mjs) both read this. Never hardcode a syndication rate anywhere else. status: confirmed = an outlet agreed; proposed = standard ask.",
+  "updated": "2026-09-21",
+  "base": {
+    "text":       { "label": "Text — reported feature (500–800w)", "reprint": 50, "first": 75 },
+    "shortText":  { "label": "Short text — brief (≤350w)",         "reprint": 35, "first": 50 },
+    "photos":     { "label": "Photos — my own licensed set",       "reprint": 25, "first": 40, "perPhoto": 10 },
+    "reel":       { "label": "Reel / short video (produced)",       "reprint": 75, "first": 100 },
+    "column":     { "label": "Ongoing column — weekly",             "flat": 25 }
+  },
+  "bundles": {
+    "text+photos":       { "label": "Text + photos",              "price": 100 },
+    "text+photos+reel":  { "label": "Full package (text+photos+reel)", "price": 150 },
+    "photos+reel":       { "label": "Photos + reel (they write)", "price": 100 }
+  },
+  "partnership": { "label": "Recurring feed — monthly retainer", "min": 300, "max": 500, "ceiling": 750 },
+  "productionCost": { "reel": 75 },
+  "outlets": {
+    "anniston-star": {
+      "name": "Anniston Star", "market": "Calhoun",
+      "contact": "Ginna Gray · ggray@annistonstar.com",
+      "status": "confirmed",
+      "overrides": { "text": 50, "reel": 75 }
+    },
+    "bama-buzz": {
+      "name": "Bama Buzz", "market": "statewide",
+      "contact": "Cindy Hatcher · chatcher@bhamnow.com",
+      "status": "confirmed-pays-rate-tbd",
+      "overrides": { "bundleFull": 150 }
+    },
+    "gadsden-times": {
+      "name": "Gadsden Times", "market": "Etowah",
+      "contact": "news@gadsdentimes.com",
+      "status": "proposed",
+      "overrides": { "text": 60, "bundleTextPhotos": 100, "bundleFull": 150 }
+    },
+    "southern-legends": {
+      "name": "Southern Legends", "market": "home of record",
+      "contact": "—", "status": "own",
+      "overrides": { "free": true }
+    }
+  },
+  "rules": [
+    "Never sell exclusive to two outlets in overlapping markets — first rights to one, reprint to the rest.",
+    "Only bill for my own photos. Others' shots travel courtesy + credit, $0.",
+    "Disclose where a version ran ('also appears in the Anniston Star') on my own sites, not in a competitor's copy.",
+    "Money-gate: confirm each outlet's actual rate before quoting; never state a rate as fact until they agree.",
+    "A $75 reel sold ≈ break-even against $75 production (Ginna). Bundle or mark up."
+  ]
+}

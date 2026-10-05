@@ -84,3 +84,22 @@ When adding a scrollytelling profile:
 4. Keep the MDX body minimal or add a note that prose is in the config
 
 When editing prose on a scrollytelling profile, **edit the config, not the MDX body.**
+
+---
+
+## Enrichment: run tools/sl-enrich.py
+
+Every standard MDX profile goes through the enrichment script before it ships, and again after big edits. The script applies the rules, so they don't depend on anyone remembering them.
+
+```bash
+python3 tools/sl-enrich.py lint <slug>              # or: lint --all  (profiles + listicles, one summary report)
+python3 tools/sl-enrich.py suggest <slug>           # dry-run: pull quotes, licensed images, ATD matches, crosslinks
+python3 tools/sl-enrich.py suggest <slug> --apply   # or: --apply --pick c2,c5 after reviewing candidates
+python3 tools/sl-enrich.py fix-layout <slug> --apply
+python3 tools/sl-enrich.py audit-layout <slug>      # Playwright on localhost:3030, 1440 + 390 wide
+```
+
+- **lint** checks for kill-list words, broken internal links (including links to aiWritten or unpublished profiles), missing or heavy images (over 200KB or 1600px), images with no credit, leftover `[EDIT: ...]` placeholders, and float layout. Every floated image needs a paragraph of 300+ characters beside it, and two floats must never be adjacent. It also checks shelf life: dated times, prices, or upcoming dates without `shelfLife` give a warning, and `shelfLife: timely` without `validUntil` is an error.
+- **suggest** is dry-run by default. It writes `reports/sl-enrich/<slug>-<date>.md` plus an HTML review page that shows the candidate images by file path. Images come only from public domain, CC0, CC BY, or CC BY-SA sources (Wikimedia Commons, Openverse, Library of Congress) through `tools/scrape.py`. Each image's author, license, and source URL are recorded in `content/data/image-credits.json`. Alabama Tourism Department matches are listed for a manual pull, credited as "Photo: <Photographer>, Alabama Tourism Department."
+- **--apply** is limited to these edits: it inserts at most two `InlineImage` tags, inserts at most one `PullQuote` (a verbatim sentence from the piece), adds `shelfLife`, and moves or centers floats that have no text beside them. It backs up the MDX first to `reports/sl-enrich/backups/` and refuses to write if anything else in the file would change. Conversions go through `tools/image-prep.py`. After an apply, the render audit runs on the changed page.
+- `no-binoculars-required` and `anniston-museums-gardens` are hand-tuned. The script runs on them in dry-run only.

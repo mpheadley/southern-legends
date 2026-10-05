@@ -7,7 +7,6 @@ import { getAllListicles } from "@/lib/listicles"
 import { siteConfig } from "@/lib/site-config"
 import SectionLinks from "@/app/components/SectionLinks"
 import ShareRow from "@/app/components/ShareRow"
-import { getWideMerch } from "@/lib/merch"
 
 export const metadata: Metadata = {
   title: "SL Places — Southern Legends",
@@ -33,7 +32,6 @@ export default function PlacesPage() {
   const featured = getFeatured()
   const all = SL_PLACES
   const guides = getAllListicles().slice(0, 8)
-  const featuredMerch = getWideMerch(4)
 
   const schema = {
     "@context": "https://schema.org",
@@ -307,31 +305,6 @@ export default function PlacesPage() {
                 }}>
                   {g.title}
                 </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Merch */}
-        {featuredMerch.length > 0 && (
-          <div style={{ marginBottom: "2rem" }}>
-            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1rem" }}>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f" }}>Wear it</p>
-              <Link href="/merch" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, color: "#9a6c2f", textDecoration: "none" }}>Shop all →</Link>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: "0.75rem" }}>
-              {featuredMerch.map((item) => (
-                <a key={item.id} href={`/merch#${item.id}`} style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                  <div style={{ position: "relative", width: "100%", aspectRatio: "1", borderRadius: "5px", overflow: "hidden", background: "#2a1e10" }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.photo} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                    {item.badge && (
-                      <span style={{ position: "absolute", top: "0.35rem", left: "0.35rem", background: item.badgeColor || "#7a5c1e", color: "#F0EDE6", fontSize: "0.5rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "0.12rem 0.4rem", borderRadius: "3px" }}>{item.badge}</span>
-                    )}
-                  </div>
-                  <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.8rem", color: "#1a1208", lineHeight: 1.2 }}>{item.name}</p>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", color: "#9a6c2f" }}>${item.price}</p>
-                </a>
               ))}
             </div>
           </div>

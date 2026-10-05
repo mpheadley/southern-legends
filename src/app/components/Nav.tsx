@@ -37,8 +37,28 @@ export default function Nav() {
     { label: "Theology", href: "/theology" },
     { label: "Merch", href: "/merch" },
   ];
-  const allLinks = [...navLinks, ...moreLinks];
   const supportLink = { label: "Support", href: "/support" };
+
+  // Mobile: grouped by intent instead of a flat wall of 11 links.
+  const mobileGroups = [
+    { title: "Read", links: [
+      { label: "Stories", href: "/profiles" },
+      { label: "Essays", href: "/essays" },
+      { label: "Guides", href: "/listicles" },
+      { label: "Books", href: "/books" },
+    ]},
+    { title: "Explore", links: [
+      { label: "Map", href: "/map" },
+      { label: "Places", href: "/places" },
+      { label: "The Land", href: "/land" },
+      { label: "Arts", href: "/arts" },
+    ]},
+    { title: "More", links: [
+      { label: "Theology", href: "/theology" },
+      { label: "About", href: "/about" },
+      { label: "Merch", href: "/merch" },
+    ]},
+  ];
 
   return (
     <>
@@ -159,9 +179,9 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* Mobile overlay */}
+      {/* Mobile overlay — grouped, left-aligned, scrollable */}
       <div
-        className={`fixed inset-0 z-[60] bg-ll-dark/98 flex flex-col items-center justify-center transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[60] bg-ll-dark/98 backdrop-blur-sm overflow-y-auto transition-opacity duration-300 ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -170,64 +190,88 @@ export default function Nav() {
         aria-modal="true"
         aria-label="Navigation menu"
       >
-        <button
-          className="absolute top-5 right-6 text-white p-2"
-          onClick={() => setMobileOpen(false)}
-          aria-label="Close menu"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <nav className="flex flex-col items-center gap-8">
-          {allLinks.map((item) => {
-            const isActive = pathname.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-2xl font-semibold transition-colors ${
-                  isActive
-                    ? "text-ll-accent"
-                    : "text-white hover:text-ll-accent"
-                }`}
-                style={{ fontFamily: "var(--font-heading)" }}
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <div className="min-h-full flex flex-col px-7 pt-6 pb-10">
+          {/* Top row: wordmark + close */}
+          <div className="flex items-center justify-between mb-6">
+            <Link
+              href="/"
+              className="font-bold text-lg text-white uppercase tracking-[0.08em]"
+              style={{ fontFamily: "var(--font-heading)" }}
+              onClick={() => setMobileOpen(false)}
+            >
+              Southern Legends
+            </Link>
+            <button
+              className="text-white p-2 -mr-2"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Search — full-width entry point */}
           <Link
             href="/search"
-            className="text-2xl font-semibold text-white hover:text-ll-accent transition-colors flex items-center gap-2"
-            style={{ fontFamily: "var(--font-heading)" }}
             onClick={() => setMobileOpen(false)}
+            className="flex items-center gap-3 w-full px-4 py-3 mb-7 rounded-lg bg-white/5 border border-white/10 text-white/70 hover:text-white hover:border-white/25 transition-colors"
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
-            Search
+            <span className="text-sm font-medium">Search everything</span>
           </Link>
+
+          {/* Grouped sections */}
+          {mobileGroups.map((group) => (
+            <div key={group.title} className="mb-7">
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-ll-accent/70 mb-1.5">
+                {group.title}
+              </p>
+              <div className="flex flex-col">
+                {group.links.map((item) => {
+                  const isActive = pathname.startsWith(item.href);
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={`py-2.5 text-xl font-semibold transition-colors border-b border-white/5 ${
+                        isActive ? "text-ll-accent" : "text-white hover:text-ll-accent"
+                      }`}
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+
+          {/* Support — anchored CTA */}
           <Link
             href={supportLink.href}
-            className="px-6 py-2 bg-ll-primary text-white text-xl font-semibold rounded hover:bg-ll-primary-dark transition-colors"
-            style={{ fontFamily: "var(--font-heading)" }}
             onClick={() => setMobileOpen(false)}
+            className="mt-auto w-full text-center px-6 py-3.5 bg-ll-primary text-white text-lg font-semibold rounded-lg hover:bg-ll-primary-dark transition-colors"
+            style={{ fontFamily: "var(--font-heading)" }}
           >
-            {supportLink.label}
+            Support Southern Legends
           </Link>
-        </nav>
+          <a
+            href="/profiles/feed.xml"
+            className="mt-4 flex items-center justify-center gap-2 text-white/40 hover:text-white/70 text-xs font-medium uppercase tracking-[0.15em] transition-colors"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795 0 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.742-7.115-15.793-15.839-15.82zm0-8.18v4.819c12.951.115 23.363 10.627 23.478 23.625h.022v-4.819h-.022c-.115-13.262-10.873-23.861-23.478-23.625z" />
+            </svg>
+            RSS
+          </a>
+        </div>
       </div>
     </>
   );

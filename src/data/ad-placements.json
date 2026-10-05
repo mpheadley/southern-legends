@@ -1,0 +1,765 @@
+{
+  "generated": "2026-10-05",
+  "pages": {
+    "profiles/2nd-chance-inc-anniston": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/aaron-norris-anniston": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/ace-hardware-oxford": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/adlene-kufarimai": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/amag-anniston": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/anniston-first-umc": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/anniston-museums-gardens": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/anniston-star": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/apothecary-draft-house": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/apothecary-josh-stearns": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/aquality-farms": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/aseel-mustafa": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/aubrey-fullbright-romarin": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/bill-crowe-gadsden-state": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/blackberry-hill-alpacas": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/blair-callaway": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/brian-howell": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/brodie-boyd": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/camp-sumatanga": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/cathy-simpson-longleaf-bookshop": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/charmly-co-auburn": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/chastity-byrd": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/chief-ladiga-trail": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/ciara-smith-roston": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/clinton-hubbard": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/connie-thompson": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/dale-clem": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/danielle-hall-sound-embrace": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/designs-by-rosa-kate": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/dpil-uweca-imagination-library": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/dr-patricia-corbin": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/dr-renee-baptiste": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/eli-yanson-jsu": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/eric-traynor": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/eric-wilcox": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/estefania-cuevas-wilcox": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/farm-at-silver-creek": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/figure-eight-videography": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/freedom-riders-national-monument": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/gadsden-state-show-band": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/headley-flower-farm": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/heather-florals-bloom-bar": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/hubbards-off-main": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/interfaith-ministries-calhoun-county": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/iris-the-cat": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/jackson-hodges": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/james-spann": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/jay-jenkins": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/jean-ellison-mom-to-go": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/jean-ellison-the-collective": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/jeremy-stovall": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/jerod-snider-called-coffee": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/jim-williams-parca": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/joe-skaggs-photography": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/jonathan-land-roofing": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/joseph-giri": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/josh-bullock": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/julia-anniston-jewelry": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/justin-hall-old-noble": {
+      "decision": "house:gatherstudio",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/karla-eden-main-street-anniston": {
+      "decision": "house:gatherstudio",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/katelyn-iron-city-bloomery": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/kathryn-parker-goofball-series": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/kelly-clem": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/ken-bodiford": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/leaffilter-anniston": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/leah-cleghorn-southern-girl-coffee": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/lee-farm-weddings": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/lee-kathryn-evancho-calhoun-journal": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/lewis-downing": {
+      "decision": "house:gatherstudio",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/lori-floyd-the-right-place": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/lori-floyd": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/lucid-dreams-amber": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/lucy-vandervoort-morris": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/maria-called-coffee": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/mark-jones-jacksonville": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/martha-vandervoort": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/matt-headley": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/matt-mitchell-southern-humorist": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/michele-hornsby-redbird-willow": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/michelle-mcgrady": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/mickey-starling-kiwanis": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/model-city-glass": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/mom-to-go": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/narrow-way-quartet": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/nathan-wight": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/no-binoculars-required": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/noah-sanders": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/noccalula-falls": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/nostalgia-media": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/on-time-fashion": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/ontime-fashion": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/otter-creek-farmstead": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/oxford-lumber-ace-hardware": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/patrick-wigley-wigs-wheels": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/peerless-saloon": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/pete-conroy": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/quadw-anniston": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/quality-shoppe": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/redbird-willow-farm-expo": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/rl-travel-advisors": {
+      "decision": "house:tend",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/rondell-goode-bbq": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/rons-goode-bbq": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/rr-travel-service": {
+      "decision": "house:tend",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/scott-emmalie-whitney": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/shannon-jenkins": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/shepherds-table": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/sherill-clontz": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/silver-run-chapel": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/skylar-sweeney-todd-gadsden": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/sound-embrace": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/sound-solutions-anniston": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/sound-solutions": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/spring-street-station": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/sy-nguyen-beauty": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/sy-nguyen-nails": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/talladega-creekside-resort": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/tera-whigham-terafied": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/tera-whigham": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/teresa-stricklin": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/the-farm-at-silver-creek": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/the-goofball-series": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "profiles/the-main-olive": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/the-pageant-prepper": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/the-roost-jacksonville": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/the-roost-lofts-on-ladiga": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "profiles/vernon-thompson-afumc": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "profiles/woodstock-5k": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/anniston-still-here": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/broken-ground-book": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/centre-alabama-essay": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/chamber-podcast-marketing-through-faith": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/gadsden-alabama-essay": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/god-and-the-algorithm-book": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/humor-comedy-dark-satire-taxonomy": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/iris-the-cheshire-cat-of-northeast-alabama": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/jacksonville-alabama-essay": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/lickskillet-alabama": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/mcclellan-what-the-shells-left-standing": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/neurodiversity-sin-creation": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/oxford-alabama-essay": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/piedmont-alabama-essay": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/plainspoken-blueprint-book": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/poly-cluster-essay": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/redbird-willow-farm": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/talladega-alabama-essay": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/tend-book": {
+      "decision": "house:aisle",
+      "why": "single candidate",
+      "by": "python"
+    },
+    "essays/the-headshot": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/the-lazy-river": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/trust-the-one-who-walks-with-a-limp": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/what-lombard-gave-me": {
+      "decision": null,
+      "why": "tacky-guard (sensitive topic)",
+      "by": "python"
+    },
+    "essays/what-the-triskelion-means": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    },
+    "essays/which-stream-are-you-from": {
+      "decision": null,
+      "why": "no candidates",
+      "by": "python"
+    }
+  }
+}

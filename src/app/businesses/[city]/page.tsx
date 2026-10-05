@@ -3,7 +3,6 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { MapPin } from "lucide-react"
 import { getBusinessesByCity, getBusinessCities, cityToSlug } from "@/lib/businesses"
-import { getMerchForCity } from "@/lib/merch"
 
 export const revalidate = 86400
 
@@ -40,7 +39,6 @@ export default async function BusinessesCityPage({ params }: Props) {
   const businesses = getBusinessesByCity(citySlug)
   if (businesses.length === 0) notFound()
 
-  const cityMerch = getMerchForCity(citySlug, 3)
 
   // Group by category
   const byCategory: Record<string, typeof businesses> = {}
@@ -92,38 +90,6 @@ export default async function BusinessesCityPage({ params }: Props) {
           </div>
         </section>
       ))}
-
-      {cityMerch.length > 0 && (
-        <section style={{ background: "#1a1208", borderRadius: "8px", padding: "1.5rem", marginTop: "2rem", marginBottom: "1.5rem" }}>
-          <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.4rem" }}>Wear it</p>
-          <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.1rem", color: "#F0EDE6", fontWeight: 400, marginBottom: "1rem" }}>{cityName} merch from Southern Legends</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem", marginBottom: "1rem" }}>
-            {cityMerch.map((item) => {
-              const card = (
-                <>
-                  <div style={{ position: "relative", width: "100%", aspectRatio: "1", borderRadius: "5px", overflow: "hidden", background: "#2a1e10" }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.photo} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover", opacity: item.available ? 1 : 0.45 }} />
-                    {!item.available && (
-                      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ fontFamily: "var(--font-body)", fontSize: "0.55rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#F0EDE6", background: "rgba(26,18,8,0.88)", padding: "0.15rem 0.4rem", borderRadius: "3px" }}>Coming soon</span>
-                      </div>
-                    )}
-                  </div>
-                  <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.8rem", color: item.available ? "#F0EDE6" : "rgba(240,237,230,0.4)", lineHeight: 1.2, marginTop: "0.35rem" }}>{item.name}</p>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", color: "rgba(240,237,230,0.4)", marginTop: "0.15rem" }}>{item.available ? `$${item.price}` : "Coming soon"}</p>
-                </>
-              )
-              return item.available ? (
-                <a key={item.id} href={`/merch#${item.id}`} style={{ textDecoration: "none" }}>{card}</a>
-              ) : (
-                <div key={item.id}>{card}</div>
-              )
-            })}
-          </div>
-          <a href="/merch" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#c4974a", fontWeight: 600, textDecoration: "none" }}>See all merch →</a>
-        </section>
-      )}
 
       <div className="mt-10 pt-6 border-t border-neutral-200 text-sm text-neutral-500 flex flex-wrap gap-4">
         <Link href={`/places/${citySlug}`} className="underline hover:text-neutral-800">

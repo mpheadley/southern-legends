@@ -28,6 +28,9 @@ import ProfileCardHero from "@/app/components/ProfileCardHero";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
 import { getEssayMerch, getMerchForCity } from "@/lib/merch";
 import ClosingSection from "@/app/components/ClosingSection"
+import { pickCTA, pickAd, snapshotAd } from "@/lib/cta-router";
+import HouseAdUnit from "@/app/components/HouseAdUnit";
+import AisleStrip from "@/app/components/AisleStrip";
 import SpotifyEmbed from "@/app/components/SpotifyEmbed"
 import AuthorSupport from "@/app/components/AuthorSupport"
 import { getPlaylistId } from "@/lib/spotify-config";
@@ -346,6 +349,11 @@ export default async function JournalPostPage({ params }: { params: Params }) {
               <AudioPlayer src={frontmatter.audioUrl} title="Listen to this essay" />
             </div>
           )}
+          {(() => {
+            const pageCta = pickCTA({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags });
+            const top = snapshotAd(`essays/${slug}`, { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags }, pageCta.key);
+            return top?.key === "aisle" ? <AisleStrip ad={top} page={`essays/${slug}`} /> : null;
+          })()}
           <MDXRemote source={content} components={mdxComponents} />
 
           {/* Auto-inject YouTube playlist if one is configured for this slug */}
@@ -396,6 +404,20 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           compact
         />
       </div>
+
+      {/* Ad slot — ONE tasteful house cross-promo (or the Support SL fallback) at the
+          end, before Comments. Mirrors the profiles/[slug] pattern. See lib/cta-router.ts */}
+      {(() => {
+        const pageCta = pickCTA({
+          category: (frontmatter as { category?: string }).category,
+          tags: frontmatter.tags,
+        });
+        const houseAd = snapshotAd(`essays/${slug}`, 
+          { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags },
+          pageCta.key,
+        );
+        return houseAd ? <HouseAdUnit ad={houseAd} page={`essays/${slug}`} /> : null;
+      })()}
 
       <Comments slug={slug} />
 

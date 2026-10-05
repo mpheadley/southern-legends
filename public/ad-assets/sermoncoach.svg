@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- SermonCoach — Primary Square Badge 200×200 -->
+  <rect width="200" height="200" rx="18" fill="#0d1a0d"/>
+  <!-- Mic icon: cream capsule + gold stand/base -->
+  <g transform="translate(60,24) scale(3.33)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Mic capsule — cream -->
+    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" stroke="#f0ede8" stroke-width="0.7"/>
+    <!-- Stand arc — gold -->
+    <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="#C9A227" stroke-width="0.7"/>
+    <!-- Stem — gold -->
+    <line x1="12" y1="19" x2="12" y2="22" stroke="#C9A227" stroke-width="0.7"/>
+    <!-- Base bar — gold -->
+    <line x1="8" y1="22" x2="16" y2="22" stroke="#C9A227" stroke-width="0.7"/>
+  </g>
+  <!-- Divider -->
+  <line x1="24" y1="138" x2="176" y2="138" stroke="#C9A227" stroke-width="0.5" opacity="0.25"/>
+  <!-- SERMON -->
+  <text x="100" y="153" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700"
+        fill="#f0ede8" text-anchor="middle" letter-spacing="3">SERMON</text>
+  <!-- Gold rule -->
+  <line x1="32" y1="162" x2="168" y2="162" stroke="#C9A227" stroke-width="0.5" opacity="0.4"/>
+  <!-- COACH -->
+  <text x="100" y="178" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700"
+        fill="#C9A227" text-anchor="middle" letter-spacing="5">COACH</text>
+</svg>

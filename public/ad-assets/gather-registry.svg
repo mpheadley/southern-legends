@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 96" width="224" height="96">
+  <!-- Mark: filled gift box (matches square primary), centered in 96 box -->
+  <g transform="translate(24,24)">
+    <!-- box body -->
+    <rect x="6" y="24" width="36" height="22" rx="2" fill="#E8722A"/>
+    <!-- lid -->
+    <rect x="4" y="18" width="40" height="9" rx="2" fill="#CA8A04"/>
+    <!-- vertical ribbon -->
+    <rect x="20" y="18" width="8" height="28" rx="1.5" fill="#060d09" opacity="0.4"/>
+    <!-- bow left -->
+    <path d="M24 18 Q13 10 10 14 Q8 18 24 18" fill="#f0ede8" opacity="0.9"/>
+    <!-- bow right -->
+    <path d="M24 18 Q35 10 38 14 Q40 18 24 18" fill="#f0ede8" opacity="0.9"/>
+    <!-- knot -->
+    <circle cx="24" cy="18" r="2.6" fill="#CA8A04"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="92" y="45" font-family="'Fraunces','Cormorant Garamond',Georgia,serif" font-size="30" font-weight="700" fill="#f0ede8" letter-spacing="0.5">Gather</text>
+  <text x="93" y="70" font-family="'DM Sans',system-ui,sans-serif" font-size="17" font-weight="600" fill="#CA8A04" letter-spacing="4">REGISTRY</text>
+</svg>

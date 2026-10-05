@@ -125,6 +125,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.5,
     },
+    // Rolling events pages: evergreen URLs, content changes daily
+    {
+      url: `${siteConfig.url}/listicles/anniston-events`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/listicles/calhoun-county-events`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
     // Content entries
     ...profileEntries,
     ...journalEntries,

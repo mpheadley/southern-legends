@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Blueprint Session — Primary Square Badge 200×200 -->
+  <!-- Colors: dark #111a14, cream #F7F5F0, sage #6B8F71, gold #c9a96e -->
+  <rect width="200" height="200" rx="18" fill="#111a14"/>
+  <!-- layout-template icon (Lucide): header bar + two panels = the brief/blueprint -->
+  <g transform="translate(60,28) scale(3.33)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Header bar — cream -->
+    <rect x="3" y="3" width="18" height="7" rx="1" stroke="#F7F5F0" stroke-width="0.65"/>
+    <!-- Left panel — sage -->
+    <rect x="3" y="14" width="7" height="7" rx="1" stroke="#6B8F71" stroke-width="0.65"/>
+    <!-- Right panel — gold -->
+    <rect x="14" y="14" width="7" height="7" rx="1" stroke="#c9a96e" stroke-width="0.65"/>
+  </g>
+  <!-- Divider -->
+  <line x1="24" y1="138" x2="176" y2="138" stroke="#c9a96e" stroke-width="0.5" opacity="0.3"/>
+  <!-- BLUEPRINT -->
+  <text x="100" y="153" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700"
+        fill="#F7F5F0" text-anchor="middle" letter-spacing="3">BLUEPRINT</text>
+  <!-- Gold rule -->
+  <line x1="32" y1="162" x2="168" y2="162" stroke="#c9a96e" stroke-width="0.5" opacity="0.45"/>
+  <!-- SESSION -->
+  <text x="100" y="178" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700"
+        fill="#c9a96e" text-anchor="middle" letter-spacing="5">SESSION</text>
+</svg>

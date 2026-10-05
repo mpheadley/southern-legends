@@ -16,9 +16,11 @@ import ShareRow from "@/app/components/ShareRow"
 import SpotifyEmbed from "@/app/components/SpotifyEmbed"
 import CityThemePlayer from "@/app/components/CityThemePlayer"
 import { getPlaylistId } from "@/lib/spotify-config"
-import { getMerchForCity } from "@/lib/merch"
 import PlaylistEmbed from "@/app/components/PlaylistEmbed"
 import { getPlaylist } from "@/lib/playlists"
+import UpcomingEvents from "@/app/components/UpcomingEvents"
+
+const CALHOUN_EVENT_TOWNS = ["Anniston", "Oxford", "Jacksonville", "Piedmont", "Weaver", "Ohatchee", "Alexandria", "Glencoe"]
 
 export const revalidate = 86400 // revalidate daily
 
@@ -153,7 +155,6 @@ export default async function CityPage({ params }: Props) {
     .join(" · ")
   const news = getNewsForCity(cityName)
   const isAnniston = citySlug === "anniston"
-  const cityMerch = getMerchForCity(citySlug)
 
   const schema = {
     "@context": "https://schema.org",
@@ -432,6 +433,22 @@ export default async function CityPage({ params }: Props) {
         </div>
       )}
 
+      {/* EVENTS — Calhoun County towns link to the rolling events pages */}
+      {CALHOUN_EVENT_TOWNS.includes(cityName) && (
+        <section style={{ borderTop: "1px solid rgba(154,108,47,0.12)" }}>
+          <div className="mx-auto max-w-4xl px-6 py-10">
+            <p style={{ ...LABEL, marginBottom: "1rem" }}>Coming up in {cityName}</p>
+            <UpcomingEvents city={cityName} title={`Next up in ${cityName}`} limit={3} />
+            <Link
+              href={cityName === "Anniston" ? "/listicles/anniston-events" : "/listicles/calhoun-county-events"}
+              style={{ ...BODY, color: "#9a6c2f", textDecoration: "underline" }}
+            >
+              {cityName === "Anniston" ? "All Anniston events →" : "All Calhoun County events →"}
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* SL PLACES — curated editorial listings */}
       {slPlaces.length > 0 && (
         <section style={{ borderTop: "1px solid rgba(154,108,47,0.12)" }}>
@@ -526,55 +543,6 @@ export default async function CityPage({ params }: Props) {
           </a>
         </div>
       </div>
-
-      {/* MERCH */}
-      {cityMerch.length > 0 && (
-        <section style={{ background: "#1a1208", borderTop: "1px solid rgba(154,108,47,0.12)" }}>
-          <div className="mx-auto max-w-4xl px-6 py-10">
-            <p style={{ ...LABEL, color: "#9a6c2f", marginBottom: "0.5rem" }}>Wear it</p>
-            <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.25rem", color: "#F0EDE6", fontWeight: 400, marginBottom: "1.5rem" }}>
-              {cityName} merch from Southern Legends
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "1rem", marginBottom: "1.25rem" }}>
-              {cityMerch.map((item) => {
-                const card = (
-                  <>
-                    <div style={{ position: "relative", width: "100%", aspectRatio: "1", borderRadius: "6px", overflow: "hidden", background: "#2a1e10" }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={item.photo} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover", opacity: item.available ? 1 : 0.45 }} />
-                      {!item.available && (
-                        <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                          <span style={{ fontFamily: "var(--font-body)", fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#F0EDE6", background: "rgba(26,18,8,0.88)", padding: "0.2rem 0.5rem", borderRadius: "3px" }}>Coming soon</span>
-                        </div>
-                      )}
-                      {item.available && item.badge && (
-                        <span style={{ position: "absolute", top: "0.4rem", left: "0.4rem", background: item.badgeColor || "#7a5c1e", color: "#F0EDE6", fontSize: "0.55rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "0.15rem 0.45rem", borderRadius: "3px" }}>
-                          {item.badge}
-                        </span>
-                      )}
-                    </div>
-                    <div>
-                      <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.875rem", color: item.available ? "#F0EDE6" : "rgba(240,237,230,0.4)", lineHeight: 1.2, marginBottom: "0.15rem" }}>{item.name}</p>
-                      <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", color: "rgba(240,237,230,0.4)" }}>{item.available ? `$${item.price}` : "Notify me when ready"}</p>
-                    </div>
-                  </>
-                )
-                return item.available ? (
-                  <a key={item.id} href={`/merch#${item.id}`} style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>{card}</a>
-                ) : (
-                  <div key={item.id} style={{ display: "flex", flexDirection: "column", gap: "0.5rem", cursor: "default" }}>{card}</div>
-                )
-              })}
-            </div>
-            <a
-              href="/merch"
-              style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#c4974a", fontWeight: 600, textDecoration: "none" }}
-            >
-              See all Southern Legends merch →
-            </a>
-          </div>
-        </section>
-      )}
 
       {/* NEWSLETTER */}
       <div style={{ borderTop: "1px solid rgba(154,108,47,0.1)" }}>
