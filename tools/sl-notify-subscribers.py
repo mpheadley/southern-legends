@@ -39,7 +39,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 ROOT = REPO.parent
 SITE = "https://southernlegends.org"
-FROM = "Southern Legends <stories@matthewheadley.com>"
+FROM = "Matt Headley, Southern Legends <stories@matthewheadley.com>"
 REPLY_TO = "matt@gatherstudio.app"
 AUDIENCE_ID = "bc84e16a-40ed-4e6b-bc6e-1396bcb83a92"
 OUT = ROOT / "reports" / "sl-notify"
@@ -196,7 +196,8 @@ def c_story(kicker: str, title: str, dek: str, image: str, alt: str, credit: str
                 f'style="border-radius:8px;background:{C["dark"]};">'
                 f'<tr><td style="padding:0;"><a href="{_e(href)}"><img src="{_e(_abs(image))}" width="520" alt="{_e(alt or title)}" '
                 f'style="display:block;width:100%;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
-                f'<tr><td style="padding:0 24px 26px;">'
+                + (f'<tr><td style="padding:2px 24px 10px;font-family:{SANS};font-size:13px;font-style:italic;color:#b8b2aa;">{_e(credit)}</td></tr>' if credit else '')
+                + f'<tr><td style="padding:0 24px 26px;">'
                 f'<div style="font-family:{BODY};font-size:17px;line-height:1.6;color:#E7E2D9;padding:0 0 18px;">{_e(dek)}</div>'
                 f'{c_button(href, "Read the full story")}</td></tr></table></td></tr>')
     cred = (f'<div style="font-family:{SANS};font-size:11px;color:{C["muted"]};padding:6px 0 0;">{_e(credit)}</div>'
@@ -337,7 +338,7 @@ def c_share(page_url: str, title: str) -> str:
     from urllib.parse import quote
     fb = f"https://www.facebook.com/sharer/sharer.php?u={quote(page_url, safe='')}"
     body = (f"I thought you'd like this story from Southern Legends:\n\n{title}\n{page_url}\n\n"
-            f"If you want the next one, it's free: {SITE}/subscribe")
+            f"If you want the next one, it's free: {SITE}/subscribe?source=forward")
     mail = f"mailto:?subject={quote('A story you might like: ' + title)}&body={quote(body)}"
     a = f'style="color:{C["primary"]};font-weight:700;text-decoration:none;"'
     btn = (f'<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>'
@@ -352,7 +353,7 @@ def c_share(page_url: str, title: str) -> str:
             f'Know someone who&rsquo;d like this?</div>{btn}'
             f'<div style="padding-top:12px;">Or share the story: '
             f'{_icon("facebook", fb, "Share on Facebook", 28)}</div>'
-            f'<div style="color:{C["muted"]};padding-top:6px;">Forwarded this? <a href="{SITE}/subscribe" {a}>Get the next one free</a></div>'
+            f'<div style="color:{C["muted"]};padding-top:6px;">Forwarded this? <a href="{SITE}/subscribe?source=forward" {a}>Get the next one free</a></div>'
             f'</td></tr>'
             f'<tr><td class="px" align="center" style="padding:18px 40px 26px;">'
             f'<div style="font-family:{MONO};font-size:12px;letter-spacing:2px;text-transform:uppercase;color:{C["muted"]};'
@@ -394,11 +395,10 @@ def c_ad(image: str, href: str, alt: str, label: str, html_text: str = "") -> st
 
 
 def wrap(rows: str, preheader: str = "") -> str:
-    pre = (f'<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{_e(preheader)}</div>'
-           if preheader else "")
+    pre = (f'<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{_e(preheader)}'
+           + "&#847;&zwnj;&nbsp;" * 40 + '</div>' if preheader else "")
     return (f'<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
             f'<style>@media (max-width:480px){{.px{{padding-left:18px!important;padding-right:18px!important}}}}</style>'
-            f'<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Courier+Prime&family=Inter:wght@400;700&display=swap" rel="stylesheet">'
             f'</head><body style="margin:0;padding:0;background:{C["warm"]};">{pre}'
             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{C["warm"]};">'
             f'<tr><td align="center" style="padding:24px 12px;">'
@@ -491,6 +491,35 @@ def preview(slug: str, open_it: bool = True) -> dict | None:
     return _write_preview(slug, subject, body, url, open_it)
 
 
+UTM = "utm_source=sl-letter&utm_medium=email&utm_campaign={slug}"
+
+
+def finalize(body: str, slug: str) -> str:
+    """Tag every southernlegends.org link so clicks show up in analytics per letter."""
+    def tag(m):
+        url = m.group(1)
+        if "utm_source=" in url:
+            return m.group(0)
+        base, _, frag = url.partition("#")
+        sep = "&" if "?" in base else "?"
+        return f'href="{base}{sep}{UTM.format(slug=slug)}' + (f"#{frag}" if frag else "") + '"'
+    return re.sub(r'href="(https://southernlegends\.org[^"]*)"', tag, body)
+
+
+def to_text(body: str) -> str:
+    """Plain-text part for the broadcast (spam filters and watch/voice previews want one)."""
+    t = re.sub(r"(?is)<(head|style)[^>]*>.*?</\1>", "", body)
+    t = re.sub(r'(?is)<div style="display:none.*?</div>', "", t)
+    t = re.sub(r'(?is)<img [^>]*alt="([^"]*)"[^>]*>', lambda m: m.group(1), t)
+    t = re.sub(r'(?is)<a [^>]*href="([^"]+)"[^>]*>(.*?)</a>',
+               lambda m: (re.sub("<[^>]+>", "", m.group(2)).strip() + f" ({m.group(1)})")
+               if re.sub("<[^>]+>", "", m.group(2)).strip() else "", t)
+    t = re.sub(r"(?i)<br\s*/?>|</(p|tr|div|h1)>", "\n", t)
+    t = htmlmod.unescape(re.sub(r"<[^>]+>", "", t))
+    t = re.sub(r"[ \t\u034f\u200c\xa0]+", " ", t)
+    return re.sub(r"\n\s*\n+", "\n\n", t).strip()
+
+
 def build_current(slug: str) -> dict | None:
     """Build the email exactly as preview() would, without touching the preview files or manifest."""
     letter = load_letter(slug) if slug.startswith("letter-") else None
@@ -502,11 +531,13 @@ def build_current(slug: str) -> dict | None:
             return None
         kind, path, route = hit
         subject, body, url = build_email(frontmatter(path), slug, route, path.read_text(encoding="utf-8"))
+    body = finalize(body, slug)
     return {"slug": slug, "subject": subject, "body": body, "url": url,
             "hash": hashlib.sha256((subject + body).encode()).hexdigest(), "live": is_live(url)}
 
 
 def _write_preview(slug: str, subject: str, body: str, url: str, open_it: bool) -> dict:
+    body = finalize(body, slug)
     live = is_live(url)
     h = hashlib.sha256((subject + body).encode()).hexdigest()
     OUT.mkdir(parents=True, exist_ok=True)
@@ -527,7 +558,7 @@ def _write_preview(slug: str, subject: str, body: str, url: str, open_it: bool) 
         f"<b>PREVIEW, not sent.</b> Subject: {htmlmod.escape(subject)} · To: SL subscribers · "
         f'Page live: {"yes" if live else "NO, deploy first"} · <a href="{url}">{url}</a>{note}</div>'
     )
-    page.write_text(banner + shown.replace("{{{RESEND_UNSUBSCRIBE_URL}}}", "#"), encoding="utf-8")
+    page.write_text(banner + shown.replace("{{{RESEND_UNSUBSCRIBE_URL}}}", "#").replace("{{{FIRST_NAME|there}}}", "there"), encoding="utf-8")
     (OUT / f"{slug}.json").write_text(json.dumps({"slug": slug, "hash": h, "url": url, "subject": subject,
                                                   "built": datetime.now(timezone.utc).isoformat()}))
     print(f"{slug}: preview {page}  live={live}")
@@ -547,6 +578,36 @@ def resend(path: str, payload: dict | None, key: str, method: str = "POST") -> d
             return json.loads(r.read().decode() or "{}")
     except urllib.error.HTTPError as e:
         raise SystemExit(f"Resend {path} failed [{e.code}]: {e.read().decode()[:400]}")
+
+
+def preflight(slug: str, cur: dict) -> list[str]:
+    """Rules that must hold for every send (Python enforces; see reports/sl-strategy/email-fundraising-review.md)."""
+    body, out = cur["body"], []
+    meta_p = LETTERS / f"{slug}.json"
+    meta = json.loads(meta_p.read_text()) if meta_p.exists() else {}
+    types = {b.get("type") for b in meta.get("blocks", [])}
+    if "crisis" in types and "ad" in types:
+        out.append("a crisis-line story can't carry an ad block (matches the site's sensitive-page rule)")
+    if "southernlegends.blog" in body:
+        out.append("links to southernlegends.blog; use .org")
+    if re.search(r"\bExpo\b", body):
+        out.append('says "Expo"; The Aisle is a bridal show')
+    bad = [h for h in re.findall(r'href="(https?://[^"]*theaisle[^"]*)"', body) if "/go/aisle" not in h]
+    if bad:
+        out.append(f"Aisle links must go through southernlegends.org/go/aisle?from=<letter> so clicks count: {bad}")
+    if meta.get("send_by") and datetime.now().strftime("%Y-%m-%d") > meta["send_by"]:
+        out.append(f"past its send_by date ({meta['send_by']}); the dated details in it are stale")
+    text = to_text(body)
+    if not text:
+        out.append("empty plain-text part")
+    if "reply" not in text.lower():
+        out.append("no invitation to reply")
+    tmp = OUT / f".{slug}.txt"
+    tmp.write_text(text)
+    r = subprocess.run([sys.executable, str(ROOT / "tools/kill-list-check.py"), str(tmp)], capture_output=True, text=True)
+    if r.returncode != 0:
+        out.append("kill-list: " + (r.stdout + r.stderr).strip().splitlines()[-1])
+    return out
 
 
 def send(slug: str) -> None:
@@ -579,11 +640,15 @@ def send(slug: str) -> None:
         if 'id="video"' not in html:
             raise SystemExit(f"{slug}: {page} has no #video anchor live yet, so the video link would land "
                              f"at the top of the page. Deploy first.")
+    problems = preflight(slug, cur)
+    if problems:
+        raise SystemExit(f"{slug}: refused:\n  - " + "\n  - ".join(problems))
+    text = to_text(cur["body"])
     key = load_env("RESEND_FULL_ACCESS_KEY")
     if not key:
         raise SystemExit("RESEND_FULL_ACCESS_KEY not found.")
     b = resend("/broadcasts", {"audience_id": AUDIENCE_ID, "from": FROM, "reply_to": REPLY_TO,
-                               "subject": cur["subject"], "html": cur["body"],
+                               "subject": cur["subject"], "html": cur["body"], "text": text,
                                "name": f"SL - {cur['subject']} - {datetime.now():%Y-%m-%d}"}, key)
     bid = b.get("id")
     if not bid:
