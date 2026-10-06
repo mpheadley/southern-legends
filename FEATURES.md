@@ -5,6 +5,11 @@
 ---
 
 
+
+## Sponsor price ladder (2026-10-05)
+
+- `src/lib/sponsor-pricing.ts` is the one home for the "Sponsor a story" price: $150 founding rate, then $250 / $400 / $600+ on readership triggers. `/sponsor` reads `CURRENT` and shows the founding-rate note. To step up, change `CURRENT_STEP`. Plan: `reports/sl-strategy/sponsor-pricing-plan.md`.
+
 ## Cleanup + "Hey" greeting (2026-10-05)
 
 - Removed `/api/drip/day-3` and `/api/drip/day-7`: unused, and they emailed any posted address with no auth. Welcome drips live in `/api/subscribe`.

@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
+import { CURRENT as SPONSOR, extrasThroughCurrent } from "@/lib/sponsor-pricing";
 import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Sponsor a Story — Southern Legends",
   description:
-    "Sponsor an honest Southern Legends story about your business. $250, labeled as sponsored, and you read it before it runs.",
+    `Sponsor an honest Southern Legends story about your business. $${SPONSOR.price}, labeled as sponsored, and you read it before it runs.`,
   alternates: { canonical: "/sponsor" },
   openGraph: { url: "/sponsor" },
 }
@@ -49,10 +50,17 @@ export default function SponsorPage() {
         >
           Sponsor a story
         </h2>
-        <p className="text-4xl font-bold text-white mb-1">$250</p>
-        <p className="text-xs text-stone-500 mb-6">One story. No contract, no monthly bill.</p>
+        <p className="text-4xl font-bold text-white mb-1">${SPONSOR.price}</p>
+        <p className="text-xs text-stone-500 mb-2">One story. No contract, no monthly bill.</p>
+        {SPONSOR.key === "founding" ? (
+          <p className="text-xs text-stone-400 mb-6">
+            Founding rate while the readership is small. It rises as the readers do, and I&apos;ll post the new price here before it changes.
+          </p>
+        ) : (
+          <div className="mb-6" />
+        )}
         <ul className="text-sm text-stone-300 space-y-2 mb-8">
-          {WHAT_YOU_GET.map((f) => (
+          {[...WHAT_YOU_GET, ...extrasThroughCurrent()].map((f) => (
             <li key={f} className="flex gap-2 items-start">
               <span className="text-[var(--color-ll-primary)] mt-0.5">✓</span>
               <span>{f}</span>
