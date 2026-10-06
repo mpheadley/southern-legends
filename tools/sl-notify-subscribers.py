@@ -491,6 +491,21 @@ def preview(slug: str, open_it: bool = True) -> dict | None:
     return _write_preview(slug, subject, body, url, open_it)
 
 
+def build_current(slug: str) -> dict | None:
+    """Build the email exactly as preview() would, without touching the preview files or manifest."""
+    letter = load_letter(slug) if slug.startswith("letter-") else None
+    if letter:
+        subject, body, url = letter
+    else:
+        hit = find(slug)
+        if not hit:
+            return None
+        kind, path, route = hit
+        subject, body, url = build_email(frontmatter(path), slug, route, path.read_text(encoding="utf-8"))
+    return {"slug": slug, "subject": subject, "body": body, "url": url,
+            "hash": hashlib.sha256((subject + body).encode()).hexdigest(), "live": is_live(url)}
+
+
 def _write_preview(slug: str, subject: str, body: str, url: str, open_it: bool) -> dict:
     live = is_live(url)
     h = hashlib.sha256((subject + body).encode()).hexdigest()
@@ -543,10 +558,11 @@ def send(slug: str) -> None:
     if os.environ.get("CLAUDECODE") and os.environ.get("SL_NOTIFY_APPROVED", "") != slug:
         raise SystemExit(f"{slug}: blocked inside a Claude session. Needs Matt's go for this send "
                          f"(SL_NOTIFY_APPROVED={slug}).")
-    cur = preview(slug, open_it=False)
+    reviewed_hash = json.loads(manifest.read_text())["hash"]  # read BEFORE rebuilding (rebuild rewrites it)
+    cur = build_current(slug)
     if not cur:
         raise SystemExit(1)
-    if cur["hash"] != json.loads(manifest.read_text())["hash"]:
+    if cur["hash"] != reviewed_hash:
         raise SystemExit(f"{slug}: content changed since the preview Matt saw. Re-preview first.")
     if not cur["live"]:
         raise SystemExit(f"{slug}: page isn't live at {cur['url']}. Deploy first.")
