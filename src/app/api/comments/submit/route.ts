@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: SL_FROM,
       replyTo: SL_REPLY_TO,
-      to: "matt@headleyweb.com",
+      to: "matt@gatherstudio.app",
       subject: `New comment on /${slug}`,
       html: `
         <p><strong>Name:</strong> ${name.trim()}</p>

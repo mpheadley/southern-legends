@@ -119,7 +119,7 @@ export default function PrivacyPage() {
 
           <p>
             Questions about any of this? Reach out at{" "}
-            <a href="mailto:matt@headleyweb.com">matt@headleyweb.com</a>.
+            <a href="mailto:matt@gatherstudio.app">matt@gatherstudio.app</a>.
           </p>
 
           <hr className="my-10 border-ll-dark/10" />
@@ -127,11 +127,11 @@ export default function PrivacyPage() {
           <p className="text-sm text-ll-text-light">
             Last updated March 2026. Southern Legends is built and maintained by{" "}
             <a
-              href="https://headleyweb.com"
+              href="https://gatherstudio.app"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Headley Web &amp; SEO
+              Gather Studio
             </a>
             .
           </p>

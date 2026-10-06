@@ -99,7 +99,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      {/* Built by Headley Web & SEO | headleyweb.com */}
+      {/* Built by Gather Studio by Matt Headley | gatherstudio.app */}
       <body className={`${sourceSans.variable} ${fraunces.variable} ${imFell.variable} ${barlowCondensed.variable} antialiased`}>
         <a
           href="#main-content"

@@ -109,6 +109,9 @@ def main() -> int:
 
             if "scheduledAt" in body and not UNSUB_RE.search(body):
                 errors.append(f"{where}: scheduled email has no unsubscribe link")
+            # Matt's voice: emails open with "Hey" (Southern, how he talks), never "Hi"/"Hello"/"Dear".
+            if re.search(r"(<p[^>]*>|[`\"'])\s*(Hi|Hello|Dear|Greetings)\b[ ,$]", body):
+                errors.append(f'{where}: greeting opens with Hi/Hello/Dear; Matt says "Hey"')
 
     for f in SRC.rglob("*"):
         if f.is_file() and f.suffix in SOURCE_EXT:

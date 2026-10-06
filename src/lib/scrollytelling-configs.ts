@@ -20,7 +20,7 @@ const IMG = "/images/profiles/aquality-farms";
   heroPosition: "center 35%",
   eyebrow: "Southern Legends",
   authorName: "Matt Headley",
-  authorBio: 'lives in Jacksonville, Alabama. He builds websites for local businesses at headleyweb.com and writes about the people and places he finds along the way.',
+  authorBio: 'lives in Jacksonville, Alabama. He builds websites for local businesses through Gather Studio and writes about the people and places he finds along the way.',
   slug: "aquality-farms",
   // ... full config preserved in git history
 }

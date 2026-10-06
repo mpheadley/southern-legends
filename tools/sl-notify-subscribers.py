@@ -588,6 +588,11 @@ def preflight(slug: str, cur: dict) -> list[str]:
     types = {b.get("type") for b in meta.get("blocks", [])}
     if "crisis" in types and "ad" in types:
         out.append("a crisis-line story can't carry an ad block (matches the site's sensitive-page rule)")
+    # Matt's voice: letters open with "Hey", the Southern greeting he uses. Never "Hi"/"Hello"/"Dear".
+    for b in meta.get("blocks", []):
+        for para in b.get("paragraphs", []):
+            if re.match(r"\s*(Hi|Hello|Dear|Greetings)\b", para):
+                out.append(f'opens with "{para.split()[0]}"; Matt says "Hey" (e.g. "Hey {{{{{{FIRST_NAME|there}}}}}},")')
     if "southernlegends.blog" in body:
         out.append("links to southernlegends.blog; use .org")
     if re.search(r"\bExpo\b", body):

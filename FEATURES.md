@@ -4,6 +4,13 @@
 
 ---
 
+
+## Cleanup + "Hey" greeting (2026-10-05)
+
+- Removed `/api/drip/day-3` and `/api/drip/day-7`: unused, and they emailed any posted address with no auth. Welcome drips live in `/api/subscribe`.
+- Comment notifications go to matt@gatherstudio.app; retired Headley Web references replaced with Gather Studio (privacy page, layout comment, scrollytelling bio).
+- Letters and site emails open with "Hey" (Matt's Southern greeting). Enforced by `tools/sl-notify-subscribers.py` preflight and `tools/sl-email-lint.py`.
+
 ## Email + Fundraising Cleanup (2026-10-05)
 
 - **One sender** (`src/lib/email-sender.ts`): every site email sends as `Matt Headley, Southern Legends <stories@matthewheadley.com>`, reply-to `matt@gatherstudio.app`. No more `noreply@` or unverified domains.
