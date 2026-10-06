@@ -186,7 +186,19 @@ def c_button(href: str, label: str) -> str:
             f'font-weight:700;color:#ffffff;text-decoration:none;">{_e(label)} &rarr;</a></td></tr></table>')
 
 
-def c_story(kicker: str, title: str, dek: str, image: str, alt: str, credit: str, href: str) -> str:
+def c_story(kicker: str, title: str, dek: str, image: str, alt: str, credit: str, href: str,
+            hero: bool = False) -> str:
+    """Story card. hero=True: the image is a rendered email hero (tools/sl-share-card.py --email-hero)
+    that already carries kicker, title, and credit, so the card shows only the dek and button."""
+    if hero:
+        return (f'<tr><td class="px" style="padding:28px 40px 8px;">'
+                f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+                f'style="border-radius:8px;background:{C["dark"]};">'
+                f'<tr><td style="padding:0;"><a href="{_e(href)}"><img src="{_e(_abs(image))}" width="520" alt="{_e(alt or title)}" '
+                f'style="display:block;width:100%;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
+                f'<tr><td style="padding:0 24px 26px;">'
+                f'<div style="font-family:{BODY};font-size:17px;line-height:1.6;color:#E7E2D9;padding:0 0 18px;">{_e(dek)}</div>'
+                f'{c_button(href, "Read the full story")}</td></tr></table></td></tr>')
     cred = (f'<div style="font-family:{SANS};font-size:11px;color:{C["muted"]};padding:6px 0 0;">{_e(credit)}</div>'
             if credit else "")
     return (f'<tr><td class="px" style="padding:28px 40px 8px;">'
@@ -318,8 +330,8 @@ BLOCKS = {
     "kicker": lambda b: c_kicker(b["text"]),
     "photo": lambda b: c_photo(b["src"], b.get("alt", ""), b.get("caption", ""), b.get("href", "")),
     "prose": lambda b: c_prose(b["paragraphs"]),
-    "story": lambda b: c_story(b["kicker"], b["title"], b["dek"], b["image"], b.get("alt", ""),
-                               b.get("credit", ""), b["href"]),
+    "story": lambda b: c_story(b.get("kicker", ""), b["title"], b["dek"], b["image"], b.get("alt", ""),
+                               b.get("credit", ""), b["href"], b.get("hero", False)),
     "video": lambda b: c_video(b["thumb"], b["page"], b["label"], b.get("length", "")),
     "events": lambda b: c_events(b["title"], b["rows"], b.get("link")),
     "note": lambda b: c_note(b["html"]),
