@@ -654,7 +654,7 @@ def send(slug: str) -> None:
         raise SystemExit("RESEND_FULL_ACCESS_KEY not found.")
     b = resend("/broadcasts", {"audience_id": AUDIENCE_ID, "from": FROM, "reply_to": REPLY_TO,
                                "subject": cur["subject"], "html": cur["body"], "text": text,
-                               "name": f"SL - {cur['subject']} - {datetime.now():%Y-%m-%d}"}, key)
+                               "name": f"SL {slug} {datetime.now():%Y-%m-%d}"[:70]}, key)
     bid = b.get("id")
     if not bid:
         raise SystemExit(f"Broadcast not created: {b}")
