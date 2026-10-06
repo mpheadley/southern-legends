@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 interface VideoEmbedProps {
   url: string;
   caption?: string;
+  /** Anchor for links straight to the video (emails link to <page>#video). */
+  id?: string;
 }
 
 interface YtStats {
@@ -55,7 +57,7 @@ function formatCount(n: string): string {
   return num.toLocaleString();
 }
 
-export default function VideoEmbed({ url, caption }: VideoEmbedProps) {
+export default function VideoEmbed({ url, caption, id = "video" }: VideoEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [stats, setStats] = useState<YtStats | null>(null);
@@ -95,7 +97,7 @@ export default function VideoEmbed({ url, caption }: VideoEmbedProps) {
   }
 
   return (
-    <figure className={`not-prose my-8 bg-ll-warm border border-ll-border rounded-lg overflow-hidden ${parsed.isShort ? "max-w-xs mx-auto" : ""}`}>
+    <figure id={id} className={`not-prose my-8 scroll-mt-24 bg-ll-warm border border-ll-border rounded-lg overflow-hidden ${parsed.isShort ? "max-w-xs mx-auto" : ""}`}>
       <div ref={containerRef} className="relative w-full" style={{ paddingBottom: parsed.isShort ? "177.78%" : "56.25%" }}>
         {visible ? (
           <iframe

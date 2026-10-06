@@ -124,61 +124,219 @@ def image_urls(body: str) -> list[str]:
     return re.findall(r'<img[^>]+src="([^"]+)"', body)
 
 
+# ---------------------------------------------------------------------------
+# Email design components. Every SL email is built from these, so the look
+# stays consistent. Table layout + inline styles for email clients.
+# Tokens mirror southern-legends/src/app/globals.css (--color-ll-*).
+# ---------------------------------------------------------------------------
+C = {
+    "primary": "#9A3412", "primary_dark": "#7C2D12", "accent": "#CA8A04",
+    "dark": "#1C1917", "light": "#FAFAF7", "warm": "#F0EDE6", "text": "#3F3B36",
+    "muted": "#6B6560", "border": "#E5E5E0",
+}
+SERIF = "'Fraunces', Georgia, 'Times New Roman', serif"
+BODY = "Georgia, 'Times New Roman', serif"
+MONO = "'Courier Prime', 'Courier New', Courier, monospace"
+SANS = "'Inter', Arial, Helvetica, sans-serif"
+WORDMARK = f"{SITE}/ad-assets/sl-wordmark-crimson.png"
+MASTHEAD = f"{SITE}/images/email/sl-masthead-editorial.jpg"
+SIGNATURE = f"{SITE}/images/email/matt-signature.png"
+HEADSHOT = f"{SITE}/images/email/matt-headshot-240.jpg"
+_e = htmlmod.escape
+
+
+def _abs(src: str) -> str:
+    return SITE + src if src.startswith("/") else src
+
+
+def c_kicker(text: str) -> str:
+    return (f'<tr><td class="px" style="padding:28px 40px 6px;font-family:{MONO};font-size:13px;letter-spacing:2px;'
+            f'text-transform:uppercase;color:{C["primary"]};">{_e(text)}</td></tr>')
+
+
+def c_masthead(dateline: str) -> str:
+    """Editorial masthead: full-width banner from the SL watercolor end card, dateline strip below."""
+    return (f'<tr><td style="padding:0;background:{C["dark"]};"><a href="{SITE}">'
+            f'<img src="{MASTHEAD}" width="600" alt="Southern Legends. Northeast Alabama, by Matt Headley." '
+            f'style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>'
+            f'<tr><td class="px" align="center" style="padding:14px 40px;background:{C["dark"]};font-family:{MONO};'
+            f'font-size:12px;letter-spacing:3px;text-transform:uppercase;color:{C["accent"]};">{_e(dateline)}</td></tr>')
+
+
+def c_photo(src: str, alt: str, caption: str = "", href: str = "") -> str:
+    img = (f'<img src="{_e(_abs(src))}" width="520" alt="{_e(alt)}" '
+           f'style="display:block;width:100%;max-width:520px;height:auto;border:0;border-radius:6px;">')
+    if href:
+        img = f'<a href="{_e(href)}">{img}</a>'
+    cap = (f'<div style="font-family:{SANS};font-size:12px;line-height:1.5;color:{C["muted"]};padding-top:8px;">'
+           f'{_e(caption)}</div>') if caption else ""
+    return f'<tr><td class="px" style="padding:24px 40px 4px;">{img}{cap}</td></tr>'
+
+
+def c_prose(paragraphs: list[str]) -> str:
+    ps = "".join(f'<p style="margin:0 0 16px;">{p}</p>' for p in paragraphs)  # trusted letter HTML
+    return (f'<tr><td class="px" style="padding:20px 40px 4px;font-family:{BODY};font-size:18px;line-height:1.65;'
+            f'color:{C["text"]};">{ps}</td></tr>')
+
+
+def c_button(href: str, label: str) -> str:
+    return (f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>'
+            f'<td style="background:{C["primary"]};border-radius:4px;">'
+            f'<a href="{_e(href)}" style="display:inline-block;padding:14px 26px;font-family:{SANS};font-size:16px;'
+            f'font-weight:700;color:#ffffff;text-decoration:none;">{_e(label)} &rarr;</a></td></tr></table>')
+
+
+def c_story(kicker: str, title: str, dek: str, image: str, alt: str, credit: str, href: str) -> str:
+    cred = (f'<div style="font-family:{SANS};font-size:11px;color:{C["muted"]};padding:6px 0 0;">{_e(credit)}</div>'
+            if credit else "")
+    return (f'<tr><td class="px" style="padding:28px 40px 8px;">'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+            f'style="border:1px solid {C["border"]};border-radius:8px;background:#ffffff;">'
+            f'<tr><td class="px" style="padding:0;"><a href="{_e(href)}"><img src="{_e(_abs(image))}" width="518" alt="{_e(alt)}" '
+            f'style="display:block;width:100%;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
+            f'<tr><td class="px" style="padding:16px 24px 24px;">{cred}'
+            f'<div style="font-family:{MONO};font-size:12px;letter-spacing:2px;text-transform:uppercase;'
+            f'color:{C["accent"]};padding:12px 0 6px;">{_e(kicker)}</div>'
+            f'<div style="font-family:{SERIF};font-size:28px;line-height:1.15;font-weight:700;color:{C["dark"]};'
+            f'padding:0 0 10px;"><a href="{_e(href)}" style="color:{C["dark"]};text-decoration:none;">{_e(title)}</a></div>'
+            f'<div style="font-family:{BODY};font-size:17px;line-height:1.6;color:{C["text"]};padding:0 0 18px;">{_e(dek)}</div>'
+            f'{c_button(href, "Read the full story")}</td></tr></table></td></tr>')
+
+
+def c_video(thumb: str, page_url: str, label: str, length: str) -> str:
+    """Video card. ALWAYS links to the video's section on the SL page (<page>#video), never to
+    YouTube directly (Matt, 2026-10-05). send() checks the live page has id="video"."""
+    href = page_url.split("#")[0] + "#video"
+    return (f'<tr><td class="px" style="padding:20px 40px 8px;">'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+            f'style="background:{C["dark"]};border-radius:8px;">'
+            f'<tr><td class="px" style="padding:0;"><a href="{href}"><img src="{_e(thumb)}" width="520" alt="{_e(label)}" '
+            f'style="display:block;width:100%;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
+            f'<tr><td class="px" style="padding:14px 20px;"><a href="{href}" style="font-family:{SANS};font-size:15px;font-weight:700;'
+            f'color:#ffffff;text-decoration:none;"><span style="color:{C["accent"]};">&#9654;</span>&nbsp; {_e(label)}'
+            f'<span style="font-weight:400;color:#b8b2aa;"> &middot; {_e(length)}</span></a></td></tr>'
+            f'</table></td></tr>')
+
+
+def c_events(title: str, rows: list[dict], link: dict | None = None) -> str:
+    trs = "".join(
+        f'<tr><td valign="top" style="padding:10px 14px 10px 0;width:76px;">'
+        f'<div style="background:{C["primary"]};color:#fff;border-radius:4px;text-align:center;padding:6px 0;'
+        f'font-family:{MONO};font-size:12px;letter-spacing:1px;line-height:1.3;">{_e(r["day"])}<br>'
+        f'<span style="font-family:{SERIF};font-size:22px;font-weight:700;letter-spacing:0;">{_e(r["date"])}</span></div></td>'
+        f'<td valign="top" style="padding:10px 0;font-family:{BODY};font-size:16px;line-height:1.55;color:{C["text"]};">'
+        f'<b style="color:{C["dark"]};">{_e(r["what"])}</b><br>{_e(r["detail"])}</td></tr>'
+        for r in rows)
+    lk = (f'<div style="padding-top:8px;"><a href="{_e(link["href"])}" style="font-family:{SANS};font-size:15px;'
+          f'font-weight:700;color:{C["primary"]};">{_e(link["label"])} &rarr;</a></div>') if link else ""
+    return (f'<tr><td class="px" style="padding:24px 40px 8px;">'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+            f'style="background:{C["warm"]};border-left:4px solid {C["accent"]};border-radius:0 8px 8px 0;">'
+            f'<tr><td class="px" style="padding:18px 22px;"><div style="font-family:{MONO};font-size:12px;letter-spacing:2px;'
+            f'text-transform:uppercase;color:{C["muted"]};padding-bottom:4px;">{_e(title)}</div>'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{trs}</table>{lk}'
+            f'</td></tr></table></td></tr>')
+
+
+def c_note(html_text: str) -> str:
+    return (f'<tr><td class="px" style="padding:20px 40px 4px;font-family:{BODY};font-size:16px;line-height:1.6;'
+            f'color:{C["muted"]};font-style:italic;">{html_text}</td></tr>')
+
+
+def c_signoff(closing: str = "Thanks for reading,") -> str:
+    return (f'<tr><td class="px" style="padding:24px 40px 8px;">'
+            f'<div style="font-family:{BODY};font-size:18px;color:{C["text"]};padding-bottom:4px;">{_e(closing)}</div>'
+            f'<img src="{SIGNATURE}" width="150" alt="Matt" style="display:block;width:150px;height:auto;border:0;margin:0 0 14px;">'
+            f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>'
+            f'<td valign="middle" style="padding-right:14px;"><img src="{HEADSHOT}" width="64" height="64" alt="Matt Headley" '
+            f'style="display:block;width:64px;height:64px;border-radius:32px;border:2px solid {C["border"]};"></td>'
+            f'<td valign="middle" style="font-family:{SANS};font-size:14px;line-height:1.5;color:{C["muted"]};">'
+            f'<b style="font-family:{SERIF};font-size:17px;color:{C["dark"]};">Matt Headley</b><br>'
+            f'Writer, Southern Legends<br><a href="{SITE}" style="color:{C["primary"]};text-decoration:none;">southernlegends.org</a>'
+            f'</td></tr></table></td></tr>')
+
+
+def c_footer() -> str:
+    return (f'<tr><td class="px" style="padding:28px 40px 32px;border-top:1px solid {C["border"]};font-family:{SANS};font-size:12px;'
+            f'line-height:1.7;color:{C["muted"]};" align="center">'
+            f"You're getting this because you subscribed to Southern Legends, stories from Northeast Alabama.<br>"
+            f'Free to read, always. <a href="{SITE}/support" style="color:{C["primary"]};">Support the work</a> &middot; '
+            f'<a href="{SITE}" style="color:{C["muted"]};">southernlegends.org</a> &middot; '
+            f'<a href="{{{{{{RESEND_UNSUBSCRIBE_URL}}}}}}" style="color:{C["muted"]};">Unsubscribe</a></td></tr>')
+
+
+def wrap(rows: str, preheader: str = "") -> str:
+    pre = (f'<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{_e(preheader)}</div>'
+           if preheader else "")
+    return (f'<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
+            f'<style>@media (max-width:480px){{.px{{padding-left:18px!important;padding-right:18px!important}}}}</style>'
+            f'<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Courier+Prime&family=Inter:wght@400;700&display=swap" rel="stylesheet">'
+            f'</head><body style="margin:0;padding:0;background:{C["warm"]};">{pre}'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{C["warm"]};">'
+            f'<tr><td align="center" style="padding:24px 12px;">'
+            f'<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" '
+            f'style="width:100%;max-width:600px;background:{C["light"]};border-radius:10px;overflow:hidden;">'
+            f'{rows}</table></td></tr></table></body></html>')
+
+
+BLOCKS = {
+    "kicker": lambda b: c_kicker(b["text"]),
+    "photo": lambda b: c_photo(b["src"], b.get("alt", ""), b.get("caption", ""), b.get("href", "")),
+    "prose": lambda b: c_prose(b["paragraphs"]),
+    "story": lambda b: c_story(b["kicker"], b["title"], b["dek"], b["image"], b.get("alt", ""),
+                               b.get("credit", ""), b["href"]),
+    "video": lambda b: c_video(b["thumb"], b["page"], b["label"], b.get("length", "")),
+    "events": lambda b: c_events(b["title"], b["rows"], b.get("link")),
+    "note": lambda b: c_note(b["html"]),
+    "signoff": lambda b: c_signoff(b.get("closing", "Thanks for reading,")),
+}
+
+
+def render_blocks(spec: dict) -> str:
+    rows = c_masthead(spec.get("dateline", "Stories from Northeast Alabama"))
+    rows += "".join(BLOCKS[b["type"]](b) for b in spec["blocks"])
+    return wrap(rows + c_footer(), spec.get("preheader", ""))
+
+
+def youtube_thumb(url: str) -> str:
+    m = re.search(r"(?:v=|youtu\.be/|shorts/|embed/)([A-Za-z0-9_-]{11})", url or "")
+    return f"https://i.ytimg.com/vi/{m.group(1)}/maxresdefault.jpg" if m else ""
+
+
 def build_email(fm: dict, slug: str, route: str) -> tuple[str, str, str]:
-    e = htmlmod.escape
+    """Auto email for a newly live page, built from the same components as letters."""
     title = fm.get("title", slug)
     name = fm.get("name", "")
-    blurb = fm.get("subtitle") or fm.get("excerpt", "")
-    hero = email_safe(fm.get("heroImage") or fm.get("image") or "")
-    hero_url = SITE + hero if hero.startswith("/") else hero
-    credit = fm.get("photoCredit") or fm.get("heroCredit") or ""
+    dek = fm.get("subtitle") or fm.get("excerpt", "")
     url = f"{SITE}/{route}/{slug}"
     kicker = {"profiles": "New profile", "essays": "New essay", "listicles": "New list"}[route]
     if name and route == "profiles":
         kicker += f" · {name}"
-
-    hero_html = ""
-    if hero_url:
-        hero_html = (
-            f'<a href="{url}"><img src="{e(hero_url)}" alt="{e(fm.get("heroAlt", title))}" '
-            f'style="width:100%;max-width:600px;border-radius:6px;margin:0 0 6px;display:block;"></a>'
-        )
-        if credit:
-            c = credit if credit.lower().startswith("photo") else f"Photo: {credit}"
-            hero_html += f'<p style="font-size:11px;color:#8a8378;margin:0 0 22px;">{e(c)}</p>'
-
-    body = f"""\
-<div style="max-width:600px;margin:0 auto;font-family:Georgia,serif;color:#1C1917;padding:8px;">
-  <p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8B2A1F;margin:0 0 8px;">Southern Legends · {e(kicker)}</p>
-  <h1 style="font-size:30px;line-height:1.2;margin:0 0 16px;">{e(title)}</h1>
-  {hero_html}
-  <p style="font-size:17px;line-height:1.6;color:#3a352f;margin:0 0 24px;">{e(blurb)}</p>
-  <p style="margin:0 0 32px;">
-    <a href="{url}" style="display:inline-block;background:#8B2A1F;color:#fff;text-decoration:none;font-weight:600;padding:12px 24px;border-radius:4px;font-family:Arial,sans-serif;">Read the full story &rarr;</a>
-  </p>
-  <hr style="border:none;border-top:1px solid #e5e0d8;margin:0 0 16px;">
-  <p style="font-size:13px;color:#8a8378;line-height:1.6;margin:0;">
-    You're getting this because you subscribed to Southern Legends, stories from Northeast Alabama.
-    Free to read, always. <a href="{SITE}/support" style="color:#8B2A1F;">Support the work</a> if you'd like to help keep it going.<br>
-    Matt Headley · <a href="{SITE}" style="color:#8a8378;">southernlegends.org</a> ·
-    <a href="{{{{{{RESEND_UNSUBSCRIBE_URL}}}}}}" style="color:#8a8378;">Unsubscribe</a>
-  </p>
-</div>"""
-    return title, body, url
+    credit = fm.get("photoCredit") or fm.get("heroCredit") or ""
+    if credit and not credit.lower().startswith("photo"):
+        credit = f"Photo: {credit}"
+    blocks = [{"type": "story", "kicker": kicker, "title": title, "dek": dek,
+               "image": email_safe(fm.get("heroImage") or fm.get("image") or ""),
+               "alt": fm.get("heroAlt", title), "credit": credit, "href": url}]
+    thumb = youtube_thumb(fm.get("youtubeUrl", ""))
+    if thumb:
+        blocks.append({"type": "video", "thumb": thumb, "page": url, "label": "Watch the interview"})
+    blocks.append({"type": "signoff"})
+    return title, render_blocks({"preheader": dek, "blocks": blocks}), url
 
 
 LETTERS = OUT / "letters"
 
 
 def load_letter(slug: str) -> tuple[str, str, str] | None:
-    """A hand-written letter (welcome, roundup) lives in reports/sl-notify/letters/<slug>.json:
-    {"subject": ..., "check_url": <page that must be live>, "body_file": <html fragment>}."""
+    """A letter (welcome, roundup) is DATA in reports/sl-notify/letters/<slug>.json:
+    {"subject", "check_url", "preheader", "dateline", "covers": [...], "blocks": [...]}.
+    Block types: see BLOCKS. Rendered by the same components as every SL email."""
     p = LETTERS / f"{slug}.json"
     if not p.exists():
         return None
     meta = json.loads(p.read_text())
-    body = (LETTERS / meta["body_file"]).read_text(encoding="utf-8")
-    return meta["subject"], body, meta["check_url"]
+    return meta["subject"], render_blocks(meta), meta["check_url"]
 
 
 def preview(slug: str, open_it: bool = True) -> dict | None:
@@ -261,6 +419,14 @@ def send(slug: str) -> None:
     broken = [u for u in image_urls(cur["body"]) if not is_live(u)]
     if broken:
         raise SystemExit(f"{slug}: these images don't load yet (deploy first?): {broken}")
+    for page in sorted(set(re.findall(r'href="([^"#]+)#video"', cur["body"]))):
+        try:
+            html = urllib.request.urlopen(page, timeout=30).read().decode("utf-8", "ignore")
+        except Exception:
+            html = ""
+        if 'id="video"' not in html:
+            raise SystemExit(f"{slug}: {page} has no #video anchor live yet, so the video link would land "
+                             f"at the top of the page. Deploy first.")
     key = load_env("RESEND_FULL_ACCESS_KEY")
     if not key:
         raise SystemExit("RESEND_FULL_ACCESS_KEY not found.")
