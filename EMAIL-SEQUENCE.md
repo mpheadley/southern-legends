@@ -1,5 +1,7 @@
 # Email Sequence — Southern Legends
 
+> **Subscriber letters (story emails) live in `/Volumes/Samsung_T5/webdev/reports/sl-notify/README.md`**: tool, rules, drafted letters, Fable review status. This file covers the comment flow and signup drips only.
+
 ## Comment Flow (built April 2026)
 
 Every comment submission:

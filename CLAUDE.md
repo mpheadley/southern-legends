@@ -230,3 +230,6 @@ Matt writes first. Always. Do not generate content before coaching is complete.
 - CSS goes in `globals.css` — no inline `<style>` blocks
 - Use `var(--font-heading)` / `var(--font-accent)` / `var(--font-body)` — don't hardcode font names in components
 - Use design token color classes (`text-ll-dark`, `bg-ll-primary`, etc.) — don't hardcode hex values in components
+
+## Subscriber letters
+Start at `/Volumes/Samsung_T5/webdev/reports/sl-notify/README.md`. Letters are JSON data rendered by `tools/sl-notify-subscribers.py`; the send is gated in Python (reviewed hash, live page and images, 988, `/go/aisle`, reply invite, kill-list). No Iris byline; video links go to `<page>#video`.
