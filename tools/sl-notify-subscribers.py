@@ -670,6 +670,22 @@ def send(slug: str) -> None:
     print(f"{slug}: sent. Broadcast {bid}")
 
 
+def send_test(slug: str, to: str) -> None:
+    """Send the exact letter to one address (Matt's proof copy). Not a broadcast; not logged as sent."""
+    cur = build_current(slug)
+    if not cur:
+        raise SystemExit(1)
+    problems = preflight(slug, cur)
+    if problems:
+        raise SystemExit(f"{slug}: refused:\n  - " + "\n  - ".join(problems))
+    first = "Matt" if to.startswith("matt") else "there"
+    body = cur["body"].replace("{{{FIRST_NAME|there}}}", first).replace("{{{RESEND_UNSUBSCRIBE_URL}}}", f"{SITE}/subscribe")
+    key = load_env("RESEND_FULL_ACCESS_KEY")
+    r = resend("/emails", {"from": FROM, "to": [to], "reply_to": REPLY_TO, "subject": "[TEST] " + cur["subject"],
+                           "html": body, "text": to_text(body)}, key)
+    print(f"{slug}: test sent to {to} (id {r.get('id')}). Not a broadcast; subscribers got nothing.")
+
+
 def pending() -> list[str]:
     done = read_log(SENT_LOG) | read_log(SKIP_LOG)
     out = []
@@ -703,7 +719,10 @@ def main() -> int:
         append_log(SKIP_LOG, {"slug": slug, "at": datetime.now(timezone.utc).isoformat()})
         print(f"{slug}: marked don't-email.")
         return 0
-    if "--send" in sys.argv:
+    if "--test" in sys.argv:
+        i = sys.argv.index("--test")
+        send_test(slug, sys.argv[i + 1] if i + 1 < len(sys.argv) and "@" in sys.argv[i + 1] else "matt@gatherstudio.app")
+    elif "--send" in sys.argv:
         send(slug)
     else:
         preview(slug)
