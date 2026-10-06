@@ -4,6 +4,17 @@
 
 ---
 
+## Email + Fundraising Cleanup (2026-10-05)
+
+- **One sender** (`src/lib/email-sender.ts`): every site email sends as `Matt Headley, Southern Legends <stories@matthewheadley.com>`, reply-to `matt@gatherstudio.app`. No more `noreply@` or unverified domains.
+- **Unsubscribe** — `/api/unsubscribe?e=&t=` (HMAC token, `src/lib/unsubscribe.ts`) marks the Resend contact unsubscribed. Every welcome/drip email carries the link plus a List-Unsubscribe header.
+- **Welcome sequence** — "about twice a month" cadence, Day-0 reply question, Day-7 forward ask (the $4.99 pitch is gone). One signup path: `/api/newsletter/subscribe` is an alias of `/api/subscribe`. `/subscribe?source=forward` tags signups.
+- **One monthly offer** — `/support` leads with the $5 reader tier (`PatronTiers tiers={["5"]}`) and the one-time gift; Stripe pricing table removed; merch trimmed to 6 items with real photos. Popup says $5 a month. `/newsletter` ($7) redirects to `/support`; its checkout returns 410.
+- **Sponsor** — `/sponsor` is one offer: Sponsor a story, $250, labeled, reviewed before it runs, call or email.
+- **Stripe webhook** — only patron checkouts become members; one-time payments are logged; patrons (and support-link gifts when `STRIPE_SUPPORT_PAYMENT_LINK_ID` is set) get a thank-you email.
+- **/vol-1** — reserve button uses `NEXT_PUBLIC_VOL1_PAYMENT_URL` when set; "The Aisle: Anniston Bridal Show".
+- **`.blog` → `.org`** everywhere in `src/`. Lint: `python3 tools/sl-email-lint.py`.
+
 ## Subscriber Emails + City Page Photos (2026-10-05)
 
 - **`tools/sl-notify-subscribers.py`** — emails a newly live profile, essay, or list (or a hand-written letter in `reports/sl-notify/letters/`) to the SL Resend list. Preview first, always: the send refuses unless Matt saw a preview of the exact same content, the page and every image load on southernlegends.org, the slug was never sent before, and (in a Claude session) `SL_NOTIFY_APPROVED=<slug>` is set. WebP heroes get a `-email.jpg` copy for Outlook.

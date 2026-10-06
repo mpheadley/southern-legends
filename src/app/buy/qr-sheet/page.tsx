@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-const BASE = 'https://southernlegends.blog'
+const BASE = 'https://southernlegends.org'
 
 export default function QRSheetPage() {
   const items = MERCH.filter(m => m.available)

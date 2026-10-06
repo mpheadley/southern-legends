@@ -4,9 +4,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
-import StripePricingTable from "@/app/components/StripePricingTable";
+import PatronTiers from "@/app/components/PatronTiers";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
 import { MERCH } from "@/lib/merch";
+import { existsSync } from "fs";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -15,7 +17,13 @@ export const metadata: Metadata = {
   openGraph: { url: "/support" },
 };
 
-const available = MERCH.filter((m) => m.available);
+// Six items, real photos only. A missing local file renders as a blank square.
+function hasPhoto(photo: string | undefined): boolean {
+  if (!photo) return false;
+  if (!photo.startsWith("/")) return true;
+  return existsSync(path.join(process.cwd(), "public", photo));
+}
+const featuredMerch = MERCH.filter((m) => m.available && m.photo && hasPhoto(m.photo)).slice(0, 6);
 
 export default function SupportPage() {
   const breadcrumbSchema = {
@@ -50,6 +58,35 @@ export default function SupportPage() {
         </div>
       </section>
 
+      {/* Give directly */}
+      <section className="bg-white py-14 px-6">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs uppercase tracking-widest text-ll-text-light font-semibold mb-2">Give directly</p>
+          <h2 className="text-2xl font-bold text-ll-dark mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+            $5 a month
+          </h2>
+          <p className="text-sm text-ll-text mb-8 max-w-xl">
+            This stays free to read. Five dollars a month from a few of you covers the gas, the memory card, and the afternoon it takes to sit with somebody. Cancel any time.
+          </p>
+
+          <PatronTiers tiers={["5"]} />
+
+          {process.env.NEXT_PUBLIC_STRIPE_SUPPORT_URL && (
+            <div className="mt-8">
+              <p className="text-sm text-ll-text-light mb-3">Or a one-time gift, any amount. No account needed.</p>
+              <a
+                href={process.env.NEXT_PUBLIC_STRIPE_SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark"
+              >
+                Give a one-time gift →
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Merch */}
       <section className="bg-ll-light py-14 px-6">
         <div className="mx-auto max-w-4xl">
@@ -62,7 +99,7 @@ export default function SupportPage() {
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: "1rem", marginBottom: "2rem" }}>
-            {available.map((item) => (
+            {featuredMerch.map((item) => (
               <Link key={item.id} href={`/merch#${item.id}`} style={{ textDecoration: "none" }}>
                 <div style={{ position: "relative", width: "100%", paddingBottom: "100%", borderRadius: "8px", overflow: "hidden", background: "#1a1208" }}>
                   <Image
@@ -91,41 +128,12 @@ export default function SupportPage() {
 
           <div className="text-center">
             <Link
-              href="/merch"
+              href="/merch/shirts"
               className="inline-block text-sm font-semibold text-ll-primary border border-ll-primary px-5 py-2.5 hover:bg-ll-primary hover:text-white transition-colors rounded"
             >
-              Full catalog →
+              See the shirts →
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Give directly */}
-      <section className="bg-white py-14 px-6">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-xs uppercase tracking-widest text-ll-text-light font-semibold mb-2">Give directly</p>
-          <h2 className="text-2xl font-bold text-ll-dark mb-3" style={{ fontFamily: "var(--font-heading)" }}>
-            Monthly support
-          </h2>
-          <p className="text-sm text-ll-text mb-8 max-w-xl">
-            A monthly contribution keeps the work going. Cancel any time.
-          </p>
-
-          <StripePricingTable />
-
-          {process.env.NEXT_PUBLIC_STRIPE_SUPPORT_URL && (
-            <div className="mt-8">
-              <p className="text-sm text-ll-text-light mb-3">Or a one-time gift — no account needed.</p>
-              <a
-                href={process.env.NEXT_PUBLIC_STRIPE_SUPPORT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-support inline-block px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark"
-              >
-                Give a one-time gift →
-              </a>
-            </div>
-          )}
         </div>
       </section>
 
@@ -180,10 +188,10 @@ export default function SupportPage() {
         <p className="text-sm text-ll-text-light">
           Questions?{" "}
           <a
-            href="mailto:matt@southernlegends.blog"
+            href="mailto:matt@gatherstudio.app"
             className="text-ll-primary underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
           >
-            matt@southernlegends.blog
+            matt@gatherstudio.app
           </a>
         </p>
       </div>

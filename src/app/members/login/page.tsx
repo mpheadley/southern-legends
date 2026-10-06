@@ -24,8 +24,8 @@ export default function MembersLoginPage() {
         <LoginClient />
         <p className="text-xs mt-6" style={{ color: '#9e968e' }}>
           Not a member?{' '}
-          <a href="https://buy.stripe.com/cNidRagBU6t7c3OdOb2cg04" target="_blank" rel="noopener" style={{ color: 'var(--color-ll-accent)', textDecoration: 'underline' }}>
-            Subscribe for $7/month →
+          <a href="/support" style={{ color: 'var(--color-ll-accent)', textDecoration: 'underline' }}>
+            Become a Reader, $5 a month →
           </a>
         </p>
       </div>

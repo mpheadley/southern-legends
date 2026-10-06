@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
 
   if (!cart?.length) return NextResponse.json({ error: 'Cart is empty' }, { status: 400 })
 
-  const origin = req.headers.get('origin') ?? 'https://southernlegends.blog'
+  const origin = req.headers.get('origin') ?? 'https://southernlegends.org'
 
   const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cart.map((item) => ({
     price_data: {

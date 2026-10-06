@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import { SL_FROM, SL_REPLY_TO } from "@/lib/email-sender";
 import { createHmac } from "crypto";
 
 function approveToken(commentId: string, secret: string): string {
@@ -75,13 +76,14 @@ export async function POST(request: NextRequest) {
     let approveSection = `<p>Approve it in <a href="https://supabase.com/dashboard">Supabase dashboard</a> — set <code>approved = true</code> to publish.</p>`;
     if (approveSecret) {
       const token = approveToken(inserted.id, approveSecret);
-      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://southernlegends.blog";
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://southernlegends.org";
       const approveUrl = `${siteUrl}/api/comments/approve?id=${inserted.id}&token=${token}`;
       approveSection = `<p style="margin-top:1rem"><a href="${approveUrl}" style="display:inline-block;padding:10px 20px;background:#9A3412;color:white;text-decoration:none;border-radius:4px;font-weight:bold">Approve comment</a></p>`;
     }
 
     await resend.emails.send({
-      from: "Southern Legends <noreply@gatherstudio.app>",
+      from: SL_FROM,
+      replyTo: SL_REPLY_TO,
       to: "matt@headleyweb.com",
       subject: `New comment on /${slug}`,
       html: `

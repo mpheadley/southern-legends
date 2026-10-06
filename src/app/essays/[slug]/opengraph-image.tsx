@@ -16,7 +16,7 @@ export const alt = "Southern Legends journal";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const BASE_URL = "https://southernlegends.blog";
+const BASE_URL = "https://southernlegends.org";
 
 export default async function OGImage({
   params,

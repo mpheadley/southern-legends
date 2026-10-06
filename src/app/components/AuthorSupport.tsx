@@ -23,7 +23,7 @@ export default function AuthorSupport() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", alignItems: "flex-start" }}>
           <a
-            href="/newsletter"
+            href="/support"
             style={{ display: "inline-block", background: "#1a1208", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.55rem 1.1rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}
           >
             Support this work →

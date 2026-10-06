@@ -25,14 +25,14 @@ const REGIONAL_COMPANIES = [
   {
     name: "Anniston Community Theater",
     city: "Anniston",
-    url: "https://southernlegends.blog/places/anniston",
+    url: "https://southernlegends.org/places/anniston",
     desc: "Live theater in Calhoun County.",
     contact: null,
   },
   {
     name: "JSU Theater Department",
     city: "Jacksonville",
-    url: "https://southernlegends.blog/places/jacksonville",
+    url: "https://southernlegends.org/places/jacksonville",
     desc: "Jacksonville State University performing arts program.",
     contact: null,
   },

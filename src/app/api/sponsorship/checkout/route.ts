@@ -48,7 +48,7 @@ export async function GET(req: NextRequest) {
   }
 
   const stripe = getStripe()
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://southernlegends.blog"
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://southernlegends.org"
 
   const label = program
     ? `${tierConfig.label} · ${program.toUpperCase()} Program`

@@ -11,7 +11,7 @@ interface Props {
 export default function ShareRow({ url, title, description = "" }: Props) {
   const [copied, setCopied] = useState(false);
 
-  const full = url.startsWith("http") ? url : `https://southernlegends.blog${url}`;
+  const full = url.startsWith("http") ? url : `https://southernlegends.org${url}`;
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(full)}`;
   const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(full)}`;
   const emailUrl = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(description ? `${description}\n\n${full}` : full)}`;

@@ -299,7 +299,7 @@ export default function RegistryPage() {
           {' '}and powered by{' '}
           <a href="https://gather-registry.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(201,162,75,.4)' }}>Gather Registry</a>.
           {' '}Want to add your NE Alabama business?{' '}
-          <a href="mailto:matt@southernlegends.blog?subject=Registry Partner" style={{ color: 'rgba(201,162,75,.5)' }}>Email us.</a>
+          <a href="mailto:matt@gatherstudio.app?subject=Registry Partner" style={{ color: 'rgba(201,162,75,.5)' }}>Email us.</a>
         </p>
       </section>
 

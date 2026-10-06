@@ -19,7 +19,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$40',
     commission: '15%',
     commissionNote: '$6 per sale · 25% → civil rights ed.',
-    dest: 'https://southernlegends.blog/buy/freedom-riders-shirt',
+    dest: 'https://southernlegends.org/buy/freedom-riders-shirt',
     description: 'The shirt that started SL merch. Anniston, 1961. A quarter of every sale funds local civil rights education.',
     category: 'merch',
   },
@@ -30,7 +30,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$35',
     commission: '15%',
     commissionNote: '$5.25 per sale',
-    dest: 'https://southernlegends.blog/buy/anniston-45-shirt',
+    dest: 'https://southernlegends.org/buy/anniston-45-shirt',
     description: 'Anniston, Alabama — 45 years of road racing. Navy shirt, DTF print.',
     category: 'merch',
   },
@@ -41,7 +41,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$30',
     commission: '15%',
     commissionNote: '$4.50 per sale',
-    dest: 'https://southernlegends.blog/buy/woodstock-shirt',
+    dest: 'https://southernlegends.org/buy/woodstock-shirt',
     description: 'Woodstock 5K — RRCA Alabama State Championship. Aug 2, 2026, Anniston.',
     category: 'merch',
   },
@@ -52,7 +52,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$30',
     commission: '10%',
     commissionNote: '$3 per sale · 25% → Raiders XC program',
-    dest: 'https://southernlegends.blog/buy/pv-raiders-shirt',
+    dest: 'https://southernlegends.org/buy/pv-raiders-shirt',
     description: 'Every sale puts money back into the Pleasant Valley XC program. Real fundraiser, not just a slogan.',
     category: 'merch',
   },
@@ -63,7 +63,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$35',
     commission: '15%',
     commissionNote: '$5.25 per sale',
-    dest: 'https://southernlegends.blog/buy/clt-shirt',
+    dest: 'https://southernlegends.org/buy/clt-shirt',
     description: '61 miles, Anniston to Cleburne County. The best trail in Alabama that nobody talks about.',
     category: 'merch',
   },
@@ -98,7 +98,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$32',
     commission: '15%',
     commissionNote: '$4.80 per sale',
-    dest: 'https://southernlegends.blog/buy/multitudes-shirt',
+    dest: 'https://southernlegends.org/buy/multitudes-shirt',
     description: '"I contain multitudes." For the people holding more than one thing at once.',
     category: 'merch',
   },
@@ -109,7 +109,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$32',
     commission: '15%',
     commissionNote: '$4.80 per sale',
-    dest: 'https://southernlegends.blog/buy/neurospicy-shirt',
+    dest: 'https://southernlegends.org/buy/neurospicy-shirt',
     description: 'Nutrition label for the neurospicy mind. ADHD/autism community shirt.',
     category: 'merch',
   },
@@ -255,7 +255,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     price: '$8–$20',
     commission: '10%',
     commissionNote: 'via Bookshop.org',
-    dest: 'https://southernlegends.blog/books',
+    dest: 'https://southernlegends.org/books',
     description: "Books about the South — essays, profiles, and Matt's forthcoming titles.",
     category: 'product',
   },
@@ -308,12 +308,12 @@ export const DESTINATIONS: Record<string, string> = Object.fromEntries(
 DESTINATIONS['default'] = 'https://southernlegends.org/merch'
 DESTINATIONS['merch'] = 'https://southernlegends.org/merch'
 DESTINATIONS['shop'] = 'https://ecclesiacommunity.org/shop'
-DESTINATIONS['books'] = 'https://southernlegends.blog/books'
-DESTINATIONS['freedom-riders'] = 'https://southernlegends.blog/buy/freedom-riders-shirt'
-DESTINATIONS['anniston-45'] = 'https://southernlegends.blog/buy/anniston-45-shirt'
-DESTINATIONS['woodstock'] = 'https://southernlegends.blog/buy/woodstock-shirt'
-DESTINATIONS['pv-raiders'] = 'https://southernlegends.blog/buy/pv-raiders-shirt'
-DESTINATIONS['clt'] = 'https://southernlegends.blog/buy/clt-shirt'
+DESTINATIONS['books'] = 'https://southernlegends.org/books'
+DESTINATIONS['freedom-riders'] = 'https://southernlegends.org/buy/freedom-riders-shirt'
+DESTINATIONS['anniston-45'] = 'https://southernlegends.org/buy/anniston-45-shirt'
+DESTINATIONS['woodstock'] = 'https://southernlegends.org/buy/woodstock-shirt'
+DESTINATIONS['pv-raiders'] = 'https://southernlegends.org/buy/pv-raiders-shirt'
+DESTINATIONS['clt'] = 'https://southernlegends.org/buy/clt-shirt'
 
 export const CATEGORY_LABELS: Record<AffiliateProduct['category'], string> = {
   merch: 'Merch',

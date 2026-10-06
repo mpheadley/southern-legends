@@ -10,10 +10,17 @@ export const metadata: Metadata = {
     title: "Southern Legends Vol. 1 — Fall 2026",
     description:
       "Five profiles. 200 copies. Northeast Alabama. $15 — 10% benefits early childhood literacy through UWECA.",
-    url: "https://southernlegends.blog/vol-1",
-    images: [{ url: "https://southernlegends.blog/images/og-default.webp", width: 1200, height: 630 }],
+    url: "https://southernlegends.org/vol-1",
+    images: [{ url: "https://southernlegends.org/images/og-default.webp", width: 1200, height: 630 }],
   },
 };
+
+// Reserve link: a real payment link once NEXT_PUBLIC_VOL1_PAYMENT_URL is set,
+// email until then.
+const PAYMENT_URL = process.env.NEXT_PUBLIC_VOL1_PAYMENT_URL?.trim() || "";
+const RESERVE_HREF =
+  PAYMENT_URL ||
+  `mailto:matt@gatherstudio.app?subject=${encodeURIComponent("Reserve: Southern Legends Vol. 1")}&body=${encodeURIComponent("I'd like to reserve a copy of Southern Legends Vol. 1 ($15). Please let me know when and where to pick it up.")}`;
 
 const PROFILES = [
   {
@@ -288,10 +295,11 @@ export default function Vol1Page() {
             }}
           >
             $15 per copy. Available at{" "}
-            <strong style={{ color: "#1C1917" }}>The Aisle Bridal Expo</strong> on October 18, 2026 at Anniston Museums & Gardens — and at select local spots in Northeast Alabama.
+            <strong style={{ color: "#1C1917" }}>The Aisle: Anniston Bridal Show</strong> on October 18, 2026 at Anniston Museums & Gardens — and at select local spots in Northeast Alabama.
           </p>
           <a
-            href={`mailto:matt@southernlegends.blog?subject=Reserve — Southern Legends Vol. 1&body=I'd like to reserve a copy of Southern Legends Vol. 1 ($15). Please let me know when and where to pick it up.`}
+            href={RESERVE_HREF}
+            {...(PAYMENT_URL ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             style={{
               display: "inline-block",
               background: "#9A3412",
@@ -306,7 +314,7 @@ export default function Vol1Page() {
               marginBottom: "1.5rem",
             }}
           >
-            Email to reserve → $15
+            {PAYMENT_URL ? "Reserve a copy → $15" : "Email to reserve → $15"}
           </a>
           <div
             style={{
@@ -346,7 +354,7 @@ export default function Vol1Page() {
             letterSpacing: "0.05em",
           }}
         >
-          ← Read the stories at southernlegends.blog
+          ← Read the stories at southernlegends.org
         </Link>
       </section>
 

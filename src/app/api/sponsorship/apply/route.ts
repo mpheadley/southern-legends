@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
+import { SL_FROM } from "@/lib/email-sender"
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
@@ -26,7 +27,8 @@ export async function POST(request: NextRequest) {
 
   if (resend) {
     await resend.emails.send({
-      from: "Southern Legends <noreply@plainspokenblueprint.com>",
+      from: SL_FROM,
+      replyTo: email,
       to: "matt@gatherstudio.app",
       subject: `SL Sponsorship inquiry — ${city} — ${businessName}`,
       text: [

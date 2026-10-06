@@ -134,7 +134,7 @@ export default function SupportPopup() {
         </h2>
 
         <p style={{ fontSize: "0.825rem", color: "rgba(250,250,247,0.55)", marginBottom: "1.25rem", lineHeight: 1.7 }}>
-          $4.99/month helps cover the time it takes to write this. That&rsquo;s the whole pitch. No perks to describe. Just the work, kept going.
+          $5 a month covers the gas, the memory card, and the afternoon it takes to sit with somebody. That&rsquo;s all it is.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
@@ -153,7 +153,7 @@ export default function SupportPopup() {
               letterSpacing: "0.02em",
             }}
           >
-            Become a Reader — $4.99/mo
+            Become a Reader, $5 a month
           </a>
 
           <button

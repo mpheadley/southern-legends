@@ -7,7 +7,7 @@ const PODCAST_TITLE = "Southern Legends";
 const PODCAST_DESCRIPTION =
   "Stories, essays, and dispatches from Northeast Alabama — on faith, community, small business, and what it means to build a life in a place people overlook.";
 const PODCAST_AUTHOR = "Matt Headley";
-const PODCAST_EMAIL = "matt@southernlegends.blog";
+const PODCAST_EMAIL = "matt@gatherstudio.app";
 const PODCAST_COVER = `${SITE_URL}/images/podcast-cover.jpg`;
 const PODCAST_LANGUAGE = "en-us";
 const PODCAST_CATEGORY = "Society &amp; Culture";

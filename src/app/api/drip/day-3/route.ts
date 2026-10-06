@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { SL_FROM, SL_REPLY_TO } from '@/lib/email-sender'
+import { unsubscribeFooterHtml, unsubscribeFooterText } from '@/lib/unsubscribe'
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
@@ -28,10 +30,11 @@ export async function POST(req: NextRequest) {
     <p>A few days ago you signed up. Thought I'd point you somewhere specific.</p>
     <p>The Noble Street project is the one I keep coming back to — stories from one block in Anniston, Alabama.
     A florist. A pastor who preached about hospital socks. A market that became something else.</p>
-    <p><a href="https://southernlegends.blog/journal/noble-street-anniston">Start with Noble Street →</a></p>
+    <p><a href="https://southernlegends.org/journal/noble-street-anniston">Start with Noble Street →</a></p>
     <p>There are also city pages if you want to find what's been written about a place you know:</p>
-    <p><a href="https://southernlegends.blog/places">Browse by city →</a></p>
+    <p><a href="https://southernlegends.org/places">Browse by city →</a></p>
     <p>Matt</p>
+    ${unsubscribeFooterHtml(email)}
   `
 
   const text = `${greeting}
@@ -40,15 +43,16 @@ A few days ago you signed up. Thought I'd point you somewhere specific.
 
 The Noble Street project is the one I keep coming back to — stories from one block in Anniston, Alabama. A florist. A pastor who preached about hospital socks. A market that became something else.
 
-Start here: https://southernlegends.blog/journal/noble-street-anniston
+Start here: https://southernlegends.org/journal/noble-street-anniston
 
 There are also city pages if you want to find what's been written about a place you know:
-https://southernlegends.blog/places
+https://southernlegends.org/places
 
-Matt`
+Matt${unsubscribeFooterText(email)}`
 
   const { error } = await resend.emails.send({
-    from: 'Matt Headley <noreply@gatherstudio.app>',
+    from: SL_FROM,
+    replyTo: SL_REPLY_TO,
     to: email,
     subject: 'One block in Anniston',
     html,

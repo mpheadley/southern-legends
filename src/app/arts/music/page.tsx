@@ -16,8 +16,8 @@ const MUSIC_TAGS = ["music", "songs", "musician", "band", "guitar", "singing", "
 
 const REGIONAL_VENUES = [
   { name: "Studio 104", city: "Anniston", url: "https://studio104.gatherstudio.app", desc: "Recording studio in Anniston." },
-  { name: "Noble Street Stage", city: "Anniston", url: "https://southernlegends.blog/places/anniston", desc: "Live music on Noble Street corridor." },
-  { name: "Gadsden Arts Center", city: "Gadsden", url: "https://southernlegends.blog/places/gadsden", desc: "Arts venue and performance space." },
+  { name: "Noble Street Stage", city: "Anniston", url: "https://southernlegends.org/places/anniston", desc: "Live music on Noble Street corridor." },
+  { name: "Gadsden Arts Center", city: "Gadsden", url: "https://southernlegends.org/places/gadsden", desc: "Arts venue and performance space." },
 ];
 
 const REGIONAL_NEWS_FEEDS = [

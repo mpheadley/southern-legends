@@ -111,7 +111,7 @@ export default function SLCardPage() {
 
           {/* Primary — Read the Stories */}
           <a
-            href="https://southernlegends.blog"
+            href="https://southernlegends.org"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -136,7 +136,7 @@ export default function SLCardPage() {
 
           {/* Nominate a story */}
           <a
-            href="https://southernlegends.blog/nominate"
+            href="https://southernlegends.org/nominate"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -252,7 +252,7 @@ export default function SLCardPage() {
               textTransform: "uppercase",
             }}
           >
-            southernlegends.blog
+            southernlegends.org
           </p>
         </div>
       </div>

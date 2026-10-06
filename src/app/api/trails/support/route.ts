@@ -5,7 +5,7 @@ const stripe = process.env.STRIPE_SECRET_KEY
   ? new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: "2026-05-27.dahlia" })
   : null
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://southernlegends.blog"
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://southernlegends.org"
 const SL_FEE_PERCENT = 15
 
 export async function POST(req: NextRequest) {

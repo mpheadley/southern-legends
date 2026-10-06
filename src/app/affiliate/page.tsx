@@ -57,7 +57,7 @@ function ProductCard({ product, affiliateCode }: { product: AffiliateProduct; af
   const ytId = YOUTUBE_IDS[product.key]
   const thumb = THUMBNAILS[product.key]
   const refLink = affiliateCode
-    ? `https://southernlegends.blog/r/${affiliateCode}?dest=${product.key}`
+    ? `https://southernlegends.org/r/${affiliateCode}?dest=${product.key}`
     : null
 
   return (
@@ -168,7 +168,7 @@ export default function AffiliateSignup() {
       const data = await res.json()
       setAffiliateCode(data.code)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Email matt@southernlegends.blog.')
+      setError(err instanceof Error ? err.message : 'Something went wrong. Email matt@gatherstudio.app.')
     }
     setLoading(false)
   }
@@ -253,7 +253,7 @@ export default function AffiliateSignup() {
         {/* Footer note */}
         <div style={{ marginTop: '2rem', padding: '1rem 1.25rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(250,250,247,0.05)', borderRadius: 6 }}>
           <p style={{ fontSize: '0.78rem', color: 'rgba(250,250,247,0.35)', lineHeight: 1.65, margin: 0 }}>
-            Commissions paid monthly via Venmo or PayPal once you hit $10. Questions or custom arrangements: matt@southernlegends.blog. Already have a code? <a href="https://gather-registry.vercel.app/affiliate/dashboard" style={{ color: '#CA8A04' }}>View your dashboard</a>.
+            Commissions paid monthly via Venmo or PayPal once you hit $10. Questions or custom arrangements: matt@gatherstudio.app. Already have a code? <a href="https://gather-registry.vercel.app/affiliate/dashboard" style={{ color: '#CA8A04' }}>View your dashboard</a>.
           </p>
         </div>
       </div>

@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { SL_FROM, SL_REPLY_TO } from "@/lib/email-sender";
 
-const BASE_URL = "https://southernlegends.blog";
+const BASE_URL = "https://southernlegends.org";
 
 function buildPostEmail(params: {
   title: string;
@@ -51,7 +52,7 @@ function buildPostEmail(params: {
 
       <p style="margin:32px 0 0;font-size:14px;color:#78716C;line-height:1.7;">
         Matt Headley<br>
-        <a href="${BASE_URL}" style="color:#C4622D;text-decoration:none;">southernlegends.blog</a>
+        <a href="${BASE_URL}" style="color:#C4622D;text-decoration:none;">southernlegends.org</a>
       </p>
     </div>
 
@@ -59,7 +60,7 @@ function buildPostEmail(params: {
     <div style="padding:20px 32px;background:#F0EDE8;border-top:1px solid #E7E5E4;">
       <p style="margin:0;font-size:11px;color:#A8A29E;font-family:system-ui,sans-serif;line-height:1.6;">
         You're getting this because you subscribed to Southern Legends.
-        <a href="{{unsubscribe}}" style="color:#9A3412;">Unsubscribe</a>.
+        <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#9A3412;">Unsubscribe</a>.
       </p>
     </div>
 
@@ -77,9 +78,9 @@ Read the full piece: ${fullUrl}
 
 —
 Matt Headley
-southernlegends.blog
+southernlegends.org
 
-Unsubscribe: {{unsubscribe}}`;
+Unsubscribe: {{{RESEND_UNSUBSCRIBE_URL}}}`;
 
   return { html, text };
 }
@@ -119,10 +120,11 @@ export async function POST(request: NextRequest) {
 
   const createResult = await resend.broadcasts.create({
     audienceId,
-    from: "Matt Headley <matt@southernlegends.blog>",
-    replyTo: "matt@southernlegends.blog",
+    from: SL_FROM,
+    replyTo: SL_REPLY_TO,
     subject,
     html,
+    text,
     name: broadcastName,
   });
 

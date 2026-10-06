@@ -116,7 +116,7 @@ export default function MerchPage() {
               headline="Newsletter"
               body="New stories, profiles, and place essays — straight to your inbox."
               cta="Subscribe free →"
-              href="/newsletter"
+              href="/subscribe"
               accent="rgba(240,237,230,0.12)"
               ctaStyle={{ background: 'rgba(240,237,230,0.08)', color: 'var(--color-ll-warm)', border: '1px solid rgba(240,237,230,0.18)' }}
             />

@@ -103,7 +103,7 @@ export default function MembersPage() {
       </div>
 
       <div className="mt-16 pt-8 border-t text-xs" style={{ borderColor: '#ddd6c8', color: '#9e968e' }}>
-        Questions? Email <a href="mailto:matt@southernlegends.blog" style={{ color: 'var(--color-ll-accent)' }}>matt@southernlegends.blog</a>
+        Questions? Email <a href="mailto:matt@gatherstudio.app" style={{ color: 'var(--color-ll-accent)' }}>matt@gatherstudio.app</a>
         {' · '}
         <a href="https://billing.stripe.com/p/login/bpc_1TezxsLAZU170UPnup6aRXfn" target="_blank" rel="noopener" style={{ color: 'var(--color-ll-accent)' }}>Manage subscription →</a>
       </div>

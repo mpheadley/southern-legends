@@ -9,8 +9,8 @@ export async function GET() {
     "ORG:Southern Legends",
     "TITLE:Writer",
     "TEL;TYPE=CELL:+12566447334",
-    "EMAIL;TYPE=WORK:matt@southernlegends.blog",
-    "URL:https://southernlegends.blog",
+    "EMAIL;TYPE=WORK:matt@gatherstudio.app",
+    "URL:https://southernlegends.org",
     "NOTE:Longform stories from Northeast Alabama.",
     "END:VCARD",
   ].join("\r\n");

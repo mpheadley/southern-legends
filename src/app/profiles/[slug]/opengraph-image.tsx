@@ -15,7 +15,7 @@ export const alt = "Southern Legends profile";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const BASE_URL = "https://southernlegends.blog";
+const BASE_URL = "https://southernlegends.org";
 
 const CATEGORY_COLORS: Record<string, string> = {
   craftspeople: "#9A3412",
@@ -138,7 +138,7 @@ export default async function OGImage({
             textTransform: "uppercase",
           }}
         >
-          southernlegends.blog
+          southernlegends.org
         </div>
 
         {/* Bottom-left: content block */}

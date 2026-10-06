@@ -252,10 +252,10 @@ export default function MinistryPage() {
             If you are a pastor in the East District and would like to be profiled in Southern
             Legends, reach out at{" "}
             <a
-              href="mailto:matt@southernlegends.blog"
+              href="mailto:matt@gatherstudio.app"
               style={{ color: "#9a6c2f", textDecoration: "underline" }}
             >
-              matt@southernlegends.blog
+              matt@gatherstudio.app
             </a>
             .
           </p>

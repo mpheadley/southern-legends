@@ -51,14 +51,14 @@ export default function AdminPage() {
   const SEED: CalItem[] = [
     { id:"1", date:"2026-06-08", platform:"FB - SL Page", type:"Reel", status:"live", copy:"Intro reel (19s). From the Appalachian foothills..." },
     { id:"2", date:"2026-06-08", platform:"FB - SL Page", type:"Reel", status:"live", copy:"Workout clip (49s). What if every angry comment was a workout?" },
-    { id:"3", date:"2026-06-08", platform:"FB - SL Page", type:"Feed post", status:"live", copy:"Ep1 announcement with OG card.", link:"https://southernlegends.blog/essays/the-digital-gym-somatic-practice" },
+    { id:"3", date:"2026-06-08", platform:"FB - SL Page", type:"Feed post", status:"live", copy:"Ep1 announcement with OG card.", link:"https://southernlegends.org/essays/the-digital-gym-somatic-practice" },
     { id:"4", date:"2026-06-08", platform:"YouTube", type:"Video", status:"live", copy:"Full ep1 (3:43).", link:"https://www.youtube.com/watch?v=upVG97BpaFw" },
     { id:"5", date:"2026-06-08", platform:"Spotify", type:"Clip", status:"live", copy:"What if every angry comment was a workout? From Ep. 1 of Southern Legends." },
     { id:"6", date:"2026-06-09", platform:"FB — Personal", type:"Share / Reel", status:"ready", copy:"Share SL intro Reel + workout clip to timeline." },
     { id:"7", date:"2026-06-09", platform:"YouTube / TikTok", type:"Intro Reel v3", status:"ready", copy:"New intro reel (diff music) via CapCut. Asset: pending export." },
     { id:"8", date:"TBD", platform:"FB — SL Page", type:"Reel", status:"planned", copy:"Swap intro Reel to v3 once exported." },
-    { id:"9", date:"TBD", platform:"All", type:"Ep2 launch", status:"planned", copy:"Freedom Riders episode out now.", link:"https://southernlegends.blog/podcast" },
-    { id:"10", date:"TBD", platform:"All", type:"Ep3 launch", status:"planned", copy:"Chief Ladiga Trail episode out now.", link:"https://southernlegends.blog/podcast" },
+    { id:"9", date:"TBD", platform:"All", type:"Ep2 launch", status:"planned", copy:"Freedom Riders episode out now.", link:"https://southernlegends.org/podcast" },
+    { id:"10", date:"TBD", platform:"All", type:"Ep3 launch", status:"planned", copy:"Chief Ladiga Trail episode out now.", link:"https://southernlegends.org/podcast" },
   ];
   const [calItems, setCalItems] = useState<CalItem[]>(() => {
     if (typeof window === "undefined") return SEED;
@@ -226,7 +226,7 @@ export default function AdminPage() {
       <div style={{ padding: "14px 20px", borderBottom: "1px solid #e5e0d8", display: "flex", alignItems: "center", gap: 10, background: "#fff" }}>
         <span>🌿</span>
         <span style={{ fontWeight: 700, fontSize: 16, fontFamily: "Georgia, serif" }}>Southern Legends</span>
-        <span style={{ marginLeft: "auto", fontSize: 11, color: "#a8a29e" }}>southernlegends.blog</span>
+        <span style={{ marginLeft: "auto", fontSize: 11, color: "#a8a29e" }}>southernlegends.org</span>
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, borderBottom: "1px solid #e5e0d8", padding: "12px 16px", background: CREAM }}>
@@ -261,7 +261,7 @@ export default function AdminPage() {
             ))}
             <div style={{ fontSize:11, fontWeight:700, textTransform:"uppercase", letterSpacing:1, color:"#a8a29e", marginTop:8, marginBottom:4 }}>Published Essays</div>
             {ESSAYS.map(e => (
-              <a key={e.slug} href={`https://southernlegends.blog/essays/${e.slug}`} target="_blank" rel="noopener noreferrer"
+              <a key={e.slug} href={`https://southernlegends.org/essays/${e.slug}`} target="_blank" rel="noopener noreferrer"
                 style={{ background:"#fff", border:"1px solid #e5e0d8", borderRadius:8, padding:"10px 14px", display:"flex", alignItems:"center", justifyContent:"space-between", textDecoration:"none", gap:12 }}>
                 <div style={{ fontSize:13, fontWeight:600, color:BROWN }}>{e.label}</div>
                 <span style={{ background:"#f5f3ff", color:"#7c3aed", border:"1px solid #c4b5fd", borderRadius:6, padding:"3px 10px", fontSize:11, fontWeight:700, flexShrink:0 }}>Read →</span>
@@ -365,7 +365,7 @@ export default function AdminPage() {
                   <button onClick={() => openEditor(p.slug)} style={{ background: "#fff", color: BROWN, border: "1px solid #d8cfc2", borderRadius: 5, padding: "5px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>
                     ✏️ Edit
                   </button>
-                  <button onClick={() => { setMessage(`${p.title}\n\nhttps://southernlegends.blog/profiles/${p.slug}`); setLink(`https://southernlegends.blog/profiles/${p.slug}`); setTab("post"); }} style={{ background: AMBER, color: "#fff", border: "none", borderRadius: 5, padding: "5px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>
+                  <button onClick={() => { setMessage(`${p.title}\n\nhttps://southernlegends.org/profiles/${p.slug}`); setLink(`https://southernlegends.org/profiles/${p.slug}`); setTab("post"); }} style={{ background: AMBER, color: "#fff", border: "none", borderRadius: 5, padding: "5px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>
                     Post →
                   </button>
                 </div>

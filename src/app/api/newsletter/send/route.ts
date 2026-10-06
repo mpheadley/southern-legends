@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { SL_FROM, SL_REPLY_TO } from "@/lib/email-sender";
 
 export async function POST(request: NextRequest) {
   const secret = process.env.ADMIN_SEND_SECRET?.trim();
@@ -33,7 +34,8 @@ export async function POST(request: NextRequest) {
 
   const createResult = await resend.broadcasts.create({
     audienceId,
-    from: "Southern Legends <stories@matthewheadley.com>",
+    from: SL_FROM,
+      replyTo: SL_REPLY_TO,
     subject: subject.trim(),
     html: html.trim(),
     name: `SL - ${subject.trim()} - ${new Date().toISOString().slice(0, 10)}`,

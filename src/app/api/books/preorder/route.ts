@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unknown book or tier" }, { status: 400 });
   }
 
-  const origin = req.headers.get("origin") ?? "https://southernlegends.blog";
+  const origin = req.headers.get("origin") ?? "https://southernlegends.org";
   const isSupport = chosen.id === "support";
 
   const session = await stripe.checkout.sessions.create({

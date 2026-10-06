@@ -12,10 +12,10 @@ export default function NewsletterCapture({ source = "unknown" }: { source?: str
     setStatus("loading");
     setErrorMsg("");
     try {
-      const res = await fetch("/api/newsletter/subscribe", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), source, magazine_waitlist: true }),
+        body: JSON.stringify({ email: email.trim(), source }),
       });
       if (res.ok) {
         setStatus("success");
@@ -61,7 +61,7 @@ export default function NewsletterCapture({ source = "unknown" }: { source?: str
           lineHeight: 1.65,
         }}
       >
-        New profiles sent when they&rsquo;re ready. No schedule. No noise.
+        About twice a month. If I don&rsquo;t have one worth your time, I skip it.
       </p>
       <p
         style={{

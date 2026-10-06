@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
 
   const { tier } = (await req.json().catch(() => ({}))) as { tier?: string };
   const price = TIERS[tier ?? "20"] ?? TIERS["20"];
-  const origin = req.headers.get("origin") ?? "https://southernlegends.blog";
+  const origin = req.headers.get("origin") ?? "https://southernlegends.org";
 
   const isTwenty = (tier ?? "20") === "20";
 

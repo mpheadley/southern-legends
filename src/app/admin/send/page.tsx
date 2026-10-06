@@ -51,7 +51,7 @@ function SendForm() {
     ${nlBody.split(/\n\n+/).map((p) => `<p style="margin:0 0 20px;">${p.replace(/\n/g, "<br>")}</p>`).join("")}
     <p style="margin:32px 0 0;font-size:14px;color:#78716C;">
       Matt Headley<br>
-      <a href="https://southernlegends.blog" style="color:#C4622D;text-decoration:none;">southernlegends.blog</a>
+      <a href="https://southernlegends.org" style="color:#C4622D;text-decoration:none;">southernlegends.org</a>
     </p>
   </div>
   <div style="padding:20px 32px;background:#F0EDE8;border-top:1px solid #E7E5E4;">
@@ -197,7 +197,7 @@ function SendForm() {
               />
 
               <label style={s.label}>Post URL</label>
-              <p style={s.hint}>Full path, e.g. /profiles/jean-ellison or https://southernlegends.blog/essays/...</p>
+              <p style={s.hint}>Full path, e.g. /profiles/jean-ellison or https://southernlegends.org/essays/...</p>
               <input
                 type="text"
                 value={postUrl}

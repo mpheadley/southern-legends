@@ -11,11 +11,20 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
     e.preventDefault();
     setStatus("loading");
 
+    // ?source=forward (etc.) on the URL wins, so forwarded-email signups are visible.
+    let urlSource: string | null = null;
+    try {
+      const raw = new URLSearchParams(window.location.search).get("source");
+      if (raw && /^[a-z0-9_-]{1,40}$/i.test(raw)) urlSource = raw.toLowerCase();
+    } catch {
+      urlSource = null;
+    }
+
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), firstName: firstName.trim(), source: source ?? (variant === "inline" ? "footer" : "homepage") }),
+        body: JSON.stringify({ email: email.trim(), firstName: firstName.trim(), source: urlSource ?? source ?? (variant === "inline" ? "footer" : "homepage") }),
       });
       if (res.ok) {
         setStatus("success");

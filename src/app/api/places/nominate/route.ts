@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
+import { SL_FROM, SL_REPLY_TO } from "@/lib/email-sender"
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
@@ -19,7 +20,8 @@ export async function POST(req: NextRequest) {
   }
 
   await resend?.emails.send({
-    from: "SL Places <noreply@southernlegends.blog>",
+    from: SL_FROM,
+    replyTo: fields.your_email || SL_REPLY_TO,
     to: "matt@gatherstudio.app",
     subject: `SL Places nomination: ${fields.business_name} in ${fields.city}`,
     html: `

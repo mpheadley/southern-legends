@@ -94,7 +94,7 @@ export default function LivePage() {
                   </div>
 
                   <a
-                    href={`mailto:matt@southernlegends.blog?subject=Order: ${encodeURIComponent(item.name)}&body=Size: ${selectedSize || '(please select)'}%0AName:%0AShipping address:`}
+                    href={`mailto:matt@gatherstudio.app?subject=Order: ${encodeURIComponent(item.name)}&body=Size: ${selectedSize || '(please select)'}%0AName:%0AShipping address:`}
                     className="inline-block text-sm px-5 py-2.5 rounded-lg font-semibold transition-opacity hover:opacity-90"
                     style={{
                       background: 'rgba(124,58,237,0.85)',
@@ -113,7 +113,7 @@ export default function LivePage() {
         {/* Sub-note */}
         <p className="text-center text-xs mt-16 leading-relaxed" style={{ color: 'rgba(240,237,230,0.28)' }}>
           DTF print · made to order · ships in 7–10 days · NE Alabama made<br />
-          Questions? <a href="mailto:matt@southernlegends.blog" style={{ color: 'rgba(202,138,4,0.5)' }}>matt@southernlegends.blog</a>
+          Questions? <a href="mailto:matt@gatherstudio.app" style={{ color: 'rgba(202,138,4,0.5)' }}>matt@gatherstudio.app</a>
         </p>
       </div>
     </main>

@@ -124,7 +124,7 @@ export default function VendorWoodstockPage() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 4, textAlign: 'right' }}>
           <p style={{ fontSize: '0.7rem', color: 'rgba(240,237,232,0.3)' }}>Questions: matt@gatherstudio.app</p>
-          <p style={{ fontSize: '0.7rem', color: 'rgba(240,237,232,0.3)' }}>southernlegends.blog</p>
+          <p style={{ fontSize: '0.7rem', color: 'rgba(240,237,232,0.3)' }}>southernlegends.org</p>
         </div>
       </div>
 

@@ -8,7 +8,9 @@ const TIERS = [
   { amount: "20", label: "$20", note: "Welcome shirt + sticker", featured: true },
 ];
 
-export default function PatronTiers() {
+// tiers: which amounts to show, by key ("5", "10", "20"). Default shows all.
+export default function PatronTiers({ tiers }: { tiers?: string[] } = {}) {
+  const shown = tiers ? TIERS.filter((t) => tiers.includes(t.amount)) : TIERS;
   const [loading, setLoading] = useState<string | null>(null);
 
   async function subscribe(tier: string) {
@@ -31,7 +33,7 @@ export default function PatronTiers() {
 
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem", maxWidth: "560px" }}>
-      {TIERS.map((t) => (
+      {shown.map((t) => (
         <button
           key={t.amount}
           onClick={() => subscribe(t.amount)}

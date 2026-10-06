@@ -228,7 +228,7 @@ export default async function ListiclePage({
               </p>
             </div>
           </div>
-          <a href="/newsletter" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "#1a1208", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.75rem", fontWeight: 600, padding: "0.45rem 0.9rem", borderRadius: "6px", textDecoration: "none" }}>
+          <a href="/support" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "#1a1208", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.75rem", fontWeight: 600, padding: "0.45rem 0.9rem", borderRadius: "6px", textDecoration: "none" }}>
             Support this work →
           </a>
         </div>
@@ -293,14 +293,14 @@ export default async function ListiclePage({
                 Reach vendors and attendees planning for NE Alabama events. $150/mo sponsor spotlight.
               </p>
             </div>
-            <a href="mailto:matt@southernlegends.blog?subject=Sponsor%20Inquiry" style={{ display: "inline-block", background: "#9a6c2f", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.6rem 1.1rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            <a href="mailto:matt@gatherstudio.app?subject=Sponsor%20Inquiry" style={{ display: "inline-block", background: "#9a6c2f", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.6rem 1.1rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
               Get in touch
             </a>
           </div>
         )}
 
         <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "#6b5040", marginTop: "2rem", fontStyle: "italic" }}>
-          A living list, honestly kept. Know an event we missed? <a href="mailto:matt@southernlegends.blog" style={{ color: "#9a6c2f" }}>Tell us.</a>
+          A living list, honestly kept. Know an event we missed? <a href="mailto:matt@gatherstudio.app" style={{ color: "#9a6c2f" }}>Tell us.</a>
         </p>
 
         {/* Share */}

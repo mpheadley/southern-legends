@@ -162,7 +162,7 @@ export default async function CityPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: `Businesses in ${cityName}, Alabama`,
-    url: `https://southernlegends.blog/places/${citySlug}`,
+    url: `https://southernlegends.org/places/${citySlug}`,
     numberOfItems: cityBizzes.length,
     itemListElement: cityBizzes.slice(0, 20).map((b, i) => ({
       "@type": "ListItem",
