@@ -289,6 +289,87 @@ def c_info(title: str, html_text: str, link: dict | None = None) -> str:
             f'</td></tr></table></td></tr>')
 
 
+# Default "More from Southern Legends" row. Edit here to change it for every email at once.
+DEFAULT_TILES = [
+    {"image": "/images/books/southern-legends-cover.webp", "label": "Southern Legends Vol. 1",
+     "sub": "The collected profiles, in print. Get on the list.", "href": "/vol-1"},
+    {"image": "/images/books/tend-cover.webp", "label": "Tend: Before the Wedding",
+     "sub": "Five conversations before you say I do. Presale list open.", "href": "/essays/forthcoming-tend-before-the-wedding"},
+    {"image": "/merch/ladiga-tee-transparent.png", "label": "Ladiga's Land tee",
+     "sub": "Southern Legends shirts and totes.", "href": "/merch/shirts"},
+]
+
+
+def c_more(title: str, tiles: list[dict]) -> str:
+    """Row of up to 3 tiles (book signup, merch, support). Each: image, label, sub, href."""
+    w = 150
+    cells = "".join(
+        f'<td valign="top" align="center" width="33%" style="padding:0 6px;">'
+        f'<a href="{_e(_abs_href(t["href"]))}"><img src="{_e(_abs(t["image"]))}" width="{w}" alt="{_e(t["label"])}" '
+        f'style="display:block;width:100%;max-width:{w}px;height:auto;border:0;border-radius:4px;margin:0 auto 10px;"></a>'
+        f'<a href="{_e(_abs_href(t["href"]))}" style="font-family:{SERIF};font-size:16px;font-weight:700;color:{C["dark"]};'
+        f'text-decoration:none;line-height:1.25;">{_e(t["label"])}</a>'
+        f'<div style="font-family:{SANS};font-size:13px;line-height:1.45;color:{C["muted"]};padding-top:4px;">{_e(t.get("sub", ""))}</div>'
+        f'</td>' for t in tiles[:3])
+    return (f'<tr><td class="px" style="padding:30px 40px 10px;border-top:1px solid {C["border"]};">'
+            f'<div style="font-family:{MONO};font-size:12px;letter-spacing:2px;text-transform:uppercase;'
+            f'color:{C["muted"]};text-align:center;padding:0 0 16px;">{_e(title)}</div>'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{cells}</tr></table>'
+            f'</td></tr>')
+
+
+ICONS = f"{SITE}/images/email/icons"
+PODCAST = {"spotify": "https://open.spotify.com/show/033rE2IJkbyZuLXZwEjtgo",
+           "apple": "https://podcasts.apple.com/podcast/id1896892029"}
+FOLLOW = {"facebook": "https://www.facebook.com/SouthernLegendsAL",
+          "youtube": "https://www.youtube.com/@mpheadley"}
+
+
+def _icon(name: str, href: str, alt: str, size: int = 36) -> str:
+    return (f'<a href="{_e(href)}" style="display:inline-block;margin:0 6px;text-decoration:none;">'
+            f'<img src="{ICONS}/{name}.png" width="{size}" height="{size}" alt="{_e(alt)}" '
+            f'style="display:inline-block;width:{size}px;height:{size}px;border:0;"></a>')
+
+
+def c_share(page_url: str, title: str) -> str:
+    """'Share this email' button (opens the reader's own email app, pre-filled: works in every
+    client, unlike a form field) + Facebook share, then follow/listen icons."""
+    from urllib.parse import quote
+    fb = f"https://www.facebook.com/sharer/sharer.php?u={quote(page_url, safe='')}"
+    body = (f"I thought you'd like this story from Southern Legends:\n\n{title}\n{page_url}\n\n"
+            f"If you want the next one, it's free: {SITE}/subscribe")
+    mail = f"mailto:?subject={quote('A story you might like: ' + title)}&body={quote(body)}"
+    a = f'style="color:{C["primary"]};font-weight:700;text-decoration:none;"'
+    btn = (f'<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>'
+           f'<td style="border:2px solid {C["primary"]};border-radius:4px;">'
+           f'<a href="{mail}" style="display:inline-block;padding:12px 24px;font-family:{SANS};font-size:16px;'
+           f'font-weight:700;color:{C["primary"]};text-decoration:none;">'
+           f'<img src="{ICONS}/mail.png" width="20" height="20" alt="" style="vertical-align:-4px;border:0;margin-right:8px;">'
+           f'Share this email</a></td></tr></table>')
+    return (f'<tr><td class="px" align="center" style="padding:26px 40px 8px;font-family:{SANS};font-size:15px;'
+            f'line-height:1.7;color:{C["text"]};">'
+            f'<div style="font-family:{SERIF};font-size:19px;font-weight:700;color:{C["dark"]};padding-bottom:12px;">'
+            f'Know someone who&rsquo;d like this?</div>{btn}'
+            f'<div style="padding-top:12px;">Or share the story: '
+            f'{_icon("facebook", fb, "Share on Facebook", 28)}</div>'
+            f'<div style="color:{C["muted"]};padding-top:6px;">Forwarded this? <a href="{SITE}/subscribe" {a}>Get the next one free</a></div>'
+            f'</td></tr>'
+            f'<tr><td class="px" align="center" style="padding:18px 40px 26px;">'
+            f'<div style="font-family:{MONO};font-size:12px;letter-spacing:2px;text-transform:uppercase;color:{C["muted"]};'
+            f'padding-bottom:12px;">Follow &amp; listen</div>'
+            f'{_icon("facebook", FOLLOW["facebook"], "Southern Legends on Facebook")}'
+            f'{_icon("youtube", FOLLOW["youtube"], "Southern Legends on YouTube")}'
+            f'{_icon("spotify", PODCAST["spotify"], "Southern Legends podcast on Spotify")}'
+            f'{_icon("applepodcasts", PODCAST["apple"], "Southern Legends podcast on Apple Podcasts")}'
+            f'<div style="font-family:{SANS};font-size:13px;color:{C["muted"]};padding-top:10px;">'
+            f'The Southern Legends podcast is on <a href="{PODCAST["spotify"]}" {a}>Spotify</a> and '
+            f'<a href="{PODCAST["apple"]}" {a}>Apple Podcasts</a>.</div></td></tr>')
+
+
+def _abs_href(h: str) -> str:
+    return SITE + h if h.startswith("/") else h
+
+
 def c_crisis() -> str:
     """Safe messaging. Any email that mentions suicide must carry this (send() refuses otherwise)."""
     return (f'<tr><td class="px" style="padding:20px 40px 4px;">'
@@ -338,6 +419,8 @@ BLOCKS = {
     "signoff": lambda b: c_signoff(b.get("closing", "Thanks for reading,")),
     "crisis": lambda b: c_crisis(),
     "info": lambda b: c_info(b["title"], b["html"], b.get("link")),
+    "more": lambda b: c_more(b.get("title", "More from Southern Legends"), b.get("tiles", DEFAULT_TILES)),
+    "share": lambda b: c_share(b["page"], b["title"]),
     "ad": lambda b: c_ad(b["image"], b["href"], b.get("alt", ""), b.get("label", "Advertisement"), b.get("html", "")),
 }
 
@@ -372,7 +455,7 @@ def build_email(fm: dict, slug: str, route: str, text: str = "") -> tuple[str, s
     thumb = youtube_thumb(fm.get("youtubeUrl", ""))
     if thumb:
         blocks.append({"type": "video", "thumb": thumb, "page": url, "label": "Watch the interview"})
-    blocks.append({"type": "signoff"})
+    blocks += [{"type": "signoff"}, {"type": "more"}, {"type": "share", "page": url, "title": title}]
     return title, render_blocks({"preheader": dek, "blocks": blocks}), url
 
 
