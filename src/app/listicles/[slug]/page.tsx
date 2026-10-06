@@ -1,5 +1,6 @@
 export const revalidate = 300;
 
+import CrisisLine from "@/app/components/CrisisLine";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -34,6 +35,7 @@ export async function generateMetadata({
 }
 
 const mdxComponents = {
+  CrisisLine,
   Script: (props: React.ComponentProps<"script">) => <script {...props} />,
 };
 

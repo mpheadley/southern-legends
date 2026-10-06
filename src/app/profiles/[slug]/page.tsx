@@ -1,5 +1,6 @@
 export const revalidate = 300
 
+import CrisisLine from "@/app/components/CrisisLine";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -49,6 +50,7 @@ import NextProfileCard from "@/app/components/NextProfileCard";
 import AuthorSupport from "@/app/components/AuthorSupport";
 
 const mdxComponents = {
+  CrisisLine,
   h2: (props: React.ComponentProps<"h2">) => {
     const id =
       typeof props.children === "string"

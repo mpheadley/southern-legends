@@ -79,6 +79,20 @@ export default function VideoEmbed({ url, caption, id = "video" }: VideoEmbedPro
     return () => observer.disconnect();
   }, []);
 
+  // Links like /profiles/x#video (from emails) jump before images above have loaded, so the
+  // page shifts and the video ends up off-screen. Re-align once the page settles.
+  useEffect(() => {
+    if (typeof window === "undefined" || window.location.hash !== `#${id}`) return;
+    const align = () => document.getElementById(id)?.scrollIntoView({ block: "start" });
+    const timers = [300, 1200, 2500].map((ms) => window.setTimeout(align, ms));
+    if (document.readyState === "complete") align();
+    else window.addEventListener("load", align, { once: true });
+    return () => {
+      timers.forEach(window.clearTimeout);
+      window.removeEventListener("load", align);
+    };
+  }, [id]);
+
   useEffect(() => {
     if (parsed?.platform !== "youtube" || !parsed.videoId) return;
     fetch(`/api/youtube-stats?videoId=${parsed.videoId}`)

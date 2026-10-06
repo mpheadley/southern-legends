@@ -1,5 +1,6 @@
 export const revalidate = 300
 
+import CrisisLine from "@/app/components/CrisisLine";
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
@@ -72,6 +73,7 @@ function FeaturedImage({ src, alt, caption }: { src: string; alt: string; captio
 
 
 const mdxComponents = {
+  CrisisLine,
   h2: (props: React.ComponentProps<"h2">) => {
     const id =
       typeof props.children === "string"

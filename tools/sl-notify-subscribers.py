@@ -192,9 +192,9 @@ def c_story(kicker: str, title: str, dek: str, image: str, alt: str, credit: str
     return (f'<tr><td class="px" style="padding:28px 40px 8px;">'
             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
             f'style="border:1px solid {C["border"]};border-radius:8px;background:#ffffff;">'
-            f'<tr><td class="px" style="padding:0;"><a href="{_e(href)}"><img src="{_e(_abs(image))}" width="518" alt="{_e(alt)}" '
+            f'<tr><td style="padding:0;"><a href="{_e(href)}"><img src="{_e(_abs(image))}" width="518" alt="{_e(alt)}" '
             f'style="display:block;width:100%;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
-            f'<tr><td class="px" style="padding:16px 24px 24px;">{cred}'
+            f'<tr><td style="padding:16px 24px 24px;">{cred}'
             f'<div style="font-family:{MONO};font-size:12px;letter-spacing:2px;text-transform:uppercase;'
             f'color:{C["accent"]};padding:12px 0 6px;">{_e(kicker)}</div>'
             f'<div style="font-family:{SERIF};font-size:28px;line-height:1.15;font-weight:700;color:{C["dark"]};'
@@ -210,11 +210,11 @@ def c_video(thumb: str, page_url: str, label: str, length: str) -> str:
     return (f'<tr><td class="px" style="padding:20px 40px 8px;">'
             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
             f'style="background:{C["dark"]};border-radius:8px;">'
-            f'<tr><td class="px" style="padding:0;"><a href="{href}"><img src="{_e(thumb)}" width="520" alt="{_e(label)}" '
+            f'<tr><td style="padding:0;"><a href="{href}"><img src="{_e(_abs(thumb))}" width="520" alt="{_e(label)}" '
             f'style="display:block;width:100%;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
-            f'<tr><td class="px" style="padding:14px 20px;"><a href="{href}" style="font-family:{SANS};font-size:15px;font-weight:700;'
+            f'<tr><td style="padding:14px 20px;"><a href="{href}" style="font-family:{SANS};font-size:15px;font-weight:700;'
             f'color:#ffffff;text-decoration:none;"><span style="color:{C["accent"]};">&#9654;</span>&nbsp; {_e(label)}'
-            f'<span style="font-weight:400;color:#b8b2aa;"> &middot; {_e(length)}</span></a></td></tr>'
+            + (f'<span style="font-weight:400;color:#b8b2aa;"> &middot; {_e(length)}</span>' if length else '') + f'</a></td></tr>'
             f'</table></td></tr>')
 
 
@@ -232,7 +232,7 @@ def c_events(title: str, rows: list[dict], link: dict | None = None) -> str:
     return (f'<tr><td class="px" style="padding:24px 40px 8px;">'
             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
             f'style="background:{C["warm"]};border-left:4px solid {C["accent"]};border-radius:0 8px 8px 0;">'
-            f'<tr><td class="px" style="padding:18px 22px;"><div style="font-family:{MONO};font-size:12px;letter-spacing:2px;'
+            f'<tr><td style="padding:18px 22px;"><div style="font-family:{MONO};font-size:12px;letter-spacing:2px;'
             f'text-transform:uppercase;color:{C["muted"]};padding-bottom:4px;">{_e(title)}</div>'
             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{trs}</table>{lk}'
             f'</td></tr></table></td></tr>')
@@ -265,6 +265,41 @@ def c_footer() -> str:
             f'<a href="{{{{{{RESEND_UNSUBSCRIBE_URL}}}}}}" style="color:{C["muted"]};">Unsubscribe</a></td></tr>')
 
 
+def c_info(title: str, html_text: str, link: dict | None = None) -> str:
+    lk = (f'<div style="padding-top:10px;"><a href="{_e(link["href"])}" style="font-family:{SANS};font-size:15px;'
+          f'font-weight:700;color:{C["primary"]};">{_e(link["label"])} &rarr;</a></div>') if link else ""
+    return (f'<tr><td class="px" style="padding:24px 40px 8px;">'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+            f'style="background:{C["warm"]};border-left:4px solid {C["accent"]};border-radius:0 8px 8px 0;">'
+            f'<tr><td style="padding:18px 22px;"><div style="font-family:{MONO};font-size:12px;letter-spacing:2px;'
+            f'text-transform:uppercase;color:{C["muted"]};padding-bottom:6px;">{_e(title)}</div>'
+            f'<div style="font-family:{BODY};font-size:16px;line-height:1.6;color:{C["text"]};">{html_text}</div>{lk}'
+            f'</td></tr></table></td></tr>')
+
+
+def c_crisis() -> str:
+    """Safe messaging. Any email that mentions suicide must carry this (send() refuses otherwise)."""
+    return (f'<tr><td class="px" style="padding:20px 40px 4px;">'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" '
+            f'style="background:#faf6ee;border-left:4px solid {C["accent"]};border-radius:0 8px 8px 0;">'
+            f'<tr><td style="padding:14px 18px;font-family:{SANS};font-size:15px;line-height:1.55;color:{C["text"]};">'
+            f'This story talks about suicide. If you or someone you know is struggling, call or text '
+            f'<a href="tel:988" style="color:{C["primary"]};font-weight:700;">988</a>, the Suicide &amp; Crisis Lifeline, '
+            f'any time. It\'s free and confidential.</td></tr></table></td></tr>')
+
+
+def c_ad(image: str, href: str, alt: str, label: str, html_text: str = "") -> str:
+    """A labeled promo (e.g. The Aisle, Matt's own event). Always carries a visible label."""
+    txt = (f'<div style="font-family:{BODY};font-size:16px;line-height:1.6;color:{C["text"]};padding:0 0 14px;">'
+           f'{html_text}</div>') if html_text else ""
+    return (f'<tr><td class="px" align="center" style="padding:28px 40px 8px;">'
+            f'<div style="font-family:{MONO};font-size:11px;letter-spacing:2px;text-transform:uppercase;'
+            f'color:{C["muted"]};padding:0 0 10px;">{_e(label)}</div>{txt}'
+            f'<a href="{_e(href)}"><img src="{_e(_abs(image))}" width="300" alt="{_e(alt)}" '
+            f'style="display:block;width:300px;max-width:100%;height:auto;border:0;border-radius:6px;'
+            f'box-shadow:0 2px 10px rgba(0,0,0,0.12);"></a></td></tr>')
+
+
 def wrap(rows: str, preheader: str = "") -> str:
     pre = (f'<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{_e(preheader)}</div>'
            if preheader else "")
@@ -289,6 +324,9 @@ BLOCKS = {
     "events": lambda b: c_events(b["title"], b["rows"], b.get("link")),
     "note": lambda b: c_note(b["html"]),
     "signoff": lambda b: c_signoff(b.get("closing", "Thanks for reading,")),
+    "crisis": lambda b: c_crisis(),
+    "info": lambda b: c_info(b["title"], b["html"], b.get("link")),
+    "ad": lambda b: c_ad(b["image"], b["href"], b.get("alt", ""), b.get("label", "Advertisement"), b.get("html", "")),
 }
 
 
@@ -303,7 +341,7 @@ def youtube_thumb(url: str) -> str:
     return f"https://i.ytimg.com/vi/{m.group(1)}/maxresdefault.jpg" if m else ""
 
 
-def build_email(fm: dict, slug: str, route: str) -> tuple[str, str, str]:
+def build_email(fm: dict, slug: str, route: str, text: str = "") -> tuple[str, str, str]:
     """Auto email for a newly live page, built from the same components as letters."""
     title = fm.get("title", slug)
     name = fm.get("name", "")
@@ -315,7 +353,8 @@ def build_email(fm: dict, slug: str, route: str) -> tuple[str, str, str]:
     credit = fm.get("photoCredit") or fm.get("heroCredit") or ""
     if credit and not credit.lower().startswith("photo"):
         credit = f"Photo: {credit}"
-    blocks = [{"type": "story", "kicker": kicker, "title": title, "dek": dek,
+    blocks = [{"type": "crisis"}] if re.search(r"suicid", text, re.I) else []
+    blocks += [{"type": "story", "kicker": kicker, "title": title, "dek": dek,
                "image": email_safe(fm.get("heroImage") or fm.get("image") or ""),
                "alt": fm.get("heroAlt", title), "credit": credit, "href": url}]
     thumb = youtube_thumb(fm.get("youtubeUrl", ""))
@@ -353,7 +392,7 @@ def preview(slug: str, open_it: bool = True) -> dict | None:
     if fm.get("published", "true").lower() == "false" or fm.get("aiWritten", "false").lower() == "true":
         print(f"{slug}: not published (or aiWritten). Not emailing.")
         return None
-    subject, body, url = build_email(fm, slug, route)
+    subject, body, url = build_email(fm, slug, route, path.read_text(encoding="utf-8"))
     return _write_preview(slug, subject, body, url, open_it)
 
 
@@ -416,6 +455,8 @@ def send(slug: str) -> None:
         raise SystemExit(f"{slug}: content changed since the preview Matt saw. Re-preview first.")
     if not cur["live"]:
         raise SystemExit(f"{slug}: page isn't live at {cur['url']}. Deploy first.")
+    if re.search(r"suicid", cur["body"], re.I) and "988" not in cur["body"]:
+        raise SystemExit(f"{slug}: mentions suicide but has no 988 crisis line. Add a crisis block.")
     broken = [u for u in image_urls(cur["body"]) if not is_live(u)]
     if broken:
         raise SystemExit(f"{slug}: these images don't load yet (deploy first?): {broken}")
