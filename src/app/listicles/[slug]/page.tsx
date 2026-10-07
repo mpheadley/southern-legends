@@ -268,16 +268,16 @@ export default async function ListiclePage({
           <div style={{ marginTop: "2rem", background: "#1a1208", borderRadius: "12px", padding: "1.5rem 1.75rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "center" }}>
             <div>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.35rem" }}>
-                The Aisle · Bridal Expo · Oct 18, 2026
+                The Aisle · Bridal Show · Oct 18, 2026
               </p>
               <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.15rem", color: "#f0ede6", lineHeight: 1.35, marginBottom: "0.4rem" }}>
                 Meet these vendors in person at Anniston Museums &amp; Gardens.
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "rgba(240,237,230,0.7)", lineHeight: 1.55 }}>
-                Free admission. Local vendors. Northeast Alabama's bridal expo.
+                Free to register · $25 at the door · VIP $75. Local vendors. Northeast Alabama's bridal show.
               </p>
             </div>
-            <a href="https://theaisle.app" target="_blank" rel="noopener" style={{ display: "inline-block", background: "#9a6c2f", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.65rem 1.2rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            <a href="https://theaislebridalshows.com" target="_blank" rel="noopener" style={{ display: "inline-block", background: "#9a6c2f", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.65rem 1.2rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
               Get tickets →
             </a>
           </div>

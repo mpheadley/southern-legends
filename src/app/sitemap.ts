@@ -4,6 +4,11 @@ import { getAllProfiles } from "@/lib/profiles";
 import { getAllJournalPosts } from "@/lib/journal";
 import { getBusinessCities, cityToSlug as bizCityToSlug } from "@/lib/businesses";
 import { CITIES, cityToSlug as dbCityToSlug } from "@/lib/city-businesses";
+import { TRAILS } from "@/lib/trails";
+import { getAllParks } from "@/lib/parks";
+import { getActivePrograms } from "@/lib/programs";
+import { getAllListicles } from "@/lib/listicles";
+import { SL_PLACES, cityToSlug as placeCityToSlug } from "@/lib/places";
 
 const CALHOUN_CITIES = ['Anniston', 'Oxford', 'Jacksonville', 'Attalla', 'Rainbow City', 'Alexandria', 'Ohatchee', 'Glencoe', 'Weaver', 'Heflin', 'Piedmont']
 
@@ -37,6 +42,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteConfig.url}/businesses/${bizCityToSlug(city)}`,
     changeFrequency: "weekly" as const,
     priority: city === "Anniston" ? 0.85 : 0.65,
+  }));
+
+
+  const staticPaths = [
+    "/affiliate", "/almanac", "/almanac/autumn-2026", "/arts/music", "/arts/poetry", "/arts/theater",
+    "/back-forty", "/back-forty/resources", "/books/company-of-farmers", "/books/opinions", "/colophon",
+    "/land", "/listen", "/listicles", "/map", "/masthead", "/merch/catalog", "/merch/clt-coin",
+    "/merch/freedom-riders", "/merch/pvxc", "/merch/shirts", "/merch/woodstock", "/ministry", "/parks",
+    "/places/nominate", "/podcast", "/pricing", "/privacy", "/programs", "/registry", "/sponsor",
+    "/theology", "/trails", "/woodstock-5k", "/vol-1",
+  ];
+  const staticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => ({
+    url: `${siteConfig.url}${path}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+  const trailEntries: MetadataRoute.Sitemap = TRAILS.map((t) => ({
+    url: `${siteConfig.url}/trails/${t.slug}`, changeFrequency: "monthly" as const, priority: 0.7,
+  }));
+  const parkEntries: MetadataRoute.Sitemap = getAllParks().map((k) => ({
+    url: `${siteConfig.url}/parks/${k.slug}`, changeFrequency: "monthly" as const, priority: 0.7,
+  }));
+  const programEntries: MetadataRoute.Sitemap = getActivePrograms().map((g) => ({
+    url: `${siteConfig.url}/programs/${g.slug}`, changeFrequency: "monthly" as const, priority: 0.6,
+  }));
+  const listicleEntries: MetadataRoute.Sitemap = getAllListicles().map((l) => ({
+    url: `${siteConfig.url}/listicles/${l.slug}`, changeFrequency: "monthly" as const, priority: 0.7,
+  }));
+  const placeEntries: MetadataRoute.Sitemap = SL_PLACES.filter((b) => b.featured || b.story).map((b) => ({
+    url: `${siteConfig.url}/places/${placeCityToSlug(b.city)}/${b.slug}`, changeFrequency: "monthly" as const, priority: 0.6,
   }));
 
   return [
@@ -143,5 +178,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...journalEntries,
     ...cityEntries,
     ...businessCityEntries,
+    ...staticEntries,
+    ...trailEntries,
+    ...parkEntries,
+    ...programEntries,
+    ...listicleEntries,
+    ...placeEntries,
   ];
 }

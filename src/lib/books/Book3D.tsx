@@ -15,10 +15,12 @@ export default function Book3D({
   books,
   fallbackSrc,
   className = "",
+  onSelect,
 }: {
   books: Book3DItem[];
   fallbackSrc?: string;
   className?: string;
+  onSelect?: (b: Book3DItem) => void;
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
@@ -34,7 +36,7 @@ export default function Book3D({
       if (!en.isIntersecting) return;
       lazy.disconnect();
       if (disposed || el.clientWidth === 0) return;
-      handle = mountShelf(el, { books, onLabel: setLabel });
+      handle = mountShelf(el, { books, onLabel: setLabel, onSelect });
       setReady(true);
     }, { rootMargin: "200px" });
     lazy.observe(el);
@@ -53,7 +55,7 @@ export default function Book3D({
       {books.length > 1 && (
         <div className="pointer-events-none absolute inset-x-0 bottom-2 text-center" aria-live="polite">
           <p className="font-fraunces text-lg text-stone-100">{label?.title ?? " "}</p>
-          <p className="text-sm text-stone-400">{label ? label.subtitle : "Grab a book and turn it. Let go and it settles back."}</p>
+          <p className="text-sm text-stone-400">{label ? label.subtitle : ""}</p>
         </div>
       )}
     </div>

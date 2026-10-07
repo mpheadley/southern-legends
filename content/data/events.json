@@ -1,6 +1,6 @@
 {
   "_note": "One home for dated event facts on SL. Pages render these via <UpcomingEvents />; an event hides itself the day after `end`. Verify Aisle facts against gather/apps/theaisle canonical-snapshot.json + lib/expo-pricing.ts before editing.",
-  "updatedAt": "2026-10-05T13:16:20+00:00",
+  "updatedAt": "2026-10-07T11:00:10+00:00",
   "events": [
     {
       "id": "skytrail-2026",
@@ -49,38 +49,6 @@
       "verifiedAt": "2026-10-05",
       "addedAt": "2026-10-05",
       "startTime": "11:00"
-    },
-    {
-      "id": "jefferson-starship-at-oxford-performing-arts-center-2026-10-06",
-      "auto": true,
-      "name": "Jefferson Starship",
-      "start": "2026-10-06",
-      "end": "2026-10-06",
-      "time": "7 p.m.",
-      "startTime": "19:00",
-      "venue": "Oxford Performing Arts Center",
-      "venues": [
-        "opac"
-      ],
-      "city": "Oxford",
-      "county": "Calhoun",
-      "category": "music",
-      "price": "",
-      "url": "https://visitcalhouncounty.com/event/jefferson-starship-at-oxford-performing-arts-center/",
-      "urlLabel": "Event details",
-      "source": "Visit Calhoun County",
-      "sourceUrl": "https://visitcalhouncounty.com/event/jefferson-starship-at-oxford-performing-arts-center/",
-      "sources": [
-        {
-          "name": "Visit Calhoun County",
-          "url": "https://visitcalhouncounty.com/event/jefferson-starship-at-oxford-performing-arts-center/",
-          "official": true,
-          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2948"
-        }
-      ],
-      "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
-      "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
       "id": "collection-conversations-berman-discussion-group-2026-10-07",

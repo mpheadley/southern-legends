@@ -1,21 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "./TurnstileWidget";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY || "";
 
 export default function NewsletterCapture({ source = "unknown" }: { source?: string }) {
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");  // honeypot: humans leave this empty
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [captchaToken, setCaptchaToken] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (TURNSTILE_SITE_KEY && !captchaToken) {
+      setErrorMsg("Please verify you're not a robot.");
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
     setErrorMsg("");
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), source }),
+        body: JSON.stringify({ website, email: email.trim(), source, captchaToken }),
       });
       if (res.ok) {
         setStatus("success");
@@ -94,6 +104,7 @@ export default function NewsletterCapture({ source = "unknown" }: { source?: str
           }}
         >
           <label className="sr-only" htmlFor="nl-email">Email address</label>
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={website} onChange={(e) => setWebsite(e.target.value)} style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }} />
           <input
             id="nl-email"
             type="email"
@@ -113,6 +124,11 @@ export default function NewsletterCapture({ source = "unknown" }: { source?: str
               outline: "none",
             }}
           />
+          {TURNSTILE_SITE_KEY && (
+            <div className="flex justify-center">
+              <TurnstileWidget sitekey={TURNSTILE_SITE_KEY} onVerify={setCaptchaToken} />
+            </div>
+          )}
           <button
             type="submit"
             disabled={status === "loading"}

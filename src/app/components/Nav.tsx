@@ -1,12 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Link } from "next-view-transitions";
 
 export default function Nav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!moreOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMoreOpen(false); };
+    const onClick = (e: MouseEvent) => { if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false); };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onClick);
+    return () => { document.removeEventListener("keydown", onKey); document.removeEventListener("mousedown", onClick); };
+  }, [moreOpen]);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -97,20 +108,24 @@ export default function Nav() {
               );
             })}
             {/* More — groups the secondary sections */}
-            <div className="relative group">
+            <div className="relative" ref={moreRef}>
               <button
-                className="text-xs font-semibold uppercase tracking-[0.15em] text-white/60 group-hover:text-white transition-colors duration-200 flex items-center gap-1"
+                type="button"
+                onClick={() => setMoreOpen((o) => !o)}
+                className="text-xs font-semibold uppercase tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-200 flex items-center gap-1 min-h-[44px] px-1"
                 aria-haspopup="true"
+                aria-expanded={moreOpen}
               >
                 More
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round"><polyline points="6 9 12 15 18 9" /></svg>
               </button>
-              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+              <div className={`absolute left-0 top-full pt-2 transition-all duration-150 ${moreOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
                 <div className="bg-ll-dark border border-white/10 rounded shadow-lg py-2 min-w-[9rem]">
                   {moreLinks.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
+                      onClick={() => setMoreOpen(false)}
                       className="block px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white/60 hover:text-white hover:bg-white/5 transition-colors"
                     >
                       {item.label}

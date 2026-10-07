@@ -8,6 +8,7 @@ const RESHOW_DAYS = 14;
 export default function SubscribePopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");  // honeypot: humans leave this empty
   const [firstName, setFirstName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -57,7 +58,7 @@ export default function SubscribePopup() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), firstName: firstName.trim(), source: "popup" }),
+        body: JSON.stringify({ website, email: email.trim(), firstName: firstName.trim(), source: "popup" }),
       });
       if (res.ok) {
         setStatus("success");
@@ -167,6 +168,7 @@ export default function SubscribePopup() {
 
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={website} onChange={(e) => setWebsite(e.target.value)} style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }} />
                 <input
                   type="text"
                   placeholder="First name (optional)"

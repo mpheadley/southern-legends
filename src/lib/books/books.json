@@ -12,13 +12,17 @@
       "subtitle": null,
       "tagline": "Say the plain thing. Make your customer the hero.",
       "cover": "clever-confuses-cover.webp",
-      "front": { "tagline": "Say the plain thing.<br>Make your customer the hero." },
+      "front": {
+        "tagline": "Say the plain thing.<br>Make your customer the hero."
+      },
       "back": {
         "headline": "You built something<br>worth buying.",
         "body": "This book helps your customers see it.",
         "footer": "The Plainspoken Blueprint<br>Book One",
         "url": "plainspokenblueprint.com"
-      }
+      },
+      "cta": null,
+      "font": "'Playfair Display', serif"
     },
     {
       "key": "tend",
@@ -30,13 +34,26 @@
       "subtitle": null,
       "tagline": "Five conversations before you say I do.",
       "cover": "tend-cover.webp",
-      "front": { "tagline": "Five conversations before you say I do." },
+      "front": {
+        "tagline": "Five conversations before you say I do."
+      },
       "back": {
         "headline": "Most couples spend months planning the wedding.",
         "headline2": "Almost nobody prepares for the marriage.",
         "body": "Five conversations won&rsquo;t prevent every hard season. But you&rsquo;ll go in knowing each other better than most.",
         "url": "tendmarriage.com"
-      }
+      },
+      "cta": {
+        "preorder": {
+          "start": "2026-10-18",
+          "end": "2026-12-31",
+          "price": null,
+          "href": "/workbook",
+          "enabled": false,
+          "note": "enable + set price with Matt's go; takes money"
+        }
+      },
+      "font": "'Cormorant Garamond', serif"
     },
     {
       "key": "sl",
@@ -48,12 +65,16 @@
       "subtitle": null,
       "tagline": "Untold Stories of the South",
       "cover": "southern-legends-cover.webp",
-      "front": { "tagline": "Untold Stories of the South" },
+      "front": {
+        "tagline": "Untold Stories of the South"
+      },
       "back": {
         "headline": "Every place has a mythology and a reality.",
         "headline2": "This book is the reality.",
         "body": "The profiles, the places, the history. Northeast Alabama as it actually is."
-      }
+      },
+      "cta": null,
+      "font": "'Lora', Georgia, serif"
     },
     {
       "key": "gata",
@@ -73,7 +94,9 @@
         "quote": "&ldquo;I built God out of code.<br>It wasn&rsquo;t what I needed.&rdquo;",
         "attribution": "&mdash; Matt Headley",
         "url": "matthewheadley.com"
-      }
+      },
+      "cta": null,
+      "font": "'Fraunces', serif"
     },
     {
       "key": "clt",
@@ -85,11 +108,16 @@
       "subtitle": null,
       "tagline": "The land the trail runs through · 1832 – 2032",
       "cover": "chief-ladiga-cover.webp",
-      "front": { "tagline": "The land the trail runs through", "years": "1832 – 2032" },
+      "front": {
+        "tagline": "The land the trail runs through",
+        "years": "1832 – 2032"
+      },
       "back": {
         "body": "<b>1832</b> The Creek Nation was removed from Northeast Alabama.<br><b>2032</b> The bicentennial arrives.",
         "url": "chiefladiga.org"
-      }
+      },
+      "cta": null,
+      "font": "'Fraunces', serif"
     },
     {
       "key": "bg",
@@ -102,7 +130,8 @@
       "tagline": "A Memoir",
       "cover": "broken-ground-cover.webp",
       "front": {},
-      "back": {}
+      "back": {},
+      "cta": null
     }
   ]
 }

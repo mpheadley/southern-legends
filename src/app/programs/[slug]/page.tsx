@@ -100,7 +100,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 <li>✓ Cancel any time</li>
               </ul>
               <Link
-                href={`/api/sponsorship/checkout?tier=trail&program=${p.slug}`}
+                href={`/api/sponsorship/checkout?tier=trail&program=${p.slug}`} prefetch={false}
                 className="block text-center py-2 px-4 border border-stone-600 text-stone-300 rounded-lg text-sm hover:border-stone-400 hover:text-white transition-colors"
               >
                 Become a Trail Sponsor
@@ -119,7 +119,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 <li>✓ Priority placement</li>
               </ul>
               <Link
-                href={`/api/sponsorship/checkout?tier=landmark&program=${p.slug}`}
+                href={`/api/sponsorship/checkout?tier=landmark&program=${p.slug}`} prefetch={false}
                 className="block text-center py-2 px-4 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
                 style={{ background: p.heroColor }}
               >

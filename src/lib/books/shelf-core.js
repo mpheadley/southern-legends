@@ -12,7 +12,7 @@ const W = 3, H = 4.5, D = 0.3, GAP = 1.1;
  *   onLabel(book|null): called when hover changes (for captions)
  * Returns { dispose() }.
  */
-export function mountShelf(el, { books, base = '/images/books/3d/', interactive = true, onLabel } = {}) {
+export function mountShelf(el, { books, base = '/images/books/3d/', interactive = true, onLabel, onSelect } = {}) {
   const n = books.length;
   const span = n * W + (n - 1) * GAP;
   const reduce = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -29,9 +29,16 @@ export function mountShelf(el, { books, base = '/images/books/3d/', interactive 
   cv.setAttribute('role', 'img');
   cv.setAttribute('aria-label', `${books.map(b => b.title).join(', ')} — drag a book to turn it`);
   el.appendChild(cv);
+  const tag = document.createElement('div');
+  tag.setAttribute('aria-hidden', 'true');
+  tag.style.cssText = 'position:absolute;left:0;top:0;pointer-events:none;transform:translate(-50%,-100%);white-space:nowrap;opacity:0;transition:opacity .6s ease;color:#FBF6EE;text-shadow:0 2px 10px rgba(0,0,0,.7);font-size:clamp(15px,2.2vw,22px);letter-spacing:.02em';
+  el.appendChild(tag);
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+  let baseZ = 10, closeZ = 8; let zoomZ = baseZ, vZoomZ = 0, zoomStart = 0;
+  let zFrom = baseZ, zTo = baseZ, zT = 1, pFrom = 0, pTo = 0, pT = 1;
+  const easeInOut = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
   // Fixed lights: shelf and camera never move, so shadows shift only as books turn.
   scene.add(new THREE.HemisphereLight(0xfff4e6, 0x1a1612, 0.95));
@@ -101,8 +108,14 @@ export function mountShelf(el, { books, base = '/images/books/3d/', interactive 
     camera.aspect = w / h;
     const tan = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const fitH = (H + 1.4) / 2 / tan;
-    const fitW = (span + 1.8) / 2 / (tan * camera.aspect);
-    camera.position.set(0, 0.8, Math.max(fitH, fitW));
+    // Zoomed out with margin so the whole shelf (incl. the end books) sits inside the frame.
+    const fitW = (span + 4.5) / 2 / (tan * camera.aspect);
+    // Default: the whole shelf in view. Hover or grab a book to move in on it.
+    const closeW = (W * 2.5) / 2 / (tan * camera.aspect);
+    baseZ = Math.max(fitH, fitW) * 1.08;
+    closeZ = n > 1 ? Math.max(closeW, fitH * 1.12) : baseZ;
+    camera.position.set(0, 0.8, baseZ);
+    zoomZ = baseZ;
     camera.lookAt(0, -0.2, 0);
     camera.updateProjectionMatrix();
   };
@@ -118,21 +131,40 @@ export function mountShelf(el, { books, base = '/images/books/3d/', interactive 
     const hit = ray.intersectObjects(states.map(s => s.mesh))[0];
     return hit ? states[hit.object.userData.i] : null;
   };
+  // Selection: the book last grabbed (or stepped to with arrow keys) is the one the page describes.
+  let selectedIdx = 0;
+  const select = i => {
+    selectedIdx = (i + n) % n;
+    stageTarget = -states[selectedIdx].x;
+    if (onSelect) onSelect(states[selectedIdx].item);
+  };
+  if (interactive) {
+    el.tabIndex = 0;
+    el.setAttribute('role', 'group');
+    el.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); select(selectedIdx + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); select(selectedIdx - 1); }
+    });
+  }
   const spring = (x, v, t, k, c, dt) => { v += (-k * (x - t) - c * v) * dt; return [x + v * dt, v]; };
 
   let held = null, hovered = null, stageX = 0, vStageX = 0, stageTarget = 0;
+  let zoomPhase = 0;
   let last = [0, 0], down = [0, 0, 0];
   const setHover = s => {
     if (s === hovered) return;
     hovered = s;
     cv.style.cursor = s ? 'grab' : 'default';
     if (onLabel) onLabel(s ? s.item : null);
+    if (!s) tag.style.opacity = '0';
   };
   const onDown = e => {
     if (!interactive) return;
     const s = pick(e);
     if (!s) { stageTarget = 0; return; }
+    if (interactive && n > 1) { zoomPhase = 1; zoomStart = performance.now(); }
     if (n > 1) stageTarget = -s.x;     // slide the shelf so this book is centered
+    selectedIdx = s.mesh.userData.i; if (onSelect) onSelect(s.item);
     held = s; s.held = true;
     last = [e.clientX, e.clientY]; down = [e.clientX, e.clientY, performance.now()];
     cv.setPointerCapture(e.pointerId);
@@ -146,7 +178,12 @@ export function mountShelf(el, { books, base = '/images/books/3d/', interactive 
       held.rx = THREE.MathUtils.clamp(held.rx + dy * 0.008, -0.6, 0.6); held.vrx = 0;
       return;
     }
-    if (interactive) setHover(pick(e));
+    if (interactive) {
+      // Hysteresis: keep the current book unless the pointer lands on another one.
+      // Stops the zoom from making the hover target flicker.
+      const s = pick(e);
+      if (s) setHover(s);
+    }
   };
   const onUp = e => {
     if (!held) return;
@@ -176,7 +213,7 @@ export function mountShelf(el, { books, base = '/images/books/3d/', interactive 
     [stageX, vStageX] = spring(stageX, vStageX, stageTarget, 40, 11, dt);
     stage.position.x = stageX;
     states.forEach((s, i) => {
-      [s.lift, s.vlift] = spring(s.lift, s.vlift, s.held ? 1 : s === hovered ? 0.3 : 0, 90, 13, dt);
+      [s.lift, s.vlift] = spring(s.lift, s.vlift, s.held ? 1 : s === hovered ? 0.3 : 0, 24, 10, dt);   // soft lift: glides between books
       if (!s.held) {
         [s.ry, s.vry] = spring(s.ry, s.vry, s.face, 60, 9, dt);
         [s.rx, s.vrx] = spring(s.rx, s.vrx, 0, 70, 10, dt);
@@ -185,6 +222,30 @@ export function mountShelf(el, { books, base = '/images/books/3d/', interactive 
       s.pivot.rotation.set(s.rx, (n > 1 ? -0.1 : -0.22) + s.ry + idle, 0);
       s.pivot.position.set(s.x, s.lift * 0.6, s.lift * 1.4);
     });
+    // Zoom: whole shelf at rest; move in on the hovered or grabbed book.
+    const focus = (held || hovered);
+    const zGoal = focus && n > 1 ? closeZ : baseZ;
+    // Timed ease-in-out: starts slow, speeds up, settles. Restarts whenever the goal changes.
+    if (zGoal !== zTo) { zFrom = zoomZ; zTo = zGoal; zT = 0; }
+    zT = Math.min(1, zT + dt / 1.1);
+    zoomZ = zFrom + (zTo - zFrom) * easeInOut(zT);
+    camera.position.z = zoomZ;
+    const fx = focus && n > 1 ? focus.x + stage.position.x : 0;
+    const panGoal = fx * 0.6;
+    if (panGoal !== pTo) { pFrom = camera.position.x; pTo = panGoal; pT = 0; }
+    pT = Math.min(1, pT + dt / 1.4);
+    camera.position.x = pFrom + (pTo - pFrom) * easeInOut(pT);
+    camera.lookAt(camera.position.x, -0.2, 0);
+    // Title above the hovered book, in that book's cover font.
+    if (hovered && hovered.item.font) {
+      tag.style.fontFamily = hovered.item.font;
+      tag.textContent = hovered.item.title;
+      const v = new THREE.Vector3(hovered.pivot.position.x + stage.position.x, H / 2 + 0.6, 0).project(camera);
+      const r = cv.getBoundingClientRect();
+      tag.style.left = ((v.x + 1) / 2 * r.width) + 'px';
+      tag.style.top = ((1 - v.y) / 2 * r.height) + 'px';
+      tag.style.opacity = '1';
+    } else tag.style.opacity = '0';
     renderer.render(scene, camera);
   };
   tick();

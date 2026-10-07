@@ -263,15 +263,29 @@ export default async function JournalPostPage({ params }: { params: Params }) {
       >
         {heroSrc ? (
           <>
-            <Image
-              src={heroSrc}
-              alt={frontmatter.imageAlt ?? frontmatter.title}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-              style={{ objectPosition: (frontmatter as { heroFocus?: string }).heroFocus ?? "center 20%" }}
-            />
+            {(frontmatter as { parallax?: boolean }).parallax ? (
+              <div
+                className="absolute inset-0"
+                role="img"
+                aria-label={frontmatter.imageAlt ?? frontmatter.title}
+                style={{
+                  backgroundImage: `url(${heroSrc})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: (frontmatter as { heroFocus?: string }).heroFocus ?? "center 20%",
+                  backgroundAttachment: "fixed",
+                }}
+              />
+            ) : (
+              <Image
+                src={heroSrc}
+                alt={frontmatter.imageAlt ?? frontmatter.title}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+                style={{ objectPosition: (frontmatter as { heroFocus?: string }).heroFocus ?? "center 20%" }}
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-ll-dark/95 via-ll-dark/60 to-ll-dark/30 z-[1]" aria-hidden="true" />
           </>
         ) : (

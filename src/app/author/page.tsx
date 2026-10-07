@@ -1,3 +1,4 @@
+import ShelfSection from "@/components/ShelfSection";
 import Book3D from "@/lib/books/Book3D";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -132,6 +133,15 @@ const BOOKS: Book[] = [
   },
 ];
 
+const SHELF_ENTRIES = BOOKS.filter(b => b.cover3d).map(b => ({
+  key: b.cover3d!,
+  title: b.title,
+  tagline: b.tagline,
+  description: b.description,
+  cta: b.presellUrl && b.status === "presell" ? { label: `Presell — ${b.eta ?? "join the list"}`, href: b.presellUrl }
+     : b.signupUrl ? { label: b.signupLabel ?? "Notify me", href: b.signupUrl } : undefined,
+}));
+
 export default function AuthorPage() {
   const nearBooks = BOOKS.filter(b => b.tier === "near");
   const laterBooks = BOOKS.filter(b => b.tier === "later");
@@ -148,7 +158,7 @@ export default function AuthorPage() {
           width={96}
           height={96}
           className="rounded-full shrink-0"
-          style={{ width: 96, height: 96 }}
+          style={{ width: 96, height: 96, objectFit: "cover" }}
         />
         <div>
           <p className="text-sm uppercase tracking-widest text-stone-400 mb-1">Author</p>
@@ -163,29 +173,8 @@ export default function AuthorPage() {
         </div>
       </div>
 
-      {/* Desktop: all books on one 3D shelf. Phones get one book per card below. */}
-      <Book3D
-        className="hidden sm:block h-[380px] mb-14 -mx-4 md:-mx-24"
-        books={BOOKS.filter(b => b.cover3d).map(b => ({ key: b.cover3d!, title: b.title, subtitle: b.tagline }))}
-      />
+      <ShelfSection entries={SHELF_ENTRIES} />
 
-      <section className="mb-14">
-        <h2 className="text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-5">Closest to done</h2>
-        <div className="space-y-5">
-          {nearBooks.map((book, i) => (
-            <BookCard key={book.slug} book={book} featured={i === 0} />
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-14">
-        <h2 className="text-xs uppercase tracking-widest text-stone-400 mb-5">Also in the works</h2>
-        <div className="space-y-5">
-          {laterBooks.map(book => (
-            <BookCard key={book.slug} book={book} />
-          ))}
-        </div>
-      </section>
 
       <section className="mb-14">
         <h2 className="text-xs uppercase tracking-widest text-stone-400 mb-5">Shirts</h2>

@@ -1,14 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "./TurnstileWidget";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY || "";
 
 export default function SubscribeCTA({ variant = "section", source }: { variant?: "section" | "inline"; source?: string }) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");  // honeypot: humans leave this empty
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [captchaToken, setCaptchaToken] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (TURNSTILE_SITE_KEY && !captchaToken) {
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
 
     // ?source=forward (etc.) on the URL wins, so forwarded-email signups are visible.
@@ -24,7 +33,7 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), firstName: firstName.trim(), source: urlSource ?? source ?? (variant === "inline" ? "footer" : "homepage") }),
+        body: JSON.stringify({ website, email: email.trim(), firstName: firstName.trim(), captchaToken, source: urlSource ?? source ?? (variant === "inline" ? "footer" : "homepage") }),
       });
       if (res.ok) {
         setStatus("success");
@@ -59,6 +68,7 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
           <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <div className="flex gap-2">
               <label className="sr-only" htmlFor="footer-subscribe-name">First name</label>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={website} onChange={(e) => setWebsite(e.target.value)} style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }} />
               <input
                 id="footer-subscribe-name"
                 type="text"
@@ -78,6 +88,11 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
                 className="flex-1 px-3 py-2 text-sm rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-ll-accent"
               />
             </div>
+            {TURNSTILE_SITE_KEY && (
+              <div className="flex justify-center">
+                <TurnstileWidget sitekey={TURNSTILE_SITE_KEY} onVerify={setCaptchaToken} />
+              </div>
+            )}
             <button
               type="submit"
               disabled={status === "loading"}
@@ -113,6 +128,7 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto">
             <div className="flex flex-col sm:flex-row gap-3">
               <label className="sr-only" htmlFor="subscribe-name">First name</label>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={website} onChange={(e) => setWebsite(e.target.value)} style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }} />
               <input
                 id="subscribe-name"
                 type="text"

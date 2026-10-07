@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
   }
 
-  let body: { email: string; firstName?: string; source?: string };
+  let body: { email: string; firstName?: string; source?: string; website?: string };
   try {
     body = await request.json();
   } catch {
@@ -43,11 +43,41 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
   }
 
+  // Honeypot: the hidden "website" field is empty for people and filled by most bots.
+  // Accept-but-drop, same as the bot filter below.
+  if (body.website?.trim()) {
+    console.log(`[subscribe] dropped honeypot submission: ${email}`);
+    return NextResponse.json({ success: true });
+  }
+
   // Silently accept-but-drop bots — return success so scrapers don't learn to retry,
   // but never add them to the audience or fire the drip.
   if (isBotEmail(email)) {
     console.log(`[subscribe] dropped bot-pattern email: ${email}`);
     return NextResponse.json({ success: true });
+  }
+
+  const domain = email.split("@")[1]?.toLowerCase() ?? "";
+  if (["gamil", "gmai", "gmial", "yahooo", "yaho", "hotmial", "outloo", "gmx.c"].some((typo) => domain.includes(typo))) {
+    return NextResponse.json({ error: "That email domain doesn't look right — check it and try again." }, { status: 400 });
+  }
+
+  // Cloudflare Turnstile. Both keys must be set in production; the widget only renders with the site key.
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY?.trim();
+  if (turnstileSecret) {
+    const captchaToken = (body as { captchaToken?: string }).captchaToken ?? "";
+    if (!captchaToken) {
+      return NextResponse.json({ error: "Please verify you're not a robot." }, { status: 400 });
+    }
+    const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `response=${encodeURIComponent(captchaToken)}&secret=${encodeURIComponent(turnstileSecret)}`,
+    });
+    const verifyData = (await verifyRes.json()) as { success?: boolean };
+    if (!verifyData.success) {
+      return NextResponse.json({ error: "CAPTCHA verification failed — please try again." }, { status: 400 });
+    }
   }
 
   const resend = new Resend(apiKey);

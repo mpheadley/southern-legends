@@ -190,7 +190,7 @@ export default async function CityPage({ params }: Props) {
         @media(max-width:380px){.biz-grid{grid-template-columns:1fr}}
         .flip-card{perspective:1000px;height:128px;cursor:default}
         .flip-card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.4s cubic-bezier(0.4,0.2,0.2,1)}
-        .flip-card:hover .flip-card-inner{transform:rotateY(180deg)}
+        .flip-card:hover .flip-card-inner,.flip-card:focus-within .flip-card-inner{transform:rotateY(180deg)}
         .flip-card-front,.flip-card-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:8px;padding:1rem 1.125rem;overflow:hidden}
         .flip-card-back{transform:rotateY(180deg);background:#1a1208!important;display:flex;flex-direction:column;justify-content:space-between}
       `}</style>
@@ -388,7 +388,7 @@ export default async function CityPage({ params }: Props) {
             <p style={{ ...BODY, fontSize: "0.75rem" }}>{cityBizzes.length} businesses</p>
           </div>
           <p style={{ ...BODY, fontSize: "0.875rem", marginBottom: "1.5rem" }}>
-            Every business in {cityName} in the directory. Hover a card for details.
+            Every business in {cityName} in the directory. Tap or tab to a card for details.
           </p>
           <div className="biz-grid" style={{ marginBottom: "1.5rem" }}>
             {[...cityBizzes]
@@ -402,7 +402,7 @@ export default async function CityPage({ params }: Props) {
                 ? `linear-gradient(to top, rgba(20,16,14,0.88) 0%, rgba(20,16,14,0.45) 55%, rgba(20,16,14,0.15) 100%), url(${photo}) center/cover no-repeat, ${bgColor}`
                 : bgColor
               return (
-                <div key={biz.id} className="flip-card">
+                <div key={biz.id} className="flip-card" tabIndex={0}>
                   <div className="flip-card-inner">
                     <div className="flip-card-front" style={{ background: frontBg }}>
                       <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(240,237,230,0.55)", marginBottom: "0.5rem" }}>

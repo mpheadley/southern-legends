@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Woodstock 5K — Race-Day Guide',
   description:
     'Everything for the Publix Woodstock 5K in Anniston, Alabama — Saturday, August 1, 2026. Course, schedule, merch, and how to support the oldest continuous footrace in the Southeast.',
-  alternates: { canonical: '/woodstock' },
+  alternates: { canonical: '/woodstock-5k' },
   openGraph: { url: '/woodstock', title: 'Woodstock 5K — Race-Day Guide' },
 }
 
