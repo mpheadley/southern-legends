@@ -9,5 +9,17 @@
     "source_url": "https://www.loc.gov/item/2010640427/",
     "original_url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:08600:08614/full/pct:25/0/default.jpg",
     "retrieved": "2026-10-05"
+  },
+  "/images/journal/wendell-tanya-berry-on-being.webp": {
+    "profile": "wendell-berry",
+    "title": "Wendell Berry and His Wife Tanya",
+    "author": "Ann Thompson for On Being",
+    "license": "CC BY-NC-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+    "source": "Flickr (On Being)",
+    "source_url": "https://flic.kr/p/87DC1H",
+    "original_url": "",
+    "retrieved": "2026-10-05",
+    "note": "Hero for both Berry drafts. NC license: Matt kept affiliate links knowingly (sl-berry-pieces-session.md). On Being permission email drafted, not sent."
   }
 }

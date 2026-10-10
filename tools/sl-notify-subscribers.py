@@ -580,7 +580,7 @@ def resend(path: str, payload: dict | None, key: str, method: str = "POST") -> d
         raise SystemExit(f"Resend {path} failed [{e.code}]: {e.read().decode()[:400]}")
 
 
-def preflight(slug: str, cur: dict) -> list[str]:
+def preflight(slug: str, cur: dict, schedule: bool = True) -> list[str]:
     """Rules that must hold for every send (Python enforces; see reports/sl-strategy/email-fundraising-review.md)."""
     body, out = cur["body"], []
     meta_p = LETTERS / f"{slug}.json"
@@ -602,6 +602,15 @@ def preflight(slug: str, cur: dict) -> list[str]:
         out.append(f"Aisle links must go through southernlegends.org/go/aisle?from=<letter> so clicks count: {bad}")
     if meta.get("send_by") and datetime.now().strftime("%Y-%m-%d") > meta["send_by"]:
         out.append(f"past its send_by date ({meta['send_by']}); the dated details in it are stale")
+    today = datetime.now().strftime("%Y-%m-%d")
+    if schedule and meta.get("not_before") and today < meta["not_before"]:
+        out.append(f"too early: not before {meta['not_before']}. {meta.get('not_before_why', '')}".rstrip())
+    if schedule and meta.get("after_invite_drive"):
+        drive = OUT / "invite-drive.json"
+        status = json.loads(drive.read_text()).get("status", "unknown") if drive.exists() else "missing"
+        if status != "done":
+            out.append(f"invite drive is '{status}', not 'done'. Invitations go out before the next letter; "
+                       f"set status to 'done' in {drive} when the drive is finished")
     text = to_text(body)
     if not text:
         out.append("empty plain-text part")
@@ -675,7 +684,7 @@ def send_test(slug: str, to: str) -> None:
     cur = build_current(slug)
     if not cur:
         raise SystemExit(1)
-    problems = preflight(slug, cur)
+    problems = preflight(slug, cur, schedule=False)  # proof copy to Matt: date/invite gates don't apply
     if problems:
         raise SystemExit(f"{slug}: refused:\n  - " + "\n  - ".join(problems))
     first = "Matt" if to.startswith("matt") else "there"
