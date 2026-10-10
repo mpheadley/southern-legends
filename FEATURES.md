@@ -6,6 +6,10 @@
 
 
 
+## Admin: AI-written profiles review (2026-10-10)
+
+- `/admin/profiles-review` (read-only) lists every `content/profiles/*.mdx` with `aiWritten: true`: title, slug, date, published and listed flags, link to `/profiles/<slug>` (the public route stays off while the flag is set). Same PIN gate as the other admin pages (`sl_admin_pin` in localStorage, `x-admin-pin` header vs `ADMIN_PIN`), noindex via the `/admin` layout, not in nav or sitemap. Data from `GET /api/admin/profiles-review`; no writes.
+
 ## Places nomination hardening (2026-10-10)
 
 - `src/lib/turnstile.ts` is the one home for the Turnstile siteverify + honeypot check. `/api/subscribe` and `/api/places/nominate` both import it.
