@@ -60,7 +60,7 @@ export default function GlobeView({
           width={size.w}
           height={size.h}
           backgroundColor="#0a0f0c"
-          globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
+          globeImageUrl="/images/map/earth-dark.webp"
           atmosphereColor="#2d6a4f"
           atmosphereAltitude={0.18}
           pointsData={markers}
