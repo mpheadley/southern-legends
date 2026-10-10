@@ -50,7 +50,7 @@ export default function ClosingSection({ shareUrl, title, excerpt, primary, podc
               Gather Studio
             </a>
             , a messaging coaching practice for small businesses, and the founder of{" "}
-            <a href="https://theaisle.app" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
+            <a href="https://theaislebridalshows.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
               The Aisle
             </a>
             , a bridal show in Anniston.
