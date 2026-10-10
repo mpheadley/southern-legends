@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { SL_FROM, SL_REPLY_TO, SL_NOTIFY_TO } from "@/lib/email-sender";
 import { unsubscribeUrl, unsubscribeFooterHtml, unsubscribeFooterText } from "@/lib/unsubscribe";
+import { isHoneypotFilled, verifyTurnstile } from "@/lib/turnstile";
 
 // Same bot filter as Aisle's is_bot_email() (tools/aisle-network-email-drip.py) —
 // known bot/crawler domains + the dotted-segment gmail pattern (x.x.x.x@gmail.com).
@@ -45,7 +46,7 @@ export async function POST(request: NextRequest) {
 
   // Honeypot: the hidden "website" field is empty for people and filled by most bots.
   // Accept-but-drop, same as the bot filter below.
-  if (body.website?.trim()) {
+  if (isHoneypotFilled(body.website)) {
     console.log(`[subscribe] dropped honeypot submission: ${email}`);
     return NextResponse.json({ success: true });
   }
@@ -62,22 +63,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "That email domain doesn't look right — check it and try again." }, { status: 400 });
   }
 
-  // Cloudflare Turnstile. Both keys must be set in production; the widget only renders with the site key.
-  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY?.trim();
-  if (turnstileSecret) {
-    const captchaToken = (body as { captchaToken?: string }).captchaToken ?? "";
-    if (!captchaToken) {
-      return NextResponse.json({ error: "Please verify you're not a robot." }, { status: 400 });
-    }
-    const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `response=${encodeURIComponent(captchaToken)}&secret=${encodeURIComponent(turnstileSecret)}`,
-    });
-    const verifyData = (await verifyRes.json()) as { success?: boolean };
-    if (!verifyData.success) {
-      return NextResponse.json({ error: "CAPTCHA verification failed — please try again." }, { status: 400 });
-    }
+  // Cloudflare Turnstile (shared check in lib/turnstile.ts; skipped when no secret is set).
+  const captcha = await verifyTurnstile((body as { captchaToken?: string }).captchaToken);
+  if (!captcha.ok) {
+    return NextResponse.json(
+      { error: captcha.reason === "missing" ? "Please verify you're not a robot." : "CAPTCHA verification failed — please try again." },
+      { status: 400 },
+    );
   }
 
   const resend = new Resend(apiKey);

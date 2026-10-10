@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import NominateForm from "./NominateForm"
 
 export const metadata: Metadata = {
   title: "Nominate a Place — Southern Legends",
@@ -7,7 +8,23 @@ export const metadata: Metadata = {
   alternates: { canonical: "/places/nominate" },
 }
 
-export default function NominatePlacePage() {
+const ERROR_COPY: Record<string, string> = {
+  missing: "A few required fields were empty. Please fill in the business name, city, your name, your email, and why they belong here.",
+  email: "That email address does not look right. Please check it and try again.",
+  website: "The website link needs to start with http:// or https://. You can also leave it blank.",
+  captcha: "The quick check did not go through. Please try it again.",
+  invalid: "We could not read that submission. Please try again.",
+  send: "Your nomination did not go through on our end. Please try again in a minute, or email matt@gatherstudio.app.",
+}
+
+export default async function NominatePlacePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ success?: string; error?: string }>
+}) {
+  const { success, error } = await searchParams
+  const errorMessage = error ? (ERROR_COPY[error] ?? ERROR_COPY.invalid) : null
+
   return (
     <main id="main-content" style={{ backgroundColor: "#F0EDE6", minHeight: "100vh" }}>
       <div className="mx-auto max-w-2xl px-6 pt-28 pb-20 md:pt-36">
@@ -15,7 +32,7 @@ export default function NominatePlacePage() {
           href="/places"
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.8rem",
+            fontSize: "0.875rem",
             fontWeight: 600,
             letterSpacing: "0.08em",
             color: "#9a6c2f",
@@ -29,7 +46,7 @@ export default function NominatePlacePage() {
 
         <p style={{
           fontFamily: "var(--font-body)",
-          fontSize: "0.7rem",
+          fontSize: "0.875rem",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
@@ -51,115 +68,64 @@ export default function NominatePlacePage() {
           Nominate a business
         </h1>
 
-        <p style={{
-          fontFamily: "var(--font-body)",
-          fontSize: "1.0625rem",
-          color: "#4a3728",
-          lineHeight: 1.7,
-          marginBottom: "2.5rem",
-        }}>
-          SL Places lists businesses with a story behind them — not the ones who paid to be here. If you know a local business in Northeast Alabama worth knowing, tell us about it. We read every submission and reach out to the ones that fit.
-        </p>
-
-        <form
-          action="/api/places/nominate"
-          method="POST"
-          style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
-        >
-          {[
-            { name: "business_name", label: "Business name", type: "text", required: true },
-            { name: "city", label: "City", type: "text", required: true },
-            { name: "website", label: "Website or social link", type: "url", required: false },
-            { name: "your_name", label: "Your name", type: "text", required: true },
-            { name: "your_email", label: "Your email", type: "email", required: true },
-          ].map(field => (
-            <div key={field.name}>
-              <label style={{
-                display: "block",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.8rem",
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "#1a1208",
-                marginBottom: "0.4rem",
-              }}>
-                {field.label}{field.required && " *"}
-              </label>
-              <input
-                type={field.type}
-                name={field.name}
-                required={field.required}
-                style={{
-                  width: "100%",
-                  padding: "0.625rem 0.875rem",
-                  border: "1px solid rgba(154,108,47,0.3)",
-                  borderRadius: "4px",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.9375rem",
-                  background: "#fff",
-                  color: "#1a1208",
-                  outline: "none",
-                  boxSizing: "border-box",
-                }}
-              />
-            </div>
-          ))}
-
-          <div>
-            <label style={{
-              display: "block",
-              fontFamily: "var(--font-body)",
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "#1a1208",
-              marginBottom: "0.4rem",
-            }}>
-              Why do they belong here? *
-            </label>
-            <textarea
-              name="reason"
-              required
-              rows={4}
-              style={{
-                width: "100%",
-                padding: "0.625rem 0.875rem",
-                border: "1px solid rgba(154,108,47,0.3)",
-                borderRadius: "4px",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.9375rem",
-                background: "#fff",
-                color: "#1a1208",
-                resize: "vertical",
-                outline: "none",
-                boxSizing: "border-box",
-              }}
-              placeholder="Tell us what makes this business worth knowing..."
-            />
-          </div>
-
-          <button
-            type="submit"
+        {success === "1" ? (
+          <section
+            aria-live="polite"
             style={{
-              background: "#9a6c2f",
-              color: "#F0EDE6",
-              fontFamily: "var(--font-body)",
-              fontWeight: 700,
-              fontSize: "0.875rem",
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              padding: "0.75rem 1.5rem",
-              borderRadius: "4px",
-              border: "none",
-              cursor: "pointer",
-              alignSelf: "flex-start",
+              background: "#fff",
+              border: "1px solid rgba(154,108,47,0.3)",
+              borderRadius: "6px",
+              padding: "1.5rem",
+              marginTop: "1.5rem",
             }}
           >
-            Submit nomination
-          </button>
-        </form>
+            <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", fontWeight: 400, color: "#1a1208", marginBottom: "0.75rem" }}>
+              Thank you. We have it.
+            </h2>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "1.0625rem", color: "#4a3728", lineHeight: 1.7, marginBottom: "1rem" }}>
+              Every nomination gets read by a person. If the business fits SL Places, we will reach out to them and let you know.
+            </p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "1rem", lineHeight: 1.7 }}>
+              <Link href="/places" style={{ color: "#9a6c2f", fontWeight: 600 }}>Back to Places</Link>
+              <span style={{ color: "#4a3728" }}> or </span>
+              <Link href="/places/nominate" style={{ color: "#9a6c2f", fontWeight: 600 }}>nominate another business</Link>
+              <span style={{ color: "#4a3728" }}>.</span>
+            </p>
+          </section>
+        ) : (
+          <>
+            <p style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "1.0625rem",
+              color: "#4a3728",
+              lineHeight: 1.7,
+              marginBottom: "2.5rem",
+            }}>
+              SL Places lists businesses with a story behind them, not the ones who paid to be here. If you know a local business in Northeast Alabama worth knowing, tell us about it. We read every submission and reach out to the ones that fit.
+            </p>
+
+            {errorMessage && (
+              <p
+                role="alert"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "1rem",
+                  lineHeight: 1.6,
+                  color: "#7a1f1f",
+                  background: "#fbeaea",
+                  border: "1px solid #e3b4b4",
+                  borderRadius: "4px",
+                  padding: "0.85rem 1rem",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                {errorMessage}
+              </p>
+            )}
+
+            <NominateForm />
+          </>
+        )}
       </div>
     </main>
   )

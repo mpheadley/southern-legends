@@ -1,10 +1,16 @@
 # Southern Legends — Shipped Features
 
-*Last updated: 2026-10-05. Source of truth for what's built.*
+*Last updated: 2026-10-10. Source of truth for what's built.*
 
 ---
 
 
+
+## Places nomination hardening (2026-10-10)
+
+- `src/lib/turnstile.ts` is the one home for the Turnstile siteverify + honeypot check. `/api/subscribe` and `/api/places/nominate` both import it.
+- `/api/places/nominate`: honeypot (hidden `company`) accept-and-drop, Turnstile token required when `TURNSTILE_SECRET_KEY` is set, length caps (name/city 120, reason 2000), email format check, city required, website kept only when it parses as http(s), every field HTML-escaped in the notification email, Resend result checked. Redirects back to `/places/nominate?success=1` or `?error=missing|email|website|captcha|invalid|send`.
+- `/places/nominate` reads those params: plain success panel or inline error. Form is the client `NominateForm` with the shared `TurnstileWidget`, label/htmlFor pairs, 14px labels, 16px inputs.
 
 ## Sponsor price ladder (2026-10-05)
 
