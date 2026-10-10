@@ -1,6 +1,6 @@
 {
   "_note": "One home for dated event facts on SL. Pages render these via <UpcomingEvents />; an event hides itself the day after `end`. Verify Aisle facts against gather/apps/theaisle canonical-snapshot.json + lib/expo-pricing.ts before editing.",
-  "updatedAt": "2026-10-07T11:00:10+00:00",
+  "updatedAt": "2026-10-09T11:01:03+00:00",
   "events": [
     {
       "id": "skytrail-2026",
@@ -51,134 +51,6 @@
       "startTime": "11:00"
     },
     {
-      "id": "collection-conversations-berman-discussion-group-2026-10-07",
-      "auto": true,
-      "name": "Collection Conversations: Berman Discussion Group",
-      "start": "2026-10-07",
-      "end": "2026-10-07",
-      "time": "12 p.m.",
-      "startTime": "",
-      "venue": "Anniston Museums & Gardens",
-      "venues": [
-        "amag"
-      ],
-      "city": "Anniston",
-      "county": "Calhoun",
-      "category": "community",
-      "price": "Free",
-      "url": "https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/",
-      "urlLabel": "Event details",
-      "source": "Anniston Museums & Gardens",
-      "sourceUrl": "https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/",
-      "sources": [
-        {
-          "name": "Anniston Museums & Gardens",
-          "url": "https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/",
-          "official": true,
-          "verify": "amag:https://www.exploreamag.org/events/collection-conversations-berman-discussion-group/"
-        }
-      ],
-      "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
-      "summary": "Community event. Free. Check the listing before you go."
-    },
-    {
-      "id": "viruses-anti-virus-software-2026-10-07",
-      "auto": true,
-      "name": "Viruses & Anti-Virus Software",
-      "start": "2026-10-07",
-      "end": "2026-10-07",
-      "time": "2 p.m.",
-      "startTime": "14:00",
-      "venue": "Public Library of Anniston-Calhoun County",
-      "venues": [
-        "placc"
-      ],
-      "city": "Anniston",
-      "county": "Calhoun",
-      "category": "civic",
-      "price": "Free",
-      "url": "https://www.publiclibrary.cc/events",
-      "urlLabel": "Event details",
-      "source": "Public Library of Anniston-Calhoun County",
-      "sourceUrl": "https://www.publiclibrary.cc/events",
-      "sources": [
-        {
-          "name": "Public Library of Anniston-Calhoun County",
-          "url": "https://www.publiclibrary.cc/events",
-          "official": true,
-          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261007T190000Z"
-        }
-      ],
-      "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
-      "summary": "Community class. Free. Check the listing before you go."
-    },
-    {
-      "id": "blackhawk-at-oxford-performing-arts-center-2026-10-08",
-      "auto": true,
-      "name": "Blackhawk",
-      "start": "2026-10-08",
-      "end": "2026-10-08",
-      "time": "7 p.m.",
-      "startTime": "19:00",
-      "venue": "Oxford Performing Arts Center",
-      "venues": [
-        "opac"
-      ],
-      "city": "Oxford",
-      "county": "Calhoun",
-      "category": "music",
-      "price": "",
-      "url": "https://visitcalhouncounty.com/event/blackhawk-at-oxford-performing-arts-center/",
-      "urlLabel": "Event details",
-      "source": "Visit Calhoun County",
-      "sourceUrl": "https://visitcalhouncounty.com/event/blackhawk-at-oxford-performing-arts-center/",
-      "sources": [
-        {
-          "name": "Visit Calhoun County",
-          "url": "https://visitcalhouncounty.com/event/blackhawk-at-oxford-performing-arts-center/",
-          "official": true,
-          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2950"
-        }
-      ],
-      "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
-      "summary": "Live music in Oxford. Check the listing before you go."
-    },
-    {
-      "id": "cosplayers-ball-2026-10-08",
-      "auto": true,
-      "name": "Cosplayers' Ball",
-      "start": "2026-10-08",
-      "end": "2026-10-08",
-      "time": "6 p.m.",
-      "startTime": "18:00",
-      "venue": "Public Library of Anniston-Calhoun County",
-      "venues": [
-        "placc"
-      ],
-      "city": "Anniston",
-      "county": "Calhoun",
-      "category": "arts",
-      "price": "Free",
-      "url": "https://www.publiclibrary.cc/events",
-      "urlLabel": "Event details",
-      "source": "Public Library of Anniston-Calhoun County",
-      "sourceUrl": "https://www.publiclibrary.cc/events",
-      "sources": [
-        {
-          "name": "Public Library of Anniston-Calhoun County",
-          "url": "https://www.publiclibrary.cc/events",
-          "official": true,
-          "verify": "ical:https://calendar.google.com/calendar/ical/placcfriends%40protonmail.com/public/basic.ics#20261008T230000Z"
-        }
-      ],
-      "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
-      "summary": "Arts and performance. Free. Check the listing before you go."
-    },
-    {
       "id": "an-evening-with-amy-grant-at-oxford-performing-arts-center-2026-10-09",
       "auto": true,
       "name": "An Evening with Amy Grant",
@@ -207,7 +79,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -239,40 +111,8 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program. Free. Check the listing before you go."
-    },
-    {
-      "id": "midnight-on-main-at-oxford-performing-arts-center-2026-10-10",
-      "auto": true,
-      "name": "Midnight on Main",
-      "start": "2026-10-10",
-      "end": "2026-10-10",
-      "time": "6 p.m.",
-      "startTime": "18:00",
-      "venue": "Oxford Performing Arts Center",
-      "venues": [
-        "opac"
-      ],
-      "city": "Oxford",
-      "county": "Calhoun",
-      "category": "community",
-      "price": "",
-      "url": "https://visitcalhouncounty.com/event/midnight-on-main-opac/",
-      "urlLabel": "Event details",
-      "source": "Visit Calhoun County",
-      "sourceUrl": "https://visitcalhouncounty.com/event/midnight-on-main-opac/",
-      "sources": [
-        {
-          "name": "Visit Calhoun County",
-          "url": "https://visitcalhouncounty.com/event/midnight-on-main-opac/",
-          "official": true,
-          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/2473"
-        }
-      ],
-      "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
-      "summary": "Community event in Oxford. Check the listing before you go."
     },
     {
       "id": "museum-after-dark-2026-10-10",
@@ -303,8 +143,40 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program. Tickets: Adults $15 · Children (4–17) $10 · Ages 0–3 Free. Check the listing before you go."
+    },
+    {
+      "id": "skytrail-festival-2026-10-10",
+      "auto": true,
+      "name": "SkyTrail Festival",
+      "start": "2026-10-10",
+      "end": "2026-10-10",
+      "time": "3 a.m.",
+      "startTime": "03:00",
+      "venue": "Longleaf Event Center",
+      "venues": [
+        "longleaf"
+      ],
+      "city": "Anniston",
+      "county": "Calhoun",
+      "category": "community",
+      "price": "Free",
+      "url": "https://visitcalhouncounty.com/event/skytrail-festival-2/2026-10-10/",
+      "urlLabel": "Event details",
+      "source": "Visit Calhoun County",
+      "sourceUrl": "https://visitcalhouncounty.com/event/skytrail-festival-2/2026-10-10/",
+      "sources": [
+        {
+          "name": "Visit Calhoun County",
+          "url": "https://visitcalhouncounty.com/event/skytrail-festival-2/2026-10-10/",
+          "official": true,
+          "verify": "https://visitcalhouncounty.com/wp-json/tribe/events/v1/events/10002931"
+        }
+      ],
+      "addedAt": "2026-10-09",
+      "verifiedAt": "2026-10-09",
+      "summary": "Community event. Free. Check the listing before you go."
     },
     {
       "id": "elktoberfest-at-anniston-elks-lodge-189-2026-10-11",
@@ -333,7 +205,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Food and gathering. Check the listing before you go."
     },
     {
@@ -365,7 +237,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program. Free. Check the listing before you go."
     },
     {
@@ -397,7 +269,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Community class. Free. Check the listing before you go."
     },
     {
@@ -429,7 +301,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "College sports in Jacksonville. Check the listing before you go."
     },
     {
@@ -461,7 +333,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -499,7 +371,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Outdoors. Check the listing before you go."
     },
     {
@@ -531,7 +403,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -563,7 +435,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Outdoors. Free. Check the listing before you go."
     },
     {
@@ -595,7 +467,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     },
     {
@@ -627,7 +499,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     },
     {
@@ -659,7 +531,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     },
     {
@@ -691,7 +563,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -723,7 +595,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance in Oxford. Check the listing before you go."
     },
     {
@@ -755,7 +627,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     },
     {
@@ -787,7 +659,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program. Free. Check the listing before you go."
     },
     {
@@ -819,7 +691,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Community class. Check the listing before you go."
     },
     {
@@ -851,7 +723,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Community class. Free. Check the listing before you go."
     },
     {
@@ -883,7 +755,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     },
     {
@@ -913,7 +785,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Food and gathering in Ohatchee. Check the listing before you go."
     },
     {
@@ -943,7 +815,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Community event. Check the listing before you go."
     },
     {
@@ -975,7 +847,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program. Free. Check the listing before you go."
     },
     {
@@ -1007,7 +879,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program. Free. Check the listing before you go."
     },
     {
@@ -1039,7 +911,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program in Oxford. Check the listing before you go."
     },
     {
@@ -1071,7 +943,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1101,7 +973,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Outdoors in Piedmont. Check the listing before you go."
     },
     {
@@ -1133,7 +1005,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "College sports in Jacksonville. Check the listing before you go."
     },
     {
@@ -1165,7 +1037,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance in Oxford. Check the listing before you go."
     },
     {
@@ -1197,7 +1069,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Community event. Free. Check the listing before you go."
     },
     {
@@ -1227,7 +1099,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Community event in Oxford. Check the listing before you go."
     },
     {
@@ -1259,7 +1131,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1291,7 +1163,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Outdoors. Check the listing before you go."
     },
     {
@@ -1323,7 +1195,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     },
     {
@@ -1355,7 +1227,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1385,7 +1257,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Food and gathering in Ohatchee. Check the listing before you go."
     },
     {
@@ -1417,7 +1289,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "College sports in Jacksonville. Check the listing before you go."
     },
     {
@@ -1449,7 +1321,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program in Oxford. Check the listing before you go."
     },
     {
@@ -1479,7 +1351,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Outdoors. Check the listing before you go."
     },
     {
@@ -1511,7 +1383,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1543,7 +1415,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Family program. Free. Check the listing before you go."
     },
     {
@@ -1573,7 +1445,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Outdoors in Piedmont. Check the listing before you go."
     },
     {
@@ -1605,7 +1477,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1637,7 +1509,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     },
     {
@@ -1669,7 +1541,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1701,7 +1573,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1733,7 +1605,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Live music in Oxford. Check the listing before you go."
     },
     {
@@ -1765,7 +1637,7 @@
         }
       ],
       "addedAt": "2026-10-05",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-09",
       "summary": "Arts and performance. Free. Check the listing before you go."
     }
   ]

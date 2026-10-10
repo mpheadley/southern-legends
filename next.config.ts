@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 160, 256, 384],
     remotePatterns: [
       { protocol: "https", hostname: "upload.wikimedia.org" },
+      // /faith share cards (tools/sl-faith-snapshot.py uploads them to Vercel Blob at runtime)
+      { protocol: "https", hostname: "*.public.blob.vercel-storage.com", pathname: "/faith/**" },
     ],
   },
   async redirects() {

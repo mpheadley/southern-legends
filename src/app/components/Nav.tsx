@@ -46,6 +46,7 @@ export default function Nav() {
     { label: "Arts", href: "/arts" },
     { label: "The Land", href: "/land" },
     { label: "Theology", href: "/theology" },
+    { label: "Faith column", href: "/faith" },
     { label: "Merch", href: "/merch" },
   ];
   const supportLink = { label: "Support", href: "/support" };
@@ -66,6 +67,7 @@ export default function Nav() {
     ]},
     { title: "More", links: [
       { label: "Theology", href: "/theology" },
+      { label: "Faith column", href: "/faith" },
       { label: "About", href: "/about" },
       { label: "Merch", href: "/merch" },
     ]},

@@ -8,11 +8,12 @@ import { TRAILS } from "@/lib/trails";
 import { getAllParks } from "@/lib/parks";
 import { getActivePrograms } from "@/lib/programs";
 import { getAllListicles } from "@/lib/listicles";
+import { getFaithColumns } from "@/lib/faith";
 import { SL_PLACES, cityToSlug as placeCityToSlug } from "@/lib/places";
 
 const CALHOUN_CITIES = ['Anniston', 'Oxford', 'Jacksonville', 'Attalla', 'Rainbow City', 'Alexandria', 'Ohatchee', 'Glencoe', 'Weaver', 'Heflin', 'Piedmont']
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const profiles = getAllProfiles();
   const journalPosts = getAllJournalPosts().filter(p => p.frontmatter.published);
 
@@ -81,6 +82,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      // Faith column hub. Column pages (/faith/[slug]) canonicalize to the Star, so they stay out.
+      url: `${siteConfig.url}/faith`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
     {
       url: `${siteConfig.url}/profiles`,
@@ -184,5 +192,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...programEntries,
     ...listicleEntries,
     ...placeEntries,
+    // Longer cuts are original SL writing (own canonical), so they belong in the sitemap.
+    ...(await getFaithColumns())
+      .filter((c) => c.longCut)
+      .map((c) => ({ url: `${siteConfig.url}/faith/${c.slug}`, lastModified: c.date, changeFrequency: "monthly" as const, priority: 0.7 })),
   ];
 }

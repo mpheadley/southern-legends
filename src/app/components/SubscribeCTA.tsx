@@ -5,17 +5,38 @@ import TurnstileWidget from "./TurnstileWidget";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY || "";
 
-export default function SubscribeCTA({ variant = "section", source }: { variant?: "section" | "inline"; source?: string }) {
+export default function SubscribeCTA({
+  variant = "section",
+  source,
+  heading,
+  subhead,
+  id,
+}: {
+  variant?: "section" | "inline";
+  source?: string;
+  /** Optional section-variant overrides (e.g. /faith). Defaults keep the original copy. */
+  heading?: string;
+  subhead?: string;
+  id?: string;
+}) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");  // honeypot: humans leave this empty
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error" | "captcha">("idle");
   const [captchaToken, setCaptchaToken] = useState("");
+
+  // Both variants render the Turnstile widget whenever the site key is set. The server
+  // (api/subscribe) rejects a submit with no token when TURNSTILE_SECRET_KEY is set, so
+  // the widget must appear everywhere this form does.
+  const ERROR_COPY = {
+    error: "Something went wrong. Please try again.",
+    captcha: "One more step: finish the quick check above, then press Subscribe again.",
+  } as const;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (TURNSTILE_SITE_KEY && !captchaToken) {
-      setStatus("error");
+      setStatus("captcha");
       return;
     }
     setStatus("loading");
@@ -103,22 +124,23 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
           </form>
         )}
 
-        {status === "error" && (
-          <p className="mt-2 text-xs text-red-400">Something went wrong. Please try again.</p>
+        {(status === "error" || status === "captcha") && (
+          <p className="mt-2 text-xs text-red-400" role="alert">{ERROR_COPY[status]}</p>
         )}
       </div>
     );
   }
 
   return (
-    <section className="subscribe-cta text-white" style={{ background: "linear-gradient(to right, #1e3527, #5c3d02)" }}>
+    <section id={id} className="subscribe-cta text-white" style={{ background: "linear-gradient(to right, #1e3527, #5c3d02)" }}>
       <div className="max-w-xl mx-auto px-6 py-14 md:py-18 text-center">
         <h2
           className="text-2xl md:text-3xl font-bold mb-3"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Stories from Northeast Alabama — and from the person writing them.
+          {heading ?? "Stories from Northeast Alabama — and from the person writing them."}
         </h2>
+        {subhead && <p className="text-base text-white/75 mb-6">{subhead}</p>}
 
         {status === "success" ? (
           <p className="text-lg font-medium text-ll-accent">
@@ -148,6 +170,11 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
                 className="subscribe-input flex-1 px-4 py-3 rounded text-ll-dark text-base bg-white placeholder:text-ll-text-light focus:outline-none focus:ring-2 focus:ring-ll-accent"
               />
             </div>
+            {TURNSTILE_SITE_KEY && (
+              <div className="flex justify-center">
+                <TurnstileWidget sitekey={TURNSTILE_SITE_KEY} onVerify={setCaptchaToken} />
+              </div>
+            )}
             <button
               type="submit"
               disabled={status === "loading"}
@@ -158,10 +185,8 @@ export default function SubscribeCTA({ variant = "section", source }: { variant?
           </form>
         )}
 
-        {status === "error" && (
-          <p className="mt-4 text-sm text-red-400">
-            Something went wrong. Please try again.
-          </p>
+        {(status === "error" || status === "captcha") && (
+          <p className="mt-4 text-sm text-red-400" role="alert">{ERROR_COPY[status]}</p>
         )}
       </div>
     </section>

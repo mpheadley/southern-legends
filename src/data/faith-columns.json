@@ -1,0 +1,232 @@
+{
+  "_generated_by": "tools/sl-faith-snapshot.py — do not hand-edit; re-run the generator",
+  "generatedAt": "2026-10-10T21:37:19+00:00",
+  "byline": "Matt Headley writes at Southern Legends (southernlegends.org) and pastors Ecclesia Community in Northeast Alabama.",
+  "attribution": "This piece originally appeared in The Anniston Star.",
+  "headshot": {
+    "src": "/images/faith/matt-headley.webp",
+    "width": 640,
+    "height": 795
+  },
+  "columns": [
+    {
+      "id": "col-12",
+      "slug": "making-room-for-the-dark",
+      "title": "Making Room for the Dark",
+      "date": "2026-10-07",
+      "starUrl": "https://www.annistonstar.com/free/matt-headley-making-room-for-the-dark/article_17ab0c58-d114-48f6-b552-44b685857180.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "You don't need a church to hear that sermon.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/making-room-for-the-dark-fc5e16c722.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “You don't need a church to hear that sermon.” over a photograph",
+        "credit": "PHOTO: DAMIR K / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "col-10",
+      "slug": "meet-you-where-you-are",
+      "title": "Meet You Where You Are",
+      "date": "2026-09-30",
+      "starUrl": "https://www.annistonstar.com/free/matt-headley-meet-you-where-you-are/article_1c1dffa0-bc7f-4950-af4a-1b7cc2e972a1.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "I don't preach that way as much anymore.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/meet-you-where-you-are-726a3e1b77.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “I don't preach that way as much anymore.” over a photograph",
+        "credit": "PHOTO: ÇIĞDEM İŞERİ / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "/essays/a-seed-must-die",
+      "longReadMinutes": 7
+    },
+    {
+      "id": "col-11",
+      "slug": "the-table",
+      "title": "The Table",
+      "date": "2026-09-23",
+      "starUrl": "https://www.annistonstar.com/features/faith/matt-headley-the-table/article_613a026c-1882-4a8e-b270-ecc362c7ccab.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "The blessing isn't a mood; it's a practice.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/the-table-28c0a6527c.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “The blessing isn't a mood; it's a practice.” over a photograph",
+        "credit": "PHOTO: LETÍCIA ALVARES / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "col-08",
+      "slug": "the-candle",
+      "title": "The Candle",
+      "date": "2026-09-16",
+      "starUrl": "https://www.annistonstar.com/features/faith/the-candle/article_dc916391-b9d2-4c63-af0a-09842086acf5.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "The practice holds you when you can't hold yourself.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/the-candle-dd3ac90410.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “The practice holds you when you can't hold yourself.” over a photograph",
+        "credit": "PHOTO: CLÉMENT PROUST / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "col-07",
+      "slug": "the-tomato-timer",
+      "title": "The Tomato Timer",
+      "date": "2026-09-09",
+      "starUrl": "https://www.annistonstar.com/features/faith/matt-headley-the-tomato-timer/article_30151a14-9eed-4af2-9882-7b2a1d10dadf.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "The list doesn't empty, the inbox doesn't zero out.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/the-tomato-timer-7816f234ec.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “The list doesn't empty, the inbox doesn't zero out.” over a photograph",
+        "credit": "PHOTO: JIN FENG / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "col-06",
+      "slug": "the-book-lady",
+      "title": "The Book Lady",
+      "date": "2026-09-02",
+      "starUrl": "https://www.annistonstar.com/free/the-book-lady/article_9e3dfe6b-10f8-4322-9cdf-c0bc728dc0e8.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "Grace with no eye on the return.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/the-book-lady-e0339add1f.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “Grace with no eye on the return.” over a photograph",
+        "credit": "PHOTO: KABOOMPICS.COM / PEXELS"
+      },
+      "reel": {
+        "url": "https://www.facebook.com/reel/1363820082061439/",
+        "title": "Watch the reel",
+        "blurb": "The Aisle made a short reel for Dolly Parton's Imagination Library. Ten percent of The Aisle's proceeds go to the Imagination Library here at home, through United Way of East Central Alabama (UWECA).",
+        "platform": "Facebook",
+        "tag": {
+          "name": "Dolly Parton's Imagination Library",
+          "url": "https://www.facebook.com/dollysimaginationlibrary"
+        }
+      },
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "untracked-people-church-forgot",
+      "slug": "the-people-the-church-forgot",
+      "title": "The People the Church Forgot",
+      "date": "2026-08-26",
+      "starUrl": "https://www.annistonstar.com/features/faith/the-people-the-church-forgot/article_1d869919-44dc-4ef8-ba08-78722c5757b6.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "The woman I mentioned has found her people.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/the-people-the-church-forgot-fce8266172.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “The woman I mentioned has found her people.” over a photograph",
+        "credit": "PHOTO: MARINA M / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "col-03",
+      "slug": "the-women-who-kept-the-lights-on",
+      "title": "The Women Who Kept the Lights On",
+      "date": "2026-08-19",
+      "starUrl": "https://www.annistonstar.com/features/faith/matt-headley-the-women-who-kept-the-lights-on/article_2b67caff-3603-455c-8d76-dc381aa7271a.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "I never once beat the women to the church.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/the-women-who-kept-the-lights-on-aeec3f5b9c.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “I never once beat the women to the church.” over a photograph",
+        "credit": "PHOTO: MOHAMMAD MOHEBBI / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "col-02",
+      "slug": "what-the-vows-already-know",
+      "title": "What the Vows Already Know",
+      "date": "2026-08-05",
+      "starUrl": "https://www.annistonstar.com/features/faith/what-the-vows-already-know/article_6f1d8410-8730-4bbf-b003-c98ea139e5e4.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "The vow doesn't wait for you to be ready.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/what-the-vows-already-know-1e17f0c5ba.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “The vow doesn't wait for you to be ready.” over a photograph",
+        "credit": "PHOTO: DANTE MUÑOZ / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "",
+      "longReadMinutes": 0
+    },
+    {
+      "id": "col-01",
+      "slug": "the-songs-you-sing-before-you-understand-them",
+      "title": "The Songs You Sing Before You Understand Them",
+      "date": "2026-07-29",
+      "starUrl": "https://www.annistonstar.com/features/faith/the-songs-you-sing-before-you-understand-them/article_d82c435d-057e-4f0a-9978-2f4d48264f42.html",
+      "epigraph": "",
+      "paragraphs": [],
+      "pullQuote": "You don't believe your way into the practices.",
+      "card": {
+        "src": "https://r1vzyjvxewtjdk3u.public.blob.vercel-storage.com/faith/cards/the-songs-you-sing-before-you-understand-them-7bd76a68e9.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Share card with the line “You don't believe your way into the practices.” over a photograph",
+        "credit": "PHOTO: ANN H / PEXELS"
+      },
+      "reel": null,
+      "longCut": false,
+      "longUrl": "/essays/the-same-songs",
+      "longReadMinutes": 5
+    }
+  ]
+}
