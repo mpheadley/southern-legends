@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { getAllJournalPosts } from "@/lib/journal";
+import { getAllJournalPosts, getJournalPostBySlug } from "@/lib/journal";
 import SectionLinks from "@/app/components/SectionLinks";
 import ShareRow from "@/app/components/ShareRow";
 import { SHELF_LABELS, SHELF_ORDER, booksByCategory } from "@/data/faith-agrarian-booklist";
@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/books" },
   openGraph: { url: "/books" },
 };
+
+/** relatedProfile links only once the essay is published (audit C-10). /journal/* redirects to /essays/*. */
+function liveRelated(href?: string): string | null {
+  if (!href) return null;
+  const m = href.match(/^\/(?:journal|essays)\/(.+)$/);
+  if (!m) return href;
+  const post = getJournalPostBySlug(m[1]);
+  return post?.frontmatter.published ? `/essays/${m[1]}` : null;
+}
 
 const BOOK_TAGS = ["books", "literature", "reading", "memoir", "novel", "poetry", "nonfiction", "fiction", "magazines", "publishing"];
 
@@ -165,23 +174,23 @@ export default function BooksPage() {
   );
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16">
+    <main className="page-light page-top max-w-3xl mx-auto px-4 pb-16">
       <div className="mb-12">
-        <p className="text-sm uppercase tracking-widest text-stone-400 mb-3">Books &amp; Literature</p>
-        <h1 className="text-4xl font-bold text-stone-900 dark:text-stone-100 mb-4">
+        <p className="text-sm uppercase tracking-widest text-ll-text-light mb-3">Books &amp; Literature</p>
+        <h1 className="text-4xl font-bold text-ll-dark mb-4">
           Reading the South
         </h1>
-        <p className="text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
+        <p className="text-lg text-ll-text leading-relaxed">
           The South has always been a place people write about — and write from. Books, shelves, and the reading behind the writing.
         </p>
       </div>
 
       {/* Forthcoming from Matt */}
       <div className="mb-14">
-        <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-6">Forthcoming from Matt Headley</h2>
+        <h2 className="text-2xl font-bold text-ll-dark mb-6">Forthcoming from Matt Headley</h2>
         <div className="space-y-5">
           {FORTHCOMING_BOOKS.map(book => (
-            <article key={book.slug} className="border border-stone-200 dark:border-stone-700 rounded-lg overflow-hidden">
+            <article key={book.slug} className="border border-ll-border rounded-lg overflow-hidden">
               <Link href={book.href} className="group flex gap-0">
                 {book.cover && (
                   <div className="relative w-28 sm:w-36 shrink-0 self-stretch">
@@ -196,17 +205,17 @@ export default function BooksPage() {
                 )}
                 <div className={`p-4 sm:p-5 flex flex-col justify-between flex-1 ${!book.cover ? "pl-5" : ""}`}>
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1">
+                    <p className="text-sm uppercase tracking-wider text-ll-primary mb-1">
                       {book.status}
                     </p>
-                    <h3 className="font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 leading-snug mb-2">
+                    <h3 className="font-bold text-ll-dark group-hover:text-ll-primary leading-snug mb-2">
                       {book.title}
                     </h3>
-                    <p className="text-sm text-stone-500 dark:text-stone-400 italic leading-relaxed">
+                    <p className="text-sm text-ll-text-light italic leading-relaxed">
                       {book.tagline}
                     </p>
                   </div>
-                  <p className="text-xs text-amber-700 dark:text-amber-400 mt-3">
+                  <p className="text-xs text-ll-primary mt-3">
                     {book.preorder ? "Preorder →" : "Read the announcement →"}
                   </p>
                 </div>
@@ -218,36 +227,36 @@ export default function BooksPage() {
 
       {/* Faith & Agrarian Shelf — from the canonical booklist */}
       <div className="mb-14">
-        <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">The Faith &amp; Agrarian Shelf</h2>
-        <p className="text-stone-500 dark:text-stone-400 mb-6 text-sm">
+        <h2 className="text-2xl font-bold text-ll-dark mb-2">The Faith &amp; Agrarian Shelf</h2>
+        <p className="text-ll-text-light mb-6 text-sm">
           Faith, land, and vocation — the books that shaped how Matt thinks about the ground, and the reading behind the forthcoming <em>Company of Farmers</em>. Alabama titles first.
         </p>
         {SHELF_ORDER.map(cat => (
           <div key={cat} className="mb-8">
-            <h3 className="text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-3 font-semibold">{SHELF_LABELS[cat]}</h3>
+            <h3 className="text-sm uppercase tracking-widest text-ll-primary mb-3 font-semibold">{SHELF_LABELS[cat]}</h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {booksByCategory(cat).map(book => (
                 <div
                   key={book.slug}
-                  className={`border rounded-lg p-5 flex flex-col ${book.alabama ? "border-amber-400 dark:border-amber-500 bg-amber-50/50 dark:bg-amber-950/20 sm:col-span-2" : "border-stone-200 dark:border-stone-700"}`}
+                  className={`border rounded-lg p-5 flex flex-col ${book.alabama ? "border-ll-accent bg-ll-warm/50 sm:col-span-2" : "border-ll-border"}`}
                 >
                   {book.alabama && (
-                    <p className="text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2">Alabama</p>
+                    <p className="text-sm uppercase tracking-widest text-ll-primary mb-2">Alabama</p>
                   )}
-                  <h4 className="font-semibold text-stone-900 dark:text-stone-100 mb-1">{book.title}</h4>
-                  <p className="text-sm text-stone-500 dark:text-stone-400 mb-2">by {book.author}</p>
-                  <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{book.blurb}</p>
+                  <h4 className="font-semibold text-ll-dark mb-1">{book.title}</h4>
+                  <p className="text-sm text-ll-text-light mb-2">by {book.author}</p>
+                  <p className="text-sm text-ll-text leading-relaxed">{book.blurb}</p>
                   {book.mattNote && (
-                    <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed mt-2 border-l-2 border-amber-400 dark:border-amber-500 pl-3 italic">
+                    <p className="text-sm text-ll-text leading-relaxed mt-2 border-l-2 border-ll-accent pl-3 italic">
                       {book.mattNote}
                     </p>
                   )}
                   <div className="flex gap-3 mt-3 text-sm">
-                    {book.relatedProfile && (
-                      <Link href={book.relatedProfile} className="text-amber-700 dark:text-amber-400 hover:underline">Read the profile →</Link>
+                    {liveRelated(book.relatedProfile) && (
+                      <Link href={liveRelated(book.relatedProfile)!} className="text-ll-primary hover:underline">Read the profile →</Link>
                     )}
                     {book.bookshopUrl && (
-                      <a href={book.bookshopUrl} target="_blank" rel="noopener noreferrer" className="text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-400 hover:underline">Find the book →</a>
+                      <a href={book.bookshopUrl} target="_blank" rel="noopener noreferrer" className="text-ll-text-light hover:text-ll-primary hover:underline">Find the book →</a>
                     )}
                   </div>
                 </div>
@@ -255,25 +264,25 @@ export default function BooksPage() {
             </div>
           </div>
         ))}
-        <p className="text-xs text-stone-400 dark:text-stone-500 mt-2">
-          The reading behind <Link href="/essays/forthcoming-homesteading-heroes" className="text-amber-700 dark:text-amber-400 hover:underline">Company of Farmers</Link>. Start with Matt&apos;s profile of <Link href="/profiles/noah-sanders" className="text-amber-700 dark:text-amber-400 hover:underline">Noah Sanders</Link>.
+        <p className="text-xs text-ll-text-light mt-2">
+          The reading behind <Link href="/essays/forthcoming-homesteading-heroes" className="text-ll-primary hover:underline">Company of Farmers</Link>. Start with Matt&apos;s profile of <Link href="/profiles/noah-sanders" className="text-ll-primary hover:underline">Noah Sanders</Link>.
         </p>
       </div>
 
       {/* Ministry & Formation Shelf */}
       <div className="mb-14">
-        <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">Ministry &amp; Formation</h2>
-        <p className="text-stone-500 dark:text-stone-400 mb-6 text-sm">
+        <h2 className="text-2xl font-bold text-ll-dark mb-2">Ministry &amp; Formation</h2>
+        <p className="text-ll-text-light mb-6 text-sm">
           The shelf behind Ecclesia Community and the Plainspoken Blueprint&apos;s formation arc. Fresh expressions, contemplative prayer, incarnational ministry.
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {MINISTRY_BOOKS.map(book => (
-            <div key={book.title} className="border border-stone-200 dark:border-stone-700 rounded-lg p-5 flex flex-col">
-              <h4 className="font-semibold text-stone-900 dark:text-stone-100 mb-1">{book.title}</h4>
-              <p className="text-sm text-stone-500 dark:text-stone-400 mb-2">by {book.author}</p>
-              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed flex-1">{book.blurb}</p>
+            <div key={book.title} className="border border-ll-border rounded-lg p-5 flex flex-col">
+              <h4 className="font-semibold text-ll-dark mb-1">{book.title}</h4>
+              <p className="text-sm text-ll-text-light mb-2">by {book.author}</p>
+              <p className="text-sm text-ll-text leading-relaxed flex-1">{book.blurb}</p>
               {book.mattNote && (
-                <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed mt-2 border-l-2 border-amber-400 dark:border-amber-500 pl-3 italic">
+                <p className="text-sm text-ll-text leading-relaxed mt-2 border-l-2 border-ll-accent pl-3 italic">
                   {book.mattNote}
                 </p>
               )}
@@ -281,34 +290,34 @@ export default function BooksPage() {
                 href={book.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-400 hover:underline mt-3 text-sm"
+                className="text-ll-text-light hover:text-ll-primary hover:underline mt-3 text-sm"
               >
                 Find the book →
               </a>
             </div>
           ))}
         </div>
-        <p className="text-xs text-stone-400 dark:text-stone-500 mt-4">
+        <p className="text-xs text-ll-text-light mt-4">
           Affiliate links support Southern Legends and independent bookstores via Bookshop.org.
         </p>
       </div>
 
       {/* Business & Messaging Shelf */}
       <div className="mb-14">
-        <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">Business &amp; Messaging</h2>
-        <p className="text-stone-500 dark:text-stone-400 mb-6 text-sm">
+        <h2 className="text-2xl font-bold text-ll-dark mb-2">Business &amp; Messaging</h2>
+        <p className="text-ll-text-light mb-6 text-sm">
           The reading behind{" "}
-          <a href="https://gatherstudio.app" target="_blank" rel="noopener noreferrer" className="text-amber-700 dark:text-amber-400 hover:underline">Gather Studio</a>{" "}
+          <a href="https://gatherstudio.app" target="_blank" rel="noopener noreferrer" className="text-ll-primary hover:underline">Gather Studio</a>{" "}
           and the Plainspoken Blueprint methodology. Message clarity, solo business, the war against resistance.
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {BUSINESS_BOOKS.map(book => (
-            <div key={book.title} className="border border-stone-200 dark:border-stone-700 rounded-lg p-5 flex flex-col">
-              <h4 className="font-semibold text-stone-900 dark:text-stone-100 mb-1">{book.title}</h4>
-              <p className="text-sm text-stone-500 dark:text-stone-400 mb-2">by {book.author}</p>
-              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed flex-1">{book.blurb}</p>
+            <div key={book.title} className="border border-ll-border rounded-lg p-5 flex flex-col">
+              <h4 className="font-semibold text-ll-dark mb-1">{book.title}</h4>
+              <p className="text-sm text-ll-text-light mb-2">by {book.author}</p>
+              <p className="text-sm text-ll-text leading-relaxed flex-1">{book.blurb}</p>
               {book.mattNote && (
-                <p className="text-sm text-stone-700 dark:text-stone-300 leading-relaxed mt-2 border-l-2 border-amber-400 dark:border-amber-500 pl-3 italic">
+                <p className="text-sm text-ll-text leading-relaxed mt-2 border-l-2 border-ll-accent pl-3 italic">
                   {book.mattNote}
                 </p>
               )}
@@ -317,7 +326,7 @@ export default function BooksPage() {
                   href={book.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-400 hover:underline text-sm"
+                  className="text-ll-text-light hover:text-ll-primary hover:underline text-sm"
                 >
                   Find the book →
                 </a>
@@ -326,7 +335,7 @@ export default function BooksPage() {
                     href={book.podcastUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-400 hover:underline text-sm"
+                    className="text-ll-text-light hover:text-ll-primary hover:underline text-sm"
                   >
                     Podcast: {book.podcast} →
                   </a>
@@ -335,15 +344,15 @@ export default function BooksPage() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-stone-400 dark:text-stone-500 mt-4">
+        <p className="text-xs text-ll-text-light mt-4">
           Affiliate links support Southern Legends and independent bookstores via Bookshop.org.
         </p>
       </div>
 
       {/* Regional Publications */}
       <div className="mb-12">
-        <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">Southern Publications Worth Reading</h2>
-        <p className="text-stone-500 dark:text-stone-400 mb-6 text-sm">Magazines and journals doing serious work on Southern culture and literature.</p>
+        <h2 className="text-2xl font-bold text-ll-dark mb-2">Southern Publications Worth Reading</h2>
+        <p className="text-ll-text-light mb-6 text-sm">Magazines and journals doing serious work on Southern culture and literature.</p>
         <div className="grid gap-4 sm:grid-cols-2">
           {REGIONAL_PUBS.map(pub => (
             <a
@@ -351,12 +360,12 @@ export default function BooksPage() {
               href={pub.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-stone-200 dark:border-stone-700 rounded-lg p-4 hover:border-amber-500 dark:hover:border-amber-500 transition group"
+              className="border border-ll-border rounded-lg p-4 hover:border-ll-accent transition group"
             >
-              <h3 className="font-semibold text-stone-900 dark:text-stone-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 mb-1">
+              <h3 className="font-semibold text-ll-dark group-hover:text-ll-primary mb-1">
                 {pub.name}
               </h3>
-              <p className="text-sm text-stone-500 dark:text-stone-400">{pub.description}</p>
+              <p className="text-sm text-ll-text-light">{pub.description}</p>
             </a>
           ))}
         </div>
@@ -365,12 +374,12 @@ export default function BooksPage() {
       {/* Essays tagged books */}
       {essays.length > 0 && (
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-6">Reading Notes</h2>
+          <h2 className="text-2xl font-bold text-ll-dark mb-6">Reading Notes</h2>
           <div className="space-y-4">
             {essays.map(p => (
-              <article key={p.slug} className="border-b border-stone-100 dark:border-stone-800 pb-4">
+              <article key={p.slug} className="border-b border-ll-border pb-4">
                 <Link href={`/essays/${p.slug}`} className="group">
-                  <h3 className="font-semibold text-stone-900 dark:text-stone-100 group-hover:text-amber-700 dark:group-hover:text-amber-400">
+                  <h3 className="font-semibold text-ll-dark group-hover:text-ll-primary">
                     {p.frontmatter.title}
                   </h3>
                 </Link>
@@ -381,34 +390,34 @@ export default function BooksPage() {
       )}
 
       {/* Gather Registry — Reading List CTA */}
-      <div className="border border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 rounded-lg p-6 mb-10">
-        <p className="text-xs font-bold tracking-widest uppercase text-amber-700 dark:text-amber-500 mb-2">Free · Takes 2 minutes</p>
-        <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100 mb-2">Build a reading list on Gather Registry.</h2>
-        <p className="text-stone-500 dark:text-stone-400 text-sm mb-4 leading-relaxed">
+      <div className="border border-ll-border bg-ll-warm rounded-lg p-6 mb-10">
+        <p className="text-sm font-bold tracking-widest uppercase text-ll-primary mb-2">Free · Takes 2 minutes</p>
+        <h2 className="text-xl font-semibold text-ll-dark mb-2">Build a reading list on Gather Registry.</h2>
+        <p className="text-ll-text-light text-sm mb-4 leading-relaxed">
           Share one link. Anyone can gift you the books you actually want to read — perfect for birthdays, anniversaries, or just telling people what&apos;s on your nightstand.
         </p>
         <a
           href="https://gather-registry.vercel.app/create?type=reading&ref=southern-legends"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-amber-700 text-white px-5 py-2 rounded font-medium hover:bg-amber-800 transition text-sm"
+          className="inline-block bg-ll-primary text-white px-5 py-2 rounded font-medium hover:bg-ll-primary-dark transition text-sm"
         >
           Create a reading list →
         </a>
-        <p className="text-xs text-stone-400 dark:text-stone-500 mt-3">
-          Powered by <a href="https://gather-registry.vercel.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700">Gather Registry</a>. All Bookshop.org links support independent bookstores and Southern Legends.
+        <p className="text-xs text-ll-text-light mt-3">
+          Powered by <a href="https://gather-registry.vercel.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-ll-primary">Gather Registry</a>. All Bookshop.org links support independent bookstores and Southern Legends.
         </p>
       </div>
 
       {/* Contribute */}
-      <div className="bg-stone-50 dark:bg-stone-800 rounded-lg p-8 mt-4">
-        <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100 mb-2">Contribute a Review or Reading Note</h2>
-        <p className="text-stone-500 dark:text-stone-400 mb-4 text-sm">
+      <div className="bg-ll-warm rounded-lg p-8 mt-4">
+        <h2 className="text-xl font-semibold text-ll-dark mb-2">Contribute a Review or Reading Note</h2>
+        <p className="text-ll-text-light mb-4 text-sm">
           Read something Southern worth telling people about? We publish brief reading notes and book reviews from regional contributors.
         </p>
         <Link
           href="/nominate"
-          className="inline-block bg-amber-700 text-white px-5 py-2 rounded font-medium hover:bg-amber-800 transition text-sm"
+          className="inline-block bg-ll-primary text-white px-5 py-2 rounded font-medium hover:bg-ll-primary-dark transition text-sm"
         >
           Submit a Review
         </Link>

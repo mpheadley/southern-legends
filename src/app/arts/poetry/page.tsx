@@ -23,40 +23,40 @@ export default function PoetryPage() {
   );
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16">
+    <main className="page-light page-top max-w-3xl mx-auto px-4 pb-16">
       <div className="mb-4">
-        <Link href="/arts" className="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 hover:underline">
+        <Link href="/arts" className="text-sm font-semibold uppercase tracking-widest text-ll-primary hover:underline">
           ← Arts
         </Link>
       </div>
       <div className="mb-12">
-        <p className="text-sm uppercase tracking-widest text-stone-400 mb-3">Poetry</p>
-        <h1 className="text-4xl font-bold text-stone-900 dark:text-stone-100 mb-4">
+        <p className="text-sm uppercase tracking-widest text-ll-text-light mb-3">Poetry</p>
+        <h1 className="text-4xl font-bold text-ll-dark mb-4">
           Poems from the Foothills
         </h1>
-        <p className="text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
+        <p className="text-lg text-ll-text leading-relaxed">
           Southern Legends publishes original poetry from Alabama writers and artists of the
           Appalachian foothills. We are looking for poems that know where they live.
         </p>
       </div>
 
       {/* Contributors */}
-      <div className="bg-amber-50 dark:bg-stone-800 border border-amber-200 dark:border-stone-700 rounded-lg p-6 mb-12">
-        <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2">Contribute a Poem</h2>
-        <p className="text-stone-600 dark:text-stone-400 text-sm mb-3">
+      <div className="bg-ll-warm border border-ll-border rounded-lg p-6 mb-12">
+        <h2 className="text-lg font-semibold text-ll-dark mb-2">Contribute a Poem</h2>
+        <p className="text-ll-text text-sm mb-3">
           We are inviting Alabama poets to submit original work. We are particularly interested in
           Brodie Boyd, Jason Wright, and other regional voices. No payment yet — but a real audience.
         </p>
         <div className="flex gap-3 flex-wrap">
           <Link
             href="/nominate"
-            className="inline-block bg-amber-700 text-white px-5 py-2 rounded font-medium hover:bg-amber-800 transition text-sm"
+            className="inline-block bg-ll-primary text-white px-5 py-2 rounded font-medium hover:bg-ll-primary-dark transition text-sm"
           >
             Submit Your Work
           </Link>
           <a
             href="mailto:matt@gatherstudio.app?subject=Poetry for Southern Legends"
-            className="inline-block border border-amber-700 text-amber-700 dark:text-amber-400 px-5 py-2 rounded font-medium hover:bg-amber-50 dark:hover:bg-stone-700 transition text-sm"
+            className="inline-block border border-ll-primary text-ll-primary px-5 py-2 rounded font-medium hover:bg-ll-warm transition text-sm"
           >
             Email Directly
           </a>
@@ -66,28 +66,28 @@ export default function PoetryPage() {
       {/* Published poems */}
       {(profiles.length > 0 || essays.length > 0) ? (
         <div>
-          <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-6">Published Poems</h2>
+          <h2 className="text-2xl font-bold text-ll-dark mb-6">Published Poems</h2>
           <div className="space-y-6">
             {profiles.map(p => (
-              <article key={p.slug} className="border-b border-stone-100 dark:border-stone-800 pb-6">
+              <article key={p.slug} className="border-b border-ll-border pb-6">
                 <Link href={`/profiles/${p.slug}`} className="group">
-                  <h3 className="text-xl font-semibold text-stone-900 dark:text-stone-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 mb-1">
+                  <h3 className="text-xl font-semibold text-ll-dark group-hover:text-ll-primary mb-1">
                     {p.frontmatter.title}
                   </h3>
                   {p.frontmatter.excerpt && (
-                    <p className="text-stone-500 dark:text-stone-400">{p.frontmatter.excerpt}</p>
+                    <p className="text-ll-text-light">{p.frontmatter.excerpt}</p>
                   )}
                 </Link>
               </article>
             ))}
             {essays.map(p => (
-              <article key={p.slug} className="border-b border-stone-100 dark:border-stone-800 pb-6">
+              <article key={p.slug} className="border-b border-ll-border pb-6">
                 <Link href={`/essays/${p.slug}`} className="group">
-                  <h3 className="text-xl font-semibold text-stone-900 dark:text-stone-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 mb-1">
+                  <h3 className="text-xl font-semibold text-ll-dark group-hover:text-ll-primary mb-1">
                     {p.frontmatter.title}
                   </h3>
                   {p.frontmatter.excerpt && (
-                    <p className="text-stone-500 dark:text-stone-400">{p.frontmatter.excerpt}</p>
+                    <p className="text-ll-text-light">{p.frontmatter.excerpt}</p>
                   )}
                 </Link>
               </article>
@@ -95,7 +95,7 @@ export default function PoetryPage() {
           </div>
         </div>
       ) : (
-        <p className="text-stone-400 italic text-sm">
+        <p className="text-ll-text-light italic text-sm">
           First poems coming soon. We are actively seeking Alabama poets to contribute.
         </p>
       )}

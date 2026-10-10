@@ -81,11 +81,13 @@ export default function NotFound() {
         #iris-egg.show { animation: iris-in 0.5s ease forwards; }
         #iris-egg.hide { animation: iris-out 0.7s ease forwards; }
       `}} />
-      <img id="iris-egg" src="/images/iris-cat-jump.gif" alt="" aria-hidden="true" />
+      <img id="iris-egg" alt="" aria-hidden="true" />
       <script dangerouslySetInnerHTML={{ __html: `
         (function(){
           var el = document.getElementById('iris-egg');
           if(!el) return;
+          // Load the gif only once a real 404 renders (keeps it out of prefetch/preload)
+          setTimeout(function(){ el.src = '/images/iris-cat-jump.gif'; }, 2500);
           setTimeout(function(){ el.classList.add('show'); }, 3000);
           setTimeout(function(){ el.classList.add('hide'); }, 9500);
           setTimeout(function(){ el.style.display='none'; }, 10300);

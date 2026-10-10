@@ -47,7 +47,7 @@ export default function JournalPage() {
       <div className="mx-auto max-w-2xl px-6 pt-28 pb-6 md:pt-36 md:pb-8">
         <p style={{
           fontFamily: "var(--font-source-sans)",
-          fontSize: "0.7rem",
+          fontSize: "var(--text-label)",
           fontWeight: 600,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
@@ -83,7 +83,7 @@ export default function JournalPage() {
         <div className="mx-auto max-w-2xl px-6 pt-10 pb-12">
           <p style={{
             fontFamily: "var(--font-source-sans)",
-            fontSize: "0.6375rem",
+            fontSize: "var(--text-label)",
             fontWeight: 600,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
@@ -119,7 +119,7 @@ export default function JournalPage() {
             </p>
             <p style={{
               fontFamily: "var(--font-source-sans)",
-              fontSize: "0.6875rem",
+              fontSize: "var(--text-label)",
               fontWeight: 600,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -164,10 +164,10 @@ export default function JournalPage() {
                   marginBottom: i < posts.length - 1 ? "2.5rem" : 0,
                 }}
               >
-                <Link href={`/essays/${post.slug}`} className="group block">
+                <Link href={`/essays/${post.slug}`} prefetch={false} className="group block">
                   <p style={{
                     fontFamily: "var(--font-source-sans)",
-                    fontSize: "0.6875rem",
+                    fontSize: "var(--text-label)",
                     fontWeight: 600,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",

@@ -12,7 +12,7 @@ export default function LivePage() {
   const [size, setSize] = useState<Record<string, string>>({})
 
   return (
-    <main className="min-h-screen" style={{ background: 'var(--color-ll-dark)', color: 'var(--color-ll-warm)' }}>
+    <main className="min-h-screen page-top" style={{ background: 'var(--color-ll-dark)', color: 'var(--color-ll-warm)' }}>
 
       {/* Header */}
       <div className="border-b" style={{ borderColor: 'rgba(202,138,4,0.15)' }}>

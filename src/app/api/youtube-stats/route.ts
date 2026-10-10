@@ -16,17 +16,22 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid videoId' }, { status: 400 })
   }
 
+  // Fail soft (audit C-11): stats are decoration. With no key or an upstream error,
+  // answer 200 + null so the embed renders without stats and the console stays clean.
+  const none = () => NextResponse.json(null, { headers: { 'Cache-Control': 'public, s-maxage=3600' } })
+
   const apiKey = process.env.YOUTUBE_API_KEY
-  if (!apiKey) {
-    return NextResponse.json({ error: 'YOUTUBE_API_KEY not set' }, { status: 500 })
-  }
+  if (!apiKey) return none()
 
   const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${apiKey}`
-  const res = await fetch(url, { next: { revalidate: 3600 } })
-
-  if (!res.ok) {
-    return NextResponse.json({ error: 'YouTube API error' }, { status: 502 })
+  let res: Response
+  try {
+    res = await fetch(url, { next: { revalidate: 3600 } })
+  } catch {
+    return none()
   }
+
+  if (!res.ok) return none()
 
   const data = await res.json() as {
     items?: Array<{
@@ -37,9 +42,7 @@ export async function GET(req: NextRequest) {
   }
 
   const item = data.items?.[0]
-  if (!item) {
-    return NextResponse.json({ error: 'Video not found' }, { status: 404 })
-  }
+  if (!item) return none()
 
   const stats: VideoStats = {
     videoId: item.id,

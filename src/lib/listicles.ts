@@ -42,6 +42,8 @@ export interface Listicle {
   city: string;
   category?: string;
   image?: string;
+  /** Pin to the top of guide lists. */
+  featured?: boolean;
   intro?: string;
   businesses: GuideBusiness[];
   events?: GuideEvent[];
@@ -50,6 +52,17 @@ export interface Listicle {
   eventsFeed?: { city?: string; county?: string; category?: string };
   shelfLife?: "evergreen" | "timely";
   content: string; // legacy MDX body (empty for card-format guides)
+}
+
+/** Home-market cities shown first on guide lists. */
+export const ANCHOR_GUIDE_CITIES = ["Anniston", "Calhoun County"];
+
+/** Only keep a local /images path when the file is actually on disk (audit C-04:
+ *  99 of 132 frontmatter image paths were missing, rendering broken cards). */
+function verifiedImage(src: unknown): string | undefined {
+  if (typeof src !== "string" || !src) return undefined;
+  if (!src.startsWith("/")) return src;
+  return fs.existsSync(path.join(process.cwd(), "public", src)) ? src : undefined;
 }
 
 function titleCase(s: string): string {
@@ -81,7 +94,8 @@ export function getListicle(slug: string): Listicle | null {
     tags: (data.tags as string[]) ?? [],
     city: (data.place as string) || deriveCity(slug),
     category: data.category as string | undefined,
-    image: data.image as string | undefined,
+    image: verifiedImage(data.image),
+    featured: data.featured === true,
     intro: data.intro as string | undefined,
     businesses: (data.businesses as GuideBusiness[]) ?? [],
     events: data.events as GuideEvent[] | undefined,
@@ -96,7 +110,14 @@ export function getAllListicles(): Listicle[] {
   return getListicleSlugs()
     .map(getListicle)
     .filter((l): l is Listicle => l !== null)
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .sort((a, b) => {
+      // featured first, then home-market cities, then newest
+      if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
+      const aa = ANCHOR_GUIDE_CITIES.includes(a.city), ba = ANCHOR_GUIDE_CITIES.includes(b.city);
+      if (aa !== ba) return aa ? -1 : 1;
+      const d = (b.date || "").localeCompare(a.date || "");
+      return d !== 0 ? d : a.title.localeCompare(b.title);
+    });
 }
 
 export function getListiclesByCity(city: string): Listicle[] {

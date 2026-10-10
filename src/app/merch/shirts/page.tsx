@@ -6,7 +6,7 @@ import { MERCH, MerchItem } from '@/lib/merch'
 
 const COLLECTIONS: { label: string; desc: string; ids: string[] }[] = [
   {
-    label: 'On Fourthwall — Order Now',
+    label: 'Order now',
     desc: 'Ships to your door. All sizes. Multiple colorways.',
     ids: MERCH.filter(m => m.fwUrl).map(m => m.id),
   },
@@ -33,7 +33,7 @@ const COLLECTIONS: { label: string; desc: string; ids: string[] }[] = [
   },
 ]
 
-// Fourthwall photos have a baked-in white backdrop; multiply melts it into the panel color
+// Product photos have a baked-in white backdrop; multiply melts it into the panel color
 const PANEL = '#ece5d8'
 
 function Face({ src, alt, back = false }: { src: string; alt: string; back?: boolean }) {
@@ -130,11 +130,11 @@ function ShirtCard({ item }: { item: MerchItem }) {
           }}>
             {item.name}
           </p>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: '#9a8a7a', lineHeight: 1.4 }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-meta)', color: '#9a8a7a', lineHeight: 1.4 }}>
             {item.tagline}
           </p>
           {item.sub && (
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: '#6b5c50', marginTop: 3 }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-label)', color: '#6b5c50', marginTop: 3 }}>
               {item.sub}
             </p>
           )}
@@ -154,7 +154,7 @@ function ShirtCard({ item }: { item: MerchItem }) {
                 background: '#9a6c2f',
                 color: '#f5f0e8',
                 fontFamily: 'var(--font-body)',
-                fontSize: '0.75rem',
+                fontSize: 'var(--text-meta)',
                 fontWeight: 700,
                 letterSpacing: '0.05em',
                 padding: '6px 14px',
@@ -162,18 +162,18 @@ function ShirtCard({ item }: { item: MerchItem }) {
                 textDecoration: 'none',
               }}
             >
-              Buy →
+              Order →
             </a>
           ) : item.available ? (
             <span style={{
-              fontFamily: 'var(--font-body)', fontSize: '0.72rem',
+              fontFamily: 'var(--font-body)', fontSize: 'var(--text-label)',
               color: '#4ade80', fontWeight: 700, letterSpacing: '0.05em',
             }}>
               At events
             </span>
           ) : (
             <span style={{
-              fontFamily: 'var(--font-body)', fontSize: '0.72rem',
+              fontFamily: 'var(--font-body)', fontSize: 'var(--text-label)',
               color: '#6b7280', fontWeight: 700, letterSpacing: '0.05em',
             }}>
               Coming soon
@@ -201,7 +201,7 @@ export default function ShirtsPage() {
       {/* Header */}
       <div style={{ maxWidth: '72rem', margin: '0 auto', padding: 'clamp(80px, 10vw, 120px) 24px 48px' }}>
         <p style={{
-          fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 700,
+          fontFamily: 'var(--font-body)', fontSize: 'var(--text-label)', fontWeight: 700,
           letterSpacing: '0.25em', textTransform: 'uppercase', color: '#9a6c2f', marginBottom: 16,
         }}>
           Southern Legends · Shirts
@@ -229,7 +229,7 @@ export default function ShirtsPage() {
           <section key={col.label} style={{ maxWidth: '72rem', margin: '0 auto', padding: '0 24px 64px' }}>
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 40, marginBottom: 32 }}>
               <p style={{
-                fontFamily: 'var(--font-body)', fontSize: '0.68rem', fontWeight: 700,
+                fontFamily: 'var(--font-body)', fontSize: 'var(--text-label)', fontWeight: 700,
                 letterSpacing: '0.2em', textTransform: 'uppercase', color: '#9a6c2f', marginBottom: 8,
               }}>
                 {col.label}

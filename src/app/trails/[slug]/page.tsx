@@ -1,5 +1,6 @@
 "use client"
 
+import { Star } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
@@ -54,7 +55,7 @@ function Stars({ rating, size = 16 }: { rating: number; size?: number }) {
   return (
     <span aria-label={`${rating} out of 5 stars`}>
       {[1, 2, 3, 4, 5].map(i => (
-        <span key={i} style={{ color: i <= rating ? "#CA8A04" : "#E5E5E0", fontSize: size }}>★</span>
+        <Star key={i} size={size} aria-hidden="true" style={{ display: "inline", color: i <= rating ? "#CA8A04" : "#E5E5E0" }} fill={i <= rating ? "#CA8A04" : "none"} />
       ))}
     </span>
   )
@@ -70,8 +71,10 @@ function StarInput({ value, onChange }: { value: number; onChange: (n: number) =
           onClick={() => onChange(i)}
           onMouseEnter={() => setHover(i)}
           onMouseLeave={() => setHover(0)}
-          style={{ color: i <= (hover || value) ? "#CA8A04" : "#E5E5E0", fontSize: 28, cursor: "pointer" }}
-        >★</span>
+          style={{ color: i <= (hover || value) ? "#CA8A04" : "#E5E5E0", cursor: "pointer", display: "inline-block" }}
+          role="button"
+          aria-label={`${i} star${i > 1 ? "s" : ""}`}
+        ><Star size={28} aria-hidden="true" fill={i <= (hover || value) ? "#CA8A04" : "none"} /></span>
       ))}
     </span>
   )
@@ -177,14 +180,14 @@ export default function TrailPage() {
     <main style={{ background: "var(--color-ll-light)", minHeight: "100vh" }}>
 
       {/* Hero */}
-      <div style={{ background: "linear-gradient(to bottom, #1C1917, #2D1A0A)", padding: "4rem 1.5rem 3rem", position: "relative", overflow: "hidden" }}>
+      <div style={{ background: "linear-gradient(to bottom, #1C1917, #2D1A0A)", padding: "7.5rem 1.5rem 3rem", position: "relative", overflow: "hidden" }}>
         {trail.image && (
           <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${trail.image})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.25 }} />
         )}
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url(/topo-7.png)", backgroundSize: "400px", opacity: 0.07 }} />
         <div style={{ position: "relative", maxWidth: "52rem", margin: "0 auto" }}>
           <Link href="/trails" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "rgba(250,250,247,0.6)", textDecoration: "none", display: "inline-block", marginBottom: "1.5rem" }}>← All Trails</Link>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.75rem" }}>{trail.region} · {trail.state}</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.75rem" }}>{trail.region} · {trail.state}</p>
           <h1 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2rem, 5vw, 3.5rem)", color: "#FAFAF7", fontWeight: 400, lineHeight: 1.1, marginBottom: "1rem" }}>{trail.name}</h1>
 
           {/* Stats row */}
@@ -219,7 +222,7 @@ export default function TrailPage() {
 
         {/* Highlights */}
         <section style={{ background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", padding: "1.75rem", marginBottom: "3rem" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Highlights</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Highlights</p>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             {trail.highlights.map((h, i) => (
               <li key={i} style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", color: "#3F3B36", lineHeight: 1.6, display: "flex", gap: "0.6rem" }}>
@@ -246,7 +249,7 @@ export default function TrailPage() {
         {/* CLT Support widget */}
         {trail.slug === "chief-ladiga-trail" && (
           <section id="support" style={{ background: "#1C1917", borderRadius: "8px", padding: "2rem", marginBottom: "3rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.5rem" }}>Support Chief Ladiga Trail</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.5rem" }}>Support Chief Ladiga Trail</p>
             <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", color: "#FAFAF7", fontWeight: 400, marginBottom: "0.75rem" }}>Keep the trail open.</h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "rgba(250,250,247,0.7)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
               CLT is volunteer-maintained and community-funded. Your contribution supports trail repairs, trailhead improvements, and new connections. Southern Legends keeps a 15% platform fee; 85% goes directly to CLT.
@@ -284,7 +287,7 @@ export default function TrailPage() {
         {/* CLT Founding Backer — Kickstarter-style */}
         {trail.slug === "chief-ladiga-trail" && (
           <section style={{ background: "#0A1F12", border: "1px solid #2D4A30", borderRadius: "8px", padding: "2rem", marginBottom: "3rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#4ADE80", marginBottom: "0.5rem" }}>Founding Backer — 2026</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#4ADE80", marginBottom: "0.5rem" }}>Founding Backer — 2026</p>
             <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", color: "#FAFAF7", fontWeight: 400, marginBottom: "0.75rem" }}>Be part of the reckoning.</h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "rgba(250,250,247,0.7)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
               In 2032, the Chief Ladiga Trail turns 200 years from the treaty that removed Ladiga's people. I{"'"}m writing the book. The trail deserves backers who know its name. Choose a tier — your donation goes to CLT (85%) and the research project (15%).
@@ -306,7 +309,7 @@ export default function TrailPage() {
                 >
                   <p style={{ fontFamily: "var(--font-body)", fontSize: "1rem", fontWeight: 700, color: "#FAFAF7", margin: "0 0 0.25rem" }}>{tier.label}</p>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: backerTier === tier.amount ? "#BBF7D0" : "#CA8A04", fontWeight: 700, margin: "0 0 0.4rem" }}>${tier.amount}</p>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "rgba(250,250,247,0.6)", margin: 0 }}>{tier.perks}</p>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "rgba(250,250,247,0.6)", margin: 0 }}>{tier.perks}</p>
                 </button>
               ))}
             </div>
@@ -356,13 +359,13 @@ export default function TrailPage() {
         {/* CLT From the Journal */}
         {trail.slug === "chief-ladiga-trail" && (
           <section style={{ marginBottom: "3rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>From the Journal</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>From the Journal</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1rem" }}>
               {CLT_ESSAYS.map(essay => (
                 <Link key={essay.slug} href={`/essays/${essay.slug}`} style={{ display: "block", textDecoration: "none", background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", overflow: "hidden" }}>
                   <div style={{ height: "160px", backgroundImage: `url(${essay.image})`, backgroundSize: "cover", backgroundPosition: "center" }} />
                   <div style={{ padding: "1.25rem" }}>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9A3412", marginBottom: "0.4rem" }}>{essay.subtitle}</p>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9A3412", marginBottom: "0.4rem" }}>{essay.subtitle}</p>
                     <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.1rem", color: "#1C1917", marginBottom: "0.5rem" }}>{essay.title}</p>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "#6B6560", lineHeight: 1.6, margin: 0 }}>{essay.excerpt}</p>
                   </div>
@@ -376,14 +379,14 @@ export default function TrailPage() {
         {trail.slug === "chief-ladiga-trail" && (
           <section style={{ marginBottom: "3rem" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412" }}>Trail Gear</p>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412" }}>Trail Gear</p>
               <Link href="/merch" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#9A3412", textDecoration: "none" }}>All merch →</Link>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.75rem" }}>
               {CLT_MERCH.map(item => (
                 <div key={item.id} style={{ background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", padding: "1.25rem" }}>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", fontWeight: 600, color: "#1C1917", marginBottom: "0.25rem" }}>{item.name}</p>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#9B8B7A", marginBottom: "0.75rem" }}>{item.note}</p>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#9B8B7A", marginBottom: "0.75rem" }}>{item.note}</p>
                   <button
                     onClick={() => handleMerchSupport(item.price, item.name)}
                     style={{ width: "100%", background: "#9A3412", color: "#FAFAF7", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "0.8rem", padding: "0.5rem", border: "none", cursor: "pointer", borderRadius: "3px" }}
@@ -393,18 +396,18 @@ export default function TrailPage() {
                 </div>
               ))}
             </div>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#9B8B7A", marginTop: "0.75rem" }}>Orders fulfilled via Southern Legends. Printed on demand, ships direct.</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#9B8B7A", marginTop: "0.75rem" }}>Orders fulfilled via Southern Legends. Printed on demand, ships direct.</p>
           </section>
         )}
 
         {/* CLT Products — Chapbook + SaaS */}
         {trail.slug === "chief-ladiga-trail" && (
-          <section style={{ background: "#F5F0E8", borderRadius: "8px", padding: "1.75rem", marginBottom: "3rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Products</p>
+          <section style={{ background: "var(--color-ll-light)", borderRadius: "8px", padding: "1.75rem", marginBottom: "3rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Products</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1rem" }}>
               {/* Chapbook */}
               <div style={{ background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", padding: "1.5rem" }}>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.4rem" }}>Digital Chapbook</p>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.4rem" }}>Digital Chapbook</p>
                 <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.1rem", color: "#1C1917", marginBottom: "0.5rem" }}>La-dee-ga: Three Essays</p>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "#6B6560", lineHeight: 1.6, marginBottom: "1rem" }}>Chief Ladiga, 1832 + The Trail at Night + a new introduction. The seed of the 2030 book. $4.99 PDF — instant delivery.</p>
                 <button
@@ -416,7 +419,7 @@ export default function TrailPage() {
               </div>
               {/* SaaS */}
               <div style={{ background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", padding: "1.5rem" }}>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#3D6B4F", marginBottom: "0.4rem" }}>Coming — Trail Tools</p>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#3D6B4F", marginBottom: "0.4rem" }}>Coming — Trail Tools</p>
                 <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.1rem", color: "#1C1917", marginBottom: "0.5rem" }}>CLT Conditions Reporter</p>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "#6B6560", lineHeight: 1.6, marginBottom: "1rem" }}>Real-time trail conditions, volunteer coordination, and event calendar — embeddable on chiefladiga.com. Built for trail orgs.</p>
                 <a
@@ -433,7 +436,7 @@ export default function TrailPage() {
         {/* Sponsor slot */}
         <section style={{ border: "1px dashed #CA8A04", borderRadius: "6px", padding: "1.25rem 1.5rem", marginBottom: "3rem", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
           <div>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.25rem" }}>Sponsor this trail page</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.25rem" }}>Sponsor this trail page</p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#6B6560", margin: 0 }}>Local outfitters, gear shops, and trail-adjacent businesses. $75/mo. Seen by every visitor to this page.</p>
           </div>
           <a href="mailto:matt@gatherstudio.app?subject=Trail Sponsor" style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "0.8rem", color: "#9A3412", textDecoration: "none", whiteSpace: "nowrap" }}>Get in touch →</a>
@@ -443,7 +446,7 @@ export default function TrailPage() {
         <section style={{ marginBottom: "3rem" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1.5rem", flexWrap: "wrap", gap: "1rem" }}>
             <div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "0.25rem" }}>Trail Reviews</p>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "0.25rem" }}>Trail Reviews</p>
               {avgRating !== null
                 ? <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#6B6560" }}>{avgRating.toFixed(1)} avg · {reviews.length} review{reviews.length !== 1 ? "s" : ""}</p>
                 : <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#6B6560" }}>No reviews yet — be first.</p>
@@ -469,7 +472,7 @@ export default function TrailPage() {
 
           {showForm && (
             <form onSubmit={handleSubmit} style={{ background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", padding: "1.75rem", marginBottom: "2rem" }}>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1.5rem" }}>Your Review — {trail.name}</p>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1.5rem" }}>Your Review — {trail.name}</p>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
                 <Field label="Your name *">
@@ -538,7 +541,7 @@ export default function TrailPage() {
                     </div>
                     <div style={{ textAlign: "right" }}>
                       <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, color: "#3F3B36", margin: 0 }}>{r.name}</p>
-                      {r.date_hiked && <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", color: "#9B8B7A", margin: "0.15rem 0 0" }}>{r.date_hiked}</p>}
+                      {r.date_hiked && <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "#9B8B7A", margin: "0.15rem 0 0" }}>{r.date_hiked}</p>}
                     </div>
                   </div>
                   {(r.conditions || r.difficulty_felt) && (
@@ -562,13 +565,13 @@ export default function TrailPage() {
         {/* Trail news */}
         {news.length > 0 && (
           <section style={{ marginBottom: "3rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Trail News</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Trail News</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {news.map((item, i) => (
                 <a key={i} href={item.url} target="_blank" rel="noopener noreferrer"
                   style={{ display: "block", background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", padding: "0.875rem 1rem", textDecoration: "none" }}>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", fontWeight: 600, color: "#1C1917", marginBottom: "0.25rem" }}>{item.title}</p>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#6B6560" }}>{item.source}{item.date ? ` · ${item.date}` : ""}</p>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#6B6560" }}>{item.source}{item.date ? ` · ${item.date}` : ""}</p>
                 </a>
               ))}
             </div>
@@ -577,7 +580,7 @@ export default function TrailPage() {
 
         {/* Related trails */}
         <section style={{ marginBottom: "3rem" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Nearby Trails</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "1rem" }}>Nearby Trails</p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {TRAILS.filter(t => t.slug !== trail.slug).slice(0, 4).map(t => (
               <Link key={t.slug} href={`/trails/${t.slug}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", fontWeight: 600, color: "#9A3412", border: "1px solid #9A3412", padding: "0.4rem 0.875rem", borderRadius: "3px", textDecoration: "none" }}>
@@ -595,7 +598,7 @@ export default function TrailPage() {
 function Stat({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
     <div>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(250,250,247,0.5)", margin: "0 0 0.15rem" }}>{label}</p>
+      <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(250,250,247,0.5)", margin: "0 0 0.15rem" }}>{label}</p>
       <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: color ?? "rgba(250,250,247,0.9)", fontWeight: color ? 700 : 400, margin: 0 }}>{value}</p>
     </div>
   )
@@ -612,7 +615,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#6B6560", background: "#F0EDE6", padding: "0.2rem 0.5rem", borderRadius: "2px" }}>{children}</span>
+    <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#6B6560", background: "#F0EDE6", padding: "0.2rem 0.5rem", borderRadius: "2px" }}>{children}</span>
   )
 }
 
@@ -631,7 +634,7 @@ const inputStyle: React.CSSProperties = {
 
 const labelStyle: React.CSSProperties = {
   fontFamily: "var(--font-body)",
-  fontSize: "0.7rem",
+  fontSize: "var(--text-label)",
   fontWeight: 600,
   letterSpacing: "0.1em",
   textTransform: "uppercase",

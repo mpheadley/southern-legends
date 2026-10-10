@@ -13,12 +13,13 @@ interface ClosingSectionProps {
   title: string;
   excerpt?: string;
   primary: Product;
-  secondary: Product;
+  /** Kept for callers; only `primary` renders now (design audit QW-05: one item, merch lives on /merch). */
+  secondary?: Product;
   tertiary?: Product;
   podcastUrls?: { spotify?: string; apple?: string; youtube?: string };
 }
 
-export default function ClosingSection({ shareUrl, title, excerpt, primary, secondary, tertiary, podcastUrls }: ClosingSectionProps) {
+export default function ClosingSection({ shareUrl, title, excerpt, primary, podcastUrls }: ClosingSectionProps) {
   return (
     <section className="profile-closing">
       {/* Author credit */}
@@ -52,7 +53,7 @@ export default function ClosingSection({ shareUrl, title, excerpt, primary, seco
             <a href="https://theaisle.app" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
               The Aisle
             </a>
-            , a curated bridal expo series launching in Anniston this October.
+            , a bridal show in Anniston.
           </p>
           <div className="mt-3">
             <Link
@@ -68,14 +69,14 @@ export default function ClosingSection({ shareUrl, title, excerpt, primary, seco
       {/* Divider */}
       <div className="profile-closing-divider" />
 
-      {/* Share + Merch + Support */}
+      {/* Share + one merch item + Support */}
       <div className="profile-closing-share">
         <ShareButtons url={shareUrl} title={title} description={excerpt ?? ""} podcastUrls={podcastUrls} />
 
-        <p className="text-xs text-ll-accent text-center mt-8 mb-2" style={{ letterSpacing: "0.05em" }}>
+        <p className="text-sm text-ll-accent text-center mt-8 mb-2" style={{ letterSpacing: "0.05em" }}>
           Purchases support Southern Legends.
         </p>
-        <div className="flex gap-8 justify-center items-start">
+        <div className="flex justify-center">
           <div className="flex flex-col items-center gap-3">
             <Link href={primary.url}>
               <Image
@@ -87,7 +88,7 @@ export default function ClosingSection({ shareUrl, title, excerpt, primary, seco
                 unoptimized
               />
             </Link>
-            <span className="text-xs text-white/60">{primary.name}</span>
+            <span className="text-sm text-white/60">{primary.name}</span>
             <Link
               href={primary.url}
               className="inline-block text-sm font-medium text-white border border-white/50 px-4 py-2 hover:bg-white hover:text-ll-dark transition-colors"
@@ -95,46 +96,6 @@ export default function ClosingSection({ shareUrl, title, excerpt, primary, seco
               Get the shirt →
             </Link>
           </div>
-          <div className="flex flex-col items-center gap-3">
-            <Link href={secondary.url}>
-              <Image
-                src={secondary.image}
-                alt={secondary.name}
-                width={140}
-                height={140}
-                className="rounded hover:opacity-90 transition-opacity"
-                unoptimized
-              />
-            </Link>
-            <span className="text-xs text-white/60">{secondary.name}</span>
-            <Link
-              href={secondary.url}
-              className="inline-block text-sm font-medium text-white border border-white/50 px-4 py-2 hover:bg-white hover:text-ll-dark transition-colors"
-            >
-              Get the shirt →
-            </Link>
-          </div>
-          {tertiary && (
-            <div className="flex flex-col items-center gap-3">
-              <Link href={tertiary.url}>
-                <Image
-                  src={tertiary.image}
-                  alt={tertiary.name}
-                  width={140}
-                  height={140}
-                  className="rounded hover:opacity-90 transition-opacity"
-                  unoptimized
-                />
-              </Link>
-              <span className="text-xs text-white/60">{tertiary.name}</span>
-              <Link
-                href={tertiary.url}
-                className="inline-block text-sm font-medium text-white border border-white/50 px-4 py-2 hover:bg-white hover:text-ll-dark transition-colors"
-              >
-                Get the shirt →
-              </Link>
-            </div>
-          )}
         </div>
 
         <a

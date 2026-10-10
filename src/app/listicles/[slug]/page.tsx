@@ -62,25 +62,25 @@ function EventCard({ event, index }: { event: GuideEvent; index: number }) {
         </div>
       )}
       <div style={{ padding: "1.25rem 1.5rem" }}>
-        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.35rem" }}>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.35rem" }}>
           {event.category ?? "Event"}
         </p>
-        <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.2rem", fontWeight: 700, color: "#1a1208", marginBottom: "0.75rem", lineHeight: 1.2 }}>
+        <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.2rem", fontWeight: 700, color: "var(--color-ll-dark)", marginBottom: "0.75rem", lineHeight: 1.2 }}>
           {event.name}
         </h3>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem", marginBottom: "0.9rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
-            <Calendar size={13} color="#9a6c2f" />
-            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "#4a3728" }}>{event.date}</span>
+            <Calendar size={13} color="var(--color-ll-accent-dark)" />
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "var(--color-ll-text)" }}>{event.date}</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
-            <MapPin size={13} color="#9a6c2f" />
-            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "#4a3728" }}>{event.location}</span>
+            <MapPin size={13} color="var(--color-ll-accent-dark)" />
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "var(--color-ll-text)" }}>{event.location}</span>
           </div>
           {event.distances && (
             <div style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
-              <Route size={13} color="#9a6c2f" />
-              <span style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "#4a3728" }}>{event.distances}</span>
+              <Route size={13} color="var(--color-ll-accent-dark)" />
+              <span style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "var(--color-ll-text)" }}>{event.distances}</span>
             </div>
           )}
         </div>
@@ -89,14 +89,14 @@ function EventCard({ event, index }: { event: GuideEvent; index: number }) {
         </p>
         {event.vendor && (
           <div style={{ background: "#f7f3ee", borderRadius: "6px", padding: "0.5rem 0.75rem", display: "flex", alignItems: "flex-start", gap: "0.4rem", marginTop: "0.5rem" }}>
-            <Star size={12} color="#9a6c2f" style={{ marginTop: "2px", flexShrink: 0 }} />
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "#6b4a2a", lineHeight: 1.5, margin: 0 }}>
+            <Star size={12} color="var(--color-ll-accent-dark)" style={{ marginTop: "2px", flexShrink: 0 }} />
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#6b4a2a", lineHeight: 1.5, margin: 0 }}>
               <strong>Vendor note:</strong> {event.vendor}
             </p>
           </div>
         )}
         {event.web && (
-          <a href={event.web} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", marginTop: "0.85rem", fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#9a6c2f", textDecoration: "none" }}>
+          <a href={event.web} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", marginTop: "0.85rem", fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "var(--color-ll-accent-dark)", textDecoration: "none" }}>
             <ExternalLink size={11} /> Visit website
           </a>
         )}
@@ -111,7 +111,7 @@ function EventList({ events }: { events: GuideEvent[] }) {
     <div style={{ marginTop: "2rem" }}>
       {sections.map((section) => (
         <div key={section} style={{ marginBottom: "3rem" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "1rem", borderBottom: "1px solid #e0d8cc", paddingBottom: "0.5rem" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "1rem", borderBottom: "1px solid #e0d8cc", paddingBottom: "0.5rem" }}>
             {section}
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
@@ -180,7 +180,7 @@ export default async function ListiclePage({
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(26,18,8,.1) 0%, rgba(26,18,8,.45) 45%, rgba(26,18,8,.88) 100%)" }} />
           <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "0 1.5rem 2.5rem" }}>
             <div style={{ maxWidth: "48rem", margin: "0 auto" }}>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#F0EDE6", opacity: 0.8, marginBottom: "0.6rem" }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#F0EDE6", opacity: 0.8, marginBottom: "0.6rem" }}>
                 Southern Legends · Local Guide
               </p>
               <h1 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 400, lineHeight: 1.05, color: "#fff", marginBottom: l.intro ? "1.1rem" : "0" }}>
@@ -195,9 +195,9 @@ export default async function ListiclePage({
           </div>
         </div>
       ) : (
-        <div style={{ background: "#1a1208", padding: "5rem 1.5rem 2.5rem" }}>
+        <div style={{ background: "var(--color-ll-dark)", padding: "5rem 1.5rem 2.5rem" }}>
           <div style={{ maxWidth: "48rem", margin: "0 auto" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.6rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.6rem" }}>
               Southern Legends · Local Guide
             </p>
             <h1 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 400, lineHeight: 1.05, color: "#f0ede6", marginBottom: l.intro ? "1.1rem" : "0" }}>
@@ -213,7 +213,7 @@ export default async function ListiclePage({
       )}
 
       <div className="mx-auto max-w-3xl px-6 pb-16 pt-8">
-        <Link href="/listicles" style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", textDecoration: "none" }}>
+        <Link href="/listicles" style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", textDecoration: "none" }}>
           ← Local Guides
         </Link>
 
@@ -222,13 +222,13 @@ export default async function ListiclePage({
           <div style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
             <Image src="/images/about/headshot-hedcut-matt-headley.webp" alt="Matt Headley" width={36} height={36} style={{ borderRadius: "50%", objectFit: "cover" }} />
             <div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", fontWeight: 600, color: "#1a1208", lineHeight: 1.2 }}>Matt Headley</p>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", color: "#9a6c2f", lineHeight: 1.2 }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", fontWeight: 600, color: "var(--color-ll-dark)", lineHeight: 1.2 }}>Matt Headley</p>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "var(--color-ll-accent-dark)", lineHeight: 1.2 }}>
                 Southern Legends{l.date && !l.eventsFeed ? ` · ${new Date(l.date).toLocaleDateString("en-US", { month: "long", year: "numeric" })}` : ""}
               </p>
             </div>
           </div>
-          <a href="/support" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "#1a1208", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.75rem", fontWeight: 600, padding: "0.45rem 0.9rem", borderRadius: "6px", textDecoration: "none" }}>
+          <a href="/support" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "var(--color-ll-dark)", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", fontWeight: 600, padding: "0.45rem 0.9rem", borderRadius: "6px", textDecoration: "none" }}>
             Support this work →
           </a>
         </div>
@@ -263,11 +263,11 @@ export default async function ListiclePage({
           </article>
         )}
 
-        {/* The Aisle Expo house ad — wedding-category listicles only */}
+        {/* The Aisle bridal show house ad — wedding-category listicles only */}
         {showAisleAd && (
-          <div style={{ marginTop: "2rem", background: "#1a1208", borderRadius: "12px", padding: "1.5rem 1.75rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "center" }}>
+          <div style={{ marginTop: "2rem", background: "var(--color-ll-dark)", borderRadius: "12px", padding: "1.5rem 1.75rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "center" }}>
             <div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.35rem" }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.35rem" }}>
                 The Aisle · Bridal Show · Oct 18, 2026
               </p>
               <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.15rem", color: "#f0ede6", lineHeight: 1.35, marginBottom: "0.4rem" }}>
@@ -277,30 +277,30 @@ export default async function ListiclePage({
                 Free to register · $25 at the door · VIP $75. Local vendors. Northeast Alabama's bridal show.
               </p>
             </div>
-            <a href="https://theaislebridalshows.com" target="_blank" rel="noopener" style={{ display: "inline-block", background: "#9a6c2f", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.65rem 1.2rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            <a href="https://theaislebridalshows.com" target="_blank" rel="noopener" style={{ display: "inline-block", background: "var(--color-ll-accent-dark)", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.65rem 1.2rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
               Get tickets →
             </a>
           </div>
         )}
 
         {isEvent && (
-          <div style={{ background: "#1a1208", borderRadius: "10px", padding: "1.5rem 1.75rem", marginTop: "2.5rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "center" }}>
+          <div style={{ background: "var(--color-ll-dark)", borderRadius: "10px", padding: "1.5rem 1.75rem", marginTop: "2.5rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "center" }}>
             <div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.35rem" }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.35rem" }}>
                 Sponsor This Guide
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#f0ede6", lineHeight: 1.55 }}>
                 Reach vendors and attendees planning for NE Alabama events. $150/mo sponsor spotlight.
               </p>
             </div>
-            <a href="mailto:matt@gatherstudio.app?subject=Sponsor%20Inquiry" style={{ display: "inline-block", background: "#9a6c2f", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.6rem 1.1rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            <a href="mailto:matt@gatherstudio.app?subject=Sponsor%20Inquiry" style={{ display: "inline-block", background: "var(--color-ll-accent-dark)", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.6rem 1.1rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
               Get in touch
             </a>
           </div>
         )}
 
-        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "#6b5040", marginTop: "2rem", fontStyle: "italic" }}>
-          A living list, honestly kept. Know an event we missed? <a href="mailto:matt@gatherstudio.app" style={{ color: "#9a6c2f" }}>Tell us.</a>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "var(--color-ll-text)", marginTop: "2rem", fontStyle: "italic" }}>
+          A living list, honestly kept. Know an event we missed? <a href="mailto:matt@gatherstudio.app" style={{ color: "var(--color-ll-accent-dark)" }}>Tell us.</a>
         </p>
 
         {/* Share */}
@@ -310,8 +310,8 @@ export default async function ListiclePage({
 
         {/* Merch strip */}
         {cityMerch.length > 0 && (
-          <div style={{ marginTop: "2.5rem", background: "#1a1208", borderRadius: "12px", padding: "1.5rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "1rem" }}>
+          <div style={{ marginTop: "2.5rem", background: "var(--color-ll-dark)", borderRadius: "12px", padding: "1.5rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "1rem" }}>
               {isOutdoors ? "Shop CLT & Trail Gear" : "From the Southern Legends Shop"}
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "0.85rem" }}>
@@ -322,17 +322,17 @@ export default async function ListiclePage({
                       {item.photo && <Image src={item.photo} alt={item.name} fill style={{ objectFit: "cover", opacity: 0.9 }} sizes="200px" />}
                     </div>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#f0ede6", marginTop: "0.4rem" }}>{item.name}</p>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#9a6c2f", marginTop: "0.1rem" }}>{item.price}</p>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "var(--color-ll-accent-dark)", marginTop: "0.1rem" }}>{item.price}</p>
                   </a>
                 ) : (
                   <div key={item.id} style={{ opacity: 0.5 }}>
                     <div style={{ position: "relative", width: "100%", paddingBottom: "100%", borderRadius: "8px", overflow: "hidden", background: "#2a1f0e" }}>
                       {item.photo && <Image src={item.photo} alt={item.name} fill style={{ objectFit: "cover" }} sizes="200px" />}
                       <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(26,18,8,0.5)" }}>
-                        <span style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#f0ede6", background: "rgba(26,18,8,0.7)", padding: "0.25rem 0.5rem", borderRadius: "4px" }}>Coming soon</span>
+                        <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#f0ede6", background: "rgba(26,18,8,0.7)", padding: "0.25rem 0.5rem", borderRadius: "4px" }}>Coming soon</span>
                       </div>
                     </div>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#9a6c2f", marginTop: "0.4rem" }}>{item.name}</p>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-ll-accent-dark)", marginTop: "0.4rem" }}>{item.name}</p>
                   </div>
                 )
               ))}
@@ -342,12 +342,12 @@ export default async function ListiclePage({
 
         {others.length > 0 && (
           <div style={{ marginTop: "3rem", borderTop: "1px solid rgba(154,108,47,0.18)", paddingTop: "2rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "1rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "1rem" }}>
               More local guides
             </p>
             <div style={{ display: "grid", gap: "0.5rem" }}>
               {others.map((o) => (
-                <Link key={o.slug} href={`/listicles/${o.slug}`} style={{ fontFamily: "var(--font-heading)", fontSize: "1.05rem", color: "#1a1208", textDecoration: "none" }}>
+                <Link key={o.slug} href={`/listicles/${o.slug}`} style={{ fontFamily: "var(--font-heading)", fontSize: "1.05rem", color: "var(--color-ll-dark)", textDecoration: "none" }}>
                   {o.title}
                 </Link>
               ))}

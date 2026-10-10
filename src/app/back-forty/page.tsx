@@ -22,7 +22,7 @@ const columns = [
 export default function BackFortyPage() {
   return (
     <main style={{ backgroundColor: "var(--color-ll-warm)", minHeight: "100vh" }}>
-      <div style={{ maxWidth: "42rem", margin: "0 auto", padding: "4rem 1.5rem 6rem" }}>
+      <div style={{ maxWidth: "42rem", margin: "0 auto", padding: "7.5rem 1.5rem 6rem" }}>
         <p
           style={{
             fontSize: "0.7rem",

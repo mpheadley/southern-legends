@@ -16,7 +16,7 @@ export default async function AisleBand({ label = adLabel("aisle") }: { ad?: Ven
   const look = AISLE_SHOW_LOOK[show.slug] ?? {};
   return (
     <div className="px-6 py-8">
-      <p className="max-w-3xl mx-auto text-[0.62rem] font-bold tracking-[0.16em] uppercase" style={{ color: "#8a8170", fontFamily: "var(--font-body)", marginBottom: 8 }}>
+      <p className="max-w-3xl mx-auto text-[length:var(--text-label)] font-bold tracking-[0.16em] uppercase" style={{ color: "#8a8170", fontFamily: "var(--font-body)", marginBottom: 8 }}>
         {label}
       </p>
       <style>{`.ab-photo{object-position:30% 30%}@media(min-width:760px){.ab-photo{object-position:60% 30%}}.ab,.ab *{text-decoration:none!important}.ab{display:grid;grid-template-columns:1fr;gap:18px;align-items:end}.ab-ask{justify-self:start;display:flex;flex-direction:row;align-items:center;gap:14px}.ab-qr-svg svg{width:100%;height:100%;display:block}.ab-qr-svg{width:84px!important;height:84px!important}@media(min-width:760px){.ab{grid-template-columns:1fr auto}.ab-ask{justify-self:end;flex-direction:column}.ab-qr-svg{width:104px!important;height:104px!important}}`}</style>
@@ -42,7 +42,7 @@ export default async function AisleBand({ label = adLabel("aisle") }: { ad?: Ven
               {look.venueLine ?? `${show.venue} · ${show.city}, ${show.state}`}
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: 18, marginTop: 16 }}>
-              <img src="/ad-assets/aisle-arch-cream.png" alt="The Aisle" style={{ height: ARCH_H, width: "auto" }} />
+              <img src="/ad-assets/aisle-arch-cream-256.webp" alt="The Aisle" style={{ height: ARCH_H, width: "auto" }} />
               {look.partnerLogo ? <img src={look.partnerLogo} alt={look.partnerAlt ?? ""} style={{ height: ARCH_H / 2, width: "auto", opacity: 0.95 }} /> : null}
             </div>
           </div>
@@ -50,7 +50,7 @@ export default async function AisleBand({ label = adLabel("aisle") }: { ad?: Ven
             {/* laptop: point your phone at it · phone: screenshot it or show your partner */}
             <div className="ab-qr" style={{ background: "#fff", padding: 8, borderRadius: 8, textAlign: "center" }}>
               <AisleQR size={104} />
-              <span style={{ display: "block", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: ".06em", textTransform: "uppercase", color: "#1e2a4a", marginTop: 4 }}>Scan with your phone</span>
+              <span style={{ display: "block", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "var(--text-label)", letterSpacing: ".06em", textTransform: "uppercase", color: "#1e2a4a", marginTop: 4 }}>Scan with your phone</span>
             </div>
             <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
               <span style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.85rem 1.4rem", borderRadius: 6, fontWeight: 800, fontSize: "0.98rem", whiteSpace: "nowrap", fontFamily: "var(--font-body)" }}>

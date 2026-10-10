@@ -149,7 +149,7 @@ export default function OpinionsBook() {
           </p>
           <h1
             className="text-4xl md:text-5xl font-black leading-tight mb-2"
-            style={{ color: "var(--color-ll-dark)", fontFamily: "Georgia, serif" }}
+            style={{ color: "var(--color-ll-dark)", fontFamily: "var(--font-heading)" }}
           >
             Everyone Has Opinions
             <br />
@@ -189,7 +189,7 @@ export default function OpinionsBook() {
                   background: "#e8e2d8",
                   color: "#a09080",
                   fontSize: 14,
-                  fontFamily: "Georgia, serif",
+                  fontFamily: "var(--font-heading)",
                   fontStyle: "italic",
                   textAlign: "center",
                   padding: 24,
@@ -214,7 +214,7 @@ export default function OpinionsBook() {
                   key={i}
                   className="leading-relaxed"
                   style={{
-                    fontFamily: "Georgia, serif",
+                    fontFamily: "var(--font-heading)",
                     fontSize: line === line.toUpperCase() && line.length > 3 ? 22 : 17,
                     color: "var(--color-ll-dark)",
                     fontWeight: line === line.toUpperCase() && line.length > 3 ? 800 : 400,

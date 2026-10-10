@@ -24,7 +24,7 @@ export default async function AisleStrip(_: { ad?: VentureCTA; page?: string }) 
       <style>{`a:has(>.as),.as,.as *{text-decoration:none!important}.as{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.as-logos{display:flex}`}</style>
       <span className="as relative" style={{ padding: "14px 18px" }}>
         <span className="as-logos" style={{ alignItems: "center", gap: 12 }}>
-          <img src="/ad-assets/aisle-arch-cream.png" alt="The Aisle" style={{ height: ARCH_H, width: "auto" }} />
+          <img src="/ad-assets/aisle-arch-cream-256.webp" alt="The Aisle" style={{ height: ARCH_H, width: "auto" }} />
           {look.partnerLogo ? <img src={look.partnerLogo} alt={look.partnerAlt ?? ""} style={{ height: ARCH_H / 2, width: "auto" }} /> : null}
         </span>
         <span style={{ flex: 1, minWidth: 200 }}>

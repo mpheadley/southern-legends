@@ -18,7 +18,7 @@ export default async function MarginAisle() {
         <aside className="margin-aisle" aria-label="The Aisle">
          <Dismissible>
           <style>{`@keyframes aisleDrift{from{transform:scale(1)}to{transform:scale(1.06)}}.margin-aisle .aisle-photo{animation:aisleDrift 12s ease-in-out infinite alternate}.margin-aisle .aisle-cta{transition:transform .2s ease,filter .2s ease}.margin-aisle .aisle-cta:hover{transform:translateY(-1px);filter:brightness(1.06)}@media (prefers-reduced-motion:reduce){.margin-aisle .aisle-photo{animation:none}.margin-aisle .aisle-cta{transition:none}}.margin-aisle{display:none}@media(min-width:1440px){.margin-aisle{display:block;position:fixed;right:20px;top:120px;width:300px;z-index:30}}`}</style>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: "0 0 6px" }}>{adLabel("aisle")}</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: "0 0 6px" }}>{adLabel("aisle")}</p>
           <AisleGoLink spot="margin" className="block no-underline rounded-xl overflow-hidden relative" style={{ width: 300, height: 250, color: "#fff", background: "#1e2a4a", boxShadow: "0 8px 24px rgba(0,0,0,.2)", borderTop: "4px solid #C9A227" }}>
             <ImpressionOnView placement="margin" showSlug={show.slug} />
             <img className="aisle-photo" src={show.photo ?? "/ad-assets/aisle-couple.webp"} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "62% 30%" }} />
@@ -29,15 +29,15 @@ export default async function MarginAisle() {
               </span>
             </span>
             <span style={{ position: "absolute", left: 20, right: 20, bottom: 14, display: "block" }}>
-              <span style={{ display: "block", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: ".12em", textTransform: "uppercase", color: "#C9A227" }}>
+              <span style={{ display: "block", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "var(--text-label)", letterSpacing: ".12em", textTransform: "uppercase", color: "#C9A227" }}>
                 Bridal Show · {showDayLabel(show.date)}
               </span>
               <span style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "0.8rem", margin: "4px 0 10px" }}>
                 {show.venue}, {show.city}
               </span>
               <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-                <span className="aisle-cta" style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.45rem 0.7rem", borderRadius: 6, fontWeight: 800, fontSize: "0.78rem", fontFamily: "var(--font-body)" }}>Register free →</span>
-                <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.68rem", color: "#C9A227" }}>theaislebridalshows.com</span>
+                <span className="aisle-cta" style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.45rem 0.7rem", borderRadius: 6, fontWeight: 800, fontSize: "var(--text-meta)", fontFamily: "var(--font-body)" }}>Register free →</span>
+                <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "var(--text-label)", color: "#C9A227" }}>theaislebridalshows.com</span>
               </span>
             </span>
           </AisleGoLink>

@@ -57,62 +57,109 @@ export default function PrivacyPage() {
       {/* Content */}
       <section className="bg-ll-light">
         <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 prose-profile">
+          {/* Rewritten 2026-10-10 (design audit C-13) from what the code actually does:
+              api/subscribe, api/city-newsletter (Resend), api/comments (Supabase),
+              api/members + lib/subscribers (sl_member cookie), Stripe checkout routes,
+              TurnstileWidget, CookieBanner + Analytics (GA4 after consent), api/ad-event. */}
           <p>
-            Southern Legends is a small editorial site. We don&apos;t sell
-            anything, run ads, or collect personal information beyond what&apos;s
-            described below.
+            Southern Legends is a small editorial site run by one person. I
+            don&apos;t sell your information. Here is what the site collects,
+            and why.
           </p>
 
-          <h2>What We Collect</h2>
+          <h2>Analytics</h2>
 
           <p>
-            If you visit the site without accepting cookies, we collect nothing.
-            Full stop.
-          </p>
-
-          <p>
-            If you accept cookies, we use{" "}
-            <strong>Google Analytics 4 (GA4)</strong> to measure traffic — things
-            like which stories get read, how people find the site, and roughly
-            where visitors are coming from. GA4 uses cookies to track sessions
-            and page views. No names, no email addresses, no account data.
-          </p>
-
-          <p>
-            We don&apos;t have a newsletter signup, comment system, or user
-            accounts, so there&apos;s no way to submit personal information
-            through the site itself.
-          </p>
-
-          <h2>Cookies</h2>
-
-          <p>
-            We use one first-party cookie to remember your consent choice
-            (<code>cookie_consent</code>). If you accept analytics, Google sets
-            additional cookies to distinguish sessions and measure traffic. You
-            can decline at any time — the site works exactly the same either way.
+            If you visit without accepting the cookie banner, no analytics run.
+            If you accept, the site loads <strong>Google Analytics 4 (GA4)</strong>{" "}
+            to measure traffic: which stories get read, how people find the
+            site, and roughly where visitors are. GA4 sets its own cookies to
+            tell sessions apart. It does not get your name or email from this
+            site.
           </p>
 
           <p>
-            If you want to clear your choice, clearing your browser&apos;s
-            cookies for this site will reset the banner on your next visit.
+            The site also counts views and clicks on its own small promos (for
+            example, The Aisle bridal show). That count records the page and
+            the promo, plus a random session ID. No name, no email, no cookie.
           </p>
 
-          <h2>How It&apos;s Used</h2>
+          <h2>Email newsletter</h2>
 
           <p>
-            Analytics data helps me understand which stories are resonating and
-            whether the site is actually reaching people in Northeast Alabama.
-            That&apos;s it. The data isn&apos;t shared with anyone, sold, or used
-            for advertising.
+            When you subscribe, your email address (and first name, if you give
+            it) goes to <strong>Resend</strong>, the service that sends the
+            newsletter. Every email has an unsubscribe link. Subscribe forms are
+            protected by <strong>Cloudflare Turnstile</strong>, a spam check that
+            may look at your browser and IP address to tell people from bots.
           </p>
 
-          <h2>Third Parties</h2>
+          <h2>Comments and reviews</h2>
 
           <p>
-            The only third-party service with any access to site data is Google
-            Analytics, and only when you&apos;ve consented. Google&apos;s own
-            privacy policy governs how they handle that data.
+            If you leave a comment on a story, the site stores your name, your
+            message, and your email if you choose to give it (used only to tell
+            you about replies, if you ask for that). Trail reviews store the
+            name and review you submit. Comments are held for approval before
+            they appear. Your email is never shown publicly.
+          </p>
+          {/* [EDIT: confirm] — how long comments/reviews are kept and whether Supabase logs IP addresses. */}
+
+          <h2>Payments and members</h2>
+
+          <p>
+            Purchases, memberships, and support payments are handled by{" "}
+            <strong>Stripe</strong>. Card details go straight to Stripe; this
+            site never sees or stores them. For memberships, the site keeps
+            your email, your Stripe customer and subscription IDs, and whether
+            the membership is active.
+          </p>
+
+          <h2>Cookies and browser storage</h2>
+
+          <ul>
+            <li>
+              <code>cookie_consent</code> (stored in your browser) remembers
+              whether you accepted analytics.
+            </li>
+            <li>
+              <code>sl_member</code> is a sign-in cookie, set only if you
+              unlock the members area. It lasts 30 days.
+            </li>
+            <li>
+              A few small browser-storage flags remember whether you&apos;ve
+              already seen a popup, so it doesn&apos;t keep showing.
+            </li>
+            <li>
+              Google sets its own analytics cookies, only after you accept.
+            </li>
+          </ul>
+
+          <p>
+            Some stories embed videos or music from YouTube, Spotify, or
+            Facebook. Those players come from those companies and follow their
+            own privacy policies.
+          </p>
+
+          <p>
+            To reset your cookie choice, clear this site&apos;s cookies and
+            storage in your browser. The banner will come back on your next
+            visit.
+          </p>
+
+          <h2>Who sees it</h2>
+
+          <p>
+            I use this information to run the site, send the newsletter, and
+            see which stories reach people in Northeast Alabama. It isn&apos;t
+            sold. The services named above (Google, Resend, Cloudflare,
+            Stripe, and the database host for comments) handle it on the
+            site&apos;s behalf under their own privacy policies.
+          </p>
+
+          <p>
+            Want your email, comment, or review removed? Email me and I&apos;ll
+            take care of it.
           </p>
 
           <h2>Contact</h2>
@@ -125,7 +172,7 @@ export default function PrivacyPage() {
           <hr className="my-10 border-ll-dark/10" />
 
           <p className="text-sm text-ll-text-light">
-            Last updated March 2026. Southern Legends is built and maintained by{" "}
+            Last updated October 2026. Southern Legends is built and maintained by{" "}
             <a
               href="https://gatherstudio.app"
               target="_blank"

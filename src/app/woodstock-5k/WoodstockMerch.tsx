@@ -114,13 +114,13 @@ function ShirtCard({ item }: { item: Item }) {
       onMouseLeave={() => setHover(false)}
     >
       {item.realPhoto ? (
-        <div className="relative w-[220px] h-[253px]">
+        <div className="relative w-full max-w-[220px] aspect-[220/253]">
           <Image src={item.realPhoto} alt={item.name} fill className="object-contain" sizes="220px" />
         </div>
       ) : (
         <ShirtMockup src={item.src!} alt={item.name} shirtColor={hover ? item.shirtColor : undefined} size={220} />
       )}
-      <h3 className="mt-3 font-serif text-lg text-neutral-900">{item.name}</h3>
+      <h3 className="mt-3 [font-family:var(--font-heading)] text-lg text-neutral-900">{item.name}</h3>
       <p className="text-sm text-neutral-600">{item.tagline}</p>
       {item.price != null && <p className="mt-1 font-semibold text-neutral-900">${item.price}</p>}
     </div>
@@ -130,10 +130,10 @@ function ShirtCard({ item }: { item: Item }) {
 function FlatCard({ item }: { item: Item }) {
   return (
     <div className="rounded-2xl border border-black/10 bg-white p-4 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
-      <div className="relative w-[200px] h-[200px]">
+      <div className="relative w-full max-w-[200px] aspect-square">
         <Image src={item.src!} alt={item.name} fill className="object-contain" sizes="200px" />
       </div>
-      <h3 className="mt-3 font-serif text-lg text-neutral-900">{item.name}</h3>
+      <h3 className="mt-3 [font-family:var(--font-heading)] text-lg text-neutral-900">{item.name}</h3>
       <p className="text-sm text-neutral-600">{item.tagline}</p>
       {item.price != null && <p className="mt-1 font-semibold text-neutral-900">${item.price}</p>}
     </div>
@@ -151,7 +151,7 @@ function ComingCard({ item }: { item: Item }) {
       <span className="mt-3 inline-block rounded-full bg-[#CA8A04]/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#8a5a04]">
         Coming soon
       </span>
-      <h3 className="mt-3 font-serif text-lg text-neutral-900">{item.name}</h3>
+      <h3 className="mt-3 [font-family:var(--font-heading)] text-lg text-neutral-900">{item.name}</h3>
       <p className="text-sm text-neutral-600">{item.tagline}</p>
     </div>
   )

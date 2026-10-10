@@ -89,7 +89,7 @@ export default function HeroCarousel({ profiles }: HeroCarouselProps) {
               {heroImage ? (
                 <Image
                   src={heroImage}
-                  alt={heroAlt || name}
+                  alt={heroAlt || name || frontmatter.title}
                   fill
                   className="object-cover"
                   sizes="100vw"

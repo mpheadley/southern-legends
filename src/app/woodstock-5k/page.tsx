@@ -55,7 +55,7 @@ export default function WoodstockPage() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#CA8A04]">
               Anniston · Calhoun County · Aug 1, 2026
             </p>
-            <h1 className="mt-3 font-serif text-4xl md:text-5xl font-black leading-tight">
+            <h1 className="mt-3 [font-family:var(--font-heading)] text-4xl md:text-5xl font-black leading-tight">
               Woodstock 5K
             </h1>
             <p className="mt-2 text-lg text-[#9bb0a2]">{RACE.champ}</p>
@@ -84,7 +84,7 @@ export default function WoodstockPage() {
 
       {/* Race facts */}
       <section className="mx-auto max-w-4xl px-6 py-12">
-        <h2 className="font-serif text-2xl font-black text-neutral-900">Race day</h2>
+        <h2 className="[font-family:var(--font-heading)] text-2xl font-black text-neutral-900">Race day</h2>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {[
             ['When', `${RACE.date} · ${RACE.window}`],
@@ -111,7 +111,7 @@ export default function WoodstockPage() {
       {/* Merch */}
       <section id="merch" className="bg-[#f0ede8] py-14">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="font-serif text-3xl font-black text-neutral-900">Race-day merch</h2>
+          <h2 className="[font-family:var(--font-heading)] text-3xl font-black text-neutral-900">Race-day merch</h2>
           <p className="mt-2 max-w-prose text-neutral-700">
             Licensed through the Anniston Runners Club — a cut of every sale runs back to the
             club and the Arc of Calhoun & Cleburne Counties. Buying a shirt is another way to
@@ -128,7 +128,7 @@ export default function WoodstockPage() {
         <div className="rounded-2xl border border-black/10 bg-[#0f1c13] text-[#f0ede8] p-7 md:flex md:items-center md:justify-between md:gap-6">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#CA8A04]">While you're here</p>
-            <h2 className="mt-2 font-serif text-2xl font-black">Run the Chief Ladiga Trail</h2>
+            <h2 className="mt-2 [font-family:var(--font-heading)] text-2xl font-black">Run the Chief Ladiga Trail</h2>
             <p className="mt-2 max-w-prose text-[#cfe0d4]">
               33.5 paved miles from Anniston to the Georgia line — the spine of Calhoun County's
               outdoor economy. Trailheads, events, and gear.
@@ -147,7 +147,7 @@ export default function WoodstockPage() {
       <section id="support" className="bg-[#faf7f2] py-14">
         <div className="mx-auto max-w-4xl px-6 grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-black/10 bg-white p-7">
-            <h2 className="font-serif text-2xl font-black text-neutral-900">Support</h2>
+            <h2 className="[font-family:var(--font-heading)] text-2xl font-black text-neutral-900">Support</h2>
             <p className="mt-2 text-neutral-700">
               Southern Legends tells the stories of Northeast Alabama — free to read, reader-supported.
               Chip in and keep the stories coming.
@@ -157,7 +157,7 @@ export default function WoodstockPage() {
             </Link>
           </div>
           <div className="rounded-2xl border border-black/10 bg-white p-7">
-            <h2 className="font-serif text-2xl font-black text-neutral-900">Sign up & registry</h2>
+            <h2 className="[font-family:var(--font-heading)] text-2xl font-black text-neutral-900">Sign up & registry</h2>
             <p className="mt-2 text-neutral-700">
               Register for events and manage signups through Gather Registry.
             </p>
@@ -173,7 +173,7 @@ export default function WoodstockPage() {
 
       {/* Subscribe */}
       <section className="mx-auto max-w-2xl px-6 py-14 text-center">
-        <h2 className="font-serif text-2xl font-black text-neutral-900">
+        <h2 className="[font-family:var(--font-heading)] text-2xl font-black text-neutral-900">
           Get the next Anniston story
         </h2>
         <p className="mt-2 text-neutral-700">

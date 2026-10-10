@@ -54,7 +54,7 @@ export default function ShirtMockup({ src, alt, shirtColor, size = 320, classNam
   return (
     <div
       className={className}
-      style={{ position: 'relative', width: size, height: size, flexShrink: 0 }}
+      style={{ position: 'relative', width: size, maxWidth: '100%', aspectRatio: '1 / 1', height: 'auto', flexShrink: 0 }}
       aria-label={`${alt} shirt mockup`}
     >
       {/* Real photo blank shirt as background */}

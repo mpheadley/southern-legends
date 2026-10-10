@@ -282,7 +282,7 @@ export const MERCH: MerchItem[] = [
     tagline: 'Nutrition label parody · DTG on cream',
     sub: 'For the neurodivergent, the twice exceptional, the sensory-rich.',
     price: 35,
-    photo: '/print-files/NEUROSPICY-01-nutrition-label-CREAM.png',
+    photo: '/images/merch/neurospicy-01-nutrition-label-cream-800.webp',
     bg: '#f5f0e8',
     badge: 'Mental Health',
     badgeColor: '#6d28d9',

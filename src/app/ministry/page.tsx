@@ -61,7 +61,7 @@ export default function MinistryPage() {
       <section
         style={{
           background: "linear-gradient(135deg, #1a3a1a 0%, #2d1a0a 100%)",
-          padding: "5rem 1.5rem 3rem",
+          padding: "7.5rem 1.5rem 3rem",
           color: "#f0ede6",
         }}
       >

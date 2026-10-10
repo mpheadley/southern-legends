@@ -52,7 +52,7 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
         {/* Category tag — top left */}
         <span
           className="absolute top-3 left-3 category-tag z-10"
-          style={{ fontSize: "0.65rem" }}
+          style={{ fontSize: "var(--text-label)" }}
         >
           {category}
         </span>
@@ -71,7 +71,7 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
             fontFamily: "var(--font-heading)",
             fontStyle: "italic",
             fontWeight: 300,
-            fontSize: "0.75rem",
+            fontSize: "var(--text-meta)",
             color: "rgba(250,250,247,0.65)",
             lineHeight: 1.3,
           }}>

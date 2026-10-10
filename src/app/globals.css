@@ -2500,3 +2500,79 @@ html { overflow-x: hidden; }
 @media (max-width: 480px) {
   .faith-prose p { font-size: 1.0625rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   Design-audit fixes · 2026-10-10 (appended; see reports/sl-design-audit)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* QW-09 — type floor tokens: labels ≥14px, meta 13px */
+:root {
+  --text-label: 0.875rem;
+  --text-meta: 0.8125rem;
+}
+.category-tag { font-size: var(--text-label); }
+
+/* QW-02 / C-05 — clear the fixed header (~76px) on pages with no full-bleed hero */
+.page-top { padding-top: clamp(6.5rem, 10vh, 8rem); }
+
+/* QW-01 / C-01 — light reading surface for section hubs that were written for a
+   light page but sat on the dark body. Full-bleed without a wrapper element. */
+.page-light {
+  background-color: var(--color-ll-light);
+  color: var(--color-ll-text);
+  box-shadow: 0 0 0 100vmax var(--color-ll-light);
+  clip-path: inset(0 -100vmax);
+}
+
+/* QW-14 — visible keyboard focus everywhere */
+:is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-ll-accent);
+  outline-offset: 3px;
+}
+
+/* QW-03 — story hero photo credit: smaller, never over the title block */
+.ph-credit {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  z-index: 3;
+  margin: 0;
+  max-width: 60%;
+  text-align: right;
+  font-size: var(--text-meta);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 768px) {
+  .ph-credit {
+    top: 5rem;
+    bottom: auto;
+    max-width: 70%;
+  }
+}
+
+/* QW-04 / C-06 — mobile story hero grows to fit; h1 no longer clips under the nav */
+@media (max-width: 768px) {
+  .ph-hero.st-hero {
+    height: auto;
+    min-height: 65dvh;
+    padding-top: 5.5rem;
+  }
+  .ph-hero .st-hero-title,
+  .ph-hero .st-hero-title.profile-title-display,
+  .ph-hero h1.profile-title-display {
+    font-size: clamp(2rem, 9vw, 2.75rem) !important;
+  }
+}
+
+/* C-03 — map: dark styling for the OSM base layer only; keep Leaflet controls clear of the header/overlay */
+.sl-tiles-dark { filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.6); }
+.sl-map .leaflet-top { top: 5.25rem; }
+@media (max-width: 768px) {
+  .sl-map .leaflet-top { top: 16.5rem; }
+}
+
+/* QW-16 / C-07 — no horizontal scroll at 390 */
+.no-x-overflow { max-width: 100%; overflow-wrap: anywhere; }
+.no-x-overflow img, .no-x-overflow iframe, .no-x-overflow video { max-width: 100%; height: auto; }

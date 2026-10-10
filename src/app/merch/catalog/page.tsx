@@ -127,7 +127,7 @@ export default function MerchCatalogPage() {
   const comingSoon = MERCH.filter(m => m.comingSoon).length
 
   return (
-    <main style={{ background: '#0e0c0b', minHeight: '100vh', padding: '48px 32px 80px', maxWidth: 1400, margin: '0 auto' }}>
+    <main style={{ background: '#0e0c0b', minHeight: '100vh', padding: '120px 32px 80px', maxWidth: 1400, margin: '0 auto' }}>
 
       <div style={{ marginBottom: 40, borderBottom: '1px solid rgba(202,138,4,0.2)', paddingBottom: 24 }}>
         <p style={{ fontSize: 11, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(202,138,4,0.6)', marginBottom: 8 }}>Southern Legends</p>

@@ -112,22 +112,22 @@ const BIZ_COLORS: Record<string, string> = {
 
 const LABEL: React.CSSProperties = {
   fontFamily: "var(--font-body)",
-  fontSize: "0.7rem",
+  fontSize: "var(--text-label)",
   fontWeight: 700,
   letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "#9a6c2f",
+  color: "var(--color-ll-accent-dark)",
 }
 
 const HEADING: React.CSSProperties = {
   fontFamily: "var(--font-heading)",
   fontWeight: 400,
-  color: "#1a1208",
+  color: "var(--color-ll-dark)",
 }
 
 const BODY: React.CSSProperties = {
   fontFamily: "var(--font-body)",
-  color: "#6b5040",
+  color: "var(--color-ll-text)",
 }
 
 export default async function CityPage({ params }: Props) {
@@ -150,10 +150,27 @@ export default async function CityPage({ params }: Props) {
     const cat = b.category || "Other"
     categoryCounts[cat] = (categoryCounts[cat] || 0) + 1
   }
-  const topCategories = Object.entries(categoryCounts)
+  // Human labels for raw category keys (audit C-16). "other" is dropped; unknown keys are title-cased.
+  const CATEGORY_LABELS: Record<string, string | null> = {
+    other: null,
+    "food truck": "Food trucks",
+    "hair salon wedding": "Hair & wedding",
+    "wedding photographer": "Wedding photographers",
+  }
+  const labelFor = (cat: string): string | null => {
+    const key = cat.trim().toLowerCase()
+    if (key in CATEGORY_LABELS) return CATEGORY_LABELS[key]
+    return key.replace(/\b\w/g, (c) => c.toUpperCase())
+  }
+  const labelCounts: Record<string, number> = {}
+  for (const [cat, n] of Object.entries(categoryCounts)) {
+    const label = labelFor(cat)
+    if (label) labelCounts[label] = (labelCounts[label] || 0) + n
+  }
+  const topCategories = Object.entries(labelCounts)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 4)
-    .map(([cat, n]) => `${n} ${cat.toLowerCase()}`)
+    .slice(0, 3)
+    .map(([label, n]) => `${n} ${label}`)
     .join(" · ")
   const news = getNewsForCity(cityName)
   const isAnniston = citySlug === "anniston"
@@ -192,19 +209,19 @@ export default async function CityPage({ params }: Props) {
         .flip-card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.4s cubic-bezier(0.4,0.2,0.2,1)}
         .flip-card:hover .flip-card-inner,.flip-card:focus-within .flip-card-inner{transform:rotateY(180deg)}
         .flip-card-front,.flip-card-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:8px;padding:1rem 1.125rem;overflow:hidden}
-        .flip-card-back{transform:rotateY(180deg);background:#1a1208!important;display:flex;flex-direction:column;justify-content:space-between}
+        .flip-card-back{transform:rotateY(180deg);background:var(--color-ll-dark)!important;display:flex;flex-direction:column;justify-content:space-between}
       `}</style>
 
       {/* HERO */}
       <div className="mx-auto max-w-4xl px-6 pt-28 pb-8 md:pt-36">
         <Link
           href="/places"
-          style={{ ...BODY, fontSize: "0.8rem", fontWeight: 600, color: "#9a6c2f", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.25rem", marginBottom: "1.5rem" }}
+          style={{ ...BODY, fontSize: "0.8rem", fontWeight: 600, color: "var(--color-ll-accent-dark)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.25rem", marginBottom: "1.5rem" }}
         >
           ← Places
         </Link>
         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.5rem" }}>
-          <MapPin size={14} style={{ color: "#9a6c2f" }} />
+          <MapPin size={14} style={{ color: "var(--color-ll-accent-dark)" }} />
           <p style={{ ...LABEL, marginBottom: 0 }}>Alabama</p>
         </div>
         <h1 style={{ ...HEADING, fontSize: "clamp(2.5rem, 7vw, 4rem)", marginBottom: "0.5rem" }}>
@@ -220,13 +237,13 @@ export default async function CityPage({ params }: Props) {
               href={cityMeta.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#9a6c2f", fontWeight: 600, textDecoration: "none" }}
+              style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-ll-accent-dark)", fontWeight: 600, textDecoration: "none" }}
             >
               {cityName} on Facebook ↗
             </a>
           )}
           {topCategories && (
-            <p style={{ ...BODY, fontSize: "0.75rem", margin: 0 }}>{topCategories}</p>
+            <p style={{ ...BODY, fontSize: "var(--text-label)", margin: 0 }}>{topCategories}</p>
           )}
         </div>
       </div>
@@ -256,7 +273,7 @@ export default async function CityPage({ params }: Props) {
       <div className="mx-auto max-w-4xl px-6 pb-8">
         <div style={{
           position: "relative", width: "100%", height: "320px", borderRadius: "8px", overflow: "hidden",
-          background: cityMeta?.heroImage ? undefined : "linear-gradient(135deg, #1a1208 0%, #2e1e0a 45%, #4a2e12 100%)",
+          background: cityMeta?.heroImage ? undefined : "linear-gradient(135deg, var(--color-ll-dark) 0%, #2e1e0a 45%, #4a2e12 100%)",
         }}>
           {cityMeta?.heroImage && (
             <Image
@@ -270,7 +287,7 @@ export default async function CityPage({ params }: Props) {
           )}
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,18,8,0.5) 0%, transparent 65%)" }} />
           {cityMeta?.heroCredit && (
-            <p style={{ position: "absolute", right: "0.75rem", bottom: "0.5rem", margin: 0, zIndex: 2, fontSize: "0.85rem", color: "rgba(255,255,255,0.9)", textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}>
+            <p style={{ position: "absolute", right: "0.75rem", top: "0.6rem", maxWidth: "70%", textAlign: "right", margin: 0, zIndex: 2, fontSize: "var(--text-meta)", color: "rgba(255,255,255,0.92)", textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}>
               {cityMeta.heroCredit}
             </p>
           )}
@@ -282,16 +299,16 @@ export default async function CityPage({ params }: Props) {
             </div>
           )}
           <div style={{ position: "absolute", bottom: "1rem", left: "1.25rem" }}>
-            <p style={{ ...LABEL, color: "#F0EDE6", fontSize: "0.65rem", margin: 0 }}>{cityName}, Alabama</p>
+            <p style={{ ...LABEL, color: "#F0EDE6", fontSize: "var(--text-label)", margin: 0 }}>{cityName}, Alabama</p>
           </div>
         </div>
       </div>
 
       {/* DISPATCH — local news */}
       {news.length > 0 && (
-        <section style={{ background: "#1a1208" }}>
+        <section style={{ background: "var(--color-ll-dark)" }}>
           <div className="mx-auto max-w-4xl px-6 py-8">
-            <p style={{ ...LABEL, color: "#9a6c2f", marginBottom: "1rem" }}>
+            <p style={{ ...LABEL, color: "var(--color-ll-accent-dark)", marginBottom: "1rem" }}>
               This week in {cityName}
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
@@ -320,7 +337,7 @@ export default async function CityPage({ params }: Props) {
       {featuredBizzes.length > 0 && (
         <div className="mx-auto max-w-4xl px-6 py-10">
           <p style={{ ...LABEL, marginBottom: "1.25rem" }}>Featured in {cityName}</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.875rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "0.875rem" }}>
             {featuredBizzes.map((biz, i) => {
               const Icon = getFeatIcon(biz.category)
               const isHero = i === 0
@@ -328,7 +345,7 @@ export default async function CityPage({ params }: Props) {
                 ? `/places/${citySlug}/${biz.storySlug}`
                 : biz.website ?? undefined
               const isExternal = !biz.storySlug && !!biz.website
-              const bg = biz.tag === "own" ? "#1a1208" : biz.tag === "aisle" ? "#231808" : "#1c1812"
+              const bg = biz.tag === "own" ? "var(--color-ll-dark)" : biz.tag === "aisle" ? "#231808" : "#1c1812"
               return (
                 <div
                   key={biz.name}
@@ -344,8 +361,8 @@ export default async function CityPage({ params }: Props) {
                   }}
                 >
                   <div>
-                    <Icon size={isHero ? 26 : 18} style={{ color: "#c4974a", marginBottom: "0.625rem" }} />
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(240,237,230,0.45)", marginBottom: "0.3rem" }}>
+                    <Icon size={isHero ? 26 : 18} style={{ color: "var(--color-ll-accent)", marginBottom: "0.625rem" }} />
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(240,237,230,0.45)", marginBottom: "0.3rem" }}>
                       {TAG_LABELS[biz.tag]} · {biz.category}
                     </p>
                     {href ? (
@@ -369,7 +386,7 @@ export default async function CityPage({ params }: Props) {
                     )}
                   </div>
                   {href && (
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.68rem", color: "#c4974a", fontWeight: 600, marginTop: "0.75rem" }}>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "var(--color-ll-accent)", fontWeight: 600, marginTop: "0.75rem" }}>
                       {biz.storySlug ? "Read more →" : "Visit ↗"}
                     </p>
                   )}
@@ -385,7 +402,7 @@ export default async function CityPage({ params }: Props) {
         <div className="mx-auto max-w-4xl px-6 py-10">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.5rem" }}>
             <p style={{ ...LABEL }}>Who&apos;s building in {cityName}</p>
-            <p style={{ ...BODY, fontSize: "0.75rem" }}>{cityBizzes.length} businesses</p>
+            <p style={{ ...BODY, fontSize: "var(--text-meta)" }}>{cityBizzes.length} businesses</p>
           </div>
           <p style={{ ...BODY, fontSize: "0.875rem", marginBottom: "1.5rem" }}>
             Every business in {cityName} in the directory. Tap or tab to a card for details.
@@ -405,7 +422,7 @@ export default async function CityPage({ params }: Props) {
                 <div key={biz.id} className="flip-card" tabIndex={0}>
                   <div className="flip-card-inner">
                     <div className="flip-card-front" style={{ background: frontBg }}>
-                      <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(240,237,230,0.55)", marginBottom: "0.5rem" }}>
+                      <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(240,237,230,0.55)", marginBottom: "0.5rem" }}>
                         {biz.category}
                       </p>
                       <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.9375rem", fontWeight: 400, color: "#F0EDE6", lineHeight: 1.25, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}>
@@ -417,19 +434,19 @@ export default async function CityPage({ params }: Props) {
                         <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.875rem", fontWeight: 400, color: "#F0EDE6", marginBottom: "0.2rem", lineHeight: 1.2 }}>
                           {biz.name}
                         </p>
-                        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", color: "rgba(240,237,230,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                        <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "rgba(240,237,230,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                           {biz.category}
                         </p>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
                         <Link
                           href={`/places/${citySlug}/${biz.slug}`}
-                          style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#c4974a", fontWeight: 600, textDecoration: "none" }}
+                          style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "var(--color-ll-accent)", fontWeight: 600, textDecoration: "none" }}
                         >
                           View listing →
                         </Link>
                         {biz.phone && (
-                          <a href={`tel:${biz.phone}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", color: "rgba(240,237,230,0.55)", textDecoration: "none" }}>
+                          <a href={`tel:${biz.phone}`} style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "rgba(240,237,230,0.55)", textDecoration: "none" }}>
                             {biz.phone}
                           </a>
                         )}
@@ -456,7 +473,7 @@ export default async function CityPage({ params }: Props) {
             <UpcomingEvents city={cityName} title={`Next up in ${cityName}`} limit={3} />
             <Link
               href={cityName === "Anniston" ? "/listicles/anniston-events" : "/listicles/calhoun-county-events"}
-              style={{ ...BODY, color: "#9a6c2f", textDecoration: "underline" }}
+              style={{ ...BODY, color: "var(--color-ll-accent-dark)", textDecoration: "underline" }}
             >
               {cityName === "Anniston" ? "All Anniston events →" : "All Calhoun County events →"}
             </Link>
@@ -478,7 +495,7 @@ export default async function CityPage({ params }: Props) {
                 >
                   <div style={{ background: "#fff", borderRadius: "6px", padding: "1.125rem 1.5rem", border: "1px solid rgba(154,108,47,0.12)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div>
-                      <p style={{ fontFamily: "var(--font-heading)", fontSize: "1rem", fontWeight: 400, color: "#1a1208", marginBottom: "0.2rem" }}>
+                      <p style={{ fontFamily: "var(--font-heading)", fontSize: "1rem", fontWeight: 400, color: "var(--color-ll-dark)", marginBottom: "0.2rem" }}>
                         {place.name}
                       </p>
                       <p style={{ ...BODY, fontSize: "0.8125rem" }}>
@@ -486,7 +503,7 @@ export default async function CityPage({ params }: Props) {
                         {place.story && " · SL Story"}
                       </p>
                     </div>
-                    <span style={{ color: "#9a6c2f", fontSize: "1.125rem" }}>→</span>
+                    <span style={{ color: "var(--color-ll-accent-dark)", fontSize: "1.125rem" }}>→</span>
                   </div>
                 </Link>
               ))}
@@ -496,9 +513,9 @@ export default async function CityPage({ params }: Props) {
       )}
 
       {/* CLAIM BAND */}
-      <div style={{ background: "#1a1208" }}>
+      <div style={{ background: "var(--color-ll-dark)" }}>
         <div className="mx-auto max-w-4xl px-6 py-10" style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start" }}>
-          <p style={{ ...LABEL, color: "#9a6c2f" }}>Gather Circle</p>
+          <p style={{ ...LABEL, color: "var(--color-ll-accent-dark)" }}>Gather Circle</p>
           <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.25rem, 3vw, 1.75rem)", color: "#F0EDE6", fontWeight: 400, maxWidth: "36rem" }}>
             Is your business listed in {cityName}?
           </p>
@@ -507,7 +524,7 @@ export default async function CityPage({ params }: Props) {
           </p>
           <a
             href={`https://gatherstudio.app/api/wiki-claim?city=${citySlug}`}
-            style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.875rem", background: "#9a6c2f", color: "#F0EDE6", padding: "0.625rem 1.5rem", borderRadius: "4px", textDecoration: "none" }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.875rem", background: "var(--color-ll-accent-dark)", color: "#F0EDE6", padding: "0.625rem 1.5rem", borderRadius: "4px", textDecoration: "none" }}
           >
             Add your listing →
           </a>
@@ -519,7 +536,7 @@ export default async function CityPage({ params }: Props) {
         <section style={{ borderTop: "1px solid rgba(154,108,47,0.12)" }}>
           <div className="mx-auto max-w-4xl px-6 py-10">
             <p style={{ ...LABEL, marginBottom: "1rem" }}>Faith in Anniston</p>
-            <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", fontWeight: 400, color: "#1a1208", marginBottom: "0.75rem" }}>
+            <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", fontWeight: 400, color: "var(--color-ll-dark)", marginBottom: "0.75rem" }}>
               A weekly column in the Anniston Star.
             </p>
             <p style={{ ...BODY, fontSize: "0.9375rem", lineHeight: 1.65, marginBottom: "1.25rem", maxWidth: "36rem" }}>
@@ -529,7 +546,7 @@ export default async function CityPage({ params }: Props) {
               href="https://www.annistonstar.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#9a6c2f", fontWeight: 600, textDecoration: "underline" }}
+              style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", fontWeight: 600, textDecoration: "underline" }}
             >
               Read the Anniston Star →
             </a>
@@ -541,10 +558,10 @@ export default async function CityPage({ params }: Props) {
       {/* Populated via SL_SPONSORS in places.ts — empty until first sponsor signs */}
 
       {/* BLUEPRINT PITCH */}
-      <div style={{ background: "#f5f0e8", borderTop: "1px solid rgba(154,108,47,0.1)" }}>
+      <div style={{ background: "var(--color-ll-light)", borderTop: "1px solid rgba(154,108,47,0.1)" }}>
         <div className="mx-auto max-w-4xl px-6 py-10">
           <p style={{ ...LABEL, marginBottom: "0.75rem" }}>Gather Studio</p>
-          <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.25rem, 3vw, 1.75rem)", color: "#1a1208", fontWeight: 400, marginBottom: "0.75rem", maxWidth: "32rem" }}>
+          <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.25rem, 3vw, 1.75rem)", color: "var(--color-ll-dark)", fontWeight: 400, marginBottom: "0.75rem", maxWidth: "32rem" }}>
             Does your {cityName} business have a clear message?
           </p>
           <p style={{ ...BODY, fontSize: "0.9375rem", lineHeight: 1.65, marginBottom: "1.25rem", maxWidth: "36rem" }}>
@@ -552,7 +569,7 @@ export default async function CityPage({ params }: Props) {
           </p>
           <a
             href="https://gatherstudio.app/book"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.875rem", background: "#1a1208", color: "#F0EDE6", padding: "0.625rem 1.5rem", borderRadius: "4px", textDecoration: "none" }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.875rem", background: "var(--color-ll-dark)", color: "#F0EDE6", padding: "0.625rem 1.5rem", borderRadius: "4px", textDecoration: "none" }}
           >
             Book a Blueprint Session
           </a>
@@ -577,7 +594,7 @@ export default async function CityPage({ params }: Props) {
                 <Link
                   key={slug}
                   href={`/places/${slug}`}
-                  style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#9a6c2f", fontWeight: 600, textDecoration: "none", padding: "0.3rem 0.75rem", border: "1px solid rgba(154,108,47,0.25)", borderRadius: "4px" }}
+                  style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", fontWeight: 600, textDecoration: "none", padding: "0.3rem 0.75rem", border: "1px solid rgba(154,108,47,0.25)", borderRadius: "4px" }}
                 >
                   {name}
                 </Link>
@@ -591,7 +608,7 @@ export default async function CityPage({ params }: Props) {
       <div className="mx-auto max-w-4xl px-6 py-6">
         <Link
           href={`/businesses/${dbCityToSlug(cityName)}`}
-          style={{ ...BODY, fontSize: "0.875rem", color: "#9a6c2f", fontWeight: 600, textDecoration: "underline" }}
+          style={{ ...BODY, fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", fontWeight: 600, textDecoration: "underline" }}
         >
           Browse all {cityName} businesses →
         </Link>
@@ -601,7 +618,7 @@ export default async function CityPage({ params }: Props) {
       <div className="mx-auto max-w-4xl px-6 py-8" style={{ textAlign: "center" }}>
         <Link
           href="/places/nominate"
-          style={{ ...BODY, fontSize: "0.875rem", color: "#9a6c2f", fontWeight: 600, textDecoration: "underline" }}
+          style={{ ...BODY, fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", fontWeight: 600, textDecoration: "underline" }}
         >
           Know a business in {cityName} that belongs here? Nominate them →
         </Link>

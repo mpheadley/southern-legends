@@ -11,6 +11,7 @@ export default function SubscribeCTA({
   heading,
   subhead,
   id,
+  headingAs = "h2",
 }: {
   variant?: "section" | "inline";
   source?: string;
@@ -18,6 +19,8 @@ export default function SubscribeCTA({
   heading?: string;
   subhead?: string;
   id?: string;
+  /** Render the section heading as the page h1 (e.g. /subscribe). Default h2. */
+  headingAs?: "h1" | "h2";
 }) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -134,12 +137,17 @@ export default function SubscribeCTA({
   return (
     <section id={id} className="subscribe-cta text-white" style={{ background: "linear-gradient(to right, #1e3527, #5c3d02)" }}>
       <div className="max-w-xl mx-auto px-6 py-14 md:py-18 text-center">
-        <h2
-          className="text-2xl md:text-3xl font-bold mb-3"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          {heading ?? "Stories from Northeast Alabama — and from the person writing them."}
-        </h2>
+        {(() => {
+          const Heading = headingAs;
+          return (
+            <Heading
+              className="text-2xl md:text-3xl font-bold mb-3"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              {heading ?? "Stories from Northeast Alabama — and from the person writing them."}
+            </Heading>
+          );
+        })()}
         {subhead && <p className="text-base text-white/75 mb-6">{subhead}</p>}
 
         {status === "success" ? (

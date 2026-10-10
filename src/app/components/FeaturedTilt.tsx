@@ -209,13 +209,15 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
         ref={sectionRef}
         style={{ perspective: "1200px" }}
       >
-        <h1
+        <p
+          aria-hidden="true"
           style={{
             position: "absolute",
             top: "1.5rem",
             left: "50%",
             transform: "translateX(-50%)",
             zIndex: 10,
+            margin: 0,
             fontFamily: "var(--font-heading)",
             fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
             fontWeight: 400,
@@ -227,7 +229,7 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
           }}
         >
           Southern Legends
-        </h1>
+        </p>
 
         {/* Profile cards */}
         {cards.map((card, i) => (
@@ -243,7 +245,7 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
               {card.heroImage ? (
                 <Image
                   src={card.heroImage}
-                  alt={card.heroAlt || card.name}
+                  alt={card.heroAlt || card.name || card.title}
                   fill
                   sizes="(max-width: 639px) 50vw, 100vw"
                   priority={i === 0}

@@ -211,7 +211,7 @@
 
 - `/profiles/feed.xml` — profiles RSS
 - `/api/content-feed` — content API
-- `/api/youtube-stats` — YouTube view/like counts for VideoEmbed
+- `/api/youtube-stats` — YouTube view/like counts for VideoEmbed; fails soft (200 + null) when the key is missing or YouTube errors
 - `/podcast.xml` — podcast RSS (essays + profiles, audio + video)
 - `/subscribe` — email signup (Supabase)
 - `/api/newsletter/subscribe` — newsletter subscribe → Resend audience bc84e16a
@@ -271,4 +271,13 @@
 - /masthead — editorial statement, contributor grid (8 contributors), per-contributor record modal with webcam + teleprompter overlay
 - /api/masthead/speak — Deepgram TTS proxy (aura-asteria-en); "Listen" button on editorial statement
 - Camera device selector on masthead (DSLR-ready via HDMI capture card)
-- Links to ReelStudio /dialogue for full podcast dialogue mode
+- (2026-10-10) /dialogue links removed — the route does not exist in SL
+
+## 2026-10-10 — Design audit quick wins + bug fixes
+- See reports/sl-design-audit/after/applied.json (QW-01..24, C-01..20)
+- /map: OSM base tiles (CARTO now needs a key), h1, map stays under the header
+- /businesses ships again (content/businesses no longer in .vercelignore)
+- Local guides: missing images skipped, Anniston/Calhoun first, city jump pills
+- One subscribe component (SubscribeCTA; NewsletterCapture removed); SubscribeCTA `headingAs` prop
+- /pricing noindex + out of sitemap; privacy policy matches what the site collects
+- Type tokens --text-label (14px) / --text-meta (13px); .page-top / .page-light utilities; global :focus-visible

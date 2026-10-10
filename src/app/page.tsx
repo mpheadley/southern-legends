@@ -8,7 +8,7 @@ import HeroCarousel from "./components/HeroCarousel";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 import Image from "next/image";
-import NewsletterCapture from "./components/NewsletterCapture";
+import SubscribeCTA from "./components/SubscribeCTA";
 
 export default function HomePage() {
   const allProfiles = getAllProfiles();
@@ -67,6 +67,8 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
+
+      <h1 className="sr-only">Southern Legends — Stories from Northeast Alabama</h1>
 
       {/* ─── Featured Stories: 3D tilt on desktop, carousel on mobile ─── */}
       <div className="hidden sm:block">
@@ -159,7 +161,7 @@ export default function HomePage() {
               {/* Middle — text */}
               <Link href={`/essays/${featuredJournal.slug}`} className="flex-1 min-w-0 px-5 py-4 hover:opacity-80 transition-opacity">
                 <p
-                  className="text-xs uppercase tracking-widest mb-1"
+                  className="text-sm uppercase tracking-widest mb-1"
                   style={{ color: "rgba(250,220,150,0.9)", fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   From the Journal
@@ -189,7 +191,7 @@ export default function HomePage() {
         <section className="gradient-hero no-pseudo-topo" style={{ position: "relative" }}>
           <div aria-hidden="true" className="grid-topo" />
           <div className="mx-auto max-w-3xl px-6 py-8 md:py-10" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(250,220,150,0.8)", marginBottom: "0.75rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(250,220,150,0.8)", marginBottom: "0.75rem" }}>
               Support This Work
             </p>
             <a
@@ -201,7 +203,7 @@ export default function HomePage() {
                 border: "1px solid rgba(250,250,247,0.25)",
                 color: "#FAFAF7",
                 padding: "0.75rem 1.5rem",
-                fontSize: "0.7rem",
+                fontSize: "var(--text-label)",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
@@ -243,7 +245,7 @@ export default function HomePage() {
           <div>
             <p
               style={{
-                fontSize: "0.58rem",
+                fontSize: "var(--text-label)",
                 fontWeight: 700,
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
@@ -287,7 +289,7 @@ export default function HomePage() {
                 background: "#9A3412",
                 color: "#FAFAF7",
                 padding: "0.85rem 1.75rem",
-                fontSize: "0.7rem",
+                fontSize: "var(--text-label)",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
@@ -300,14 +302,14 @@ export default function HomePage() {
             </Link>
             <p
               style={{
-                fontSize: "0.72rem",
+                fontSize: "var(--text-label)",
                 color: "rgba(250,250,247,0.3)",
                 textAlign: "center",
                 fontFamily: "var(--font-body)",
                 margin: 0,
               }}
             >
-              Available Oct 18 at The Aisle Expo · select local spots
+              Available Oct 18 at The Aisle: Anniston Bridal Show · select local spots
             </p>
           </div>
         </div>
@@ -344,7 +346,7 @@ export default function HomePage() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.58rem",
+              fontSize: "var(--text-label)",
               fontWeight: 700,
               letterSpacing: "0.22em",
               textTransform: "uppercase",
@@ -385,7 +387,7 @@ export default function HomePage() {
               border: "1px solid rgba(250,250,247,0.3)",
               color: "#FAFAF7",
               padding: "0.85rem 1.75rem",
-              fontSize: "0.7rem",
+              fontSize: "var(--text-label)",
               fontWeight: 700,
               letterSpacing: "0.14em",
               textTransform: "uppercase",
@@ -411,10 +413,10 @@ export default function HomePage() {
       {/* ─── Guide Band ─── */}
       <section style={{ padding: "4rem 2rem", background: "rgba(0,0,0,0.02)" }}>
         <div style={{ maxWidth: "640px", margin: "0 auto", display: "flex", gap: "2rem", alignItems: "center", flexWrap: "wrap" }}>
-          <img src="/images/matt-headshot-studio-canonical.jpg" alt="Matt Headley — Southern Legends" width={96} height={96}
+          <img src="/images/matt-headshot-studio-canonical-192.webp" alt="Matt Headley — Southern Legends" width={96} height={96}
                style={{ borderRadius: "50%", objectFit: "cover", border: "2px solid rgba(0,0,0,0.1)", flexShrink: 0 }} />
           <div>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "1.4rem", fontWeight: 700, marginBottom: "0.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.4rem", fontWeight: 700, marginBottom: "0.5rem" }}>
               I write these stories so they&rsquo;re not lost.
             </h2>
             <p style={{ opacity: 0.65, lineHeight: 1.7, marginBottom: "1rem" }}>
@@ -427,7 +429,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <NewsletterCapture source="homepage" />
+      <SubscribeCTA variant="section" source="homepage" />
     </main>
   );
 }

@@ -57,10 +57,10 @@ export default function CalhounCountyBusinessesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <div style={{ background: '#FAFAF7', color: '#3F3B36', minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+      <div style={{ background: '#FAFAF7', color: '#3F3B36', minHeight: '100vh', fontFamily: 'var(--font-heading)' }}>
 
         {/* Header */}
-        <div style={{ background: '#1C1917', color: '#FAFAF7', padding: '3rem 1.5rem 2.5rem' }}>
+        <div style={{ background: '#1C1917', color: '#FAFAF7', padding: '7rem 1.5rem 2.5rem' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
             <p style={{ fontSize: '0.75rem', color: '#CA8A04', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.75rem', fontFamily: 'var(--font-geist-sans, sans-serif)' }}>
               <Link href="/" style={{ color: '#CA8A04', textDecoration: 'none' }}>Southern Legends</Link>

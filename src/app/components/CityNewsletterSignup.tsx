@@ -22,40 +22,43 @@ export default function CityNewsletterSignup({ city }: { city: string }) {
     }
   }
 
+  // Styled to match SubscribeCTA (design audit QW-06); posts to the city list API.
   return (
-    <div style={{ background: "#1a1208", borderRadius: "8px", padding: "2rem", margin: "2rem 0" }}>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "#9a6c2f", marginBottom: "0.75rem" }}>
+    <div className="subscribe-cta text-white rounded-lg my-8 px-6 py-8 text-center" style={{ background: "linear-gradient(to right, #1e3527, #5c3d02)" }}>
+      <p className="uppercase font-semibold text-ll-accent mb-2" style={{ fontSize: "var(--text-label)", letterSpacing: "0.15em" }}>
         Southern Legends
       </p>
-      <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.375rem", color: "#F0EDE6", fontWeight: 400, marginBottom: "0.5rem" }}>
+      <p className="text-2xl font-bold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
         The {city} Letter
       </p>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "rgba(240,237,230,0.65)", lineHeight: 1.6, marginBottom: "1.25rem" }}>
+      <p className="text-base text-white/75 mb-5 max-w-md mx-auto">
         Weekly digest of what&apos;s happening in {city}. One story. One dispatch. When there&apos;s something worth sending.
       </p>
       {status === "done" ? (
-        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#9a6c2f", fontWeight: 600 }}>
+        <p className="text-lg font-medium text-ll-accent">
           You&apos;re in. First issue coming soon.
         </p>
       ) : (
-        <form onSubmit={handleSubmit} style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" as const }}>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <label className="sr-only" htmlFor={`city-letter-${city}`}>Email address</label>
           <input
+            id={`city-letter-${city}`}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
-            style={{ flex: 1, minWidth: "200px", padding: "0.625rem 1rem", borderRadius: "4px", border: "1px solid rgba(154,108,47,0.3)", background: "rgba(240,237,230,0.06)", color: "#F0EDE6", fontFamily: "var(--font-body)", fontSize: "0.875rem", outline: "none" }}
+            className="subscribe-input flex-1 min-w-0 px-4 py-3 rounded text-ll-dark text-base bg-white placeholder:text-ll-text-light focus:outline-none focus:ring-2 focus:ring-ll-accent"
           />
           <button
             type="submit"
             disabled={status === "loading"}
-            style={{ padding: "0.625rem 1.25rem", background: "#9a6c2f", color: "#F0EDE6", border: "none", borderRadius: "4px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.875rem", cursor: "pointer", opacity: status === "loading" ? 0.7 : 1 }}
+            className="btn-primary px-6 py-3 bg-ll-primary text-white font-semibold rounded hover:bg-ll-primary-dark disabled:opacity-60"
           >
             {status === "loading" ? "…" : "Subscribe"}
           </button>
           {status === "error" && (
-            <p style={{ width: "100%", fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#ef4444", marginTop: "0.25rem" }}>
+            <p className="w-full mt-1 text-sm text-red-400" role="alert">
               Something went wrong. Try again.
             </p>
           )}

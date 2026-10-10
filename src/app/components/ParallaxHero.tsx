@@ -108,13 +108,7 @@ export default function ParallaxHero({
         </div>
 
         {photoCredit && (
-          <p
-              style={{
-                position: "absolute", bottom: "0.5rem", right: "0.75rem", zIndex: 3,
-                margin: 0, fontSize: "1rem", fontWeight: 500, color: "rgba(255,255,255,0.92)",
-                textShadow: "0 1px 3px rgba(0,0,0,0.8)",
-              }}
-            >
+          <p className="ph-credit">
             Photo: {photoCredit}
             </p>
           )}

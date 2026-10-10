@@ -61,7 +61,7 @@ export default function SupportPage() {
       {/* Give directly */}
       <section className="bg-white py-14 px-6">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs uppercase tracking-widest text-ll-text-light font-semibold mb-2">Give directly</p>
+          <p className="text-sm uppercase tracking-widest text-ll-text-light font-semibold mb-2">Give directly</p>
           <h2 className="text-2xl font-bold text-ll-dark mb-3" style={{ fontFamily: "var(--font-heading)" }}>
             $5 a month
           </h2>
@@ -90,7 +90,7 @@ export default function SupportPage() {
       {/* Merch */}
       <section className="bg-ll-light py-14 px-6">
         <div className="mx-auto max-w-4xl">
-          <p className="text-xs uppercase tracking-widest text-ll-text-light font-semibold mb-2">Buy something</p>
+          <p className="text-sm uppercase tracking-widest text-ll-text-light font-semibold mb-2">Buy something</p>
           <h2 className="text-2xl font-bold text-ll-dark mb-2" style={{ fontFamily: "var(--font-heading)" }}>
             Southern Legends Shop
           </h2>
@@ -113,15 +113,15 @@ export default function SupportPage() {
                     <span style={{
                       position: "absolute", top: "0.4rem", left: "0.4rem",
                       background: item.badgeColor ?? "#9a6c2f", color: "#fff",
-                      fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.08em",
+                      fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.08em",
                       textTransform: "uppercase", padding: "0.15rem 0.4rem", borderRadius: "3px",
                     }}>
                       {item.badge}
                     </span>
                   )}
                 </div>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "#1a1208", marginTop: "0.4rem", fontWeight: 600 }}>{item.name}</p>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", color: "#9a6c2f" }}>${item.price}</p>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#1a1208", marginTop: "0.4rem", fontWeight: 600 }}>{item.name}</p>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "#9a6c2f" }}>${item.price}</p>
               </Link>
             ))}
           </div>
@@ -140,7 +140,7 @@ export default function SupportPage() {
       {/* Listen free */}
       <section className="bg-ll-light py-14 px-6">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs uppercase tracking-widest text-ll-text-light font-semibold mb-2">Free</p>
+          <p className="text-sm uppercase tracking-widest text-ll-text-light font-semibold mb-2">Free</p>
           <h2 className="text-2xl font-bold text-ll-dark mb-3" style={{ fontFamily: "var(--font-heading)" }}>
             Listen for free
           </h2>

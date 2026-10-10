@@ -45,7 +45,7 @@ export default function JournalCard({ post }: { post: JournalPost }) {
           </h3>
           <p style={{
             fontFamily: "var(--font-source-sans)",
-            fontSize: "0.6875rem",
+            fontSize: "var(--text-label)",
             fontWeight: 600,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
@@ -62,7 +62,7 @@ export default function JournalCard({ post }: { post: JournalPost }) {
     <Link href={`/essays/${slug}`} className="group block">
       <p style={{
         fontFamily: "var(--font-source-sans)",
-        fontSize: "0.6875rem",
+        fontSize: "var(--text-label)",
         fontWeight: 600,
         letterSpacing: "0.12em",
         textTransform: "uppercase",

@@ -213,9 +213,9 @@ export default function MastheadPage() {
   }, [camStream])
 
   return (
-    <main style={{ background: '#FAFAF7', color: '#3F3B36', minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+    <main className="no-x-overflow" style={{ background: '#FAFAF7', color: '#3F3B36', minHeight: '100vh', fontFamily: 'var(--font-heading)', overflowX: 'clip' }}>
       {/* Header */}
-      <div style={{ background: '#1C1917', color: '#FAFAF7', padding: '3rem 1.5rem 2.5rem' }}>
+      <div style={{ background: '#1C1917', color: '#FAFAF7', padding: '7rem 1.5rem 2.5rem' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <p style={{ fontSize: '0.75rem', color: '#CA8A04', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.75rem', fontFamily: 'var(--font-geist-sans, sans-serif)' }}>
             <Link href="/" style={{ color: '#CA8A04', textDecoration: 'none' }}>Southern Legends</Link>
@@ -259,17 +259,7 @@ export default function MastheadPage() {
             <span style={{ fontSize: '0.75rem', color: '#9ca3af', fontFamily: 'var(--font-geist-sans, sans-serif)' }}>
               Powered by Deepgram TTS
             </span>
-            <Link
-              href="/dialogue"
-              style={{
-                display: 'flex', alignItems: 'center', gap: '0.5rem',
-                background: 'transparent', color: '#9A3412', border: '1px solid #9A3412',
-                borderRadius: 8, padding: '0.75rem 1.25rem', fontSize: '0.875rem', fontWeight: 600,
-                textDecoration: 'none', fontFamily: 'var(--font-geist-sans, sans-serif)',
-              }}
-            >
-              🎙 Record a response
-            </Link>
+            {/* "Record a response" linked to /dialogue, which does not exist (audit C-10) — removed. */}
           </div>
         </div>
       </section>
@@ -301,7 +291,7 @@ export default function MastheadPage() {
           <p style={{ fontSize: '0.7rem', color: '#9A3412', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '2rem', fontFamily: 'var(--font-geist-sans, sans-serif)' }}>
             Contributors
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(380px, 100%), 1fr))', gap: '1.5rem' }}>
             {CONTRIBUTORS.map(c => (
               <div
                 key={c.name}
@@ -433,7 +423,7 @@ export default function MastheadPage() {
               </div>
               <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem 1.25rem' }}>
                 <p style={{
-                  fontFamily: 'Georgia, serif', fontSize: '1.25rem', lineHeight: 2,
+                  fontFamily: 'var(--font-heading)', fontSize: '1.25rem', lineHeight: 2,
                   color: '#f0ede8', whiteSpace: 'pre-wrap',
                 }}>
                   {recordingFor.script}
@@ -444,14 +434,6 @@ export default function MastheadPage() {
                     {recordingFor.bio}
                   </p>
                 </div>
-              </div>
-              <div style={{ padding: '1rem 1.25rem', borderTop: '1px solid #1a2e1e' }}>
-                <a
-                  href={`/dialogue?subject=${encodeURIComponent(recordingFor.name)}&script=${encodeURIComponent(recordingFor.script)}`}
-                  style={{ display: 'block', textAlign: 'center', background: '#1a2e1e', color: '#CA8A04', border: '1px solid #2d4a32', borderRadius: 8, padding: '0.625rem', fontSize: '0.8rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-geist-sans, sans-serif)' }}
-                >
-                  Open in Dialogue Studio →
-                </a>
               </div>
             </div>
           </div>

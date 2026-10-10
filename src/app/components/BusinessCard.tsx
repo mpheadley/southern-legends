@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Star } from "lucide-react";
 
 export interface GuideBusiness {
   name: string;
@@ -35,13 +36,13 @@ export function BusinessCard({ b, index }: { b: GuideBusiness; index: number }) 
   return (
     <div style={{
       display: "flex", flexDirection: "column", background: "#fff",
-      border: b.badge ? "2px solid #9a6c2f" : "1px solid rgba(154,108,47,0.15)", borderRadius: "12px",
+      border: b.badge ? "2px solid var(--color-ll-accent-dark)" : "1px solid rgba(154,108,47,0.15)", borderRadius: "12px",
       overflow: "hidden",
     }}>
-      {/* Expo vendor badge */}
+      {/* Aisle vendor badge */}
       {b.badge && (
-        <div style={{ background: "#9a6c2f", color: "#fff", fontFamily: "var(--font-body)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.35rem 1rem", display: "flex", alignItems: "center", gap: "0.4rem" }}>
-          ★ {b.badge}
+        <div style={{ background: "var(--color-ll-accent-dark)", color: "#fff", fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.35rem 1rem", display: "flex", alignItems: "center", gap: "0.4rem" }}>
+          <Star size={16} aria-hidden="true" fill="currentColor" /> {b.badge}
         </div>
       )}
       {/* Photo / Carousel */}
@@ -113,12 +114,12 @@ export function BusinessCard({ b, index }: { b: GuideBusiness; index: number }) 
 
       {/* Content */}
       <div style={{ padding: "1rem 1.25rem 1.1rem" }}>
-        <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.3rem", fontWeight: 400, color: "#1a1208", lineHeight: 1.2, margin: "0 0 0.15rem" }}>
+        <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.3rem", fontWeight: 400, color: "var(--color-ll-dark)", lineHeight: 1.2, margin: "0 0 0.15rem" }}>
           {b.web
-            ? <a href={b.web} target="_blank" rel="noopener" style={{ color: "#1a1208", textDecoration: "none" }}>{b.name}</a>
+            ? <a href={b.web} target="_blank" rel="noopener" style={{ color: "var(--color-ll-dark)", textDecoration: "none" }}>{b.name}</a>
             : b.name}
         </h2>
-        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "#6b5040", margin: "0 0 0.7rem" }}>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "var(--color-ll-text)", margin: "0 0 0.7rem" }}>
           {b.city}{b.zip ? ` · ${b.zip}` : ""}
         </p>
 
@@ -127,7 +128,7 @@ export function BusinessCard({ b, index }: { b: GuideBusiness; index: number }) 
           <blockquote style={{
             margin: "0 0 0.85rem",
             padding: "0.65rem 0.85rem",
-            borderLeft: "3px solid #9a6c2f",
+            borderLeft: "3px solid var(--color-ll-accent-dark)",
             background: "#f9f5ef",
             borderRadius: "0 6px 6px 0",
           }}>
@@ -135,7 +136,7 @@ export function BusinessCard({ b, index }: { b: GuideBusiness; index: number }) 
               "{b.quote}"
             </p>
             {b.quoteAttrib && (
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", color: "#9a6c2f", marginTop: "0.35rem", marginBottom: 0 }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "var(--color-ll-accent-dark)", marginTop: "0.35rem", marginBottom: 0 }}>
                 — {b.quoteAttrib}
               </p>
             )}
@@ -144,17 +145,17 @@ export function BusinessCard({ b, index }: { b: GuideBusiness; index: number }) 
 
         <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
           {b.tel && (
-            <a href={telHref(b.tel)} style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", fontWeight: 600, color: "#9a6c2f", background: "#F0EDE6", padding: "0.3rem 0.7rem", borderRadius: "5px", textDecoration: "none" }}>
+            <a href={telHref(b.tel)} style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", fontWeight: 600, color: "var(--color-ll-accent-dark)", background: "#F0EDE6", padding: "0.3rem 0.7rem", borderRadius: "5px", textDecoration: "none" }}>
               {b.tel}
             </a>
           )}
           {b.web && (
-            <a href={b.web} target="_blank" rel="noopener" style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", fontWeight: 600, color: "#F0EDE6", background: "#9a6c2f", padding: "0.3rem 0.8rem", borderRadius: "5px", textDecoration: "none" }}>
+            <a href={b.web} target="_blank" rel="noopener" style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", fontWeight: 600, color: "#F0EDE6", background: "var(--color-ll-accent-dark)", padding: "0.3rem 0.8rem", borderRadius: "5px", textDecoration: "none" }}>
               Visit site →
             </a>
           )}
           {b.aisleUrl && (
-            <a href={b.aisleUrl} target="_blank" rel="noopener" style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", fontWeight: 600, color: "#9a6c2f", background: "#fff5e6", border: "1px solid #9a6c2f", padding: "0.3rem 0.8rem", borderRadius: "5px", textDecoration: "none" }}>
+            <a href={b.aisleUrl} target="_blank" rel="noopener" style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", fontWeight: 600, color: "var(--color-ll-accent-dark)", background: "#fff5e6", border: "1px solid var(--color-ll-accent-dark)", padding: "0.3rem 0.8rem", borderRadius: "5px", textDecoration: "none" }}>
               See at The Aisle →
             </a>
           )}
@@ -162,12 +163,12 @@ export function BusinessCard({ b, index }: { b: GuideBusiness; index: number }) 
         {(b.profile || b.registryUrl) && (
           <div style={{ display: "flex", gap: "1rem", marginTop: "0.75rem", flexWrap: "wrap" }}>
             {b.profile && (
-              <a href={b.profile} style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#9a6c2f", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.25rem" }}>
+              <a href={b.profile} style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "var(--color-ll-accent-dark)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.25rem" }}>
                 Read their story →
               </a>
             )}
             {b.registryUrl && (
-              <a href={b.registryUrl} style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#6b5040", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.25rem" }}>
+              <a href={b.registryUrl} style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "var(--color-ll-text)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.25rem" }}>
                 Add to registry →
               </a>
             )}

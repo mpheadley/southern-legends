@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getBook } from "@/data/book-preorders";
 import BookPreorder from "@/app/components/BookPreorder";
 import ShareRow from "@/app/components/ShareRow";
+import { getJournalPostBySlug } from "@/lib/journal";
 
 const book = getBook("company-of-farmers")!;
 
@@ -15,15 +16,22 @@ export const metadata: Metadata = {
 };
 
 const CHAPTERS = [
-  { name: "Wendell Berry", href: "/journal/wendell-berry-profile", note: "The permission-giver." },
-  { name: "Joel Salatin", href: "/journal/joel-salatin-profile", note: "The showman I argued with." },
-  { name: "Jesse Frost", href: "/journal/jesse-frost-profile", note: "The living soil." },
-  { name: "Toby Hemenway", href: "/journal/toby-hemenway-profile", note: "Gaia's Garden — the permaculture case for the backyard." },
-  { name: "Amy Stross", href: "/journal/amy-stross-profile", note: "The Suburban Micro-Farm — the case for the small bet." },
-  { name: "Justin Rhodes", href: "/journal/justin-rhodes-profile", note: "The YouTube farmer." },
+  { name: "Wendell Berry", href: "/essays/wendell-berry-profile", note: "The permission-giver." },
+  { name: "Joel Salatin", href: "/essays/joel-salatin-profile", note: "The showman I argued with." },
+  { name: "Jesse Frost", href: "/essays/jesse-frost-profile", note: "The living soil." },
+  { name: "Toby Hemenway", href: "/essays/toby-hemenway-profile", note: "Gaia's Garden — the permaculture case for the backyard." },
+  { name: "Amy Stross", href: "/essays/amy-stross-profile", note: "The Suburban Micro-Farm — the case for the small bet." },
+  { name: "Justin Rhodes", href: "/essays/justin-rhodes-profile", note: "The YouTube farmer." },
   { name: "Noah Sanders", href: "/profiles/noah-sanders", note: "Northeast Alabama." },
-  { name: "Indigo Ridge Farms", href: "/journal/indigo-ridge-farms-profile", note: "The Crosbys." },
+  { name: "Indigo Ridge Farms", href: "/essays/indigo-ridge-farms-profile", note: "The Crosbys." },
 ];
+
+/** Essay chapters link only once the essay is published; profiles always link. */
+function chapterIsLive(href: string): boolean {
+  if (!href.startsWith("/essays/")) return true;
+  const post = getJournalPostBySlug(href.slice("/essays/".length));
+  return !!post?.frontmatter.published;
+}
 
 const BOOKLIST = [
   { title: "The Living Soil Handbook", author: "Jesse Frost", url: "https://bookshop.org/a/gather/9781635020007" },
@@ -123,12 +131,19 @@ export default async function CompanyOfFarmersPage({
           <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             {CHAPTERS.map((ch) => (
               <div key={ch.href} style={{ display: "flex", alignItems: "baseline", gap: "0.75rem" }}>
-                <Link
-                  href={ch.href}
-                  style={{ fontFamily: "var(--font-heading)", fontSize: "0.95rem", fontWeight: 700, color: "#C9A227", textDecoration: "none", whiteSpace: "nowrap" }}
-                >
-                  {ch.name}
-                </Link>
+                {chapterIsLive(ch.href) ? (
+                  <Link
+                    href={ch.href}
+                    style={{ fontFamily: "var(--font-heading)", fontSize: "0.95rem", fontWeight: 700, color: "#C9A227", textDecoration: "none", whiteSpace: "nowrap" }}
+                  >
+                    {ch.name}
+                  </Link>
+                ) : (
+                  // Essay not published yet — show the name without a dead link (audit C-10)
+                  <span style={{ fontFamily: "var(--font-heading)", fontSize: "0.95rem", fontWeight: 700, color: "#C9A227", whiteSpace: "nowrap", opacity: 0.75 }}>
+                    {ch.name}
+                  </span>
+                )}
                 <span style={{ fontSize: "0.82rem", color: "#9a8070", fontStyle: "italic" }}>{ch.note}</span>
               </div>
             ))}

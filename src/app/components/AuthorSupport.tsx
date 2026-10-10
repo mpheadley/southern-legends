@@ -13,10 +13,10 @@ export default function AuthorSupport() {
             style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
           />
           <div>
-            <p style={{ fontFamily: "var(--font-heading)", fontSize: "1rem", fontWeight: 700, color: "#1a1208", lineHeight: 1.2 }}>
+            <p style={{ fontFamily: "var(--font-heading)", fontSize: "1rem", fontWeight: 700, color: "var(--color-ll-dark)", lineHeight: 1.2 }}>
               Matt Headley
             </p>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "#6b5040", lineHeight: 1.5, maxWidth: "30rem", marginTop: "0.2rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "var(--color-ll-text)", lineHeight: 1.5, maxWidth: "30rem", marginTop: "0.2rem" }}>
               I cover Northeast Alabama — the people, places, and things worth knowing about. Southern Legends is independent and reader-supported.
             </p>
           </div>
@@ -24,13 +24,13 @@ export default function AuthorSupport() {
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", alignItems: "flex-start" }}>
           <a
             href="/support"
-            style={{ display: "inline-block", background: "#1a1208", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.55rem 1.1rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}
+            style={{ display: "inline-block", background: "var(--color-ll-dark)", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.55rem 1.1rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}
           >
             Support this work →
           </a>
           <a
             href="/merch"
-            style={{ fontFamily: "var(--font-body)", fontSize: "0.73rem", color: "#9a6c2f", textDecoration: "underline", whiteSpace: "nowrap" }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.73rem", color: "var(--color-ll-accent-dark)", textDecoration: "underline", whiteSpace: "nowrap" }}
           >
             Shop the merch
           </a>

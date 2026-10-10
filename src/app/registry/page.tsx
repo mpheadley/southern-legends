@@ -1,5 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { getProfileBySlug } from '@/lib/profiles'
+
+/** Only link "Read Their Story" when the target story actually renders (audit C-10:
+ *  8 registry links 404'd — /businesses/<slug> was never a route, some profiles
+ *  are missing or AI-drafted and hidden in production). */
+function liveStoryUrl(url?: string): string | null {
+  if (!url || !url.startsWith('/profiles/')) return null
+  const p = getProfileBySlug(url.slice('/profiles/'.length))
+  if (!p || p.frontmatter.aiWritten) return null
+  return url
+}
 
 export const metadata: Metadata = {
   title: 'Local Love Registry — Southern Legends',
@@ -17,8 +28,8 @@ const REGISTRY_CATEGORIES = [
     icon: '🌸',
     desc: 'From bouquets to table arrangements. Local growers who know this soil.',
     businesses: [
-      { name: 'Heather Florals', city: 'Anniston', url: 'https://heatherflorals.com', slUrl: '/businesses/heather-florals', note: 'Custom wedding arrangements, farm-grown' },
-      { name: 'Bloom Bar', city: 'Anniston', slUrl: '/businesses/bloom-bar', note: 'DIY bouquet bar + pop-up floral events' },
+      { name: 'Heather Florals', city: 'Anniston', url: 'https://heatherflorals.com', slUrl: '/profiles/heather-florals-bloom-bar', note: 'Custom wedding arrangements, farm-grown' },
+      { name: 'Bloom Bar', city: 'Anniston', slUrl: '/profiles/heather-florals-bloom-bar', note: 'DIY bouquet bar + pop-up floral events' },
       { name: 'Romarin Floral', city: 'Oxford', slUrl: '/profiles/aubrey-fullbright-romarin', note: 'Aubrey Fullbright, fine-art arrangements' },
     ],
   },
@@ -106,7 +117,7 @@ export default function RegistryPage() {
     <main style={{ background: 'var(--color-ll-dark)', color: 'var(--color-ll-warm)', minHeight: '100vh' }}>
 
       {/* Hero */}
-      <section style={{ borderBottom: '1px solid rgba(201,162,75,.12)', padding: '80px 24px 64px' }}>
+      <section style={{ borderBottom: '1px solid rgba(201,162,75,.12)', padding: '120px 24px 64px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(201,162,75,.6)', marginBottom: '16px', fontFamily: 'var(--font-sans)' }}>
             Southern Legends · NE Alabama
@@ -209,9 +220,9 @@ export default function RegistryPage() {
                       </div>
                       <p style={{ fontSize: '13px', color: 'rgba(240,237,230,.5)', fontFamily: 'var(--font-sans)', lineHeight: 1.6, marginBottom: '14px' }}>{biz.note}</p>
                       <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                        {biz.slUrl && (
+                        {liveStoryUrl(biz.slUrl) && (
                           <Link
-                            href={biz.slUrl}
+                            href={liveStoryUrl(biz.slUrl)!}
                             style={{ fontSize: '12px', color: 'rgba(201,162,75,.7)', fontFamily: 'var(--font-sans)', textDecoration: 'none', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.5px' }}
                           >
                             Read Their Story →

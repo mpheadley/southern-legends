@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { Link } from "next-view-transitions";
+import { Globe, MapPin } from "lucide-react";
 import type { MapMarker, TrailPath, FilterBucket } from "@/lib/map-data";
 
 // WebGL / window-dependent views — never SSR them.
@@ -64,7 +65,7 @@ export default function GlobeMap({
   );
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh", background: "#0a0f0c", overflow: "hidden" }}>
+    <div className="sl-map" style={{ position: "relative", zIndex: 0, isolation: "isolate", width: "100%", height: "100dvh", background: "#0a0f0c", overflow: "hidden" }}>
       {mode === "globe" && !isMobile ? (
         <GlobeView markers={filtered} trails={filteredTrails} onSelect={setSelected} />
       ) : (
@@ -75,10 +76,10 @@ export default function GlobeMap({
       <div
         style={{
           position: "absolute",
-          top: "1.25rem",
+          top: "5.5rem",
           left: "50%",
           transform: "translateX(-50%)",
-          zIndex: 20,
+          zIndex: 1100, // above Leaflet panes (400) + controls (1000); the wrapper's isolation keeps it under the site header
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -86,10 +87,13 @@ export default function GlobeMap({
           width: "min(92vw, 720px)",
         }}
       >
+        <h1 style={{ fontFamily: "var(--font-heading)", color: "#F0EDE6", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, lineHeight: 1.1, margin: 0, textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}>
+          The Map
+        </h1>
         {!isMobile && (
           <div style={pillWrap}>
-            <button onClick={() => setMode("globe")} style={pill(mode === "globe")}>🌍 Globe</button>
-            <button onClick={() => setMode("flat")} style={pill(mode === "flat")}>📍 Map</button>
+            <button onClick={() => setMode("globe")} style={pill(mode === "globe")}><Globe size={16} aria-hidden="true" style={{ display: "inline", verticalAlign: "-3px", marginRight: 6 }} />Globe</button>
+            <button onClick={() => setMode("flat")} style={pill(mode === "flat")}><MapPin size={16} aria-hidden="true" style={{ display: "inline", verticalAlign: "-3px", marginRight: 6 }} />Map</button>
           </div>
         )}
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.4rem" }}>
@@ -99,25 +103,25 @@ export default function GlobeMap({
             </button>
           ))}
         </div>
-        <div style={{ fontSize: "0.72rem", color: "rgba(240,237,232,0.55)", letterSpacing: "0.02em" }}>
-          {filtered.length} places · Northeast Alabama
-        </div>
+        <p style={{ fontSize: "var(--text-meta)", color: "rgba(240,237,232,0.8)", letterSpacing: "0.02em", margin: 0, textAlign: "center", textShadow: "0 1px 6px rgba(0,0,0,0.8)" }}>
+          Stories, businesses, essays, and trails · {filtered.length} places across Northeast Alabama
+        </p>
       </div>
 
       {/* Slide-in card panel */}
       <aside
         style={{
           position: "fixed",
-          top: 0,
+          top: "4.75rem",
           right: 0,
-          height: "100vh",
+          height: "calc(100dvh - 4.75rem)",
           width: "min(380px, 88vw)",
           background: "#0f1c13",
           borderLeft: "1px solid rgba(201,162,39,0.25)",
           boxShadow: "-12px 0 40px rgba(0,0,0,0.5)",
           transform: selected ? "translateX(0)" : "translateX(105%)",
           transition: "transform 0.32s cubic-bezier(0.16,1,0.3,1)",
-          zIndex: 50,
+          zIndex: 1200,
           display: "flex",
           flexDirection: "column",
         }}
@@ -133,7 +137,7 @@ export default function GlobeMap({
               <span
                 style={{
                   display: "inline-block",
-                  fontSize: "0.68rem",
+                  fontSize: "var(--text-label)",
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
                   color: "#0a0f0c",
@@ -145,11 +149,11 @@ export default function GlobeMap({
               >
                 {TYPE_LABEL[selected.type]}
               </span>
-              <h2 style={{ fontFamily: "var(--font-serif, Georgia, serif)", color: "#f0ede8", fontSize: "1.4rem", margin: "0.7rem 0 0.35rem", lineHeight: 1.15 }}>
+              <h2 style={{ fontFamily: "var(--font-heading)", color: "#f0ede8", fontSize: "1.4rem", margin: "0.7rem 0 0.35rem", lineHeight: 1.15 }}>
                 {selected.name}
               </h2>
               {selected.location && (
-                <div style={{ color: "rgba(240,237,232,0.6)", fontSize: "0.82rem", marginBottom: "0.8rem" }}>{selected.location}</div>
+                <div style={{ color: "rgba(240,237,232,0.6)", fontSize: "var(--text-label)", marginBottom: "0.8rem" }}>{selected.location}</div>
               )}
               {selected.excerpt && (
                 <p style={{ color: "rgba(240,237,232,0.85)", fontSize: "0.92rem", lineHeight: 1.55, marginBottom: "1.1rem" }}>{selected.excerpt}</p>
@@ -195,7 +199,7 @@ function chip(active: boolean): React.CSSProperties {
     cursor: "pointer",
     borderRadius: 999,
     padding: "0.32rem 0.85rem",
-    fontSize: "0.8rem",
+    fontSize: "var(--text-label)",
     fontWeight: 500,
     color: active ? "#0a0f0c" : "rgba(240,237,232,0.9)",
     background: active ? "#f0ede8" : "rgba(15,28,19,0.7)",

@@ -12,12 +12,12 @@ const YOUTUBE_IDS: Record<string, string> = {
 
 // Thumbnail images per product key — all paths verified on disk
 const THUMBNAILS: Record<string, string> = {
-  'freedom-riders-shirt': '/print-files/FREEDOM-RIDERS-02-dennis-portrait-BLACK.png',
+  'freedom-riders-shirt': '/images/merch/freedom-riders-02-dennis-portrait-black-800.webp',
   'anniston-45-shirt': '/merch/anniston-45-mockup.webp',
   'woodstock-shirt': '/merch/20260726_182840_gpt_vintage-t-shirt-mockup-on-black-shirt,-d.webp',
   'pv-raiders-shirt': '/merch/fw/pv-raiders-xc-01.webp',
   'clt-shirt': '/merch/fw/chief-ladiga-trail-01.webp',
-  'sl-stickers': '/print-files/FREEDOM-RIDERS-S1-burning-bus-sticker.png',
+  'sl-stickers': '/images/merch/freedom-riders-s1-burning-bus-sticker-800.webp',
   'headley-bros': '/images/about/headshot-hedcut-matt-headley.webp',
   'heather-florals': '/images/heather/heather-headshot.webp',
   'bloom-bar': '/merch/bloom-bar-tee.webp',
@@ -33,7 +33,7 @@ const THUMBNAILS: Record<string, string> = {
   'silver-run': '/images/about/headshot-hedcut-matt-headley.webp',
   'aisle-tickets': '/merch/aisle-vendor-tee-mockup.webp',
   'multitudes-shirt': '/merch/fw/i-contain-multitudes-01.webp',
-  'neurospicy-shirt': '/print-files/NEUROSPICY-01-nutrition-label-CREAM.png',
+  'neurospicy-shirt': '/images/merch/neurospicy-01-nutrition-label-cream-800.webp',
   'gather-registry': '/images/about/headshot-hedcut-matt-headley.webp',
   'church-custom-shirt': '/print-files/ECCLESIA-05-pilgrims-shirt.webp',
 }
@@ -174,8 +174,8 @@ export default function AffiliateSignup() {
   }
 
   return (
-    <main style={{ background: '#1C1917', color: '#FAFAF7', minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '4rem 1.25rem 6rem' }}>
+    <main className="no-x-overflow" style={{ background: '#1C1917', color: '#FAFAF7', minHeight: '100vh', fontFamily: 'var(--font-heading)', overflowX: 'clip' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '7.5rem 1.25rem 6rem' }}>
 
         {/* Header */}
         <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#CA8A04', marginBottom: '0.75rem', opacity: 0.8 }}>
@@ -195,17 +195,17 @@ export default function AffiliateSignup() {
               Get your links — takes 10 seconds
             </p>
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.6rem' }}>
                 <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Your name" required
-                  style={{ padding: '0.65rem 0.85rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: '#FAFAF7', fontSize: '0.85rem', outline: 'none' }} />
+                  style={{ padding: '0.65rem 0.85rem', background: 'rgba(255,255,255,0.06)', minWidth: 0, border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: '#FAFAF7', fontSize: '0.85rem', outline: 'none' }} />
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required
-                  style={{ padding: '0.65rem 0.85rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: '#FAFAF7', fontSize: '0.85rem', outline: 'none' }} />
+                  style={{ padding: '0.65rem 0.85rem', background: 'rgba(255,255,255,0.06)', minWidth: 0, border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: '#FAFAF7', fontSize: '0.85rem', outline: 'none' }} />
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.6rem' }}>
                 <input type="text" value={handle} onChange={e => setHandle(e.target.value)} placeholder="@handle (optional)"
-                  style={{ padding: '0.65rem 0.85rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: '#FAFAF7', fontSize: '0.85rem', outline: 'none' }} />
+                  style={{ padding: '0.65rem 0.85rem', background: 'rgba(255,255,255,0.06)', minWidth: 0, border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: '#FAFAF7', fontSize: '0.85rem', outline: 'none' }} />
                 <select value={platform} onChange={e => setPlatform(e.target.value)}
-                  style={{ padding: '0.65rem 0.85rem', background: '#2a2320', border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: platform ? '#FAFAF7' : 'rgba(250,250,247,0.4)', fontSize: '0.85rem', outline: 'none' }}>
+                  style={{ padding: '0.65rem 0.85rem', background: '#2a2320', minWidth: 0, border: '1px solid rgba(250,250,247,0.12)', borderRadius: 5, color: platform ? '#FAFAF7' : 'rgba(250,250,247,0.4)', fontSize: '0.85rem', outline: 'none' }}>
                   <option value="">Platform...</option>
                   <option>Instagram</option><option>Facebook</option><option>Newsletter</option>
                   <option>YouTube</option><option>Blog</option><option>TikTok</option><option>Podcast</option><option>Other</option>

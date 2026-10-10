@@ -26,7 +26,7 @@ const WHAT_YOU_GET = [
 
 export default function SponsorPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16">
+    <main className="page-top max-w-3xl mx-auto px-4 pb-16">
       <header className="mb-12 text-center">
         <p className="text-sm uppercase tracking-widest text-[var(--color-ll-primary)] mb-3 font-medium">
           Sponsor a story

@@ -1,3 +1,4 @@
+import { MapPin } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -56,35 +57,35 @@ export default async function PlaceDetailPage({ params }: Props) {
       <main id="main-content" style={{ backgroundColor: "#F0EDE6", minHeight: "100vh" }}>
         <div className="mx-auto max-w-2xl px-6 pt-28 pb-20 md:pt-36">
           <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", marginBottom: "2rem" }}>
-            <Link href="/places" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#9a6c2f", textDecoration: "none", fontWeight: 600 }}>Places</Link>
-            <span style={{ color: "#9a6c2f" }}>›</span>
-            <Link href={`/places/${citySlug}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#9a6c2f", textDecoration: "none", fontWeight: 600 }}>{circle.city}</Link>
+            <Link href="/places" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-ll-accent-dark)", textDecoration: "none", fontWeight: 600 }}>Places</Link>
+            <span style={{ color: "var(--color-ll-accent-dark)" }}>›</span>
+            <Link href={`/places/${citySlug}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-ll-accent-dark)", textDecoration: "none", fontWeight: 600 }}>{circle.city}</Link>
           </div>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.75rem" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.75rem" }}>
             {circle.category}
           </p>
-          <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 400, color: "#1a1208", fontSize: "clamp(2rem, 6vw, 3.5rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
+          <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 400, color: "var(--color-ll-dark)", fontSize: "clamp(2rem, 6vw, 3.5rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
             {circle.name}
           </h1>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "2rem" }}>
             {circle.address && (
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#6b5040" }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-text)" }}>
                 {circle.address}, {circle.city}, AL
               </p>
             )}
             {circle.phone && (
-              <a href={`tel:${circle.phone}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#9a6c2f", textDecoration: "none" }}>
+              <a href={`tel:${circle.phone}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", textDecoration: "none" }}>
                 {circle.phone}
               </a>
             )}
             {circle.website && (
-              <a href={circle.website} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#9a6c2f", textDecoration: "none" }}>
+              <a href={circle.website} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", textDecoration: "none" }}>
                 {circle.website.replace(/^https?:\/\//, "")} ↗
               </a>
             )}
           </div>
-          <div style={{ background: "#1a1208", borderRadius: "8px", padding: "1.5rem", marginBottom: "1.5rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.5rem" }}>
+          <div style={{ background: "var(--color-ll-dark)", borderRadius: "8px", padding: "1.5rem", marginBottom: "1.5rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.5rem" }}>
               Is this your business?
             </p>
             <p style={{ fontFamily: "var(--font-heading)", fontSize: "1rem", color: "#F0EDE6", fontWeight: 400, marginBottom: "1rem" }}>
@@ -92,12 +93,12 @@ export default async function PlaceDetailPage({ params }: Props) {
             </p>
             <a
               href={`https://gatherstudio.app/api/wiki-claim?id=${circle.id}&name=${encodeURIComponent(circle.name)}`}
-              style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", fontWeight: 700, background: "#9a6c2f", color: "#F0EDE6", padding: "0.5rem 1.25rem", borderRadius: "4px", textDecoration: "none", display: "inline-block" }}
+              style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", fontWeight: 700, background: "var(--color-ll-accent-dark)", color: "#F0EDE6", padding: "0.5rem 1.25rem", borderRadius: "4px", textDecoration: "none", display: "inline-block" }}
             >
               Claim this listing →
             </a>
           </div>
-          <Link href={`/places/${citySlug}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#9a6c2f", textDecoration: "none" }}>
+          <Link href={`/places/${citySlug}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", textDecoration: "none" }}>
             ← Back to {circle.city}
           </Link>
         </div>
@@ -130,11 +131,11 @@ export default async function PlaceDetailPage({ params }: Props) {
 
         {/* Breadcrumb */}
         <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", marginBottom: "2rem" }}>
-          <Link href="/places" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#9a6c2f", textDecoration: "none", fontWeight: 600 }}>
+          <Link href="/places" style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-ll-accent-dark)", textDecoration: "none", fontWeight: 600 }}>
             Places
           </Link>
-          <span style={{ color: "#9a6c2f" }}>›</span>
-          <Link href={`/places/${citySlug}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#9a6c2f", textDecoration: "none", fontWeight: 600 }}>
+          <span style={{ color: "var(--color-ll-accent-dark)" }}>›</span>
+          <Link href={`/places/${citySlug}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-ll-accent-dark)", textDecoration: "none", fontWeight: 600 }}>
             {biz.city}
           </Link>
         </div>
@@ -142,11 +143,11 @@ export default async function PlaceDetailPage({ params }: Props) {
         {/* Category badge */}
         <p style={{
           fontFamily: "var(--font-body)",
-          fontSize: "0.7rem",
+          fontSize: "var(--text-label)",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
-          color: "#9a6c2f",
+          color: "var(--color-ll-accent-dark)",
           marginBottom: "0.75rem",
         }}>
           {biz.category}
@@ -156,7 +157,7 @@ export default async function PlaceDetailPage({ params }: Props) {
           fontFamily: "var(--font-heading)",
           fontSize: "clamp(2rem, 6vw, 3.5rem)",
           fontWeight: 400,
-          color: "#1a1208",
+          color: "var(--color-ll-dark)",
           marginBottom: "1rem",
           lineHeight: 1.1,
         }}>
@@ -166,7 +167,7 @@ export default async function PlaceDetailPage({ params }: Props) {
         <p style={{
           fontFamily: "var(--font-body)",
           fontSize: "1.0625rem",
-          color: "#4a3728",
+          color: "var(--color-ll-text)",
           lineHeight: 1.7,
           marginBottom: "2rem",
         }}>
@@ -176,18 +177,18 @@ export default async function PlaceDetailPage({ params }: Props) {
         {/* SL story link */}
         {biz.story && (
           <div style={{
-            background: "#1a1208",
+            background: "var(--color-ll-dark)",
             borderRadius: "6px",
             padding: "1.25rem 1.5rem",
             marginBottom: "2rem",
           }}>
             <p style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.75rem",
+              fontSize: "var(--text-meta)",
               fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "#9a6c2f",
+              color: "var(--color-ll-accent-dark)",
               marginBottom: "0.5rem",
             }}>
               Southern Legends Story
@@ -214,17 +215,17 @@ export default async function PlaceDetailPage({ params }: Props) {
           marginBottom: "2.5rem",
         }}>
           {biz.address && (
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#6b5040" }}>
-              📍 {biz.address}
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-text)", display: "flex", alignItems: "center", gap: "0.4rem" }}>
+              <MapPin size={16} aria-hidden="true" /> {biz.address}
             </p>
           )}
           {biz.phone && (
-            <a href={`tel:${biz.phone}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#9a6c2f", textDecoration: "none" }}>
+            <a href={`tel:${biz.phone}`} style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", textDecoration: "none" }}>
               {biz.phone}
             </a>
           )}
           {biz.website && (
-            <a href={biz.website} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#9a6c2f", textDecoration: "none" }}>
+            <a href={biz.website} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-accent-dark)", textDecoration: "none" }}>
               {biz.website.replace(/^https?:\/\//, '')} ↗
             </a>
           )}
@@ -232,7 +233,7 @@ export default async function PlaceDetailPage({ params }: Props) {
 
         {/* ReelStudio pitch */}
         <div style={{
-          background: "#1a1208",
+          background: "var(--color-ll-dark)",
           borderRadius: "6px",
           padding: "1.25rem 1.5rem",
           marginBottom: "1.5rem",
@@ -243,7 +244,7 @@ export default async function PlaceDetailPage({ params }: Props) {
           flexWrap: "wrap",
         }}>
           <div>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#9a6c2f", marginBottom: "0.35rem" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.35rem" }}>
               ReelStudio
             </p>
             <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.9375rem", color: "#F0EDE6", fontWeight: 400 }}>
@@ -254,7 +255,7 @@ export default async function PlaceDetailPage({ params }: Props) {
             href="https://gatherstudio.app/reelstudio/record"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", fontWeight: 700, background: "#9a6c2f", color: "#F0EDE6", padding: "0.5rem 1rem", borderRadius: "4px", textDecoration: "none", flexShrink: 0 }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", fontWeight: 700, background: "var(--color-ll-accent-dark)", color: "#F0EDE6", padding: "0.5rem 1rem", borderRadius: "4px", textDecoration: "none", flexShrink: 0 }}
           >
             Record now →
           </a>
@@ -263,13 +264,13 @@ export default async function PlaceDetailPage({ params }: Props) {
         {/* BridalShowReviews — wedding/florist businesses only */}
         {isBridalCategory(biz.category) && (
           <div style={{ marginBottom: "1.5rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#6b5040", lineHeight: 1.6 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "var(--color-ll-text)", lineHeight: 1.6 }}>
               Planning a wedding in {biz.city}?{" "}
               <a
                 href="https://bridalshowreviews.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#9a6c2f", fontWeight: 600, textDecoration: "underline" }}
+                style={{ color: "var(--color-ll-accent-dark)", fontWeight: 600, textDecoration: "underline" }}
               >
                 See every NE Alabama bridal show rated by couples who went →
               </a>
@@ -285,7 +286,7 @@ export default async function PlaceDetailPage({ params }: Props) {
           <p style={{
             fontFamily: "var(--font-body)",
             fontSize: "0.875rem",
-            color: "#6b5040",
+            color: "var(--color-ll-text)",
             marginBottom: "0.75rem",
           }}>
             Know a business in {biz.city} worth featuring?
@@ -295,7 +296,7 @@ export default async function PlaceDetailPage({ params }: Props) {
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "0.875rem",
-              color: "#9a6c2f",
+              color: "var(--color-ll-accent-dark)",
               fontWeight: 600,
               textDecoration: "underline",
             }}

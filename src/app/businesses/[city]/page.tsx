@@ -50,21 +50,21 @@ export default async function BusinessesCityPage({ params }: Props) {
   const categories = Object.keys(byCategory).sort()
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
+    <main className="page-light page-top max-w-4xl mx-auto px-4 pb-16">
       <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-neutral-500 mb-2">
+        <div className="flex items-center gap-2 text-sm text-ll-text-light mb-2">
           <Link href="/" className="hover:underline">Southern Legends</Link>
           <span>/</span>
           <Link href="/businesses" className="hover:underline">Businesses</Link>
           <span>/</span>
           <span>{cityName}</span>
         </div>
-        <h1 className="text-3xl font-serif font-bold mb-2">{cityName}, Alabama</h1>
-        <p className="text-neutral-500 text-sm flex items-center gap-1">
+        <h1 className="text-3xl [font-family:var(--font-heading)] font-bold mb-2">{cityName}, Alabama</h1>
+        <p className="text-ll-text-light text-sm flex items-center gap-1">
           <MapPin size={14} />
           {businesses.length} businesses worth knowing
           {" · "}
-          <Link href={`/places/${citySlug}`} className="underline hover:text-neutral-800">
+          <Link href={`/places/${citySlug}`} className="underline hover:text-ll-dark">
             City profile
           </Link>
         </p>
@@ -72,13 +72,13 @@ export default async function BusinessesCityPage({ params }: Props) {
 
       {categories.map((cat) => (
         <section key={cat} className="mb-10">
-          <h2 className="text-lg font-semibold mb-4 border-b border-neutral-200 pb-2">{cat}</h2>
+          <h2 className="text-lg font-semibold mb-4 border-b border-ll-border pb-2">{cat}</h2>
           <div className="space-y-6">
             {byCategory[cat].map((b) => (
               <article key={b.slug} className="group">
                 <h3 className="font-medium text-base mb-1">{b.frontmatter.title}</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">{b.frontmatter.excerpt}</p>
-                <div className="mt-2 text-xs text-neutral-400">
+                <p className="text-sm text-ll-text leading-relaxed">{b.frontmatter.excerpt}</p>
+                <div className="mt-2 text-xs text-ll-text-light">
                   {b.frontmatter.tags
                     .filter((t) => t !== "businesses" && t !== citySlug)
                     .map((t) => (
@@ -91,14 +91,14 @@ export default async function BusinessesCityPage({ params }: Props) {
         </section>
       ))}
 
-      <div className="mt-10 pt-6 border-t border-neutral-200 text-sm text-neutral-500 flex flex-wrap gap-4">
-        <Link href={`/places/${citySlug}`} className="underline hover:text-neutral-800">
+      <div className="mt-10 pt-6 border-t border-ll-border text-sm text-ll-text-light flex flex-wrap gap-4">
+        <Link href={`/places/${citySlug}`} className="underline hover:text-ll-dark">
           {cityName} city profile →
         </Link>
-        <Link href="/businesses" className="underline hover:text-neutral-800">
+        <Link href="/businesses" className="underline hover:text-ll-dark">
           All Alabama cities →
         </Link>
-        <Link href="/nominate" className="underline hover:text-neutral-800">
+        <Link href="/nominate" className="underline hover:text-ll-dark">
           Nominate a business →
         </Link>
       </div>

@@ -28,7 +28,6 @@ import VideoLoop from "@/app/components/VideoLoop";
 import ShareButtons from "@/app/components/ShareButtons";
 import ScrollytellingProfile from "@/app/components/ScrollytellingProfile";
 import ParallaxHero from "@/app/components/ParallaxHero";
-import NewsletterCapture from "@/app/components/NewsletterCapture";
 import Comments from "@/app/components/Comments";
 import PlaylistEmbed from "@/app/components/PlaylistEmbed";
 import { getPlaylist } from "@/lib/playlists";
@@ -47,7 +46,6 @@ import MerchBlock from "@/app/components/MerchBlock";
 import ArtCredit from "@/app/components/ArtCredit";
 import Callout from "@/app/components/Callout";
 import NextProfileCard from "@/app/components/NextProfileCard";
-import AuthorSupport from "@/app/components/AuthorSupport";
 
 const mdxComponents = {
   CrisisLine,
@@ -584,9 +582,7 @@ export default async function ProfilePage({
       )}
 
       {/* Subscribe */}
-      <NewsletterCapture source="profile" />
 
-      <AuthorSupport />
     </main>
   );
 }

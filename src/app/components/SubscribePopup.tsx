@@ -129,7 +129,7 @@ export default function SubscribePopup() {
         </button>
 
         {/* Eyebrow */}
-        <p style={{ fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#C4622D", marginBottom: "0.75rem", fontWeight: 600 }}>
+        <p style={{ fontSize: "var(--text-label)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-ll-primary-light)", marginBottom: "0.75rem", fontWeight: 600 }}>
           Southern Legends
         </p>
 
@@ -195,7 +195,7 @@ export default function SubscribePopup() {
                 disabled={status === "loading"}
                 style={{
                   padding: "0.75rem",
-                  background: "#C4622D",
+                  background: "var(--color-ll-primary-light)",
                   color: "#fff",
                   border: "none",
                   borderRadius: "4px",
@@ -216,7 +216,7 @@ export default function SubscribePopup() {
               )}
             </form>
 
-            <p style={{ fontSize: "0.72rem", color: "rgba(250,250,247,0.3)", marginTop: "1rem", textAlign: "center" }}>
+            <p style={{ fontSize: "var(--text-label)", color: "rgba(250,250,247,0.3)", marginTop: "1rem", textAlign: "center" }}>
               No spam. Unsubscribe any time.
             </p>
           </>

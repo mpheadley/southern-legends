@@ -30,14 +30,14 @@ export default function ProgramsPage() {
   const programs = getActivePrograms()
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16">
+    <main className="page-top max-w-3xl mx-auto px-4 pb-16">
       <header className="mb-12">
         <p className="text-sm uppercase tracking-widest text-[var(--color-ll-primary)] mb-3 font-medium">
           Community Programs
         </p>
         <h1
           className="text-4xl md:text-5xl mb-4"
-          style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, #f5f0e8)' }}
+          style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, var(--color-ll-light))' }}
         >
           NE Alabama School Programs
         </h1>
@@ -71,7 +71,7 @@ export default function ProgramsPage() {
                 </p>
                 <h2
                   className="text-xl mb-1"
-                  style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, #f5f0e8)' }}
+                  style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, var(--color-ll-light))' }}
                 >
                   {p.school}
                 </h2>
@@ -106,7 +106,7 @@ export default function ProgramsPage() {
       <section className="mt-16 border border-stone-800 rounded-xl p-8 bg-stone-900/30">
         <h2
           className="text-2xl mb-3"
-          style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, #f5f0e8)' }}
+          style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, var(--color-ll-light))' }}
         >
           Add your program
         </h2>

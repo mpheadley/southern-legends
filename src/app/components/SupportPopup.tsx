@@ -115,7 +115,7 @@ export default function SupportPopup() {
           ×
         </button>
 
-        <p style={{ fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#C4622D", marginBottom: "0.6rem", fontWeight: 600 }}>
+        <p style={{ fontSize: "var(--text-label)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-ll-primary-light)", marginBottom: "0.6rem", fontWeight: 600 }}>
           If this was worth your time
         </p>
 
@@ -144,7 +144,7 @@ export default function SupportPopup() {
               display: "block",
               textAlign: "center",
               padding: "0.7rem",
-              background: "#C4622D",
+              background: "var(--color-ll-primary-light)",
               color: "#fff",
               borderRadius: "4px",
               fontSize: "0.875rem",
@@ -162,7 +162,7 @@ export default function SupportPopup() {
               background: "none",
               border: "none",
               color: "rgba(250,250,247,0.35)",
-              fontSize: "0.78rem",
+              fontSize: "var(--text-meta)",
               cursor: "pointer",
               padding: "0.25rem",
               textDecoration: "underline",

@@ -148,7 +148,7 @@ export default function AuthorPage() {
   const shirts = MERCH.filter(m => m.fwUrl).slice(0, 6);
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16">
+    <main className="page-top max-w-3xl mx-auto px-4 pb-16">
 
       {/* Header */}
       <div className="flex gap-6 items-start mb-14">

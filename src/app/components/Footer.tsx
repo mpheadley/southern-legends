@@ -25,7 +25,7 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
             <nav className="flex flex-col gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Navigate</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Navigate</p>
               {siteConfig.nav.map((item) => (
                 <Link
                   key={item.href}
@@ -38,7 +38,7 @@ export default function Footer() {
             </nav>
 
             <div className="flex flex-col gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Get Involved</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Get Involved</p>
               <Link
                 href="/nominate"
                 className="text-sm text-white/80 hover:text-white transition-colors"
@@ -68,7 +68,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Follow</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Follow</p>
               <a
                 href="https://www.facebook.com/SouthernLegendsAL"
                 target="_blank"
@@ -94,7 +94,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Listen</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Listen</p>
               <a
                 href={siteConfig.podcast.spotify}
                 target="_blank"

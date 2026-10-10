@@ -24,7 +24,7 @@ export default function HouseAdUnit({ ad, page }: { ad: VentureCTA; page?: strin
   const pic = b.hero ?? b.logo;
   return (
     <div className="px-6 py-8">
-      <p className="max-w-3xl mx-auto text-[0.62rem] font-bold tracking-[0.16em] uppercase" style={{ color: "#8a8170", fontFamily: "var(--font-body)", marginBottom: 8 }}>
+      <p className="max-w-3xl mx-auto text-[length:var(--text-label)] font-bold tracking-[0.16em] uppercase" style={{ color: "#8a8170", fontFamily: "var(--font-body)", marginBottom: 8 }}>
         {label}
       </p>
       <style>{`.vb{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}.vb-ask{grid-column:1 / -1}@media(min-width:760px){.vb{grid-template-columns:auto 1fr auto}.vb-ask{grid-column:auto}}`}</style>
@@ -42,7 +42,7 @@ export default function HouseAdUnit({ ad, page }: { ad: VentureCTA; page?: strin
             </span>
           )}
           <div style={{ minWidth: 0 }}>
-            <p className="text-[0.68rem] font-bold tracking-[0.14em] uppercase" style={{ fontFamily: "var(--font-body)", opacity: 0.8, margin: "0 0 4px" }}>
+            <p className="text-[length:var(--text-label)] font-bold tracking-[0.14em] uppercase" style={{ fontFamily: "var(--font-body)", opacity: 0.8, margin: "0 0 4px" }}>
               {ad.eyebrow}
             </p>
             <p style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.3rem", lineHeight: 1.2, margin: 0 }}>{ad.headline}</p>

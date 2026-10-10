@@ -82,9 +82,11 @@ export default function Nav() {
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center gap-6">
           {/* Wordmark */}
-          <Link href="/" className="shrink-0">
+          <Link href="/" className="shrink-0 flex items-center gap-2.5" aria-label="Southern Legends — home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/sl-badge-72.webp" alt="" aria-hidden="true" width={36} height={36} className="w-8 h-8 md:w-9 md:h-9 rounded-[6px]" />
             <span
-              className="font-bold text-xl tracking-tight text-white uppercase tracking-[0.08em]"
+              className="font-bold text-lg md:text-2xl text-white uppercase tracking-[0.08em]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Southern Legends
@@ -99,7 +101,7 @@ export default function Nav() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-xs font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
+                  className={`text-sm font-semibold uppercase tracking-[0.12em] transition-colors duration-200 ${
                     isActive
                       ? "text-white"
                       : "text-white/60 hover:text-white"
@@ -114,7 +116,7 @@ export default function Nav() {
               <button
                 type="button"
                 onClick={() => setMoreOpen((o) => !o)}
-                className="text-xs font-semibold uppercase tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-200 flex items-center gap-1 min-h-[44px] px-1"
+                className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 hover:text-white transition-colors duration-200 flex items-center gap-1 min-h-[44px] px-1"
                 aria-haspopup="true"
                 aria-expanded={moreOpen}
               >
@@ -128,7 +130,7 @@ export default function Nav() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMoreOpen(false)}
-                      className="block px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white/60 hover:text-white hover:bg-white/5 transition-colors"
+                      className="block px-4 py-2 text-sm font-semibold uppercase tracking-[0.12em] text-white/60 hover:text-white hover:bg-white/5 transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -144,7 +146,7 @@ export default function Nav() {
           {/* Support button — right side, desktop */}
           <Link
             href={supportLink.href}
-            className="hidden md:inline-block px-4 py-1.5 bg-ll-primary text-white text-xs font-semibold uppercase tracking-[0.15em] rounded hover:bg-ll-primary-dark transition-colors"
+            className="hidden md:inline-block px-4 py-1.5 bg-ll-primary text-white text-sm font-semibold uppercase tracking-[0.12em] rounded hover:bg-ll-primary-dark transition-colors"
           >
             {supportLink.label}
           </Link>

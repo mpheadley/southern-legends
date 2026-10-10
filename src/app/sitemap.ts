@@ -51,7 +51,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/back-forty", "/back-forty/resources", "/books/company-of-farmers", "/books/opinions", "/colophon",
     "/land", "/listen", "/listicles", "/map", "/masthead", "/merch/catalog", "/merch/clt-coin",
     "/merch/freedom-riders", "/merch/pvxc", "/merch/shirts", "/merch/woodstock", "/ministry", "/parks",
-    "/places/nominate", "/podcast", "/pricing", "/privacy", "/programs", "/registry", "/sponsor",
+    "/places/nominate", "/podcast", "/privacy", "/programs", "/registry", "/sponsor",
     "/theology", "/trails", "/woodstock-5k", "/vol-1",
   ];
   const staticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => ({

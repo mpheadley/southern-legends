@@ -318,32 +318,6 @@ export default function AboutPage() {
             >
               I contain<br />multitudes.
             </p>
-            <div className="flex gap-6 justify-center flex-wrap mb-5">
-              <Link href="/buy/clt-shirt" className="text-center">
-                <Image
-                  src="/merch/fw/chief-ladiga-trail-01.webp"
-                  alt="Chief Ladiga Trail tee"
-                  width={160}
-                  height={160}
-                  className="mx-auto rounded mb-1"
-                  unoptimized
-                  loading="eager"
-                />
-                <span className="text-xs text-ll-text-light">Chief Ladiga Trail</span>
-              </Link>
-              <Link href="/buy/model-city-shirt" className="text-center">
-                <Image
-                  src="/merch/fw/model-city-dark-01.webp"
-                  alt="The Model City tee"
-                  width={160}
-                  height={160}
-                  className="mx-auto rounded mb-1"
-                  unoptimized
-                  loading="eager"
-                />
-                <span className="text-xs text-ll-text-light">The Model City</span>
-              </Link>
-            </div>
             <Link
               href="/merch"
               className="inline-block text-sm font-medium text-ll-primary border border-ll-primary px-5 py-2.5 hover:bg-ll-primary hover:text-white transition-colors"

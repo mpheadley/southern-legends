@@ -3,7 +3,7 @@ import Link from "next/link"
 import { getFeatured, SL_PLACES, cityToSlug, bizToSlug } from "@/lib/places"
 import { CITIES, cityToSlug as dbCityToSlug } from "@/lib/city-businesses"
 import { ANCHOR_CITIES, regionCities } from "@/lib/region"
-import { getAllListicles } from "@/lib/listicles"
+import { getAllListicles, ANCHOR_GUIDE_CITIES } from "@/lib/listicles"
 import { siteConfig } from "@/lib/site-config"
 import SectionLinks from "@/app/components/SectionLinks"
 import ShareRow from "@/app/components/ShareRow"
@@ -31,7 +31,10 @@ function categoryColor(cat: string) {
 export default function PlacesPage() {
   const featured = getFeatured()
   const all = SL_PLACES
-  const guides = getAllListicles().slice(0, 8)
+  // Home-market or featured guides only — the alphabetical slice surfaced thin guides first (audit C-17)
+  const guides = getAllListicles()
+    .filter((g) => g.featured || ANCHOR_GUIDE_CITIES.includes(g.city))
+    .slice(0, 8)
 
   const schema = {
     "@context": "https://schema.org",
@@ -50,11 +53,11 @@ export default function PlacesPage() {
       <div className="mx-auto max-w-4xl px-6 pt-28 pb-10 md:pt-36">
         <p style={{
           fontFamily: "var(--font-body)",
-          fontSize: "0.7rem",
+          fontSize: "var(--text-label)",
           fontWeight: 600,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: "#9a6c2f",
+          color: "var(--color-ll-accent-dark)",
           marginBottom: "1rem",
         }}>
           Southern Legends
@@ -64,7 +67,7 @@ export default function PlacesPage() {
           fontSize: "clamp(2.5rem, 7vw, 4rem)",
           fontWeight: 400,
           lineHeight: 1.1,
-          color: "#1a1208",
+          color: "var(--color-ll-dark)",
           marginBottom: "1rem",
         }}>
           Places
@@ -72,7 +75,7 @@ export default function PlacesPage() {
         <p style={{
           fontFamily: "var(--font-body)",
           fontSize: "1.125rem",
-          color: "#4a3728",
+          color: "var(--color-ll-text)",
           maxWidth: "42rem",
           lineHeight: 1.65,
           marginBottom: "2.5rem",
@@ -83,7 +86,7 @@ export default function PlacesPage() {
           href="/places/nominate"
           style={{
             display: "inline-block",
-            background: "#9a6c2f",
+            background: "var(--color-ll-accent-dark)",
             color: "#F0EDE6",
             fontFamily: "var(--font-body)",
             fontWeight: 600,
@@ -104,11 +107,11 @@ export default function PlacesPage() {
           <>
             <p style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.7rem",
+              fontSize: "var(--text-label)",
               fontWeight: 600,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#9a6c2f",
+              color: "var(--color-ll-accent-dark)",
               marginBottom: "1.25rem",
             }}>
               Featured
@@ -135,7 +138,7 @@ export default function PlacesPage() {
                   }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
                       <span style={{
-                        fontSize: "0.65rem",
+                        fontSize: "var(--text-label)",
                         fontWeight: 700,
                         letterSpacing: "0.12em",
                         textTransform: "uppercase",
@@ -146,12 +149,12 @@ export default function PlacesPage() {
                       </span>
                       {biz.story && (
                         <span style={{
-                          fontSize: "0.6rem",
+                          fontSize: "var(--text-label)",
                           fontWeight: 700,
                           letterSpacing: "0.1em",
                           textTransform: "uppercase",
                           color: "#F0EDE6",
-                          background: "#9a6c2f",
+                          background: "var(--color-ll-accent-dark)",
                           padding: "0.15rem 0.45rem",
                           borderRadius: "3px",
                           fontFamily: "var(--font-body)",
@@ -164,7 +167,7 @@ export default function PlacesPage() {
                       fontFamily: "var(--font-heading)",
                       fontSize: "1.25rem",
                       fontWeight: 400,
-                      color: "#1a1208",
+                      color: "var(--color-ll-dark)",
                       marginBottom: "0.5rem",
                       lineHeight: 1.2,
                     }}>
@@ -173,7 +176,7 @@ export default function PlacesPage() {
                     <p style={{
                       fontFamily: "var(--font-body)",
                       fontSize: "0.875rem",
-                      color: "#6b5040",
+                      color: "var(--color-ll-text)",
                       lineHeight: 1.5,
                       marginBottom: "0.75rem",
                     }}>
@@ -181,8 +184,8 @@ export default function PlacesPage() {
                     </p>
                     <p style={{
                       fontFamily: "var(--font-body)",
-                      fontSize: "0.75rem",
-                      color: "#9a6c2f",
+                      fontSize: "var(--text-meta)",
+                      color: "var(--color-ll-accent-dark)",
                       fontWeight: 600,
                     }}>
                       {biz.city}, {biz.state}
@@ -198,11 +201,11 @@ export default function PlacesPage() {
         <div style={{ marginBottom: "2.5rem" }}>
           <p style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.7rem",
+            fontSize: "var(--text-label)",
             fontWeight: 600,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#9a6c2f",
+            color: "var(--color-ll-accent-dark)",
             marginBottom: "1.25rem",
           }}>
             Where we spend our time
@@ -220,7 +223,7 @@ export default function PlacesPage() {
                   fontFamily: "var(--font-heading)",
                   fontSize: "1.25rem",
                   fontWeight: 400,
-                  color: "#1a1208",
+                  color: "var(--color-ll-dark)",
                   textDecoration: "none",
                   padding: "1rem 1.25rem",
                   background: "#fff",
@@ -230,7 +233,7 @@ export default function PlacesPage() {
                 }}
               >
                 {city}
-                <span style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#9a6c2f", fontWeight: 600, marginTop: "0.25rem" }}>
+                <span style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "var(--color-ll-accent-dark)", fontWeight: 600, marginTop: "0.25rem" }}>
                   Northeast Alabama
                 </span>
               </Link>
@@ -242,11 +245,11 @@ export default function PlacesPage() {
         <div style={{ marginBottom: "3rem" }}>
           <p style={{
             fontFamily: "var(--font-body)",
-            fontSize: "0.7rem",
+            fontSize: "var(--text-label)",
             fontWeight: 600,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#9a6c2f",
+            color: "var(--color-ll-accent-dark)",
             marginBottom: "1.25rem",
           }}>
             More across Northeast Alabama
@@ -263,7 +266,7 @@ export default function PlacesPage() {
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.875rem",
-                  color: "#4a3728",
+                  color: "var(--color-ll-text)",
                   textDecoration: "none",
                   padding: "0.35rem 0",
                   borderBottom: "1px solid rgba(154,108,47,0.08)",
@@ -282,14 +285,14 @@ export default function PlacesPage() {
           <div style={{ marginBottom: "3rem" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem" }}>
               <p style={{
-                fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 600,
-                letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a6c2f",
+                fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 600,
+                letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)",
               }}>
                 Local Guides
               </p>
               <Link href="/listicles" style={{
                 fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600,
-                color: "#9a6c2f", textDecoration: "none",
+                color: "var(--color-ll-accent-dark)", textDecoration: "none",
               }}>
                 See all →
               </Link>
@@ -301,7 +304,7 @@ export default function PlacesPage() {
                 <Link key={g.slug} href={`/listicles/${g.slug}`} style={{
                   display: "block", background: "#fff", border: "1px solid rgba(154,108,47,0.15)",
                   borderRadius: "6px", padding: "0.9rem 1.1rem", textDecoration: "none",
-                  fontFamily: "var(--font-heading)", fontSize: "1.05rem", color: "#1a1208", lineHeight: 1.25,
+                  fontFamily: "var(--font-heading)", fontSize: "1.05rem", color: "var(--color-ll-dark)", lineHeight: 1.25,
                 }}>
                   {g.title}
                 </Link>
@@ -312,7 +315,7 @@ export default function PlacesPage() {
 
         {/* Nominate CTA */}
         <div style={{
-          background: "#1a1208",
+          background: "var(--color-ll-dark)",
           borderRadius: "8px",
           padding: "2rem",
           textAlign: "center",
@@ -338,7 +341,7 @@ export default function PlacesPage() {
             href="/places/nominate"
             style={{
               display: "inline-block",
-              background: "#9a6c2f",
+              background: "var(--color-ll-accent-dark)",
               color: "#F0EDE6",
               fontFamily: "var(--font-body)",
               fontWeight: 600,

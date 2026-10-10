@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 export default function SubscribePage() {
   return (
-    <main>
-      <SubscribeCTA variant="section" />
+    <main className="page-top" style={{ background: "var(--color-ll-dark)" }}>
+      <SubscribeCTA variant="section" headingAs="h1" />
     </main>
   );
 }

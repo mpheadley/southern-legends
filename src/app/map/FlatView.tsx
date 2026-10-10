@@ -68,10 +68,15 @@ export default function FlatView({
       scrollWheelZoom
     >
       <LayersControl position="topright">
-        <LayersControl.BaseLayer checked name="Dark">
+        {/* CARTO dark_all now requires an API key (tiles render "API KEY REQUIRED").
+            OSM standard tiles are free, no key, attribution required; the dark look
+            comes from a CSS filter on this layer only (.sl-tiles-dark in globals.css). */}
+        <LayersControl.BaseLayer checked name="Map">
           <TileLayer
-            attribution="&copy; OpenStreetMap, &copy; CARTO"
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            maxZoom={19}
+            className="sl-tiles-dark"
           />
         </LayersControl.BaseLayer>
         <LayersControl.BaseLayer name="Satellite">
@@ -82,7 +87,7 @@ export default function FlatView({
         </LayersControl.BaseLayer>
         <LayersControl.BaseLayer name="Terrain">
           <TileLayer
-            attribution="&copy; OpenTopoMap"
+            attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Style &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
             url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
           />
         </LayersControl.BaseLayer>

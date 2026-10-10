@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ColophonPage() {
   return (
     <main id="main-content" className="bg-ll-light min-h-screen">
-      <div className="max-w-2xl mx-auto px-6 py-24 md:py-32">
+      <div className="max-w-2xl mx-auto px-6 pt-32 pb-24 md:pb-32">
 
         <header className="mb-16">
           <p className="text-ll-primary text-sm font-semibold uppercase tracking-widest mb-4">Colophon</p>

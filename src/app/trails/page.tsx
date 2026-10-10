@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Bike, Footprints, PersonStanding, TrainTrack, type LucideIcon } from "lucide-react"
 import { TRAILS, difficultyLabel, difficultyColor, surfaceLabel } from "@/lib/trails"
 import SectionLinks from "@/app/components/SectionLinks"
 import ShareRow from "@/app/components/ShareRow"
@@ -11,12 +12,12 @@ export const metadata: Metadata = {
   openGraph: { url: "/trails" },
 }
 
-const USE_ICONS: Record<string, string> = {
-  biking: "🚴",
-  hiking: "🥾",
-  running: "🏃",
-  horses: "🐎",
-  "rail-trail": "🛤️",
+// Lucide, not emoji (audit QW-17). Uses without an icon (e.g. horses) fall back to a text label.
+const USE_ICONS: Record<string, { Icon: LucideIcon; label: string }> = {
+  biking: { Icon: Bike, label: "Biking" },
+  hiking: { Icon: Footprints, label: "Hiking" },
+  running: { Icon: PersonStanding, label: "Running" },
+  "rail-trail": { Icon: TrainTrack, label: "Rail-trail" },
 }
 
 export default function TrailsPage() {
@@ -29,14 +30,14 @@ export default function TrailsPage() {
       {/* Hero */}
       <div style={{
         background: "linear-gradient(to bottom, #1C1917, #3D2B1A)",
-        padding: "5rem 1.5rem 4rem",
+        padding: "7.5rem 1.5rem 4rem",
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
       }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url(/topo-7.png)", backgroundSize: "400px", opacity: 0.06 }} />
         <div style={{ position: "relative", maxWidth: "48rem", margin: "0 auto" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "1rem" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "1rem" }}>
             Southern Legends · Trail Guide
           </p>
           <h1 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2.5rem, 6vw, 4rem)", color: "#FAFAF7", fontWeight: 400, lineHeight: 1.1, marginBottom: "1.25rem" }}>
@@ -66,7 +67,7 @@ export default function TrailsPage() {
 
       {/* Featured trails */}
       <div style={{ maxWidth: "72rem", margin: "0 auto", padding: "4rem 1.5rem 0" }}>
-        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "2rem" }}>Featured</p>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "2rem" }}>Featured</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "1.5rem", marginBottom: "4rem" }}>
           {featured.map(trail => (
             <TrailCard key={trail.slug} trail={trail} featured />
@@ -75,7 +76,7 @@ export default function TrailsPage() {
 
         {/* All trails */}
         <div id="all-trails">
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "2rem" }}>All Trails</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#9A3412", marginBottom: "2rem" }}>All Trails</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1rem", marginBottom: "4rem" }}>
             {rest.map(trail => (
               <TrailCard key={trail.slug} trail={trail} />
@@ -86,7 +87,7 @@ export default function TrailsPage() {
         {/* Support CLT */}
         <div style={{ background: "#1C1917", borderRadius: "8px", padding: "2.5rem", marginBottom: "3rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "2rem", alignItems: "center" }}>
           <div>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.5rem" }}>Support the Trail</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.5rem" }}>Support the Trail</p>
             <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.75rem", color: "#FAFAF7", fontWeight: 400, marginBottom: "0.75rem" }}>Chief Ladiga Trail needs your help.</h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", color: "rgba(250,250,247,0.7)", lineHeight: 1.7 }}>
               The CLT is volunteer-maintained and grant-funded. Trail repairs, trailhead improvements, and new connections depend on community support.
@@ -107,7 +108,16 @@ export default function TrailsPage() {
 }
 
 function TrailCard({ trail, featured = false }: { trail: import("@/lib/trails").Trail; featured?: boolean }) {
-  const uses = trail.uses.map(u => USE_ICONS[u] ?? u).join(" ")
+  const uses = (
+    <span style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+      {trail.uses.map((u) => {
+        const ic = USE_ICONS[u]
+        return ic
+          ? <ic.Icon key={u} size={16} aria-label={ic.label} role="img" />
+          : <span key={u} style={{ textTransform: "capitalize" }}>{u}</span>
+      })}
+    </span>
+  )
 
   return (
     <Link href={`/trails/${trail.slug}`} style={{ textDecoration: "none", display: "block" }}>
@@ -129,24 +139,24 @@ function TrailCard({ trail, featured = false }: { trail: import("@/lib/trails").
               background: difficultyColor(trail.difficulty),
               color: "#fff",
               fontFamily: "var(--font-body)",
-              fontSize: "0.6rem",
+              fontSize: "var(--text-label)",
               fontWeight: 700,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               padding: "0.2rem 0.5rem",
               borderRadius: "2px",
             }}>{difficultyLabel(trail.difficulty)}</span>
-            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", color: "rgba(250,250,247,0.8)" }}>{uses}</span>
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", color: "rgba(250,250,247,0.9)" }}>{uses}</span>
           </div>
         </div>
 
         <div style={{ padding: "1rem" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9A3412", marginBottom: "0.25rem" }}>{trail.region}</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9A3412", marginBottom: "0.25rem" }}>{trail.region}</p>
           <h3 style={{ fontFamily: "var(--font-heading)", fontSize: featured ? "1.25rem" : "1.05rem", color: "#1C1917", fontWeight: 400, marginBottom: "0.5rem", lineHeight: 1.2 }}>{trail.name}</h3>
           <div style={{ display: "flex", gap: "1rem", marginBottom: "0.75rem" }}>
-            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#6B6560" }}>{trail.length} mi</span>
-            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#6B6560" }}>{surfaceLabel(trail.surface)}</span>
-            {trail.fee && <span style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#9A3412" }}>Fee</span>}
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#6B6560" }}>{trail.length} mi</span>
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#6B6560" }}>{surfaceLabel(trail.surface)}</span>
+            {trail.fee && <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#9A3412" }}>Fee</span>}
           </div>
           {featured && (
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#3F3B36", lineHeight: 1.6, marginBottom: "0.75rem" }}>

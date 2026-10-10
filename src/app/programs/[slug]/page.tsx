@@ -24,7 +24,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
   if (!p) notFound()
 
   return (
-    <main className="max-w-2xl mx-auto px-4 py-16">
+    <main className="page-top max-w-2xl mx-auto px-4 pb-16">
       <Link
         href="/programs"
         className="text-sm text-stone-500 hover:text-stone-300 transition-colors mb-8 inline-block"
@@ -43,7 +43,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
         </p>
         <h1
           className="text-4xl md:text-5xl mb-3"
-          style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, #f5f0e8)' }}
+          style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, var(--color-ll-light))' }}
         >
           {p.mascot} {p.name}
         </h1>
@@ -54,7 +54,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
         <section className="mb-10 border border-stone-800 rounded-xl p-6 bg-stone-900/40">
           <h2
             className="text-xl mb-2"
-            style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, #f5f0e8)' }}
+            style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, var(--color-ll-light))' }}
           >
             Official Merch
           </h2>
@@ -79,7 +79,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
           </p>
           <h2
             className="text-2xl mb-2"
-            style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, #f5f0e8)' }}
+            style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ll-cream, var(--color-ll-light))' }}
           >
             Support the {p.mascot}
           </h2>
