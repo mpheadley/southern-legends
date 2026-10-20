@@ -17,23 +17,24 @@ interface Props {
   count?: number;  // how many to show (default 4)
 }
 
+/** Quiet cross-links row. SL tokens only (no stone/amber, no dark: variants). */
 export default function SectionLinks({ current, count = 4 }: Props) {
   const others = SECTIONS.filter((s) => s.href !== current).slice(0, count);
 
   return (
-    <div className="border-t border-stone-200 dark:border-stone-700 pt-10 mt-16">
-      <p className="text-xs uppercase tracking-widest text-stone-400 mb-5">Explore Southern Legends</p>
+    <div className="border-t border-ll-border pt-10 mt-16 text-left">
+      <p className="text-sm uppercase tracking-widest text-ll-text-light mb-5">Explore Southern Legends</p>
       <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
         {others.map((s) => (
           <Link
             key={s.href}
             href={s.href}
-            className="group border border-stone-200 dark:border-stone-700 rounded-lg p-4 hover:border-amber-500 dark:hover:border-amber-500 transition"
+            className="group border border-ll-border rounded-lg p-4 bg-white/60 hover:border-ll-accent transition"
           >
-            <p className="font-semibold text-stone-900 dark:text-stone-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 text-sm mb-1">
+            <p className="font-semibold text-ll-dark group-hover:text-ll-primary text-sm mb-1" style={{ fontFamily: "var(--font-heading)" }}>
               {s.label} →
             </p>
-            <p className="text-xs text-stone-500 dark:text-stone-400">{s.desc}</p>
+            <p className="text-sm text-ll-text-light">{s.desc}</p>
           </Link>
         ))}
       </div>
