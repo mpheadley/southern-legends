@@ -38,7 +38,6 @@ import ProfileCardHero from "@/app/components/ProfileCardHero";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
 import FloatingShareBar from "@/app/components/FloatingShareBar";
 import PrevNextEdgeArrows from "@/app/components/PrevNextEdgeArrows";
-import NextUpPopup from "@/app/components/NextUpPopup";
 import VideoEmbed from "@/app/components/VideoEmbed";
 import UpcomingEvents from "@/app/components/UpcomingEvents";
 import ShelfLifeNotice from "@/app/components/ShelfLifeNotice";
@@ -301,7 +300,7 @@ export default async function ProfilePage({
       <ReadingProgressBar />
       <PrevNextEdgeArrows prev={prev} next={next} />
       <FloatingShareBar slug={slug} title={frontmatter.title} description={frontmatter.excerpt ?? ""} />
-      {next && <NextUpPopup next={next} />}
+      {/* NextUpPopup retired (redesign B-01): one overlay per visit, SubscribePopup owns it. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

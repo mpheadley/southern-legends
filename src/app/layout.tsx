@@ -9,7 +9,6 @@ import ScrollReveal from "./components/ScrollReveal";
 import CookieBanner from "./components/CookieBanner";
 import LenisProvider from "./components/LenisProvider";
 import SubscribePopup from "./components/SubscribePopup";
-import SupportPopup from "./components/SupportPopup";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -115,8 +114,8 @@ export default function RootLayout({
           <Footer />
           <ScrollReveal />
           <CookieBanner />
+          {/* One overlay per visit (redesign B-01): SubscribePopup only. SupportPopup retired. */}
           <SubscribePopup />
-          <SupportPopup />
         </LenisProvider>
       </body>
     </html>

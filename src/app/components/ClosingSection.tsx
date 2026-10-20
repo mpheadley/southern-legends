@@ -12,17 +12,22 @@ interface ClosingSectionProps {
   shareUrl: string;
   title: string;
   excerpt?: string;
-  primary: Product;
-  /** Kept for callers; only `primary` renders now (design audit QW-05: one item, merch lives on /merch). */
+  /** Kept for callers. Merch no longer renders here (redesign B-01: one closing block, one ask). It lives on /merch. */
+  primary?: Product;
   secondary?: Product;
   tertiary?: Product;
   podcastUrls?: { spotify?: string; apple?: string; youtube?: string };
 }
 
-export default function ClosingSection({ shareUrl, title, excerpt, primary, podcastUrls }: ClosingSectionProps) {
+/**
+ * The one closing block at the end of every story and essay (redesign B-01).
+ * Byline (hedcut, one sentence) → share row → ONE ask (Support).
+ * Comments and related stories sit below it on the page.
+ */
+export default function ClosingSection({ shareUrl, title, excerpt, podcastUrls }: ClosingSectionProps) {
   return (
-    <section className="profile-closing">
-      {/* Author credit */}
+    <section className="profile-closing" aria-label="About the author">
+      {/* Byline */}
       <div className="profile-closing-author">
         <Image
           src="/images/about/headshot-hedcut-matt-headley.webp"
@@ -33,76 +38,31 @@ export default function ClosingSection({ shareUrl, title, excerpt, primary, podc
           style={{ width: "128px", height: "128px" }}
         />
         <div>
-          <p className="profile-closing-bio">
+          <p className="profile-closing-bio" style={{ fontSize: "1rem" }}>
             <Link href="/about" className="profile-closing-name">
               Matt Headley
             </Link>
-            {" "}is pastor of Ecclesia Community, a fresh expression of Christian community, a flower farmer in Northeast Alabama, and the author of{" "}
-            <Link href="/author" className="profile-closing-link">
-              Tend: Before the Wedding
-            </Link>
-            {" "}and{" "}
-            <Link href="/author" className="profile-closing-link">
-              God & the Algorithm
-            </Link>
-            . He is the founder and editor of Southern Legends, the founder of{" "}
-            <a href="https://plainspokenblueprint.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
-              Gather Studio
-            </a>
-            , a messaging coaching practice for small businesses, and the founder of{" "}
-            <a href="https://theaislebridalshows.com" target="_blank" rel="noopener noreferrer" className="profile-closing-link">
-              The Aisle
-            </a>
-            , a bridal show in Anniston.
+            {" "}writes Southern Legends from Northeast Alabama. He lost a farm, kept going, and now sits down with the people here who are still building.
           </p>
-          <div className="mt-3">
-            <Link
-              href="/essays"
-              className="btn-journal inline-block px-5 py-2 border-2 border-ll-accent font-bold text-sm rounded-md hover:bg-ll-accent transition-colors"
-            >
-              Matt also writes about his own story →
-            </Link>
-          </div>
+          <p className="mt-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <Link href="/essays" className="profile-closing-link">His own story is in the essays →</Link>
+          </p>
         </div>
       </div>
 
-      {/* Divider */}
       <div className="profile-closing-divider" />
 
-      {/* Share + one merch item + Support */}
+      {/* Share + the one ask */}
       <div className="profile-closing-share">
         <ShareButtons url={shareUrl} title={title} description={excerpt ?? ""} podcastUrls={podcastUrls} />
-
-        <p className="text-sm text-ll-accent text-center mt-8 mb-2" style={{ letterSpacing: "0.05em" }}>
-          Purchases support Southern Legends.
+        <p className="text-sm text-center mt-6" style={{ color: "rgba(255,255,255,0.75)", maxWidth: "26rem" }}>
+          Southern Legends is independent and reader-supported. No paywall, no sponsors deciding who gets written about.
         </p>
-        <div className="flex justify-center">
-          <div className="flex flex-col items-center gap-3">
-            <Link href={primary.url}>
-              <Image
-                src={primary.image}
-                alt={primary.name}
-                width={140}
-                height={140}
-                className="rounded hover:opacity-90 transition-opacity"
-                unoptimized
-              />
-            </Link>
-            <span className="text-sm text-white/60">{primary.name}</span>
-            <Link
-              href={primary.url}
-              className="inline-block text-sm font-medium text-white border border-white/50 px-4 py-2 hover:bg-white hover:text-ll-dark transition-colors"
-            >
-              Get the shirt →
-            </Link>
-          </div>
-        </div>
-
         <a
           href="/support"
-          className="btn-support inline-block mt-4 px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
+          className="btn-support inline-block mt-2 px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
         >
-          Support this work →
+          Support this work — $5 →
         </a>
       </div>
     </section>
