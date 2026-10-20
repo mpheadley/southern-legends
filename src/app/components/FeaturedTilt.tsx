@@ -209,27 +209,7 @@ export default function FeaturedTilt({ cards }: { cards: FeaturedCard[] }) {
         ref={sectionRef}
         style={{ perspective: "1200px" }}
       >
-        <p
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            top: "1.5rem",
-            left: "50%",
-            transform: "translateX(-50%)",
-            zIndex: 10,
-            margin: 0,
-            fontFamily: "var(--font-heading)",
-            fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
-            fontWeight: 400,
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "rgba(250,250,247,0.55)",
-            whiteSpace: "nowrap",
-            pointerEvents: "none",
-          }}
-        >
-          Southern Legends
-        </p>
+        {/* The "Southern Legends" label that sat under the old opaque header is gone: the wordmark shows through the transparent nav now (B-02). */}
 
         {/* Profile cards */}
         {cards.map((card, i) => (
