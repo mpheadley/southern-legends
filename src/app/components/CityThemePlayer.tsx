@@ -1,15 +1,7 @@
 "use client"
 
 import AudioPlayer from "./AudioPlayer"
-
-/** Maps city slug → audio file under /public/audio/cities/.
- *  Drop the Suno .mp3 into public/audio/cities/ and add the slug here. */
-const CITY_THEMES: Record<string, { file: string; caption: string }> = {
-  anniston: {
-    file: "/audio/cities/anniston-theme.mp3",
-    caption: "Anniston — original composition · Southern Legends",
-  },
-}
+import { CITY_THEMES } from "@/lib/city-themes"
 
 interface Props {
   citySlug: string
