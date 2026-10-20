@@ -3,11 +3,18 @@
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { Link } from "next-view-transitions";
-import { Globe, MapPin } from "lucide-react";
+import { Globe, MapPin, X } from "lucide-react";
 import type { MapMarker, TrailPath, FilterBucket } from "@/lib/map-data";
 
 // WebGL / window-dependent views — never SSR them.
-const GlobeView = dynamic(() => import("./GlobeView"), { ssr: false });
+const GlobeView = dynamic(() => import("./GlobeView"), {
+  ssr: false,
+  loading: () => (
+    <p style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", margin: 0, color: "rgba(240,237,232,0.7)", fontFamily: "var(--font-body)", fontSize: "0.95rem" }}>
+      Loading the globe…
+    </p>
+  ),
+});
 const FlatView = dynamic(() => import("./FlatView"), { ssr: false });
 
 type Mode = "globe" | "flat";
@@ -42,9 +49,22 @@ export default function GlobeMap({
   const [filter, setFilter] = useState<FilterBucket | "all">("all");
   const [selected, setSelected] = useState<MapMarker | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [noWebGL, setNoWebGL] = useState(false);
 
-  // Globe degrades badly on small screens — force flat on mobile.
+  // Globe degrades badly on small screens — force flat on mobile. Without WebGL the
+  // globe is a blank canvas, so those readers get the flat map too (redesign B-09).
   useEffect(() => {
+    let webgl = false;
+    try {
+      const c = document.createElement("canvas");
+      webgl = !!(c.getContext("webgl2") || c.getContext("webgl"));
+    } catch {
+      webgl = false;
+    }
+    if (!webgl) {
+      setNoWebGL(true);
+      setMode("flat");
+    }
     const check = () => {
       const m = window.innerWidth < 768;
       setIsMobile(m);
@@ -54,6 +74,14 @@ export default function GlobeMap({
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
+
+  // Escape closes the detail panel.
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setSelected(null); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [selected]);
 
   const filtered = useMemo(
     () => (filter === "all" ? markers : markers.filter((m) => m.filter === filter)),
@@ -66,7 +94,7 @@ export default function GlobeMap({
 
   return (
     <div className="sl-map" style={{ position: "relative", zIndex: 0, isolation: "isolate", width: "100%", height: "100dvh", background: "#0a0f0c", overflow: "hidden" }}>
-      {mode === "globe" && !isMobile ? (
+      {mode === "globe" && !isMobile && !noWebGL ? (
         <GlobeView markers={filtered} trails={filteredTrails} onSelect={setSelected} />
       ) : (
         <FlatView markers={filtered} trails={filteredTrails} onSelect={setSelected} />
@@ -90,15 +118,15 @@ export default function GlobeMap({
         <h1 style={{ fontFamily: "var(--font-heading)", color: "#F0EDE6", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, lineHeight: 1.1, margin: 0, textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}>
           The Map
         </h1>
-        {!isMobile && (
-          <div style={pillWrap}>
-            <button onClick={() => setMode("globe")} style={pill(mode === "globe")}><Globe size={16} aria-hidden="true" style={{ display: "inline", verticalAlign: "-3px", marginRight: 6 }} />Globe</button>
-            <button onClick={() => setMode("flat")} style={pill(mode === "flat")}><MapPin size={16} aria-hidden="true" style={{ display: "inline", verticalAlign: "-3px", marginRight: 6 }} />Map</button>
+        {!isMobile && !noWebGL && (
+          <div style={pillWrap} role="group" aria-label="View">
+            <button type="button" aria-pressed={mode === "globe"} onClick={() => setMode("globe")} style={pill(mode === "globe")}><Globe size={16} aria-hidden="true" style={{ display: "inline", verticalAlign: "-3px", marginRight: 6 }} />Globe</button>
+            <button type="button" aria-pressed={mode === "flat"} onClick={() => setMode("flat")} style={pill(mode === "flat")}><MapPin size={16} aria-hidden="true" style={{ display: "inline", verticalAlign: "-3px", marginRight: 6 }} />Map</button>
           </div>
         )}
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.4rem" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.4rem" }} role="group" aria-label="Filter">
           {FILTERS.map((f) => (
-            <button key={f.key} onClick={() => setFilter(f.key)} style={chip(filter === f.key)}>
+            <button key={f.key} type="button" aria-pressed={filter === f.key} onClick={() => setFilter(f.key)} style={chip(filter === f.key)}>
               {f.label}
             </button>
           ))}
@@ -110,6 +138,8 @@ export default function GlobeMap({
 
       {/* Slide-in card panel */}
       <aside
+        aria-label="Selected place"
+        aria-hidden={!selected}
         style={{
           position: "fixed",
           top: "4.75rem",
@@ -128,7 +158,7 @@ export default function GlobeMap({
       >
         {selected && (
           <>
-            <button onClick={() => setSelected(null)} style={closeBtn} aria-label="Close">×</button>
+            <button type="button" onClick={() => setSelected(null)} style={closeBtn} aria-label="Close"><X size={18} aria-hidden="true" /></button>
             {selected.photo && (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={selected.photo} alt={selected.name} style={{ width: "100%", height: 200, objectFit: "cover" }} />
@@ -220,6 +250,6 @@ const closeBtn: React.CSSProperties = {
   cursor: "pointer",
   background: "rgba(10,15,12,0.7)",
   color: "#f0ede8",
-  fontSize: "1.3rem",
-  lineHeight: 1,
+  display: "grid",
+  placeItems: "center",
 };
