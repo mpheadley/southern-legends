@@ -7,11 +7,9 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { Link } from "next-view-transitions";
 import { notFound } from "next/navigation";
 import { getListicle, getListicleSlugs, getAllListicles, GuideEvent } from "@/lib/listicles";
-import { getMerchForCity, getMerchForOutdoors } from "@/lib/merch";
 import ShareRow from "@/app/components/ShareRow";
 import { BusinessCard } from "@/app/components/BusinessCard";
 import { Calendar, MapPin, Route, ExternalLink, Star } from "lucide-react";
-import AuthorSupport from "@/app/components/AuthorSupport";
 import UpcomingEvents from "@/app/components/UpcomingEvents";
 
 export function generateStaticParams() {
@@ -134,15 +132,15 @@ export default async function ListiclePage({
   const l = getListicle(slug);
   if (!l) notFound();
 
-  const others = getAllListicles().filter((x) => x.slug !== slug).slice(0, 6);
+  // Same-city guides first, then the rest (redesign B-05).
+  const others = getAllListicles()
+    .filter((x) => x.slug !== slug)
+    .sort((a, b) => Number(b.city === l.city) - Number(a.city === l.city))
+    .slice(0, 6);
   const isEvent = l.events && l.events.length > 0;
   const isCard = !isEvent && l.businesses && l.businesses.length > 0;
   const weddingCategories = ["photographer", "florist", "venue", "catering", "bridal", "chapel", "jeweler", "jewelry", "bakery", "cake", "hair salon", "salon", "spa", "rental", "music", "alterations", "boutique", "nail", "wedding planner", "planner"];
   const showAisleAd = weddingCategories.some(c => (l.category ?? "").toLowerCase().includes(c) || l.tags.some(t => t.toLowerCase().includes(c)));
-  const isOutdoors = l.category === "outdoors";
-  const cityMerch = isOutdoors
-    ? getMerchForOutdoors(6)
-    : getMerchForCity(l.city.toLowerCase().replace(/\s+/g, "-"), 4);
 
   // JSON-LD: Event schema for event listicles, ItemList for all
   const eventSchema = isEvent ? {
@@ -195,7 +193,7 @@ export default async function ListiclePage({
           </div>
         </div>
       ) : (
-        <div style={{ background: "var(--color-ll-dark)", padding: "5rem 1.5rem 2.5rem" }}>
+        <div style={{ background: "var(--color-ll-dark)", padding: "7rem 1.5rem 2.5rem" }}>
           <div style={{ maxWidth: "48rem", margin: "0 auto" }}>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.6rem" }}>
               Southern Legends · Local Guide
@@ -206,6 +204,11 @@ export default async function ListiclePage({
             {l.intro && (
               <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1rem, 2.2vw, 1.2rem)", color: "rgba(240,237,230,0.75)", lineHeight: 1.6, maxWidth: "38rem" }}>
                 {l.intro}
+              </p>
+            )}
+            {!l.eventsFeed && !isEvent && (
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "rgba(240,237,230,0.55)", lineHeight: 1.5, maxWidth: "38rem", marginTop: "1rem" }}>
+                How this list is made: public data first, then what I know from living here. Nobody paid to be on it.
               </p>
             )}
           </div>
@@ -308,38 +311,6 @@ export default async function ListiclePage({
           <ShareRow url={`/listicles/${slug}`} title={l.title} description={l.excerpt} />
         </div>
 
-        {/* Merch strip */}
-        {cityMerch.length > 0 && (
-          <div style={{ marginTop: "2.5rem", background: "var(--color-ll-dark)", borderRadius: "12px", padding: "1.5rem" }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "1rem" }}>
-              {isOutdoors ? "Shop CLT & Trail Gear" : "From the Southern Legends Shop"}
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "0.85rem" }}>
-              {cityMerch.map((item) => (
-                item.available ? (
-                  <a key={item.id} href={`/merch#${item.id}`} style={{ textDecoration: "none" }}>
-                    <div style={{ position: "relative", width: "100%", paddingBottom: "100%", borderRadius: "8px", overflow: "hidden", background: "#2a1f0e" }}>
-                      {item.photo && <Image src={item.photo} alt={item.name} fill style={{ objectFit: "cover", opacity: 0.9 }} sizes="200px" />}
-                    </div>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "#f0ede6", marginTop: "0.4rem" }}>{item.name}</p>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "var(--color-ll-accent-dark)", marginTop: "0.1rem" }}>{item.price}</p>
-                  </a>
-                ) : (
-                  <div key={item.id} style={{ opacity: 0.5 }}>
-                    <div style={{ position: "relative", width: "100%", paddingBottom: "100%", borderRadius: "8px", overflow: "hidden", background: "#2a1f0e" }}>
-                      {item.photo && <Image src={item.photo} alt={item.name} fill style={{ objectFit: "cover" }} sizes="200px" />}
-                      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(26,18,8,0.5)" }}>
-                        <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#f0ede6", background: "rgba(26,18,8,0.7)", padding: "0.25rem 0.5rem", borderRadius: "4px" }}>Coming soon</span>
-                      </div>
-                    </div>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-ll-accent-dark)", marginTop: "0.4rem" }}>{item.name}</p>
-                  </div>
-                )
-              ))}
-            </div>
-          </div>
-        )}
-
         {others.length > 0 && (
           <div style={{ marginTop: "3rem", borderTop: "1px solid rgba(154,108,47,0.18)", paddingTop: "2rem" }}>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "1rem" }}>
@@ -356,7 +327,6 @@ export default async function ListiclePage({
         )}
       </div>
 
-      <AuthorSupport />
     </main>
   );
 }
