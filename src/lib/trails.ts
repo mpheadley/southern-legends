@@ -116,7 +116,7 @@ export const TRAILS: Trail[] = [
     alltrailsUrl: "https://www.alltrails.com/trail/us/alabama/coldwater-mountain-bike-trail",
     dogs: true,
     fee: false,
-    image: "/images/guides/trail-race-hero.webp",
+    // no image: the only file on hand was AI-generated (real photos only)
     tags: ["mountain-bike", "singletrack", "imba-epic", "oxford-al", "technical"],
   },
   {
