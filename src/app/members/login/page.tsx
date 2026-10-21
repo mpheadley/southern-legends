@@ -4,7 +4,7 @@ import LoginClient from './LoginClient'
 export const metadata: Metadata = {
   title: 'Members · Southern Legends',
   description: 'Access your Southern Legends member content.',
-  robots: { index: false },
+  robots: { index: false, follow: false },
 }
 
 export default function MembersLoginPage() {

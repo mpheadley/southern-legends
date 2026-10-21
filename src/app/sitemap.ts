@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     "/affiliate", "/almanac", "/almanac/autumn-2026", "/arts/music", "/arts/poetry", "/arts/theater",
     "/back-forty", "/back-forty/resources", "/books/company-of-farmers", "/books/opinions", "/colophon",
-    "/land", "/listen", "/listicles", "/map", "/masthead", "/merch/catalog", "/merch/clt-coin",
+    "/land", "/listen", "/listicles", "/map", "/merch/catalog", "/merch/clt-coin",
     "/merch/freedom-riders", "/merch/pvxc", "/merch/shirts", "/merch/woodstock", "/ministry", "/parks",
     "/places/nominate", "/podcast", "/privacy", "/programs", "/registry", "/sponsor",
     "/theology", "/trails", "/woodstock-5k", "/vol-1",
