@@ -160,7 +160,7 @@ export const AFFILIATE_CATALOG: AffiliateProduct[] = [
     commission: '10%',
     commissionNote: '$2.50–$7.50 per ticket',
     dest: 'https://theaisle.app',
-    description: 'Oct 18 NE Alabama bridal show. Couples + vendors. Anniston.',
+    description: 'NE Alabama bridal shows. Couples + vendors.',
     category: 'event',
   },
 

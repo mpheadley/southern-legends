@@ -294,8 +294,7 @@ export default function Vol1Page() {
               fontFamily: "var(--font-body)",
             }}
           >
-            $15 per copy. Available at{" "}
-            <strong style={{ color: "#1C1917" }}>The Aisle: Anniston Bridal Show</strong> on October 18, 2026 at Anniston Museums & Gardens — and at select local spots in Northeast Alabama.
+            $15 per copy. Available at select local spots in Northeast Alabama.
           </p>
           <a
             href={RESERVE_HREF}

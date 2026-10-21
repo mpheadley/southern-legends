@@ -67,9 +67,10 @@ const VENTURES: Rule[] = [
       key: "aisle",
       eyebrow: "The Aisle",
       headline: "Planning a wedding in East Alabama?",
-      body: "Register free for The Aisle — the region's best wedding vendors under one roof, one afternoon.",
+      body: "Register free for the next Aisle show — the region's best wedding vendors under one roof, one afternoon.",
       cta: "Register free",
-      href: "https://theaislebridalshows.com/live/anniston-oct-2026/register",
+      // Permanent destination: forwards to whichever show is next (never a dated register URL here).
+      href: "/go/aisle",
     },
   },
   {

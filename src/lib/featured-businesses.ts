@@ -93,7 +93,7 @@ export const FEATURED_BUSINESSES: FeaturedBusiness[] = [
     name: "Anniston Museums & Gardens",
     category: "Wedding Venue",
     website: "https://www.amag.org",
-    description: "Stunning museum venue on the finest block in Calhoun County. Host of The Aisle Oct 18.",
+    description: "Stunning museum venue on the finest block in Calhoun County. Hosted The Aisle, October 2026.",
     tag: "aisle",
   },
 

@@ -418,7 +418,10 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags },
           pageCta.key,
         );
-        return houseAd ? <HouseAdUnit ad={houseAd} page={`essays/${slug}`} /> : null;
+        // One ask per view: the closing block above already asks for Support, so the
+        // Support fallback stays off here. Only a real cross-promo earns the slot.
+        if (!houseAd || houseAd.key === "support") return null;
+        return <HouseAdUnit ad={houseAd} page={`essays/${slug}`} />;
       })()}
 
       <Comments slug={slug} />

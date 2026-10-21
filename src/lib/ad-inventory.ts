@@ -87,16 +87,36 @@ export type AisleShow = {
   qr?: string
 }
 
-/** The show the Aisle ad promotes today, or null once the schedule is used up. */
-export function activeAisleShow(today = new Date()): AisleShow | null {
-  const shows = (aisleShows as { shows: AisleShow[] }).shows
+/**
+ * CAMPAIGN END — the Aisle featured campaign ended the day after the Anniston show
+ * (Matt, 2026-10-21). From this date no Aisle ad renders anywhere on SL (top strip, band,
+ * margin card, phone bar, listicle ad); the slots fall back to the house resolver.
+ * /go/aisle still forwards to the next real show, so a QR someone kept still works.
+ * To run The Aisle again: set this to null (or a later date) and keep FEATURED_SCHEDULE current.
+ */
+export const FEATURED_CAMPAIGN_END: string | null = '2026-10-19'
+
+/** Is the Aisle featured campaign still running today (Central)? */
+export function aisleCampaignLive(today = new Date()): boolean {
+  if (!FEATURED_CAMPAIGN_END) return true
+  return today < new Date(`${FEATURED_CAMPAIGN_END}T00:00:00-06:00`)
+}
+
+/** First scheduled show that hasn't happened yet (Central), campaign or not. */
+export function nextAisleShow(shows: AisleShow[], today = new Date()): AisleShow | null {
   for (const slug of FEATURED_SCHEDULE) {
     const show = shows.find((x) => x.slug === slug)
-    if (!show) continue
+    if (!show?.date) continue
     const end = new Date(`${show.date}T23:59:59-06:00`) // end of show day, Central
     if (today <= end) return show
   }
   return null
+}
+
+/** The show the Aisle ad promotes today, or null once the campaign has ended or the schedule is used up. */
+export function activeAisleShow(today = new Date()): AisleShow | null {
+  if (!aisleCampaignLive(today)) return null
+  return nextAisleShow((aisleShows as { shows: AisleShow[] }).shows, today)
 }
 
 /** Presentation only (photo, partner logo, venue wording) — facts stay in the snapshot. */

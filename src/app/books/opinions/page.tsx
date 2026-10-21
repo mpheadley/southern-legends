@@ -285,7 +285,7 @@ export default function OpinionsBook() {
           >
             <p className="font-bold text-lg mb-1">The full book is coming.</p>
             <p className="text-sm mb-4 opacity-90">
-              Illustrated. Printed. Available at The Aisle Bridal Show, Oct 18.
+              Illustrated. Printed. Subscribers hear first when it ships.
             </p>
             <Link
               href="/subscribe"

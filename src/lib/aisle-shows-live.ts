@@ -6,7 +6,7 @@
 // Server-only: uses AISLE_TURSO_URL + AISLE_TURSO_TOKEN (never exposed to the browser).
 import "server-only";
 import snapshot from "@/data/aisle-shows.json";
-import { FEATURED_SCHEDULE, type AisleShow } from "@/lib/ad-inventory";
+import { aisleCampaignLive, nextAisleShow, type AisleShow } from "@/lib/ad-inventory";
 
 const SITE = "https://theaislebridalshows.com";
 
@@ -64,13 +64,13 @@ export async function getAisleShows(): Promise<AisleShow[]> {
   return (await fromTurso()) ?? (snapshot as { shows: AisleShow[] }).shows;
 }
 
-/** The show the Aisle ads promote right now (first scheduled show not yet past, Central). */
+/** The next real show (first scheduled show not yet past, Central) — used by /go/aisle so a kept QR still lands somewhere. */
+export async function getNextAisleShow(today = new Date()): Promise<AisleShow | null> {
+  return nextAisleShow(await getAisleShows(), today);
+}
+
+/** The show the Aisle ADS promote right now — null once the campaign has ended (FEATURED_CAMPAIGN_END). */
 export async function getActiveAisleShow(today = new Date()): Promise<AisleShow | null> {
-  const shows = await getAisleShows();
-  for (const slug of FEATURED_SCHEDULE) {
-    const show = shows.find((x) => x.slug === slug);
-    if (!show?.date) continue;
-    if (today <= new Date(`${show.date}T23:59:59-06:00`)) return show;
-  }
-  return null;
+  if (!aisleCampaignLive(today)) return null;
+  return getNextAisleShow(today);
 }

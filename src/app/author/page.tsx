@@ -75,7 +75,7 @@ const BOOKS: Book[] = [
     title: "Tend: Before the Wedding",
     tagline: "Five conversations before you say I do.",
     status: "presell",
-    statusLabel: "Presell signup open · prints after the Oct 18 show",
+    statusLabel: "Presell signup open",
     tier: "near",
     series: "The Tend Series",
     presellUrl: "/essays/forthcoming-tend-before-the-wedding",
