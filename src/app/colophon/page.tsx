@@ -52,15 +52,15 @@ export default function ColophonPage() {
               for a site that spends time with people who have been at something for a long time.
             </p>
             <p>
-              Section labels, eyebrow lines, and category tags use{" "}
-              <strong>Barlow Condensed</strong>, a compressed grotesque that keeps the
-              structural skeleton visible without competing with the prose.
+              Section labels, eyebrow lines, and category tags are Source Sans 3 too, set small,
+              bold, and spaced out. Pull quotes are Fraunces italic, a shift in register — a
+              breath between the reported prose and whatever line a subject said that stopped
+              the interview cold.
             </p>
             <p>
-              Pull quotes use <strong>IM Fell English</strong> italic, a digital revival of a
-              17th-century English typeface. It marks a shift in register — a breath between
-              the reported prose and whatever line a subject said that stopped the interview
-              cold. It lives only in pull quotes. One job, one place.
+              Two typefaces, no more. The site once loaded Barlow Condensed for labels and IM
+              Fell English for pull quotes; both came out in October 2026 so pages load lighter
+              and the type reads as one voice.
             </p>
           </section>
 

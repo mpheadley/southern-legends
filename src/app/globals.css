@@ -59,10 +59,11 @@
 
 body {
   /* Typography — must be on body, not :root, because next/font sets
-     --font-fraunces / --font-im-fell / --font-source-sans via classes on <body> */
+     --font-fraunces / --font-source-sans via classes on <body>.
+     Two faces only (B-11): accent labels fall to Source Sans, pull quotes to Fraunces italic. */
   --font-heading: var(--font-fraunces), Georgia, serif;
-  --font-accent: var(--font-condensed), system-ui, sans-serif;
-  --font-pull-quote: var(--font-im-fell), Georgia, serif;
+  --font-accent: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
+  --font-pull-quote: var(--font-fraunces), Georgia, serif;
   --font-body: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
 
   font-family: var(--font-body);
@@ -371,7 +372,7 @@ mark {
   background: var(--color-ll-primary-dark);
 }
 
-/* ─── Pull Quote (IM Fell English italic + oversized quote marks) ─── */
+/* ─── Pull Quote (Fraunces italic + oversized quote marks) ─── */
 
 .pull-quote {
   border-left: 4px solid var(--color-ll-accent);
