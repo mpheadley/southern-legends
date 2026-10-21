@@ -293,11 +293,25 @@ export default async function CityPage({ params }: Props) {
         })}
       </div>
       {cityBizzes.length > 21 && (
-        <p style={{ ...BODY, fontSize: "0.8125rem", textAlign: "center" }}>
-          <Link href={`/businesses/${citySlug}`} style={{ color: "var(--color-ll-accent-dark)", fontWeight: 600, textDecoration: "underline" }}>
-            + {cityBizzes.length - 21} more in {cityName} →
-          </Link>
-        </p>
+        /* The rest of the directory, opened in place (B-10: /businesses is gone, /places is the one directory). */
+        <details style={{ ...BODY, fontSize: "0.875rem" }}>
+          <summary style={{ cursor: "pointer", textAlign: "center", color: "var(--color-ll-accent-dark)", fontWeight: 600 }}>
+            + {cityBizzes.length - 21} more in {cityName}
+          </summary>
+          <ul style={{ listStyle: "none", padding: 0, margin: "1rem 0 0", columns: 2, columnGap: "2rem" }}>
+            {[...cityBizzes]
+              .sort((a, b) => Number(fs.existsSync(path.join(process.cwd(), "public/images/businesses", `${b.slug}.webp`))) - Number(fs.existsSync(path.join(process.cwd(), "public/images/businesses", `${a.slug}.webp`))))
+              .slice(21)
+              .map((biz) => (
+                <li key={biz.id} style={{ breakInside: "avoid", padding: "0.3rem 0", borderBottom: "1px solid rgba(154,108,47,0.12)" }}>
+                  <Link href={`/places/${citySlug}/${biz.slug}`} style={{ color: "var(--color-ll-dark)", fontWeight: 600, textDecoration: "none" }}>
+                    {biz.name}
+                  </Link>
+                  <span style={{ color: "#6b625a", fontSize: "var(--text-label)" }}> · {biz.category}</span>
+                </li>
+              ))}
+          </ul>
+        </details>
       )}
     </div>
   )

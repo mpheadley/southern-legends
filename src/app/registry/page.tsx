@@ -39,7 +39,7 @@ const REGISTRY_CATEGORIES = [
     icon: '📷',
     desc: 'People who know how the light hits here in the late afternoon.',
     businesses: [
-      { name: 'A Bryan Photo', city: 'Anniston', slUrl: '/businesses/a-bryan-photo', note: 'Wedding + portrait, NE Alabama' },
+      { name: 'A Bryan Photo', city: 'Anniston', note: 'Wedding + portrait, NE Alabama' },
       { name: 'Valerie Matthews Photography', city: 'NE Alabama', note: 'Fine art wedding photography, 5★' },
       { name: 'Joe Skaggs Photography', city: 'Oxford', note: 'Editorial + commercial, AL cycling + Foothills Mag' },
     ],
@@ -61,7 +61,7 @@ const REGISTRY_CATEGORIES = [
     icon: '🍽️',
     desc: 'Southern table, local hands.',
     businesses: [
-      { name: '1918 Catering', city: 'Anniston', slUrl: '/businesses/1918-catering', note: 'Full-service catering, full-service care' },
+      { name: '1918 Catering', city: 'Anniston', note: 'Full-service catering, full-service care' },
       { name: 'Called Coffee', city: 'Anniston', note: 'Noble Street coffee — Maria, Brodie, and the whole crew' },
       { name: 'Aquality Farms', city: 'NE Alabama', slUrl: '/profiles/aquality-farms', note: 'Local produce, farm-to-table' },
     ],

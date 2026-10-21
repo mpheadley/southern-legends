@@ -275,7 +275,7 @@ export async function getMapData(): Promise<MapData> {
       lon: pos.lon,
       location: `${b.city}, AL`,
       excerpt: [b.category, b.vertical].filter(Boolean).join(" · "),
-      url: `/businesses/${cityToSlug(b.city)}`,
+      url: `/places/${cityToSlug(b.city)}`,
       color: MARKER_COLORS.business,
     });
   }

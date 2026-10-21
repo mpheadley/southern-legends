@@ -34,7 +34,14 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
+    // B-10 (2026-10-21): /businesses retired, /places is the one city directory.
+    // A city that had a /businesses page maps to its /places page; everything else lands on /places.
+    const BUSINESS_CITIES_WITH_PLACES_PAGE =
+      "adamsville|alabaster|alexandria|altoona|anniston|arab|ardmore|ashford|ashville|athens|atlanta|attalla|auburn|autaugaville|axis|bay-minette|bayou-la-batre|belle-mina|berry|bessemer|billingsley|birmingham|glencoe|jacksonville|ohatchee|oxford|piedmont|weaver";
     return [
+      { source: "/businesses", destination: "/places", permanent: true },
+      { source: `/businesses/:city(${BUSINESS_CITIES_WITH_PLACES_PAGE})`, destination: "/places/:city", permanent: true },
+      { source: "/businesses/:path*", destination: "/places", permanent: true },
       { source: "/featured", destination: "/", permanent: true },
       { source: "/journal", destination: "/essays", permanent: true },
       { source: "/journal/:slug", destination: "/essays/:slug", permanent: true },
