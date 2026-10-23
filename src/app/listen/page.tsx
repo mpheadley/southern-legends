@@ -24,10 +24,12 @@ export default function ListenPage() {
         <div style={{ maxWidth: "580px", margin: "0 auto" }}>
           <p
             style={{
-              fontFamily: "var(--font-condensed)",
-              fontSize: "0.65rem",
+              fontFamily: "var(--font-body)",
+              fontSize: "var(--text-label)",
+              fontWeight: 700,
+              textTransform: "uppercase",
               color: "#CA8A04",
-              letterSpacing: "0.1em",
+              letterSpacing: "0.15em",
               marginBottom: "1.5rem",
             }}
           >

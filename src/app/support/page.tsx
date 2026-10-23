@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import PatronTiers from "@/app/components/PatronTiers";
+import { SUPPORT_PRICE_LABEL } from "@/lib/patron-tiers";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
 import { MERCH } from "@/lib/merch";
 import { existsSync } from "fs";
@@ -63,7 +64,7 @@ export default function SupportPage() {
         <div className="mx-auto max-w-3xl">
           <p className="text-sm uppercase tracking-widest text-ll-text-light font-semibold mb-2">Give directly</p>
           <h2 className="text-2xl font-bold text-ll-dark mb-3" style={{ fontFamily: "var(--font-heading)" }}>
-            $5 a month
+            {SUPPORT_PRICE_LABEL} a month
           </h2>
           <p className="text-sm text-ll-text mb-8 max-w-xl">
             This stays free to read. Five dollars a month from a few of you covers the gas, the memory card, and the afternoon it takes to sit with somebody. Cancel any time.

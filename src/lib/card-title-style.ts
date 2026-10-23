@@ -62,7 +62,8 @@ export function resolveCardTitle(
   const resolvedHtml = cardTitleHtml || titleHtml;
 
   const isCondensed = cardFont === "condensed";
-  const fontFamily = isCondensed ? "var(--font-condensed)" : "var(--font-heading)";
+  // "condensed" cards now set in Fraunces bold caps (B-11: Barlow Condensed is no longer loaded).
+  const fontFamily = "var(--font-heading)";
   const fontWeight = cardFont === "serif-bold" ? 700 : isCondensed ? 700 : 400;
   const fontStyle: React.CSSProperties["fontStyle"] = cardFont === "serif-italic" ? "italic" : "normal";
   const textTransform: React.CSSProperties["textTransform"] =

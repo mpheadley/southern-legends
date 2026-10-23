@@ -4,18 +4,15 @@
 // Arch + AMAG lockup: AMAG is exactly half the arch height. Hidden until the reader has
 // scrolled a quarter of the way down, and never on no-promo pages.
 import { AisleGoLink, AisleGate, AfterQuarter, Dismissible, ImpressionOnView } from "@/app/components/AisleGo";
-import { getActiveAisleShow } from "@/lib/aisle-shows-live";
-import { showDayLabel, adLabel } from "@/lib/ad-inventory";
+import { showDayLabel, adLabel, type AisleShow } from "@/lib/ad-inventory";
 
 const ARCH_H = 64;
 
-export default async function MarginAisle() {
-  const show = await getActiveAisleShow();
-  if (!show) return null;
+export default function MarginAisle({ show, cta = "Register", campaignId }: { show: AisleShow; cta?: string; campaignId?: string }) {
   return (
     <AisleGate>
       <AfterQuarter>
-        <aside className="margin-aisle" aria-label="The Aisle">
+        <aside className="margin-aisle" aria-label="The Aisle" data-ad-slot="margin" data-ad-campaign={campaignId}>
          <Dismissible>
           <style>{`@keyframes aisleDrift{from{transform:scale(1)}to{transform:scale(1.06)}}.margin-aisle .aisle-photo{animation:aisleDrift 12s ease-in-out infinite alternate}.margin-aisle .aisle-cta{transition:transform .2s ease,filter .2s ease}.margin-aisle .aisle-cta:hover{transform:translateY(-1px);filter:brightness(1.06)}@media (prefers-reduced-motion:reduce){.margin-aisle .aisle-photo{animation:none}.margin-aisle .aisle-cta{transition:none}}.margin-aisle{display:none}@media(min-width:1440px){.margin-aisle{display:block;position:fixed;right:20px;top:120px;width:300px;z-index:30}}`}</style>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: "0 0 6px" }}>{adLabel("aisle")}</p>
@@ -36,7 +33,7 @@ export default async function MarginAisle() {
                 {show.venue}, {show.city}
               </span>
               <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-                <span className="aisle-cta" style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.45rem 0.7rem", borderRadius: 6, fontWeight: 800, fontSize: "var(--text-meta)", fontFamily: "var(--font-body)" }}>Register free →</span>
+                <span className="aisle-cta" style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.45rem 0.7rem", borderRadius: 6, fontWeight: 800, fontSize: "var(--text-meta)", fontFamily: "var(--font-body)" }}>{cta} →</span>
                 <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "var(--text-label)", color: "#C9A227" }}>theaislebridalshows.com</span>
               </span>
             </span>

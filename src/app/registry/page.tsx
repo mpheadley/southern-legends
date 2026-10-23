@@ -4,7 +4,9 @@ import { getProfileBySlug } from '@/lib/profiles'
 
 /** Only link "Read Their Story" when the target story actually renders (audit C-10:
  *  8 registry links 404'd — /businesses/<slug> was never a route, some profiles
- *  are missing or AI-drafted and hidden in production). */
+ *  are missing or AI-drafted and hidden in production).
+ *  2026-10-21 (B-12): dead targets removed from the data too — the Jean Ellison and
+ *  Jason Wright profiles are AI-drafted (hidden) and the BeatStudio URL 404s. */
 function liveStoryUrl(url?: string): string | null {
   if (!url || !url.startsWith('/profiles/')) return null
   const p = getProfileBySlug(url.slice('/profiles/'.length))
@@ -21,7 +23,10 @@ export const metadata: Metadata = {
   },
 }
 
-const REGISTRY_CATEGORIES = [
+type RegistryBiz = { name: string; city: string; note: string; url?: string; slUrl?: string }
+type RegistryCategory = { id: string; label: string; icon: string; desc: string; businesses: RegistryBiz[] }
+
+const REGISTRY_CATEGORIES: RegistryCategory[] = [
   {
     id: 'flowers',
     label: 'Flowers & Botanicals',
@@ -39,7 +44,7 @@ const REGISTRY_CATEGORIES = [
     icon: '📷',
     desc: 'People who know how the light hits here in the late afternoon.',
     businesses: [
-      { name: 'A Bryan Photo', city: 'Anniston', slUrl: '/businesses/a-bryan-photo', note: 'Wedding + portrait, NE Alabama' },
+      { name: 'A Bryan Photo', city: 'Anniston', note: 'Wedding + portrait, NE Alabama' },
       { name: 'Valerie Matthews Photography', city: 'NE Alabama', note: 'Fine art wedding photography, 5★' },
       { name: 'Joe Skaggs Photography', city: 'Oxford', note: 'Editorial + commercial, AL cycling + Foothills Mag' },
     ],
@@ -61,7 +66,7 @@ const REGISTRY_CATEGORIES = [
     icon: '🍽️',
     desc: 'Southern table, local hands.',
     businesses: [
-      { name: '1918 Catering', city: 'Anniston', slUrl: '/businesses/1918-catering', note: 'Full-service catering, full-service care' },
+      { name: '1918 Catering', city: 'Anniston', note: 'Full-service catering, full-service care' },
       { name: 'Called Coffee', city: 'Anniston', note: 'Noble Street coffee — Maria, Brodie, and the whole crew' },
       { name: 'Aquality Farms', city: 'NE Alabama', slUrl: '/profiles/aquality-farms', note: 'Local produce, farm-to-table' },
     ],
@@ -72,9 +77,9 @@ const REGISTRY_CATEGORIES = [
     icon: '🎵',
     desc: 'People who fill a room and make it something.',
     businesses: [
-      { name: 'The Evergreens', city: 'Anniston', slUrl: '/profiles/jean-ellison', note: 'Jean Ellison + Jason Wright, acoustic' },
+      { name: 'The Evergreens', city: 'Anniston', note: 'Jean Ellison + Jason Wright, acoustic' },
       { name: 'Studio 104', city: 'Anniston', note: 'Brodie Boyd — lessons, live performance, worship' },
-      { name: 'BeatStudio', city: 'Online', url: 'https://beatstudio-roan.vercel.app', note: 'AI-assisted chord charts + practice tools' },
+      { name: 'BeatStudio', city: 'Online', note: 'AI-assisted chord charts + practice tools' },
     ],
   },
   {
@@ -95,7 +100,7 @@ const REGISTRY_CATEGORIES = [
     desc: 'Gifts that last longer than a toaster.',
     businesses: [
       { name: 'Maria — Called Coffee', city: 'Anniston', note: 'Murals, graffiti, jewelry — trash art made beautiful' },
-      { name: 'Jason Wright Art', city: 'NE Alabama', slUrl: '/profiles/jason-wright', note: 'Custom commissioned artwork' },
+      { name: 'Jason Wright Art', city: 'NE Alabama', note: 'Custom commissioned artwork' },
       { name: 'Anniston Museum & Gardens', city: 'Anniston', slUrl: '/profiles/anniston-museums-gardens', note: 'Membership gifts + guided experiences' },
     ],
   },
@@ -119,7 +124,7 @@ export default function RegistryPage() {
       {/* Hero */}
       <section style={{ borderBottom: '1px solid rgba(201,162,75,.12)', padding: '120px 24px 64px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(201,162,75,.6)', marginBottom: '16px', fontFamily: 'var(--font-sans)' }}>
+          <p style={{ fontSize: '14px', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(201,162,75,.6)', marginBottom: '16px', fontFamily: 'var(--font-sans)' }}>
             Southern Legends · NE Alabama
           </p>
           <h1 style={{
@@ -177,7 +182,7 @@ export default function RegistryPage() {
       {/* How it works */}
       <section style={{ padding: '64px 24px', background: 'rgba(201,162,75,.04)', borderBottom: '1px solid rgba(201,162,75,.08)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <p style={{ textAlign: 'center', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(201,162,75,.6)', marginBottom: '40px', fontFamily: 'var(--font-sans)' }}>How It Works</p>
+          <p style={{ textAlign: 'center', fontSize: '14px', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(201,162,75,.6)', marginBottom: '40px', fontFamily: 'var(--font-sans)' }}>How It Works</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '40px' }}>
             {[
               { n: '1', t: 'Browse', d: 'Find local NE Alabama businesses below, sorted by category.' },
@@ -198,7 +203,7 @@ export default function RegistryPage() {
       {/* Categories */}
       <section id="categories" style={{ padding: '72px 24px 80px' }}>
         <div style={{ maxWidth: '1060px', margin: '0 auto' }}>
-          <p style={{ textAlign: 'center', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(201,162,75,.6)', marginBottom: '16px', fontFamily: 'var(--font-sans)' }}>Local Vendors by Category</p>
+          <p style={{ textAlign: 'center', fontSize: '14px', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(201,162,75,.6)', marginBottom: '16px', fontFamily: 'var(--font-sans)' }}>Local Vendors by Category</p>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem,3.5vw,2.8rem)', fontWeight: 900, textAlign: 'center', marginBottom: '56px', color: 'var(--color-ll-warm)' }}>The businesses behind every gift</h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
@@ -216,14 +221,14 @@ export default function RegistryPage() {
                     <div key={biz.name} style={{ background: 'rgba(201,162,75,.04)', border: '1px solid rgba(201,162,75,.1)', borderRadius: '8px', padding: '20px 20px 16px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px' }}>
                         <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--color-ll-warm)' }}>{biz.name}</h4>
-                        <span style={{ fontSize: '11px', color: 'rgba(240,237,230,.35)', fontFamily: 'var(--font-sans)', flexShrink: 0, marginLeft: '8px', paddingTop: '2px' }}>{biz.city}</span>
+                        <span style={{ fontSize: '14px', color: 'rgba(240,237,230,.35)', fontFamily: 'var(--font-sans)', flexShrink: 0, marginLeft: '8px', paddingTop: '2px' }}>{biz.city}</span>
                       </div>
-                      <p style={{ fontSize: '13px', color: 'rgba(240,237,230,.5)', fontFamily: 'var(--font-sans)', lineHeight: 1.6, marginBottom: '14px' }}>{biz.note}</p>
+                      <p style={{ fontSize: '14px', color: 'rgba(240,237,230,.5)', fontFamily: 'var(--font-sans)', lineHeight: 1.6, marginBottom: '14px' }}>{biz.note}</p>
                       <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                         {liveStoryUrl(biz.slUrl) && (
                           <Link
                             href={liveStoryUrl(biz.slUrl)!}
-                            style={{ fontSize: '12px', color: 'rgba(201,162,75,.7)', fontFamily: 'var(--font-sans)', textDecoration: 'none', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.5px' }}
+                            style={{ fontSize: '14px', color: 'rgba(201,162,75,.7)', fontFamily: 'var(--font-sans)', textDecoration: 'none', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.5px' }}
                           >
                             Read Their Story →
                           </Link>
@@ -233,7 +238,7 @@ export default function RegistryPage() {
                             href={biz.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ fontSize: '12px', color: 'rgba(201,162,75,.5)', fontFamily: 'var(--font-sans)', textDecoration: 'none', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.5px' }}
+                            style={{ fontSize: '14px', color: 'rgba(201,162,75,.5)', fontFamily: 'var(--font-sans)', textDecoration: 'none', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.5px' }}
                           >
                             Visit Website →
                           </a>
@@ -243,7 +248,7 @@ export default function RegistryPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{
-                            fontSize: '12px',
+                            fontSize: '14px',
                             background: 'rgba(201,162,75,.15)',
                             color: 'var(--color-ll-gold)',
                             border: '1px solid rgba(201,162,75,.25)',
@@ -296,7 +301,7 @@ export default function RegistryPage() {
           >
             Create Your Free Registry →
           </a>
-          <p style={{ marginTop: '16px', fontSize: '13px', color: 'rgba(240,237,230,.3)', fontFamily: 'var(--font-sans)' }}>
+          <p style={{ marginTop: '16px', fontSize: '14px', color: 'rgba(240,237,230,.3)', fontFamily: 'var(--font-sans)' }}>
             Free to create. No account required to browse.
           </p>
         </div>
@@ -304,7 +309,7 @@ export default function RegistryPage() {
 
       {/* Footer note */}
       <section style={{ padding: '32px 24px', borderTop: '1px solid rgba(201,162,75,.08)', textAlign: 'center' }}>
-        <p style={{ fontSize: '13px', color: 'rgba(240,237,230,.25)', fontFamily: 'var(--font-sans)' }}>
+        <p style={{ fontSize: '14px', color: 'rgba(240,237,230,.25)', fontFamily: 'var(--font-sans)' }}>
           Local Love Registry is part of{' '}
           <Link href="/" style={{ color: 'rgba(201,162,75,.4)' }}>Southern Legends</Link>
           {' '}and powered by{' '}

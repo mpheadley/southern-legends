@@ -65,6 +65,15 @@ function verifiedImage(src: unknown): string | undefined {
   return fs.existsSync(path.join(process.cwd(), "public", src)) ? src : undefined;
 }
 
+/** Real SL photography only (redesign B-05). The per-category files under
+ *  /images/listicles and /images/guides are stock or generated and not of the
+ *  place in question, so generic guides render a photo-free header instead. */
+const REAL_PHOTO_PREFIXES = ["/images/profiles/", "/images/journal/", "/images/locations/", "/images/businesses/"];
+function realPhoto(src: string | undefined): string | undefined {
+  if (!src) return undefined;
+  return REAL_PHOTO_PREFIXES.some((p) => src.startsWith(p)) ? src : undefined;
+}
+
 function titleCase(s: string): string {
   return s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
@@ -94,7 +103,7 @@ export function getListicle(slug: string): Listicle | null {
     tags: (data.tags as string[]) ?? [],
     city: (data.place as string) || deriveCity(slug),
     category: data.category as string | undefined,
-    image: verifiedImage(data.image),
+    image: realPhoto(verifiedImage(data.image)),
     featured: data.featured === true,
     intro: data.intro as string | undefined,
     businesses: (data.businesses as GuideBusiness[]) ?? [],

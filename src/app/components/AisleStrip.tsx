@@ -1,16 +1,12 @@
-// AisleStrip — slim top-of-article Aisle campaign strip (runs only while The Aisle is the
-// featured campaign). Seen by nearly every reader; the full AisleBand still closes the page.
+// AisleStrip — slim top-of-article Aisle strip (runs only while an Aisle show campaign is on
+// the ad schedule). Seen by nearly every reader; the full AisleBand still closes the page.
 // One message, one action. Aisle arch + AMAG at exactly half the arch height (brand rule).
-import type { VentureCTA } from "@/lib/cta-router";
-import { AISLE_SHOW_LOOK, showDayLabel } from "@/lib/ad-inventory";
-import { getActiveAisleShow } from "@/lib/aisle-shows-live";
+import { AISLE_SHOW_LOOK, showDayLabel, type AisleShow } from "@/lib/ad-inventory";
 import { AisleGoLink, ImpressionOnView } from "@/app/components/AisleGo";
 
 const ARCH_H = 52;
 
-export default async function AisleStrip(_: { ad?: VentureCTA; page?: string }) {
-  const show = await getActiveAisleShow();
-  if (!show) return null;
+export default function AisleStrip({ show, cta = "Register" }: { show: AisleShow; cta?: string }) {
   const look = AISLE_SHOW_LOOK[show.slug] ?? {};
   return (
     <AisleGoLink
@@ -36,7 +32,7 @@ export default async function AisleStrip(_: { ad?: VentureCTA; page?: string }) 
           </span>
         </span>
         <span style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.6rem 1.1rem", borderRadius: 6, fontWeight: 800, fontSize: "0.9rem", whiteSpace: "nowrap", fontFamily: "var(--font-body)" }}>
-          Register free →
+          {cta} →
         </span>
       </span>
     </AisleGoLink>

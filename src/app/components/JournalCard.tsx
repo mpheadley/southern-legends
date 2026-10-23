@@ -10,6 +10,11 @@ function formatDate(dateStr: string): string {
   });
 }
 
+/**
+ * Essay card. With a real `heroImage` (or `image`) in frontmatter it shows the photo;
+ * without one it is the typographic card (date, Fraunces title, two-line excerpt).
+ * AI illustrations were retired 2026-10-21 (B-08) — the image field is optional on purpose.
+ */
 export default function JournalCard({ post }: { post: JournalPost }) {
   const { slug, frontmatter, readingTime } = post;
   const fm = frontmatter as unknown as { heroImage?: string; heroAlt?: string; image?: string; imageAlt?: string };
@@ -100,7 +105,7 @@ export default function JournalCard({ post }: { post: JournalPost }) {
       <span className="group-hover:underline" style={{
         display: "inline-block",
         marginTop: "0.75rem",
-        fontSize: "0.8125rem",
+        fontSize: "0.875rem",
         fontWeight: 500,
         color: "var(--color-ll-primary)",
         fontFamily: "var(--font-source-sans)",

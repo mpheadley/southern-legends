@@ -28,9 +28,9 @@ import JournalCard from "@/app/components/JournalCard";
 import ProfileCardHero from "@/app/components/ProfileCardHero";
 import { getEssayMerch } from "@/lib/merch";
 import ClosingSection from "@/app/components/ClosingSection"
-import { pickCTA, pickAd, snapshotAd } from "@/lib/cta-router";
+import { pickCTA, pickAd, snapshotAd, isSensitive } from "@/lib/cta-router";
 import HouseAdUnit from "@/app/components/HouseAdUnit";
-import AisleStrip from "@/app/components/AisleStrip";
+import { TopStripSlot } from "@/app/components/ScheduledAds";
 import Callout from "@/app/components/Callout";
 import ReadingProgressBar from "@/app/components/ReadingProgressBar";
 import ArticleGate from "@/app/components/ArticleGate";
@@ -361,11 +361,10 @@ export default async function JournalPostPage({ params }: { params: Params }) {
             </div>
           )}
           {(() => {
-            const pageCta = pickCTA({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags });
-            const top = snapshotAd(`essays/${slug}`, { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags }, pageCta.key);
-            if (top?.key === "aisle") return <AisleStrip ad={top} page={`essays/${slug}`} />;
-            // Sensitive page (only the soft Support ad) → tell the site-wide Aisle band to stay off.
-            return top?.key === "support" ? <span data-sl-no-promo hidden /> : null;
+            // Sensitive page (grief, illness…) → no scheduled ads anywhere on it, including the
+            // site-wide band. Otherwise the top strip shows today's campaign (lib/ad-schedule).
+            if (isSensitive({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags })) return <span data-sl-no-promo hidden />;
+            return <TopStripSlot />;
           })()}
           <MDXRemote source={content} components={mdxComponents} />
 
@@ -418,7 +417,10 @@ export default async function JournalPostPage({ params }: { params: Params }) {
           { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags },
           pageCta.key,
         );
-        return houseAd ? <HouseAdUnit ad={houseAd} page={`essays/${slug}`} /> : null;
+        // One ask per view: the closing block above already asks for Support, so the
+        // Support fallback stays off here. Only a real cross-promo earns the slot.
+        if (!houseAd || houseAd.key === "support") return null;
+        return <HouseAdUnit ad={houseAd} page={`essays/${slug}`} />;
       })()}
 
       <Comments slug={slug} />

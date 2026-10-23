@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "_howto": "Network-wide ad schedule (all Gather sites that opt in). Edit this file, run tools/sl-ad-schedule.py --check, then --upload. Sites read it from Vercel Blob (ads/schedule.json) at request time, so no deploy. Dates are inclusive ISO yyyy-mm-dd, Central time. end null = open-ended. One campaign per site+slot per day.",
+  "sites": {
+    "southern-legends": {
+      "name": "Southern Legends",
+      "url": "https://southernlegends.org",
+      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"]
+    }
+  },
+  "campaigns": [
+    {
+      "id": "aisle-oct18",
+      "label": "The Aisle: Anniston Bridal Show (Oct 18)",
+      "advertiser": "The Aisle Bridal Shows",
+      "bucket": "house",
+      "sites": ["southern-legends"],
+      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "start": "2026-10-05",
+      "end": "2026-10-18",
+      "creative": "aisle-show",
+      "showSlug": "anniston-oct-2026",
+      "headline": "Engaged? This is for you.",
+      "body": "The Aisle: Anniston Bridal Show at Longleaf Event Center, Anniston Museums & Gardens. Local wedding vendors, one afternoon.",
+      "short": "Bridal Show",
+      "cta": "Register",
+      "href": "/go/aisle",
+      "image": "/ad-assets/aisle-couple.webp",
+      "accent": "#C9A227",
+      "notes": "Ended the day after the show (Matt, 2026-10-21). Show facts come live from Turso expo_shows."
+    },
+    {
+      "id": "sl-support",
+      "label": "Support Southern Legends (monthly)",
+      "advertiser": "Southern Legends",
+      "bucket": "house",
+      "sites": ["southern-legends"],
+      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "start": "2026-10-19",
+      "end": "2027-01-04",
+      "headline": "If this is worth something to you, say so.",
+      "body": "Southern Legends is free to read. {support_price} a month from a few of you covers the gas, the memory card, and the afternoon it takes to sit with somebody. Cancel any time.",
+      "short": "Kept free by readers.",
+      "cta": "Support the work · {support_price}/mo",
+      "href": "/support",
+      "accent": "#9A3412",
+      "notes": "Recurring reader support: the best income ask for SL readers. Price comes from src/lib/patron-tiers.ts."
+    },
+    {
+      "id": "aisle-silver-run-2027",
+      "label": "The Aisle: Silver Run Chapel (Feb 21, 2027)",
+      "advertiser": "The Aisle Bridal Shows",
+      "bucket": "house",
+      "sites": ["southern-legends"],
+      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "start": "2027-01-05",
+      "end": "2027-02-21",
+      "creative": "aisle-show",
+      "showSlug": "silver-run-feb-2027",
+      "headline": "Engaged? This is for you.",
+      "body": "The Aisle: Silver Run Chapel. A bridal show in Munford with local wedding vendors, one afternoon.",
+      "short": "Bridal Show",
+      "cta": "Register",
+      "href": "/go/aisle",
+      "accent": "#C9A227",
+      "notes": "Verified 2026-10-23: name, date 2027-02-21, venue Silver Run Chapel (Munford, AL) from theaisle live pages; register URL returns 200. No real photo yet (chapel images on disk are AI renders), so the ad is text-forward navy. Door/VIP prices render live from Turso, never typed here."
+    },
+    {
+      "id": "sl-support-spring",
+      "label": "Support Southern Legends (monthly, after Silver Run)",
+      "advertiser": "Southern Legends",
+      "bucket": "house",
+      "sites": ["southern-legends"],
+      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "start": "2027-02-22",
+      "end": null,
+      "headline": "If this is worth something to you, say so.",
+      "body": "Southern Legends is free to read. {support_price} a month from a few of you covers the gas, the memory card, and the afternoon it takes to sit with somebody. Cancel any time.",
+      "short": "Kept free by readers.",
+      "cta": "Support the work · {support_price}/mo",
+      "href": "/support",
+      "accent": "#9A3412",
+      "notes": "Same ask as sl-support, resumes the day after Silver Run."
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "sl-vol1-fallback",
+      "label": "Fallback: Southern Legends Vol. 1 (print)",
+      "advertiser": "Southern Legends",
+      "bucket": "house",
+      "sites": ["southern-legends"],
+      "requires": "VOL1_ON_SALE",
+      "headline": "Southern Legends in print.",
+      "body": "Vol. 1: five profiles, 200 copies. 10% supports early childhood literacy through UWECA's Imagination Library.",
+      "short": "Vol. 1 is out. Five profiles in print.",
+      "cta": "Get Vol. 1",
+      "href": "/vol-1",
+      "accent": "#9A3412"
+    },
+    {
+      "id": "sl-support-fallback",
+      "label": "Fallback: Support Southern Legends",
+      "advertiser": "Southern Legends",
+      "bucket": "house",
+      "sites": ["southern-legends"],
+      "headline": "If this is worth something to you, say so.",
+      "body": "Southern Legends is free to read. {support_price} a month from a few of you covers the gas, the memory card, and the afternoon it takes to sit with somebody. Cancel any time.",
+      "short": "Kept free by readers.",
+      "cta": "Support the work · {support_price}/mo",
+      "href": "/support",
+      "accent": "#9A3412"
+    }
+  ]
+}

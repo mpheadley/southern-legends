@@ -229,7 +229,7 @@ export default function ParkPage() {
         )}
 
         {/* Activities + camping */}
-        <section style={{ marginBottom: "3rem", display: "grid", gridTemplateColumns: park.camping ? "1fr 1fr" : "1fr", gap: "1rem" }}>
+        <section style={{ marginBottom: "3rem", display: "grid", gridTemplateColumns: park.camping ? "repeat(auto-fit, minmax(240px, 1fr))" : "1fr", gap: "1rem" }}>
           <div style={{ background: "#FFFFFF", border: "1px solid var(--color-ll-border)", borderRadius: "6px", padding: "1.5rem" }}>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9A3412", marginBottom: "0.75rem" }}>Things to Do</p>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
@@ -258,21 +258,17 @@ export default function ParkPage() {
           )}
         </section>
 
-        {/* Noccalula tee — per-park woodcut merch (only where real art exists) */}
+        {/* Park tee lives on /merch (redesign B-06: one ask per page) */}
         {park.slug === "noccalula-falls-park" && (
-          <section style={{ background: "#1C1917", borderRadius: "8px", padding: "2rem", marginBottom: "3rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1.5rem", alignItems: "center" }}>
-            <div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.5rem" }}>Park Woodcut</p>
-              <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.4rem", color: "#FAFAF7", fontWeight: 400, marginBottom: "0.5rem" }}>&ldquo;Where the Water Thunders&rdquo;</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "rgba(250,250,247,0.7)", lineHeight: 1.6, margin: "0 0 1rem" }}>A hand-woodcut emblem of the falls. Printed on demand, ships direct — one tee, this one park.</p>
-              <Link href="/merch" style={{ display: "inline-block", background: "#CA8A04", color: "#1C1917", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.875rem", padding: "0.7rem 1.5rem", textDecoration: "none", borderRadius: "3px" }}>See the tee →</Link>
-            </div>
-          </section>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#6B6560", marginBottom: "3rem" }}>
+            The &ldquo;Where the Water Thunders&rdquo; woodcut tee is in the{" "}
+            <Link href="/merch" style={{ color: "#9A3412", fontWeight: 600 }}>Southern Legends shop →</Link>
+          </p>
         )}
 
         {/* F0 — parks planner email gate */}
-        <section style={{ background: "#0A1F12", border: "1px solid #2D4A30", borderRadius: "8px", padding: "2rem", marginBottom: "3rem" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#4ADE80", marginBottom: "0.5rem" }}>Plan the Trip</p>
+        <section style={{ background: "#1C1917", borderRadius: "8px", padding: "2rem", marginBottom: "3rem" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.5rem" }}>Plan the Trip</p>
           <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.4rem", color: "#FAFAF7", fontWeight: 400, marginBottom: "0.75rem" }}>Get the honest park list before you drive.</h2>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "rgba(250,250,247,0.7)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
             A short seasonal note when the falls are running, the leaves are turning, or a park&apos;s worth the drive. NE Alabama first, more parks as I get to them. No spam, unsubscribe anytime.
@@ -280,21 +276,18 @@ export default function ParkPage() {
           {!planDone ? (
             <form onSubmit={handlePlan} style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
               <input type="email" required value={planEmail} onChange={(e) => setPlanEmail(e.target.value)} placeholder="your@email.com" style={{ flex: 1, minWidth: "220px", fontFamily: "var(--font-body)", fontSize: "0.9rem", padding: "0.75rem 1rem", borderRadius: "4px", border: "1px solid rgba(255,255,255,0.2)", background: "rgba(255,255,255,0.07)", color: "#FAFAF7", outline: "none" }} />
-              <button type="submit" style={{ background: "#16A34A", color: "#FAFAF7", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.9rem", padding: "0.75rem 1.5rem", border: "none", cursor: "pointer", borderRadius: "4px", whiteSpace: "nowrap" }}>Send me the list →</button>
+              <button type="submit" style={{ background: "#CA8A04", color: "#1C1917", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "0.9rem", padding: "0.75rem 1.5rem", border: "none", cursor: "pointer", borderRadius: "4px", whiteSpace: "nowrap" }}>Send me the list →</button>
             </form>
           ) : (
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#4ADE80", margin: 0 }}>✓ You&apos;re in. Watch your inbox.</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#CA8A04", margin: 0 }}>You&apos;re in. Watch your inbox.</p>
           )}
         </section>
 
-        {/* Sponsor slot */}
-        <section style={{ border: "1px dashed #CA8A04", borderRadius: "6px", padding: "1.25rem 1.5rem", marginBottom: "3rem", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-          <div>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#CA8A04", marginBottom: "0.25rem" }}>Sponsor this park page</p>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#6B6560", margin: 0 }}>Local outfitters, campgrounds, cabins, and tourism boards. $150/mo — seen by every visitor planning a trip here.</p>
-          </div>
-          <a href={`mailto:matt@gatherstudio.app?subject=Parks Guide Sponsor — ${park.name}`} style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "0.8rem", color: "#9A3412", textDecoration: "none", whiteSpace: "nowrap" }}>Get in touch →</a>
-        </section>
+        {/* Sponsor — one line */}
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-meta)", color: "#9B8B7A", marginBottom: "3rem" }}>
+          Outfitters, campgrounds, cabins and tourism boards can sponsor this page for $150/mo.{" "}
+          <a href={`mailto:matt@gatherstudio.app?subject=Parks Guide Sponsor — ${park.name}`} style={{ color: "#9A3412", fontWeight: 600, textDecoration: "none" }}>Get in touch →</a>
+        </p>
 
         {/* Reviews */}
         <section style={{ marginBottom: "3rem" }}>

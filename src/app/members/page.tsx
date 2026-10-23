@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Members · Southern Legends',
   description: 'Member-exclusive content from Southern Legends.',
-  robots: { index: false },
+  robots: { index: false, follow: false },
 }
 
 const MEMBER_CONTENT = [

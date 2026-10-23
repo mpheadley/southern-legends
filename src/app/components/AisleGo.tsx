@@ -21,14 +21,34 @@ export const goHref = (path: string, spot: string, tier?: string) => `${GO}?from
 /** Paths that never get the site-wide band. */
 const SKIP = [/^\/admin/, /^\/api/, /^\/go\//, /^\/support\/thanks/, /^\/r\//];
 
-export function AisleGate({ children }: { children: ReactNode }) {
+/**
+ * Keeps site-wide ads off skipped paths and no-promo pages. With `askKey`, also stays off a
+ * page that already makes that ask (an element marked data-sl-ask="<askKey>", e.g. the
+ * closing block's Support button) — one ask per view.
+ */
+export function AdGate({ children, askKey }: { children: ReactNode; askKey?: string }) {
   const path = usePathname() ?? "/";
   const [show, setShow] = useState(false); // hidden until checked → never flashes on a grief page
   useEffect(() => {
-    const blocked = SKIP.some((re) => re.test(path)) || !!document.querySelector("[data-sl-no-promo]");
+    const blocked =
+      SKIP.some((re) => re.test(path)) ||
+      !!document.querySelector("[data-sl-no-promo]") ||
+      (!!askKey && !!document.querySelector(`[data-sl-ask="${askKey}"]`));
     setShow(!blocked);
-  }, [path]);
+  }, [path, askKey]);
   return show ? <>{children}</> : null;
+}
+export const AisleGate = AdGate;
+
+/** A plain link for scheduled (non-Aisle) ads that logs the click, then navigates normally. */
+export function TrackedAdLink({ href, placement, campaignId, className, style, children }: { href: string; placement: string; campaignId: string; className?: string; style?: React.CSSProperties; children: ReactNode }) {
+  const path = usePathname() ?? "/";
+  const ext = href.startsWith("http");
+  return (
+    <a href={href} target={ext ? "_blank" : undefined} rel={ext ? "noopener noreferrer" : undefined} className={className} style={style} onClick={() => sendAdEvent("click", placement, path, campaignId)}>
+      {children}
+    </a>
+  );
 }
 
 export function AisleGoLink({ spot, tier, className, style, children }: { spot: string; tier?: string; className?: string; style?: React.CSSProperties; children: ReactNode }) {

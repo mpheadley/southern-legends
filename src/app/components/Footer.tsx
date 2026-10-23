@@ -23,10 +23,23 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-12">
             <nav className="flex flex-col gap-3">
               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Navigate</p>
               {siteConfig.nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-white/80 hover:text-white transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            <nav className="flex flex-col gap-3">
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-1">Sections</p>
+              {siteConfig.footerSections.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

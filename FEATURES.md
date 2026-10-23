@@ -4,6 +4,15 @@
 
 ---
 
+## Oct 21 decisions (redesign follow-ups, branch sl-redesign-oct20)
+
+- **Aisle campaign ended** — `FEATURED_CAMPAIGN_END = '2026-10-19'` in `src/lib/ad-inventory.ts`. `activeAisleShow()` / `getActiveAisleShow()` return null from that date, so the top strip, closing band, margin card, phone bar and the wedding-listicle ad all render nothing; ad slots fall back to the house resolver. `/go/aisle` uses the ungated `getNextAisleShow()` so a kept QR still forwards to the next real show. To run The Aisle again, set the constant to null (or a later date). The router's Aisle cross-promo now points at `/go/aisle`, never a dated register URL.
+- **One ask per view on essays** — the house-ad slot after the closing block skips the Support fallback (the closing block already asks); only a real cross-promo renders there.
+- **B-08** — AI essay illustrations retired (12 essays); `heroImage` left commented in each frontmatter so a real photo path goes straight back in. Cards and heroes fall to the typographic layout.
+- **B-10** — `/businesses` retired: 308 redirects in `next.config.ts` (`/businesses` → `/places`, 28 known cities → `/places/<city>`, else `/places`), route files removed, sitemap entries dropped, no internal links remain.
+- **B-11** — Two typefaces: Fraunces + Source Sans 3. Barlow Condensed and IM Fell English no longer load; `--font-accent` → Source Sans, `--font-pull-quote` → Fraunces italic.
+- **B-12** — `/masthead`, `/live`, `/members` (+login) noindex, follow:false; `/masthead` out of the sitemap. `/registry` stays public with dead links removed. `/affiliate` untouched.
+
 
 
 ## Admin: AI-written profiles review (2026-10-10)

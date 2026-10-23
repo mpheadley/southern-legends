@@ -19,9 +19,9 @@ import ArticleImage from "@/app/components/ArticleImage";
 import InlineImage from "@/app/components/InlineImage";
 import Figure from "@/app/components/Figure";
 import PhotoCarouselLoader from "@/app/components/PhotoCarouselLoader";
-import { pickCTA, pickAd, snapshotAd } from "@/lib/cta-router";
+import { pickCTA, pickAd, snapshotAd, isSensitive } from "@/lib/cta-router";
 import HouseAdUnit from "@/app/components/HouseAdUnit";
-import AisleStrip from "@/app/components/AisleStrip";
+import { TopStripSlot } from "@/app/components/ScheduledAds";
 import PullQuote from "@/app/components/PullQuote";
 import FacebookEmbed from "@/app/components/FacebookEmbed";
 import VideoLoop from "@/app/components/VideoLoop";
@@ -38,7 +38,6 @@ import ProfileCardHero from "@/app/components/ProfileCardHero";
 import { scrollytellingConfigs } from "@/lib/scrollytelling-configs";
 import FloatingShareBar from "@/app/components/FloatingShareBar";
 import PrevNextEdgeArrows from "@/app/components/PrevNextEdgeArrows";
-import NextUpPopup from "@/app/components/NextUpPopup";
 import VideoEmbed from "@/app/components/VideoEmbed";
 import UpcomingEvents from "@/app/components/UpcomingEvents";
 import ShelfLifeNotice from "@/app/components/ShelfLifeNotice";
@@ -301,7 +300,7 @@ export default async function ProfilePage({
       <ReadingProgressBar />
       <PrevNextEdgeArrows prev={prev} next={next} />
       <FloatingShareBar slug={slug} title={frontmatter.title} description={frontmatter.excerpt ?? ""} />
-      {next && <NextUpPopup next={next} />}
+      {/* NextUpPopup retired (redesign B-01): one overlay per visit, SubscribePopup owns it. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -467,11 +466,10 @@ export default async function ProfilePage({
       <article className="bg-ll-light">
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 prose-profile">
           {(() => {
-            const pageCta = pickCTA({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags });
-            const top = snapshotAd(`profiles/${slug}`, { category: (frontmatter as { category?: string }).category, tags: frontmatter.tags }, pageCta.key);
-            if (top?.key === "aisle") return <AisleStrip ad={top} page={`profiles/${slug}`} />;
-            // Sensitive page (only the soft Support ad) → tell the site-wide Aisle band to stay off.
-            return top?.key === "support" ? <span data-sl-no-promo hidden /> : null;
+            // Sensitive page (grief, illness…) → no scheduled ads anywhere on it, including the
+            // site-wide band. Otherwise the top strip shows today's campaign (lib/ad-schedule).
+            if (isSensitive({ category: (frontmatter as { category?: string }).category, tags: frontmatter.tags })) return <span data-sl-no-promo hidden />;
+            return <TopStripSlot />;
           })()}
           <ShelfLifeNotice
             shelfLife={frontmatter.shelfLife}

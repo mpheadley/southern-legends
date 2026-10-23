@@ -10,7 +10,7 @@
 //      won't buy a $300 Blueprint off a profile — they'll subscribe. Paid asks
 //      live downstream in the email nurture, never on the front door.
 
-import { featuredKey, pickPaidAd } from './ad-inventory';
+import { pickPaidAd } from './ad-inventory';
 
 export type VentureCTA = {
   eyebrow: string;
@@ -67,9 +67,10 @@ const VENTURES: Rule[] = [
       key: "aisle",
       eyebrow: "The Aisle",
       headline: "Planning a wedding in East Alabama?",
-      body: "Register free for The Aisle — the region's best wedding vendors under one roof, one afternoon.",
+      body: "Register free for the next Aisle show — the region's best wedding vendors under one roof, one afternoon.",
       cta: "Register free",
-      href: "https://theaislebridalshows.com/live/anniston-oct-2026/register",
+      // Permanent destination: forwards to whichever show is next (never a dated register URL here).
+      href: "/go/aisle",
     },
   },
   {
@@ -136,6 +137,11 @@ const VENTURES: Rule[] = [
 
 // SENSITIVE: never any promo — these pages get only the soft Support ad.
 const SENSITIVE = ["obituary", "obituaries", "grief", "memorial", "funeral", "death", "cancer", "illness", "mental health", "suicide", "addiction"];
+/** Grief/illness/etc. page → no promos at all (scheduled ads included); only the soft Support ask. */
+export function isSensitive(input: { category?: string; tags?: string[] }): boolean {
+  const hay = [(input.category ?? "").toLowerCase(), ...(input.tags ?? []).map((t) => t.toLowerCase())].join(" ");
+  return SENSITIVE.some((w) => hay.includes(w));
+}
 // NO_SELL: no topic-matched venture pitch (an arts profile shouldn't get a random business ad),
 // but the featured campaign may still run here.
 const NO_SELL = [...SENSITIVE, "arts", "theatre", "theater", "poetry", "personal"];
@@ -209,13 +215,8 @@ export function pickAd(
   if (SENSITIVE.some((w) => hay.includes(w))) return SUPPORT_HOUSE;
   const paid = pickPaidAd({ ...input, site: input.site ?? "sl" });
   if (paid) return paid;
-  // Campaign chooser (ad-inventory FEATURED_CAMPAIGN): one venture promoted site-wide,
-  // including arts/theater pages — only SENSITIVE pages are skipped.
-  const feat = featuredKey();
-  if (feat && feat !== excludeKey) {
-    const rule = VENTURES.find((v) => v.key === feat);
-    if (rule) return rule.cta;
-  }
+  // Site-wide campaigns (The Aisle, reader support…) no longer run through here: they're on the
+  // date-driven ad schedule (lib/ad-schedule.ts → components/ScheduledAds.tsx).
   if (NO_SELL.some((w) => hay.includes(w))) return SUPPORT_HOUSE;
   return pickHouseAd(input, excludeKey);
 }

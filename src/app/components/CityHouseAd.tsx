@@ -4,10 +4,10 @@ import { localBusinesses } from "@/lib/city-businesses"
 const CATEGORY_AD_MAP: Record<string, { text: string; cta: string; url: string; label: string }> = {
   "Church":        { label: "Attune", text: "Daily contemplative practice for pastors. Examen, centering prayer, Lectio Divina.", cta: "Try Attune", url: "https://attuneprayer.app" },
   "Ministry":      { label: "Attune", text: "Daily contemplative practice for pastors. Examen, centering prayer, Lectio Divina.", cta: "Try Attune", url: "https://attuneprayer.app" },
-  "Wedding Venue": { label: "The Aisle",   text: "NE Alabama's bridal show is October 18. Your booth is still open.", cta: "Reserve a booth", url: "https://theaisle.app/vendor" },
-  "Wedding":       { label: "The Aisle",   text: "NE Alabama's bridal show is October 18. Your booth is still open.", cta: "Reserve a booth", url: "https://theaisle.app/vendor" },
+  "Wedding Venue": { label: "The Aisle",   text: "NE Alabama's bridal show. Booths for the next show are open.", cta: "Reserve a booth", url: "https://theaisle.app/vendor" },
+  "Wedding":       { label: "The Aisle",   text: "NE Alabama's bridal show. Booths for the next show are open.", cta: "Reserve a booth", url: "https://theaisle.app/vendor" },
   "Florist":       { label: "Petal Studio", text: "Built for florists who are tired of guessing their recipes.", cta: "Try Petal Studio", url: "https://petalstudio.app" },
-  "Bridal":        { label: "The Aisle",   text: "NE Alabama's bridal show is October 18. Your booth is still open.", cta: "Reserve a booth", url: "https://theaisle.app/vendor" },
+  "Bridal":        { label: "The Aisle",   text: "NE Alabama's bridal show. Booths for the next show are open.", cta: "Reserve a booth", url: "https://theaisle.app/vendor" },
   "Restaurant":    { label: "MarketDay",   text: "Run a market or vendor event? MarketDay handles the logistics.", cta: "See MarketDay", url: "https://gatherstudio.app/marketday" },
   "Food Vendor":   { label: "MarketDay",   text: "Run a market or vendor event? MarketDay handles the logistics.", cta: "See MarketDay", url: "https://gatherstudio.app/marketday" },
   "Food Truck":    { label: "MarketDay",   text: "Run a market or vendor event? MarketDay handles the logistics.", cta: "See MarketDay", url: "https://gatherstudio.app/marketday" },

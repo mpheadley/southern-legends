@@ -1,7 +1,6 @@
-import MarginAisle from "@/app/components/MarginAisle";
-import SiteAisleBand from "@/app/components/SiteAisleBand";
+import { SiteAdBand, MarginSlot } from "@/app/components/ScheduledAds";
 import type { Metadata } from "next";
-import { Source_Sans_3, Fraunces, IM_Fell_English, Barlow_Condensed } from "next/font/google";
+import { Source_Sans_3, Fraunces } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -9,7 +8,6 @@ import ScrollReveal from "./components/ScrollReveal";
 import CookieBanner from "./components/CookieBanner";
 import LenisProvider from "./components/LenisProvider";
 import SubscribePopup from "./components/SubscribePopup";
-import SupportPopup from "./components/SupportPopup";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -27,20 +25,8 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
-const imFell = IM_Fell_English({
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-im-fell",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const barlowCondensed = Barlow_Condensed({
-  variable: "--font-condensed",
-  weight: ["600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+// Two faces only (B-11, 2026-10-21): Fraunces for headings and pull quotes, Source Sans 3 for
+// body and labels. Barlow Condensed and IM Fell English are no longer loaded.
 
 export const metadata: Metadata = {
   title: {
@@ -100,7 +86,7 @@ export default function RootLayout({
         />
       </head>
       {/* Built by Gather Studio by Matt Headley | gatherstudio.app */}
-      <body className={`${sourceSans.variable} ${fraunces.variable} ${imFell.variable} ${barlowCondensed.variable} antialiased`}>
+      <body className={`${sourceSans.variable} ${fraunces.variable} antialiased`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-ll-primary focus:text-white focus:px-4 focus:py-2 focus:rounded"
@@ -110,13 +96,13 @@ export default function RootLayout({
         <LenisProvider>
           <Nav />
           {children}
-          <SiteAisleBand />
-          <MarginAisle />
+          <SiteAdBand />
+          <MarginSlot />
           <Footer />
           <ScrollReveal />
           <CookieBanner />
+          {/* One overlay per visit (redesign B-01): SubscribePopup only. SupportPopup retired. */}
           <SubscribePopup />
-          <SupportPopup />
         </LenisProvider>
       </body>
     </html>

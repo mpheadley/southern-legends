@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { getAllProfiles } from "@/lib/profiles";
 import { getAllJournalPosts } from "@/lib/journal";
-import { getBusinessCities, cityToSlug as bizCityToSlug } from "@/lib/businesses";
 import { CITIES, cityToSlug as dbCityToSlug } from "@/lib/city-businesses";
 import { TRAILS } from "@/lib/trails";
 import { getAllParks } from "@/lib/parks";
@@ -10,8 +9,6 @@ import { getActivePrograms } from "@/lib/programs";
 import { getAllListicles } from "@/lib/listicles";
 import { getFaithColumns } from "@/lib/faith";
 import { SL_PLACES, cityToSlug as placeCityToSlug } from "@/lib/places";
-
-const CALHOUN_CITIES = ['Anniston', 'Oxford', 'Jacksonville', 'Attalla', 'Rainbow City', 'Alexandria', 'Ohatchee', 'Glencoe', 'Weaver', 'Heflin', 'Piedmont']
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const profiles = getAllProfiles();
@@ -38,18 +35,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: city === "Anniston" ? 0.9 : 0.7,
   }));
 
-  // Businesses — Calhoun County priority cities
-  const businessCityEntries: MetadataRoute.Sitemap = CALHOUN_CITIES.map((city) => ({
-    url: `${siteConfig.url}/businesses/${bizCityToSlug(city)}`,
-    changeFrequency: "weekly" as const,
-    priority: city === "Anniston" ? 0.85 : 0.65,
-  }));
-
-
   const staticPaths = [
     "/affiliate", "/almanac", "/almanac/autumn-2026", "/arts/music", "/arts/poetry", "/arts/theater",
     "/back-forty", "/back-forty/resources", "/books/company-of-farmers", "/books/opinions", "/colophon",
-    "/land", "/listen", "/listicles", "/map", "/masthead", "/merch/catalog", "/merch/clt-coin",
+    "/land", "/listen", "/listicles", "/map", "/merch/catalog", "/merch/clt-coin",
     "/merch/freedom-riders", "/merch/pvxc", "/merch/shirts", "/merch/woodstock", "/ministry", "/parks",
     "/places/nominate", "/podcast", "/privacy", "/programs", "/registry", "/sponsor",
     "/theology", "/trails", "/woodstock-5k", "/vol-1",
@@ -105,21 +94,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${siteConfig.url}/places`,
       lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${siteConfig.url}/businesses`,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteConfig.url}/businesses/anniston`,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${siteConfig.url}/businesses/calhoun-county`,
       changeFrequency: "weekly",
       priority: 0.85,
     },
@@ -185,7 +159,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...profileEntries,
     ...journalEntries,
     ...cityEntries,
-    ...businessCityEntries,
     ...staticEntries,
     ...trailEntries,
     ...parkEntries,

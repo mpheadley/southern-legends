@@ -1,18 +1,14 @@
 // AisleBand — The Aisle campaign ad, built from the church-screen banner (photo, navy fade,
 // Fraunces "Engaged? / this is for you." treatment). PSBP: one message, one action.
-// Promotes whichever show the schedule says is next (activeAisleShow) — date, venue, door
-// price, register link and QR all come from the Turso snapshot, so it switches itself.
+// Renders the show the ad schedule hands it (content/data/ad-schedule.json → SiteAdBand) —
+// date, venue, door price, register link and QR all come from Turso, never typed here.
 // Brand rules: Aisle arch on every Aisle graphic; a partner lockup is exactly half its height.
-import type { VentureCTA } from "@/lib/cta-router";
-import { AISLE_SHOW_LOOK, showDayLabel, adLabel } from "@/lib/ad-inventory";
-import { getActiveAisleShow } from "@/lib/aisle-shows-live";
+import { AISLE_SHOW_LOOK, showDayLabel, adLabel, type AisleShow } from "@/lib/ad-inventory";
 import { AisleGoLink, AisleQR, ImpressionOnView } from "@/app/components/AisleGo";
 
 const ARCH_H = 64;
 
-export default async function AisleBand({ label = adLabel("aisle") }: { ad?: VentureCTA; label?: string }) {
-  const show = await getActiveAisleShow();
-  if (!show) return null;
+export default function AisleBand({ show, cta = "Register", label = adLabel("aisle") }: { show: AisleShow; cta?: string; label?: string }) {
   const look = AISLE_SHOW_LOOK[show.slug] ?? {};
   return (
     <div className="px-6 py-8">
@@ -54,12 +50,15 @@ export default async function AisleBand({ label = adLabel("aisle") }: { ad?: Ven
             </div>
             <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
               <span style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.85rem 1.4rem", borderRadius: 6, fontWeight: 800, fontSize: "0.98rem", whiteSpace: "nowrap", fontFamily: "var(--font-body)" }}>
-                Register free →
+                {cta} →
               </span>
-              {/* canonical couple-facing wording: theaisle lib/ticket-pricing.ts (D-017) */}
-              <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, color: "#fff", textAlign: "center", maxWidth: 220, lineHeight: 1.35 }}>
-                Free to register in advance{show.doorPrice ? ` · $${show.doorPrice} at the door` : ""}
-              </span>
+              {/* canonical couple-facing wording: theaisle lib/ticket-pricing.ts (D-017). Only with a
+                  live door price, so "free" never stands alone. */}
+              {show.doorPrice ? (
+                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, color: "#fff", textAlign: "center", maxWidth: 220, lineHeight: 1.35 }}>
+                  Free to register in advance · ${show.doorPrice} at the door
+                </span>
+              ) : null}
               <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 700, color: "#C9A227", textAlign: "center", letterSpacing: ".02em" }}>
                 theaislebridalshows.com
               </span>
