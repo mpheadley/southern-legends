@@ -17,11 +17,17 @@ export interface PlaylistConfig {
   caption?: string;
 }
 
-// A real YouTube playlist id is >= 13 chars; a real video id is exactly 11.
+// Real YouTube playlist ids are 18+ chars (usually 34, e.g. PLr4GH13ozhd...); a real video id
+// is exactly 11. The old ">= 13" check let the 14-char placeholder "PLjacksonville" through and
+// shipped a dead player on /places/jacksonville (fixed 2026-10-21).
+function realPlaylistId(id?: string): boolean {
+  return !!id && id.length >= 18;
+}
+function realVideoId(id?: string): boolean {
+  return !!id && id.length === 11;
+}
 function isReady(pl: PlaylistConfig): boolean {
-  const realPlaylist = !!pl.playlistId && pl.playlistId.length >= 13;
-  const realVideo = !!pl.videoId && pl.videoId.length === 11;
-  return realPlaylist || realVideo;
+  return realPlaylistId(pl.playlistId) || realVideoId(pl.videoId);
 }
 
 const playlists: Record<string, PlaylistConfig> = {
@@ -50,8 +56,10 @@ const playlists: Record<string, PlaylistConfig> = {
     title: "Oxford, Alabama — on film",
   },
   jacksonville: {
-    playlistId: "PLjacksonville", // TODO real id
+    playlistId: "", // no Jacksonville playlist yet
+    videoId: "t_HdqRLdvKg", // public, SL channel: JSU Pirates of Penzance (2007), Stone Center, Jacksonville AL
     title: "Jacksonville, Alabama — on film",
+    caption: "Jacksonville State University's 2007 Pirates of Penzance, filmed at the Ernest Stone Performing Arts Center.",
   },
   gadsden: {
     playlistId: "PLgadsden", // TODO real id
@@ -85,7 +93,9 @@ const playlists: Record<string, PlaylistConfig> = {
 export function getPlaylist(slug: string): PlaylistConfig | null {
   const pl = playlists[slug];
   if (!pl) return null;
-  return isReady(pl) ? pl : null;
+  if (!isReady(pl)) return null;
+  // Strip a placeholder playlist id so the embed never gets a bogus ?list= or "open playlist" link.
+  return realPlaylistId(pl.playlistId) ? pl : { ...pl, playlistId: "" };
 }
 
 /** True only if a real, renderable playlist exists for the slug. */
