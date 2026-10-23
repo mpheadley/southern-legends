@@ -74,7 +74,7 @@ export async function SiteAdBand() {
       {bar ? (
         <AdGate>
           {bar.show ? (
-            <MobileAisleBar dateLabel={showDayLabel(bar.show.date)} showSlug={bar.show.slug} cta={bar.cta} />
+            <MobileAisleBar dateLabel={showDayLabel(bar.show.date)} showSlug={bar.show.slug} cta={bar.cta} campaignId={bar.campaign.id} />
           ) : (
             <MobileAdBar short={bar.short} cta={bar.cta} href={bar.href} campaignId={bar.campaign.id} accent={bar.campaign.accent} />
           )}
@@ -112,9 +112,7 @@ export async function MarginSlot() {
   if (ad.show) {
     return (
       <AdGate>
-        <div data-ad-slot="margin" data-ad-campaign={ad.campaign.id}>
-          <MarginAisle show={ad.show} cta={ad.cta} />
-        </div>
+        <MarginAisle show={ad.show} cta={ad.cta} campaignId={ad.campaign.id} />
       </AdGate>
     );
   }

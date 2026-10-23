@@ -8,11 +8,11 @@ import { showDayLabel, adLabel, type AisleShow } from "@/lib/ad-inventory";
 
 const ARCH_H = 64;
 
-export default function MarginAisle({ show, cta = "Register" }: { show: AisleShow; cta?: string }) {
+export default function MarginAisle({ show, cta = "Register", campaignId }: { show: AisleShow; cta?: string; campaignId?: string }) {
   return (
     <AisleGate>
       <AfterQuarter>
-        <aside className="margin-aisle" aria-label="The Aisle">
+        <aside className="margin-aisle" aria-label="The Aisle" data-ad-slot="margin" data-ad-campaign={campaignId}>
          <Dismissible>
           <style>{`@keyframes aisleDrift{from{transform:scale(1)}to{transform:scale(1.06)}}.margin-aisle .aisle-photo{animation:aisleDrift 12s ease-in-out infinite alternate}.margin-aisle .aisle-cta{transition:transform .2s ease,filter .2s ease}.margin-aisle .aisle-cta:hover{transform:translateY(-1px);filter:brightness(1.06)}@media (prefers-reduced-motion:reduce){.margin-aisle .aisle-photo{animation:none}.margin-aisle .aisle-cta{transition:none}}.margin-aisle{display:none}@media(min-width:1440px){.margin-aisle{display:block;position:fixed;right:20px;top:120px;width:300px;z-index:30}}`}</style>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: "0 0 6px" }}>{adLabel("aisle")}</p>
