@@ -13,7 +13,7 @@ export default function HouseAdUnit({ ad, page }: { ad: VentureCTA; page?: strin
   const b = brandFor(ad.key);
   const label = adLabel(ad.key, { paid: ad.paid, advertiser: ad.eyebrow });
 
-  // The Aisle band renders site-wide from the layout (SiteAisleBand) — never twice on a page.
+  // Aisle ads run only from the ad schedule (ScheduledAds in the layout) — never twice on a page.
   if (ad.key === "aisle") return null;
 
   if (b.testimonial) {

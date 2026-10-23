@@ -1,12 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { PATRON_TIERS } from "@/lib/patron-tiers";
 
-const TIERS = [
-  { amount: "5", label: "$5", note: "Keeps a light on" },
-  { amount: "10", label: "$10", note: "Patron letter monthly" },
-  { amount: "20", label: "$20", note: "Welcome shirt + sticker", featured: true },
-];
+const TIERS = PATRON_TIERS;
 
 // tiers: which amounts to show, by key ("5", "10", "20"). Default shows all.
 export default function PatronTiers({ tiers }: { tiers?: string[] } = {}) {

@@ -1,5 +1,4 @@
-import MarginAisle from "@/app/components/MarginAisle";
-import SiteAisleBand from "@/app/components/SiteAisleBand";
+import { SiteAdBand, MarginSlot } from "@/app/components/ScheduledAds";
 import type { Metadata } from "next";
 import { Source_Sans_3, Fraunces } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
@@ -97,8 +96,8 @@ export default function RootLayout({
         <LenisProvider>
           <Nav />
           {children}
-          <SiteAisleBand />
-          <MarginAisle />
+          <SiteAdBand />
+          <MarginSlot />
           <Footer />
           <ScrollReveal />
           <CookieBanner />

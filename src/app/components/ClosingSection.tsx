@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ShareButtons from "./ShareButtons";
+import { SUPPORT_PRICE_LABEL } from "@/lib/patron-tiers";
 
 interface Product {
   url: string;
@@ -58,11 +59,13 @@ export default function ClosingSection({ shareUrl, title, excerpt, podcastUrls }
         <p className="text-sm text-center mt-6" style={{ color: "rgba(255,255,255,0.75)", maxWidth: "26rem" }}>
           Southern Legends is independent and reader-supported. No paywall, no sponsors deciding who gets written about.
         </p>
+        {/* Marks this view as already asking for support: the site-wide band skips a second ask. */}
+        <span data-sl-ask="support" hidden />
         <a
           href="/support"
           className="btn-support inline-block mt-2 px-7 py-3 bg-ll-primary font-bold text-sm rounded-md hover:bg-ll-primary-dark transition-colors"
         >
-          Support this work — $5 →
+          Support this work — {SUPPORT_PRICE_LABEL} →
         </a>
       </div>
     </section>

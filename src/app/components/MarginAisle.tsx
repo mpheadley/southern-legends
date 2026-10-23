@@ -4,14 +4,11 @@
 // Arch + AMAG lockup: AMAG is exactly half the arch height. Hidden until the reader has
 // scrolled a quarter of the way down, and never on no-promo pages.
 import { AisleGoLink, AisleGate, AfterQuarter, Dismissible, ImpressionOnView } from "@/app/components/AisleGo";
-import { getActiveAisleShow } from "@/lib/aisle-shows-live";
-import { showDayLabel, adLabel } from "@/lib/ad-inventory";
+import { showDayLabel, adLabel, type AisleShow } from "@/lib/ad-inventory";
 
 const ARCH_H = 64;
 
-export default async function MarginAisle() {
-  const show = await getActiveAisleShow();
-  if (!show) return null;
+export default function MarginAisle({ show, cta = "Register" }: { show: AisleShow; cta?: string }) {
   return (
     <AisleGate>
       <AfterQuarter>
@@ -36,7 +33,7 @@ export default async function MarginAisle() {
                 {show.venue}, {show.city}
               </span>
               <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-                <span className="aisle-cta" style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.45rem 0.7rem", borderRadius: 6, fontWeight: 800, fontSize: "var(--text-meta)", fontFamily: "var(--font-body)" }}>Register free →</span>
+                <span className="aisle-cta" style={{ background: "#C9A227", color: "#1e2a4a", padding: "0.45rem 0.7rem", borderRadius: 6, fontWeight: 800, fontSize: "var(--text-meta)", fontFamily: "var(--font-body)" }}>{cta} →</span>
                 <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "var(--text-label)", color: "#C9A227" }}>theaislebridalshows.com</span>
               </span>
             </span>

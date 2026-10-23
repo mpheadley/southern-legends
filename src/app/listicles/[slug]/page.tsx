@@ -11,8 +11,7 @@ import ShareRow from "@/app/components/ShareRow";
 import { BusinessCard } from "@/app/components/BusinessCard";
 import { Calendar, MapPin, Route, ExternalLink, Star } from "lucide-react";
 import UpcomingEvents from "@/app/components/UpcomingEvents";
-import { getActiveAisleShow } from "@/lib/aisle-shows-live";
-import { showDayLabel } from "@/lib/ad-inventory";
+import { ListicleSlot } from "@/app/components/ScheduledAds";
 
 export function generateStaticParams() {
   return getListicleSlugs().map((slug) => ({ slug }));
@@ -143,8 +142,6 @@ export default async function ListiclePage({
   const isCard = !isEvent && l.businesses && l.businesses.length > 0;
   const weddingCategories = ["photographer", "florist", "venue", "catering", "bridal", "chapel", "jeweler", "jewelry", "bakery", "cake", "hair salon", "salon", "spa", "rental", "music", "alterations", "boutique", "nail", "wedding planner", "planner"];
   const isWeddingGuide = weddingCategories.some(c => (l.category ?? "").toLowerCase().includes(c) || l.tags.some(t => t.toLowerCase().includes(c)));
-  // Live show from Turso; null once the Aisle campaign has ended, so nothing dated is ever typed here.
-  const aisleShow = isWeddingGuide ? await getActiveAisleShow() : null;
 
   // JSON-LD: Event schema for event listicles, ItemList for all
   const eventSchema = isEvent ? {
@@ -270,25 +267,9 @@ export default async function ListiclePage({
           </article>
         )}
 
-        {/* The Aisle bridal show house ad — wedding-category listicles only, live show facts */}
-        {aisleShow && (
-          <div style={{ marginTop: "2rem", background: "var(--color-ll-dark)", borderRadius: "12px", padding: "1.5rem 1.75rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "center" }}>
-            <div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.35rem" }}>
-                The Aisle · Bridal Show · {showDayLabel(aisleShow.date)}
-              </p>
-              <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.15rem", color: "#f0ede6", lineHeight: 1.35, marginBottom: "0.4rem" }}>
-                Meet these vendors in person at {aisleShow.venue}, {aisleShow.city}.
-              </p>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "rgba(240,237,230,0.7)", lineHeight: 1.55 }}>
-                Free to register in advance{aisleShow.doorPrice ? ` · $${aisleShow.doorPrice} at the door` : ""}{aisleShow.vipPrice ? ` · VIP $${aisleShow.vipPrice}` : ""}. Local vendors. Northeast Alabama's bridal show.
-              </p>
-            </div>
-            <a href="/go/aisle" target="_blank" rel="noopener" style={{ display: "inline-block", background: "var(--color-ll-accent-dark)", color: "#f0ede6", fontFamily: "var(--font-body)", fontSize: "0.8rem", fontWeight: 600, padding: "0.65rem 1.2rem", borderRadius: "6px", textDecoration: "none", whiteSpace: "nowrap" }}>
-              Get tickets →
-            </a>
-          </div>
-        )}
+        {/* Scheduled ad (lib/ad-schedule): today's campaign — reader support, or The Aisle on
+            wedding guides while a show campaign runs. */}
+        <ListicleSlot weddingGuide={isWeddingGuide} />
 
         {isEvent && (
           <div style={{ background: "var(--color-ll-dark)", borderRadius: "10px", padding: "1.5rem 1.75rem", marginTop: "2.5rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "1rem", alignItems: "center" }}>

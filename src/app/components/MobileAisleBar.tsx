@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { goHref, ImpressionOnView } from "@/app/components/AisleGo";
 import { usePathname } from "next/navigation";
 
-export default function MobileAisleBar({ dateLabel, showSlug }: { dateLabel: string; showSlug?: string }) {
+export default function MobileAisleBar({ dateLabel, showSlug, cta = "Register" }: { dateLabel: string; showSlug?: string; cta?: string }) {
   const path = usePathname() ?? "/";
   const [opacity, setOpacity] = useState(0);
   const [gone, setGone] = useState(false);
@@ -33,7 +33,7 @@ export default function MobileAisleBar({ dateLabel, showSlug }: { dateLabel: str
         {opacity ? <ImpressionOnView placement="bottom-bar" showSlug={showSlug} /> : null}
         <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 700, fontSize: "0.85rem", whiteSpace: "nowrap" }}>Bridal Show</span>
         <span style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", opacity: 0.9, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{dateLabel}</span>
-        <span style={{ marginLeft: "auto", background: "#C9A227", color: "#1e2a4a", padding: "5px 9px", borderRadius: 5, fontWeight: 800, fontSize: "0.72rem", whiteSpace: "nowrap" }}>Register free →</span>
+        <span style={{ marginLeft: "auto", background: "#C9A227", color: "#1e2a4a", padding: "5px 9px", borderRadius: 5, fontWeight: 800, fontSize: "0.72rem", whiteSpace: "nowrap" }}>{cta} →</span>
       </a>
       <button type="button" aria-label="Close this ad" onClick={() => setGone(true)} style={{ width: 34, height: 34, marginRight: 6, borderRadius: "50%", border: "1px solid rgba(232,201,138,.8)", background: "transparent", color: "#fff", fontSize: 18, lineHeight: 1, cursor: "pointer", padding: 0 }}>×</button>
     </div>

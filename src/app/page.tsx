@@ -1,5 +1,6 @@
 export const revalidate = 300
 
+import { VOL1_ON_SALE } from "@/lib/vol1";
 import { getAllProfiles, getFeaturedProfiles } from "@/lib/profiles";
 import { getJournalPostBySlug } from "@/lib/journal";
 import ProfileCardHero from "./components/ProfileCardHero";
@@ -15,7 +16,6 @@ import SubscribeCTA from "./components/SubscribeCTA";
  * on sale. Flip this to false when the 200 copies are gone and the band becomes
  * the $5 reader-support ask (redesign B-07).
  */
-const VOL1_ON_SALE = true;
 
 export default function HomePage() {
   const allProfiles = getAllProfiles();

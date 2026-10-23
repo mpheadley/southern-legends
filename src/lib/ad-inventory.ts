@@ -63,18 +63,11 @@ export interface PaidAd {
 export const PAID_ADS: PaidAd[] = []
 
 /**
- * FEATURED CAMPAIGN — the campaign chooser. The featured venture's ad runs on every SL page
- * with an ad slot (except SENSITIVE pages and pages whose own CTA already pitches it). Paid
- * advertisers still win.
- *
- * The Aisle runs on a SHOW SCHEDULE: it promotes the first show below that hasn't happened
- * yet (Central time), so the ad switches itself the day after each show. Show facts come
- * from src/data/aisle-shows.json (generated from Turso expo_shows by
- * tools/sl-aisle-shows-snapshot.py) — never typed here. Pages revalidate every 5 minutes, so
- * the switch needs no deploy. Empty schedule / all shows past → no featured campaign.
+ * AISLE SHOWS — used by /go/aisle (the permanent QR/button destination) to forward to the next
+ * real show. WHICH ad runs WHEN is no longer decided here: that's the network-wide ad schedule
+ * (content/data/ad-schedule.json → Vercel Blob, lib/ad-schedule.ts). Show facts come from Turso
+ * expo_shows (lib/aisle-shows-live.ts, snapshot fallback src/data/aisle-shows.json).
  */
-import aisleShows from '@/data/aisle-shows.json'
-
 export const FEATURED_SCHEDULE: string[] = [
   'anniston-oct-2026',   // Sun Oct 18 2026 · Longleaf @ AMAG
   'silver-run-feb-2027', // Sun Feb 21 2027 · Silver Run Chapel (date per Turso)
@@ -87,21 +80,6 @@ export type AisleShow = {
   qr?: string
 }
 
-/**
- * CAMPAIGN END — the Aisle featured campaign ended the day after the Anniston show
- * (Matt, 2026-10-21). From this date no Aisle ad renders anywhere on SL (top strip, band,
- * margin card, phone bar, listicle ad); the slots fall back to the house resolver.
- * /go/aisle still forwards to the next real show, so a QR someone kept still works.
- * To run The Aisle again: set this to null (or a later date) and keep FEATURED_SCHEDULE current.
- */
-export const FEATURED_CAMPAIGN_END: string | null = '2026-10-19'
-
-/** Is the Aisle featured campaign still running today (Central)? */
-export function aisleCampaignLive(today = new Date()): boolean {
-  if (!FEATURED_CAMPAIGN_END) return true
-  return today < new Date(`${FEATURED_CAMPAIGN_END}T00:00:00-06:00`)
-}
-
 /** First scheduled show that hasn't happened yet (Central), campaign or not. */
 export function nextAisleShow(shows: AisleShow[], today = new Date()): AisleShow | null {
   for (const slug of FEATURED_SCHEDULE) {
@@ -111,12 +89,6 @@ export function nextAisleShow(shows: AisleShow[], today = new Date()): AisleShow
     if (today <= end) return show
   }
   return null
-}
-
-/** The show the Aisle ad promotes today, or null once the campaign has ended or the schedule is used up. */
-export function activeAisleShow(today = new Date()): AisleShow | null {
-  if (!aisleCampaignLive(today)) return null
-  return nextAisleShow((aisleShows as { shows: AisleShow[] }).shows, today)
 }
 
 /** Presentation only (photo, partner logo, venue wording) — facts stay in the snapshot. */
@@ -135,10 +107,6 @@ export const AISLE_SHOW_LOOK: Record<string, { venueLine?: string; partnerLogo?:
 export function showDayLabel(iso: string): string {
   const d = new Date(`${iso}T12:00:00-06:00`)
   return d.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', timeZone: 'America/Chicago' })
-}
-
-export function featuredKey(today = new Date()): string | null {
-  return activeAisleShow(today) ? 'aisle' : null
 }
 
 /** Is this ad live today (and on this site)? */
