@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withGatherSites } from "@headley/gathersites/next-config";
 
 const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
@@ -67,4 +68,7 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// withGatherSites: transpiles the editor package, allows Vercel Blob photos in next/image,
+// and appends an X-Frame-Options: SAMEORIGIN rule after this site's own DENY so /edit can
+// show the live page in its preview iframe.
+export default withGatherSites(nextConfig);

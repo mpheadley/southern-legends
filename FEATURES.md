@@ -1,6 +1,14 @@
 # Southern Legends — Shipped Features
 
-*Last updated: 2026-10-10. Source of truth for what's built.*
+*Last updated: 2026-11-13. Source of truth for what's built.*
+
+---
+
+## GatherSites editor on the home page (2026-11-13)
+
+- `/edit` — words/photos editor for the home page only, via the shared `@headley/gathersites` package (`vendor/headley-gathersites-1.2.0.tgz`, slug `southern-legends`, storageKey `slContent`). No earlier bespoke editor existed on this site. Covers two static sections: "More Stories" heading/line, and the Vol.-1/support band (both the on-sale and after-sellout copy). Articles, the almanac, places, and the subscribe/dataset pipeline are NOT editable here — they stay on SL's own publishing pipeline.
+- `src/app/components/SiteChrome.tsx` (new) renders nav/footer/ads/popups everywhere except `/edit`, which renders bare. `api/cms`, `api/cms/upload`, `api/cms/versions` are package re-exports.
+- Not yet live: needs `CMS_EDIT_KEY` (Matt sets it), `CMS_SITE=southern-legends`, and a Turso pair for the gather-shared `site_cms` DB (plain `TURSO_DATABASE_URL`/`TURSO_AUTH_TOKEN` or `CMS_TURSO_*` override — this project only has `AISLE_TURSO_*` today, a different DB). `BLOB_READ_WRITE_TOKEN` already exists.
 
 ---
 

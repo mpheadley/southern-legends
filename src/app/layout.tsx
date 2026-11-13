@@ -1,13 +1,10 @@
-import { SiteAdBand, MarginSlot } from "@/app/components/ScheduledAds";
 import type { Metadata } from "next";
 import { Source_Sans_3, Fraunces } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import ScrollReveal from "./components/ScrollReveal";
-import CookieBanner from "./components/CookieBanner";
-import LenisProvider from "./components/LenisProvider";
-import SubscribePopup from "./components/SubscribePopup";
+import { CmsProvider } from "@headley/gathersites/client";
+import { SiteAdBand, MarginSlot } from "@/app/components/ScheduledAds";
+import SiteChrome from "./components/SiteChrome";
+import { TEXT_DEFAULTS } from "@/lib/content";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -87,23 +84,20 @@ export default function RootLayout({
       </head>
       {/* Built by Gather Studio by Matt Headley | gatherstudio.app */}
       <body className={`${sourceSans.variable} ${fraunces.variable} antialiased`}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-ll-primary focus:text-white focus:px-4 focus:py-2 focus:rounded"
-        >
-          Skip to content
-        </a>
-        <LenisProvider>
-          <Nav />
-          {children}
-          <SiteAdBand />
-          <MarginSlot />
-          <Footer />
-          <ScrollReveal />
-          <CookieBanner />
-          {/* One overlay per visit (redesign B-01): SubscribePopup only. SupportPopup retired. */}
-          <SubscribePopup />
-        </LenisProvider>
+        {/* GatherSites: published words layer over the built-in copy. storageKey "slContent"
+            is this site's own draft key. SiteChrome skips nav/footer/ads/popups on /edit. */}
+        <CmsProvider defaults={TEXT_DEFAULTS} storageKey="slContent">
+          <SiteChrome
+            adSlots={
+              <>
+                <SiteAdBand />
+                <MarginSlot />
+              </>
+            }
+          >
+            {children}
+          </SiteChrome>
+        </CmsProvider>
       </body>
     </html>
     </ViewTransitions>

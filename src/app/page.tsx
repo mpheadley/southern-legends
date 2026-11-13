@@ -10,6 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 import Image from "next/image";
 import SubscribeCTA from "./components/SubscribeCTA";
+import { Editable } from "@headley/gathersites/client";
 
 /**
  * Vol. 1 (the print issue) is the one support ask on the home page while it is
@@ -98,20 +99,22 @@ export default function HomePage() {
       </section>
 
       {/* 2 · More Stories: six cards, one link */}
-      <section className="gradient-hero no-pseudo-topo" style={{ position: "relative" }}>
+      <section id="more-stories" className="gradient-hero no-pseudo-topo" style={{ position: "relative" }}>
         <div aria-hidden="true" className="grid-topo" />
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28" style={{ position: "relative", zIndex: 1 }}>
           <div className="flex items-end justify-between gap-6 mb-12">
             <div>
-              <h2
+              <Editable
+                path="home.more.headline"
+                as="h2"
                 className="text-3xl md:text-5xl font-normal text-white tracking-tight"
                 style={{ fontFamily: "var(--font-heading)", fontVariationSettings: '"opsz" 60' }}
               >
                 More Stories
-              </h2>
-              <p className="mt-3 text-white/65 max-w-md">
+              </Editable>
+              <Editable path="home.more.sub" as="p" className="mt-3 text-white/65 max-w-md">
                 The people behind the shops, farms, and traditions that make this region what it is.
-              </p>
+              </Editable>
             </div>
             <Link
               href="/profiles"
@@ -198,7 +201,7 @@ export default function HomePage() {
       )}
 
       {/* 4 · ONE support band: Vol. 1 while it is on sale, then the $5 ask */}
-      <section style={{ background: "#1C1917", position: "relative", overflow: "hidden" }}>
+      <section id="support-band" style={{ background: "#1C1917", position: "relative", overflow: "hidden" }}>
         <div
           aria-hidden="true"
           style={{
@@ -225,8 +228,12 @@ export default function HomePage() {
           {VOL1_ON_SALE ? (
             <>
               <div>
-                <p style={LABEL}>Now available · Vol. 1</p>
-                <h2
+                <Editable path="home.support.sale.label" as="p" style={LABEL}>
+                  Now available · Vol. 1
+                </Editable>
+                <Editable
+                  path="home.support.sale.headline"
+                  as="h2"
                   style={{
                     fontFamily: "var(--font-heading)",
                     fontSize: "clamp(1.75rem, 4.5vw, 2.75rem)",
@@ -237,11 +244,15 @@ export default function HomePage() {
                   }}
                 >
                   Southern Legends<br />in print.
-                </h2>
-                <p style={{ fontSize: "0.9375rem", color: "rgba(250,250,247,0.6)", lineHeight: 1.7, margin: 0, fontFamily: "var(--font-body)" }}>
+                </Editable>
+                <Editable
+                  path="home.support.sale.body"
+                  as="p"
+                  style={{ fontSize: "0.9375rem", color: "rgba(250,250,247,0.6)", lineHeight: 1.7, margin: 0, fontFamily: "var(--font-body)" }}
+                >
                   Five profiles. 200 copies. $15.<br />
                   10% supports early childhood literacy through UWECA&rsquo;s Imagination Library.
-                </p>
+                </Editable>
               </div>
               <div>
                 <Link
@@ -260,15 +271,19 @@ export default function HomePage() {
                     textAlign: "center",
                   }}
                 >
-                  Reserve your copy — $15
+                  <Editable path="home.support.sale.cta" as="span">Reserve your copy — $15</Editable>
                 </Link>
               </div>
             </>
           ) : (
             <>
               <div>
-                <p style={LABEL}>Reader-supported</p>
-                <h2
+                <Editable path="home.support.ask.label" as="p" style={LABEL}>
+                  Reader-supported
+                </Editable>
+                <Editable
+                  path="home.support.ask.headline"
+                  as="h2"
                   style={{
                     fontFamily: "var(--font-heading)",
                     fontSize: "clamp(1.75rem, 4.5vw, 2.75rem)",
@@ -279,10 +294,14 @@ export default function HomePage() {
                   }}
                 >
                   No paywall.<br />No sponsors picking the stories.
-                </h2>
-                <p style={{ fontSize: "0.9375rem", color: "rgba(250,250,247,0.6)", lineHeight: 1.7, margin: 0, fontFamily: "var(--font-body)" }}>
+                </Editable>
+                <Editable
+                  path="home.support.ask.body"
+                  as="p"
+                  style={{ fontSize: "0.9375rem", color: "rgba(250,250,247,0.6)", lineHeight: 1.7, margin: 0, fontFamily: "var(--font-body)" }}
+                >
                   $5 a month keeps the stories free for everyone else.
-                </p>
+                </Editable>
               </div>
               <div>
                 <Link
@@ -301,7 +320,7 @@ export default function HomePage() {
                     textAlign: "center",
                   }}
                 >
-                  Support this work — $5
+                  <Editable path="home.support.ask.cta" as="span">Support this work — $5</Editable>
                 </Link>
               </div>
             </>
