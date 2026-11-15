@@ -292,6 +292,14 @@ function Doors({
             : attribution}
       </p>
       {byline && <p className="mt-2 text-sm italic leading-relaxed text-ll-text-light">{byline}</p>}
+      {/* Free to read; one plain support line, no paywall (faith-column-owned-channel-strategy, 2026-11-15). */}
+      <p className="mt-4 text-sm leading-relaxed text-ll-text-light">
+        Free to read.{" "}
+        <a href="/support" className="font-medium text-ll-primary underline underline-offset-4">
+          Support the writing
+        </a>
+        .
+      </p>
     </div>
   );
 }
