@@ -127,7 +127,7 @@ export default function MerchPage() {
               headline="Reader Patron"
               body="Keep the lights on. Cancel any time."
               cta="Become a patron →"
-              href="https://buy.stripe.com/patron5"
+              href="/support"
               accent="rgba(154,52,18,0.25)"
               ctaStyle={{ background: 'var(--color-ll-primary)', color: 'var(--color-ll-warm)' }}
             />
