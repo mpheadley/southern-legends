@@ -4,6 +4,9 @@
 
 ---
 
+## Content feed follows page visibility (2026-11-15)
+- `/api/content-feed` and `/api/content-feed/[type]/[slug]` now serve only pieces whose pages are live: `published: true`, not `aiWritten`, not `draft`. Before this, the per-slug route returned the full text of unpublished and AI-written profiles with no gate. 19 profiles are served; 108 are blocked.
+
 ## GatherSites editor on the home page (2026-11-13)
 
 - `/edit` — words/photos editor for the home page only, via the shared `@headley/gathersites` package (`vendor/headley-gathersites-1.2.0.tgz`, slug `southern-legends`, storageKey `slContent`). No earlier bespoke editor existed on this site. Covers two static sections: "More Stories" heading/line, and the Vol.-1/support band (both the on-sale and after-sellout copy). Articles, the almanac, places, and the subscribe/dataset pipeline are NOT editable here — they stay on SL's own publishing pipeline.

@@ -41,7 +41,8 @@ function readContentDir(dir: string, type: 'profile' | 'journal'): ContentItem[]
         title: fm.title ?? fm.name ?? slug,
         excerpt: fm.excerpt ?? '',
         date: fm.date ?? '',
-        published: fm.published !== 'false',
+        // Same rule as the pages: published, not AI-written, not draft.
+        published: fm.published === 'true' && fm.aiWritten !== 'true' && fm.draft !== 'true',
       }
     })
     .filter(item => item.published)
