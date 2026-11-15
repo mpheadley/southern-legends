@@ -117,3 +117,13 @@ export function getAllJournalPosts(): JournalPost[] {
         new Date(a.frontmatter.date).getTime()
     );
 }
+
+/** Case-insensitive tag check (frontmatter has a mix of "AI" and "ai", etc.). */
+export function journalPostHasTag(post: JournalPost, tag: string): boolean {
+  const needle = tag.toLowerCase();
+  return (post.frontmatter.tags ?? []).some((t) => t.toLowerCase() === needle);
+}
+
+export function getJournalPostsByTag(tag: string): JournalPost[] {
+  return getAllJournalPosts().filter((p) => journalPostHasTag(p, tag));
+}

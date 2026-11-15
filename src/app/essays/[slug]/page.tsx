@@ -6,7 +6,7 @@ import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
-import { getAllJournalPosts, getJournalPostBySlug, getJournalSlugs, getOtherJournalPosts } from "@/lib/journal";
+import { getAllJournalPosts, getJournalPostBySlug, getJournalSlugs, getOtherJournalPosts, journalPostHasTag } from "@/lib/journal";
 import { getAllProfiles } from "@/lib/profiles";
 import { siteConfig } from "@/lib/site-config";
 import ShareButtons from "@/app/components/ShareButtons";
@@ -38,6 +38,12 @@ import PhotoCarouselLoader from "@/app/components/PhotoCarouselLoader";
 import TestimonialBlock from "@/app/components/TestimonialBlock";
 import PlaylistEmbed from "@/app/components/PlaylistEmbed";
 import { getPlaylist } from "@/lib/playlists";
+
+// Same two chips as the /essays list filter — keep in sync with src/app/essays/page.tsx.
+const ESSAY_TAG_FILTERS: { tag: string; label: string }[] = [
+  { tag: "ai", label: "AI" },
+  { tag: "faith", label: "Faith" },
+];
 
 function Dateline({ children }: { children: React.ReactNode }) {
   return (
@@ -325,6 +331,21 @@ export default async function JournalPostPage({ params }: { params: Params }) {
             <span aria-hidden="true">&middot;</span>
             <span>{readingTime}</span>
           </div>
+
+          {/* Tag chips — AI / Faith only, linking to the filtered list. */}
+          {ESSAY_TAG_FILTERS.some((f) => journalPostHasTag(post, f.tag)) && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {ESSAY_TAG_FILTERS.filter((f) => journalPostHasTag(post, f.tag)).map((f) => (
+                <Link
+                  key={f.tag}
+                  href={`/essays?tag=${f.tag}`}
+                  className="inline-flex items-center px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-wider rounded-full text-white/80 hover:text-white border border-white/30 hover:border-white/60 transition-colors"
+                >
+                  {f.label}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

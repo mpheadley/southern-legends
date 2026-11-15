@@ -2,18 +2,20 @@ export const revalidate = 300
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllJournalPosts, getFeaturedJournalPost } from "@/lib/journal";
+import { getAllJournalPosts, getFeaturedJournalPost, journalPostHasTag } from "@/lib/journal";
 import { siteConfig } from "@/lib/site-config";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
 import SectionLinks from "@/app/components/SectionLinks";
 import ShareRow from "@/app/components/ShareRow";
 
-export const metadata: Metadata = {
-  title: "Essays — Southern Legends",
-  description: `Matt Headley writes about what's behind the profiles — and what's behind him.`,
-  alternates: { canonical: "/essays" },
-  openGraph: { url: "/essays" },
-};
+// The only two filter chips Matt wants on this list. Not a full tag browser —
+// just a quick way to find the AI writing and the faith writing.
+const TAG_FILTERS: { tag: string; label: string }[] = [
+  { tag: "ai", label: "AI" },
+  { tag: "faith", label: "Faith" },
+];
+
+type SearchParams = Promise<{ tag?: string }>;
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("en-US", {
@@ -23,9 +25,42 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export default function JournalPage() {
-  const featured = getFeaturedJournalPost();
-  const posts = getAllJournalPosts().filter(p => p.slug !== featured?.slug);
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}): Promise<Metadata> {
+  const { tag } = await searchParams;
+  const filter = TAG_FILTERS.find((f) => f.tag === tag);
+  if (!filter) {
+    return {
+      title: "Essays — Southern Legends",
+      description: `Matt Headley writes about what's behind the profiles — and what's behind him.`,
+      alternates: { canonical: "/essays" },
+      openGraph: { url: "/essays" },
+    };
+  }
+  return {
+    title: `${filter.label} writing — Southern Legends`,
+    description: `Matt Headley's essays tagged ${filter.label.toLowerCase()}.`,
+    alternates: { canonical: `/essays?tag=${filter.tag}` },
+    openGraph: { url: `/essays?tag=${filter.tag}` },
+  };
+}
+
+export default async function JournalPage({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const { tag } = await searchParams;
+  const activeFilter = TAG_FILTERS.find((f) => f.tag === tag);
+
+  const allPosts = getAllJournalPosts();
+  const featured = activeFilter ? null : getFeaturedJournalPost();
+  const posts = activeFilter
+    ? allPosts.filter((p) => journalPostHasTag(p, activeFilter.tag))
+    : allPosts.filter((p) => p.slug !== featured?.slug);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -76,6 +111,37 @@ export default function JournalPage() {
         }}>
           I write about what&apos;s behind the profiles. And what&apos;s behind me.
         </p>
+
+        {/* Tag filter — All / AI / Faith. Filters in place, URL is shareable (/essays?tag=ai). */}
+        <div className="flex flex-wrap gap-2 mt-6" role="group" aria-label="Filter essays by topic">
+          <Link
+            href="/essays"
+            aria-current={!activeFilter ? "true" : undefined}
+            className="inline-flex items-center px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-colors"
+            style={{
+              backgroundColor: !activeFilter ? "var(--color-ll-primary)" : "transparent",
+              color: !activeFilter ? "#FAFAF7" : "var(--color-ll-dark)",
+              border: "1px solid var(--color-ll-border)",
+            }}
+          >
+            All
+          </Link>
+          {TAG_FILTERS.map((f) => (
+            <Link
+              key={f.tag}
+              href={`/essays?tag=${f.tag}`}
+              aria-current={activeFilter?.tag === f.tag ? "true" : undefined}
+              className="inline-flex items-center px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-colors"
+              style={{
+                backgroundColor: activeFilter?.tag === f.tag ? "var(--color-ll-primary)" : "transparent",
+                color: activeFilter?.tag === f.tag ? "#FAFAF7" : "var(--color-ll-dark)",
+                border: "1px solid var(--color-ll-border)",
+              }}
+            >
+              {f.label}
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Featured post hero */}
@@ -151,8 +217,23 @@ export default function JournalPage() {
 
       {/* Post list */}
       <div className="mx-auto max-w-2xl px-6 py-12 md:py-16">
+        {activeFilter && (
+          <p style={{
+            fontFamily: "var(--font-source-sans)",
+            fontSize: "0.8125rem",
+            fontWeight: 600,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "#9C8E84",
+            marginBottom: "2rem",
+          }}>
+            {posts.length} {posts.length === 1 ? "piece" : "pieces"} tagged &ldquo;{activeFilter.label}&rdquo;
+          </p>
+        )}
         {posts.length === 0 ? (
-          <p style={{ color: "#9C8E84", fontSize: "0.875rem" }}>Coming soon.</p>
+          <p style={{ color: "#9C8E84", fontSize: "0.875rem" }}>
+            {activeFilter ? `Nothing tagged "${activeFilter.label}" yet.` : "Coming soon."}
+          </p>
         ) : (
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {posts.map((post, i) => (
@@ -215,6 +296,24 @@ export default function JournalPage() {
                     Read →
                   </span>
                 </Link>
+                {TAG_FILTERS.some((f) => journalPostHasTag(post, f.tag)) && (
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {TAG_FILTERS.filter((f) => journalPostHasTag(post, f.tag)).map((f) => (
+                      <Link
+                        key={f.tag}
+                        href={`/essays?tag=${f.tag}`}
+                        className="inline-flex items-center px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-wider rounded-full hover:opacity-80 transition-opacity"
+                        style={{
+                          backgroundColor: "var(--color-ll-warm)",
+                          color: "var(--color-ll-primary)",
+                          border: "1px solid var(--color-ll-border)",
+                        }}
+                      >
+                        {f.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

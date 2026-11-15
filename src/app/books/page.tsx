@@ -52,6 +52,7 @@ const FORTHCOMING_BOOKS = [
     cover: null,
     status: "Forthcoming",
     preorder: false,
+    siteUrl: "https://godandthealgorithm.com/#subscribe",
   },
 ];
 
@@ -220,6 +221,16 @@ export default function BooksPage() {
                   </p>
                 </div>
               </Link>
+              {"siteUrl" in book && book.siteUrl && (
+                <a
+                  href={book.siteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-t border-ll-border px-4 sm:px-5 py-2.5 text-xs font-semibold text-ll-primary hover:bg-ll-warm transition-colors"
+                >
+                  Get updates on the book →
+                </a>
+              )}
             </article>
           ))}
         </div>
