@@ -138,7 +138,7 @@ export async function MarginSlot() {
       <AfterQuarter>
         <aside className="margin-ad" aria-label={ad.campaign.advertiser} data-ad-slot="margin" data-ad-campaign={ad.campaign.id}>
           <Dismissible campaignId={ad.campaign.id} label={labelFor(ad)}>
-            <style>{`.margin-ad{display:none}@media(min-width:1440px){.margin-ad{display:block;position:fixed;right:20px;top:120px;width:300px;z-index:30}}.margin-ad a,.margin-ad a *{text-decoration:none!important}`}</style>
+            <style>{`.margin-ad{display:none}@media(min-width:1680px){.margin-ad{display:block;position:fixed;right:20px;top:120px;width:300px;z-index:30}}.margin-ad a,.margin-ad a *{text-decoration:none!important}`}</style>
             <TrackedAdLink href={ad.href} placement="margin" campaignId={ad.campaign.id} className="block no-underline rounded-xl overflow-hidden relative" style={{ width: 300, height: 250, color: CREAM, background: INK, boxShadow: "0 8px 24px rgba(0,0,0,.2)", borderTop: `4px solid ${GOLD}` }}>
               <ImpressionOnView placement="margin" showSlug={ad.campaign.id} />
               <span style={{ position: "absolute", left: 20, right: 20, top: 16, display: "block" }}>

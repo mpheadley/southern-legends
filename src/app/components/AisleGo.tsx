@@ -136,17 +136,18 @@ export function Dismissible({ children, campaignId, label, days = 7 }: { childre
 
   return (
     <div style={{ position: "relative" }}>
-      <style>{`.sl-ad-close-btn:hover{color:#1a1208}.sl-ad-close-btn:focus-visible{outline:2px solid #E8C98A;outline-offset:2px}`}</style>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", margin: "0 0 6px" }}>
+      <style>{`.sl-ad-close-btn:hover{color:#ffffff}.sl-ad-close-btn:focus-visible{outline:2px solid #E8C98A;outline-offset:2px}`}</style>
+      {/* Dark pill so the label + close read clearly over any page background; sentence case so it fits 300px on one line (2026-11-17). */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, margin: "0 0 6px", padding: "0 4px 0 14px", background: "#1C1917", borderRadius: 10, whiteSpace: "nowrap" }}>
         {label ? (
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: 0 }}>{label}</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, letterSpacing: ".02em", color: "rgba(250,246,238,.72)", margin: 0, overflow: "hidden", textOverflow: "ellipsis" }}>{label}</p>
         ) : <span />}
         <button
           type="button"
           aria-label="Close this ad"
           onClick={close}
-          className="sl-ad-close-btn inline-flex items-center gap-1 min-h-[44px] px-2 -mr-2 rounded text-[14px] font-bold uppercase tracking-[.12em]"
-          style={{ color: "#8a8170", background: "transparent", border: 0, cursor: "pointer" }}
+          className="sl-ad-close-btn inline-flex shrink-0 items-center gap-1 min-h-[44px] px-2 rounded text-[14px] font-semibold"
+          style={{ color: "rgba(250,246,238,.85)", background: "transparent", border: 0, cursor: "pointer" }}
         >
           <X size={16} strokeWidth={2.25} aria-hidden />
           Close ad
