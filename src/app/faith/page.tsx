@@ -223,7 +223,11 @@ function ColumnRow({ column: c, featured = false }: { column: FaithColumn; featu
             </Link>
           </h3>
           {c.pullQuote && (
-            <p className="faith-display mt-4 max-w-2xl text-lg italic text-ll-text sm:text-xl">“{plain(c.pullQuote)}”</p>
+            <p className="faith-display mt-4 max-w-2xl text-lg italic text-ll-text sm:text-xl">
+              “{plain(c.pullQuote)}”
+              {/* Someone else's words (e.g. Wendell Berry) are credited so they never read as Matt's. */}
+              {c.pullQuoteBy && <span className="ml-2 whitespace-nowrap text-base not-italic text-ll-text-light">— {c.pullQuoteBy}</span>}
+            </p>
           )}
 
           {longer ? (

@@ -41,6 +41,14 @@ export type FaithColumn = {
   paragraphs: string[];
   /** The one line. */
   pullQuote: string;
+  /** Who said the pull quote when it isn't Matt (e.g. "Wendell Berry"). "" = Matt's own words. */
+  pullQuoteBy: string;
+  /** The dek: 1-2 sentences under the title and the og:description. Matt's words or the line the Star chose. "" = none. */
+  teaser: string;
+  /** Whose text `paragraphs` is: "star" = as the Star printed it, "mine" = Matt's sent version (differs from print). */
+  textSource: "star" | "mine" | "";
+  /** Old slugs of this column; /faith/<old> permanently redirects here. */
+  redirectFrom: string[];
   card: FaithImage | null;
   reel: FaithReel | null;
 };
@@ -115,10 +123,24 @@ function isPublished(c: FaithColumn, today: string): boolean {
   );
 }
 
+// Renamed column URLs (Matt 2026-11-17). Applied here too so a rename works the moment the site deploys,
+// before the next Blob snapshot carries the new slug (tools/sl-faith-snapshot.py "_redirects" in faith-slugs.json).
+// next.config.ts sends the old URL to the new one with a 308.
+export const FAITH_SLUG_RENAMES: Record<string, string> = {
+  "the-algorithm-is-the-new-king": "the-king-we-choose-for-ourselves",
+};
+
 function normalize(c: FaithColumn): FaithColumn {
   const paragraphs = Array.isArray(c.paragraphs) ? c.paragraphs.filter((p) => typeof p === "string" && p.trim()) : [];
+  const renamed = FAITH_SLUG_RENAMES[c.slug];
+  const redirectFrom = Array.isArray(c.redirectFrom) ? c.redirectFrom.filter((s) => typeof s === "string" && /^[a-z0-9-]+$/.test(s)) : [];
   return {
     ...c,
+    slug: renamed ?? c.slug,
+    redirectFrom: renamed && !redirectFrom.includes(c.slug) ? [...redirectFrom, c.slug] : redirectFrom,
+    pullQuoteBy: typeof c.pullQuoteBy === "string" ? c.pullQuoteBy.trim() : "",
+    teaser: typeof c.teaser === "string" ? c.teaser.trim() : "",
+    textSource: c.textSource === "star" || c.textSource === "mine" ? c.textSource : "",
     paragraphs,
     longCut: c.longCut === true && paragraphs.length > 0,
     longUrl: typeof c.longUrl === "string" && c.longUrl.startsWith("/essays/") ? c.longUrl : "",
@@ -157,6 +179,11 @@ export async function getFaithColumns(): Promise<FaithColumn[]> {
 
 export async function getFaithColumn(slug: string): Promise<FaithColumn | undefined> {
   return (await getFaithColumns()).find((c) => c.slug === slug);
+}
+
+/** The column an old (renamed) slug now lives at, if any. */
+export function faithRedirectTarget(columns: FaithColumn[], slug: string): FaithColumn | undefined {
+  return columns.find((c) => c.redirectFrom.includes(slug));
 }
 
 /**

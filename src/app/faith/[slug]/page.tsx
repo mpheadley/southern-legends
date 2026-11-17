@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Link } from "next-view-transitions";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Play } from "lucide-react";
 import SubscribeCTA from "@/app/components/SubscribeCTA";
 import ShareRow from "@/app/components/ShareRow";
 import { siteConfig } from "@/lib/site-config";
-import { getFaithData, faithAbsUrl, faithReadLabel, formatFaithDate, type FaithColumn, type FaithReel } from "@/lib/faith";
+import {
+  getFaithData,
+  faithAbsUrl,
+  faithReadLabel,
+  faithRedirectTarget,
+  formatFaithDate,
+  type FaithColumn,
+  type FaithReel,
+} from "@/lib/faith";
 import { inline, plain } from "../FaithText";
 import FaithTrack from "../FaithTrack";
 
@@ -34,7 +42,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { columns, headshot } = await getFaithData();
   const c = columns.find((x) => x.slug === slug);
   if (!c) return {};
-  const description = plain(c.pullQuote) || `Matt Headley's faith column in The Anniston Star, ${formatFaithDate(c.date)}.`;
+  // The teaser (dek) is the share text; else the pull quote when it's Matt's own words.
+  const description =
+    plain(c.teaser) ||
+    (c.pullQuoteBy ? "" : plain(c.pullQuote)) ||
+    `Matt Headley's faith column in The Anniston Star, ${formatFaithDate(c.date)}.`;
   const image = c.card ?? headshot;
   const ownText = c.paragraphs.length > 0;
   return {
@@ -66,13 +78,18 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
   const { slug } = await params;
   const { columns: all, headshot: faithHeadshot, byline: faithByline, attribution: faithAttribution } = await getFaithData();
   const c = all.find((x) => x.slug === slug);
-  if (!c) notFound();
+  if (!c) {
+    // A renamed column keeps its old links working (308).
+    const moved = faithRedirectTarget(all, slug);
+    if (moved) permanentRedirect(`/faith/${moved.slug}`);
+    notFound();
+  }
 
   const idx = all.findIndex((x) => x.slug === c.slug);
   const newer = idx > 0 ? all[idx - 1] : undefined;
   const older = idx < all.length - 1 ? all[idx + 1] : undefined;
   const ownText = c.paragraphs.length > 0;
-  const description = plain(c.pullQuote);
+  const description = plain(c.teaser) || plain(c.pullQuote);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -107,6 +124,9 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
           <h1 className="faith-display text-[clamp(2.5rem,7vw,5rem)] font-semibold text-white" style={{ lineHeight: 1.02 }}>
             {c.title}
           </h1>
+          {c.teaser && (
+            <p className="mt-6 max-w-2xl text-xl leading-relaxed text-white/80 md:text-2xl">{inline(c.teaser)}</p>
+          )}
           <div className="mt-8 flex items-center gap-4">
             {faithHeadshot && (
               <Image
@@ -138,23 +158,14 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
               <p key={i}>{inline(p)}</p>
             ))}
           </div>
+          {c.pullQuote && <PullQuote column={c} />}
           {doors}
           {c.reel && <ReelBox reel={c.reel} slug={c.slug} />}
           <div className="mt-8">
             <ShareRow url={`/faith/${c.slug}`} title={c.title} description={description} />
           </div>
-          {c.card && (
-            <figure className="mt-12">
-              <Image
-                src={c.card.src}
-                width={c.card.width}
-                height={c.card.height}
-                alt={c.card.alt || `Share card for “${c.title}”`}
-                sizes="(min-width: 768px) 420px, 100vw"
-                className="mx-auto h-auto w-full max-w-[420px] rounded-sm shadow-lg"
-              />
-            </figure>
-          )}
+          {/* Full-text pages: the teaser up top does the card's job, so the card image is only the share image
+              (og:image / twitter) now. Link-only pages still show it (Matt 2026-11-17). */}
         </article>
       ) : (
         // Link-only page: the one line and the doors on the left, the share card beside them.
@@ -163,7 +174,12 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
             <div className="min-w-0 max-w-[42rem]">
               <RanInStar column={c} />
               {c.pullQuote && (
-                <p className="faith-display text-[clamp(1.6rem,3.2vw,2.25rem)] italic leading-snug text-ll-dark">“{description}”</p>
+                <p className="faith-display text-[clamp(1.6rem,3.2vw,2.25rem)] italic leading-snug text-ll-dark">
+                  “{plain(c.pullQuote)}”
+                  {c.pullQuoteBy && (
+                    <span className="mt-3 block text-lg not-italic text-ll-text-light">— {c.pullQuoteBy}</span>
+                  )}
+                </p>
               )}
               {doors}
               {c.reel && <ReelBox reel={c.reel} slug={c.slug} />}
@@ -346,9 +362,27 @@ function ReelBox({ reel, slug }: { reel: FaithReel; slug: string }) {
 function RanInStar({ column: c }: { column: FaithColumn }) {
   return (
     <p className="mb-10 text-base italic leading-relaxed text-ll-text-light">
-      {c.longCut ? "A shorter version of this column ran in " : "This column originally ran in "}
+      {c.longCut
+        ? "A shorter version of this column ran in "
+        : c.textSource === "mine"
+          ? "A version of this column ran in "
+          : "This column originally ran in "}
       <span className="not-italic font-medium">The Anniston Star</span> on{" "}
       <time dateTime={c.date}>{formatFaithDate(c.date)}</time>.
     </p>
+  );
+}
+
+/** The pull quote on a full-text page: quiet, after the column, credited when it's someone else's words. */
+function PullQuote({ column: c }: { column: FaithColumn }) {
+  return (
+    <figure className="mt-12 border-l-2 border-ll-accent pl-5">
+      <blockquote className="faith-display text-xl italic leading-snug text-ll-dark md:text-2xl">
+        “{plain(c.pullQuote)}”
+      </blockquote>
+      {c.pullQuoteBy && (
+        <figcaption className="mt-2 text-base text-ll-text-light">— {c.pullQuoteBy}</figcaption>
+      )}
+    </figure>
   );
 }

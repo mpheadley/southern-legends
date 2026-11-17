@@ -48,6 +48,9 @@ const nextConfig: NextConfig = {
       { source: "/journal/:slug", destination: "/essays/:slug", permanent: true },
       { source: "/essays/the-return", destination: "/essays/five-fifteen", permanent: true },
       { source: "/woodstock", destination: "/print/woodstock", permanent: false },
+      // Faith column renamed to its Star headline (Matt 2026-11-17); emailed links keep working (308).
+      // Keep in step with FAITH_SLUG_RENAMES in src/lib/faith.ts.
+      { source: "/faith/the-algorithm-is-the-new-king", destination: "/faith/the-king-we-choose-for-ourselves", permanent: true },
     ];
   },
   async headers() {
