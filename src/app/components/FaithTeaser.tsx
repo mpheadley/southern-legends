@@ -63,7 +63,7 @@ export default async function FaithTeaser() {
             className="text-sm line-clamp-2"
             style={{ fontFamily: "var(--font-body)", color: "rgba(250,250,247,0.65)", lineHeight: 1.55 }}
           >
-            “{quote}”
+            “{quote}”{latest.pullQuoteBy ? ` — ${latest.pullQuoteBy}` : ""}
           </p>
         )}
         <p
