@@ -151,9 +151,9 @@ export default function AboutPage() {
               >
                 why this site exists
               </Link>
-              {" "}in the journal. My writing has appeared in the{" "}
+              {" "}in the journal. I write a weekly faith column for the{" "}
               <Link
-                href="/essays/hope-in-the-wilderness"
+                href="/faith"
                 className="text-ll-primary font-medium underline underline-offset-3 hover:text-ll-primary-dark transition-colors"
               >
                 Anniston Star

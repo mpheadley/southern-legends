@@ -20,7 +20,7 @@ export const siteConfig = {
       { label: "Stories", href: "/profiles" },
       { label: "Essays", href: "/essays" },
       { label: "Guides", href: "/listicles" },
-      { label: "Faith column", href: "/faith" },
+      { label: "Faith column · Anniston Star", href: "/faith" },
       { label: "Books", href: "/books" },
     ]},
     { title: "Explore", links: [
@@ -45,7 +45,7 @@ export const siteConfig = {
     { label: "Arts", href: "/arts" },
     { label: "The Land", href: "/land" },
     { label: "Theology", href: "/theology" },
-    { label: "Faith column", href: "/faith" },
+    { label: "Faith column · Anniston Star", href: "/faith" },
     { label: "Books", href: "/books" },
     { label: "Merch", href: "/merch" },
   ],

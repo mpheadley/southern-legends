@@ -32,8 +32,15 @@ export type AdCampaign = {
   short?: string;
   cta: string;
   href: string;
-  /** Real photos only, never AI. */
+  /** Real photos only, never AI. Band background (dimmed). Needs imageCredit when it isn't ours. */
   image?: string;
+  imageCredit?: string;
+  /** Round face shown beside the headline (real photo of the person asking). */
+  portrait?: string;
+  /** Name under the portrait, e.g. "Matt Headley". */
+  portraitName?: string;
+  /** Light-on-dark wordmark/lockup shown on the band and margin card. */
+  logo?: string;
   accent?: string;
   /** Topic words (PaidAd.topics). Reserved: SL slots don't target by topic yet. */
   topics?: string[];

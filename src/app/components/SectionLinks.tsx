@@ -9,6 +9,7 @@ const SECTIONS = [
   { label: "Books", href: "/books", desc: "Literature from and about the South" },
   { label: "Land", href: "/land", desc: "Farming, gardening, and homesteading" },
   { label: "Essays", href: "/essays", desc: "Long-form from Matt Headley" },
+  { label: "Faith column", href: "/faith", desc: "The weekly Anniston Star column" },
   { label: "Theology", href: "/theology", desc: "The shape underneath the work" },
 ];
 

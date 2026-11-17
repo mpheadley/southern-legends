@@ -25,6 +25,16 @@ const labelFor = (ad: SlAd) =>
 /** What this ad asks for — a page already making that ask hides the site-wide band. */
 const askKey = (ad: SlAd) => (ad.show ? "aisle" : isSupportAsk(ad) ? "support" : ad.campaign.id);
 
+/** Round face of the person asking. Sized in CSS px; the file is >= 3x so it stays sharp. */
+function Portrait({ src, size, ring = GOLD }: { src: string; size: number; ring?: string }) {
+  return <img src={src} alt="" width={size} height={size} decoding="async" style={{ width: size, height: size, borderRadius: "50%", objectFit: "cover", flex: "none", border: `2px solid ${ring}`, display: "block" }} />;
+}
+
+/** Light-on-dark wordmark lockup. */
+function Logo({ src, width }: { src: string; width: number }) {
+  return <img src={src} alt="Southern Legends" width={width} height={Math.round(width * 0.207)} decoding="async" style={{ width, height: "auto", display: "block" }} />;
+}
+
 /** Marker a slot drops so the site-wide band below doesn't repeat the same ask. */
 export function AskMarker({ ad }: { ad: SlAd }) {
   return <span data-sl-ask={askKey(ad)} hidden />;
@@ -48,6 +58,7 @@ export async function TopStripSlot() {
         <ImpressionOnView placement="top-strip" showSlug={ad.campaign.id} />
         <style>{`.ss,.ss *{text-decoration:none!important}.ss{display:flex;align-items:center;gap:16px;flex-wrap:wrap}`}</style>
         <span className="ss" style={{ padding: "14px 18px" }}>
+          {ad.campaign.portrait ? <Portrait src={ad.campaign.portrait} size={48} /> : null}
           <span style={{ flex: 1, minWidth: 200 }}>
             <span style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase", color: GOLD }}>{labelFor(ad)}</span>
             <span style={{ display: "block", fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 700, fontSize: "1.2rem", lineHeight: 1.2, marginTop: 2 }}>{ad.short}</span>
@@ -76,7 +87,7 @@ export async function SiteAdBand() {
           {bar.show ? (
             <MobileAisleBar dateLabel={showDayLabel(bar.show.date)} showSlug={bar.show.slug} cta={bar.cta} campaignId={bar.campaign.id} />
           ) : (
-            <MobileAdBar short={bar.short} cta={bar.cta} href={bar.href} campaignId={bar.campaign.id} accent={bar.campaign.accent} />
+            <MobileAdBar short={bar.short} cta={bar.cta} href={bar.href} campaignId={bar.campaign.id} accent={bar.campaign.accent} portrait={bar.campaign.portrait} />
           )}
         </AdGate>
       ) : null}
@@ -89,15 +100,20 @@ function PlainBand({ ad }: { ad: SlAd }) {
   return (
     <div className="px-6 py-8">
       <p className="max-w-3xl mx-auto text-[length:var(--text-label)] font-bold tracking-[0.16em] uppercase" style={{ color: "#8a8170", fontFamily: "var(--font-body)", marginBottom: 8 }}>{labelFor(ad)}</p>
-      <style>{`.pb,.pb *{text-decoration:none!important}.pb{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}@media(min-width:760px){.pb{grid-template-columns:1fr auto}}`}</style>
+      <style>{`.pb,.pb *{text-decoration:none!important}.pb{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}@media(min-width:760px){.pb{grid-template-columns:1fr auto}}.pb-head{display:flex;gap:18px;align-items:center}@media(max-width:600px){.pb-face img{width:64px!important;height:64px!important}}`}</style>
       <TrackedAdLink href={ad.href} placement="band" campaignId={ad.campaign.id} className="block max-w-3xl mx-auto rounded-xl overflow-hidden relative no-underline" style={{ background: "#2a1d10", color: CREAM, boxShadow: "0 8px 24px rgba(0,0,0,.14)", borderLeft: `6px solid ${GOLD}` }}>
         <ImpressionOnView placement="band" showSlug={ad.campaign.id} />
         {ad.campaign.image ? <img src={ad.campaign.image} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.35 }} /> : null}
         <div className="pb relative" style={{ padding: "26px 28px 24px" }}>
           <div>
+            {ad.campaign.logo ? <div style={{ marginBottom: 18 }}><Logo src={ad.campaign.logo} width={260} /></div> : null}
+            <div className="pb-head">
+            {ad.campaign.portrait ? <span className="pb-face"><Portrait src={ad.campaign.portrait} size={88} /></span> : null}
             <p style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 700, fontSize: "clamp(1.6rem, 4vw, 2.2rem)", lineHeight: 1.05, margin: 0 }}>{ad.headline}</p>
+            </div>
             {ad.body ? <p style={{ fontFamily: "var(--font-body)", fontSize: "0.98rem", lineHeight: 1.55, margin: "12px 0 0", opacity: 0.9, maxWidth: 520 }}>{ad.body}</p> : null}
           </div>
+          {ad.campaign.imageCredit ? <p style={{ position: "absolute", right: 10, bottom: 6, margin: 0, fontSize: 11, opacity: 0.7 }}>Photo: {ad.campaign.imageCredit}</p> : null}
           <span style={{ justifySelf: "start", background: accent, color: CREAM, padding: "0.85rem 1.4rem", borderRadius: 6, fontWeight: 800, fontSize: "0.98rem", whiteSpace: "nowrap", fontFamily: "var(--font-body)" }}>{ad.cta} →</span>
         </div>
       </TrackedAdLink>
@@ -121,16 +137,21 @@ export async function MarginSlot() {
     <AdGate>
       <AfterQuarter>
         <aside className="margin-ad" aria-label={ad.campaign.advertiser} data-ad-slot="margin" data-ad-campaign={ad.campaign.id}>
-          <Dismissible>
+          <Dismissible campaignId={ad.campaign.id} label={labelFor(ad)}>
             <style>{`.margin-ad{display:none}@media(min-width:1440px){.margin-ad{display:block;position:fixed;right:20px;top:120px;width:300px;z-index:30}}.margin-ad a,.margin-ad a *{text-decoration:none!important}`}</style>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: "0 0 6px" }}>{labelFor(ad)}</p>
             <TrackedAdLink href={ad.href} placement="margin" campaignId={ad.campaign.id} className="block no-underline rounded-xl overflow-hidden relative" style={{ width: 300, height: 250, color: CREAM, background: INK, boxShadow: "0 8px 24px rgba(0,0,0,.2)", borderTop: `4px solid ${GOLD}` }}>
               <ImpressionOnView placement="margin" showSlug={ad.campaign.id} />
-              <span style={{ position: "absolute", left: 20, right: 20, top: 18, display: "block" }}>
+              <span style={{ position: "absolute", left: 20, right: 20, top: 16, display: "block" }}>
                 <span style={{ display: "block", fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 700, fontSize: "1.5rem", lineHeight: 1.1 }}>{ad.headline}</span>
               </span>
-              <span style={{ position: "absolute", left: 20, right: 20, bottom: 18, display: "block" }}>
-                <span style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "0.9rem", lineHeight: 1.4, margin: "0 0 12px", opacity: 0.9 }}>{ad.short}</span>
+              <span style={{ position: "absolute", left: 20, right: 20, bottom: 16, display: "block" }}>
+                <span style={{ display: "flex", alignItems: "center", gap: 10, margin: "0 0 10px" }}>
+                  {ad.campaign.portrait ? <Portrait src={ad.campaign.portrait} size={56} /> : null}
+                  <span style={{ display: "block" }}>
+                    {ad.campaign.portraitName ? <span style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "14px", fontWeight: 700, color: GOLD, lineHeight: 1.3 }}>{ad.campaign.portraitName}</span> : null}
+                    <span style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "0.95rem", lineHeight: 1.3, opacity: 0.9 }}>{ad.short}</span>
+                  </span>
+                </span>
                 <span style={{ display: "inline-block", background: accent, color: CREAM, padding: "0.55rem 0.9rem", borderRadius: 6, fontWeight: 800, fontSize: "0.9rem", fontFamily: "var(--font-body)" }}>{ad.cta} →</span>
               </span>
             </TrackedAdLink>
@@ -152,6 +173,7 @@ export async function ListicleSlot({ weddingGuide }: { weddingGuide: boolean }) 
     <div data-ad-slot="listicle" data-ad-campaign={ad.campaign.id} style={{ marginTop: "2rem", background: "var(--color-ll-dark)", borderRadius: "12px", padding: "1.5rem 1.75rem", display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", justifyContent: "space-between" }}>
       <AskMarker ad={ad} />
       <ImpressionOnView placement="listicle" showSlug={ad.campaign.id} />
+      {!show && ad.campaign.portrait ? <Portrait src={ad.campaign.portrait} size={64} /> : null}
       <div style={{ flex: "1 1 260px" }}>
         <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-ll-accent-dark)", marginBottom: "0.35rem" }}>
           {show ? `The Aisle · Bridal Show · ${showDayLabel(show.date)}` : labelFor(ad)}

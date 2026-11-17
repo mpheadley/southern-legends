@@ -10,6 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 import Image from "next/image";
 import SubscribeCTA from "./components/SubscribeCTA";
+import FaithTeaser from "./components/FaithTeaser";
 import { Editable } from "@headley/gathersites/client";
 
 /**
@@ -142,59 +143,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3 · One Journal teaser */}
+      {/* 3 · Essays + faith column teasers, side by side */}
       {featuredJournal && (
         <section className="gradient-hero no-pseudo-topo" style={{ position: "relative" }}>
           <div aria-hidden="true" className="grid-topo" />
-          <div className="mx-auto max-w-3xl px-6 py-10 md:py-14" style={{ position: "relative", zIndex: 1 }}>
-            <div
-              className="rounded-xl flex items-center gap-0 overflow-hidden"
-              style={{
-                background: "rgba(250,250,247,0.12)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(250,250,247,0.2)",
-                boxShadow: "0 4px 24px rgba(0,0,0,0.25)",
-              }}
-            >
-              {featuredJournal.frontmatter.cardImage && (
-                <Link
-                  href={`/essays/${featuredJournal.slug}`}
-                  className="group relative shrink-0 self-stretch overflow-hidden"
-                  style={{ width: "9rem" }}
-                  aria-hidden="true"
-                  tabIndex={-1}
-                >
-                  <Image
-                    src={featuredJournal.frontmatter.cardImage}
-                    alt=""
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    style={{ objectPosition: "center 25%" }}
-                    sizes="144px"
-                  />
+          <div className="mx-auto max-w-5xl px-6 py-10 md:py-14" style={{ position: "relative", zIndex: 1 }}>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div
+                className="rounded-xl flex items-center gap-0 overflow-hidden"
+                style={{
+                  background: "rgba(250,250,247,0.12)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(250,250,247,0.2)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.25)",
+                }}
+              >
+                {featuredJournal.frontmatter.cardImage && (
+                  <Link
+                    href={`/essays/${featuredJournal.slug}`}
+                    className="group relative shrink-0 self-stretch overflow-hidden"
+                    style={{ width: "9rem" }}
+                    aria-hidden="true"
+                    tabIndex={-1}
+                  >
+                    <Image
+                      src={featuredJournal.frontmatter.cardImage}
+                      alt=""
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      style={{ objectPosition: "center 25%" }}
+                      sizes="144px"
+                    />
+                  </Link>
+                )}
+                <Link href={`/essays/${featuredJournal.slug}`} className="flex-1 min-w-0 px-5 py-4 hover:opacity-80 transition-opacity">
+                  <p
+                    className="text-sm uppercase tracking-widest mb-1"
+                    style={{ color: "rgba(250,220,150,0.9)", fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                  >
+                    From the essays
+                  </p>
+                  <h2
+                    className="text-lg md:text-xl leading-snug mb-1"
+                    style={{ fontFamily: "var(--font-heading)", fontWeight: 400, fontStyle: "italic", color: "#FAFAF7" }}
+                  >
+                    {featuredJournal.frontmatter.title}
+                  </h2>
+                  <p
+                    className="text-sm line-clamp-2"
+                    style={{ fontFamily: "var(--font-body)", color: "rgba(250,250,247,0.65)", lineHeight: 1.55 }}
+                  >
+                    {featuredJournal.frontmatter.excerpt}
+                  </p>
                 </Link>
-              )}
-              <Link href={`/essays/${featuredJournal.slug}`} className="flex-1 min-w-0 px-5 py-4 hover:opacity-80 transition-opacity">
-                <p
-                  className="text-sm uppercase tracking-widest mb-1"
-                  style={{ color: "rgba(250,220,150,0.9)", fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  From the essays
-                </p>
-                <h2
-                  className="text-lg md:text-xl leading-snug mb-1"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 400, fontStyle: "italic", color: "#FAFAF7" }}
-                >
-                  {featuredJournal.frontmatter.title}
-                </h2>
-                <p
-                  className="text-sm line-clamp-2"
-                  style={{ fontFamily: "var(--font-body)", color: "rgba(250,250,247,0.65)", lineHeight: 1.55 }}
-                >
-                  {featuredJournal.frontmatter.excerpt}
-                </p>
-              </Link>
+              </div>
+              <FaithTeaser />
             </div>
           </div>
         </section>

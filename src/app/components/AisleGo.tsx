@@ -5,6 +5,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import QRCode from "qrcode";
+import { X } from "lucide-react";
 
 const GO = "https://southernlegends.org/go/aisle";
 
@@ -98,21 +99,60 @@ export function AfterQuarter({ children }: { children: ReactNode }) {
   );
 }
 
-/** Shows a visible × so the reader can dismiss the card for this visit. */
-export function Dismissible({ children }: { children: ReactNode }) {
-  const [gone, setGone] = useState(false);
-  if (gone) return null;
+/**
+ * Shows a header row with the ad's label and a real close button so the reader can dismiss the
+ * card. With a `campaignId`, the close is remembered in localStorage for `days` (default 7);
+ * without one (e.g. MarginAisle's small floating card), it's session-only, same as before.
+ */
+export function Dismissible({ children, campaignId, label, days = 7 }: { children: ReactNode; campaignId?: string; label?: string; days?: number }) {
+  const [ready, setReady] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    if (!campaignId) {
+      setReady(true);
+      return;
+    }
+    try {
+      const stored = localStorage.getItem(`sl-ad-closed:${campaignId}`);
+      if (stored) {
+        const closedAt = Number(stored);
+        if (!Number.isNaN(closedAt) && Date.now() - closedAt < days * 24 * 60 * 60 * 1000) {
+          setHidden(true);
+        }
+      }
+    } catch { /* localStorage may be unavailable; fail open */ }
+    setReady(true);
+  }, [campaignId, days]);
+
+  if (!ready || hidden) return null;
+
+  const close = () => {
+    setHidden(true);
+    if (campaignId) {
+      try { localStorage.setItem(`sl-ad-closed:${campaignId}`, String(Date.now())); } catch { /* ignore */ }
+    }
+  };
+
   return (
     <div style={{ position: "relative" }}>
+      <style>{`.sl-ad-close-btn:hover{color:#1a1208}.sl-ad-close-btn:focus-visible{outline:2px solid #E8C98A;outline-offset:2px}`}</style>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", margin: "0 0 6px" }}>
+        {label ? (
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-label)", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#8a8170", margin: 0 }}>{label}</p>
+        ) : <span />}
+        <button
+          type="button"
+          aria-label="Close this ad"
+          onClick={close}
+          className="sl-ad-close-btn inline-flex items-center gap-1 min-h-[44px] px-2 -mr-2 rounded text-[14px] font-bold uppercase tracking-[.12em]"
+          style={{ color: "#8a8170", background: "transparent", border: 0, cursor: "pointer" }}
+        >
+          <X size={16} strokeWidth={2.25} aria-hidden />
+          Close ad
+        </button>
+      </div>
       {children}
-      <button
-        type="button"
-        aria-label="Close this ad"
-        onClick={() => setGone(true)}
-        style={{ position: "absolute", top: -10, right: -10, width: 26, height: 26, borderRadius: "50%", border: "1px solid rgba(232,201,138,.8)", background: "#1e2a4a", color: "#fff", fontSize: 16, lineHeight: 1, cursor: "pointer", zIndex: 2, display: "flex", alignItems: "center", justifyContent: "center", padding: 0 }}
-      >
-        ×
-      </button>
     </div>
   );
 }

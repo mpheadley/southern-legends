@@ -142,6 +142,13 @@ export default async function JournalPage({
             </Link>
           ))}
         </div>
+
+        <p className="mt-5" style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", color: "#5C534A" }}>
+          The weekly faith column for The Anniston Star has its own page.{" "}
+          <Link href="/faith" className="font-semibold text-ll-primary hover:underline">
+            Faith column →
+          </Link>
+        </p>
       </div>
 
       {/* Featured post hero */}

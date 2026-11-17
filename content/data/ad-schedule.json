@@ -5,7 +5,13 @@
     "southern-legends": {
       "name": "Southern Legends",
       "url": "https://southernlegends.org",
-      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"]
+      "slots": [
+        "top-strip",
+        "band",
+        "margin",
+        "mobile-bar",
+        "listicle"
+      ]
     }
   },
   "campaigns": [
@@ -14,8 +20,16 @@
       "label": "The Aisle: Anniston Bridal Show (Oct 18)",
       "advertiser": "The Aisle Bridal Shows",
       "bucket": "house",
-      "sites": ["southern-legends"],
-      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "sites": [
+        "southern-legends"
+      ],
+      "slots": [
+        "top-strip",
+        "band",
+        "margin",
+        "mobile-bar",
+        "listicle"
+      ],
       "start": "2026-10-05",
       "end": "2026-10-18",
       "creative": "aisle-show",
@@ -34,8 +48,16 @@
       "label": "Support Southern Legends (monthly)",
       "advertiser": "Southern Legends",
       "bucket": "house",
-      "sites": ["southern-legends"],
-      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "sites": [
+        "southern-legends"
+      ],
+      "slots": [
+        "top-strip",
+        "band",
+        "margin",
+        "mobile-bar",
+        "listicle"
+      ],
       "start": "2026-10-19",
       "end": "2027-01-04",
       "headline": "If this is worth something to you, say so.",
@@ -44,15 +66,26 @@
       "cta": "Support the work · {support_price}/mo",
       "href": "/support",
       "accent": "#9A3412",
-      "notes": "Recurring reader support: the best income ask for SL readers. Price comes from src/lib/patron-tiers.ts."
+      "notes": "Recurring reader support: the best income ask for SL readers. Price comes from src/lib/patron-tiers.ts.",
+      "portrait": "/ad-assets/matt-headshot-ad.webp",
+      "portraitName": "Matt Headley",
+      "logo": "/ad-assets/sl-wordmark-white-ad.webp"
     },
     {
       "id": "aisle-silver-run-2027",
       "label": "The Aisle: Silver Run Chapel (Feb 21, 2027)",
       "advertiser": "The Aisle Bridal Shows",
       "bucket": "house",
-      "sites": ["southern-legends"],
-      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "sites": [
+        "southern-legends"
+      ],
+      "slots": [
+        "top-strip",
+        "band",
+        "margin",
+        "mobile-bar",
+        "listicle"
+      ],
       "start": "2027-01-05",
       "end": "2027-02-21",
       "creative": "aisle-show",
@@ -70,8 +103,16 @@
       "label": "Support Southern Legends (monthly, after Silver Run)",
       "advertiser": "Southern Legends",
       "bucket": "house",
-      "sites": ["southern-legends"],
-      "slots": ["top-strip", "band", "margin", "mobile-bar", "listicle"],
+      "sites": [
+        "southern-legends"
+      ],
+      "slots": [
+        "top-strip",
+        "band",
+        "margin",
+        "mobile-bar",
+        "listicle"
+      ],
       "start": "2027-02-22",
       "end": null,
       "headline": "If this is worth something to you, say so.",
@@ -80,7 +121,10 @@
       "cta": "Support the work · {support_price}/mo",
       "href": "/support",
       "accent": "#9A3412",
-      "notes": "Same ask as sl-support, resumes the day after Silver Run."
+      "notes": "Same ask as sl-support, resumes the day after Silver Run.",
+      "portrait": "/ad-assets/matt-headshot-ad.webp",
+      "portraitName": "Matt Headley",
+      "logo": "/ad-assets/sl-wordmark-white-ad.webp"
     }
   ],
   "fallbacks": [
@@ -89,7 +133,9 @@
       "label": "Fallback: Southern Legends Vol. 1 (print)",
       "advertiser": "Southern Legends",
       "bucket": "house",
-      "sites": ["southern-legends"],
+      "sites": [
+        "southern-legends"
+      ],
       "requires": "VOL1_ON_SALE",
       "headline": "Southern Legends in print.",
       "body": "Vol. 1: five profiles, 200 copies. 10% supports early childhood literacy through UWECA's Imagination Library.",
@@ -103,13 +149,17 @@
       "label": "Fallback: Support Southern Legends",
       "advertiser": "Southern Legends",
       "bucket": "house",
-      "sites": ["southern-legends"],
+      "sites": [
+        "southern-legends"
+      ],
       "headline": "If this is worth something to you, say so.",
       "body": "Southern Legends is free to read. {support_price} a month from a few of you covers the gas, the memory card, and the afternoon it takes to sit with somebody. Cancel any time.",
       "short": "Kept free by readers.",
       "cta": "Support the work · {support_price}/mo",
       "href": "/support",
-      "accent": "#9A3412"
+      "accent": "#9A3412",
+      "portrait": "/ad-assets/matt-headshot-ad.webp",
+      "logo": "/ad-assets/sl-wordmark-white-ad.webp"
     }
   ]
 }
