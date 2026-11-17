@@ -119,13 +119,6 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
             )}
             <div>
               <p className="text-base font-semibold text-white">By {siteConfig.author}</p>
-              <p className="faith-mono text-sm uppercase tracking-[0.12em] text-white/60">
-                <span className="whitespace-nowrap">The Anniston Star</span>
-                <span aria-hidden="true"> · </span>
-                <time dateTime={c.date} className="whitespace-nowrap">
-                  {formatFaithDate(c.date)}
-                </time>
-              </p>
             </div>
           </div>
         </div>
@@ -134,6 +127,7 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
       {/* ── Body ────────────────────────────────────────────────────── */}
       {ownText ? (
         <article className="mx-auto max-w-[42rem] px-6 py-14 md:py-20">
+          <RanInStar column={c} />
           {c.epigraph && (
             <blockquote className="mb-10 border-l-2 border-ll-accent pl-5 text-lg italic leading-relaxed text-ll-text-light">
               {inline(c.epigraph)}
@@ -167,6 +161,7 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
         <article className="mx-auto max-w-5xl px-6 py-14 md:px-12 md:py-20">
           <div className={`grid items-start gap-10 ${c.card ? "md:grid-cols-[minmax(0,1fr)_18rem] md:gap-16 lg:grid-cols-[minmax(0,1fr)_20rem]" : ""}`}>
             <div className="min-w-0 max-w-[42rem]">
+              <RanInStar column={c} />
               {c.pullQuote && (
                 <p className="faith-display text-[clamp(1.6rem,3.2vw,2.25rem)] italic leading-snug text-ll-dark">“{description}”</p>
               )}
@@ -247,7 +242,6 @@ export default async function FaithColumnPage({ params }: { params: Promise<{ sl
 function Doors({
   column: c,
   ownText,
-  attribution,
   byline,
 }: {
   column: FaithColumn;
@@ -284,13 +278,14 @@ function Doors({
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </div>
-      <p className="mt-5 text-sm leading-relaxed text-ll-text-light">
-        {c.longCut
-          ? "This is the longer version. A shorter cut ran in The Anniston Star."
-          : c.longUrl
-            ? "A longer version of this column lives on Southern Legends. The column itself ran in The Anniston Star."
-            : attribution}
-      </p>
+      {/* The "ran in the Star" credit now sits at the top (RanInStar, Matt 2026-11-17); this line only explains a longer version. */}
+      {(c.longCut || c.longUrl) && (
+        <p className="mt-5 text-sm leading-relaxed text-ll-text-light">
+          {c.longCut
+            ? "This is the longer version. A shorter cut ran in The Anniston Star."
+            : "A longer version of this column lives on Southern Legends. The column itself ran in The Anniston Star."}
+        </p>
+      )}
       {byline && <p className="mt-2 text-sm italic leading-relaxed text-ll-text-light">{byline}</p>}
       {/* Free to read; one plain support line, no paywall (faith-column-owned-channel-strategy, 2026-11-15). */}
       <p className="mt-4 text-sm leading-relaxed text-ll-text-light">
@@ -341,5 +336,19 @@ function ReelBox({ reel, slug }: { reel: FaithReel; slug: string }) {
       </a>
       {blurb && <p className="mt-2 text-base leading-relaxed text-ll-text">{blurb}</p>}
     </aside>
+  );
+}
+
+/**
+ * Reprint note at the top of the column (Matt, 2026-11-17: "this article originally ran in the Anniston
+ * Star" at the top, the link at the bottom). Carries the date, which used to sit in the hero.
+ */
+function RanInStar({ column: c }: { column: FaithColumn }) {
+  return (
+    <p className="mb-10 text-base italic leading-relaxed text-ll-text-light">
+      {c.longCut ? "A shorter version of this column ran in " : "This column originally ran in "}
+      <span className="not-italic font-medium">The Anniston Star</span> on{" "}
+      <time dateTime={c.date}>{formatFaithDate(c.date)}</time>.
+    </p>
   );
 }
