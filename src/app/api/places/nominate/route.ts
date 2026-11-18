@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 import { SL_FROM, SL_REPLY_TO } from "@/lib/email-sender"
 import { isHoneypotFilled, verifyTurnstile } from "@/lib/turnstile"
+import { junkReason } from "@/lib/junk"
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
@@ -71,6 +72,12 @@ export async function POST(req: NextRequest) {
     return redirectTo("error=missing")
   }
   if (!EMAIL_RE.test(fields.your_email)) return redirectTo("error=email")
+
+  const junk = junkReason({ name: fields.your_name, email: fields.your_email, message: fields.reason })
+  if (junk) {
+    console.log(`[places/nominate] dropped junk (${junk})`)
+    return redirectTo("success=1")
+  }
 
   const website = safeWebsite(fields.website)
   if (website === null) return redirectTo("error=website")

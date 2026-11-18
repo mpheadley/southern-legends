@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 import { SL_FROM, SL_REPLY_TO } from "@/lib/email-sender";
 import { createHmac } from "crypto";
+import { junkReason } from "@/lib/junk";
 
 function approveToken(commentId: string, secret: string): string {
   return createHmac("sha256", secret).update(commentId).digest("hex");
@@ -33,6 +34,10 @@ export async function POST(request: NextRequest) {
 
   if (!slug || !name?.trim() || !message?.trim()) {
     return NextResponse.json({ error: "Name and message are required" }, { status: 400 });
+  }
+
+  if (junkReason({ name, email, message })) {
+    return NextResponse.json({ ok: true });
   }
 
   if (name.trim().length > 100) {

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 import { SL_FROM, SL_REPLY_TO } from "@/lib/email-sender"
+import { junkReason } from "@/lib/junk"
 
 const SL_NEWSLETTER_AUDIENCE_ID = "bc84e16a-40ed-4e6b-bc6e-1396bcb83a92"
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
@@ -25,6 +26,9 @@ export async function POST(request: NextRequest) {
   }
   if (!city) {
     return NextResponse.json({ error: "City required" }, { status: 400 })
+  }
+  if (junkReason({ email, city })) {
+    return NextResponse.json({ success: true })
   }
 
   try {

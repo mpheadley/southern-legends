@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { supabase } from "@/lib/supabase"
+import { junkReason } from "@/lib/junk"
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,6 +9,9 @@ export async function POST(req: NextRequest) {
 
     if (!trail_slug || !name || !rating || !reviewBody) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
+    }
+    if (junkReason({ name, message: reviewBody, date: date_hiked })) {
+      return NextResponse.json({ success: true })
     }
     if (rating < 1 || rating > 5) {
       return NextResponse.json({ error: "Rating must be 1–5" }, { status: 400 })

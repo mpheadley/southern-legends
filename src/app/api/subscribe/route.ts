@@ -3,6 +3,7 @@ import { Resend } from "resend";
 import { SL_FROM, SL_REPLY_TO, SL_NOTIFY_TO } from "@/lib/email-sender";
 import { unsubscribeUrl, unsubscribeFooterHtml, unsubscribeFooterText } from "@/lib/unsubscribe";
 import { isHoneypotFilled, verifyTurnstile } from "@/lib/turnstile";
+import { junkReason } from "@/lib/junk";
 
 // Same bot filter as Aisle's is_bot_email() (tools/aisle-network-email-drip.py) —
 // known bot/crawler domains + the dotted-segment gmail pattern (x.x.x.x@gmail.com).
@@ -55,6 +56,13 @@ export async function POST(request: NextRequest) {
   // but never add them to the audience or fire the drip.
   if (isBotEmail(email)) {
     console.log(`[subscribe] dropped bot-pattern email: ${email}`);
+    return NextResponse.json({ success: true });
+  }
+
+  // Junk content: gibberish first name, dotted-gmail alias — same accept-but-drop.
+  const junk = junkReason({ firstName, email });
+  if (junk) {
+    console.log(`[subscribe] dropped junk (${junk}): ${email}`);
     return NextResponse.json({ success: true });
   }
 

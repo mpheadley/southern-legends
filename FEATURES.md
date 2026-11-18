@@ -36,6 +36,11 @@
 - `/api/places/nominate`: honeypot (hidden `company`) accept-and-drop, Turnstile token required when `TURNSTILE_SECRET_KEY` is set, length caps (name/city 120, reason 2000), email format check, city required, website kept only when it parses as http(s), every field HTML-escaped in the notification email, Resend result checked. Redirects back to `/places/nominate?success=1` or `?error=missing|email|website|captcha|invalid|send`.
 - `/places/nominate` reads those params: plain success panel or inline error. Form is the client `NominateForm` with the shared `TurnstileWidget`, label/htmlFor pairs, 14px labels, 16px inputs.
 
+## Junk form filter (2026-11-18)
+
+- `src/lib/junk.ts` (`junkReason()`) — one home for the bot-content check: gibberish mixed-case names/messages, dotted-gmail aliases, pre-2000 dates. Same rules as `gather/packages/shared/src/junk-registration.ts`.
+- Accept-but-drop (same shape as the existing honeypot/bot responses, so a bot can't tell it was filtered) on: `/api/subscribe`, `/api/city-newsletter/subscribe`, `/api/sponsorship/apply`, `/api/places/nominate`, `/api/comments/submit`, `/api/trails/review`.
+
 ## Sponsor price ladder (2026-10-05)
 
 - `src/lib/sponsor-pricing.ts` is the one home for the "Sponsor a story" price: $150 founding rate, then $250 / $400 / $600+ on readership triggers. `/sponsor` reads `CURRENT` and shows the founding-rate note. To step up, change `CURRENT_STEP`. Plan: `reports/sl-strategy/sponsor-pricing-plan.md`.
