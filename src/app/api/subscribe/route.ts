@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import { SL_FROM, SL_REPLY_TO, SL_NOTIFY_TO } from "@/lib/email-sender";
 import { unsubscribeUrl, unsubscribeFooterHtml, unsubscribeFooterText } from "@/lib/unsubscribe";
 import { isHoneypotFilled, verifyTurnstile } from "@/lib/turnstile";
-import { junkReason } from "@/lib/junk";
+import { junkReason, rateLimited } from "@/lib/junk";
 
 // Same bot filter as Aisle's is_bot_email() (tools/aisle-network-email-drip.py) —
 // known bot/crawler domains + the dotted-segment gmail pattern (x.x.x.x@gmail.com).
@@ -60,6 +60,7 @@ export async function POST(request: NextRequest) {
   }
 
   // Junk content: gibberish first name, dotted-gmail alias — same accept-but-drop.
+  if (rateLimited(request, "subscribe")) return NextResponse.json({ error: "Too many requests. Please wait a minute and try again." }, { status: 429 });
   const junk = junkReason({ firstName, email });
   if (junk) {
     console.log(`[subscribe] dropped junk (${junk}): ${email}`);

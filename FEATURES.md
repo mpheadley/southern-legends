@@ -1,5 +1,8 @@
 # Southern Legends — Shipped Features
 
+## Recent Changes (2026-11-20)
+- **Form spam guard** — `src/lib/junk.ts` adds `rateLimited()` (5/min per IP per route) and drops disposable/test email domains inside `junkReason()`; wired into subscribe, city-newsletter/subscribe, sponsorship/apply, trails/review, comments/submit, places/nominate. Junk still gets a silent success.
+
 *Last updated: 2026-11-13. Source of truth for what's built.*
 
 ---

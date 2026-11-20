@@ -24,12 +24,37 @@ function isDottedGmailAlias(email: unknown): boolean {
 }
 
 /** Returns a reason when the submission looks like a bot, else null. */
+// Disposable / test inboxes (Form Guard v2 list, Nov 20 2026).
+const DISPOSABLE_DOMAINS = new Set([
+  "mailinator.com", "guerrillamail.com", "guerrillamail.net", "sharklasers.com", "grr.la",
+  "10minutemail.com", "temp-mail.org", "tempmail.com", "tempmail.net", "tempail.com",
+  "yopmail.com", "trashmail.com", "getnada.com", "nada.email", "dispostable.com",
+  "maildrop.cc", "throwawaymail.com", "fakeinbox.com", "mohmal.com", "emailondeck.com",
+  "mintemail.com", "spamgourmet.com", "burnermail.io", "moakt.com", "inboxkitten.com",
+  "mailnesia.com", "mailcatch.com", "tmpmail.org", "tmail.ws", "spam4.me",
+  "example.com", "test.com", "sagemindai.io", "ioud.co", "xwf.google.com",
+]);
+
+// Per-IP burst limit for public form routes (in-memory; resets on cold start).
+const ipBuckets = new Map<string, number[]>();
+export function rateLimited(req: { headers: Headers }, key: string, max = 5, windowMs = 60_000): boolean {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+  const k = `${key}:${ip}`;
+  const now = Date.now();
+  const hits = (ipBuckets.get(k) ?? []).filter((t) => now - t < windowMs);
+  hits.push(now);
+  ipBuckets.set(k, hits);
+  return hits.length > max;
+}
+
 export function junkReason(body: Record<string, unknown>): string | null {
   const nameFields = ["name", "firstName", "first_name", "lastName", "last_name", "partnerName", "partner_name"];
   if (nameFields.some((k) => isGibberish(body[k]))) return "gibberish name";
   const textFields = ["message", "notes", "details", "tourTimes", "vision", "comments"];
   if (textFields.some((k) => isGibberish(body[k]))) return "gibberish message";
   if (isDottedGmailAlias(body["email"])) return "dotted gmail alias";
+  const domain = String(body["email"] ?? "").trim().toLowerCase().split("@")[1] ?? "";
+  if (DISPOSABLE_DOMAINS.has(domain)) return "disposable email";
   const date = String(body["date"] ?? body["eventDate"] ?? body["weddingDate"] ?? "");
   const y = /^(\d{4})-/.exec(date)?.[1];
   if (y && Number(y) < 2000) return "impossible date";

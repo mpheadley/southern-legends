@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 import { SL_FROM } from "@/lib/email-sender"
-import { junkReason } from "@/lib/junk"
+import { junkReason, rateLimited } from "@/lib/junk"
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
@@ -25,6 +25,7 @@ export async function POST(request: NextRequest) {
   if (!businessName || !city || !email) {
     return NextResponse.json({ error: "businessName, city, and email are required" }, { status: 400 })
   }
+  if (rateLimited(request, "sponsorship-apply")) return NextResponse.json({ error: "Too many requests. Please wait a minute and try again." }, { status: 429 })
   if (junkReason({ name: businessName, email, message })) {
     return NextResponse.json({ success: true })
   }
